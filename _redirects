@@ -1,0 +1,16 @@
+# Use one canonical host and one clean, keyword-based URL for each page.
+https://jingyueglass.com/* https://www.jingyueglass.com/:splat 301!
+/index.html / 301!
+/wine-glasses.html /wine-glasses 301!
+/beer-glasses.html /beer-glasses 301!
+/wine-decanters.html /wine-decanters 301!
+/drinkware-sets.html /drinkware-sets 301!
+/coffee-tea-mugs.html /coffee-tea-mugs 301!
+/gift-sets.html /gift-sets 301!
+/tumblers-highballs.html /tumblers-highballs 301!
+/glassware-solutions.html /glassware-solutions 301!
+/wholesale-whiskey-glasses.html /wholesale-whiskey-glasses 301!
+/custom-logo-glassware.html /custom-logo-glassware 301!
+/whiskey-decanter-gift-sets.html /whiskey-decanter-gift-sets 301!
+/glassware-mixed-container-order.html /glassware-mixed-container-order 301!
+/glassware-oem-manufacturer-china.html /glassware-oem-manufacturer-china 301!
