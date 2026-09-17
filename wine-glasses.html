@@ -490,6 +490,53 @@
     .why-card h4 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
     .why-card p { font-size: 0.88rem; color: #666; line-height: 1.55; }
 
+    /* CUSTOM LOGO TEXT PANEL */
+    .custom-logo-panel {
+      background: linear-gradient(180deg, #fff 0%, #f8f6f0 100%);
+    }
+    .logo-flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .logo-flow-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.35rem;
+      box-shadow: 0 10px 28px rgba(0,0,0,.05);
+    }
+    .logo-flow-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gold);
+      color: var(--dark);
+      font-weight: 800;
+      margin-bottom: .9rem;
+    }
+    .logo-flow-card h3 { font-size: 1rem; color: var(--dark); margin-bottom: .55rem; }
+    .logo-flow-card p { color: #5a5a5a; font-size: .9rem; line-height: 1.6; }
+    .logo-note-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 1.4rem 0;
+    }
+    .logo-note-strip span {
+      background: #fff7e3;
+      border: 1px solid rgba(184,139,58,.25);
+      border-radius: 999px;
+      color: #70501d;
+      font-size: .88rem;
+      font-weight: 700;
+      padding: .55rem .9rem;
+    }
+
     /* FAQ */
     .faq-section { background: var(--white); }
     .faq-list { max-width: 760px; margin-top: 1rem; }
@@ -579,6 +626,9 @@
       form .form-row { grid-template-columns: 1fr; }
       .trust-bar { gap: 1.5rem; }
       .sku-feature-list { grid-template-columns: 1fr; }
+      .logo-flow-grid { grid-template-columns: 1fr; }
+      .logo-flow-card { padding: 1.1rem; }
+      .logo-note-strip { gap: .55rem; }
       .wa-float { width: 48px; height: 48px; bottom: 18px; right: 18px; font-size: 1.35rem; }
       footer { padding: 2rem 5% 5.5rem; }
     }
@@ -1008,18 +1058,20 @@
 
 <!-- SPECS TABLE -->
 
-<section class="products-section" id="custom-logo-wine-glasses">
+<section class="products-section custom-logo-panel" id="custom-logo-wine-glasses">
   <div class="section-label">Custom Logo Program</div>
   <div class="section-title">Custom Logo Wine Glasses for Wineries, Restaurants and Events</div>
   <p class="section-sub">For wineries, restaurants, wedding suppliers and promotional gift buyers, custom logo wine glasses should start from the selected SKU and actual use case. Jingyue Glass reviews glass shape, logo artwork, logo size, print position, packaging and destination before confirming the suitable decoration route.</p>
-  <div class="product-grid">
-    <article class="product-card"><img src="/assets/seo/custom-logo-wine-glasses/custom-logo-stemless-wine-glass-retail-box.webp" alt="Custom logo stemless wine glass with retail box packaging"><span class="product-tag">Custom Logo · Stemless Wine Glass</span><h3>Stemless wine glass with branded retail box</h3><p>Suitable for ecommerce sellers, event gifting and private-label drinkware programs that need the glass logo and box artwork reviewed together.</p></article>
-    <article class="product-card"><img src="/assets/seo/custom-logo-wine-glasses/custom-logo-gin-wine-glass-gift-tube.webp" alt="Custom logo wine or gin glass with premium gift tube"><span class="product-tag">Custom Logo · Gift Packaging</span><h3>Premium logo glass with gift tube</h3><p>A visual route for winery clubs, tasting rooms and corporate gift buyers that need logo placement, insert, pouch or tube packaging confirmed before quote.</p></article>
+  <div class="logo-flow-grid">
+    <article class="logo-flow-card"><span class="logo-flow-icon">①</span><h3>Choose the glass style</h3><p>Start with stemless, red wine, white wine, champagne or gift-pack wine glasses. Curved bowls, stems and textures affect logo area and process selection.</p></article>
+    <article class="logo-flow-card"><span class="logo-flow-icon">②</span><h3>Send artwork and position</h3><p>Share vector artwork when available, target logo width, front-facing position and whether the glass will be viewed on shelf, table or inside packaging.</p></article>
+    <article class="logo-flow-card"><span class="logo-flow-icon">③</span><h3>Confirm decoration route</h3><p>Engraving, screen printing, decal or other methods depend on bowl curve, logo color count, quantity and durability expectations.</p></article>
+    <article class="logo-flow-card"><span class="logo-flow-icon">④</span><h3>Match packaging and quote</h3><p>Share quantity, packaging request and destination country so logo work, retail box, insert and carton plan can be quoted together.</p></article>
   </div>
-  <div class="features-grid">
-    <div class="feature-card"><h3>Decoration method by glass shape</h3><p>Engraving, screen printing, decal or other methods depend on bowl curve, stem shape, logo color count, quantity and durability expectations.</p></div>
-    <div class="feature-card"><h3>Artwork and print position</h3><p>Send vector artwork when available, target logo width, preferred front-facing area and whether the glass will be viewed on shelf, table or in gift packaging.</p></div>
-    <div class="feature-card"><h3>Quote inputs</h3><p>Share SKU or reference image, quantity, logo file, logo size/position, packaging request and destination country so the process and MOQ can be confirmed.</p></div>
+  <div class="logo-note-strip">
+    <span>✓ SKU-specific compatibility review</span>
+    <span>✓ Artwork and logo-size check</span>
+    <span>✓ Packaging + carton planning</span>
   </div>
   <p class="section-sub">Related guides: <a href="/custom-logo-glassware">custom logo glassware</a>, <a href="/custom-glassware-quote-checklist">custom glassware quote checklist</a>, and <a href="/custom-glassware-packaging-guide">custom glassware packaging guide</a>.</p>
 </section>
