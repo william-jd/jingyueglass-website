@@ -351,6 +351,14 @@
     .why-icon { font-size: 2rem; margin-bottom: 0.8rem; }
     .why-card h4 { font-size: 1rem; font-weight: 700; color: var(--dark); margin-bottom: 0.5rem; }
     .why-card p { font-size: 0.88rem; color: #666; line-height: 1.55; }
+    .champagne-flow-panel { background: linear-gradient(180deg, #fff 0%, #f8f6f0 100%); }
+    .champagne-flow-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem; }
+    .champagne-flow-card { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 1.35rem; box-shadow: 0 10px 28px rgba(0,0,0,.05); }
+    .champagne-flow-icon { width: 42px; height: 42px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--gold); color: var(--dark); font-weight: 800; margin-bottom: .9rem; }
+    .champagne-flow-card h3 { font-size: 1rem; color: var(--dark); margin-bottom: .55rem; }
+    .champagne-flow-card p { color: #5a5a5a; font-size: .9rem; line-height: 1.6; }
+    .champagne-note-strip { display: flex; flex-wrap: wrap; gap: .75rem; margin: 1.4rem 0; }
+    .champagne-note-strip span { background: #fff7e3; border: 1px solid rgba(184,139,58,.25); border-radius: 999px; color: #70501d; font-size: .88rem; font-weight: 700; padding: .55rem .9rem; }
     .faq-section { background: var(--white); }
     .faq-list { max-width: 760px; margin-top: 1rem; }
     .faq-item { border-bottom: 1px solid var(--border); padding: 1.4rem 0; }
@@ -387,7 +395,7 @@
     footer a { color: var(--gold); }
     .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; background: #25D366; color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 4px 16px rgba(37,211,102,0.4); transition: transform 0.2s; }
     .wa-float:hover { transform: scale(1.1); }
-    @media (max-width: 768px) { .hero { flex-direction: column; padding: 50px 5% 40px; gap: 2rem; } .hero-image { max-width: 100%; } .nav-links { display: none; } .form-wrap { grid-template-columns: 1fr; gap: 2rem; } form .form-row { grid-template-columns: 1fr; } .trust-bar { gap: 1.5rem; } .product-detail-grid { grid-template-columns: 1fr; gap: 1.8rem; } .detail-list { grid-template-columns: 1fr; } .detail-item:nth-child(odd) { border-right: none; } .detail-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); } .detail-item:last-child { border-bottom: none; } }
+    @media (max-width: 768px) { .hero { flex-direction: column; padding: 50px 5% 40px; gap: 2rem; } .hero-image { max-width: 100%; } .nav-links { display: none; } .form-wrap { grid-template-columns: 1fr; gap: 2rem; } form .form-row { grid-template-columns: 1fr; } .trust-bar { gap: 1.5rem; } .product-detail-grid { grid-template-columns: 1fr; gap: 1.8rem; } .detail-list { grid-template-columns: 1fr; } .detail-item:nth-child(odd) { border-right: none; } .detail-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); } .detail-item:last-child { border-bottom: none; } .champagne-flow-grid { grid-template-columns: 1fr; } .champagne-flow-card { padding: 1.1rem; } .champagne-note-strip { gap: .55rem; } }
   </style>
 </head>
 <body>
@@ -779,19 +787,20 @@
   </div>
 </section>
 
-<section class="products-section" id="custom-champagne-flute-gift-sets">
+<section class="products-section champagne-flow-panel" id="custom-champagne-flute-gift-sets">
   <div class="section-label">Wedding & Event Gift Sets</div>
   <div class="section-title">Custom Champagne Flute Gift Sets for Weddings and Corporate Events</div>
   <p class="section-sub">Bulk champagne flute gift sets often need more than a glass price. Wedding suppliers, event planners and corporate gift buyers should confirm the flute SKU, logo or monogram file, box insert, proof approval route, set quantity, packaging and destination before quotation.</p>
-  <div class="product-grid">
-    <article class="product-card"><img src="/assets/seo/champagne-flute-gift-sets/wedding-custom-logo-champagne-flutes.webp" alt="Wedding custom logo champagne flutes for bulk event gifts"><span class="product-tag">Wedding · Logo Flutes</span><h3>Personalized champagne flutes for wedding toasts</h3><p>Use for wedding favors, event gifting and venue packages where logo, date or monogram placement should be reviewed before proof approval.</p></article>
-    <article class="product-card"><img src="/assets/seo/champagne-flute-gift-sets/wedding-champagne-flute-wooden-gift-set.webp" alt="Wedding champagne flute wooden gift set with accessories"><span class="product-tag">Wedding · Wooden Box Set</span><h3>Champagne flute set with wooden presentation box</h3><p>Useful for premium wedding gift programs where the flute set, opener, stopper, box insert and artwork need to work together.</p></article>
-    <article class="product-card"><img src="/assets/seo/champagne-flute-gift-sets/custom-logo-champagne-flute-gift-box.webp" alt="Custom logo champagne flute gift box with foam insert"><span class="product-tag">Corporate · Gift Box</span><h3>Logo gift box with fitted flute insert</h3><p>For corporate gifts and retail programs that need a logo box, insert protection, barcode labels and carton planning before shipment.</p></article>
+  <div class="champagne-flow-grid">
+    <article class="champagne-flow-card"><span class="champagne-flow-icon">✦</span><h3>Confirm the event artwork</h3><p>Send the logo, monogram, wedding date, names or event mark. Vector artwork is preferred when the design needs clean printing or engraving.</p></article>
+    <article class="champagne-flow-card"><span class="champagne-flow-icon">①</span><h3>Select flute and set format</h3><p>Choose the champagne flute SKU, pair quantity, accessories and whether the set is for wedding favors, venue packages or corporate gifting.</p></article>
+    <article class="champagne-flow-card"><span class="champagne-flow-icon">②</span><h3>Review box insert and proof</h3><p>Check logo position, box artwork, insert layout and proof approval route before bulk packing, especially when the flute and box branding must match.</p></article>
+    <article class="champagne-flow-card"><span class="champagne-flow-icon">③</span><h3>Plan labels and cartons</h3><p>Confirm barcode labels, carton marks, carton quantity and destination requirements so the sets are ready for retail receiving or event distribution.</p></article>
   </div>
-  <div class="features-grid">
-    <div class="feature-card"><h3>Logo, monogram or event artwork</h3><p>Send vector artwork, name/date text, color preference and the required logo or monogram position on the flute or box.</p></div>
-    <div class="feature-card"><h3>Proof approval before bulk order</h3><p>Confirm digital mockup or sample route before bulk packing, especially when the gift box and flute decoration must match.</p></div>
-    <div class="feature-card"><h3>Box insert and carton plan</h3><p>Confirm insert fit, accessory layout, barcode label and carton quantity so the set can be prepared for retail or event distribution.</p></div>
+  <div class="champagne-note-strip">
+    <span>✓ Logo / monogram check</span>
+    <span>✓ Proof approval before bulk order</span>
+    <span>✓ Box insert + carton planning</span>
   </div>
   <p class="section-sub">Related guides: <a href="/custom-logo-glassware">custom logo glassware</a>, <a href="/custom-glassware-packaging-guide">custom glassware packaging guide</a>, and <a href="/glassware-quality-control-checklist">glassware quality control checklist</a>.</p>
 </section>
