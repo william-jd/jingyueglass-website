@@ -364,8 +364,9 @@
       transition: border-color 0.2s;
     }
     .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-    .hero-image { flex: 1; max-width: 480px; display: flex; justify-content: center; }
-    .hero-image img { width: 100%; max-width: 440px; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); object-fit: cover; height: 320px; }
+    .hero-image { flex: 1; width: 100%; max-width: 620px; display: flex; justify-content: center; }
+    .hero-image picture { width: 100%; max-width: 620px; aspect-ratio: 16 / 9; display: block; }
+    .hero-image img { width: 100%; height: 100%; border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); object-fit: contain; object-position: center; background: #f6f7f8; display: block; }
 
     /* TRUST BAR */
     .trust-bar {
@@ -611,6 +612,7 @@
       .nav-links.open { display: flex; }
       .hero { flex-direction: column; padding: 50px 5% 40px; gap: 2rem; }
       .hero-image { max-width: 100%; }
+      .hero-image picture { max-width: 100%; }
       .form-wrap { grid-template-columns: 1fr; gap: 2rem; }
       form .form-row { grid-template-columns: 1fr; }
       .trust-bar { gap: 1.5rem; }
@@ -649,7 +651,9 @@
     </div>
   </div>
   <div class="hero-image">
-    <img src="https://sc02.alicdn.com/kf/Hd3dadfc24b6c45f78f4d0990c7b3ae51X.jpg" alt="Wholesale Wine Glasses from Jingyue Glass China Factory" loading="eager">
+    <picture>
+      <img src="/assets/products/wine-glasses/jingyue-wine-glasses-hero-16x9-new-20260918.webp" alt="Colorful Jingyue wine glasses and wine accessories displayed in a 16:9 hero image" loading="eager" width="1600" height="900">
+    </picture>
   </div>
 </section>
 
