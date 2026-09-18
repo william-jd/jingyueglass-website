@@ -156,30 +156,37 @@
 
   /* ── HERO ── */
   .hero {
-    background: linear-gradient(120deg, #0d2540 60%, #1a4a7a 100%);
-    min-height: 90vh;
+    background:
+      linear-gradient(90deg, rgba(7,14,26,.94) 0%, rgba(10,25,43,.9) 46%, rgba(10,25,43,.58) 100%),
+      url('https://sc01.alicdn.com/kf/Hd4fb4669d8b9445487982e7b0a80fad3M.jpg') right center/cover no-repeat;
+    min-height: 92vh;
     display: flex; align-items: center;
-    padding: 80px 5%;
+    padding: 96px 5% 86px;
     position: relative; overflow: hidden;
   }
-  .hero::before {
+  .hero::before { content: none; }
+  .hero::after {
     content: '';
-    position: absolute; right: -5%; top: -10%;
-    width: 55%; height: 120%;
-    background: url('https://sc01.alicdn.com/kf/Hd4fb4669d8b9445487982e7b0a80fad3M.jpg') center/cover no-repeat;
-    opacity: .22;
-    border-radius: 50% 0 0 50%;
+    position: absolute; inset: auto 0 0 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,76,.75), transparent);
   }
-  .hero-content { max-width: 600px; position: relative; z-index: 1; }
+  .hero-content { max-width: 720px; position: relative; z-index: 1; }
   .hero-badge {
-    display: inline-block;
-    background: var(--accent); color: #fff;
-    font-size: .78rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-    padding: 5px 14px; border-radius: 2px; margin-bottom: 20px;
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(201,168,76,.09); color: #d8b75a;
+    border: 1px solid rgba(201,168,76,.45);
+    font-size: .78rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase;
+    padding: 10px 22px; border-radius: 999px; margin-bottom: 24px;
+    box-shadow: 0 12px 40px rgba(0,0,0,.22);
   }
-  .hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 18px; }
-  .hero h1 em { color: var(--accent); font-style: normal; }
-  .hero p { color: #b0c4de; font-size: 1.05rem; line-height: 1.7; margin-bottom: 32px; }
+  .hero-badge::before { content: '•'; color: var(--accent); font-size: 1.1rem; }
+  .hero h1 { color: #fff; font-size: clamp(2.4rem, 5vw, 4.65rem); line-height: .98; letter-spacing: -.04em; margin-bottom: 24px; max-width: 760px; text-transform: uppercase; }
+  .hero h1 em { color: var(--accent); font-style: normal; display: block; }
+  .hero p { color: #d7dfeb; font-size: clamp(1rem, 1.5vw, 1.22rem); line-height: 1.75; margin-bottom: 20px; max-width: 650px; }
+  .hero-proofline { color: #d8b75a; font-weight: 800; letter-spacing: .04em; margin: 8px 0 20px; }
+  .hero-chip-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 28px; }
+  .hero-chip { display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); color: #fff; border-radius: 999px; padding: 9px 16px; font-size: .9rem; }
+  .hero-chip strong { color: #f1c65b; }
   .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
   .btn-primary {
     background: var(--accent); color: #fff;
@@ -196,17 +203,19 @@
 
   /* ── STATS BAR ── */
   .stats-bar {
-    background: var(--accent);
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 0;
+    background: #0b111d;
+    border-top: 1px solid rgba(201,168,76,.35);
+    border-bottom: 1px solid rgba(201,168,76,.35);
+    display: grid; grid-template-columns: repeat(6, minmax(130px, 1fr)); gap: 0;
   }
   .stat-item {
-    padding: 18px 40px; text-align: center;
-    border-right: 1px solid rgba(255,255,255,.25);
-    flex: 1; min-width: 150px;
+    padding: 34px 26px; text-align: center;
+    border-right: 1px solid rgba(255,255,255,.08);
+    min-width: 0;
   }
   .stat-item:last-child { border-right: none; }
-  .stat-num { color: #fff; font-size: 1.6rem; font-weight: 700; }
-  .stat-label { color: rgba(255,255,255,.85); font-size: .8rem; margin-top: 2px; }
+  .stat-num { color: var(--accent); font-size: clamp(1.75rem, 3vw, 2.7rem); font-weight: 900; letter-spacing: -.03em; }
+  .stat-label { color: rgba(255,255,255,.72); font-size: .78rem; margin-top: 6px; letter-spacing: 1.8px; text-transform: uppercase; }
 
   /* ── SECTION COMMON ── */
   section { padding: 80px 5%; }
@@ -271,14 +280,25 @@
   .finishing-cta { display: inline-block; margin-top: 18px; padding: 11px 18px; border-radius: 3px; background: #25D366; color: #fff; font-weight: 700; font-size: .88rem; text-decoration: none; }
 
   /* ── ABOUT ── */
-  .about { background: var(--primary); }
-  .about-inner { display: flex; gap: 60px; align-items: center; flex-wrap: wrap; }
-  .about-text { flex: 1; min-width: 280px; }
+  .about { background: #0b111d; position: relative; overflow: hidden; }
+  .about::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 82% 12%, rgba(201,168,76,.14), transparent 34%); pointer-events: none; }
+  .about-inner { display: grid; grid-template-columns: minmax(280px, .9fr) minmax(320px, 1.1fr); gap: 58px; align-items: center; position: relative; z-index: 1; }
+  .about-text { min-width: 0; }
   .about .section-tag { color: var(--accent); }
-  .about .section-title { color: #fff; }
-  .about p { color: #b0c4de; font-size: .97rem; line-height: 1.8; margin-bottom: 16px; }
-  .about-img { flex: 1; min-width: 280px; }
-  .about-img img { width: 100%; border-radius: 4px; box-shadow: 0 8px 32px rgba(0,0,0,.4); }
+  .about .section-title { color: #fff; font-size: clamp(2rem, 3.7vw, 3.45rem); line-height: 1.05; max-width: 650px; }
+  .about .section-title em { color: var(--accent); font-style: normal; }
+  .about p { color: #c8d4e1; font-size: 1rem; line-height: 1.85; margin-bottom: 16px; }
+  .about-kpis { display: grid; grid-template-columns: repeat(2,minmax(130px,1fr)); gap: 12px; margin: 26px 0; }
+  .about-kpi { border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.045); border-radius: 10px; padding: 18px; }
+  .about-kpi strong { display: block; color: var(--accent); font-size: 1.65rem; line-height: 1; margin-bottom: 6px; }
+  .about-kpi span { color: rgba(255,255,255,.72); font-size: .78rem; text-transform: uppercase; letter-spacing: 1.2px; }
+  .about-video-card { min-width: 0; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.12); border-radius: 18px; overflow: hidden; box-shadow: 0 20px 70px rgba(0,0,0,.34); }
+  .about-video-frame { position: relative; aspect-ratio: 16/9; background: #111; overflow: hidden; }
+  .about-video-frame img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.95) contrast(1.05); }
+  .about-play { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; }
+  .about-play span { width: 78px; height: 78px; border-radius: 50%; background: rgba(201,168,76,.92); display:flex; align-items:center; justify-content:center; color:#111; font-size: 2rem; box-shadow:0 16px 36px rgba(0,0,0,.35); }
+  .about-video-caption { display:flex; justify-content:space-between; gap:16px; align-items:center; padding: 16px 20px; color:#fff; font-size:.88rem; }
+  .about-video-caption strong { color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; font-size: .75rem; }
 
   /* ── QUALITY DOCUMENTS ── */
   .quality-docs { background: #eef3f7; }
@@ -391,9 +411,11 @@
     .nav-links.open { display: flex; flex-direction: column; position: absolute; top: 64px; left: 0; right: 0; background: var(--primary); padding: 16px 5%; gap: 16px; }
     .lang-switcher.open { display: flex; flex-direction: row; padding: 8px 5% 16px; background: var(--primary); }
     .nav-menu-btn { display: block; }
-    .about-inner { flex-direction: column; }
+    .about-inner { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
-    .hero { min-height: 70vh; }
+    .hero { min-height: 76vh; padding-top: 88px; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .hero-chip-row { gap: 8px; }
     .stat-item { padding: 14px 20px; }
     .wa-float { left: 16px; bottom: 18px; width: 52px; height: 52px; border-radius: 14px; font-size: 1.55rem; }
     .wa-float::after { display: none; }
@@ -427,23 +449,31 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <div class="hero-badge" data-i18n="hero_badge">Wholesale · Mixed Batch · OEM/ODM · Factory Direct</div>
-    <h1 data-i18n="hero_h1">Your Reliable Glassware<br><em>Wholesale Partner in China</em></h1>
-    <p data-i18n="hero_p">We help supermarkets, distributors and importers source drinkware, decanters and gift sets from China. Discuss available mixed-SKU orders, custom logo decoration, packaging and OEM/ODM project requirements with our team.</p>
+    <div class="hero-badge" data-i18n="hero_badge">Glassware OEM / ODM · Central China · Factory Direct</div>
+    <h1 data-i18n="hero_h1">Custom Glassware<br><em>Manufacturer in China</em></h1>
+    <p data-i18n="hero_p">Source wine glasses, cocktail glassware, decanters, beer mugs and gift sets from a single export-ready partner. We help importers, distributors and brand buyers build mixed-SKU glassware programs with logo decoration, packaging and shipment support.</p>
+    <div class="hero-proofline" data-i18n="hero_proof">Low MOQ test orders · Custom logo & packaging · Global export support</div>
+    <div class="hero-chip-row" aria-label="Key sourcing advantages">
+      <span class="hero-chip">MOQ from <strong>24 pcs</strong></span>
+      <span class="hero-chip">Sample support in <strong>3–5 days</strong></span>
+      <span class="hero-chip">Export to <strong>50+ countries</strong></span>
+      <span class="hero-chip"><strong>FDA / LFGB / CE</strong> report support</span>
+    </div>
     <div class="hero-btns">
-      <a href="#inquiry" class="btn-primary" data-i18n="hero_cta1">Get Wholesale Price List</a>
-      <a href="#wholesale" class="btn-outline" data-i18n="hero_cta2">See Wholesale Terms</a>
+      <a href="#inquiry" class="btn-primary" data-i18n="hero_cta1">→ Get Factory-Direct Pricing</a>
+      <a href="#about" class="btn-outline" data-i18n="hero_cta2">See Factory Profile</a>
     </div>
   </div>
 </section>
 
 <!-- SOURCING CAPABILITIES -->
 <div class="stats-bar" aria-label="Jingyue Glass sourcing capabilities">
-  <div class="stat-item"><div class="stat-num">Wholesale</div><div class="stat-label" data-i18n="stat1">Glassware Categories</div></div>
-  <div class="stat-item"><div class="stat-num">Factory Direct</div><div class="stat-label" data-i18n="stat2">China Sourcing Support</div></div>
-  <div class="stat-item"><div class="stat-num">Mixed-SKU</div><div class="stat-label" data-i18n="stat3">Project Discussion</div></div>
-  <div class="stat-item"><div class="stat-num">Custom</div><div class="stat-label" data-i18n="stat4">Logo &amp; Packaging</div></div>
-  <div class="stat-item"><div class="stat-num">Export</div><div class="stat-label" data-i18n="stat5">Order Support</div></div>
+  <div class="stat-item"><div class="stat-num">10k+</div><div class="stat-label" data-i18n="stat1">Global Buyers & Partners</div></div>
+  <div class="stat-item"><div class="stat-num">24pcs</div><div class="stat-label" data-i18n="stat2">Low MOQ Options</div></div>
+  <div class="stat-item"><div class="stat-num">3–5</div><div class="stat-label" data-i18n="stat3">Day Sample Support</div></div>
+  <div class="stat-item"><div class="stat-num">50+</div><div class="stat-label" data-i18n="stat4">Export Markets</div></div>
+  <div class="stat-item"><div class="stat-num">OEM</div><div class="stat-label" data-i18n="stat5">Logo & Packaging</div></div>
+  <div class="stat-item"><div class="stat-num">FDA</div><div class="stat-label">LFGB / CE Support</div></div>
 </div>
 
 <!-- PRODUCTS -->
@@ -648,14 +678,24 @@
 <section class="about" id="about">
   <div class="about-inner">
     <div class="about-text">
-      <div class="section-tag" data-i18n="about_tag">About Us</div>
-      <h2 class="section-title" data-i18n="about_title">Wuhan Jingyueda Household Products</h2>
-      <p data-i18n="about_p1">We are a leading quality brand manufacturer and supplier of glassware and household products based in central China. Our product range covers drinkware, whiskey glasses, wine decanters, stemware, and dinnerware — designed for both general consumers and trade professionals.</p>
-      <p data-i18n="about_p2">With long-term relationships with over 10,000 factories, retailers, and agents worldwide, we bring you the perfect combination of design, quality, and competitive pricing.</p>
+      <div class="section-tag" data-i18n="about_tag">Inside Jingyue Glass</div>
+      <h2 class="section-title" data-i18n="about_title">See Your Glassware Project<br><em>Move from Idea to Shipment.</em></h2>
+      <p data-i18n="about_p1">Wuhan Jingyueda Household Products Co., Ltd. is a central-China glassware supplier focused on export-ready drinkware, decanters, stemware, beer mugs and retail gift sets. We support wholesale buyers who need flexible SKU selection, custom decoration and packaging coordination.</p>
+      <p data-i18n="about_p2">From SKU confirmation and sample review to carton packing and export documents, our team helps buyers reduce sourcing uncertainty before placing repeat orders.</p>
+      <div class="about-kpis" aria-label="Jingyue company highlights">
+        <div class="about-kpi"><strong>10k+</strong><span>Buyer & partner network</span></div>
+        <div class="about-kpi"><strong>50+</strong><span>Countries served</span></div>
+        <div class="about-kpi"><strong>24pcs</strong><span>Low MOQ on selected SKUs</span></div>
+        <div class="about-kpi"><strong>3–5d</strong><span>Sample support</span></div>
+      </div>
       <p style="color:var(--accent);font-style:italic;font-weight:600;margin-top:20px;" data-i18n="about_quote">"One goal, always: Let joy be within the reach of everyone, all over the world."</p>
     </div>
-    <div class="about-img">
-      <img src="https://sc01.alicdn.com/kf/H59c379603b734db0a3afb8fe10101f51f.jpg" alt="Jingyue Glass Factory Products">
+    <div class="about-video-card">
+      <div class="about-video-frame">
+        <img src="https://sc01.alicdn.com/kf/H59c379603b734db0a3afb8fe10101f51f.jpg" alt="Jingyue Glass factory and product video preview">
+        <div class="about-play" aria-hidden="true"><span>▶</span></div>
+      </div>
+      <div class="about-video-caption"><strong>Factory Video Placeholder</strong><span>YouTube link can be embedded after confirmation</span></div>
     </div>
   </div>
 </section>
@@ -974,11 +1014,11 @@
 const i18n = {
   en: {
     nav_products:"Products", nav_solutions:"Solutions", nav_why_clients:"Why Us & Clients", nav_about:"About", nav_wholesale:"Wholesale", nav_inquiry:"Get a Quote", float_quote:"Get a Free Quote",
-    hero_badge:"Wholesale · Mixed Batch · OEM/ODM · Factory Direct",
-    hero_h1:"Your Reliable Glassware<br><em>Wholesale Partner in China</em>",
-    hero_p:"We help supermarkets, distributors and importers source drinkware, decanters and gift sets from China. Discuss available mixed-SKU orders, custom logo decoration, packaging and OEM/ODM project requirements with our team.",
-    hero_cta1:"Get Wholesale Price List", hero_cta2:"See Wholesale Terms",
-    stat1:"Glassware Categories", stat2:"China Sourcing Support", stat3:"Project Discussion", stat4:"Logo & Packaging", stat5:"Order Support",
+    hero_badge:"Glassware OEM / ODM · Central China · Factory Direct",
+    hero_h1:"Custom Glassware<br><em>Manufacturer in China</em>",
+    hero_p:"Source wine glasses, cocktail glassware, decanters, beer mugs and gift sets from a single export-ready partner. We help importers, distributors and brand buyers build mixed-SKU glassware programs with logo decoration, packaging and shipment support.",
+    hero_cta1:"→ Get Factory-Direct Pricing", hero_cta2:"See Factory Profile",
+    stat1:"Global Buyers & Partners", stat2:"Low MOQ Options", stat3:"Day Sample Support", stat4:"Export Markets", stat5:"Logo & Packaging",
     prod_tag:"Our Products", prod_title:"One-Stop Glassware Solutions",
     prod_sub:"From everyday drinkware to premium gift sets — complete categories with OEM/ODM capabilities.",
     p1_name:"Wine Glasses", p1_desc:"Red, white, champagne flutes & stemless. Crystal-clear lead-free glass.",
@@ -997,9 +1037,9 @@ const i18n = {
     w4_t:"Supermarket & Retail Supply Experience", w4_p:"Proven track record supplying major retail chains in South America and Southeast Asia. We understand retail packaging specs and shelf-ready presentation.",
     w5_t:"Authorized by Global Brands", w5_p:"Licensed supplier for ARC, Libbey, and Eisch — the same quality standards trusted by premium retailers worldwide.",
     w6_t:"Fast Sample & Reliable Lead Time", w6_p:"Samples shipped within 3–5 days. Mass production 25–35 days. On-time delivery rate 98%+ — because late shipments cost you shelf space.",
-    about_tag:"About Us", about_title:"Wuhan Jingyueda Household Products",
-    about_p1:"We are a leading glassware manufacturer and wholesale supplier based in central China — not a trading company. We produce directly and supply supermarkets, distributors, and importers across South America, Southeast Asia, and Europe.",
-    about_p2:"With long-term partnerships with 10,000+ buyers worldwide and authorized by ARC, Libbey, and Eisch, we combine competitive factory pricing with the quality standards your customers demand.",
+    about_tag:"Inside Jingyue Glass", about_title:"See Your Glassware Project<br><em>Move from Idea to Shipment.</em>",
+    about_p1:"Wuhan Jingyueda Household Products Co., Ltd. is a central-China glassware supplier focused on export-ready drinkware, decanters, stemware, beer mugs and retail gift sets. We support wholesale buyers who need flexible SKU selection, custom decoration and packaging coordination.",
+    about_p2:"From SKU confirmation and sample review to carton packing and export documents, our team helps buyers reduce sourcing uncertainty before placing repeat orders.",
     about_quote:'"One goal, always: Let joy be within the reach of everyone, all over the world."',
     brand_tag:"Brand Authorization & Retail Clients", brand_title:"Trusted by Retailers & Distributors Worldwide",
     brand_sub:"We supply glassware to supermarket chains, wholesale distributors, and hospitality groups across 3 continents.",
