@@ -349,6 +349,25 @@
   @media (max-width: 980px) { .report-grid { grid-template-columns: 1fr; } .brand-list { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 
 
+
+
+
+  .buyer-guides-preview { background: var(--light); position: relative; overflow: hidden; }
+  .buyer-guides-preview::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 8% 5%, rgba(201,168,76,.12), transparent 30%), radial-gradient(circle at 92% 0, rgba(16,43,69,.08), transparent 28%); pointer-events:none; }
+  .buyer-guides-preview > * { position: relative; z-index: 1; }
+  .buyer-guide-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
+  .buyer-guide-card { position: relative; display: block; min-height: 360px; border-radius: 20px; overflow: hidden; background: #0b111d; color: #fff; text-decoration: none; box-shadow: 0 18px 44px rgba(16,43,69,.18); border: 1px solid rgba(255,255,255,.08); }
+  .buyer-guide-card::before { content:''; position:absolute; inset:0; background-image: var(--guide-bg); background-position: center; background-size: cover; opacity: .86; transform: scale(1.01); transition: transform .35s, opacity .25s; }
+  .buyer-guide-card::after { content:''; position:absolute; inset:0; background: linear-gradient(180deg, rgba(5,12,22,.04) 0%, rgba(8,17,30,.42) 42%, rgba(8,17,30,.96) 100%); }
+  .buyer-guide-card:hover::before { transform: scale(1.06); opacity: .96; }
+  .buyer-guide-content { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 26px; }
+  .buyer-guide-pill { position:absolute; top:18px; left:18px; z-index:2; display:inline-flex; color:#111827; background:var(--accent); border-radius:999px; font-size:.72rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:7px 11px; box-shadow: 0 8px 20px rgba(0,0,0,.18); }
+  .buyer-guide-card h3 { color: #fff; font-size: 1.18rem; line-height: 1.22; margin: 0 0 9px; }
+  .buyer-guide-card p { color: rgba(255,255,255,.84); font-size: .88rem; line-height: 1.55; margin: 0; }
+  .buyer-guide-link { display:inline-flex; margin-top:16px; align-items:center; color:#111827; background:linear-gradient(135deg,#d9b75d,#b88916); border-radius:999px; padding:9px 13px; font-weight:900; font-size:.78rem; text-decoration:none; }
+  @media (max-width: 1180px) { .buyer-guide-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 720px) { .buyer-guide-grid { grid-template-columns: 1fr; } .buyer-guide-card { min-height: 330px; } }
+
   /* ── FULL HOMEPAGE VISUAL ALIGNMENT PREVIEW ── */
   #why { background: var(--cream); }
   #why::before { content:''; position:absolute; inset:0; background: radial-gradient(circle at 80% 0, rgba(201,168,76,.12), transparent 34%); pointer-events:none; }
@@ -626,32 +645,66 @@
 </section>
 
 <!-- BUYER GUIDES -->
-<section style="background:var(--light);">
+<section class="buyer-guides-preview">
   <div class="section-tag">Buyer Guides</div>
   <h2 class="section-title">Plan Your Glassware Sourcing Project</h2>
   <p class="section-sub">Use these practical guides to clarify product, quantity, decoration and packaging requirements before requesting a quotation.</p>
-  <div class="product-grid">
-    <a href="/wholesale-whiskey-glasses" class="product-card" style="display:block;text-decoration:none;color:inherit;">
-      <div class="product-info"><h3>Wholesale Whiskey Glasses</h3><p>Choose styles, assess available mixed-SKU testing and prepare a precise sourcing brief.</p><span class="product-tag">View buyer guide →</span></div>
+  <div class="buyer-guide-grid">
+    <a href="/wholesale-whiskey-glasses" class="buyer-guide-card" style="--guide-bg:url('repo-drinkware-replace-10-images/assets/home/buyer-guides/wholesale-whiskey-glasses-guide-ai-preview-20260918.png');">
+      <span class="buyer-guide-pill">Buyer Guide</span>
+      <div class="buyer-guide-content">
+        <h3>Wholesale Whiskey Glasses</h3>
+        <p>Choose styles, assess available mixed-SKU testing and prepare a precise sourcing brief.</p>
+        <span class="buyer-guide-link">View buyer guide →</span>
+      </div>
     </a>
-    <a href="/custom-logo-glassware" class="product-card" style="display:block;text-decoration:none;color:inherit;">
-      <div class="product-info"><h3>Custom Logo Glassware</h3><p>Compare decoration routes and understand why custom MOQ depends on the glass and process.</p><span class="product-tag">View buyer guide →</span></div>
+    <a href="/custom-logo-glassware" class="buyer-guide-card" style="--guide-bg:url('repo-drinkware-replace-10-images/assets/home/buyer-guides/custom-logo-glassware-guide-ai-preview-20260918.png');">
+      <span class="buyer-guide-pill">Buyer Guide</span>
+      <div class="buyer-guide-content">
+        <h3>Custom Logo Glassware</h3>
+        <p>Compare decoration routes and understand why custom MOQ depends on the glass and process.</p>
+        <span class="buyer-guide-link">View buyer guide →</span>
+      </div>
     </a>
-    <a href="/whiskey-decanter-gift-sets" class="product-card" style="display:block;text-decoration:none;color:inherit;">
-      <div class="product-info"><h3>Whiskey Decanter Gift Sets</h3><p>Plan glass, branded packaging and set composition together for retail or corporate gifting.</p><span class="product-tag">View buyer guide →</span></div>
+    <a href="/whiskey-decanter-gift-sets" class="buyer-guide-card" style="--guide-bg:url('repo-drinkware-replace-10-images/assets/home/buyer-guides/whiskey-decanter-gift-sets-guide-ai-preview-20260918.png');">
+      <span class="buyer-guide-pill">Buyer Guide</span>
+      <div class="buyer-guide-content">
+        <h3>Whiskey Decanter Gift Sets</h3>
+        <p>Plan glass, branded packaging and set composition together for retail or corporate gifting.</p>
+        <span class="buyer-guide-link">View buyer guide →</span>
+      </div>
     </a>
-    <a href="/glassware-mixed-container-order" class="product-card" style="display:block;text-decoration:none;color:inherit;">
-      <div class="product-info"><h3>Mixed Glassware Orders</h3><p>Combine compatible standard SKUs for assortment testing and distributor replenishment.</p><span class="product-tag">View buyer guide →</span></div>
+    <a href="/glassware-mixed-container-order" class="buyer-guide-card" style="--guide-bg:url('repo-drinkware-replace-10-images/assets/home/buyer-guides/mixed-glassware-orders-guide-ai-preview-20260918.png');">
+      <span class="buyer-guide-pill">Buyer Guide</span>
+      <div class="buyer-guide-content">
+        <h3>Mixed Glassware Orders</h3>
+        <p>Combine compatible standard SKUs for assortment testing and distributor replenishment.</p>
+        <span class="buyer-guide-link">View buyer guide →</span>
+      </div>
     </a>
-    <a href="/glassware-oem-manufacturer-china" class="product-card" style="display:block;text-decoration:none;color:inherit;">
-      <div class="product-info"><h3>Glassware OEM in China</h3><p>Define the product, decoration, packaging and sampling route for a private-label project.</p><span class="product-tag">View buyer guide →</span></div>
+    <a href="/glassware-oem-manufacturer-china" class="buyer-guide-card" style="--guide-bg:url('repo-drinkware-replace-10-images/assets/home/buyer-guides/glassware-oem-china-guide-ai-preview-20260918.png');">
+      <span class="buyer-guide-pill">Buyer Guide</span>
+      <div class="buyer-guide-content">
+        <h3>Glassware OEM in China</h3>
+        <p>Define the product, decoration, packaging and sampling route for a private-label project.</p>
+        <span class="buyer-guide-link">View buyer guide →</span>
+      </div>
     </a>
-
-    <a href="/custom-glassware-quote-checklist" class="product-card" style="display:block;text-decoration:none;color:inherit;">
-      <div class="product-info"><h3>Custom Glassware Quote Checklist</h3><p>Prepare product, quantity, logo, packaging and destination details before requesting a quote.</p><span class="product-tag">View buyer guide →</span></div>
+    <a href="/custom-glassware-quote-checklist" class="buyer-guide-card" style="--guide-bg:url('repo-drinkware-replace-10-images/assets/home/buyer-guides/custom-glassware-quote-checklist-guide-ai-preview-20260918.png');">
+      <span class="buyer-guide-pill">Buyer Guide</span>
+      <div class="buyer-guide-content">
+        <h3>Custom Glassware Quote Checklist</h3>
+        <p>Prepare product, quantity, logo, packaging and destination details before requesting a quote.</p>
+        <span class="buyer-guide-link">View buyer guide →</span>
+      </div>
     </a>
-    <a href="/glassware-moq-guide" class="product-card" style="display:block;text-decoration:none;color:inherit;">
-      <div class="product-info"><h3>Glassware MOQ Guide</h3><p>Understand why standard SKUs, logo decoration, packaging and new molds have different MOQ drivers.</p><span class="product-tag">View buyer guide →</span></div>
+    <a href="/glassware-moq-guide" class="buyer-guide-card" style="--guide-bg:url('repo-drinkware-replace-10-images/assets/home/buyer-guides/glassware-moq-guide-ai-preview-20260918.png');">
+      <span class="buyer-guide-pill">Buyer Guide</span>
+      <div class="buyer-guide-content">
+        <h3>Glassware MOQ Guide</h3>
+        <p>Understand why standard SKUs, logo decoration, packaging and new molds have different MOQ drivers.</p>
+        <span class="buyer-guide-link">View buyer guide →</span>
+      </div>
     </a>
   </div>
 </section>
