@@ -952,22 +952,22 @@
         <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
           <span style="font-size:1.2rem;line-height:1;">⚡</span>
           <div>
-            <strong style="display:block;color:var(--primary);font-size:0.92rem;margin-bottom:2px;">1-Hour Fast Response</strong>
-            <span style="font-size:0.82rem;color:var(--gray);">Preliminary price quotation and project feasibility feedback within 1 business hour.</span>
+            <strong style="display:block;color:var(--primary);font-size:0.92rem;margin-bottom:2px;" data-i18n="inq_trust1_t">1-Hour Fast Response</strong>
+            <span style="font-size:0.82rem;color:var(--gray);" data-i18n="inq_trust1_d">Preliminary price quotation and project feasibility feedback within 1 business hour.</span>
           </div>
         </div>
         <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:12px;">
           <span style="font-size:1.2rem;line-height:1;">🔒</span>
           <div>
-            <strong style="display:block;color:var(--primary);font-size:0.92rem;margin-bottom:2px;">100% Confidentiality &amp; NDA</strong>
-            <span style="font-size:0.82rem;color:var(--gray);">Your custom designs, brand logos and project specifications are strictly protected.</span>
+            <strong style="display:block;color:var(--primary);font-size:0.92rem;margin-bottom:2px;" data-i18n="inq_trust2_t">100% Confidentiality &amp; NDA</strong>
+            <span style="font-size:0.82rem;color:var(--gray);" data-i18n="inq_trust2_d">Your custom designs, brand logos and project specifications are strictly protected.</span>
           </div>
         </div>
         <div style="display:flex;align-items:flex-start;gap:12px;">
           <span style="font-size:1.2rem;line-height:1;">📦</span>
           <div>
-            <strong style="display:block;color:var(--primary);font-size:0.92rem;margin-bottom:2px;">Sample &amp; Golden Sample Sign-Off</strong>
-            <span style="font-size:0.82rem;color:var(--gray);">Physical proofing, packaging drop test validation and retained golden sample control.</span>
+            <strong style="display:block;color:var(--primary);font-size:0.92rem;margin-bottom:2px;" data-i18n="inq_trust3_t">Sample &amp; Golden Sample Sign-Off</strong>
+            <span style="font-size:0.82rem;color:var(--gray);" data-i18n="inq_trust3_d">Physical proofing, packaging drop test validation and retained golden sample control.</span>
           </div>
         </div>
       </div>
@@ -999,11 +999,11 @@
         <div class="form-row">
           <div class="form-group">
             <label data-i18n="f_name">Your Name *</label>
-            <input type="text" name="name" required placeholder="John Smith">
+            <input type="text" name="name" required placeholder="John Smith" data-i18n-placeholder="f_ph_name">
           </div>
           <div class="form-group">
             <label data-i18n="f_company">Company Name</label>
-            <input type="text" name="company" placeholder="e.g. ABC Trading Co. / Hospitality Group">
+            <input type="text" name="company" placeholder="e.g. ABC Trading Co. / Hospitality Group" data-i18n-placeholder="f_ph_company">
           </div>
         </div>
         <div class="form-row">
@@ -1040,7 +1040,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Service / Project Intent</label>
+            <label data-i18n="f_service">Service / Project Intent</label>
             <select name="service_type">
               <option value="Standard Wholesale">Standard Wholesale (In-Stock / Low MOQ)</option>
               <option value="Custom Logo Printing">Custom Logo Printing / Laser Engraving</option>
@@ -1063,7 +1063,7 @@
             </select>
           </div>
           <div class="form-group">
-            <label>Target Delivery / Lead Time</label>
+            <label data-i18n="f_timeline">Target Delivery / Lead Time</label>
             <select name="timeline">
               <option value="Standard (25-35 Days)">Standard Production (25–35 Days)</option>
               <option value="Urgent (< 20 Days)">Urgent / Ready Stock (&lt; 20 Days)</option>
@@ -1074,11 +1074,11 @@
         </div>
         <div class="form-group">
           <label data-i18n="f_msg">Project Requirements &amp; Notes *</label>
-          <textarea name="message" required placeholder="Please provide glassware dimensions, logo decoration method, custom gift box requirements, target unit price, or destination port for CIF quote..."></textarea>
+          <textarea name="message" required placeholder="Please provide glassware dimensions, logo decoration method, custom gift box requirements, target unit price, or destination port for CIF quote..." data-i18n-placeholder="f_ph_msg"></textarea>
         </div>
         <button type="submit" class="form-submit" data-i18n="f_submit">SEND FACTORY INQUIRY →</button>
         <p class="form-msg" id="formMsg"></p>
-        <div style="margin-top:14px;display:flex;align-items:center;justify-content:center;gap:18px;font-size:0.78rem;color:var(--gray);flex-wrap:wrap;">
+        <div class="form-trust-footer" data-i18n="f_trust_footer" style="margin-top:14px;display:flex;align-items:center;justify-content:center;gap:18px;font-size:0.78rem;color:var(--gray);flex-wrap:wrap;">
           <span>🔒 100% Confidential NDA</span>
           <span>⚡ 1-Hour Fast Reply</span>
           <span>📋 Free DFM &amp; Quote Review</span>
@@ -1139,6 +1139,32 @@
 // ── i18n ──
 const i18n = {
   en: {
+    page_title: "Jingyue Glass | Factory-Direct B2B Glassware Supplier",
+    page_desc: "Wholesale glassware manufacturer in Wuhan, China: wine glasses, whiskey glasses, beer mugs, decanters & gift sets with OEM/ODM & custom logo.",
+    inq_tag: "Get a Factory Quote",
+    inq_title: "Tell Us What You Need",
+    inq_sub: "Direct B2B factory communication. Our sales and engineering team will review your project requirements and reply within 1 business hour.",
+    inq_trust1_t: "1-Hour Fast Response",
+    inq_trust1_d: "Preliminary price quotation and project feasibility feedback within 1 business hour.",
+    inq_trust2_t: "100% Confidentiality & NDA",
+    inq_trust2_d: "Your custom designs, brand logos and project specifications are strictly protected.",
+    inq_trust3_t: "Sample & Golden Sample Sign-Off",
+    inq_trust3_d: "Physical proofing, packaging drop test validation and retained golden sample control.",
+    f_name: "Your Name *",
+    f_company: "Company Name",
+    f_email: "Business Email *",
+    f_country: "Destination Country *",
+    f_product: "Product Category *",
+    f_service: "Service / Project Intent",
+    f_qty: "Estimated Order Quantity",
+    f_timeline: "Target Delivery / Lead Time",
+    f_msg: "Project Requirements & Notes *",
+    f_submit: "SEND FACTORY INQUIRY →",
+    f_trust_footer: "<span>🔒 100% Confidential NDA</span> <span>⚡ 1-Hour Fast Reply</span> <span>📋 Free DFM & Quote Review</span>",
+    f_ph_name: "John Smith",
+    f_ph_company: "e.g. ABC Trading Co. / Hospitality Group",
+    f_ph_msg: "Please provide glassware dimensions, logo decoration method, custom gift box requirements, target unit price, or destination port for CIF quote...",
+
     nav_products:"Products", nav_solutions:"Solutions", nav_why_clients:"Why Us & Clients", nav_about:"About", nav_wholesale:"Wholesale", nav_inquiry:"Get a Quote", float_quote:"Get a Free Quote",
     hero_badge:"Glassware OEM / ODM · Central China · Factory Direct",
     hero_h1:"Custom Glassware<br><em>Manufacturer in China</em>",
@@ -1194,6 +1220,32 @@ const i18n = {
     foot_prod:"Products", foot_market:"Markets", foot_contact:"Contact",
   },
   es: {
+    page_title: "Jingyue Glass | Fabricante de Cristalería B2B en China",
+    page_desc: "Fabricante de cristalería al por mayor en China: copas de vino, vasos de whisky, jarras de cerveza y sets de regalo con OEM/ODM y logo propio.",
+    inq_tag: "Cotización Directa de Fábrica",
+    inq_title: "Cuéntenos Qué Necesita",
+    inq_sub: "Comunicación B2B directa con fábrica. Nuestro equipo técnico y comercial evaluará su proyecto y responderá en 1 hora hábil.",
+    inq_trust1_t: "Respuesta Rápida en 1 Hora",
+    inq_trust1_d: "Cotización preliminar y evaluación de viabilidad de proyecto en 1 hora hábil.",
+    inq_trust2_t: "100% Confidencialidad y NDA",
+    inq_trust2_d: "Sus diseños personalizados, logotipos y especificaciones técnicas están estrictamente protegidos.",
+    inq_trust3_t: "Muestra y Control de Muestra Dorada",
+    inq_trust3_d: "Prueba física, validación de caída de embalaje y control riguroso de muestra dorada retenida.",
+    f_name: "Su Nombre *",
+    f_company: "Nombre de Empresa",
+    f_email: "Correo Corporativo *",
+    f_country: "País de Destino *",
+    f_product: "Categoría de Producto *",
+    f_service: "Servicio / Intención de Proyecto",
+    f_qty: "Cantidad Estimada de Pedido",
+    f_timeline: "Plazo de Entrega Deseado",
+    f_msg: "Requisitos del Proyecto y Notas *",
+    f_submit: "ENVIAR CONSULTA DE FÁBRICA →",
+    f_trust_footer: "<span>🔒 100% Confidencial NDA</span> <span>⚡ Respuesta en 1 Hora</span> <span>📋 Cotización y DFM Gratis</span>",
+    f_ph_name: "Juan Pérez",
+    f_ph_company: "ej. ABC Trading / Grupo Hotelero",
+    f_ph_msg: "Indique dimensiones de cristalería, método de decoración de logo, requisitos de caja de regalo o puerto de destino para cotización CIF...",
+
     nav_products:"Productos", nav_solutions:"Soluciones", nav_why_clients:"¿Por qué nosotros y clientes?", nav_about:"Nosotros", nav_wholesale:"Mayoreo", nav_inquiry:"Solicitar cotización", float_quote:"Solicitar cotización gratis",
     hero_badge:"Mayoreo · Lote Mixto · OEM/ODM · Directo de Fábrica",
     hero_h1:"Su Socio Mayorista de<br><em>Cristalería en China</em>",
@@ -1249,6 +1301,32 @@ const i18n = {
     foot_prod:"Productos", foot_market:"Mercados", foot_contact:"Contacto",
   },
   pt: {
+    page_title: "Jingyue Glass | Fabricante de Vidraria B2B na China",
+    page_desc: "Fabricante de vidraria por atacado na China: taças de vinho, copos de uísque, canecas de cerveja e kits de presente com suporte OEM/ODM.",
+    inq_tag: "Cotação Direta da Fábrica",
+    inq_title: "Diga-nos o Que Você Precisa",
+    inq_sub: "Comunicação direta B2B com a fábrica. Nossa equipe comercial e técnica analisará seu projeto e responderá em 1 hora útil.",
+    inq_trust1_t: "Resposta Rápida em 1 Hora",
+    inq_trust1_d: "Cotação preliminar e análise de viabilidade do projeto em 1 hora útil.",
+    inq_trust2_t: "100% Confidencialidade e NDA",
+    inq_trust2_d: "Seus designs personalizados, logotipos e especificações técnicas são estritamente protegidos.",
+    inq_trust3_t: "Amostra e Controle de Amostra Padrão",
+    inq_trust3_d: "Prova física, validação de teste de queda de embalagem e controle de amostra padrão retida.",
+    f_name: "Seu Nome *",
+    f_company: "Nome da Empresa",
+    f_email: "E-mail Corporativo *",
+    f_country: "País de Destino *",
+    f_product: "Categoria de Produto *",
+    f_service: "Serviço / Intenção do Projeto",
+    f_qty: "Quantidade Estimada do Pedido",
+    f_timeline: "Prazo de Entrega Desejado",
+    f_msg: "Requisitos do Projeto e Notas *",
+    f_submit: "ENVIAR CONSULTA DE FÁBRICA →",
+    f_trust_footer: "<span>🔒 100% Confidencial NDA</span> <span>⚡ Resposta em 1 Hora</span> <span>📋 Cotação e DFM Grátis</span>",
+    f_ph_name: "Carlos Silva",
+    f_ph_company: "ex. ABC Trading / Grupo Hoteleiro",
+    f_ph_msg: "Indique dimensões do vidro, método de decoração de logo, requisitos de caixa de presente ou porto de destino para cotação CIF...",
+
     nav_products:"Produtos", nav_why:"Por que nós?", nav_about:"Sobre nós", nav_inquiry:"Pedir cotação",
     hero_badge:"Direto da Fábrica · MOQ Baixo · OEM/ODM",
     hero_h1:"Cristalaria Premium,<br><em>Direto da Fábrica</em>",
@@ -1323,14 +1401,33 @@ function setLang(lang) {
   currentLang = lang;
   document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    if (btn.textContent.toLowerCase() === lang) btn.classList.add('active');
+    if (btn.textContent.trim().toLowerCase() === lang) btn.classList.add('active');
   });
   document.documentElement.lang = lang;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (i18n[lang] && i18n[lang][key]) {
-      el.innerHTML = i18n[lang][key];
-    }
+  
+  if (i18n[lang]) {
+    // Dynamic metadata update (Title & Meta Description)
+    if (i18n[lang].page_title) document.title = i18n[lang].page_title;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc && i18n[lang].page_desc) metaDesc.setAttribute('content', i18n[lang].page_desc);
+
+    // Text content updates
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (i18n[lang][key]) {
+        el.innerHTML = i18n[lang][key];
+      }
+    });
+
+    // Input & Textarea placeholder updates
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (i18n[lang][key]) {
+        el.setAttribute('placeholder', i18n[lang][key]);
+      }
+    });
+  }
+}
   });
 }
 
