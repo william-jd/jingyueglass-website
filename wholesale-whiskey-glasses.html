@@ -29,7 +29,35 @@
   </script>
   <style>
     :root{--navy:#173958;--gold:#c8930a;--ink:#1b2732;--muted:#5d6873;--line:#dfe5e8;--wash:#f6f8f8}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);line-height:1.65}a{text-decoration:none}.nav{background:var(--navy);padding:10px 6%;display:flex;justify-content:space-between;gap:20px;align-items:center}.brand{display:inline-flex;align-items:center;background:#fff;border-radius:4px;padding:3px 8px;height:42px;box-shadow:0 1px 4px rgba(0,0,0,.16)}.brand img{display:block;width:142px;height:34px;object-fit:contain}.links{display:flex;gap:18px;flex-wrap:wrap}.links a{color:#e9eff4;font-size:14px}.wrap{width:min(1080px,88%);margin:auto}.crumb{padding:18px 0;font-size:14px;color:var(--muted)}.crumb a{color:#365b78}.hero{background:linear-gradient(120deg,#0f2c46,#245b80);color:#fff;padding:68px 0}.eyebrow{color:#f2c45a;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:bold}.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:12px 0 16px;max-width:800px}.hero p{max-width:760px;color:#dbe8f0;font-size:18px}.cta{display:inline-block;background:#25d366;color:#073c21;font-weight:700;padding:14px 22px;border-radius:4px;margin:12px 12px 0 0}.cta.secondary{background:transparent;color:#fff;border:1px solid #c5d8e5}.section{padding:54px 0}.section h2{font-size:28px;line-height:1.25;margin:0 0 12px}.lead{color:var(--muted);max-width:820px}.answer{background:#fff8e7;border-left:4px solid var(--gold);padding:22px 24px;margin-top:-22px;position:relative;max-width:900px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}.card{border:1px solid var(--line);padding:22px;border-radius:7px;background:#fff}.card h3{margin:0 0 8px;font-size:19px}.card p{margin:0;color:var(--muted)}.alt{background:var(--wash)}.steps{counter-reset:step;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}.step{background:#fff;border:1px solid var(--line);padding:18px;border-radius:7px}.step b{display:block;color:var(--gold);margin-bottom:8px}.faq{max-width:900px}.faq details{border-bottom:1px solid var(--line);padding:17px 0}.faq summary{font-weight:700;cursor:pointer}.faq p{color:var(--muted);margin:10px 0 0}.closing{background:var(--navy);color:#fff;padding:52px 0;text-align:center}.closing p{color:#cfdeea;max-width:680px;margin:10px auto 20px}.footer{padding:24px 6%;font-size:13px;color:#66737d;text-align:center}@media(max-width:720px){.nav{align-items:flex-start;flex-direction:column}.grid,.steps{grid-template-columns:1fr}.hero{padding:48px 0}}
-  </style>
+  
+  /* Topic Cluster Components */
+  .guide-product-section{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:32px 28px;margin:40px 0 24px;box-shadow:0 4px 15px rgba(0,0,0,0.03)}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px;border-bottom:2px solid #f8fafc;padding-bottom:14px}
+  .section-title h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:#173B32;margin-bottom:4px}
+  .section-title p{font-size:0.88rem;color:#64748B}
+  .view-all-link{color:#173B32;font-size:0.88rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;border-bottom:1px solid #C6A15B;padding-bottom:2px}
+  .view-all-link:hover{color:#C6A15B}
+  .sku-grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .sku-card{border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;background:#fff;transition:all 0.25s ease;display:flex;flex-direction:column}
+  .sku-card:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,0.06);border-color:#C6A15B}
+  .sku-img{width:100%;height:180px;object-fit:cover;background:#f8fafc}
+  .sku-info{padding:14px;display:flex;flex-direction:column;flex-grow:1}
+  .sku-tag{font-size:0.72rem;font-weight:700;color:#C6A15B;text-transform:uppercase;margin-bottom:4px}
+  .sku-name{font-size:0.92rem;font-weight:600;color:#222;line-height:1.35;margin-bottom:8px}
+  .sku-meta{font-size:0.8rem;color:#64748B;margin-bottom:12px;line-height:1.4;flex-grow:1}
+  .sku-btn{display:block;text-align:center;background:#f1f5f9;color:#173B32;font-size:0.82rem;font-weight:700;padding:8px;border-radius:6px;text-decoration:none;transition:all 0.2s}
+  .sku-btn:hover{background:#173B32;color:#fff}
+  
+  .related-guides-section{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:32px 28px;margin:40px 0 24px;box-shadow:0 4px 15px rgba(0,0,0,0.03)}
+  .guide-grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .guide-box{border:1px solid #e2e8f0;border-radius:10px;padding:20px;background:#FAF8F3;border-top:4px solid #C6A15B;display:flex;flex-direction:column;transition:all 0.25s ease;text-decoration:none;color:inherit}
+  .guide-box:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,0.06);border-color:#173B32;border-top-color:#C6A15B}
+  .guide-tag{font-size:0.72rem;font-weight:700;color:#173B32;background:#e2e8f0;padding:2px 8px;border-radius:4px;align-self:flex-start;margin-bottom:10px}
+  .guide-h4{font-size:1.05rem;font-weight:700;color:#173B32;margin-bottom:8px;line-height:1.35}
+  .guide-p{font-size:0.82rem;color:#475569;line-height:1.5;margin-bottom:14px;flex-grow:1}
+  .guide-read-more{font-size:0.82rem;font-weight:700;color:#C6A15B;display:inline-flex;align-items:center;gap:4px}
+
+</style>
 </head>
 <body>
   <nav class="nav"><a class="brand" href="/" aria-label="Jingyue Glass home"><img src="/assets/jingyue-logo.png" alt="Jingyue Glass — wholesale glassware supplier"></a><div class="links"><a href="/wine-glasses">Wine Glasses</a><a href="/wine-decanters">Decanters</a><a href="/glassware-mixed-container-order">Mixed Orders</a><a href="/custom-logo-glassware">Custom Logo</a></div></nav>
@@ -43,7 +71,57 @@
 
     <section class="section alt" id="custom-logo-rocks-glasses"><div class="wrap"><h2>Custom Logo Whiskey Rocks Glasses for Distilleries and Bars</h2><p class="lead">Distilleries, tasting rooms, bars and corporate gift buyers usually need more than a generic whiskey glass price. To quote custom logo whiskey rocks glasses accurately, Jingyue Glass reviews the selected SKU, quantity, logo file, logo size and position, packaging plan and destination market before confirming the suitable decoration route.</p><div class="grid"><article class="card"><h3>Quote inputs</h3><p>Send SKU or reference image, estimated quantity, logo file, preferred logo width/height, logo position, packaging type and destination country.</p></article><article class="card"><h3>Logo route</h3><p>Engraving, screen printing, decal or other decoration routes depend on the glass surface, shape, logo complexity and order quantity.</p></article><article class="card"><h3>Gift and bar packaging</h3><p>For retail or corporate gifts, connect the glass choice with <a href="/custom-glassware-packaging-guide">packaging requirements</a> before confirming MOQ.</p></article></div><p class="lead">Related pages: <a href="/custom-logo-glassware">custom logo glassware</a>, <a href="/custom-glassware-packaging-guide">custom glassware packaging guide</a> and <a href="/glassware-moq-guide">glassware MOQ guide</a>.</p></div></section>
     <section class="section"><div class="wrap faq"><h2>Whiskey glass sourcing FAQ</h2><details><summary>Can I start with a mixed whiskey-glass order?</summary><p>For available standard SKUs, a low-volume mixed test order may start from 30 pieces per SKU. Final quantities depend on the selected item, stock status, packaging and destination.</p></details><details><summary>Can you add a logo to whiskey glasses?</summary><p>Yes. Decoration options can include laser engraving, screen printing, decal application and other finishes. The suitable process and MOQ are confirmed after reviewing the artwork, glass style and quantity.</p></details><details><summary>What should I send for a quotation?</summary><p>Send the preferred glass style or reference image, estimated quantity, logo or packaging request, destination country and target delivery date. Jingyue Glass can then confirm the suitable SKU and quotation route.</p></details><details><summary>What should I send for a custom logo whiskey rocks glass quote?</summary><p>Send the SKU or reference image, quantity, logo file, preferred logo size and position, packaging request, destination country and target timing. These inputs help confirm the decoration route and MOQ.</p></details><details><summary>Can distilleries and bars use the same whiskey glass SKU?</summary><p>Often yes, but the best SKU depends on serving style, brand image, dishwasher expectations, logo position and packaging route. Confirm the use case before final quotation.</p></details></div></section>
-    <section class="closing"><div class="wrap"><h2>Need help selecting whiskey glasses for your market?</h2><p>Send your target style, quantity and branding requirement by WhatsApp. We will confirm the available options and the correct order route.</p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://wa.me/8613256627201?text=Hi%2C%20I%20need%20help%20selecting%20wholesale%20whiskey%20glasses.">WhatsApp Jingyue Glass</a></div></section>
+    <section class="closing"><div class="wrap"><h2>Need help selecting whiskey glasses for your market?</h2><p>Send your target style, quantity and branding requirement by WhatsApp. We will confirm the available options and the correct order route.</p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://wa.me/8613256627201?text=Hi%2C%20I%20need%20help%20selecting%20wholesale%20whiskey%20glasses.">WhatsApp Jingyue Glass</a></div>
+    <!-- Direct Category & SKU Access -->
+    <div class="guide-product-section">
+      <div class="section-head">
+        <div class="section-title">
+          <h3>Explore Featured Wholesale Whiskey Glasses</h3>
+          <p>Direct factory supply · In-stock trial orders from 36 pcs · Custom logo engraving & gift box packaging available</p>
+        </div>
+        <a href="#quote" class="view-all-link">Request Full Catalog & Quote →</a>
+      </div>
+      <div class="sku-grid-4">
+        <div class="sku-card">
+          <img src="/assets/home/buyer-guides/wholesale-whiskey-glasses-guide.webp" alt="300ml Diamond Cut Crystal Whiskey Tumbler" class="sku-img">
+          <div class="sku-info">
+            <span class="sku-tag">SKU: JY-WG-300D</span>
+            <div class="sku-name">300ml Diamond-Cut Rock Glass</div>
+            <div class="sku-meta">• Heavy base (320g)<br>• In-stock MOQ: 48 pcs<br>• Custom Logo: Laser / Decal</div>
+            <a href="#quote" class="sku-btn">View Specs & FOB Price</a>
+          </div>
+        </div>
+        <div class="sku-card">
+          <img src="/assets/home/buyer-guides/wholesale-whiskey-glasses-guide.webp" alt="Twisted Rock Tumbler 320ml" class="sku-img">
+          <div class="sku-info">
+            <span class="sku-tag">SKU: JY-WG-320T</span>
+            <div class="sku-name">320ml Twisted Crystal Tumbler</div>
+            <div class="sku-meta">• Ergonomic spiral grip<br>• In-stock MOQ: 48 pcs<br>• Food-safe lead-free crystal</div>
+            <a href="#quote" class="sku-btn">View Specs & FOB Price</a>
+          </div>
+        </div>
+        <div class="sku-card">
+          <img src="/assets/home/buyer-guides/wholesale-whiskey-glasses-guide.webp" alt="Classic Old Fashioned Lowball Glass 350ml" class="sku-img">
+          <div class="sku-info">
+            <span class="sku-tag">SKU: JY-WG-350C</span>
+            <div class="sku-name">350ml Classic Old Fashioned Glass</div>
+            <div class="sku-meta">• Ultra-clear soda lime<br>• In-stock MOQ: 72 pcs<br>• Dishwasher safe high-fire decal</div>
+            <a href="#quote" class="sku-btn">View Specs & FOB Price</a>
+          </div>
+        </div>
+        <div class="sku-card">
+          <img src="/assets/home/buyer-guides/wholesale-whiskey-glasses-guide.webp" alt="Glencairn Tasting Glass 190ml" class="sku-img">
+          <div class="sku-info">
+            <span class="sku-tag">SKU: JY-WG-190G</span>
+            <div class="sku-name">190ml Aroma Snifter Tasting Glass</div>
+            <div class="sku-meta">• Tulip aroma-focus rim<br>• In-stock MOQ: 36 pcs<br>• Ideal for distillery branding</div>
+            <a href="#quote" class="sku-btn">View Specs & FOB Price</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
   </main>
   <footer class="footer">© 2026 Wuhan Jingyueda Household Products Co., Ltd. · <a href="https://www.jingyueglass.com/">jingyueglass.com</a></footer>
 </body>

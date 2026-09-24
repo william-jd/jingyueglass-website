@@ -23,7 +23,35 @@
   </script>
   <style>
     :root{--navy:#173958;--gold:#c8930a;--ink:#1b2732;--muted:#5d6873;--line:#dfe5e8;--wash:#f6f8f8}*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:var(--ink);line-height:1.65}a{text-decoration:none}.nav{background:var(--navy);padding:10px 6%;display:flex;justify-content:space-between;gap:20px;align-items:center}.brand{display:inline-flex;align-items:center;background:#fff;border-radius:4px;padding:3px 8px;height:42px;box-shadow:0 1px 4px rgba(0,0,0,.16)}.brand img{display:block;width:142px;height:34px;object-fit:contain}.links{display:flex;gap:18px;flex-wrap:wrap}.links a{color:#e9eff4;font-size:14px}.wrap{width:min(1080px,88%);margin:auto}.crumb{padding:18px 0;font-size:14px;color:var(--muted)}.crumb a{color:#365b78}.hero{background:linear-gradient(120deg,#0f2c46,#245b80);color:#fff;padding:68px 0}.eyebrow{color:#f2c45a;text-transform:uppercase;letter-spacing:1.5px;font-size:12px;font-weight:bold}.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:12px 0 16px;max-width:800px}.hero p{max-width:760px;color:#dbe8f0;font-size:18px}.cta{display:inline-block;background:#25d366;color:#073c21;font-weight:700;padding:14px 22px;border-radius:4px;margin:12px 12px 0 0}.cta.secondary{background:transparent;color:#fff;border:1px solid #c5d8e5}.section{padding:54px 0}.section h2{font-size:28px;line-height:1.25;margin:0 0 12px}.lead{color:var(--muted);max-width:820px}.answer{background:#fff8e7;border-left:4px solid var(--gold);padding:22px 24px;margin-top:-22px;position:relative;max-width:900px}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:24px}.card{border:1px solid var(--line);padding:22px;border-radius:7px;background:#fff}.card h3{margin:0 0 8px;font-size:19px}.card p{margin:0;color:var(--muted)}.alt{background:var(--wash)}.steps{counter-reset:step;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}.step{background:#fff;border:1px solid var(--line);padding:18px;border-radius:7px}.step b{display:block;color:var(--gold);margin-bottom:8px}.faq{max-width:900px}.faq details{border-bottom:1px solid var(--line);padding:17px 0}.faq summary{font-weight:700;cursor:pointer}.faq p{color:var(--muted);margin:10px 0 0}.closing{background:var(--navy);color:#fff;padding:52px 0;text-align:center}.closing p{color:#cfdeea;max-width:680px;margin:10px auto 20px}.footer{padding:24px 6%;font-size:13px;color:#66737d;text-align:center}@media(max-width:720px){.nav{align-items:flex-start;flex-direction:column}.grid,.steps{grid-template-columns:1fr}.hero{padding:48px 0}}
-  </style>
+  
+  /* Topic Cluster Components */
+  .guide-product-section{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:32px 28px;margin:40px 0 24px;box-shadow:0 4px 15px rgba(0,0,0,0.03)}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px;border-bottom:2px solid #f8fafc;padding-bottom:14px}
+  .section-title h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:#173B32;margin-bottom:4px}
+  .section-title p{font-size:0.88rem;color:#64748B}
+  .view-all-link{color:#173B32;font-size:0.88rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;border-bottom:1px solid #C6A15B;padding-bottom:2px}
+  .view-all-link:hover{color:#C6A15B}
+  .sku-grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .sku-card{border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;background:#fff;transition:all 0.25s ease;display:flex;flex-direction:column}
+  .sku-card:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,0.06);border-color:#C6A15B}
+  .sku-img{width:100%;height:180px;object-fit:cover;background:#f8fafc}
+  .sku-info{padding:14px;display:flex;flex-direction:column;flex-grow:1}
+  .sku-tag{font-size:0.72rem;font-weight:700;color:#C6A15B;text-transform:uppercase;margin-bottom:4px}
+  .sku-name{font-size:0.92rem;font-weight:600;color:#222;line-height:1.35;margin-bottom:8px}
+  .sku-meta{font-size:0.8rem;color:#64748B;margin-bottom:12px;line-height:1.4;flex-grow:1}
+  .sku-btn{display:block;text-align:center;background:#f1f5f9;color:#173B32;font-size:0.82rem;font-weight:700;padding:8px;border-radius:6px;text-decoration:none;transition:all 0.2s}
+  .sku-btn:hover{background:#173B32;color:#fff}
+  
+  .related-guides-section{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:32px 28px;margin:40px 0 24px;box-shadow:0 4px 15px rgba(0,0,0,0.03)}
+  .guide-grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .guide-box{border:1px solid #e2e8f0;border-radius:10px;padding:20px;background:#FAF8F3;border-top:4px solid #C6A15B;display:flex;flex-direction:column;transition:all 0.25s ease;text-decoration:none;color:inherit}
+  .guide-box:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,0.06);border-color:#173B32;border-top-color:#C6A15B}
+  .guide-tag{font-size:0.72rem;font-weight:700;color:#173B32;background:#e2e8f0;padding:2px 8px;border-radius:4px;align-self:flex-start;margin-bottom:10px}
+  .guide-h4{font-size:1.05rem;font-weight:700;color:#173B32;margin-bottom:8px;line-height:1.35}
+  .guide-p{font-size:0.82rem;color:#475569;line-height:1.5;margin-bottom:14px;flex-grow:1}
+  .guide-read-more{font-size:0.82rem;font-weight:700;color:#C6A15B;display:inline-flex;align-items:center;gap:4px}
+
+</style>
 </head>
 <body>
   <nav class="nav"><a class="brand" href="/" aria-label="Jingyue Glass home"><img src="/assets/jingyue-logo.png" alt="Jingyue Glass — wholesale glassware supplier"></a><div class="links"><a href="/wine-decanters">Wine Decanters</a><a href="/gift-sets">Gift Sets</a><a href="/custom-logo-glassware">Custom Logo</a><a href="/glassware-mixed-container-order">Mixed Orders</a></div></nav>
@@ -35,7 +63,48 @@
     <section class="section"><div class="wrap"><h2>What to confirm before quoting</h2><div class="steps"><div class="step"><b>01 — Set contents</b>Specify a decanter, matching glass count and any accessory or insert requirement.</div><div class="step"><b>02 — Brand treatment</b>Send logo artwork and identify whether branding belongs on glass, box or both.</div><div class="step"><b>03 — Packaging route</b>Share a preferred box reference or protection requirement for export shipping.</div><div class="step"><b>04 — Market and volume</b>Provide destination, estimated quantity and target timing to assess the appropriate route.</div></div></div></section>
     <section class="section alt"><div class="wrap"><h2>Connect the custom logo wooden box with the glassware set</h2><p class="lead">For corporate gift and spirits-brand programs, the wooden box is part of the product experience. Review the decanter, glasses, accessory layout, logo position, insert protection and carton plan together so the final set can be quoted as one complete project.</p><div class="grid"><article class="card"><h3>Logo placement</h3><p>Confirm whether the logo should appear on the decanter, whiskey glasses, wooden box lid, insert card or a combination of these positions.</p></article><article class="card"><h3>Set composition</h3><p>Use existing gift-set SKUs from the <a href="/gift-sets">Jingyue gift sets collection</a> as references before requesting a fully new layout.</p></article><article class="card"><h3>Packaging route</h3><p>Match the wooden box, insert and outer carton to the final decorated sample. For more planning details, see the <a href="/custom-glassware-packaging-guide">custom glassware packaging guide</a>.</p></article></div></div></section>
     <section class="section"><div class="wrap faq"><h2>Whiskey decanter gift-set FAQ</h2><details><summary>What can be included in a whiskey decanter gift set?</summary><p>A set can be planned around a decanter with matching whiskey glasses and a selected gift-box route. The final components depend on the available glass styles, intended market and packaging requirement.</p></details><details><summary>Can a gift set carry a logo or private label?</summary><p>Yes. The glass and packaging can be reviewed for suitable logo decoration and private-label treatment. MOQ is confirmed by the selected set, decoration process and box specification.</p></details><details><summary>What information is needed for gift-set pricing?</summary><p>Send the intended set configuration, approximate quantity, target market, decoration requirement, packaging reference and destination country. This allows the correct glass and packing route to be evaluated.</p></details><details><summary>Can I use current Jingyue gift set SKUs as a starting point?</summary><p>Yes. The updated gift set collection can be used as a reference for wooden box formats, set contents and accessory layouts before confirming a custom logo or packaging route.</p></details><details><summary>Should the box and glass logo be quoted together?</summary><p>Yes. Quoting the glass, logo, wooden box, insert and carton together helps avoid comparing incomplete unit prices and makes MOQ review more accurate.</p></details></div></section>
-    <section class="closing"><div class="wrap"><h2>Ready to plan a gift-ready set?</h2><p>Send your desired set composition and a packaging reference by WhatsApp for a practical sourcing discussion.</p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://wa.me/8613256627201?text=Hi%2C%20I%20want%20to%20plan%20a%20whiskey%20decanter%20gift%20set.">WhatsApp Jingyue Glass</a></div></section>
+    <section class="closing"><div class="wrap"><h2>Ready to plan a gift-ready set?</h2><p>Send your desired set composition and a packaging reference by WhatsApp for a practical sourcing discussion.</p><a class="cta" target="_blank" rel="noopener noreferrer" href="https://wa.me/8613256627201?text=Hi%2C%20I%20want%20to%20plan%20a%20whiskey%20decanter%20gift%20set.">WhatsApp Jingyue Glass</a></div>
+    <!-- Featured Decanter & Gift Set Collections -->
+    <div class="guide-product-section">
+      <div class="section-head">
+        <div class="section-title">
+          <h3>Featured Decanter & Glassware Gift Set Collections</h3>
+          <p>Complete gift solutions · Custom laser engraved wood boxes · EVA molded drop-tested inserts</p>
+        </div>
+        <a href="/gift-sets" class="view-all-link">Browse All 10 Gift Sets →</a>
+      </div>
+      <div class="sku-grid-4" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="sku-card">
+          <img src="/assets/products/gift-sets/hero-gift-sets.webp" alt="Wedding Champagne Flute Gift Box" class="sku-img">
+          <div class="sku-info">
+            <span class="sku-tag">SKU: XZM132-1</span>
+            <div class="sku-name">Luxury Flute & Accessories Gift Box</div>
+            <div class="sku-meta">• 2 Flutes + Stopper + Pourer + Opener<br>• In-Stock MOQ: 8 sets | Custom: 20 sets<br>• High-density EVA protective liner</div>
+            <a href="/gift-sets#XZM132-1" class="sku-btn">View Full Set Configuration</a>
+          </div>
+        </div>
+        <div class="sku-card">
+          <img src="/assets/products/gift-sets/hero-gift-sets.webp" alt="Burnt Pine Wood Box Twisted Decanter Set" class="sku-img">
+          <div class="sku-info">
+            <span class="sku-tag">SKU: XZM043-1A</span>
+            <div class="sku-name">Twisted Decanter & 2 Glasses Wood Box</div>
+            <div class="sku-meta">• 1 Twisted Decanter + 2 Rock Glasses + Stones<br>• In-Stock MOQ: 6 sets | Custom: 20 sets<br>• Premium burnt pine wooden box</div>
+            <a href="/gift-sets#XZM043-1A" class="sku-btn">View Full Set Configuration</a>
+          </div>
+        </div>
+        <div class="sku-card">
+          <img src="/assets/products/gift-sets/hero-gift-sets.webp" alt="Square Whiskey Decanter 4 Glasses Gift Set" class="sku-img">
+          <div class="sku-info">
+            <span class="sku-tag">SKU: XZM001</span>
+            <div class="sku-name">Executive Square Decanter & 4 Glasses</div>
+            <div class="sku-meta">• 750ml Decanter + 4 Lowball Glasses + Chilling Stones<br>• In-Stock MOQ: 4 sets | Custom: 20 sets<br>• Luxury magnetic presentation box</div>
+            <a href="/gift-sets#XZM001" class="sku-btn">View Full Set Configuration</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</section>
   </main>
   <footer class="footer">© 2026 Wuhan Jingyueda Household Products Co., Ltd. · <a href="https://www.jingyueglass.com/">jingyueglass.com</a></footer>
 </body>

@@ -122,7 +122,35 @@
     .wa-float { position: fixed; bottom: 28px; right: 28px; z-index: 999; background: #25D366; color: #fff; width: 56px; height: 56px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 4px 16px rgba(37,211,102,0.4); transition: transform 0.2s; }
     .wa-float:hover { transform: scale(1.1); }
     @media (max-width: 768px) { .hero { flex-direction: column; padding: 50px 5% 40px; gap: 2rem; } .hero-image { max-width: 100%; } .nav-links { display: none; } .form-wrap { grid-template-columns: 1fr; gap: 2rem; } form .form-row { grid-template-columns: 1fr; } .trust-bar { gap: 1.5rem; } }
-  </style>
+  
+  /* Topic Cluster Components */
+  .guide-product-section{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:32px 28px;margin:40px 0 24px;box-shadow:0 4px 15px rgba(0,0,0,0.03)}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:22px;border-bottom:2px solid #f8fafc;padding-bottom:14px}
+  .section-title h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:#173B32;margin-bottom:4px}
+  .section-title p{font-size:0.88rem;color:#64748B}
+  .view-all-link{color:#173B32;font-size:0.88rem;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:4px;border-bottom:1px solid #C6A15B;padding-bottom:2px}
+  .view-all-link:hover{color:#C6A15B}
+  .sku-grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+  .sku-card{border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;background:#fff;transition:all 0.25s ease;display:flex;flex-direction:column}
+  .sku-card:hover{transform:translateY(-4px);box-shadow:0 10px 20px rgba(0,0,0,0.06);border-color:#C6A15B}
+  .sku-img{width:100%;height:180px;object-fit:cover;background:#f8fafc}
+  .sku-info{padding:14px;display:flex;flex-direction:column;flex-grow:1}
+  .sku-tag{font-size:0.72rem;font-weight:700;color:#C6A15B;text-transform:uppercase;margin-bottom:4px}
+  .sku-name{font-size:0.92rem;font-weight:600;color:#222;line-height:1.35;margin-bottom:8px}
+  .sku-meta{font-size:0.8rem;color:#64748B;margin-bottom:12px;line-height:1.4;flex-grow:1}
+  .sku-btn{display:block;text-align:center;background:#f1f5f9;color:#173B32;font-size:0.82rem;font-weight:700;padding:8px;border-radius:6px;text-decoration:none;transition:all 0.2s}
+  .sku-btn:hover{background:#173B32;color:#fff}
+  
+  .related-guides-section{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:32px 28px;margin:40px 0 24px;box-shadow:0 4px 15px rgba(0,0,0,0.03)}
+  .guide-grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+  .guide-box{border:1px solid #e2e8f0;border-radius:10px;padding:20px;background:#FAF8F3;border-top:4px solid #C6A15B;display:flex;flex-direction:column;transition:all 0.25s ease;text-decoration:none;color:inherit}
+  .guide-box:hover{transform:translateY(-3px);box-shadow:0 8px 18px rgba(0,0,0,0.06);border-color:#173B32;border-top-color:#C6A15B}
+  .guide-tag{font-size:0.72rem;font-weight:700;color:#173B32;background:#e2e8f0;padding:2px 8px;border-radius:4px;align-self:flex-start;margin-bottom:10px}
+  .guide-h4{font-size:1.05rem;font-weight:700;color:#173B32;margin-bottom:8px;line-height:1.35}
+  .guide-p{font-size:0.82rem;color:#475569;line-height:1.5;margin-bottom:14px;flex-grow:1}
+  .guide-read-more{font-size:0.82rem;font-weight:700;color:#C6A15B;display:inline-flex;align-items:center;gap:4px}
+
+</style>
 </head>
 <body>
 <nav>
@@ -353,7 +381,39 @@
     <div class="faq-item"><div class="faq-q">Do you ship to South America and Southeast Asia?</div><div class="faq-a">Yes — we regularly ship to Brazil, Chile, Colombia, Thailand, Indonesia, Vietnam, and across Europe. We provide all export documents for customs clearance.</div></div>
   </div>
 </section>
-<section class="cta-section">
+
+    <!-- Related Sourcing & Procurement Guides -->
+    <div class="related-guides-section">
+      <div class="section-head">
+        <div class="section-title">
+          <h3>Related Sourcing & Procurement Guides</h3>
+          <p>Practical checklists, decoration durability comparisons, and MOQ insights from Jingyue Glass engineering team</p>
+        </div>
+      </div>
+      <div class="guide-grid-3">
+        
+        <a href="/glassware-oem-manufacturer-china" class="guide-box">
+          <span class="guide-tag">OEM & Factory Sourcing</span>
+          <div class="guide-h4">China Glassware OEM Sourcing: Factory Verification & Pitfalls</div>
+          <div class="guide-p">How to audit real manufacturers, avoid trading markups, verify food safety compliance, and manage tooling lead times.</div>
+          <div class="guide-read-more">Read Sourcing Guide →</div>
+        </a>
+        <a href="/glassware-moq-guide" class="guide-box">
+          <span class="guide-tag">MOQ Insights</span>
+          <div class="guide-h4">Glassware MOQ Guide: How Standard vs Custom MOQs Work</div>
+          <div class="guide-p">Understanding standard SKU low MOQ options versus custom mold and bespoke packaging thresholds.</div>
+          <div class="guide-read-more">Read Sourcing Guide →</div>
+        </a>
+        <a href="/glassware-quality-control-checklist" class="guide-box">
+          <span class="guide-tag">Quality Control</span>
+          <div class="guide-h4">Glassware Quality Control & AQL Inspection Checklist</div>
+          <div class="guide-p">AQL II standards, critical defect classifications (CR/MA/MI), and digital caliper tolerance benchmarks.</div>
+          <div class="guide-read-more">Read Sourcing Guide →</div>
+        </a>
+      </div>
+    </div>
+
+  <section class="cta-section">
   <h2>Ready to Brand Your Own Glass Mugs?</h2>
   <p>Send us your logo and requirements — we'll deliver a free digital mockup within 1 hour.</p>
   <div class="cta-btns">
