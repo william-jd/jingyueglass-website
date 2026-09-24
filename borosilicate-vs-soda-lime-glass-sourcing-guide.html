@@ -130,6 +130,14 @@
   .cluster-card span { color: var(--gray); font-size: 0.82rem; }
 
   footer { background: #0E241F; color: #D1DED9; padding: 50px 5% 30px; font-size: 0.88rem; text-align: center; }
+
+  @media (max-width: 768px) {
+    nav { height: auto; padding: 12px 5%; flex-wrap: wrap; gap: 10px; }
+    .nav-links { gap: 14px; font-size: 0.85rem; flex-wrap: wrap; }
+    .guide-container { padding: 40px 5%; }
+    .cluster-links { grid-template-columns: 1fr; }
+    .comparison-table th, .comparison-table td { padding: 10px 12px; font-size: 0.82rem; }
+  }
 </style>
 </head>
 <body>
@@ -161,7 +169,8 @@
     <h2>1. Technical & Performance Comparison Matrix</h2>
     <p>A side-by-side engineering breakdown for procurement specialists:</p>
 
-    <table class="comparison-table">
+    <div class="table-responsive" style="overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0;">
+<table class="comparison-table">
       <thead>
         <tr>
           <th>Engineering Metric</th>
@@ -203,6 +212,7 @@
         </tr>
       </tbody>
     </table>
+</div>
 
     <h2>2. Commercial Application Best Practices</h2>
     <p>Aligning product categories with the optimal glass composition:</p>
