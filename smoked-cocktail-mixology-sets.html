@@ -108,16 +108,16 @@
 
 <style>
   :root {
-    --primary: #173B32;
-    --primary-dark: #0E241F;
-    --accent: #C6A15B;
-    --accent-light: #E5CD98;
+    --primary: #1a3a5c;
+    --primary-dark: #0d2540;
+    --accent: #c8930a;
+    --accent-light: #e0a70b;
     --dark: #222222;
     --light-bg: #FAF8F3;
     --border: #E8E3D9;
     --gray: #667085;
     --white: #FFFFFF;
-    --shadow: 0 16px 40px rgba(23,59,50,0.08);
+    --shadow: 0 16px 40px rgba(13,37,64,0.08);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #fff; color: var(--dark); line-height: 1.6; }
@@ -131,15 +131,15 @@
   .nav-links a { color: #E0E7E5; font-size: 0.92rem; font-weight: 500; }
   .nav-quote-btn { background: var(--accent); color: #fff !important; padding: 10px 18px; border-radius: 4px; font-weight: 700; }
 
-  .hero { background: linear-gradient(135deg, var(--primary) 0%, #0E241F 100%); color: #fff; padding: 90px 5% 70px; }
+  .hero { background: linear-gradient(135deg, var(--primary) 0%, #0d2540 100%); color: #fff; padding: 90px 5% 70px; }
   .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 50px; align-items: center; }
   .hero-badge { display: inline-block; background: var(--accent); color: #fff; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 20px; }
   .hero h1 { font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.15; font-weight: 700; margin-bottom: 20px; }
   .hero h1 span { color: var(--accent); }
-  .hero p { font-size: 1.08rem; color: #D1DED9; max-width: 580px; margin-bottom: 30px; line-height: 1.7; }
+  .hero p { font-size: 1.08rem; color: #c8d6e6; max-width: 580px; margin-bottom: 30px; line-height: 1.7; }
   .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.15); }
   .hero-stat b { display: block; font-size: 1.5rem; color: var(--accent); font-weight: 800; }
-  .hero-stat span { font-size: 0.82rem; color: #B2C7C1; }
+  .hero-stat span { font-size: 0.82rem; color: #a8bccc; }
   .hero-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); border-radius: 12px; overflow: hidden; padding: 24px; text-align: center; }
   .hero-card img { height: 320px; width: 100%; object-fit: cover; border-radius: 8px; margin-bottom: 16px; }
 
@@ -159,7 +159,7 @@
   .kit-components li::before { content: '✓'; color: #2E7D32; font-weight: 800; }
   .kit-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 14px; border-top: 1px solid var(--border); }
   .kit-price { font-size: 1.15rem; color: var(--primary); font-weight: 700; }
-  .btn-quote { background: var(--primary); color: #fff; padding: 8px 16px; border-radius: 4px; font-size: 0.85rem; font-weight: 700; }
+  .btn-quote { background: var(--accent); color: #fff; padding: 10px 18px; border-radius: 4px; font-size: 0.85rem; font-weight: 700; box-shadow: 0 2px 6px rgba(200,147,10,0.3); transition: background 0.2s; } .btn-quote:hover { background: var(--accent-hover, #e0a70b); }
 
   .process-box { background: var(--light-bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
   .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
@@ -171,7 +171,7 @@
   .inquiry { background: var(--primary-dark); color: #fff; padding: 80px 5%; }
   .inquiry-wrap { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
   .inquiry-info h2 { font-size: 2.2rem; color: #fff; margin-bottom: 16px; }
-  .inquiry-info p { color: #C5D6D1; margin-bottom: 30px; font-size: 1.02rem; }
+  .inquiry-info p { color: #b8c9d9; margin-bottom: 30px; font-size: 1.02rem; }
   .inquiry-form { background: #fff; color: var(--dark); border-radius: 12px; padding: 36px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
   .form-group { display: flex; flex-direction: column; margin-bottom: 16px; }
@@ -179,7 +179,7 @@
   .form-group input, .form-group select, .form-group textarea { padding: 12px 14px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.92rem; font-family: inherit; }
   .btn-submit { background: var(--accent); color: #fff; border: 0; padding: 14px; border-radius: 6px; font-weight: 800; font-size: 1rem; cursor: pointer; width: 100%; }
 
-  footer { background: #0A1B17; color: #9AB2AB; padding: 40px 5%; text-align: center; font-size: 0.85rem; }
+  footer { background: #081726; color: #8ea4b8; padding: 40px 5%; text-align: center; font-size: 0.85rem; }
   
   @media (max-width: 768px) {
     .hero-inner, .inquiry-wrap { grid-template-columns: 1fr; }
@@ -214,7 +214,7 @@
     </div>
     <div class="hero-card">
       <img src="/assets/products/gift-sets/hero-gift-sets.webp" alt="Deluxe Smoked Cocktail Kit with Torch and Glassware">
-      <p style="font-size:0.88rem;color:#D1DED9;">1x Hardwood Smoker + 2x Rocks Glasses + 1x Torch + 4x Wood Chips in Custom EVA Box</p>
+      <p style="font-size:0.88rem;color:#c8d6e6;">1x Hardwood Smoker + 2x Rocks Glasses + 1x Torch + 4x Wood Chips in Custom EVA Box</p>
     </div>
   </div>
 </header>
@@ -319,11 +319,11 @@
       
       <div style="margin-top:24px;border-left:3px solid var(--accent);padding-left:16px;">
         <p style="color:#fff;font-weight:700;margin-bottom:4px;">⚡ 1-Hour Fast Response Guarantee</p>
-        <p style="font-size:0.88rem;color:#B2C7C1;">Preliminary price quotation and technical feasibility feedback within 1 business hour.</p>
+        <p style="font-size:0.88rem;color:#a8bccc;">Preliminary price quotation and technical feasibility feedback within 1 business hour.</p>
       </div>
       <div style="margin-top:16px;border-left:3px solid var(--accent);padding-left:16px;">
         <p style="color:#fff;font-weight:700;margin-bottom:4px;">🔒 100% Confidentiality &amp; NDA</p>
-        <p style="font-size:0.88rem;color:#B2C7C1;">Your custom designs, brand logos and project specifications are strictly protected.</p>
+        <p style="font-size:0.88rem;color:#a8bccc;">Your custom designs, brand logos and project specifications are strictly protected.</p>
       </div>
     </div>
 
