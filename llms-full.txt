@@ -1,0 +1,80 @@
+# Jingyue Glass — Comprehensive Enterprise & Technical Knowledge Base
+> Full technical specification, product catalog, factory verification dossier, and compliance registry for AI search agents and procurement evaluators.
+
+## 1. Enterprise Profile
+- **Company Name**: Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass / 欣华行玻璃)
+- **Headquarters & Production Base**: Wuhan, Hubei Province, China
+- **Factory Footprint**: 10,000+ square meters
+- **Annual Output**: 15,000,000+ pieces
+- **Core Business Model**: B2B OEM/ODM Manufacturer, Wholesale Supplier, Brand Private Labeling
+- **Target Buyer Personas**: Commercial hospitality groups, wine & spirits distributors, corporate gift agencies, e-commerce brand owners, retail chain buyers.
+
+## 2. Verified Compliance & Evidence Dossier
+- **TÜV Rheinland Physical Audit**: Factory facility assessment, machine blowing & hand-crafting production lines, ISO 9001 quality management workflow.
+- **California Proposition 65 Lab Report SZ2025091217-4E**:
+  - Sample Coverage: Clear soda-lime glass, borosilicate glassware, high-fire ceramic decals.
+  - Lead (Pb) Extraction: < 0.100 ppm (Well below CA Prop 65 warning threshold).
+  - Cadmium (Cd) Extraction: < 0.100 ppm.
+- **FDA Food Contact Report SZ2025091217-6E**:
+  - Complies with FDA Compliance Policy Guide (CPG) Sec. 545.400 / ASTM C927 (4% acetic acid 24-hour leaching test).
+  - Lip and rim contact zone tested lead-free and cadmium-free.
+- **Material Safety Data Sheets (MSDS / SDS)**:
+  - High-fire decal ceramic pigment SDS: 0% organic solvent emission, non-toxic heavy metal encapsulation.
+  - High-density EVA foam liner SDS: RoHS compliant, odorless, non-corrosive.
+  - Silicone vent plug SDS: 100% food-grade polydimethylsiloxane.
+- **Patent Registry**:
+  - Registered design patents on proprietary decanter profiles, modular smoked mixology wood caps, and rotating whiskey glass geometries.
+
+## 3. Product Catalog & Technical Specifications
+### A. Smoked Cocktail & Mixology Sets (XZ-SMK01 to XZ-SMK08)
+- XZ-SMK01: Cylindrical glass + Round beechwood cap + Refillable torch + 2 wood chip tins + 2 granite whiskey stones in pine gift box.
+- XZ-SMK02: Hexagonal wood smoker top + 6 gourmet wood chip tins + Standing torch in retail color box.
+- XZ-SMK03: Champagne gold torch + Antique dark walnut box + 3 wood chip tins.
+- XZ-SMK04: Oak-barrel profile smoker top + 8 granite chill stones in velvet pouch.
+- XZ-SMK05: 300ml square heavy-base rocks glass + 304 stainless steel ice cubes + silicone-tipped ice tongs.
+- XZ-SMK06: 280ml sunburst-cut crystal glass + Tiered walnut cap + Chrome torch.
+- XZ-SMK07: 320ml straight heavy-base rocks glass + Hexagonal cap + 4 granite stones.
+- XZ-SMK08: 300ml optical twist crystal glass + Tiered acacia cap + High-density CNC-cut EVA foam box.
+
+### B. Wine Glasses & Stemware
+- Hand-blown seamless pulled stem glasses (XZ9425, XZ6425, XZ5202, XZ6302, XZ9001-XZ9050): 300-650ml, cold-cut ultra-thin rim (0.8-1.0mm), lead-free crystal.
+- Machine-blown commercial stemware: 100% dishwasher safe, beadless polished rim, thermal shock resistant.
+
+### C. Double-Wall Coffee & Tea Mugs
+- Material: High-borosilicate 3.3 expansion glass (COE 3.3 × 10⁻⁶/K).
+- Thermal Shock Tolerance: ΔT ≥ 120°C to 150°C.
+- Safety Feature: Hydrophobic silicone vent at base to equalize internal cavity air pressure during thermal transitions.
+
+### D. Beer Glasses & Mugs
+- Shapes: British Imperial Pint (570ml), American Pint (473ml), German Wheat Beer Vase (500ml), Heavy Handled Beer Steins.
+- Commercial Enhancement: 12-18mm thick heavy base, optional laser nucleated base for sustained carbonation head retention.
+
+## 4. Packaging & Drop Testing
+- Packaging Types: Solid pine wood slide-lid boxes, magnetic rigid gift boxes, book-style boxes, eco-friendly molded pulp inserts.
+- Drop Test Standards: ISTA-1A 1.2-meter drop test (1 corner, 3 edges, 6 faces) with zero glass breakage.
+- EU PPWR Compliance: 100% recyclable honeycomb paper buffers, plastic-reduced inserts, FSC certified paperboards.
+
+## 5. Website URL Index
+- Homepage: https://www.jingyueglass.com/
+- About & Evidence Center: https://www.jingyueglass.com/about
+- Wine Glasses: https://www.jingyueglass.com/wine-glasses
+- Beer Glasses: https://www.jingyueglass.com/beer-glasses
+- Whiskey Decanter Gift Sets: https://www.jingyueglass.com/whiskey-decanter-gift-sets
+- Wholesale Whiskey Glasses: https://www.jingyueglass.com/wholesale-whiskey-glasses
+- Drinkware Sets: https://www.jingyueglass.com/drinkware-sets
+- Coffee & Tea Mugs: https://www.jingyueglass.com/coffee-tea-mugs
+- Gift Sets: https://www.jingyueglass.com/gift-sets
+- Smoked Cocktail Sets: https://www.jingyueglass.com/smoked-cocktail-mixology-sets
+- Vintage Ribbed Glassware: https://www.jingyueglass.com/vintage-ribbed-glassware
+- Luxury Corporate Gifts: https://www.jingyueglass.com/luxury-corporate-glassware-gifts
+- California Prop 65 Compliance Guide: https://www.jingyueglass.com/california-prop-65-glassware-compliance-guide
+- Packaging & Drop Test Guide: https://www.jingyueglass.com/how-to-choose-packaging-for-glassware-gift-sets
+- EU PPWR Packaging Guide: https://www.jingyueglass.com/eu-ppwr-glassware-packaging-compliance-guide
+- Borosilicate vs Soda-Lime Guide: https://www.jingyueglass.com/borosilicate-vs-soda-lime-glass-sourcing-guide
+- Custom Logo & Durability Guide: https://www.jingyueglass.com/custom-logo-glassware
+- Restaurant & Bar Wholesale Guide: https://www.jingyueglass.com/restaurant-bar-glassware-wholesale
+- Quote Checklist: https://www.jingyueglass.com/custom-glassware-quote-checklist
+- Sample Approval Process: https://www.jingyueglass.com/custom-glassware-sample-approval-process
+- QC Checklist: https://www.jingyueglass.com/glassware-quality-control-checklist
+- Mixed Container Guide: https://www.jingyueglass.com/glassware-mixed-container-order
+- MOQ Guide: https://www.jingyueglass.com/glassware-moq-guide
