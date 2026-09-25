@@ -23,7 +23,116 @@
     <section class="hero"><div class="wrap"><div class="eyebrow">For importers, gift companies and private-label buyers</div><h1>Custom Glassware Quote Checklist for Faster, Clearer RFQs</h1><p>Prepare the details Jingyue Glass needs to review a custom glassware project accurately: product, quantity, decoration, packaging and destination.</p><a class="cta" href="/#inquiry">Request a Quote</a><a class="cta secondary" href="/glassware-solutions">View Sourcing Solutions</a></div></section>
     
     <section class="section"><div class="wrap quick"><strong>Quick answer:</strong> A useful custom glassware RFQ should include the glass type, size or capacity, reference image, target quantity, logo or decoration request, packaging expectation, shipping term and destination. A photo alone is helpful but usually not enough for a comparable quote.</div></section>
-    <section class="section alt"><div class="wrap"><h2>Why incomplete quote requests slow down sourcing</h2><p class="lead">Many buyers send a picture and ask for a price. That starts the conversation, but it does not confirm the capacity, glass weight, decoration process, packaging cost, carton volume or shipping basis. This checklist helps importers, gift companies, e-commerce sellers and hospitality buyers prepare the information a supplier needs before giving a practical quotation.</p><div class="grid"><article class="card"><h3>For faster first replies</h3><p>Clear product and quantity details help the supplier identify whether an available SKU, similar mold or new development route is suitable.</p></article><article class="card"><h3>For comparable supplier quotes</h3><p>Two quotes are only comparable when they use the same product size, logo method, packaging and shipping term.</p></article><article class="card"><h3>For fewer revisions</h3><p>Packaging, barcode labels, gift boxes and destination details often change both product cost and freight discussion.</p></article></div></div></section>
+    
+    <!-- Interactive CBM & Carton Shipping Calculator -->
+    <section class="section" id="cbm-calculator" style="background:#fdfbf7;border-top:1px solid #dde3ea;border-bottom:1px solid #dde3ea;">
+      <div class="wrap">
+        <div class="eyebrow" style="color:var(--gold);font-weight:700;">Interactive Sourcing Tool</div>
+        <h2 style="color:var(--navy);">B2B Glassware Carton & CBM Shipping Calculator</h2>
+        <p class="lead">Estimate master cartons, ocean freight volume (CBM), pallet load and container space utilization for budget planning:</p>
+        
+        <div style="background:#fff;border:1px solid #dfe5e8;border-radius:10px;padding:26px;box-shadow:0 6px 20px rgba(0,0,0,0.04);max-width:850px;margin:24px auto;">
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:20px;">
+            <div>
+              <label style="font-size:0.88rem;font-weight:700;color:var(--navy);display:block;margin-bottom:6px;">Select Glassware Category:</label>
+              <select id="calc-cat" style="width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:6px;font-size:0.95rem;background:#fff;" onchange="updateCalc()">
+                <option value="wine" data-pcs="24" data-cbm="0.065" data-kg="7.5">Wine Glasses (24 pcs/ctn · 0.065 CBM)</option>
+                <option value="whiskey" data-pcs="48" data-cbm="0.048" data-kg="14.0" selected>Whiskey Tumblers / Rocks (48 pcs/ctn · 0.048 CBM)</option>
+                <option value="beer" data-pcs="24" data-cbm="0.055" data-kg="12.0">Beer Pint Glasses (24 pcs/ctn · 0.055 CBM)</option>
+                <option value="decanter" data-pcs="6" data-cbm="0.052" data-kg="8.5">Whiskey/Wine Decanters (6 pcs/ctn · 0.052 CBM)</option>
+                <option value="coffee" data-pcs="36" data-cbm="0.045" data-kg="6.0">Double-Wall Coffee Mugs (36 pcs/ctn · 0.045 CBM)</option>
+                <option value="smoker" data-pcs="12" data-cbm="0.072" data-kg="16.5">Smoked Cocktail Gift Sets (12 sets/ctn · 0.072 CBM)</option>
+              </select>
+            </div>
+            <div>
+              <label style="font-size:0.88rem;font-weight:700;color:var(--navy);display:block;margin-bottom:6px;">Target Order Quantity (pcs/sets):</label>
+              <input type="number" id="calc-qty" value="500" min="24" step="12" style="width:100%;padding:10px 12px;border:1px solid #cbd5e1;border-radius:6px;font-size:0.95rem;" oninput="updateCalc()">
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;background:#f8fafc;padding:18px;border-radius:8px;border:1px solid #e2e8f0;text-align:center;">
+            <div><span style="font-size:0.8rem;color:var(--muted);display:block;">Master Cartons</span><strong id="res-ctns" style="font-size:1.35rem;color:var(--navy);">11 ctns</strong></div>
+            <div><span style="font-size:0.8rem;color:var(--muted);display:block;">Total Volume (CBM)</span><strong id="res-cbm" style="font-size:1.35rem;color:var(--gold);">0.53 CBM</strong></div>
+            <div><span style="font-size:0.8rem;color:var(--muted);display:block;">Gross Weight (Est.)</span><strong id="res-kg" style="font-size:1.35rem;color:var(--navy);">154 kg</strong></div>
+            <div><span style="font-size:0.8rem;color:var(--muted);display:block;">Standard Pallets (Est.)</span><strong id="res-pallets" style="font-size:1.35rem;color:var(--navy);">1 Pallet</strong></div>
+          </div>
+
+          <div style="margin-top:16px;font-size:0.84rem;color:#64748b;line-height:1.5;">
+            💡 <i>Reference 20GP Container capacity: ~28 CBM (~500 cartons) | 40HQ Container capacity: ~68 CBM (~1,200 cartons). Standard mixed pallet height: 1.8m – 2.0m.</i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Physical Sample Rapid Dispatch Protocol -->
+    <section class="section alt" id="sample-protocol">
+      <div class="wrap">
+        <div class="eyebrow" style="color:var(--gold);font-weight:700;">Quality Guarantee</div>
+        <h2>Request Physical Sample with 100% Fee Refund</h2>
+        <p class="lead">Before committing to full production, verify hand-feel, rim clarity, cold-cut edge and packaging quality with physical golden samples.</p>
+        
+        <div class="grid">
+          <div class="card" style="border-top:3px solid var(--gold);">
+            <h3>⚡ Rapid Sample Dispatch</h3>
+            <p>Standard factory stock samples dispatched via DHL/FedEx/UPS in <strong>3–5 working days</strong> directly to your door.</p>
+          </div>
+          <div class="card" style="border-top:3px solid var(--gold);">
+            <h3>💰 100% Sample Fee Refund</h3>
+            <p>Sample evaluation fee and basic tooling deposit are <strong>fully credited back</strong> against your first official bulk purchase order.</p>
+          </div>
+          <div class="card" style="border-top:3px solid var(--gold);">
+            <h3>🎯 Golden Sample Sign-Off</h3>
+            <p>We seal two identical reference pieces: one for buyer approval, one locked at factory QC light-tables for mass inspection.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artwork & Logo Vector Upload Guide -->
+    <section class="section" id="artwork-guideline">
+      <div class="wrap">
+        <div class="eyebrow" style="color:var(--gold);font-weight:700;">Engineering Specs</div>
+        <h2>Artwork & Logo Specifications for Precision Quotation</h2>
+        <p class="lead">To ensure fast tooling review and eliminate distortion on curved glass walls, please prepare artwork per these parameters:</p>
+        
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Specification Parameter</th><th>Recommended Standard</th><th>Alternative Acceptable</th></tr></thead>
+            <tbody>
+              <tr><td><strong>File Format</strong></td><td>Vector AI (.ai), Editable PDF (.pdf), Vector SVG (.svg)</td><td>High-Res EPS (.eps), 300+ DPI TIFF / PSD</td></tr>
+              <tr><td><strong>Color Space</strong></td><td>Pantone Solid Coated Formula (PMS C)</td><td>CMYK with clear HEX/RGB reference</td></tr>
+              <tr><td><strong>Font & Typography</strong></td><td>All text converted to outlines / paths</td><td>Provide TTF / OTF font package files</td></tr>
+              <tr><td><strong>Minimum Line Weight</strong></td><td>0.15 mm (Laser Engraving) / 0.25 mm (High-Fire Decal)</td><td>Fine-line preview adjusted during sampling</td></tr>
+              <tr><td><strong>Curvature Compensation</strong></td><td>Vector artwork pre-scaled for conical taper</td><td>Factory CAD team assists conical mapping</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <script>
+    function updateCalc() {
+      var cat = document.getElementById('calc-cat');
+      var opt = cat.options[cat.selectedIndex];
+      var pcsPerCtn = parseFloat(opt.getAttribute('data-pcs'));
+      var cbmPerCtn = parseFloat(opt.getAttribute('data-cbm'));
+      var kgPerCtn = parseFloat(opt.getAttribute('data-kg'));
+      
+      var qtyInput = document.getElementById('calc-qty');
+      var qty = Math.max(1, parseFloat(qtyInput.value) || 0);
+      
+      var ctns = Math.ceil(qty / pcsPerCtn);
+      var totalCbm = (ctns * cbmPerCtn).toFixed(2);
+      var totalKg = Math.round(ctns * kgPerCtn);
+      var pallets = Math.max(1, Math.ceil(totalCbm / 1.8));
+      
+      document.getElementById('res-ctns').innerText = ctns + ' ctns';
+      document.getElementById('res-cbm').innerText = totalCbm + ' CBM';
+      document.getElementById('res-kg').innerText = totalKg + ' kg';
+      document.getElementById('res-pallets').innerText = pallets + ' Pallet' + (pallets > 1 ? 's' : '');
+    }
+    </script>
+<section class="section alt"><div class="wrap"><h2>Why incomplete quote requests slow down sourcing</h2><p class="lead">Many buyers send a picture and ask for a price. That starts the conversation, but it does not confirm the capacity, glass weight, decoration process, packaging cost, carton volume or shipping basis. This checklist helps importers, gift companies, e-commerce sellers and hospitality buyers prepare the information a supplier needs before giving a practical quotation.</p><div class="grid"><article class="card"><h3>For faster first replies</h3><p>Clear product and quantity details help the supplier identify whether an available SKU, similar mold or new development route is suitable.</p></article><article class="card"><h3>For comparable supplier quotes</h3><p>Two quotes are only comparable when they use the same product size, logo method, packaging and shipping term.</p></article><article class="card"><h3>For fewer revisions</h3><p>Packaging, barcode labels, gift boxes and destination details often change both product cost and freight discussion.</p></article></div></div></section>
     <section class="section"><div class="wrap"><h2>Custom Glassware RFQ Checklist</h2><div class="table-wrap"><table><thead><tr><th>RFQ item</th><th>What to send</th><th>Why it matters</th></tr></thead><tbody><tr><td>Product type</td><td>Wine glass, whiskey glass, beer glass, tumbler, decanter, mug or gift set.</td><td>Different glassware types use different production routes, packing and inspection points.</td></tr><tr><td>Size and capacity</td><td>ml / oz, height, top diameter, bottom diameter or a reference product link.</td><td>Small size changes can affect weight, mold selection, carton size and unit price.</td></tr><tr><td>Quantity</td><td>Target quantity or tiered quantities such as 500 / 1,000 / 3,000 pcs.</td><td>Quantity affects MOQ review, decoration cost, sample plan and production arrangement.</td></tr><tr><td>Logo or decoration</td><td>Vector logo if available, logo size, position, color and desired effect.</td><td>Laser engraving, screen printing, decal and other routes have different constraints.</td></tr><tr><td>Packaging</td><td>Bulk pack, inner box, color box, gift box, divider, barcode label or carton mark.</td><td>Packaging affects protection, presentation, carton volume and shipping cost.</td></tr><tr><td>Destination and trade term</td><td>EXW, FOB, CIF or DDP request, plus destination country, city or ZIP code.</td><td>The quote basis must be clear before buyers compare product price and landed cost.</td></tr></tbody></table></div></div></section>
     <section class="section alt"><div class="wrap"><h2>Copyable RFQ Template</h2><div class="card"><p><strong>Subject:</strong> Request for Custom Glassware Quote</p><p>Hello Jingyue Glass,<br>We are looking for a custom glassware supplier for the following project:</p><ul><li>Product type:</li><li>Capacity / size:</li><li>Reference image or drawing:</li><li>Target quantity:</li><li>Logo / decoration:</li><li>Packaging requirement:</li><li>Shipping term and destination:</li><li>Target timing:</li></ul><p>Please confirm the suitable product route, MOQ, sample route, packaging suggestion and quotation basis.</p></div></div></section>
     <section class="section"><div class="wrap"><h2>Common mistakes to avoid</h2><div class="checklist"><div class="check"><strong>Only sending a photo</strong><br>A photo does not confirm capacity, weight, artwork, packaging or shipping basis.</div><div class="check"><strong>Comparing different quote terms</strong><br>EXW, FOB, CIF and DDP are different quote bases and should not be compared directly.</div><div class="check"><strong>Assuming one MOQ applies to all work</strong><br>Standard SKUs, logo decoration, packaging and new molds can have different minimums.</div><div class="check"><strong>Leaving packaging until the end</strong><br>Gift boxes, dividers and labels can change carton dimensions and project cost.</div></div></div></section>
