@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2B Glassware Container CBM & Pallet Loading Calculator | Jingyue Glass</title>
+<meta name="description" content="Calculate container utilization (20GP / 40HQ), total CBM, carton quantities, and gross weight for mixed glassware orders. Factory-direct packing specifications.">
+<link rel="canonical" href="https://www.jingyueglass.com/container-cbm-calculator">
+<link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
+<link rel="preconnect" href="https://www.jingyueglass.com">
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --primary-dark: #0d2540;
+    --accent: #c8930a;
+    --accent-hover: #e0a70b;
+    --light: #f5f5f0;
+    --dark: #222222;
+    --gray: #65758a;
+    --border: #dde3ea;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #fff; color: var(--dark); line-height: 1.7; }
+  
+  header { background: var(--primary-dark); padding: 16px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+  .logo { font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 20px; align-items: center; }
+  .nav-links a { color: #f1f5f9; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
+  .nav-links a:hover { color: var(--accent); }
+  .btn-quote { background: var(--accent); color: #fff; padding: 8px 18px; border-radius: 6px; font-weight: 700; text-decoration: none; }
+  
+  .hero-guide { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding: 70px 20px 60px; text-align: center; }
+  .guide-tag { display: inline-block; background: var(--accent); color: #fff; padding: 4px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 16px; }
+  .hero-guide h1 { font-size: 2.3rem; max-width: 900px; margin: 0 auto 16px; font-weight: 800; line-height: 1.3; }
+  .hero-guide p { color: #cbd5e1; font-size: 1.1rem; max-width: 750px; margin: 0 auto; }
+
+  .content-container { max-width: 1040px; margin: 50px auto; padding: 0 20px; }
+  
+  /* Calculator Layout */
+  .calc-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; margin-top: 30px; }
+  @media(max-width: 860px) { .calc-grid { grid-template-columns: 1fr; } }
+
+  .calc-card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 26px; box-shadow: 0 8px 24px rgba(13,37,64,0.06); }
+  .calc-card h3 { color: var(--primary); font-size: 1.25rem; margin-bottom: 18px; display: flex; align-items: center; gap: 8px; }
+  
+  .item-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 12px; align-items: center; margin-bottom: 14px; padding-bottom: 12px; border-bottom: 1px solid #f0f4f8; }
+  .item-label { font-size: 0.92rem; font-weight: 600; color: #334155; }
+  .item-spec { font-size: 0.78rem; color: var(--gray); display: block; }
+  .item-input { width: 100%; padding: 8px 12px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.95rem; font-weight: 700; text-align: center; color: var(--primary); }
+  
+  /* Output Summary Card */
+  .summary-card { background: linear-gradient(135deg, #0d2540 0%, #1a3a5c 100%); color: #fff; border-radius: 12px; padding: 28px; position: sticky; top: 90px; }
+  .summary-card h3 { color: #fff; font-size: 1.3rem; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.15); padding-bottom: 12px; }
+  
+  .stat-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 0.95rem; }
+  .stat-row strong { font-size: 1.35rem; color: var(--accent); }
+  
+  .progress-wrap { margin: 20px 0; }
+  .progress-bar-bg { background: rgba(255,255,255,0.15); height: 16px; border-radius: 8px; overflow: hidden; position: relative; }
+  .progress-bar-fill { background: var(--accent); height: 100%; width: 0%; transition: width 0.4s ease; border-radius: 8px; }
+  .progress-labels { display: flex; justify-content: space-between; font-size: 0.78rem; color: #cbd5e1; margin-top: 6px; }
+
+  .container-select { display: flex; gap: 10px; margin-bottom: 20px; }
+  .c-btn { flex: 1; padding: 10px; border: 1px solid rgba(255,255,255,0.3); background: transparent; color: #fff; border-radius: 6px; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+  .c-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+  .status-badge { display: inline-block; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; margin-top: 14px; text-align: center; width: 100%; }
+  .status-safe { background: rgba(46,125,50,0.25); color: #81c784; border: 1px solid #4caf50; }
+  .status-warn { background: rgba(245,124,0,0.25); color: #ffb74d; border: 1px solid #ff9800; }
+  .status-over { background: rgba(211,47,47,0.25); color: #e57373; border: 1px solid #f44336; }
+
+  .btn-submit-calc { display: block; width: 100%; background: var(--accent); color: #fff; padding: 14px; text-align: center; border-radius: 6px; font-weight: 800; text-decoration: none; margin-top: 22px; font-size: 1rem; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
+  .btn-submit-calc:hover { background: var(--accent-hover); }
+
+  footer { background: var(--primary-dark); color: #94a3b8; padding: 40px 20px; text-align: center; font-size: 0.88rem; margin-top: 80px; }
+  footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
+
+/* Floating Inquiry Widget Styling */
+.floating-inquiry-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9999;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+.widget-toggle {
+  background: var(--accent, #c8930a);
+  color: #fff;
+  border: 0;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(13,37,64,0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.2s;
+}
+.widget-toggle:hover {
+  background: var(--accent-hover, #e0a70b);
+  transform: scale(1.08);
+}
+.widget-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #e53e3e;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 10px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+.widget-panel {
+  display: none;
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  width: 320px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgba(13,37,64,0.22);
+  border: 1px solid #dde3ea;
+  overflow: hidden;
+  animation: widgetSlideUp 0.25s ease-out forwards;
+}
+.widget-panel.active {
+  display: block;
+}
+@keyframes widgetSlideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.widget-header {
+  background: linear-gradient(135deg, #0d2540 0%, #1a3a5c 100%);
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+.widget-avatar {
+  width: 38px;
+  height: 38px;
+  background: #c8930a;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+.widget-header strong {
+  display: block;
+  font-size: 0.96rem;
+  color: #fff;
+}
+.widget-header p {
+  margin: 0;
+  font-size: 0.76rem;
+  color: #c9d8e8;
+}
+.widget-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: transparent;
+  border: 0;
+  color: #c9d8e8;
+  font-size: 1.4rem;
+  cursor: pointer;
+  line-height: 1;
+}
+.widget-close:hover {
+  color: #fff;
+}
+.widget-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.widget-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 600;
+  transition: background 0.15s, transform 0.15s;
+}
+.widget-btn:hover {
+  transform: translateY(-1px);
+}
+.widget-whatsapp {
+  background: #25d366;
+  color: #fff !important;
+}
+.widget-whatsapp:hover {
+  background: #20ba5a;
+}
+.widget-email {
+  background: #f1f5f9;
+  color: #1a3a5c !important;
+  border: 1px solid #cbd5e1;
+}
+.widget-email:hover {
+  background: #e2e8f0;
+}
+.widget-wechat-box {
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 0.84rem;
+}
+.widget-quote {
+  background: var(--accent, #c8930a);
+  color: #fff !important;
+  justify-content: center;
+  font-weight: 700;
+  margin-top: 4px;
+}
+.widget-quote:hover {
+  background: var(--accent-hover, #e0a70b);
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <a href="/" class="logo">Jingyue <span>Glass</span></a>
+    <nav class="nav-links">
+      <a href="/glassware-solutions">Solutions</a>
+      <a href="/glassware-mixed-container-order">Mixed Container SOP</a>
+      <a href="/about">About Us</a>
+      <a href="/custom-glassware-quote-checklist" class="btn-quote">Request DDP Freight</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero-guide">
+  <span class="guide-tag">Interactive Sourcing Tool</span>
+  <h1>Container CBM & Pallet Loading Calculator</h1>
+  <p>Accurately estimate 20GP and 40HQ container utilization, master carton quantities, and total freight weights for factory-direct mixed glassware orders.</p>
+</div>
+
+<main class="content-container">
+  <div class="calc-grid">
+    <!-- Input Section -->
+    <div class="calc-card">
+      <h3>📦 Enter Target Product Quantities (Cartons)</h3>
+      <p style="font-size:0.88rem; color:var(--gray); margin-bottom:20px;">Adjust carton quantities below to simulate container fill rate in real time.</p>
+      
+      <div class="item-row">
+        <div>
+          <span class="item-label">Whiskey Decanter Gift Sets</span>
+          <span class="item-spec">Pine Box + EVA (4 sets/ctn, 0.038 CBM, 10.5 kg)</span>
+        </div>
+        <input type="number" id="qty_decanter" class="item-input" value="150" min="0" oninput="calculateCBM()">
+        <span style="font-size:0.82rem; color:var(--gray); text-align:right;" id="cbm_decanter">5.70 CBM</span>
+      </div>
+
+      <div class="item-row">
+        <div>
+          <span class="item-label">Crystal Stemmed Wine Glasses</span>
+          <span class="item-spec">Drop-tested gift box (24 pcs/ctn, 0.024 CBM, 4.2 kg)</span>
+        </div>
+        <input type="number" id="qty_wine" class="item-input" value="200" min="0" oninput="calculateCBM()">
+        <span style="font-size:0.82rem; color:var(--gray); text-align:right;" id="cbm_wine">4.80 CBM</span>
+      </div>
+
+      <div class="item-row">
+        <div>
+          <span class="item-label">Double-Wall Coffee/Tea Mugs</span>
+          <span class="item-spec">Pearl foam clamp (24 pcs/ctn, 0.032 CBM, 5.5 kg)</span>
+        </div>
+        <input type="number" id="qty_mugs" class="item-input" value="120" min="0" oninput="calculateCBM()">
+        <span style="font-size:0.82rem; color:var(--gray); text-align:right;" id="cbm_mugs">3.84 CBM</span>
+      </div>
+
+      <div class="item-row">
+        <div>
+          <span class="item-label">Heavy Rocks / Old Fashioned</span>
+          <span class="item-spec">Master bulk divider (24 pcs/ctn, 0.021 CBM, 8.2 kg)</span>
+        </div>
+        <input type="number" id="qty_rocks" class="item-input" value="250" min="0" oninput="calculateCBM()">
+        <span style="font-size:0.82rem; color:var(--gray); text-align:right;" id="cbm_rocks">5.25 CBM</span>
+      </div>
+
+      <div class="item-row">
+        <div>
+          <span class="item-label">Smoked Cocktail Mixology Kits</span>
+          <span class="item-spec">Magnetic color box (12 kits/ctn, 0.045 CBM, 12.0 kg)</span>
+        </div>
+        <input type="number" id="qty_smoker" class="item-input" value="80" min="0" oninput="calculateCBM()">
+        <span style="font-size:0.82rem; color:var(--gray); text-align:right;" id="cbm_smoker">3.60 CBM</span>
+      </div>
+
+      <div style="margin-top:20px; padding:16px; background:var(--light); border-radius:8px; font-size:0.85rem; color:#475569;">
+        💡 <strong>Factory Packing Standard:</strong> All cartons are reinforced 5-ply kraft corrugated with corner edge protectors and pallet strapping compliant with ISPM 15 heat-treated pallet export standards.
+      </div>
+    </div>
+
+    <!-- Live Result Sidebar -->
+    <div class="summary-card">
+      <h3>📊 Container Loading Result</h3>
+      
+      <div class="container-select">
+        <button class="c-btn active" id="btn20gp" onclick="setContainerType(28, 18000, '20GP')">20' GP (28 CBM)</button>
+        <button class="c-btn" id="btn40hq" onclick="setContainerType(68, 26000, '40HQ')">40' HQ (68 CBM)</button>
+      </div>
+
+      <div class="stat-row">
+        <span>Total Volume:</span>
+        <strong id="totalCbmText">23.19 CBM</strong>
+      </div>
+
+      <div class="stat-row">
+        <span>Total Master Cartons:</span>
+        <strong id="totalCartonsText">800 Ctns</strong>
+      </div>
+
+      <div class="stat-row">
+        <span>Est. Gross Weight:</span>
+        <strong id="totalWeightText">6,045 kg</strong>
+      </div>
+
+      <div class="stat-row">
+        <span>Est. Pallet Count:</span>
+        <strong id="totalPalletsText">10 Pallets</strong>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progressBar" style="width: 82.8%;"></div>
+        </div>
+        <div class="progress-labels">
+          <span id="utilizationText">82.8% Full</span>
+          <span id="capacityText">Max 28 CBM</span>
+        </div>
+      </div>
+
+      <div id="statusBadge" class="status-badge status-safe">✓ Optimal 20GP Utilization Rate</div>
+
+      <a href="/custom-glassware-quote-checklist" class="btn-submit-calc" id="quoteBtn">Send Load Plan for Official DDP Quote →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>&copy; 2026 Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass). All rights reserved.</p>
+</footer>
+
+<script>
+var targetCbmLimit = 28;
+var targetWeightLimit = 18000;
+var currentContainerName = '20GP';
+
+function setContainerType(cbm, weight, name) {
+  targetCbmLimit = cbm;
+  targetWeightLimit = weight;
+  currentContainerName = name;
+  document.getElementById('btn20gp').classList.toggle('active', name === '20GP');
+  document.getElementById('btn40hq').classList.toggle('active', name === '40HQ');
+  calculateCBM();
+}
+
+function calculateCBM() {
+  var qDecanter = parseInt(document.getElementById('qty_decanter').value) || 0;
+  var qWine = parseInt(document.getElementById('qty_wine').value) || 0;
+  var qMugs = parseInt(document.getElementById('qty_mugs').value) || 0;
+  var qRocks = parseInt(document.getElementById('qty_rocks').value) || 0;
+  var qSmoker = parseInt(document.getElementById('qty_smoker').value) || 0;
+
+  var cbmDecanter = qDecanter * 0.038;
+  var cbmWine = qWine * 0.024;
+  var cbmMugs = qMugs * 0.032;
+  var cbmRocks = qRocks * 0.021;
+  var cbmSmoker = qSmoker * 0.045;
+
+  document.getElementById('cbm_decanter').innerText = cbmDecanter.toFixed(2) + ' CBM';
+  document.getElementById('cbm_wine').innerText = cbmWine.toFixed(2) + ' CBM';
+  document.getElementById('cbm_mugs').innerText = cbmMugs.toFixed(2) + ' CBM';
+  document.getElementById('cbm_rocks').innerText = cbmRocks.toFixed(2) + ' CBM';
+  document.getElementById('cbm_smoker').innerText = cbmSmoker.toFixed(2) + ' CBM';
+
+  var totalCbm = cbmDecanter + cbmWine + cbmMugs + cbmRocks + cbmSmoker;
+  var totalCartons = qDecanter + qWine + qMugs + qRocks + qSmoker;
+  var totalWeight = (qDecanter * 10.5) + (qWine * 4.2) + (qMugs * 5.5) + (qRocks * 8.2) + (qSmoker * 12.0);
+  var totalPallets = Math.ceil(totalCbm / 2.2);
+
+  document.getElementById('totalCbmText').innerText = totalCbm.toFixed(2) + ' CBM';
+  document.getElementById('totalCartonsText').innerText = totalCartons + ' Ctns';
+  document.getElementById('totalWeightText').innerText = Math.round(totalWeight).toLocaleString() + ' kg';
+  document.getElementById('totalPalletsText').innerText = totalPallets + ' Pallets';
+
+  var utilPercent = (totalCbm / targetCbmLimit) * 100;
+  var barWidth = Math.min(utilPercent, 100);
+  document.getElementById('progressBar').style.width = barWidth + '%';
+  document.getElementById('utilizationText').innerText = utilPercent.toFixed(1) + '% Full';
+  document.getElementById('capacityText').innerText = 'Max ' + targetCbmLimit + ' CBM';
+
+  var badge = document.getElementById('statusBadge');
+  if (utilPercent > 100 || totalWeight > targetWeightLimit) {
+    badge.className = 'status-badge status-over';
+    badge.innerText = '⚠️ Overload! Exceeds ' + currentContainerName + ' Limit';
+  } else if (utilPercent >= 80) {
+    badge.className = 'status-badge status-safe';
+    badge.innerText = '✓ Highly Efficient ' + currentContainerName + ' Utilization';
+  } else {
+    badge.className = 'status-badge status-warn';
+    badge.innerText = 'ℹ️ Low Fill Rate (' + utilPercent.toFixed(0) + '%). Recommend Adding Items';
+  }
+}
+
+// Initial calculation
+calculateCBM();
+</script>
+
+
+<!-- Floating B2B Contact / Inquiry Widget -->
+<div class="floating-inquiry-widget" id="floatingInquiryWidget">
+  <div class="widget-panel" id="widgetPanel">
+    <div class="widget-header">
+      <div class="widget-avatar">JG</div>
+      <div>
+        <strong>Jingyue Direct Support</strong>
+        <p>1-Hour Fast B2B Response</p>
+      </div>
+      <button class="widget-close" onclick="toggleWidgetPanel(event)">&times;</button>
+    </div>
+    <div class="widget-body">
+      <a href="https://wa.me/8618186607062?text=Hello%20Jingyue%20Glass%2C%20I%20am%20interested%20in%20wholesale%20glassware." target="_blank" rel="noopener noreferrer" class="widget-btn widget-whatsapp">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.797.814 3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.769-5.766zm3.377 8.203c-.145.407-.847.77-1.182.818-.335.049-.773.074-2.222-.524-1.724-.712-2.836-2.47-2.922-2.585-.086-.115-.701-.933-.701-1.777 0-.844.442-1.258.6-1.431.157-.172.343-.216.458-.216.114 0 .229.001.329.006.105.006.246-.04.385.295.145.349.497 1.212.54 1.3.043.088.072.19.014.305-.058.115-.087.187-.172.288-.086.101-.18.225-.257.303-.086.086-.176.18-.076.352.1.172.444.733.953 1.187.655.584 1.207.765 1.38.851.172.086.272.072.373-.043.101-.115.429-.501.544-.673.114-.172.229-.143.386-.086.157.057 1.002.472 1.174.558.172.086.286.129.329.201.043.072.043.416-.102.823z"/></svg>
+        <span>WhatsApp: +86 181 8660 7062</span>
+      </a>
+      <a href="mailto:sales@jingyueglass.com?subject=Wholesale%20Glassware%20Inquiry%20-%20Jingyue%20Glass" class="widget-btn widget-email">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span>sales@jingyueglass.com</span>
+      </a>
+      <div class="widget-wechat-box">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="color:#07c160;"><path d="M8.5 4.5C4.36 4.5 1 7.41 1 11c0 1.95 1.01 3.7 2.62 4.88-.13.68-.48 2.01-.52 2.19-.06.27.1.3.24.21.19-.13 1.93-1.32 2.69-1.84.78.22 1.61.34 2.47.34.2 0 .4 0 .6-.02-.1-.31-.16-.64-.16-.98 0-3.59 3.36-6.5 7.5-6.5.3 0 .59.02.88.05C16.52 6.55 12.83 4.5 8.5 4.5zm10 5.5c-3.59 0-6.5 2.46-6.5 5.5 0 3.04 2.91 5.5 6.5 5.5.75 0 1.47-.1 2.15-.29.66.45 2.17 1.48 2.34 1.59.12.08.26.05.21-.18-.03-.16-.34-1.31-.45-1.9 1.4-1.02 2.25-2.54 2.25-4.22 0-3.04-2.91-5.5-6.5-5.5z"/></svg>
+          <span style="font-size:0.84rem;font-weight:600;color:#1a3a5c;">WeChat ID: <code style="background:#edf2f7;padding:2px 6px;border-radius:4px;color:#1a3a5c;">jingyueglass</code></span>
+        </div>
+      </div>
+      <a href="/custom-glassware-quote-checklist" class="widget-btn widget-quote">
+        <span>Request Instant B2B Quote →</span>
+      </a>
+    </div>
+  </div>
+  <button class="widget-toggle" onclick="toggleWidgetPanel(event)" aria-label="Open Instant Inquiry">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+    <span class="widget-badge">1h Reply</span>
+  </button>
+</div>
+<script>
+function toggleWidgetPanel(e) {
+  if (e) e.stopPropagation();
+  var panel = document.getElementById('widgetPanel');
+  if (panel) {
+    panel.classList.toggle('active');
+  }
+}
+document.addEventListener('click', function(e) {
+  var widget = document.getElementById('floatingInquiryWidget');
+  var panel = document.getElementById('widgetPanel');
+  if (widget && panel && panel.classList.contains('active') && !widget.contains(e.target)) {
+    panel.classList.remove('active');
+  }
+});
+</script>
+
+</body>
+</html>

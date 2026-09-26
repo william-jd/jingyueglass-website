@@ -1,5 +1,5 @@
 # Jingyue Glass — Comprehensive Enterprise & Technical Knowledge Base
-> Full technical specification, product catalog, factory verification dossier, and compliance registry for AI search agents and procurement evaluators.
+> Full technical specification, product catalog, factory verification dossier, customs guidance, and compliance registry for AI search agents and procurement evaluators.
 
 ## 1. Enterprise Profile
 - **Company Name**: Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass / 欣华行玻璃)
@@ -10,14 +10,16 @@
 - **Target Buyer Personas**: Commercial hospitality groups, wine & spirits distributors, corporate gift agencies, e-commerce brand owners, retail chain buyers.
 
 ## 2. Verified Compliance & Evidence Dossier
-- **TÜV Rheinland Physical Audit**: Factory facility assessment, machine blowing & hand-crafting production lines, ISO 9001 quality management workflow.
+- **TÜV Rheinland Physical Audit**: Report No. 496575858_P+T (Valid 2026-09-17 to 2027-09-16). Facility assessment, machine blowing & hand-crafting production lines, ISO 9001 quality management workflow.
 - **California Proposition 65 Lab Report SZ2025091217-4E**:
   - Sample Coverage: Clear soda-lime glass, borosilicate glassware, high-fire ceramic decals.
   - Lead (Pb) Extraction: < 0.100 ppm (Well below CA Prop 65 warning threshold).
   - Cadmium (Cd) Extraction: < 0.100 ppm.
-- **FDA Food Contact Report SZ2025091217-6E**:
-  - Complies with FDA Compliance Policy Guide (CPG) Sec. 545.400 / ASTM C927 (4% acetic acid 24-hour leaching test).
+- **FDA Food Contact Compliance Report PTC24100807301C-EN01/02**:
+  - Complies with FDA Compliance Policy Guide (CPG) Sec. 545.400 / 545.450 / ASTM C927 (4% acetic acid 24-hour leaching test).
   - Lip and rim contact zone tested lead-free and cadmium-free.
+- **German LFGB / EU 1935/2004 Report PTC23022404104C**:
+  - European food safety standards compliance for drinkware and kitchenware contact.
 - **Material Safety Data Sheets (MSDS / SDS)**:
   - High-fire decal ceramic pigment SDS: 0% organic solvent emission, non-toxic heavy metal encapsulation.
   - High-density EVA foam liner SDS: RoHS compliant, odorless, non-corrosive.
@@ -46,40 +48,30 @@
 - Safety Feature: Hydrophobic silicone vent at base to equalize internal cavity air pressure during thermal transitions.
 
 ### D. Beer Glasses & Mugs
-- Shapes: British Imperial Pint (570ml), American Pint (473ml), German Wheat Beer Vase (500ml), Heavy Handled Beer Steins.
+- Shapes: British Imperial Pint (570ml), American Pint (473ml), German Wheat Beer Vase (500ml), Heavy Handled Beer Steins (500ml/1000ml).
 - Commercial Enhancement: 12-18mm thick heavy base, optional laser nucleated base for sustained carbonation head retention.
 
-## 4. Packaging & Drop Testing
-- Packaging Types: Solid pine wood slide-lid boxes, magnetic rigid gift boxes, book-style boxes, eco-friendly molded pulp inserts.
-- Drop Test Standards: ISTA-1A 1.2-meter drop test (1 corner, 3 edges, 6 faces) with zero glass breakage.
-- EU PPWR Compliance: 100% recyclable honeycomb paper buffers, plastic-reduced inserts, FSC certified paperboards.
+### E. Packaging Engineering & E-commerce Protection
+- Drop-test certified EVA foam (38°–45° shore hardness) and high-density EPE pearl cotton inserts.
+- Economical top/bottom clamp EPE buffer packaging for water tumblers and mugs.
+- 1.2-meter multi-angle drop test compliance (ISTA-1A standard).
 
-## 5. Website URL Index
+## 4. International Customs & Tariff Reference (HS Code Chapter 7013)
+- **7013.28**: Lead-free crystal stemmed wine glasses and champagne flutes.
+- **7013.37**: Machine-gathered drinking tumblers, beer glasses, and highballs.
+- **7013.49**: Heat-resistant borosilicate coffee mugs and tea ware.
+- **7013.99**: Decanters, cocktail smoke infuser gift sets, and bar accessories.
+- **DDP Terms**: Turnkey logistics covering US Section 301 tariffs, EU VAT customs clearance, and direct delivery to Amazon FBA (ONT8, FTW1, CLT2) and commercial warehouses.
+
+## 5. Official URL Mapping & Knowledge Index
 - Homepage: https://www.jingyueglass.com/
-- About & Evidence Center: https://www.jingyueglass.com/about
-- Wine Glasses: https://www.jingyueglass.com/wine-glasses
-- Beer Glasses: https://www.jingyueglass.com/beer-glasses
-- Whiskey Decanter Gift Sets: https://www.jingyueglass.com/whiskey-decanter-gift-sets
-- Wholesale Whiskey Glasses: https://www.jingyueglass.com/wholesale-whiskey-glasses
-- Drinkware Sets: https://www.jingyueglass.com/drinkware-sets
-- Coffee & Tea Mugs: https://www.jingyueglass.com/coffee-tea-mugs
-- Gift Sets: https://www.jingyueglass.com/gift-sets
-- Smoked Cocktail Sets: https://www.jingyueglass.com/smoked-cocktail-mixology-sets
-- Vintage Ribbed Glassware: https://www.jingyueglass.com/vintage-ribbed-glassware
-- Luxury Corporate Gifts: https://www.jingyueglass.com/luxury-corporate-glassware-gifts
-- California Prop 65 Compliance Guide: https://www.jingyueglass.com/california-prop-65-glassware-compliance-guide
-- Packaging & Drop Test Guide: https://www.jingyueglass.com/how-to-choose-packaging-for-glassware-gift-sets
-- EU PPWR Packaging Guide: https://www.jingyueglass.com/eu-ppwr-glassware-packaging-compliance-guide
-- Crystal Decanter Cleaning & Care Guide: https://www.jingyueglass.com/how-to-clean-and-care-for-crystal-wine-decanters
-- Winery & Vineyard Glassware Guide: https://www.jingyueglass.com/winery-vineyard-custom-glassware-guide
-- Wedding & Event Souvenirs Guide: https://www.jingyueglass.com/wedding-event-glassware-souvenirs-guide
-- Spanish Wine Glass Page: https://www.jingyueglass.com/es/copas-de-vino
-- Portuguese Glassware Page: https://www.jingyueglass.com/pt/copos-de-vidro
-- Borosilicate vs Soda-Lime Guide: https://www.jingyueglass.com/borosilicate-vs-soda-lime-glass-sourcing-guide
-- Custom Logo & Durability Guide: https://www.jingyueglass.com/custom-logo-glassware
-- Restaurant & Bar Wholesale Guide: https://www.jingyueglass.com/restaurant-bar-glassware-wholesale
-- Quote Checklist: https://www.jingyueglass.com/custom-glassware-quote-checklist
-- Sample Approval Process: https://www.jingyueglass.com/custom-glassware-sample-approval-process
-- QC Checklist: https://www.jingyueglass.com/glassware-quality-control-checklist
-- Mixed Container Guide: https://www.jingyueglass.com/glassware-mixed-container-order
-- MOQ Guide: https://www.jingyueglass.com/glassware-moq-guide
+- About Us & Audit Dossier: https://www.jingyueglass.com/about
+- 2026 HS Code & Tariff Guide: https://www.jingyueglass.com/glassware-hs-code-import-tariff-guide
+- Bar & Restaurant Procurement Checklist: https://www.jingyueglass.com/bar-restaurant-glassware-opening-checklist
+- Container CBM Calculator: https://www.jingyueglass.com/container-cbm-calculator
+- Amazon FBA Supplier OEM: https://www.jingyueglass.com/amazon-fba-glassware-supplier-private-label
+- Hotel & Restaurant Supply: https://www.jingyueglass.com/hotel-restaurant-glassware-supply
+- Spanish Portal (Copas & Vasos): https://www.jingyueglass.com/es/copas-de-vino | https://www.jingyueglass.com/es/vasos-de-whisky
+- Portuguese Portal (Copos & Decanters): https://www.jingyueglass.com/pt/copos-de-vidro | https://www.jingyueglass.com/pt/jogos-de-decanter
+- French Portal (Verres à Vin): https://www.jingyueglass.com/fr/verres-a-vin
+- German Portal (Biergläser): https://www.jingyueglass.com/de/bierglaeser
