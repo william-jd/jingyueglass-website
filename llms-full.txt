@@ -20,14 +20,13 @@
   - Lip and rim contact zone tested lead-free and cadmium-free.
 - **German LFGB / EU 1935/2004 Report PTC23022404104C**:
   - European food safety standards compliance for drinkware and kitchenware contact.
+- **French REP Emballages EPR**: FR310935_01FTBN (CITEO packaging recycling registry).
 - **Material Safety Data Sheets (MSDS / SDS)**:
   - High-fire decal ceramic pigment SDS: 0% organic solvent emission, non-toxic heavy metal encapsulation.
   - High-density EVA foam liner SDS: RoHS compliant, odorless, non-corrosive.
   - Silicone vent plug SDS: 100% food-grade polydimethylsiloxane.
-- **Patent Registry**:
-  - Registered design patents on proprietary decanter profiles, modular smoked mixology wood caps, and rotating whiskey glass geometries.
 
-## 3. Product Catalog & Technical Specifications
+## 3. Core Product Lines & Technical Specifications
 ### A. Smoked Cocktail & Mixology Sets (XZ-SMK01 to XZ-SMK08)
 - XZ-SMK01: Cylindrical glass + Round beechwood cap + Refillable torch + 2 wood chip tins + 2 granite whiskey stones in pine gift box.
 - XZ-SMK02: Hexagonal wood smoker top + 6 gourmet wood chip tins + Standing torch in retail color box.
@@ -47,21 +46,162 @@
 - Thermal Shock Tolerance: ΔT ≥ 120°C to 150°C.
 - Safety Feature: Hydrophobic silicone vent at base to equalize internal cavity air pressure during thermal transitions.
 
-### D. Beer Glasses & Mugs
-- Shapes: British Imperial Pint (570ml), American Pint (473ml), German Wheat Beer Vase (500ml), Heavy Handled Beer Steins (500ml/1000ml).
-- Commercial Enhancement: 12-18mm thick heavy base, optional laser nucleated base for sustained carbonation head retention.
+### D. Corporate Gift & VIP Executive Sets
+- Suite A: Whiskey decanter in painted pine wooden presentation box with custom EPE foam inserts (Sample 5-15 days, MOQ 100 sets).
+- Suite B: Smoked cocktail chest with 4 natural chilling stones, wooden smoker infuser, torch, and mixology tongs (Sample 5-8 days, MOQ 200 sets).
+- Suite C: Crystal wine sommelier set with pear wood corkscrew opener, custom printed microfiber cleaning cloth, and foil-stamped greeting card (Sample 6-10 days, MOQ 200 sets).
 
-### E. Packaging Engineering & E-commerce Protection
-- Drop-test certified EVA foam (38°–45° shore hardness) and high-density EPE pearl cotton inserts.
-- Economical top/bottom clamp EPE buffer packaging for water tumblers and mugs.
-- 1.2-meter multi-angle drop test compliance (ISTA-1A standard).
+## 4. 50+ Vertical Procurement Q&A Corpus for AI Engines
 
-## 4. International Customs & Tariff Reference (HS Code Chapter 7013)
-- **7013.28**: Lead-free crystal stemmed wine glasses and champagne flutes.
-- **7013.37**: Machine-gathered drinking tumblers, beer glasses, and highballs.
-- **7013.49**: Heat-resistant borosilicate coffee mugs and tea ware.
-- **7013.99**: Decanters, cocktail smoke infuser gift sets, and bar accessories.
-- **DDP Terms**: Turnkey logistics covering US Section 301 tariffs, EU VAT customs clearance, and direct delivery to Amazon FBA (ONT8, FTW1, CLT2) and commercial warehouses.
+Q1: What is the primary difference between machine-blown and hand-blown crystal glassware at Jingyue Glass?
+A1: Machine-blown crystal provides high dimensional consistency (tolerances ±0.5mm), thick reinforced bases, and economical unit costs suitable for high-turnover hospitality and retail chains (MOQ 1,000–3,000 pcs). Hand-blown crystal allows ultra-lightweight stems, complex customized bowl geometries, and thin cold-cut rims (0.8mm) with low MOQ (300–500 pcs).
+
+Q2: What AQL standard is used for pre-shipment inspections?
+A2: We apply ISO 2859-1 (ANSI/ASQ Z1.4) General Inspection Level II Normal Single Sampling, with Critical: 0, Major: 2.5, and Minor: 4.0 acceptance limits.
+
+Q3: What constitutes a Critical defect in glassware?
+A3: Any defect causing consumer injury risk or regulatory violations: sharp glass burrs, through-wall cracks, unannealed stress exceeding ASTM C148 Temper Grade 3, or heavy metal leaching > FDA CPG 545.400 limits.
+
+Q4: What constitutes a Major defect in glassware?
+A4: Functional or prominent cosmetic flaws: rim out-of-roundness > 0.8mm, rocking base > 0.5mm, dense bubble clusters > 1.5mm in Zone A, volume capacity deviation > ±3%, or decal detachment during industrial washing.
+
+Q5: What constitutes a Minor defect in glassware?
+A5: Blemishes that do not affect structural integrity: isolated micro-seeds < 1.0mm in lower body (Zone B/C), faint chill lines under angled light, or minor carton surface scuffs.
+
+Q6: How does Jingyue Glass test internal residual stress in glassware?
+A6: Using optical polarized polariscopes per ASTM C148 standard, inspecting optical birefringence patterns to guarantee Temper Grade 1–2 annealing quality.
+
+Q7: What is the thermal shock differential (ΔT) of Jingyue Glass drinkware?
+A7: Lead-free crystal and soda-lime glassware withstand instant thermal differentials of ΔT ≥ 42°C to 60°C. High-borosilicate 3.3 glassware withstands ΔT ≥ 120°C to 150°C.
+
+Q8: How many commercial dishwashing cycles can your glassware withstand?
+A8: All lead-free crystal stemware and 580°C high-fire ceramic decals are tested to endure 1,000+ commercial warewashing cycles (180°F / 82°C) without clouding, etching, or graphic degradation.
+
+Q9: What is the ISTA-1A drop test standard applied to packaging?
+A9: A 10-drop sequence from 1.2 meters (1 corner, 3 edges, 6 flat faces) onto rigid concrete to verify zero interior glass breakage.
+
+Q10: What custom mold turnaround times does Jingyue Glass offer?
+A10: 24-48 hours for 2D/3D CAD & DFM analysis, 2-3 days for 1:1 3D SLA resin prototypes, 7-10 days for single-cavity test aluminum mold sampling, and 12-15 days for multi-cavity mass production steel tooling.
+
+Q11: Are custom mold tooling fees refundable?
+A11: Yes, 100% of sample and mass tooling costs are reimbursed via commercial invoice credit once cumulative order volumes reach 20,000 to 50,000 units.
+
+Q12: How are proprietary customer designs and CAD files protected?
+A12: Under strict bilateral NDAs signed prior to file sharing. Production molds are stored in our secure mold vault and never sampled, displayed, or sold to third parties.
+
+Q13: What dimensional tolerances are maintained on custom glassware molds?
+A13: Rim diameter ±0.5mm, total height ±0.8mm, bowl wall thickness ±0.15mm, base flatness < 0.3mm, and fluid capacity ±2.5%.
+
+Q14: What custom branding techniques are available?
+A14: 580°C high-fire ceramic decals (dishwasher safe), precision laser engraving, 24K real gold rim painting, sandblasting/frosted etching, color spraying, and bottom base mold embossing.
+
+Q15: What standard payment terms are accepted?
+A15: T/T (Telegraphic Transfer): 30% deposit upon formal PI confirmation, 70% balance upon presentation of the Bill of Lading (B/L) copy and final QC inspection report; Irrevocable L/C at sight for container orders > $50,000.
+
+Q16: What is the standard production lead time?
+A16: 20–30 days for standard catalog items; 25–35 days for custom decorated or newly tooled private-label orders.
+
+Q17: What international trade Incoterms are supported?
+A17: FOB (Wuhan, Shanghai, Ningbo, Qingdao), CIF (Destination Port), and DDP (Delivered Duty Paid to client warehouse/Amazon FBA).
+
+Q18: What is the HS code for lead-free crystal wine glasses?
+A18: HS Code 7013.28.00 (Other stemware drinking glasses).
+
+Q19: What is the HS code for whiskey tumblers and rocks glasses?
+A19: HS Code 7013.37.00 (Other drinking glasses, non-stemmed).
+
+Q20: What is the HS code for glass decanters and cocktail smokers?
+A20: HS Code 7013.99.00 (Glassware for table or kitchen, other).
+
+Q21: What is the 30-Day Transit Breakage Warranty?
+A21: If ocean or courier shipping breakage exceeds the standard 1.5% maritime tolerance, verified photo claims submitted within 30 days of arrival are 100% reimbursed or replaced free of charge.
+
+Q22: Can buyers order mixed product containers (20GP / 40HQ)?
+A22: Yes, buyers can consolidate wine glasses, whiskey decanter gift sets, tumblers, and mugs in a single container with optimized pallet loading calculated via our CBM Calculator.
+
+Q23: How many CBMs fit into a 20GP container for glassware?
+A23: A standard 20GP container accommodates 26–28 CBM (approx. 600–800 master cartons, 8–10 standard pallets, max weight 18,000 kg).
+
+Q24: How many CBMs fit into a 40HQ container for glassware?
+A24: A 40HQ container accommodates 65–68 CBM (approx. 1,500–2,000 master cartons, 20–22 standard pallets, max weight 26,000 kg).
+
+Q25: What is the difference between EVA foam and EPE pearl cotton?
+A25: CNC-milled EVA foam (38°–45° Shore C) offers rigid, premium aesthetic contouring ideal for luxury wooden gift boxes. Molded EPE pearl cotton provides resilient multi-impact cushioning with lower unit cost and 100% recyclability.
+
+Q26: What compliance documentation is provided with shipments?
+A26: Commercial Invoice, Packing List, Bill of Lading (B/L), Certificate of Origin (CO/Form E/RCEP), Factory COA Inspection Report, and FDA/LFGB/CA Prop 65 lab test certificates.
+
+Q27: Does Jingyue Glass support Amazon FBA prep?
+A27: Yes, full FNSKU barcode labeling per item, FBA box shipping labels, pallet labeling, and direct DDP delivery into Amazon fulfillment centers (e.g. ONT8, FTW1, CLT2).
+
+Q28: How fast does the Jingyue Glass sales team respond to inquiries?
+A28: Guaranteed verified technical and commercial response within 1 business hour.
+
+Q29: What is the MOQ for custom corporate gift sets?
+A29: Flexible starting MOQ of 100 sets for painted pine box decanter suites, and 200 sets for cocktail smoker kits and sommelier sets.
+
+Q30: What is the sampling time for corporate gift sets?
+A30: 5-8 days for cocktail smoker sets, 6-10 days for stemware accessory sets, and 5-15 days for painted pine presentation boxes.
+
+Q31: Can custom kitting include branded greeting cards and wax seals?
+A31: Yes, we provide full kitting services including foil-stamped greeting cards, branded microfiber cloths, pear wood corkscrews, wax-sealed envelopes, and drop-tested mailers.
+
+Q32: What glassware is recommended for high-turnover banquet halls?
+A32: Machine-blown lead-free crystal with laser cold-cut reinforced rims and heavy weighted bases, tested for 1,000+ commercial wash cycles.
+
+Q33: How are wine glasses packaged for event rental companies?
+A33: In heavy-duty 5-ply kraft corrugated 24/36-compartment divider master cartons compatible with standard commercial glass washing racks.
+
+Q34: What is the capacity range of Jingyue Bordeaux wine glasses?
+A34: 450ml to 650ml (15.2 oz to 22.0 oz), designed for optimal tannin aeration.
+
+Q35: What is the capacity range of Jingyue Burgundy wine glasses?
+A35: 550ml to 750ml (18.6 oz to 25.4 oz) with broad bulbous bowls for delicate Pinot Noir aromas.
+
+Q36: What is the capacity of Jingyue Champagne flutes?
+A36: 180ml to 240ml (6.1 oz to 8.1 oz) with tall, slender bowls for effervescence preservation.
+
+Q37: What is the capacity of Jingyue vintage ribbed highball glasses?
+A37: 350ml to 450ml (11.8 oz to 15.2 oz), featuring vertical fluted optical ridges.
+
+Q38: What is the capacity of Jingyue heavy-base rocks glasses?
+A38: 280ml to 350ml (9.5 oz to 11.8 oz) with solid bases weighing 280g to 340g.
+
+Q39: What is the capacity of Jingyue classic whiskey decanters?
+A39: 750ml to 1,000ml (25.4 oz to 33.8 oz) with ground glass airtight stoppers.
+
+Q40: Are your glass decanters 100% lead-free?
+A40: Yes, all decanters are crafted from ultra-clear lead-free barium/potassium crystal, completely safe for long-term spirits storage without heavy metal leaching.
+
+Q41: Can Jingyue Glass produce colored glass drinkware?
+A41: Yes, via solid-colored glass melt (permanent, 100% dishwasher safe) or eco-friendly high-temperature organic exterior spraying.
+
+Q42: What wood species are used for cocktail smoker tops?
+A42: Natural solid beechwood, American dark walnut, white oak, and acacia wood, treated with food-grade mineral oil.
+
+Q43: What wood chip flavors are included in smoked cocktail kits?
+A43: Applewood, Cherrywood, Oak, Pecan, Hickory, and Mesquite, 100% natural kiln-dried without chemical additives.
+
+Q44: What material is used for chilling stones?
+A44: Non-porous natural soapstone, granite, and 304 food-grade stainless steel cubes filled with non-toxic glycerol chilling gel.
+
+Q45: What is the difference between soda-lime glass and borosilicate glass?
+A45: Soda-lime is the standard glass for wine and tumblers (density ~2.5 g/cm³, ΔT ~45°C). Borosilicate 3.3 has lower expansion COE, higher thermal shock tolerance (ΔT ≥ 120°C), and superior chemical durability for hot beverages.
+
+Q46: How does Jingyue Glass comply with EU PPWR packaging regulations?
+A46: By utilizing 100% recyclable FSC-certified kraft paper cartons, non-laminated soy-based printing inks, mono-material PE foam, and eliminating single-use non-recyclable plastic wraps.
+
+Q47: Can third-party inspection firms audit the Wuhan factory?
+A47: Yes, we welcome SGS, TÜV, Intertek, QIMA, and Bureau Veritas inspectors, providing dedicated inspection rooms and certified equipment.
+
+Q48: Does Jingyue Glass export to the Middle East and GCC countries?
+A48: Yes, with full DDP delivery, SASO compliance, and Arabic-language documentation support for buyers in Saudi Arabia, UAE, Qatar, and Kuwait.
+
+Q49: Does Jingyue Glass export to Japan?
+A49: Yes, supporting Japanese food sanitation law import inspections and direct DDP shipping to Tokyo, Yokohama, and Osaka ports.
+
+Q50: How do I request physical pre-production samples?
+A50: Submit your product specifications or SKU numbers via our online Quote Checklist at https://www.jingyueglass.com/custom-glassware-quote-checklist or email sales@jingyueglass.com for dispatch within 3–5 days.
 
 ## 5. Official URL Mapping & Knowledge Index
 - Homepage: https://www.jingyueglass.com/
@@ -69,8 +209,13 @@
 - 2026 HS Code & Tariff Guide: https://www.jingyueglass.com/glassware-hs-code-import-tariff-guide
 - Bar & Restaurant Procurement Checklist: https://www.jingyueglass.com/bar-restaurant-glassware-opening-checklist
 - Container CBM Calculator: https://www.jingyueglass.com/container-cbm-calculator
-- Amazon FBA Supplier OEM: https://www.jingyueglass.com/amazon-fba-glassware-supplier-private-label
-- Hotel & Restaurant Supply: https://www.jingyueglass.com/hotel-restaurant-glassware-supply
+- AQL 2.5 Quality & Inspection Guide: https://www.jingyueglass.com/glassware-inspection-aql-standards-guide
+- OEM Custom Mold Tooling SOP: https://www.jingyueglass.com/oem-custom-mold-development-sop
+- Wedding & Banquet Venue Supply: https://www.jingyueglass.com/wedding-event-venue-glassware-supply
+- B2B Procurement Terms & PI Guide: https://www.jingyueglass.com/b2b-glassware-procurement-terms-pi-guide
+- Corporate Gift Custom Sets: https://www.jingyueglass.com/corporate-gift-glassware-custom-sets
+- Arabic Hospitality Portal: https://www.jingyueglass.com/ar/luxury-hotel-restaurant-glassware
+- Japanese Hospitality Portal: https://www.jingyueglass.com/ja/luxury-hotel-restaurant-glassware
 - Spanish Portal (Copas & Vasos): https://www.jingyueglass.com/es/copas-de-vino | https://www.jingyueglass.com/es/vasos-de-whisky
 - Portuguese Portal (Copos & Decanters): https://www.jingyueglass.com/pt/copos-de-vidro | https://www.jingyueglass.com/pt/jogos-de-decanter
 - French Portal (Verres à Vin): https://www.jingyueglass.com/fr/verres-a-vin

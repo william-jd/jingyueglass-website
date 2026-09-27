@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>404 Page Not Found | Jingyue Glass</title>
-<meta name="description" content="The page you are looking for does not exist. Browse our custom B2B glassware collections, wine glasses, whiskey sets, or contact our factory sales team.">
+<title>404 Page Not Found | Jingyue Glass - Custom B2B Glassware Factory</title>
+<meta name="description" content="The page you requested is unavailable, but our factory direct glassware catalogs, wholesale pricing, and OEM custom solutions are right here. Browse top collections or request a quick 1-hour quote.">
 <link rel="canonical" href="https://www.jingyueglass.com/404">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
+<link rel="preconnect" href="https://www.jingyueglass.com">
 <style>
   :root {
     --primary: #1a3a5c;
@@ -19,53 +20,66 @@
     --border: #dde3ea;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: var(--light); color: var(--dark); line-height: 1.6; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #fff; color: var(--dark); line-height: 1.6; }
   
   header { background: var(--primary-dark); padding: 16px 24px; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
   .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-  .logo { font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: 0.5px; }
+  .logo { font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; }
   .logo span { color: var(--accent); }
   .nav-links { display: flex; gap: 20px; align-items: center; }
-  .nav-links a { color: #f1f5f9; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a { color: #f1f5f9; text-decoration: none; font-size: 0.95rem; font-weight: 500; }
   .nav-links a:hover { color: var(--accent); }
-  .btn-quote { background: var(--accent); color: #fff; padding: 8px 18px; border-radius: 6px; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+  .btn-quote { background: var(--accent); color: #fff; padding: 8px 18px; border-radius: 6px; font-weight: 700; text-decoration: none; }
   .btn-quote:hover { background: var(--accent-hover); }
 
-  .hero-404 { text-align: center; padding: 80px 20px 50px; max-width: 800px; margin: 0 auto; }
-  .error-code { font-size: 6rem; font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 12px; }
-  .error-title { font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 16px; font-weight: 700; }
-  .error-desc { color: var(--gray); font-size: 1.1rem; margin-bottom: 30px; }
+  .hero-404 { text-align: center; padding: 60px 20px 40px; background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%); border-bottom: 1px solid var(--border); }
+  .error-code { font-size: 5rem; font-weight: 900; color: var(--primary); line-height: 1; margin-bottom: 8px; }
+  .error-title { font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 12px; font-weight: 800; }
+  .error-desc { color: #475569; font-size: 1.05rem; max-width: 680px; margin: 0 auto 24px; }
   
-  .actions { display: flex; gap: 16px; justify-content: center; margin-bottom: 50px; flex-wrap: wrap; }
-  .btn-primary { background: var(--accent); color: #fff; padding: 12px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; transition: background 0.2s; }
+  .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
+  .btn-primary { background: var(--accent); color: #fff; padding: 12px 26px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.98rem; }
   .btn-primary:hover { background: var(--accent-hover); }
-  .btn-secondary { background: var(--primary); color: #fff; padding: 12px 28px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 1rem; transition: background 0.2s; }
+  .btn-secondary { background: var(--primary); color: #fff; padding: 12px 26px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.98rem; }
   .btn-secondary:hover { background: var(--primary-dark); }
 
-  .popular-section { max-width: 1100px; margin: 0 auto 80px; padding: 0 20px; }
-  .popular-title { text-align: center; font-size: 1.4rem; color: var(--primary-dark); margin-bottom: 24px; font-weight: 700; }
-  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-  .cat-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 22px; text-decoration: none; color: inherit; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
-  .cat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(26,58,92,0.1); border-color: var(--accent); }
-  .cat-card h3 { font-size: 1.1rem; color: var(--primary); margin-bottom: 8px; }
-  .cat-card p { font-size: 0.88rem; color: var(--gray); }
+  .content-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+  h2 { font-size: 1.5rem; color: var(--primary); margin: 36px 0 16px; border-left: 4px solid var(--accent); padding-left: 12px; }
 
-  footer { background: var(--primary-dark); color: #94a3b8; padding: 40px 20px 20px; text-align: center; font-size: 0.88rem; }
-  footer a { color: #cbd5e1; text-decoration: none; margin: 0 10px; }
-  footer a:hover { color: var(--accent); }
+  .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 24px 0 40px; }
+  .cat-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 22px; text-decoration: none; color: inherit; transition: all 0.2s; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border-top: 4px solid var(--primary); }
+  .cat-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(26,58,92,0.1); border-top-color: var(--accent); }
+  .cat-card h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 8px; }
+  .cat-card p { font-size: 0.9rem; color: #475569; }
+
+  .rfq-box { background: #fdfbf7; border: 1px solid #e2d9c8; border-radius: 8px; padding: 30px; margin: 40px 0; }
+  .rfq-box h3 { color: var(--primary); font-size: 1.4rem; margin-bottom: 10px; }
+  .rfq-box p { color: #475569; margin-bottom: 20px; }
+  .rfq-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  .rfq-form input, .rfq-form select { padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.95rem; }
+  .rfq-form button { background: var(--accent); color: #fff; border: 0; padding: 12px; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 1rem; }
+  .rfq-form button:hover { background: var(--accent-hover); }
+
+  footer { background: var(--primary-dark); color: #94a3b8; padding: 40px 20px; text-align: center; font-size: 0.88rem; margin-top: 60px; }
+  footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
+
+  .floating-inquiry-widget { position: fixed; bottom: 24px; right: 24px; z-index: 9999; }
+  .widget-toggle { background: var(--accent); color: #fff; border: 0; width: 58px; height: 58px; border-radius: 50%; cursor: pointer; box-shadow: 0 8px 24px rgba(13,37,64,0.28); display: flex; align-items: center; justify-content: center; }
+  .widget-toggle:hover { background: var(--accent-hover); }
 </style>
 </head>
 <body>
 
 <header>
   <div class="nav-container">
-    <a href="/" class="logo">JINGYUE <span>GLASS</span></a>
+    <a href="/" class="logo">Jingyue <span>Glass</span></a>
     <nav class="nav-links">
-      <a href="/wine-glasses">Wine Glasses</a>
-      <a href="/whiskey-decanter-gift-sets">Whiskey Sets</a>
-      <a href="/smoked-cocktail-mixology-sets">Cocktail Smoker</a>
-      <a href="/about">About Factory</a>
-      <a href="/#quote" class="btn-quote">Get Factory Quote</a>
+      <a href="/products">Products</a>
+      <a href="/glassware-solutions">Solutions</a>
+      <a href="/oem-custom-glassware">OEM & Custom</a>
+      <a href="/corporate-gift-glassware-custom-sets">Gift Sets</a>
+      <a href="/container-cbm-calculator">CBM Calculator</a>
+      <a href="/custom-glassware-quote-checklist" class="btn-quote">Request Factory Quote</a>
     </nav>
   </div>
 </header>
@@ -73,46 +87,84 @@
 <main>
   <section class="hero-404">
     <div class="error-code">404</div>
-    <h1 class="error-title">Looking for Premium Custom Glassware?</h1>
-    <p class="error-desc">The page you requested may have moved or no longer exists. Explore our core B2B wholesale product collections or contact our export sales engineers directly.</p>
+    <h1 class="error-title">Page Not Found — Let's Find the Right Glassware</h1>
+    <p class="error-desc">The specific URL you requested may have moved or been updated. As a direct B2B manufacturer, we have our full catalog and engineering resources available below.</p>
     <div class="actions">
       <a href="/" class="btn-primary">Return to Homepage</a>
-      <a href="/#quote" class="btn-secondary">Request Fast Quote (1h Reply)</a>
+      <a href="/custom-glassware-quote-checklist" class="btn-secondary">Request Fast Quote (1-Hour Reply)</a>
+      <a href="/container-cbm-calculator" class="btn-primary" style="background:var(--primary);">Container CBM Calculator</a>
     </div>
   </section>
 
-  <section class="popular-section">
-    <h2 class="popular-title">Browse Top B2B Wholesale Categories</h2>
+  <div class="content-container">
+    <h2>Explore Core Wholesale & Custom Collections</h2>
     <div class="cards-grid">
-      <a href="/smoked-cocktail-mixology-sets" class="cat-card">
-        <h3>Smoked Cocktail Mixology Sets →</h3>
-        <p>8 targeted factory configurations, wooden smoker caps, torches & gift box packaging.</p>
-      </a>
       <a href="/wine-glasses" class="cat-card">
         <h3>Wholesale Wine Glasses →</h3>
-        <p>Hand-blown seamless pulled stemware & durable machine-blown restaurant glasses.</p>
+        <p>Lead-free crystal Bordeaux, Burgundy, and champagne flutes with laser cold-cut rims.</p>
       </a>
       <a href="/whiskey-decanter-gift-sets" class="cat-card">
         <h3>Whiskey Decanter Gift Sets →</h3>
-        <p>Solid wood boxed decanter sets, rocks glasses, granite stones & custom EVA liners.</p>
+        <p>Painted pine and burnt wood presentation boxes with high-density EPE protective foam.</p>
       </a>
-      <a href="/california-prop-65-glassware-compliance-guide" class="cat-card">
-        <h3>CA Prop 65 Compliance Guide →</h3>
-        <p>FDA CPG limits, lab test report SZ2025091217-4E & lead-free high-fire decal standards.</p>
+      <a href="/smoked-cocktail-mixology-sets" class="cat-card">
+        <h3>Cocktail Smoker Kits →</h3>
+        <p>Turnkey mixology kits with natural chilling stones, wooden smoker infusers, and torches.</p>
+      </a>
+      <a href="/wedding-event-venue-glassware-supply" class="cat-card">
+        <h3>Banquet & Event Venue Supply →</h3>
+        <p>High-turnover stemware with 1000+ cycle commercial dishwasher durability and low MOQ.</p>
+      </a>
+      <a href="/glassware-inspection-aql-standards-guide" class="cat-card">
+        <h3>AQL 2.5 QC & Inspection Guide →</h3>
+        <p>ISO 2859-1 sampling plans, thermal shock standards, and defect classification matrix.</p>
+      </a>
+      <a href="/oem-custom-mold-development-sop" class="cat-card">
+        <h3>OEM Custom Mold Tooling SOP →</h3>
+        <p>From 2D/3D CAD to 3-day SLA prototypes and 100% refundable custom steel molds.</p>
       </a>
     </div>
-  </section>
+
+    <div class="rfq-box">
+      <h3>Need an Urgent Custom Glassware Quote?</h3>
+      <p>Submit your basic requirements below. Our factory export engineering team guarantees a verified response with pricing and packaging specs within 1 business hour.</p>
+      <form class="rfq-form" action="/custom-glassware-quote-checklist" method="GET">
+        <input type="text" name="product" placeholder="Product Type (e.g. Wine Glass / Decanter)" required>
+        <input type="text" name="qty" placeholder="Estimated Quantity (e.g. 1,000 pcs)" required>
+        <input type="email" name="email" placeholder="Your Business Email" required>
+        <button type="submit">Submit Instant Inquiry →</button>
+      </form>
+    </div>
+  </div>
 </main>
 
 <footer>
-  <p>© 2026 Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass). All rights reserved.</p>
+  <p>© 2026 Jingyue Glassware (Wuhan Jingyueda Household Products Co., Ltd.). All rights reserved.</p>
   <p style="margin-top:10px;">
-    <a href="/">Home</a> |
-    <a href="/about">Evidence Center</a> |
-    <a href="/how-to-choose-packaging-for-glassware-gift-sets">Packaging Guide</a> |
-    <a href="/custom-glassware-quote-checklist">Quote Checklist</a>
+    <a href="/">Home</a> | 
+    <a href="/products">Products</a> | 
+    <a href="/glassware-solutions">Solutions</a> | 
+    <a href="/oem-custom-glassware">OEM & Custom</a> | 
+    <a href="/corporate-gift-glassware-custom-sets">Corporate Gifts</a> | 
+    <a href="/container-cbm-calculator">CBM Calculator</a> | 
+    <a href="/privacy-policy">Privacy Policy</a> | 
+    <a href="/terms-of-service">Terms of Service</a>
   </p>
 </footer>
+
+<div class="floating-inquiry-widget">
+  <button class="widget-toggle" onclick="window.location.href='/custom-glassware-quote-checklist';" title="Request Fast Quote" aria-label="Request Fast Quote">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+  </button>
+</div>
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js').catch(err => console.error('SW failed:', err));
+  });
+}
+</script>
 
 </body>
 </html>

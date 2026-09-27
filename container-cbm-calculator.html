@@ -343,6 +343,24 @@
         <strong id="totalPalletsText">10 Pallets</strong>
       </div>
 
+      <!-- Currency Switcher & Estimated Value -->
+      <div style="margin: 16px 0 10px; padding: 12px; background: rgba(255,255,255,0.08); border-radius: 8px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <span style="font-size:0.85rem; color:#cbd5e1;">Currency Reference:</span>
+          <select id="currencySelect" onchange="calculateCBM()" style="background:#0d2540; color:#fff; border:1px solid rgba(255,255,255,0.3); border-radius:4px; padding:3px 8px; font-size:0.85rem; cursor:pointer;">
+            <option value="USD" selected>USD ($)</option>
+            <option value="EUR">EUR (€)</option>
+            <option value="GBP">GBP (£)</option>
+            <option value="AUD">AUD (A$)</option>
+            <option value="CAD">CAD (C$)</option>
+          </select>
+        </div>
+        <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.9rem;">
+          <span style="color:#cbd5e1;">Est. Cargo Value Range:</span>
+          <strong id="totalValueText" style="color:var(--accent); font-size:1.1rem;">$12,400 - $18,600</strong>
+        </div>
+      </div>
+
       <div class="progress-wrap">
         <div class="progress-bar-bg">
           <div class="progress-bar-fill" id="progressBar" style="width: 82.8%;"></div>
@@ -406,6 +424,24 @@ function calculateCBM() {
   document.getElementById('totalCartonsText').innerText = totalCartons + ' Ctns';
   document.getElementById('totalWeightText').innerText = Math.round(totalWeight).toLocaleString() + ' kg';
   document.getElementById('totalPalletsText').innerText = totalPallets + ' Pallets';
+
+  // Multi-Currency Value Calculation
+  var currSelect = document.getElementById('currencySelect');
+  var curr = currSelect ? currSelect.value : 'USD';
+  var rates = { USD: 1.0, EUR: 0.92, GBP: 0.78, AUD: 1.52, CAD: 1.36 };
+  var symbols = { USD: '$', EUR: '€', GBP: '£', AUD: 'A$', CAD: 'C$' };
+  var rate = rates[curr] || 1.0;
+  var symbol = symbols[curr] || '$';
+
+  var estBaseUSDMin = (qDecanter * 4 * 10) + (qWine * 24 * 1.2) + (qMugs * 24 * 2.2) + (qRocks * 24 * 0.95) + (qSmoker * 12 * 8.5);
+  var estBaseUSDMax = (qDecanter * 4 * 16) + (qWine * 24 * 2.1) + (qMugs * 24 * 3.5) + (qRocks * 24 * 1.45) + (qSmoker * 12 * 13.0);
+  
+  var minVal = Math.round(estBaseUSDMin * rate);
+  var maxVal = Math.round(estBaseUSDMax * rate);
+  var valElem = document.getElementById('totalValueText');
+  if (valElem) {
+    valElem.innerText = symbol + minVal.toLocaleString() + ' - ' + symbol + maxVal.toLocaleString();
+  }
 
   var utilPercent = (totalCbm / targetCbmLimit) * 100;
   var barWidth = Math.min(utilPercent, 100);
