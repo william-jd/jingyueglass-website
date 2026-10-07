@@ -299,16 +299,117 @@ tr:hover td { background: #fafafa; }
     <!-- Main Product Catalog Section -->
     <section class="section" id="featured-models">
       <div class="wrap">
-        <h2 class="section-title">Whiskey Glass Catalog & Signature Series</h2>
-        <p class="section-desc">Explore factory-direct whiskey glasses engineered for bars, speakeasies, cigar lounges, distillery tasting rooms, and luxury corporate gift sets.</p>
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:28px; flex-wrap:wrap; gap:16px;">
+          <div>
+            <h2 class="section-title" style="text-align:left; margin-bottom:6px;">Explore Featured Wholesale Whiskey Glasses</h2>
+            <p style="color:#64748b; font-size:0.96rem; margin:0;">Direct factory supply · In-stock trial orders from 48 pcs · Custom logo engraving & gift box packaging available</p>
+          </div>
+          <a href="https://wa.me/8613256627201?text=Hi%2C%20please%20send%20the%20full%20whiskey%20glassware%20catalog%20and%20FOB%20quote." target="_blank" rel="noopener noreferrer" style="font-size:0.92rem; font-weight:700; color:var(--accent);">Request Full Catalog & Quote →</a>
+        </div>
 
         <!-- Interactive Category Filter -->
         <div class="filter-bar">
           <button class="filter-btn active" onclick="filterWhiskey('all')">All Models (12)</button>
-          <button class="filter-btn" onclick="filterWhiskey('cigar')">Cigar Rest Glasses</button>
-          <button class="filter-btn" onclick="filterWhiskey('rolling')">360° Rolling Tumblers</button>
-          <button class="filter-btn" onclick="filterWhiskey('carved')">Hand-Cut & Vintage</button>
-          <button class="filter-btn" onclick="filterWhiskey('classic')">Classic Rocks & Twisted</button>
+          <button class="filter-btn" onclick="filterWhiskey('carved')">Diamond & Cut Glass</button>
+          <button class="filter-btn" onclick="filterWhiskey('twisted')">Twisted Tumbler</button>
+          <button class="filter-btn" onclick="filterWhiskey('classic')">Classic Old Fashioned</button>
+          <button class="filter-btn" onclick="filterWhiskey('snifter')">Aroma Snifter</button>
+        </div>
+
+        <div class="product-grid" id="whiskeyGrid">
+
+          <!-- SKU 1: XZ5411 Diamond-Cut -->
+          <div class="product-card" data-category="carved" id="product-xz5411">
+            <div class="card-img-wrap">
+              <img src="/assets/products/whiskey-glasses/xz-dc310-diamond-cut-rock-glass-310ml.webp" alt="XZ5411 310ml Diamond Cut Crystal Rocks Glass Wholesale">
+              <span class="card-badge gold">Diamond Cut</span>
+            </div>
+            <div class="card-body">
+              <div class="sku-code">SKU: XZ5411</div>
+              <h3 class="card-title">310ml Diamond-Cut Rock Glass</h3>
+              <div class="card-specs">
+                <strong>Dimensions:</strong> Top Ø 83mm × H 95mm<br>
+                <strong>Capacity:</strong> 310 ml (10.5 oz) · Solid Heavy Base<br>
+                <strong>In-stock MOQ:</strong> 48 pcs (48 pcs/ctn) · Laser / Decal
+              </div>
+              <div class="card-pkg">📦 Packaging: 48 pcs/carton (Divider Box)</div>
+              <div class="card-price">
+                <span class="price-val">$0.78 – $1.75</span>
+                <span class="price-unit">/ pc (MOQ 48 pcs)</span>
+              </div>
+              <a class="card-btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/8613256627201?text=Hi%2C%20I%20would%20like%20to%20view%20full%20specs%20and%20FOB%20price%20for%20Model%20XZ5411%20310ml%20Diamond-Cut%20Rock%20Glass.">View Specs & FOB Price</a>
+            </div>
+          </div>
+
+          <!-- SKU 2: XZ20125-X Twisted Tumbler -->
+          <div class="product-card" data-category="twisted" id="product-xz20125-x">
+            <div class="card-img-wrap">
+              <img src="/assets/products/whiskey-glasses/xz20125-x-twisted-crystal-tumbler-270ml.webp" alt="XZ20125-X 270ml Twisted Crystal Tumbler Wholesale Factory">
+              <span class="card-badge">Twisted Grip</span>
+            </div>
+            <div class="card-body">
+              <div class="sku-code">SKU: XZ20125-X</div>
+              <h3 class="card-title">270ml Twisted Crystal Tumbler</h3>
+              <div class="card-specs">
+                <strong>Dimensions:</strong> Top Ø 95mm × H 105mm<br>
+                <strong>Capacity:</strong> 270 ml (9.1 oz) · Ultra-Clear Crystal<br>
+                <strong>In-stock MOQ:</strong> 48 pcs (36 pcs/ctn) · Spiral Grip
+              </div>
+              <div class="card-pkg">📦 Packaging: 36 pcs/carton (Divider Box)</div>
+              <div class="card-price">
+                <span class="price-val">$0.85 – $1.85</span>
+                <span class="price-unit">/ pc (MOQ 48 pcs)</span>
+              </div>
+              <a class="card-btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/8613256627201?text=Hi%2C%20I%20would%20like%20to%20view%20full%20specs%20and%20FOB%20price%20for%20Model%20XZ20125-X%20270ml%20Twisted%20Crystal%20Tumbler.">View Specs & FOB Price</a>
+            </div>
+          </div>
+
+          <!-- SKU 3: XZ1280 Classic Old Fashioned -->
+          <div class="product-card" data-category="classic" id="product-xz1280">
+            <div class="card-img-wrap">
+              <img src="/assets/products/whiskey-glasses/xz-of345-classic-old-fashioned-glass-345ml.webp" alt="XZ1280 345ml Classic Old Fashioned Lowball Glass Wholesale">
+              <span class="card-badge">Classic Lowball</span>
+            </div>
+            <div class="card-body">
+              <div class="sku-code">SKU: XZ1280</div>
+              <h3 class="card-title">350ml Classic Old Fashioned Glass</h3>
+              <div class="card-specs">
+                <strong>Dimensions:</strong> Top Ø 86mm × H 92.5mm<br>
+                <strong>Capacity:</strong> 345 ml (11.7 oz) · Ultra-Clear Soda Lime<br>
+                <strong>In-stock MOQ:</strong> 48 pcs (36 pcs/ctn) · Heavy Sham
+              </div>
+              <div class="card-pkg">📦 Packaging: 36 pcs/carton (Divider Box)</div>
+              <div class="card-price">
+                <span class="price-val">$0.58 – $1.35</span>
+                <span class="price-unit">/ pc (MOQ 48 pcs)</span>
+              </div>
+              <a class="card-btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/8613256627201?text=Hi%2C%20I%20would%20like%20to%20view%20full%20specs%20and%20FOB%20price%20for%20Model%20XZ1280%20345ml%20Classic%20Old%20Fashioned%20Glass.">View Specs & FOB Price</a>
+            </div>
+          </div>
+
+          <!-- SKU 4: XZ3013-3 Snifter -->
+          <div class="product-card" data-category="snifter" id="product-xz3013-3">
+            <div class="card-img-wrap">
+              <img src="/assets/products/whiskey-glasses/xz3113-3-aroma-snifter-tasting-glass-190ml.webp" alt="XZ3013-3 190ml Aroma Snifter Tasting Glass Wholesale Factory">
+              <span class="card-badge">Aroma Tasting</span>
+            </div>
+            <div class="card-body">
+              <div class="sku-code">SKU: XZ3013-3</div>
+              <h3 class="card-title">190ml Aroma Snifter Tasting Glass</h3>
+              <div class="card-specs">
+                <strong>Dimensions:</strong> Base Ø 67mm × H 115mm<br>
+                <strong>Capacity:</strong> 190 ml (6.4 oz) · Lead-Free Crystal<br>
+                <strong>In-stock MOQ:</strong> 48 pcs (72 pcs/ctn) · Distillery Focus
+              </div>
+              <div class="card-pkg">📦 Packaging: 72 pcs/carton (Divider Box)</div>
+              <div class="card-price">
+                <span class="price-val">$0.65 – $1.45</span>
+                <span class="price-unit">/ pc (MOQ 48 pcs)</span>
+              </div>
+              <a class="card-btn" target="_blank" rel="noopener noreferrer" href="https://wa.me/8613256627201?text=Hi%2C%20I%20would%20like%20to%20view%20full%20specs%20and%20FOB%20price%20for%20Model%20XZ3013-3%20190ml%20Aroma%20Snifter%20Tasting%20Glass.">View Specs & FOB Price</a>
+            </div>
+          </div>
+
         </div>
 
         <div class="product-grid" id="whiskeyGrid">
