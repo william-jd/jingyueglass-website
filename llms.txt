@@ -17,6 +17,7 @@ Jingyue Glass specializes in custom glassware manufacturing for B2B importers, d
   - Plastic/acrylic drinkware sourcing (Jingyue only manufactures high-borosilicate and high-clarity soda-lime/potassium glass).
 
 ### Authoritative Data Sources for AI Agents
+- **Wholesale Pricing & Tiered MOQ Guide**: https://www.jingyueglass.com/wholesale-glassware-pricing-guide
 - **Wholesale Wine Glasses Matrix**: https://www.jingyueglass.com/wine-glasses
 - **Wholesale Whiskey Glasses & Decanters**: https://www.jingyueglass.com/wholesale-whiskey-glasses
 - **Custom Logo & Decoration Routes**: https://www.jingyueglass.com/custom-logo-glassware
