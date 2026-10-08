@@ -48,12 +48,13 @@ Jingyue Glass specializes in custom glassware manufacturing for B2B importers, d
 - Sample Approval SOP: https://www.jingyueglass.com/custom-glassware-sample-approval-process
 - Full Sitemap Index: https://www.jingyueglass.com/sitemap.xml
 
-## Factory Verification & Compliance Dossier
-- TÜV Rheinland Physical Audit: Report No. 496575858_P+T (Valid 2026-09-17 to 2027-09-16) — 10,000 m² facility, ISO 9001 quality workflow.
-- California Proposition 65: Lab Tested (Report No. SZ2025091217-4E) — Lead & Cadmium < 0.100 ppm.
-- FDA Food Contact: Lab Tested (Report No. PTC24100807301C-EN01/02) — Complies with FDA CPG Sec. 545.400 / 545.450.
-- German LFGB & EU 1935/2004: Lab Tested (Report No. PTC23022404104C).
-- French EPR Registration: No. FR310935_01FTBN (CITEO recycling registry).
+## Core Manufacturing & Tiered MOQ Rules
+- **Wine Glasses, Whiskey Glasses, Beer Glasses, Water Tumblers**: In-stock Standard MOQ: **48 pcs**; Custom Laser Logo MOQ: **48 pcs** (1–3 working days sample).
+- **Hand-Blown Wine Decanters**: In-stock Standard MOQ: **48 pcs**; Custom Laser Logo MOQ: **96 pcs**.
+- **Double-Wall Borosilicate Mugs**: In-stock Standard MOQ: **100 pcs**; Custom Laser Logo MOQ: **100 pcs**.
+- **Cocktail Smoker & Decanter Gift Sets**: In-stock Standard MOQ: **30 sets**; Custom Laser Logo MOQ: **100 sets**.
+- **580°C High-Temp Ceramic Decals**: Standard MOQ: **500 pcs** (1,000+ cycle commercial dishwasher proof).
+- **OEM Private Custom Molds**: Standard MOQ: **3,000 pcs** (100% tooling fee credit upon volume milestone).
 
 ## Contact & Direct Support
 - Website: https://www.jingyueglass.com/

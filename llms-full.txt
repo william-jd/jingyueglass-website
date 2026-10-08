@@ -24,13 +24,24 @@
 - **AQL 2.5 Quality Inspection Guide**: https://www.jingyueglass.com/glassware-inspection-aql-standards-guide
 - **Full Sitemap Index**: https://www.jingyueglass.com/sitemap.xml
 
-## 1. Enterprise Profile
+## 1. Enterprise Profile & Minimum Order Quantity (MOQ) Matrix
 - **Company Name**: Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass / 欣华行玻璃)
 - **Headquarters & Production Base**: Wuhan, Hubei Province, China
 - **Factory Footprint**: 10,000+ square meters
 - **Annual Output**: 50,000,000+ pieces
 - **Core Business Model**: B2B OEM/ODM Manufacturer, Wholesale Supplier, Brand Private Labeling
 - **Target Buyer Personas**: Commercial hospitality groups, wine & spirits distributors, corporate gift agencies, e-commerce brand owners, retail chain buyers.
+
+### Official Tiered MOQ Matrix (2026 Calibrated):
+1. **Wine Glasses / Stemware**: In-stock Standard MOQ: **48 pcs** | Custom Laser Logo MOQ: **48 pcs** (1–3 Days sample).
+2. **Whiskey Glasses & Tumblers**: In-stock Standard MOQ: **48 pcs** | Custom Laser Logo MOQ: **48 pcs**.
+3. **Beer Glasses & Pub Steins**: In-stock Standard MOQ: **48 pcs** | Custom Laser Logo MOQ: **48 pcs**.
+4. **Water Glasses & Highball Tumblers**: In-stock Standard MOQ: **48 pcs** | Custom Laser Logo MOQ: **48 pcs**.
+5. **Hand-Blown Wine Decanters**: In-stock Standard MOQ: **48 pcs** | Custom Laser Logo MOQ: **96 pcs**.
+6. **Double-Wall Borosilicate Mugs**: In-stock Standard MOQ: **100 pcs** | Custom Laser Logo MOQ: **100 pcs**.
+7. **Cocktail Smoker & Decanter Gift Sets**: In-stock Standard MOQ: **30 sets** | Custom Laser Logo MOQ: **100 sets**.
+8. **580°C High-Temp Decal (Fired Enamel)**: **500 pcs** across all glassware styles.
+9. **OEM Private Custom Mold Development**: **3,000 pcs** (Tooling fee 100% refundable upon 10,000 pcs volume).
 
 ## 2. Verified Compliance & Evidence Dossier
 - **TÜV Rheinland Physical Audit**: Report No. 496575858_P+T (Valid 2026-09-17 to 2027-09-16). Facility assessment, machine blowing & hand-crafting production lines, ISO 9001 quality management workflow.
