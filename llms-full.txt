@@ -12,7 +12,7 @@
 ## 2. Verified Compliance & Evidence Dossier
 - **TÜV Rheinland Physical Audit**: Report No. 496575858_P+T (Valid 2026-09-17 to 2027-09-16). Facility assessment, machine blowing & hand-crafting production lines, ISO 9001 quality management workflow.
 - **California Proposition 65 Lab Report SZ2025091217-4E**:
-  - Sample Coverage: Clear soda-lime glass, borosilicate glassware, high-fire ceramic decals.
+  - Sample Coverage: Clear soda-lime glass, borosilicate glassware, high-temp decal.
   - Lead (Pb) Extraction: < 0.100 ppm (Well below CA Prop 65 warning threshold).
   - Cadmium (Cd) Extraction: < 0.100 ppm.
 - **FDA Food Contact Compliance Report PTC24100807301C-EN01/02**:
@@ -75,7 +75,7 @@ Q7: What is the thermal shock differential (ΔT) of Jingyue Glass drinkware?
 A7: Lead-free crystal and soda-lime glassware withstand instant thermal differentials of ΔT ≥ 42°C to 60°C. High-borosilicate 3.3 glassware withstands ΔT ≥ 120°C to 150°C.
 
 Q8: How many commercial dishwashing cycles can your glassware withstand?
-A8: All lead-free crystal stemware and 580°C high-fire ceramic decals are tested to endure 1,000+ commercial warewashing cycles (180°F / 82°C) without clouding, etching, or graphic degradation.
+A8: All lead-free crystal stemware and 580°C high-temp decal are tested to endure 1,000+ commercial warewashing cycles (180°F / 82°C) without clouding, etching, or graphic degradation.
 
 Q9: What is the ISTA-1A drop test standard applied to packaging?
 A9: A 10-drop sequence from 1.2 meters (1 corner, 3 edges, 6 flat faces) onto rigid concrete to verify zero interior glass breakage.
@@ -93,7 +93,7 @@ Q13: What dimensional tolerances are maintained on custom glassware molds?
 A13: Rim diameter ±0.5mm, total height ±0.8mm, bowl wall thickness ±0.15mm, base flatness < 0.3mm, and fluid capacity ±2.5%.
 
 Q14: What custom branding techniques are available?
-A14: 580°C high-fire ceramic decals (dishwasher safe), precision laser engraving, 24K real gold rim painting, sandblasting/frosted etching, color spraying, and bottom base mold embossing.
+A14: 580°C high-temp decal (dishwasher safe), precision laser engraving, 24K real gold rim painting, sandblasting/frosted etching, color spraying, and bottom base mold embossing.
 
 Q15: What standard payment terms are accepted?
 A15: T/T (Telegraphic Transfer): 30% deposit upon formal PI confirmation, 70% balance upon presentation of the Bill of Lading (B/L) copy and final QC inspection report; Irrevocable L/C at sight for container orders > $50,000.
