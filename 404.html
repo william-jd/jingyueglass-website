@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>404 Page Not Found | Jingyue Glass - Custom B2B Glassware Factory</title>
 <meta name="description" content="The page you requested is unavailable, but our factory direct glassware catalogs, wholesale pricing, and OEM custom solutions are right here. Browse top collections or request a quick 1-hour quote.">
-<link rel="canonical" href="https://www.jingyueglass.com/404"
-  <link rel="alternate" hreflang="en" href="https://www.jingyueglass.com/404">
-  <link rel="alternate" hreflang="x-default" href="https://www.jingyueglass.com/404">>
+<link rel="canonical" href="https://www.jingyueglass.com/404">
+<link rel="alternate" hreflang="en" href="https://www.jingyueglass.com/404">
+<link rel="alternate" hreflang="x-default" href="https://www.jingyueglass.com/404">
 <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
 <link rel="preconnect" href="https://www.jingyueglass.com">
 <style>
@@ -39,11 +39,14 @@
   .error-title { font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 12px; font-weight: 800; }
   .error-desc { color: #475569; font-size: 1.05rem; max-width: 680px; margin: 0 auto 24px; }
   
-  .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 10px; }
+  .actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
   .btn-primary { background: var(--accent); color: #fff; padding: 12px 26px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.98rem; }
   .btn-primary:hover { background: var(--accent-hover); }
   .btn-secondary { background: var(--primary); color: #fff; padding: 12px 26px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.98rem; }
   .btn-secondary:hover { background: var(--primary-dark); }
+
+  .agent-fallback-box { background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 6px; padding: 16px 20px; max-width: 720px; margin: 20px auto 0; text-align: left; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 0.85rem; color: #334155; line-height: 1.5; }
+  .agent-fallback-box a { color: var(--primary); font-weight: 600; text-decoration: underline; }
 
   .content-container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
   h2 { font-size: 1.5rem; color: var(--primary); margin: 36px 0 16px; border-left: 4px solid var(--accent); padding-left: 12px; }
@@ -54,20 +57,27 @@
   .cat-card h3 { font-size: 1.15rem; color: var(--primary); margin-bottom: 8px; }
   .cat-card p { font-size: 0.9rem; color: #475569; }
 
-  .rfq-box { background: #fdfbf7; border: 1px solid #e2d9c8; border-radius: 8px; padding: 30px; margin: 40px 0; }
-  .rfq-box h3 { color: var(--primary); font-size: 1.4rem; margin-bottom: 10px; }
-  .rfq-box p { color: #475569; margin-bottom: 20px; }
-  .rfq-form { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
-  .rfq-form input, .rfq-form select { padding: 12px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.95rem; }
-  .rfq-form button { background: var(--accent); color: #fff; border: 0; padding: 12px; border-radius: 6px; font-weight: 700; cursor: pointer; font-size: 1rem; }
-  .rfq-form button:hover { background: var(--accent-hover); }
-
   footer { background: var(--primary-dark); color: #94a3b8; padding: 40px 20px; text-align: center; font-size: 0.88rem; margin-top: 60px; }
   footer a { color: #cbd5e1; text-decoration: none; margin: 0 8px; }
 
-  .floating-inquiry-widget { position: fixed; bottom: 24px; right: 24px; z-index: 9999; }
-  .widget-toggle { background: var(--accent); color: #fff; border: 0; width: 58px; height: 58px; border-radius: 50%; cursor: pointer; box-shadow: 0 8px 24px rgba(13,37,64,0.28); display: flex; align-items: center; justify-content: center; }
-  .widget-toggle:hover { background: var(--accent-hover); }
+  /* Floating Inquiry Widget Styling */
+  .floating-inquiry-widget { position: fixed; bottom: 24px; right: 24px; z-index: 9999; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+  .widget-toggle { background: var(--accent, #c8930a); color: #fff; border: 0; width: 58px; height: 58px; border-radius: 50%; cursor: pointer; box-shadow: 0 8px 24px rgba(13,37,64,0.28); display: flex; align-items: center; justify-content: center; position: relative; transition: transform 0.25s, background 0.2s; }
+  .widget-toggle:hover { background: var(--accent-hover, #e0a70b); transform: scale(1.08); }
+  .widget-badge { position: absolute; top: -4px; right: -4px; background: #e53e3e; color: #fff; font-size: 0.68rem; font-weight: 800; padding: 2px 6px; border-radius: 10px; }
+  .widget-panel { display: none; position: absolute; bottom: 70px; right: 0; width: 320px; background: #fff; border-radius: 12px; box-shadow: 0 16px 48px rgba(13,37,64,0.22); border: 1px solid #dde3ea; overflow: hidden; }
+  .widget-panel.active { display: block; }
+  .widget-header { background: linear-gradient(135deg, #0d2540 0%, #1a3a5c 100%); color: #fff; padding: 16px; display: flex; align-items: center; gap: 12px; position: relative; }
+  .widget-avatar { width: 38px; height: 38px; background: #c8930a; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; }
+  .widget-header strong { display: block; font-size: 0.96rem; color: #fff; }
+  .widget-header p { margin: 0; font-size: 0.76rem; color: #c9d8e8; }
+  .widget-close { position: absolute; top: 14px; right: 14px; background: transparent; border: 0; color: #c9d8e8; font-size: 1.4rem; cursor: pointer; }
+  .widget-body { padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .widget-btn { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 6px; text-decoration: none; font-size: 0.88rem; font-weight: 600; }
+  .widget-whatsapp { background: #25d366; color: #fff !important; }
+  .widget-email { background: #f1f5f9; color: #1a3a5c !important; border: 1px solid #cbd5e1; }
+  .widget-wechat-box { background: #f8fafc; border: 1px dashed #cbd5e1; padding: 10px 12px; border-radius: 6px; font-size: 0.84rem; }
+  .widget-quote { background: var(--accent, #c8930a); color: #fff !important; justify-content: center; font-weight: 700; }
 </style>
 </head>
 <body>
@@ -78,7 +88,7 @@
     <nav class="nav-links">
       <a href="/products">Products</a>
       <a href="/glassware-solutions">Solutions</a>
-      <a href="/oem-custom-glassware">OEM & Custom</a>
+      <a href="/custom-logo-glassware">Custom & Logo</a>
       <a href="/corporate-gift-glassware-custom-sets">Gift Sets</a>
       <a href="/container-cbm-calculator">CBM Calculator</a>
       <a href="/custom-glassware-quote-checklist" class="btn-quote">Request Factory Quote</a>
@@ -89,81 +99,118 @@
 <main>
   <section class="hero-404">
     <div class="error-code">404</div>
-    <h1 class="error-title">Page Not Found — Let's Find the Right Glassware</h1>
-    <p class="error-desc">The specific URL you requested may have moved or been updated. As a direct B2B manufacturer, we have our full catalog and engineering resources available below.</p>
+    <h1 class="error-title">HTTP 404: Page Not Found</h1>
+    <p class="error-desc">The requested resource cannot be found at this URL. If you are an AI crawler or automated agent, please refer to our machine-readable knowledge files and sitemap below.</p>
+    
     <div class="actions">
       <a href="/" class="btn-primary">Return to Homepage</a>
       <a href="/custom-glassware-quote-checklist" class="btn-secondary">Request Fast Quote (1-Hour Reply)</a>
       <a href="/container-cbm-calculator" class="btn-primary" style="background:var(--primary);">Container CBM Calculator</a>
     </div>
+
+    <!-- Machine & AI Agent Recoverable Notice -->
+    <div class="agent-fallback-box">
+      <strong>🤖 Notice for Automated Agents & LLM Crawlers:</strong><br>
+      Error: The requested URL was not found on this server (HTTP Status 404).<br>
+      • Agent Instructions & Ground Truth: <a href="/llms.txt">https://www.jingyueglass.com/llms.txt</a><br>
+      • Comprehensive LLM Knowledge Base: <a href="/llms-full.txt">https://www.jingyueglass.com/llms-full.txt</a><br>
+      • Full XML Sitemap Index: <a href="/sitemap.xml">https://www.jingyueglass.com/sitemap.xml</a>
+    </div>
   </section>
 
   <div class="content-container">
-    <h2>Explore Core Wholesale & Custom Collections</h2>
+    <h2>Explore Core Factory Glassware Collections</h2>
     <div class="cards-grid">
       <a href="/wine-glasses" class="cat-card">
-        <h3>Wholesale Wine Glasses →</h3>
-        <p>Lead-free crystal Bordeaux, Burgundy, and champagne flutes with laser cold-cut rims.</p>
+        <h3>🍷 Wholesale Wine Glasses</h3>
+        <p>Crystal Bordeaux, Burgundy, and Champagne flutes with laser cold-cut rims. Low MOQ from 48 pcs.</p>
       </a>
-      <a href="/whiskey-decanter-gift-sets" class="cat-card">
-        <h3>Whiskey Decanter Gift Sets →</h3>
-        <p>Painted pine and burnt wood presentation boxes with high-density EPE protective foam.</p>
+      <a href="/wholesale-whiskey-glasses" class="cat-card">
+        <h3>🥃 Wholesale Whiskey Glasses</h3>
+        <p>Heavy base rocks glasses (XZ5411, XZ20125-X) and decanters. 1,000+ cycle dishwasher safe.</p>
       </a>
-      <a href="/smoked-cocktail-mixology-sets" class="cat-card">
-        <h3>Cocktail Smoker Kits →</h3>
-        <p>Turnkey mixology kits with natural chilling stones, wooden smoker infusers, and torches.</p>
+      <a href="/custom-logo-glassware" class="cat-card">
+        <h3>🎨 Custom Logo & Branding</h3>
+        <p>Compare 4 decoration methods: Laser Engraving (48 pcs), UV Print, High-Temp Decals & Private Molds.</p>
       </a>
-      <a href="/wedding-event-venue-glassware-supply" class="cat-card">
-        <h3>Banquet & Event Venue Supply →</h3>
-        <p>High-turnover stemware with 1000+ cycle commercial dishwasher durability and low MOQ.</p>
+      <a href="/beer-glasses" class="cat-card">
+        <h3>🍺 Wholesale Beer Glasses</h3>
+        <p>Pint glasses, wheat beer glasses, and steins for commercial taprooms and craft breweries.</p>
+      </a>
+      <a href="/about" class="cat-card">
+        <h3>🏭 Factory Evidence Center</h3>
+        <p>50M pcs annual capacity, ISO/FDA compliance, TÜV audit verification, and buyer compliance pack.</p>
       </a>
       <a href="/glassware-inspection-aql-standards-guide" class="cat-card">
-        <h3>AQL 2.5 QC & Inspection Guide →</h3>
-        <p>ISO 2859-1 sampling plans, thermal shock standards, and defect classification matrix.</p>
+        <h3>🔬 AQL 2.5 Quality SOP</h3>
+        <p>Glassware defect classification standards, dimensional tolerances, and ISTA-1A drop tests.</p>
       </a>
-      <a href="/oem-custom-mold-development-sop" class="cat-card">
-        <h3>OEM Custom Mold Tooling SOP →</h3>
-        <p>From 2D/3D CAD to 3-day SLA prototypes and 100% refundable custom steel molds.</p>
-      </a>
-    </div>
-
-    <div class="rfq-box">
-      <h3>Need an Urgent Custom Glassware Quote?</h3>
-      <p>Submit your basic requirements below. Our factory export engineering team guarantees a verified response with pricing and packaging specs within 1 business hour.</p>
-      <form class="rfq-form" action="/custom-glassware-quote-checklist" method="GET">
-        <input type="text" name="product" placeholder="Product Type (e.g. Wine Glass / Decanter)" required>
-        <input type="text" name="qty" placeholder="Estimated Quantity (e.g. 1,000 pcs)" required>
-        <input type="email" name="email" placeholder="Your Business Email" required>
-        <button type="submit">Submit Instant Inquiry →</button>
-      </form>
     </div>
   </div>
 </main>
 
 <footer>
-  <p>© 2026 Jingyue Glassware (Wuhan Jingyueda Household Products Co., Ltd.). All rights reserved.</p>
-  <p style="margin-top:10px;">
-    <a href="/">Home</a> | 
-    <a href="/products">Products</a> | 
-    <a href="/glassware-solutions">Solutions</a> | 
-    <a href="/oem-custom-glassware">OEM & Custom</a> | 
-    <a href="/corporate-gift-glassware-custom-sets">Corporate Gifts</a> | 
-    <a href="/container-cbm-calculator">CBM Calculator</a> | 
-    <a href="/privacy-policy">Privacy Policy</a> | 
-    <a href="/terms-of-service">Terms of Service</a>
-  </p>
+  <p>&copy; 2026 Wuhan Jingyueda Household Products Co., Ltd. All Rights Reserved. | <a href="/privacy-policy">Privacy Policy</a> | <a href="/terms-of-service">Terms of Service</a> | <a href="/sitemap.xml">Sitemap</a> | <a href="/llms.txt">llms.txt</a></p>
 </footer>
 
-<div class="floating-inquiry-widget">
-  <button class="widget-toggle" onclick="window.location.href='/custom-glassware-quote-checklist';" title="Request Fast Quote" aria-label="Request Fast Quote">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+<!-- Floating B2B Contact Widget -->
+<div class="floating-inquiry-widget" id="floatingInquiryWidget">
+  <div class="widget-panel" id="widgetPanel">
+    <div class="widget-header">
+      <div class="widget-avatar">JG</div>
+      <div>
+        <strong>Jingyue Direct Support</strong>
+        <p>1-Hour Fast B2B Response</p>
+      </div>
+      <button class="widget-close" onclick="toggleWidgetPanel(event)">&times;</button>
+    </div>
+    <div class="widget-body">
+      <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20am%20interested%20in%20wholesale%20glassware." target="_blank" rel="noopener noreferrer" class="widget-btn widget-whatsapp">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.971.53 1.77.814 2.797.814 3.18 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.769-5.766zm3.377 8.203c-.145.407-.847.77-1.182.818-.335.049-.773.074-2.222-.524-1.724-.712-2.836-2.47-2.922-2.585-.086-.115-.701-.933-.701-1.777 0-.844.442-1.258.6-1.431.157-.172.343-.216.458-.216.114 0 .229.001.329.006.105.006.246-.04.385.295.145.349.497 1.212.54 1.3.043.088.072.19.014.305-.058.115-.087.187-.172.288-.086.101-.18.225-.257.303-.086.086-.176.18-.076.352.1.172.444.733.953 1.187.655.584 1.207.765 1.38.851.172.086.272.072.373-.043.101-.115.429-.501.544-.673.114-.172.229-.143.386-.086.157.057 1.002.472 1.174.558.172.086.286.129.329.201.043.072.043.416-.102.823z"/></svg>
+        <span>WhatsApp: +86 132 5662 7201</span>
+      </a>
+      <a href="mailto:sales@jingyueglass.com?subject=Wholesale%20Glassware%20Inquiry%20-%20Jingyue%20Glass" class="widget-btn widget-email">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        <span>sales@jingyueglass.com</span>
+      </a>
+      <div class="widget-wechat-box">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" style="color:#07c160;"><path d="M8.5 4.5C4.36 4.5 1 7.41 1 11c0 1.95 1.01 3.7 2.62 4.88-.13.68-.48 2.01-.52 2.19-.06.27.1.3.24.21.19-.13 1.93-1.32 2.69-1.84.78.22 1.61.34 2.47.34.2 0 .4 0 .6-.02-.1-.31-.16-.64-.16-.98 0-3.59 3.36-6.5 7.5-6.5.3 0 .59.02.88.05C16.52 6.55 12.83 4.5 8.5 4.5zm10 5.5c-3.59 0-6.5 2.46-6.5 5.5 0 3.04 2.91 5.5 6.5 5.5.75 0 1.47-.1 2.15-.29.66.45 2.17 1.48 2.34 1.59.12.08.26.05.21-.18-.03-.16-.34-1.31-.45-1.9 1.4-1.02 2.25-2.54 2.25-4.22 0-3.04-2.91-5.5-6.5-5.5z"/></svg>
+          <span style="font-size:0.84rem;font-weight:600;color:#1a3a5c;">WeChat ID: <code style="background:#edf2f7;padding:2px 6px;border-radius:4px;color:#1a3a5c;">132 5662 7201</code></span>
+        </div>
+      </div>
+      <a href="/custom-glassware-quote-checklist" class="widget-btn widget-quote">
+        <span>Request Instant B2B Quote →</span>
+      </a>
+    </div>
+  </div>
+  <button class="widget-toggle" onclick="toggleWidgetPanel(event)" aria-label="Open Instant Inquiry">
+    <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/></svg>
+    <span class="widget-badge">1h Reply</span>
   </button>
 </div>
 
 <script>
+function toggleWidgetPanel(e) {
+  if (e) e.stopPropagation();
+  var panel = document.getElementById('widgetPanel');
+  if (panel) {
+    panel.classList.toggle('active');
+  }
+}
+document.addEventListener('click', function(e) {
+  var widget = document.getElementById('floatingInquiryWidget');
+  var panel = document.getElementById('widgetPanel');
+  if (widget && panel && panel.classList.contains('active') && !widget.contains(e.target)) {
+    panel.classList.remove('active');
+  }
+});
+</script>
+
+<script>
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/sw.js').catch(err => console.error('SW failed:', err));
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js').catch(function(){});
   });
 }
 </script>
