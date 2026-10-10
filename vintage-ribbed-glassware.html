@@ -545,6 +545,16 @@
     </div>
 
     <form class="demo-form" action="https://formspree.io/f/mkopdvol" method="POST">
+        <input type="hidden" name="page_url" value="https://www.jingyueglass.com/vintage-ribbed-glassware">
+        <input type="hidden" name="page_path" value="/vintage-ribbed-glassware">
+        <input type="hidden" name="page_title" value="Vintage Ribbed Glassware Wholesale | Jingyue Glass">
+        <input type="hidden" name="product_category" value="Vintage Ribbed Glassware Wholesale">
+        <input type="hidden" name="cta_source" value="inquiry_form">
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="referrer" value="">
+        <input type="hidden" name="submit_timestamp" value="">
+        <input type="hidden" name="device_type" value="">
       <input type="hidden" name="subject" value="Vintage Ribbed Glassware Inquiry — jingyueglass.com">
       
       <div class="form-row">
@@ -677,5 +687,14 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+
+<script>
+(function(){
+  function jyDeviceType(){var w=window.innerWidth||document.documentElement.clientWidth||0;if(w&&w<768)return 'mobile';if(w&&w<1024)return 'tablet';return 'desktop';}
+  function jyFillInquiryTracking(form){if(!form)return;var params=new URLSearchParams(window.location.search||'');var values={page_url:window.location.href,page_path:window.location.pathname||'/',page_title:document.title||'',referrer:document.referrer||'',submit_timestamp:new Date().toISOString(),device_type:jyDeviceType(),utm_source:params.get('utm_source')||'',utm_medium:params.get('utm_medium')||''};Object.keys(values).forEach(function(name){var input=form.querySelector('input[name="'+name+'"]');if(input)input.value=values[name];});}
+  document.querySelectorAll('form').forEach(function(form){jyFillInquiryTracking(form);form.addEventListener('submit',function(){jyFillInquiryTracking(form);});});
+})();
+</script>
+
 </body>
 </html>

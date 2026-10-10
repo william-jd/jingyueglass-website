@@ -1188,14 +1188,14 @@
         <div class="contact-icon">📧</div>
         <div>
           <h3 data-i18n="ct_email">Email</h3>
-          <a href="mailto:sales@jingyueglass.com">sales@jingyueglass.com</a>
+          <a href="mailto:sales@jingyueglass.com?subject=Website%20Homepage%20Inquiry%20-%20Jingyue%20Glass">sales@jingyueglass.com</a>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">💬</div>
         <div>
           <h4>WhatsApp</h4>
-          <a href="https://wa.me/8613256627201" target="_blank">+86 132 5662 7201</a>
+          <a href="https://wa.me/8613256627201?text=Hi%20Jingyue%20Glass%2C%20I%20came%20from%20the%20homepage%20and%20would%20like%20to%20discuss%20a%20glassware%20project." target="_blank">+86 132 5662 7201</a>
         </div>
       </div>
       <div class="contact-item">
@@ -1208,6 +1208,16 @@
     </div>
     <div class="inquiry-form">
       <form id="inquiryForm" onsubmit="submitForm(event)" novalidate>
+        <input type="hidden" name="page_url" value="https://www.jingyueglass.com/">
+        <input type="hidden" name="page_path" value="/">
+        <input type="hidden" name="page_title" value="Jingyue Glass | Factory-Direct B2B Glassware Supplier">
+        <input type="hidden" name="product_category" value="Jingyue Glass">
+        <input type="hidden" name="cta_source" value="inquiry_form">
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="referrer" value="">
+        <input type="hidden" name="submit_timestamp" value="">
+        <input type="hidden" name="device_type" value="">
         <div class="form-row">
           <div class="form-group">
             <label data-i18n="f_name">Your Name *</label>
@@ -1332,8 +1342,8 @@
     <div class="footer-col">
       <h4 data-i18n="foot_contact">Contact</h4>
       <ul>
-        <li><a href="mailto:sales@jingyueglass.com">sales@jingyueglass.com</a></li>
-        <li><a href="https://wa.me/8613256627201">WhatsApp: +86 132 5662 7201</a></li>
+        <li><a href="mailto:sales@jingyueglass.com?subject=Website%20Homepage%20Inquiry%20-%20Jingyue%20Glass">sales@jingyueglass.com</a></li>
+        <li><a href="https://wa.me/8613256627201?text=Hi%20Jingyue%20Glass%2C%20I%20came%20from%20the%20homepage%20and%20would%20like%20to%20discuss%20a%20glassware%20project.">WhatsApp: +86 132 5662 7201</a></li>
         <li><a href="#inquiry" data-i18n="nav_inquiry">Get a Quote</a></li>
       </ul>
     </div>
@@ -1759,6 +1769,16 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+
+<script>
+(function(){
+  function jyDeviceType(){var w=window.innerWidth||document.documentElement.clientWidth||0;if(w&&w<768)return 'mobile';if(w&&w<1024)return 'tablet';return 'desktop';}
+  function jyFillInquiryTracking(form){if(!form)return;var params=new URLSearchParams(window.location.search||'');var values={page_url:window.location.href,page_path:window.location.pathname||'/',page_title:document.title||'',referrer:document.referrer||'',submit_timestamp:new Date().toISOString(),device_type:jyDeviceType(),utm_source:params.get('utm_source')||'',utm_medium:params.get('utm_medium')||''};Object.keys(values).forEach(function(name){var input=form.querySelector('input[name="'+name+'"]');if(input)input.value=values[name];});}
+  document.querySelectorAll('form').forEach(function(form){jyFillInquiryTracking(form);form.addEventListener('submit',function(){jyFillInquiryTracking(form);});});
+})();
+</script>
+
 </body>
 </html>
+
 

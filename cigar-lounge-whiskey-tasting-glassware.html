@@ -355,6 +355,16 @@
       <h3 style="color:#1a3a5c; font-size:1.4rem; margin-bottom:8px;">Request Lounge & Club Custom Quote</h3>
       <p style="color:#64748b; font-size:0.95rem; margin-bottom:20px;">Get factory direct pricing, logo digital proof, and customized sample sets within 1 hour.</p>
       <form action="mailto:inquiry@jingyueglass.com" method="post" enctype="text/plain" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:16px;">
+        <input type="hidden" name="page_url" value="https://www.jingyueglass.com/cigar-lounge-whiskey-tasting-glassware">
+        <input type="hidden" name="page_path" value="/cigar-lounge-whiskey-tasting-glassware">
+        <input type="hidden" name="page_title" value="Cigar Lounge & Whiskey Tasting Room Custom Glassware | Jingyue Glass">
+        <input type="hidden" name="product_category" value="Cigar Lounge & Whiskey Tasting Room Custom Glassware">
+        <input type="hidden" name="cta_source" value="inquiry_form">
+        <input type="hidden" name="utm_source" value="">
+        <input type="hidden" name="utm_medium" value="">
+        <input type="hidden" name="referrer" value="">
+        <input type="hidden" name="submit_timestamp" value="">
+        <input type="hidden" name="device_type" value="">
         <input type="text" name="Lounge_Name" placeholder="Lounge / Club Name *" required style="padding:12px; border:1px solid #cbd5e1; border-radius:6px;">
         <input type="email" name="Email" placeholder="Business Email *" required style="padding:12px; border:1px solid #cbd5e1; border-radius:6px;">
         <input type="text" name="Requirements" placeholder="Estimated Qty (e.g. 100 pcs Laser / 500 pcs Decal)" style="padding:12px; border:1px solid #cbd5e1; border-radius:6px;">
@@ -375,5 +385,14 @@
     });
   }
 </script>
+
+<script>
+(function(){
+  function jyDeviceType(){var w=window.innerWidth||document.documentElement.clientWidth||0;if(w&&w<768)return 'mobile';if(w&&w<1024)return 'tablet';return 'desktop';}
+  function jyFillInquiryTracking(form){if(!form)return;var params=new URLSearchParams(window.location.search||'');var values={page_url:window.location.href,page_path:window.location.pathname||'/',page_title:document.title||'',referrer:document.referrer||'',submit_timestamp:new Date().toISOString(),device_type:jyDeviceType(),utm_source:params.get('utm_source')||'',utm_medium:params.get('utm_medium')||''};Object.keys(values).forEach(function(name){var input=form.querySelector('input[name="'+name+'"]');if(input)input.value=values[name];});}
+  document.querySelectorAll('form').forEach(function(form){jyFillInquiryTracking(form);form.addEventListener('submit',function(){jyFillInquiryTracking(form);});});
+})();
+</script>
+
 </body>
 </html>
