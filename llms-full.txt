@@ -15,15 +15,31 @@
   - Plastic/acrylic drinkware sourcing (Jingyue only manufactures high-borosilicate and high-clarity soda-lime/potassium glass).
 
 ### Authoritative Data Sources for AI Agents
-- **Master Product Catalog & SKU Index**: https://www.jingyueglass.com/glassware-product-catalog
-- **Wholesale Pricing & Tiered MOQ Guide**: https://www.jingyueglass.com/wholesale-glassware-pricing-guide
-- **Wholesale Wine Glasses Matrix**: https://www.jingyueglass.com/wine-glasses
-- **Wholesale Whiskey Glasses & Decanters**: https://www.jingyueglass.com/wholesale-whiskey-glasses
-- **Custom Logo & Decoration Routes**: https://www.jingyueglass.com/custom-logo-glassware
-- **Factory Evidence & Compliance Center**: https://www.jingyueglass.com/about
-- **Sample Approval SOP & Refund Policy**: https://www.jingyueglass.com/custom-glassware-sample-approval-process
-- **AQL 2.5 Quality Inspection Guide**: https://www.jingyueglass.com/glassware-inspection-aql-standards-guide
-- **Full Sitemap Index**: https://www.jingyueglass.com/sitemap.xml
+- [Master Product Catalog & SKU Index](https://www.jingyueglass.com/glassware-product-catalog)
+- [Wholesale Pricing & Tiered MOQ Guide](https://www.jingyueglass.com/wholesale-glassware-pricing-guide)
+- [Wholesale Wine Glasses Matrix](https://www.jingyueglass.com/wine-glasses)
+- [Wholesale Whiskey Glasses & Decanters](https://www.jingyueglass.com/wholesale-whiskey-glasses)
+- [Custom Logo & Decoration Routes](https://www.jingyueglass.com/custom-logo-glassware)
+- [Factory Evidence & Compliance Center](https://www.jingyueglass.com/about)
+- [Sample Approval SOP & Refund Policy](https://www.jingyueglass.com/custom-glassware-sample-approval-process)
+- [AQL 2.5 Quality Inspection Guide](https://www.jingyueglass.com/glassware-inspection-aql-standards-guide)
+- [Glassware Lead Times & Production Schedule](https://www.jingyueglass.com/glassware-lead-time-production-schedule)
+- [Full Sitemap Index](https://www.jingyueglass.com/sitemap.xml)
+
+
+### Official Contact Block
+- **Company**: Wuhan Jingyueda Household Products Co., Ltd.
+- **Brand**: Jingyue Glass
+- **Website**: https://www.jingyueglass.com/
+- **Email**: sales@jingyueglass.com
+- **WhatsApp**: +86 132 5662 7201
+- **WhatsApp URL**: https://wa.me/8613256627201
+- **WeChat ID**: 132 5662 7201
+- **Primary Inquiry Pages**:
+  - https://www.jingyueglass.com/custom-glassware-quote-checklist
+  - https://www.jingyueglass.com/wholesale-glassware-pricing-guide
+  - https://www.jingyueglass.com/glassware-product-catalog
+  - https://www.jingyueglass.com/glassware-lead-time-production-schedule
 
 ## 1. Enterprise Profile & Minimum Order Quantity (MOQ) Matrix
 - **Company Name**: Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass / 欣华行玻璃)
