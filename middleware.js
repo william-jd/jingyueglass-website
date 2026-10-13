@@ -157,6 +157,59 @@ export default function middleware(request) {
       );
     }
 
+    // 5. Corporate Holiday Glassware Gifts Markdown Endpoint
+    if (path === '/corporate-holiday-glassware-gifts' || path.startsWith('/corporate-holiday-glassware-gifts')) {
+      return new Response(
+        `# Corporate Holiday & Year-End Custom Glassware Gift Sets - Jingyue Glass
+> Factory-Direct Custom Engraved Whiskey Stones & Glass Sets for Corporate Gifting
+
+## Featured Holiday Gift Box Models & Specifications
+- **Model XZM4008-1 (Volume Classic)**: 2x 300ml twisted crystal rocks glasses + 6x granite chilling stones + ice tongs + velvet pouch + matte black magnetic flip presentation hard box with custom EVA foam. In-stock MOQ: 24 sets. FOB Price range: About $3.80 – $6.00 / set.
+- **Model XZM015 (Executive Luxury)**: 2x 310ml diamond-faceted crystal rock glasses + 8x granite stones + silicone-tipped tongs + velvet pouch + burnished pine wooden box with antique bronze latch. Dual laser branding (box lid + glasses). In-stock MOQ: 24 sets. FOB Price range: About $5.00 – $7.00 / set.
+
+## Custom Branding & Delivery
+- 1–3 Day Fast Sample Proofing; 3–7 Day Bulk Dispatch (24–300 sets).
+- DDP Air Express (5–8 days) & Ocean Pallet Shipping.
+- Full Landing Page: https://www.jingyueglass.com/corporate-holiday-glassware-gifts
+- WhatsApp Sourcing: +86 132 5662 7201 | Email: sales@jingyueglass.com
+`,
+        {
+          status: 200,
+          headers: {
+            'Content-Type': 'text/markdown; charset=utf-8',
+            'Vary': 'Accept',
+          },
+        }
+      );
+    }
+
+    // 6. Luxury Wedding Event Flutes Markdown Endpoint
+    if (path === '/luxury-wedding-event-champagne-flutes' || path.startsWith('/luxury-wedding-event-champagne-flutes')) {
+      return new Response(
+        `# Luxury Wedding Toasting Flutes & Event Glassware Gift Sets - Jingyue Glass
+> Direct Factory Custom Engraved Crystal Flutes & Wine Glass Wooden Gift Sets
+
+## Featured Wedding & Event Gift Box Models
+- **Model xzm132 (In-Stock Champagne Flute Set)**: 2x lead-free crystal champagne flutes + heart-shaped wine stopper + multi-tool corkscrew + burnished solid pine wooden box. MOQ: 24 sets. FOB Price range: About $8.00 – $15.00 / set.
+- **Model xzm063 (In-Stock Stemless Wine Set)**: 2x 310ml stemless crystal egg wine glasses + complete 5-piece sommelier tool kit + burnished pine wooden box. MOQ: 24 sets. FOB Price range: About $6.00 – $10.00 / set.
+- **Model xzm130 (Luxury Lacquered Box Flute Set)**: 2x cylindrical crystal flutes (or optional 24K gold-rimmed tulip flutes) + high-gloss piano lacquer / matte spray painted solid wood box + stationery ribbon card. MOQ: 200 sets. FOB Price range: About $11.00 – $25.00 / set.
+
+## Full Customization & Lead Time
+- Laser engraving on wooden box lid, both glasses, and metal accessories.
+- In-stock dispatch in 3–7 days; custom painted box in 15–20 days.
+- Full Landing Page: https://www.jingyueglass.com/luxury-wedding-event-champagne-flutes
+- Direct WhatsApp Inquiry: +86 132 5662 7201 | Email: sales@jingyueglass.com
+`,
+        {
+          status: 200,
+          headers: {
+            'Content-Type': 'text/markdown; charset=utf-8',
+            'Vary': 'Accept',
+          },
+        }
+      );
+    }
+
     // Default Comprehensive Markdown body for Homepage and general routes
     const markdownBody = `# Jingyue Glass (Wuhan Jingyueda Household Products Co., Ltd.)
 > High-End OEM/ODM Glassware Manufacturer & Exporter in Wuhan, Hubei, China.
