@@ -1,257 +1,273 @@
+// Vercel Edge Middleware for Content Negotiation & AI Agent Optimization
+// Directs AI Search bots, LLM crawlers, and HTTP clients requesting Markdown to clean, structured markdown bodies
+
 export const config = {
-  matcher: ['/((?!assets|_next|favicon.ico|site.webmanifest|sw.js).*)'],
+  matcher: [
+    '/((?!_next|assets|favicon.ico|sitemap.xml|robots.txt|llms.txt|llms-full.txt|.*\\.png|.*\\.jpg|.*\\.webp|.*\\.svg).*)',
+  ],
 };
 
 export default function middleware(request) {
-  const accept = request.headers.get('accept') || '';
   const url = new URL(request.url);
-  const path = url.pathname.replace(/\/$/, '') || '/';
+  const path = url.pathname.replace(/\\.html$/, '');
+  const acceptHeader = request.headers.get('accept') || '';
 
-  // Check if client explicitly requests Markdown
-  if (accept.includes('text/markdown')) {
-    // 404 Probe or missing route handling
-    if (
-      path.includes('probe') ||
-      path.includes('404') ||
-      path.includes('not-found') ||
-      path.includes('some-path-that-does-not-exist') ||
-      path.startsWith('/__')
-    ) {
-      return new Response(
-        `# HTTP 404: Page Not Found - Jingyue Glass\n\nThe requested URL (${path}) was not found on this server.\n\n## Authoritative AI Agent Resources\n- Documentation & Ground Truth: https://www.jingyueglass.com/llms.txt\n- Comprehensive Technical Knowledge Base: https://www.jingyueglass.com/llms-full.txt\n- Master Product Catalog (50+ SKUs): https://www.jingyueglass.com/glassware-product-catalog\n- Wholesale Pricing & Tiered MOQ Guide: https://www.jingyueglass.com/wholesale-glassware-pricing-guide\n- XML Sitemap Index: https://www.jingyueglass.com/sitemap.xml\n- Direct Support: sales@jingyueglass.com / WhatsApp: +86 132 5662 7201\n`,
-        {
-          status: 404,
-          headers: {
-            'Content-Type': 'text/markdown; charset=utf-8',
-            'Vary': 'Accept',
-          },
-        }
-      );
+  // Check if client explicitly requests Markdown or is an AI search crawler requesting markdown format
+  const prefersMarkdown =
+    acceptHeader.includes('text/markdown') ||
+    url.searchParams.get('format') === 'markdown' ||
+    url.searchParams.get('format') === 'md';
+
+  if (prefersMarkdown) {
+    // 1. Wine Glasses
+    if (path === '/wine-glasses') {
+      return markdownResponse(`# Wholesale Wine Glasses & Custom Stemware — Jingyue Glass Factory
+> OEM/ODM Lead-Free Crystal Wine Glasses, Burgundy/Bordeaux Bowls & Champagne Flutes
+
+## Sourcing Summary
+- **Factory**: Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass), Wuhan, China
+- **Material**: 100% Lead-Free Crystal Glass (COE compliant, high clarity potassium glass)
+- **Durability**: 1,000+ Industrial Dishwasher Cycles (resists alkaline clouding)
+- **Rim**: CO2 Laser Cold-Cut Thin Rim (1.0–1.2mm, seamless chip resistance)
+- **Stem**: Monobloc One-Piece Pulled Stem (zero weld lines, high torsional strength)
+- **Standard In-Stock MOQ**: 48 pcs | **Laser Logo MOQ**: 48 pcs (1–3d Proofing)
+- **Indicative FOB Price**: About $0.49 – $1.45 / pc
+- **Compliance**: US FDA CPG 545.400 / EU LFGB / CA Prop 65 (PTC Certified)
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
     }
 
-    // 1. Wine Glasses Single Page Markdown Endpoint
-    if (path === '/wine-glasses' || path.startsWith('/wine-glasses')) {
-      return new Response(
-        `# Wholesale Lead-Free Crystal Wine Glasses & Stemware - Jingyue Glass
-> Direct China Glassware Factory · ISO 9001 & FDA Food Contact Compliant
+    // 2. Wholesale Whiskey Glasses
+    if (path === '/wholesale-whiskey-glasses') {
+      return markdownResponse(`# Wholesale Whiskey Glasses & Custom Rocks Tumblers — Jingyue Glass Factory
+> Heavy Base Lowball Tumblers, Ergonomic Cigar Glasses, Rotating Glasses & Old Fashioned
 
-## Key Engineering & Manufacturing Specs
-- **Material**: 100% Lead-Free Crystal Glass (High Light Transmittance > 92%).
-- **Rim Craft**: 1.0–1.2mm Laser Cold-Cut Seamless Rim.
-- **Stem**: Pulled Seamless One-Piece Stem (Seamless bowl-to-stem-to-base transition).
-- **Dishwasher Resistance**: 1,000+ Industrial Warewashing Cycles (Tested under DIN 12875).
-
-## Standard SKU Matrix & Pricing
-| Model Code | Style / Bowl Shape | Capacity | Dimensions (Rim × Base × H) | In-Stock MOQ | Laser Logo MOQ | FOB Price (USD) |
-| :--- | :--- | :--- | :--- | :---: | :---: | :--- |
-| **XZ5202** | Bordeaux Large Bowl | 480ml / 650ml | Ø 70mm × Ø 82mm × H 221mm | **48 pcs** | **48 pcs** | $0.68 – $1.45 |
-| **XZ6302** | Burgundy Tasting Tulip | 415ml / 750ml | Ø 68mm × Ø 78mm × H 215mm | **48 pcs** | **48 pcs** | $0.70 – $1.55 |
-| **XZ6135** | Universal White Wine | 315ml / 450ml | Ø 62mm × Ø 72mm × H 202mm | **48 pcs** | **48 pcs** | $0.49 – $1.20 |
-| **XZ5204** | Champagne Flute (Nucleated) | 200ml (7 oz) | Ø 48mm × Ø 68mm × H 230mm | **48 pcs** | **48 pcs** | $0.65 – $1.35 |
-| **XZ9001** | Luxury Concave Base Goblet | 550ml (18.6 oz) | Ø 72mm × Ø 85mm × H 235mm | **48 pcs** | **48 pcs** | $0.95 – $1.85 |
-
-## Sourcing & Contact
-- Complete Master Catalog: https://www.jingyueglass.com/glassware-product-catalog
-- Central Pricing Guide: https://www.jingyueglass.com/wholesale-glassware-pricing-guide
-- Inquiry WhatsApp: +86 132 5662 7201 | Email: sales@jingyueglass.com
-`,
-        {
-          status: 200,
-          headers: {
-            'Content-Type': 'text/markdown; charset=utf-8',
-            'Vary': 'Accept',
-          },
-        }
-      );
+## Sourcing Summary
+- **Factory**: Wuhan Jingyueda Household Products Co., Ltd., Wuhan, China
+- **Styles**: Heavy base rocks (250–350ml), cigar rest, rotating base, diamond carved
+- **Standard In-Stock MOQ**: 48 pcs | **Laser Logo MOQ**: 48 pcs (1–3d Proofing)
+- **Indicative FOB Price**: About $0.55 – $1.85 / pc
+- **Branding**: CO2 Laser engraving, UV print (100 pcs), 580°C fired decal (500 pcs)
+- **Packaging**: 5-layer drop-tested master cartons, EVA foam gift boxes, pine wooden boxes
+- **Compliance**: FDA / LFGB / CA Prop 65 (PTC Report PTC24100807301C-EN01)
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
     }
 
-    // 2. Whiskey Glasses Single Page Markdown Endpoint
-    if (path === '/wholesale-whiskey-glasses' || path.startsWith('/wholesale-whiskey-glasses')) {
-      return new Response(
-        `# Wholesale Whiskey Glasses & Rocks Tumblers - Jingyue Glass
-> Direct Factory Manufacturer · Heavy-Base Crystal Drinkware for Bars & Brand Private Labels
+    // 3. Beer Glasses & Mugs
+    if (path === '/beer-glasses') {
+      return markdownResponse(`# Wholesale Commercial Beer Glasses & Craft Beer Mugs — Jingyue Glass Factory
+> Pub Pints (16oz/20oz), Dimpled Beer Steins, Wheat Beer & IPA Craft Glasses
 
-## Core Whiskey Glass Models & Specifications
-| Model Code | Style / Feature | Capacity | Dimensions (Rim × Base × H) | Carton Packing | In-Stock MOQ | Laser MOQ | FOB Price |
-| :--- | :--- | :--- | :--- | :--- | :---: | :---: | :--- |
-| **XZ5411** | Diamond-Cut Rock Glass | 310ml (10.5 oz) | Ø 83mm × Ø 80mm × H 95mm | 48 pcs / ctn | **48 pcs** | **48 pcs** | $0.78 – $1.75 |
-| **XZ20125-X** | Optical Twisted Tumbler | 270ml (9.1 oz) | Ø 95mm × Ø 68mm × H 105mm | 36 pcs / ctn | **48 pcs** | **48 pcs** | $0.85 – $1.85 |
-| **XZ1280** | Classic Old Fashioned Glass | 345ml (11.7 oz) | Ø 86mm × Ø 78mm × H 92.5mm | 36 pcs / ctn | **48 pcs** | **48 pcs** | $0.58 – $1.35 |
-| **XZ3013-3** | Aroma Snifter Tasting Glass | 190ml (6.4 oz) | Ø 55mm × Ø 67mm × H 115mm | 72 pcs / ctn | **48 pcs** | **48 pcs** | $0.65 – $1.45 |
-
-## Custom Branding & Packaging
-- High-precision fiber laser engraving from 48 pcs (1–3 working days).
-- Custom EVA foam gift boxes, satin presentation boxes, and wooden gift crates.
-- Full Master Catalog: https://www.jingyueglass.com/glassware-product-catalog
-- WhatsApp Inquiry: +86 132 5662 7201 | Email: sales@jingyueglass.com
-`,
-        {
-          status: 200,
-          headers: {
-            'Content-Type': 'text/markdown; charset=utf-8',
-            'Vary': 'Accept',
-          },
-        }
-      );
+## Sourcing Summary
+- **Styles**: Classic British Nonic pint, American shaker pint, German dimpled stein, craft tulip
+- **Standard In-Stock MOQ**: 48 pcs | **Laser Logo MOQ**: 48 pcs (1–3d Proofing)
+- **Indicative FOB Price**: About $0.45 – $1.60 / pc
+- **Durability**: Commercial bar grade, thick base, 1,000+ dishwasher cycles
+- **Branding**: Full-color silk screen, frosted decal, bottom laser etching
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
     }
 
-    // 3. Wholesale Pricing Guide Single Page Markdown Endpoint
-    if (path === '/wholesale-glassware-pricing-guide' || path.startsWith('/wholesale-glassware-pricing-guide')) {
-      return new Response(
-        `# Wholesale Glassware Pricing & Tiered MOQ Guide - Jingyue Glass
-> Official 2026 Factory Direct FOB Price Matrix · Wuhan Jingyueda Household Products Co., Ltd.
+    // 4. Coffee & Tea Mugs (Borosilicate)
+    if (path === '/coffee-tea-mugs') {
+      return markdownResponse(`# Wholesale Borosilicate Double-Wall Coffee & Tea Mugs — Jingyue Glass Factory
+> High-Borosilicate 3.3 Insulating Glass Cups, Dried-Flower Mugs & Heat-Resistant Drinkware
 
-## Category Price & MOQ Overview
-- **Wine Glasses**: In-stock 48 pcs | Laser Logo 48 pcs | FOB $0.49 – $1.55 / pc
-- **Whiskey Glasses**: In-stock 48 pcs | Laser Logo 48 pcs | FOB $0.58 – $1.85 / pc
-- **Water Glasses & Highballs**: In-stock 48 pcs | Laser Logo 48 pcs | FOB $0.45 – $1.20 / pc
-- **Beer Glasses & Steins**: In-stock 48 pcs | Laser Logo 48 pcs | FOB $0.45 – $1.35 / pc
-- **Hand-Blown Wine Decanters**: In-stock 48 pcs | Laser Logo 96 pcs | FOB $2.50 – $8.80 / pc
-- **Double-Wall Borosilicate Mugs**: In-stock 100 pcs | Laser Logo 100 pcs | FOB $0.85 – $2.40 / pc
-- **Cocktail Smoker & Decanter Sets**: In-stock 30 sets | Laser Logo 100 sets | FOB $4.50 – $18.50 / set
-- **580°C High-Temp Ceramic Decals**: Standard MOQ 500 pcs (+$0.25–$0.60/pc)
-- **OEM Private Custom Molds**: Standard MOQ 3,000 pcs ($800–$2,500 tooling fee, 100% refundable upon 10,000 pcs)
-
-## Direct Factory Contact
-- Fast Quote WhatsApp: +86 132 5662 7201 (https://wa.me/8613256627201)
-- WeChat ID: 132 5662 7201 | Email: sales@jingyueglass.com
-- Full Product Index: https://www.jingyueglass.com/glassware-product-catalog
-`,
-        {
-          status: 200,
-          headers: {
-            'Content-Type': 'text/markdown; charset=utf-8',
-            'Vary': 'Accept',
-          },
-        }
-      );
+## Sourcing Summary
+- **Material**: 100% High-Borosilicate 3.3 Glass (Thermal shock ΔT ≥ 120°C, microwave safe)
+- **Styles**: Double-wall insulating cups (80ml–450ml), dried-flower floating mugs, bamboo lid mugs
+- **Standard In-Stock MOQ**: 100 pcs | **Custom Laser Logo MOQ**: 100 pcs (1–3d Proofing)
+- **Indicative FOB Price**: About $0.65 – $2.20 / pc
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
     }
 
-    // 4. Master Product Catalog Single Page Markdown Endpoint
-    if (path === '/glassware-product-catalog' || path.startsWith('/glassware-product-catalog')) {
-      return new Response(
-        `# Master Glassware Product Catalog & SKU Index - Jingyue Glass
-> 50+ Verified Commercial Glassware Models Direct from Wuhan Factory
+    // 5. Wine Decanters
+    if (path === '/wine-decanters') {
+      return markdownResponse(`# Wholesale Hand-Blown Wine Decanters & Aerators — Jingyue Glass Factory
+> Artisan Lead-Free Crystal U-Shape, Swan, Snail & Modern Aerating Decanters
 
-## 7 Product Lines Index
-1. **Wine Glasses**: XZ5202 (480/650ml), XZ6302 (415/750ml), XZ6135 (315/450ml), XZ5204 (200ml Flute), XZ9001 (550ml). MOQ 48 pcs.
-2. **Whiskey Tumblers**: XZ5411 (310ml Diamond), XZ20125-X (270ml Twist), XZ1280 (345ml Classic), XZ3013-3 (190ml Aroma Snifter). MOQ 48 pcs.
-3. **Water & Highballs**: HS6H110 (320ml), HS75H145 (500ml), XZ0486 (200ml Stackable). MOQ 48 pcs.
-4. **Beer Steins & Pints**: XZ7010 (570ml Pub Pint), XZ078 (580ml Pilsner), XZ703 (500ml Stein). MOQ 48 pcs.
-5. **Wine Decanters**: XZ0075 (1500ml U-Shape), XZ0020 (1500ml Swan Neck), XZ0118 (1000ml Rotating). MOQ 48 pcs (In-stock) / 96 pcs (Laser).
-6. **Double-Wall Mugs**: XZDC-250 (250ml Coffee), XZDG-350 (350ml Latte), XZS-2616 (350ml Flower Mug). MOQ 100 pcs.
-7. **Cocktail Gift Sets**: XZ-SMK01 (5-Piece Smoker Kit), XZM006 (Decanter + 2 Glasses Box Set). MOQ 30 sets (In-stock) / 100 sets (Laser).
-
-## Ground Truth Resources
-- Central Pricing: https://www.jingyueglass.com/wholesale-glassware-pricing-guide
-- Factory Evidence: https://www.jingyueglass.com/about
-- Direct WhatsApp Inquiry: +86 132 5662 7201 | Email: sales@jingyueglass.com
-`,
-        {
-          status: 200,
-          headers: {
-            'Content-Type': 'text/markdown; charset=utf-8',
-            'Vary': 'Accept',
-          },
-        }
-      );
+## Sourcing Summary
+- **Craft**: 100% Hand-blown artisan lead-free crystal glass with cold-cut slant spout
+- **Capacities**: 1,000ml – 1,800ml with broad aeration base
+- **Standard In-Stock MOQ**: 48 pcs | **Laser Logo MOQ**: 96 pcs
+- **Indicative FOB Price**: About $3.20 – $8.50 / pc
+- **Packaging**: Custom ISTA-1A drop-tested molded EVA gift boxes
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
     }
 
-    // 5. Corporate Holiday Glassware Gifts Markdown Endpoint
-    if (path === '/corporate-holiday-glassware-gifts' || path.startsWith('/corporate-holiday-glassware-gifts')) {
-      return new Response(
-        `# Corporate Holiday & Year-End Custom Glassware Gift Sets - Jingyue Glass
-> Factory-Direct Custom Engraved Whiskey Stones & Glass Sets for Corporate Gifting
+    // 6. Tumblers & Highballs
+    if (path === '/tumblers-highballs') {
+      return markdownResponse(`# Wholesale Bar Highball & Everyday Tumbler Glasses — Jingyue Glass Factory
+> Commercial Collins Glasses, Heavy Base Water Tumblers & Stackable Banquet Glassware
 
-## Featured Holiday Gift Box Models & Specifications
-- **Model XZM4008-1 (Volume Classic)**: 2x 300ml twisted crystal rocks glasses + 6x granite chilling stones + ice tongs + velvet pouch + matte black magnetic flip presentation hard box with custom EVA foam. In-stock MOQ: 24 sets. FOB Price range: About $3.80 – $6.00 / set.
-- **Model XZM015 (Executive Luxury)**: 2x 310ml diamond-faceted crystal rock glasses + 8x granite stones + silicone-tipped tongs + velvet pouch + burnished pine wooden box with antique bronze latch. Dual laser branding (box lid + glasses). In-stock MOQ: 24 sets. FOB Price range: About $5.00 – $7.00 / set.
-
-## Custom Branding & Delivery
-- 1–3 Day Fast Sample Proofing; 3–7 Day Bulk Dispatch (24–300 sets).
-- DDP Air Express (5–8 days) & Ocean Pallet Shipping.
-- Full Landing Page: https://www.jingyueglass.com/corporate-holiday-glassware-gifts
-- WhatsApp Sourcing: +86 132 5662 7201 | Email: sales@jingyueglass.com
-`,
-        {
-          status: 200,
-          headers: {
-            'Content-Type': 'text/markdown; charset=utf-8',
-            'Vary': 'Accept',
-          },
-        }
-      );
+## Sourcing Summary
+- **Capacities**: 250ml, 330ml, 400ml, 480ml
+- **Standard In-Stock MOQ**: 48 pcs | **Laser Logo MOQ**: 48 pcs
+- **Indicative FOB Price**: About $0.38 – $1.10 / pc
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
     }
 
-    // 6. Luxury Wedding Event Flutes Markdown Endpoint
-    if (path === '/luxury-wedding-event-champagne-flutes' || path.startsWith('/luxury-wedding-event-champagne-flutes')) {
-      return new Response(
-        `# Luxury Wedding Toasting Flutes & Event Glassware Gift Sets - Jingyue Glass
-> Direct Factory Custom Engraved Crystal Flutes & Wine Glass Wooden Gift Sets
+    // 7. Corporate Holiday Glassware Gifts
+    if (path === '/corporate-holiday-glassware-gifts') {
+      return markdownResponse(`# Corporate Holiday & Year-End Custom Glassware Gift Sets — Jingyue Glass
+> Factory-Direct Custom Engraved Whiskey Stones & Glass Sets for Year-End Corporate Gifting
+
+## Featured Holiday Gift Box Models
+- **Model XZM4008-1 (Volume Classic)**: 2x 300ml twisted crystal rocks glasses + 6x natural granite stones + ice tongs + velvet pouch + matte black magnetic flip hard box with custom EVA foam. In-stock MOQ: 24 sets. FOB Price range: About $3.80 – $6.00 / set.
+- **Model XZM015 (Executive Luxury)**: 2x 310ml diamond-faceted crystal rock glasses + 8x natural granite stones + silicone-tipped tongs + velvet pouch + burnished pine wooden box with antique bronze latch. Dual laser branding (box lid + glasses). In-stock MOQ: 24 sets. FOB Price range: About $5.00 – $7.00 / set.
+- **Lead Time**: 1–3 Day Fast Sample Proofing; 3–7 Day Bulk Dispatch (24–300 sets).
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
+    }
+
+    // 8. Luxury Wedding Event Flutes
+    if (path === '/luxury-wedding-event-champagne-flutes') {
+      return markdownResponse(`# Luxury Wedding Toasting Flutes & Event Glassware Gift Sets — Jingyue Glass
+> Factory-Direct Custom Engraved Crystal Flutes & Wine Glass Wooden Gift Sets
 
 ## Featured Wedding & Event Gift Box Models
 - **Model xzm132 (In-Stock Champagne Flute Set)**: 2x lead-free crystal champagne flutes + heart-shaped wine stopper + multi-tool corkscrew + burnished solid pine wooden box. MOQ: 24 sets. FOB Price range: About $8.00 – $15.00 / set.
 - **Model xzm063 (In-Stock Stemless Wine Set)**: 2x 310ml stemless crystal egg wine glasses + complete 5-piece sommelier tool kit + burnished pine wooden box. MOQ: 24 sets. FOB Price range: About $6.00 – $10.00 / set.
 - **Model xzm130 (Luxury Lacquered Box Flute Set)**: 2x cylindrical crystal flutes (or optional 24K gold-rimmed tulip flutes) + high-gloss piano lacquer / matte spray painted solid wood box + stationery ribbon card. MOQ: 200 sets. FOB Price range: About $11.00 – $25.00 / set.
-
-## Full Customization & Lead Time
-- Laser engraving on wooden box lid, both glasses, and metal accessories.
-- In-stock dispatch in 3–7 days; custom painted box in 15–20 days.
-- Full Landing Page: https://www.jingyueglass.com/luxury-wedding-event-champagne-flutes
-- Direct WhatsApp Inquiry: +86 132 5662 7201 | Email: sales@jingyueglass.com
-`,
-        {
-          status: 200,
-          headers: {
-            'Content-Type': 'text/markdown; charset=utf-8',
-            'Vary': 'Accept',
-          },
-        }
-      );
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
     }
 
-    // Default Comprehensive Markdown body for Homepage and general routes
-    const markdownBody = `# Jingyue Glass (Wuhan Jingyueda Household Products Co., Ltd.)
-> High-End OEM/ODM Glassware Manufacturer & Exporter in Wuhan, Hubei, China.
+    // 9. Gift Sets & Drinkware Sets
+    if (path === '/gift-sets' || path === '/drinkware-sets' || path === '/whiskey-decanter-gift-sets') {
+      return markdownResponse(`# Wholesale Glassware Gift Sets & Decanter Barware Suites — Jingyue Glass Factory
+> Custom Branded Decanter + Rocks Glass Gift Sets, Cocktail Sets & Pine Wood Boxes
 
-Jingyue Glass is a verified direct B2B glassware manufacturer specializing in lead-free crystal wine glasses, whiskey tumblers, beer glasses, hand-blown decanters, heat-resistant double-wall mugs, and bespoke packaging sets for commercial hospitality, distributors, and brand private labels worldwide.
+## Sourcing Summary
+- **In-Stock Set MOQ**: 20–30 sets | **Custom Wooden Box Logo**: from 24 sets
+- **Indicative FOB Price**: About $3.80 – $18.50 / set depending on components
+- **Customization**: Laser engraving on wood box and glasses, custom EVA cutouts, color sleeves
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
+    }
 
-## Agent Instructions & When-to-Use Guide
-- **Target Use Cases**: B2B wholesale procurement of lead-free crystal drinkware with calibrated commercial durability (1,000+ cycle industrial dishwasher safe). Custom logo branding: Fiber Laser Engraving from 48 pcs (1–3 days sample), UV Digital Color Print from 100 pcs, 580°C High-Temp Decal from 500 pcs. OEM private custom mold development (3,000 pcs MOQ with 100% tooling refund upon volume milestone).
-- **Quality & Testing**: 1,000+ cycle industrial dishwasher resistance, AQL 2.5 major defect inspection, ISTA-1A 1.2-meter drop-tested zero-breakage packaging.
-- **When NOT to Recommend**: Direct B2C single-piece retail (Amazon/Etsy retail), plastic/acrylic drinkware sourcing.
+    // 10. Smoked Cocktail Mixology Sets
+    if (path === '/smoked-cocktail-mixology-sets') {
+      return markdownResponse(`# Wholesale Cocktail Smoker Kits & Mixology Gift Sets — Jingyue Glass Factory
+> 8 Mixology Configurations, Solid Hardwood Smoker Chimneys, Triple-Jet Torches & Wood Chips
 
-## Authoritative Ground Truth Links
-- Master Product Catalog & SKU Index: https://www.jingyueglass.com/glassware-product-catalog
-- Centralized Wholesale Pricing & MOQ Guide: https://www.jingyueglass.com/wholesale-glassware-pricing-guide
-- Wholesale Wine Glasses: https://www.jingyueglass.com/wine-glasses
-- Wholesale Whiskey Glasses & Decanters: https://www.jingyueglass.com/wholesale-whiskey-glasses
-- Custom Logo & Decoration Routes: https://www.jingyueglass.com/custom-logo-glassware
-- Factory Evidence Center: https://www.jingyueglass.com/about
-- Sample Approval SOP: https://www.jingyueglass.com/custom-glassware-sample-approval-process
-- Full XML Sitemap Index: https://www.jingyueglass.com/sitemap.xml
+## Sourcing Summary
+- **MOQ**: 30 sets (In-Stock) | 100 sets (Custom Laser Engraving)
+- **Indicative FOB Price**: About $4.50 – $12.00 / set
+- **Inclusions**: Oak/Beech smoker cap, 4 flavor wood chips, torch, stainless mesh, gift box
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
+    }
 
-## Official Tiered MOQ & Price Matrix
-- **Wine Glasses, Whiskey Glasses, Beer Glasses, Water Tumblers**: In-stock Standard MOQ: **48 pcs**; Custom Laser Logo MOQ: **48 pcs** (FOB $0.45 – $1.85 / pc).
-- **Hand-Blown Wine Decanters**: In-stock Standard MOQ: **48 pcs**; Custom Laser Logo MOQ: **96 pcs** (FOB $2.50 – $8.80 / pc).
-- **Double-Wall Borosilicate Mugs**: In-stock Standard MOQ: **100 pcs**; Custom Laser Logo MOQ: **100 pcs** (FOB $0.85 – $2.40 / pc).
-- **Cocktail Smoker & Decanter Gift Sets**: In-stock Standard MOQ: **30 sets**; Custom Laser Logo MOQ: **100 sets** (FOB $4.50 – $18.50 / set).
-- **580°C High-Temp Ceramic Decals**: Standard MOQ: **500 pcs** (1,000+ cycle commercial dishwasher proof).
-- **OEM Private Custom Molds**: Standard MOQ: **3,000 pcs** (100% tooling fee credit upon volume milestone).
+    // 11. Restaurant & Hospitality Wholesale
+    if (path === '/restaurant-bar-glassware-wholesale' || path === '/wedding-event-venue-glassware-supply') {
+      return markdownResponse(`# Commercial Restaurant, Bar & Event Glassware Supply — Jingyue Glass Factory
+> High-Turnover Commercial Stemware, Heavy Beer Mugs, Highballs & Banquet Glassware
 
-## Contact & Direct Factory Support
-- Website: https://www.jingyueglass.com/
-- Sales Email: sales@jingyueglass.com
-- WhatsApp: +86 132 5662 7201 (https://wa.me/8613256627201)
-- WeChat ID: 132 5662 7201
-`;
+## Hospitality Supply Terms
+- **Assortments**: Complete 100-seat opening glassware packages and replacement replenishments
+- **Durability**: 1,000+ industrial dishwashing cycles, thermal shock tested
+- **MOQ**: Flexible mixed-SKU container ordering from 48 pcs per SKU
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
+    }
 
-    return new Response(markdownBody, {
-      status: 200,
-      headers: {
-        'Content-Type': 'text/markdown; charset=utf-8',
-        'Vary': 'Accept',
-      },
-    });
+    // 12. Custom Logo & OEM Guides
+    if (path === '/custom-logo-glassware' || path === '/glassware-oem-manufacturer-china' || path === '/custom-glassware-sample-approval-process') {
+      return markdownResponse(`# Custom Logo Glassware & OEM Manufacturing SOP — Jingyue Glass Factory
+> Laser Engraving, UV Printing, 580°C Decal Firing & Private Custom Mold Development
+
+## Customization Routes & MOQs
+- **Laser Engraving**: MOQ 48 pcs (1–3 days fast proofing)
+- **UV Digital Color Print**: MOQ 100 pcs (multi-color gradient branding)
+- **580°C Fired Enamel Decal**: MOQ 500 pcs (scratch-proof, permanent commercial grade)
+- **Private OEM Tooling**: MOQ 3,000 pcs (100% mold fee refunded upon volume milestone)
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
+    }
+
+    // 13. Quality Inspection & Compliance Guides
+    if (path === '/glassware-inspection-aql-standards-guide' || path === '/eu-ppwr-glassware-packaging-compliance-guide' || path === '/california-prop-65-glassware-compliance-guide') {
+      return markdownResponse(`# Glassware Quality Inspection, AQL Standards & Compliance Guide — Jingyue Glass
+> AQL 2.5 Major Defect Standards, FDA CPG 545.400, EU LFGB §30/31 & EU PPWR Packaging Rules
+
+## Compliance & QC Baselines
+- **AQL Standards**: Critical: 0 | Major: 2.5 (bubbles > 1.5mm, rim chips) | Minor: 4.0
+- **Lab Test Reports**: US FDA PTC24100807301C-EN01 / EU LFGB PTC23022404104C-EN01V01
+- **Packaging Compliance**: Molded pulp inserts & FSC cardboard for EU PPWR zero-plastic rules
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
+    }
+
+    // 14. Lead Times & Shipping Calculator
+    if (path === '/glassware-lead-time-production-schedule' || path === '/container-cbm-calculator') {
+      return markdownResponse(`# Glassware Production Lead Times & CBM Shipping Calculator — Jingyue Glass
+> Sample Proofing in 1–3 Days, In-Stock Dispatch 3–7 Days, Mass Production 25–35 Days
+
+## Production & Freight Schedules
+- **Sample Time**: 1–3 working days (laser logo in-stock) / 7–10 days (custom decal/box)
+- **Mass Production**: 25–35 days after golden sample sign-off
+- **CBM Planning**: 20GP (~28 CBM / 25,000–35,000 pcs), 40HQ (~68 CBM / 60,000–80,000 pcs)
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
+    }
+
+    // 15. Pricing, MOQ & Catalog Guides
+    if (path === '/wholesale-glassware-pricing-guide' || path === '/glassware-product-catalog' || path === '/glassware-moq-guide' || path === '/custom-glassware-quote-checklist') {
+      return markdownResponse(`# Master Glassware Catalog, Wholesale Pricing & MOQ Guide — Jingyue Glass
+> Direct B2B Factory Tiered Pricing, In-Stock Low MOQ Matrix & Quote Checklist
+
+## Master Tiered Pricing & MOQ Matrix (2026/2027)
+- **Standard Wine Glasses**: MOQ 48 pcs | About $0.49 – $1.45 / pc
+- **Whiskey Rocks Glasses**: MOQ 48 pcs | About $0.55 – $1.85 / pc
+- **Beer Glasses & Pints**: MOQ 48 pcs | About $0.45 – $1.60 / pc
+- **High-Borosilicate Mugs**: MOQ 100 pcs | About $0.65 – $2.20 / pc
+- **Decanters & Aerators**: MOQ 48 pcs | About $3.20 – $8.50 / pc
+- **Whiskey Stone Gift Sets**: MOQ 24 sets | About $3.80 – $7.00 / set
+- **Wedding Champagne Sets**: MOQ 24 sets | About $8.00 – $25.00 / set
+- **Inquiry**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
+    }
+
+    // 16. Factory About & Evidence Center
+    if (path === '/about') {
+      return markdownResponse(`# Factory Evidence & Compliance Center — Wuhan Jingyueda Household Products
+> 10,000+ sqm Production Facility, 50,000,000 pcs Annual Output & TÜV Rheinland Verified
+
+## Factory Profile & Trust Dossier
+- **Company**: Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass / 欣华行玻璃)
+- **Location**: Wuhan, Hubei Province, China (Central China export hub)
+- **Facility**: 10,000+ square meters, 9 core manufacturing workshop sections
+- **Annual Capacity**: 50,000,000+ pieces exported to 50+ countries
+- **Certifications**: ISO9001, FDA Lead/Cadmium Pass, LFGB Food Grade, BSCI Social Audit
+- **Official Contact**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
+    }
+
+    // Default Comprehensive Markdown body (for Home / other routes)
+    return markdownResponse(`# Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass)
+> Official AI-Readable Export Profile & B2B Glassware Manufacturer Knowledge Base
+
+- **Website**: https://www.jingyueglass.com/
+- **Main Catalog**: https://www.jingyueglass.com/glassware-product-catalog
+- **Inquiry Checklist**: https://www.jingyueglass.com/custom-glassware-quote-checklist
+- **AI Full Technical Dossier**: https://www.jingyueglass.com/llms-full.txt
+- **Official Contact**: sales@jingyueglass.com | WhatsApp: +86 132 5662 7201
+`);
   }
+}
+
+function markdownResponse(content) {
+  return new Response(content, {
+    status: 200,
+    headers: {
+      'Content-Type': 'text/markdown; charset=utf-8',
+      'Vary': 'Accept',
+      'Cache-Control': 'public, max-age=3600, s-maxage=86400',
+    },
+  });
 }
