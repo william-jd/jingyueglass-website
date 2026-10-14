@@ -428,6 +428,30 @@
         </div>
       </div>
 
+            <!-- Dynamic Conversion & DDP Freight CTA Box -->
+      <div style="margin-top: 18px; padding: 14px; background: rgba(200, 147, 10, 0.12); border: 1px solid rgba(200, 147, 10, 0.4); border-radius: 8px;">
+        <div style="font-size:0.85rem; font-weight:700; color:#fcd34d; margin-bottom:8px; display:flex; align-items:center; gap:6px;">
+          <span>⚡ Instant DDP Freight &amp; Order Inquiry</span>
+        </div>
+        <p style="font-size:0.78rem; color:#cbd5e1; line-height:1.45; margin-bottom:12px;">
+          Direct factory forwarding rates to US, EU, UK, AU &amp; Middle East ports with customs clearance included.
+        </p>
+        
+        <a id="dynamicWaBtn" href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20used%20your%20Container%20CBM%20Calculator%20and%20calculated%20a%2020GP%20load%20plan%20(23.19%20CBM%2C%20800%20Cartons).%20Please%20quote%20DDP%20freight." target="_blank" rel="noopener noreferrer" style="display:block; background:#25D366; color:#ffffff; font-weight:700; font-size:0.88rem; padding:10px; border-radius:6px; text-align:center; text-decoration:none; margin-bottom:8px; box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+          💬 Send Load Plan to WhatsApp →
+        </a>
+
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <button type="button" onclick="copyLoadPlan()" id="copyPlanBtn" style="background:rgba(255,255,255,0.12); color:#ffffff; border:1px solid rgba(255,255,255,0.25); border-radius:6px; padding:8px 4px; font-size:0.78rem; font-weight:600; cursor:pointer;">
+            📋 Copy Load Summary
+          </button>
+          <a id="dynamicEmailBtn" href="mailto:sales@jingyueglass.com?subject=Container%20CBM%20Load%20Plan%20Inquiry%20(20GP)&body=Hello%20Jingyue%20Glass%2C%0A%0APlease%20provide%20a%20DDP%20freight%20and%20glassware%20quote%20for%20our%20calculated%20load%20plan." style="display:block; background:rgba(255,255,255,0.12); color:#ffffff; border:1px solid rgba(255,255,255,0.25); border-radius:6px; padding:8px 4px; font-size:0.78rem; font-weight:600; text-align:center; text-decoration:none;">
+            ✉️ Email Inquiry
+          </a>
+        </div>
+        <div id="copyToast" style="display:none; font-size:0.72rem; color:#4ade80; text-align:center; margin-top:6px;">✓ Load plan copied to clipboard!</div>
+      </div>
+
       <div id="statusBadge" class="status-badge status-safe">✓ Optimal 20GP Utilization Rate</div>
 
       <a href="/custom-glassware-quote-checklist" class="btn-submit-calc" id="quoteBtn">Send Load Plan for Official DDP Quote →</a>
@@ -530,6 +554,53 @@ function calculateCBM() {
 
 // Initial calculation
 calculateCBM();
+
+function copyLoadPlan() {
+  var totalCbm = document.getElementById('totalCbmText').innerText;
+  var totalCartons = document.getElementById('totalCartonsText').innerText;
+  var totalWeight = document.getElementById('totalWeightText').innerText;
+  var totalPallets = document.getElementById('totalPalletsText').innerText;
+  var totalVal = document.getElementById('totalValueText') ? document.getElementById('totalValueText').innerText : 'N/A';
+  
+  var summary = "=== Jingyue Glassware Container Load Plan ===\n" +
+                "Target Container: " + currentContainerName + " (Max " + targetCbmLimit + " CBM)\n" +
+                "Calculated Volume: " + totalCbm + "\n" +
+                "Master Cartons: " + totalCartons + "\n" +
+                "Gross Weight: " + totalWeight + "\n" +
+                "Pallet Estimate: " + totalPallets + "\n" +
+                "Est. Value: " + totalVal + "\n" +
+                "Inquiry URL: https://www.jingyueglass.com/container-cbm-calculator";
+                
+  navigator.clipboard.writeText(summary).then(function() {
+    var toast = document.getElementById('copyToast');
+    if (toast) {
+      toast.style.display = 'block';
+      setTimeout(function() { toast.style.display = 'none'; }, 3000);
+    }
+  }).catch(function() {
+    alert("Load summary copied:\n" + summary);
+  });
+}
+
+// Update WhatsApp and Email links dynamically inside calculateCBM
+var originalCalc = calculateCBM;
+calculateCBM = function() {
+  originalCalc();
+  var totalCbm = document.getElementById('totalCbmText').innerText;
+  var totalCartons = document.getElementById('totalCartonsText').innerText;
+  var totalWeight = document.getElementById('totalWeightText').innerText;
+  
+  var waMsg = "Hello Jingyue Glass, I used your Container CBM Calculator and calculated a load plan: " + totalCbm + " (" + totalCartons + ", " + totalWeight + ") for a " + currentContainerName + " container. Please provide a formal DDP freight and glassware quote.";
+  var waUrl = "https://wa.me/8613256627201?text=" + encodeURIComponent(waMsg);
+  var waBtn = document.getElementById('dynamicWaBtn');
+  if (waBtn) waBtn.href = waUrl;
+  
+  var emailSub = "Container CBM Load Plan Inquiry (" + currentContainerName + " - " + totalCbm + ")";
+  var emailBody = "Hello Jingyue Glass Team,\n\nI calculated the following container load plan on your website:\n- Target Container: " + currentContainerName + "\n- Total Volume: " + totalCbm + "\n- Total Cartons: " + totalCartons + "\n- Total Weight: " + totalWeight + "\n\nPlease provide an official DDP freight and glassware quotation.\n\nDestination Country: [Please fill]\nCompany Name: [Please fill]";
+  var emailBtn = document.getElementById('dynamicEmailBtn');
+  if (emailBtn) emailBtn.href = "mailto:sales@jingyueglass.com?subject=" + encodeURIComponent(emailSub) + "&body=" + encodeURIComponent(emailBody);
+};
+
 </script>
 
 
