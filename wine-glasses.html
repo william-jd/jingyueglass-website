@@ -77,7 +77,7 @@
       "@type": "Product",
       "@id": "https://www.jingyueglass.com/wine-glasses#product",
       "name": "Custom Wholesale Lead-Free Crystal Wine Glasses",
-      "description": "Wholesale red wine, white wine, and champagne glasses with custom logo laser engraving, 580°C high-temp decal, and commercial dishwasher safe durability from Jingyue Glass factory.",
+      "description": "Wholesale red wine, white wine, and champagne glasses with custom logo laser engraving, 580°C high-temp decal, and commercial dishwasher safe durability from Jingyue Glass factory. Indicative prices shown; final quotation is calculated based on exact order quantity and destination address.",
       "brand": {
         "@type": "Brand",
         "name": "Jingyue Glass"
@@ -98,10 +98,19 @@
         "itemCondition": "https://schema.org/NewCondition",
         "hasMerchantReturnPolicy": {
           "@type": "MerchantReturnPolicy",
+          "name": "7-Day Transit Breakage Replacement & Refund Policy",
           "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
+          "merchantReturnDays": 7,
           "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
+          "returnFees": "https://schema.org/FreeReturn",
+          "customerRemorseReturnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+          "returnPolicyCountry": [
+            "US",
+            "EU",
+            "GB",
+            "AU"
+          ],
+          "description": "If any item arrives damaged, notify our support team within 7 days of delivery with photos and unboxing videos for immediate 100% free replacement or refund credit."
         },
         "shippingDetails": {
           "@type": "OfferShippingDetails",
@@ -111,10 +120,22 @@
             "currency": "USD"
           },
           "shippingDestination": [
-            { "@type": "DefinedRegion", "addressCountry": "US" },
-            { "@type": "DefinedRegion", "addressCountry": "EU" },
-            { "@type": "DefinedRegion", "addressCountry": "GB" },
-            { "@type": "DefinedRegion", "addressCountry": "AU" }
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "EU"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "GB"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "AU"
+            }
           ]
         },
         "seller": {

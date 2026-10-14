@@ -453,7 +453,7 @@
       "@type": "Product",
       "@id": "https://www.jingyueglass.com/beer-glasses#product",
       "name": "Wholesale Commercial Beer Glasses, Pub Pints & Steins",
-      "description": "Direct factory wholesale on commercial pub pint glasses (16oz/20oz), dimpled beer steins, and craft IPA glasses with custom logo laser engraving and 580°C fired decals from Jingyue Glass.",
+      "description": "Direct factory wholesale on commercial pub pint glasses (16oz/20oz), dimpled beer steins, and craft IPA glasses with custom logo laser engraving and 580°C fired decals from Jingyue Glass. Indicative prices shown; final quotation is calculated based on exact order quantity and destination address.",
       "brand": {
         "@type": "Brand",
         "name": "Jingyue Glass"
@@ -478,10 +478,19 @@
         },
         "hasMerchantReturnPolicy": {
           "@type": "MerchantReturnPolicy",
+          "name": "7-Day Transit Breakage Replacement & Refund Policy",
           "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
+          "merchantReturnDays": 7,
           "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
+          "returnFees": "https://schema.org/FreeReturn",
+          "customerRemorseReturnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+          "returnPolicyCountry": [
+            "US",
+            "EU",
+            "GB",
+            "AU"
+          ],
+          "description": "If any item arrives damaged, notify our support team within 7 days of delivery with photos and unboxing videos for immediate 100% free replacement or refund credit."
         },
         "shippingDetails": {
           "@type": "OfferShippingDetails",

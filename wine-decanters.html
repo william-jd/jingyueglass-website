@@ -453,7 +453,7 @@
       "@type": "Product",
       "@id": "https://www.jingyueglass.com/wine-decanters#product",
       "name": "Wholesale Hand-Blown Lead-Free Crystal Wine Decanters & Aerators",
-      "description": "Artisan hand-blown lead-free crystal wine decanters (1,000ml–1,800ml), U-shape, swan, snail, and modern aerating carafes with custom packaging and laser branding from Jingyue Glass factory.",
+      "description": "Artisan hand-blown lead-free crystal wine decanters (1,000ml–1,800ml), U-shape, swan, snail, and modern aerating carafes with custom packaging and laser branding from Jingyue Glass factory. Indicative prices shown; final quotation is calculated based on exact order quantity and destination address.",
       "brand": {
         "@type": "Brand",
         "name": "Jingyue Glass"
@@ -478,10 +478,19 @@
         },
         "hasMerchantReturnPolicy": {
           "@type": "MerchantReturnPolicy",
+          "name": "7-Day Transit Breakage Replacement & Refund Policy",
           "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 30,
+          "merchantReturnDays": 7,
           "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn"
+          "returnFees": "https://schema.org/FreeReturn",
+          "customerRemorseReturnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
+          "returnPolicyCountry": [
+            "US",
+            "EU",
+            "GB",
+            "AU"
+          ],
+          "description": "If any item arrives damaged, notify our support team within 7 days of delivery with photos and unboxing videos for immediate 100% free replacement or refund credit."
         },
         "shippingDetails": {
           "@type": "OfferShippingDetails",
