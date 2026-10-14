@@ -186,68 +186,120 @@
 
   <!-- Schema.org Product & FAQ JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.jingyueglass.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Luxury Wedding & Event Toasting Flutes", "item": "https://www.jingyueglass.com/luxury-wedding-event-champagne-flutes" }
-        ]
-      },
-      {
-        "@type": "Product",
-        "name": "Luxury Wedding Toasting Flutes & Event Glassware Gift Sets",
-        "image": [
-          "https://www.jingyueglass.com/assets/products/xzm132-champagne-flutes-wooden-gift-set.jpg",
-          "https://www.jingyueglass.com/assets/products/xzm063-stemless-wine-glasses-wooden-set.jpg",
-          "https://www.jingyueglass.com/assets/products/xzm130-luxury-lacquered-wedding-flutes-set.jpg"
-        ],
-        "description": "Factory-direct custom engraved champagne flutes and wine glass wooden gift sets for luxury weddings, banquets, and event souvenirs. In-stock MOQ 24 sets.",
-        "brand": { "@type": "Brand", "name": "Jingyue Glass" },
-        "offers": {
-          "@type": "AggregateOffer",
-          "priceCurrency": "USD",
-          "lowPrice": "6.00",
-          "highPrice": "25.00",
-          "offerCount": "3",
-          "priceValidUntil": "2027-12-31",
-          "availability": "https://schema.org/InStock",
-          "seller": { "@type": "Organization", "name": "Wuhan Jingyue Glass Co., Ltd." }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.jingyueglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Luxury Wedding & Event Toasting Flutes",
+          "item": "https://www.jingyueglass.com/luxury-wedding-event-champagne-flutes"
         }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.jingyueglass.com/luxury-wedding-event-champagne-flutes#product",
+      "name": "Luxury Wedding Toasting Flutes & Event Glassware Gift Sets",
+      "description": "Factory-direct custom engraved crystal flutes and stemless wine glass sets in pine wooden boxes (Models xzm132, xzm063) and high-gloss piano lacquer boxes (Model xzm130) for wedding gifts.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Jingyue Glass"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the MOQ for in-stock wedding champagne flute wooden gift sets?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "For in-stock Models xzm132 and xzm063, MOQ starts at only 24 sets with custom laser engraving on the wooden box lid, glasses, and metal accessories."
-            }
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Wuhan Jingyueda Household Products Co., Ltd.",
+        "url": "https://www.jingyueglass.com/"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "6.00",
+        "highPrice": "25.00",
+        "offerCount": "3",
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Wuhan Jingyueda Household Products Co., Ltd."
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
           },
-          {
-            "@type": "Question",
-            "name": "Can we upgrade Model xzm130 flutes to 24K gold-rimmed tulip champagne glasses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! Model xzm130 supports glass customization: you can select modern cylindrical crystal flutes or upgrade to 24K hand-painted gold-rimmed tulip flutes."
+          "shippingDestination": [
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "EU"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "GB"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "AU"
             }
-          },
-          {
-            "@type": "Question",
-            "name": "Can we engrave bride & groom names, wedding dates, or event branding?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes, we support precision fiber laser engraving on glasses and deep laser burning on wooden lids with individual names, monogram initials, and commemorative dates."
-            }
-          }
-        ]
+          ]
+        },
+        "url": "https://www.jingyueglass.com/luxury-wedding-event-champagne-flutes#inquiry"
       }
-    ]
-  }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the MOQ for in-stock wedding champagne flute wooden gift sets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For in-stock Models xzm132 and xzm063, MOQ starts at only 24 sets with custom laser engraving on the wooden box lid, glasses, and metal accessories."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we upgrade Model xzm130 flutes to 24K gold-rimmed tulip champagne glasses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Model xzm130 supports glass customization: you can select modern cylindrical crystal flutes or upgrade to 24K hand-painted gold-rimmed tulip flutes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we engrave bride & groom names, wedding dates, or event branding?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we support precision fiber laser engraving on glasses and deep laser burning on wooden lids with individual names, monogram initials, and commemorative dates."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>

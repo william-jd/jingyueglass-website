@@ -189,67 +189,120 @@
 
   <!-- Schema.org Product & FAQ JSON-LD -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.jingyueglass.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Corporate Holiday Glassware Gifts", "item": "https://www.jingyueglass.com/corporate-holiday-glassware-gifts" }
-        ]
-      },
-      {
-        "@type": "Product",
-        "name": "Corporate Holiday & Year-End Custom Glassware Gift Sets",
-        "image": [
-          "https://www.jingyueglass.com/assets/products/xzm4008-1-magnetic-box-whiskey-gift-set.jpg",
-          "https://www.jingyueglass.com/assets/products/xzm015-wooden-box-whiskey-stones-set.jpg"
-        ],
-        "description": "Factory-direct custom engraved whiskey gift sets for corporate gifting and year-end celebrations. Low MOQ 24 sets.",
-        "brand": { "@type": "Brand", "name": "Jingyue Glass" },
-        "offers": {
-          "@type": "AggregateOffer",
-          "priceCurrency": "USD",
-          "lowPrice": "3.80",
-          "highPrice": "7.00",
-          "offerCount": "2",
-          "priceValidUntil": "2027-12-31",
-          "availability": "https://schema.org/InStock",
-          "seller": { "@type": "Organization", "name": "Wuhan Jingyue Glass Co., Ltd." }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.jingyueglass.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Corporate Holiday Glassware Gifts",
+          "item": "https://www.jingyueglass.com/corporate-holiday-glassware-gifts"
         }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.jingyueglass.com/corporate-holiday-glassware-gifts#product",
+      "name": "Corporate Holiday & Year-End Custom Glassware Gift Sets",
+      "description": "Factory-direct custom engraved whiskey stones and rock glass sets in magnetic hard boxes (Model XZM4008-1) and burnished pine wooden boxes (Model XZM015) for year-end corporate gifting.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Jingyue Glass"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is the MOQ for custom corporate holiday gift sets?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Our MOQ starts at only 24 sets with laser engraving on glasses and pine wooden boxes. Production lead time is 1-3 working days for laser proofing."
-            }
+      "manufacturer": {
+        "@type": "Organization",
+        "name": "Wuhan Jingyueda Household Products Co., Ltd.",
+        "url": "https://www.jingyueglass.com/"
+      },
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "USD",
+        "lowPrice": "3.80",
+        "highPrice": "7.00",
+        "offerCount": "2",
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "Organization",
+          "name": "Wuhan Jingyueda Household Products Co., Ltd."
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail",
+          "returnFees": "https://schema.org/FreeReturn"
+        },
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0",
+            "currency": "USD"
           },
-          {
-            "@type": "Question",
-            "name": "Can we brand both the wooden box and the glasses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes! Model XZM015 supports dual laser branding: high-precision fiber laser etching on both glasses and large-format deep laser burning on the pine box lid."
+          "shippingDestination": [
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "US"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "EU"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "GB"
+            },
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "AU"
             }
-          },
-          {
-            "@type": "Question",
-            "name": "How fast can you dispatch for urgent November/December corporate orders?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "For in-stock sets with laser branding (24-300 sets), dispatch takes 3-7 days after artwork approval. We support air express DDP (5-8 days delivery) directly to your office or fulfillment center."
-            }
-          }
-        ]
+          ]
+        },
+        "url": "https://www.jingyueglass.com/corporate-holiday-glassware-gifts#inquiry"
       }
-    ]
-  }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the MOQ for custom corporate holiday gift sets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our MOQ starts at only 24 sets with laser engraving on glasses and pine wooden boxes. Production lead time is 1-3 working days for laser proofing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can we brand both the wooden box and the glasses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Model XZM015 supports dual laser branding: high-precision fiber laser etching on both glasses and large-format deep laser burning on the pine box lid."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast can you dispatch for urgent November/December corporate orders?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For in-stock sets with laser branding (24-300 sets), dispatch takes 3-7 days after artwork approval. We support air express DDP (5-8 days delivery) directly to your office or fulfillment center."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
 </head>
 <body>
