@@ -342,7 +342,7 @@
   }
   .sec-sub { color: var(--text-muted); font-size: 1rem; }
 
-  /* SKU Matrix - 4 Recommended Verified Products */
+  /* SKU Matrix - 4 Recommended Verified Products with Image Support */
   .sku-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
@@ -352,7 +352,7 @@
     background: #ffffff;
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 22px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -362,6 +362,26 @@
   .sku-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 24px rgba(13,37,64,0.08);
+  }
+  .sku-img-wrap {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #f8fafc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    border: 1px solid var(--border-color);
+    position: relative;
+  }
+  .sku-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    display: block;
+  }
+  .sku-card:hover .sku-img-wrap img {
+    transform: scale(1.04);
   }
   .sku-tag {
     background: #f1f5f9;
@@ -373,7 +393,7 @@
     display: inline-block;
     margin-bottom: 8px;
   }
-  .sku-title { font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px; line-height: 1.3; }
+  .sku-title { font-size: 1.12rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px; line-height: 1.3; }
   .sku-config {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
@@ -417,6 +437,7 @@
     font-weight: 800;
     text-decoration: none;
     transition: background 0.2s;
+    display: block;
   }
   .sku-btn:hover { background: var(--accent-hover); }
 
@@ -641,7 +662,7 @@
   </div>
 </section>
 
-<!-- Matched Verified SKUs -->
+<!-- Matched Verified SKUs with Real Product Photos -->
 <section class="content-sec" style="padding-top: 10px;">
   <div class="sec-header">
     <div class="sec-tag">Official Catalog Selection</div>
@@ -653,6 +674,9 @@
     <!-- SKU 1: XZM008 -->
     <div class="sku-card">
       <div>
+        <div class="sku-img-wrap">
+          <img src="/assets/products/corporate_gifting/xzm008-whiskey-stones-wooden-crate-set.webp" alt="Model XZM008 Whiskey Stones & Rocks Glass Wooden Crate Set - Jingyue Glass Factory Direct" loading="lazy">
+        </div>
         <span class="sku-tag">Model XZM008 · Wooden Crate Series</span>
         <h4 class="sku-title">Whiskey Stones & Rocks Glass Wooden Crate Set</h4>
         <div class="sku-config">
@@ -682,6 +706,9 @@
     <!-- SKU 2: XZM015 -->
     <div class="sku-card">
       <div>
+        <div class="sku-img-wrap">
+          <img src="/assets/products/corporate_gifting/xzm015-burnished-wood-whiskey-set.webp" alt="Model XZM015 Burnished Wood Connoisseur Whiskey Set - Jingyue Glass Factory Direct" loading="lazy">
+        </div>
         <span class="sku-tag">Model XZM015 · Executive Luxury Series</span>
         <h4 class="sku-title">Burnished Wood Connoisseur Whiskey Set</h4>
         <div class="sku-config">
@@ -711,6 +738,9 @@
     <!-- SKU 3: XZM006 -->
     <div class="sku-card">
       <div>
+        <div class="sku-img-wrap">
+          <img src="/assets/products/corporate_gifting/xzm006-decanter-presentation-chest-set.webp" alt="Model XZM006 Decanter & Glasses Presentation Chest Set - Jingyue Glass Factory Direct" loading="lazy">
+        </div>
         <span class="sku-tag">Model XZM006 · Master Decanter Chest</span>
         <h4 class="sku-title">Decanter & Glasses Presentation Chest Set</h4>
         <div class="sku-config">
@@ -740,6 +770,9 @@
     <!-- SKU 4: XZM063 -->
     <div class="sku-card">
       <div>
+        <div class="sku-img-wrap">
+          <img src="/assets/products/corporate_gifting/xzm063-dual-glass-mixology-wooden-set.webp" alt="Model XZM063 Dual-Glass Mixology & Accessory Wooden Set - Jingyue Glass Factory Direct" loading="lazy">
+        </div>
         <span class="sku-tag">Model XZM063 · Sommelier & Mixology</span>
         <h4 class="sku-title">Dual-Glass Mixology & Accessory Wooden Set</h4>
         <div class="sku-config">
