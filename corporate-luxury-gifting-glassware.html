@@ -54,10 +54,26 @@
       "mainEntity": [
         {
           "@type": "Question",
+          "name": "What is the MOQ and sampling lead time for custom non-stock gift sets vs in-stock sets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For custom non-stock gift sets (bespoke box dimensions, specialty wood stains, custom EVA inserts), the MOQ starts from 100 sets with a sampling lead time of 5–20 working days. For in-stock gift sets requiring custom laser logo branding only, sample dispatch is completed within 1 business day upon stock verification and vector artwork confirmation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is sample pricing structured compared to bulk production prices and shipping times?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Physical sample kits range from $10 to $200 per set depending on set complexity, materials (solid wood chests vs magnetic boxes), and accessories. Sample costs and courier air transit (3–7 days) are quoted separately from bulk FOB container pricing and ocean transit. Sample fees are 100% credited against your subsequent bulk order invoice."
+          }
+        },
+        {
+          "@type": "Question",
           "name": "Can you engrave individual employee or client names on each glass/box?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. We offer variable laser engraving for personalized VIP and executive gifts, allowing custom recipient names across wood boxes and crystal glasses."
+            "text": "Yes. We offer variable laser engraving for personalized VIP and executive gifts, allowing custom recipient names and corporate logos across solid pine wood boxes and crystal glassware."
           }
         },
         {
@@ -65,15 +81,7 @@
           "name": "Can we include custom marketing inserts, cards, or user guides inside the gift boxes?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Absolutely. We provide full fulfillment services including printing and inserting custom greeting cards, cocktail recipe booklets, and branded sleeve packaging."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is the production turnaround for a 500-set corporate holiday order?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Standard production lead time for 500 assembled gift box sets is 20–25 working days, with expedited 15-day rush production available upon request."
+            "text": "Absolutely. We provide full fulfillment services including printing and inserting custom foil-stamped greeting cards, cocktail recipe booklets, certificates of authenticity, and branded sleeve packaging."
           }
         }
       ]
@@ -149,7 +157,9 @@
     padding: 8px 18px;
     border-radius: 6px;
     font-weight: 700 !important;
+    transition: background 0.2s;
   }
+  .nav-cta:hover { background: var(--accent-hover); }
 
   .hero-sec {
     background: linear-gradient(135deg, #0d2540 0%, #1a3a5c 100%);
@@ -157,7 +167,7 @@
     padding: 64px 20px;
     text-align: center;
   }
-  .hero-inner { max-width: 880px; margin: 0 auto; }
+  .hero-inner { max-width: 900px; margin: 0 auto; }
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -207,12 +217,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
     flex-wrap: wrap;
     gap: 10px;
   }
   .qa-title {
-    font-size: 1.1rem;
+    font-size: 1.12rem;
     font-weight: 800;
     color: var(--primary-dark);
     display: flex;
@@ -231,18 +241,18 @@
     font-size: 0.96rem;
     color: #334155;
     line-height: 1.65;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
   }
   .qa-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
   }
   .qa-item {
     background: #f8fafc;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
-    padding: 12px 14px;
+    padding: 14px;
   }
   .qa-label {
     font-size: 0.78rem;
@@ -256,8 +266,54 @@
     color: var(--primary-dark);
     font-weight: 700;
   }
+  .qa-note {
+    font-size: 0.78rem;
+    color: #64748b;
+    margin-top: 4px;
+    line-height: 1.4;
+  }
 
-  /* Section Styles */
+  /* Two-Tier Commercial Terms Card */
+  .terms-sec {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 50px;
+  }
+  .terms-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+  }
+  .term-box {
+    border-radius: 10px;
+    padding: 24px;
+    border: 1px solid var(--border-color);
+  }
+  .term-box.instock {
+    background: #f0fdf4;
+    border-color: #86efac;
+  }
+  .term-box.custom {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+  }
+  .term-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .term-box.instock .term-badge { background: #dcfce7; color: #166534; }
+  .term-box.custom .term-badge { background: #e2e8f0; color: #334155; }
+  .term-title { font-size: 1.18rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px; }
+  .term-desc { font-size: 0.92rem; color: #475569; line-height: 1.6; margin-bottom: 14px; }
+  .term-list { list-style: none; font-size: 0.88rem; color: #334155; display: grid; gap: 8px; }
+  .term-list li { display: flex; gap: 8px; }
+
+  /* Content Sections */
   .content-sec {
     max-width: 1200px;
     margin: 0 auto;
@@ -286,24 +342,85 @@
   }
   .sec-sub { color: var(--text-muted); font-size: 1rem; }
 
-  /* Pain Points */
-  .pain-grid {
+  /* SKU Matrix - 4 Recommended Verified Products */
+  .sku-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 22px;
   }
-  .pain-card {
+  .sku-card {
     background: #ffffff;
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 14px rgba(13,37,64,0.03);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 14px rgba(13,37,64,0.04);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .pain-icon { font-size: 1.8rem; margin-bottom: 12px; }
-  .pain-title { font-size: 1.15rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 8px; }
-  .pain-desc { color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+  .sku-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(13,37,64,0.08);
+  }
+  .sku-tag {
+    background: #f1f5f9;
+    color: #475569;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  .sku-title { font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px; line-height: 1.3; }
+  .sku-config {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 0.82rem;
+    color: #334155;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .sku-config strong { color: var(--primary-dark); display: block; margin-bottom: 4px; }
+  .sku-meta-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.82rem;
+    margin-bottom: 14px;
+  }
+  .sku-meta-table td {
+    padding: 4px 0;
+    border-bottom: 1px dashed #f1f5f9;
+  }
+  .sku-meta-table td:first-child { color: #64748b; width: 45%; }
+  .sku-meta-table td:last-child { font-weight: 700; color: var(--primary-dark); }
+  .sku-pricing-box {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 14px;
+    font-size: 0.82rem;
+  }
+  .sku-pricing-row { display: flex; justify-content: space-between; margin-bottom: 3px; }
+  .sku-pricing-row:last-child { margin-bottom: 0; }
+  .sku-btn {
+    background: var(--accent);
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    font-weight: 800;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .sku-btn:hover { background: var(--accent-hover); }
 
-  /* Solutions */
+  /* Solutions Grid */
   .solution-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -344,45 +461,6 @@
     gap: 8px;
   }
 
-  /* SKU Matrix */
-  .sku-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-  }
-  .sku-card {
-    background: #ffffff;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 12px rgba(13,37,64,0.03);
-  }
-  .sku-title { font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 6px; }
-  .sku-spec { font-size: 0.85rem; color: #64748b; margin-bottom: 14px; line-height: 1.5; }
-  .sku-meta {
-    font-size: 0.85rem;
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px dashed var(--border-color);
-    padding-top: 10px;
-    margin-bottom: 14px;
-  }
-  .sku-btn {
-    background: var(--primary-dark);
-    color: #ffffff;
-    text-align: center;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 0.84rem;
-    font-weight: 700;
-    text-decoration: none;
-    transition: background 0.2s;
-  }
-  .sku-btn:hover { background: var(--accent); }
-
   /* CTA Form Banner */
   .cta-banner {
     background: linear-gradient(135deg, #0d2540 0%, #1a3a5c 100%);
@@ -398,7 +476,7 @@
     font-size: 2rem;
     margin-bottom: 12px;
   }
-  .cta-banner p { color: #cbd5e1; max-width: 650px; margin: 0 auto 24px; }
+  .cta-banner p { color: #cbd5e1; max-width: 650px; margin: 0 auto 24px; font-size: 0.96rem; }
   .cta-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
   .btn-cta-gold {
     background: var(--accent);
@@ -408,7 +486,9 @@
     font-size: 0.96rem;
     font-weight: 800;
     text-decoration: none;
+    transition: background 0.2s;
   }
+  .btn-cta-gold:hover { background: var(--accent-hover); }
   .btn-cta-outline {
     background: transparent;
     border: 1px solid rgba(255,255,255,0.4);
@@ -485,7 +565,7 @@
       <li><a href="/wine-decanters">Decanters</a></li>
       <li><a href="/certifications">Certifications</a></li>
       <li><a href="/download-center">Downloads</a></li>
-      <li><a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20would%20like%20to%20discuss%20a%20B2B%20glassware%20project." class="nav-cta" target="_blank" rel="noopener">WhatsApp Quote</a></li>
+      <li><a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20would%20like%20to%20discuss%20a%20B2B%20corporate%20gifting%20project." class="nav-cta" target="_blank" rel="noopener">WhatsApp Quote</a></li>
     </ul>
   </div>
 </header>
@@ -501,58 +581,195 @@
 <div class="quick-answer-card">
   <div class="quick-answer-inner">
     <div class="qa-header">
-      <div class="qa-title">⚡ Quick Sourcing Summary: Dedicated Industry Baseline</div>
-      <div class="qa-meta">Published for Commercial Sourcing Managers</div>
+      <div class="qa-title">⚡ Quick Sourcing Summary: Corporate Gifting & Sampling Baseline</div>
+      <div class="qa-meta">Official Wuhan Factory Baseline · Oct 2026</div>
     </div>
-    <div class="qa-text">Jingyue Glass delivers complete corporate gifting programs with low trial MOQ (20–24 sets). We combine lead-free crystal drinkware with custom pine/paulownia wooden boxes, high-density velvet EVA foam, chilling stones, and dual laser engraving on wood and glass, with 1–3 day fast mockup approval.</div>
+    <div class="qa-text">Jingyue Glass delivers factory-direct corporate glassware gift programs with two distinct fulfillment tracks: <strong>In-stock sets with custom laser logo</strong> dispatch physical samples within <strong>1 business day</strong>; <strong>Bespoke custom non-stock sets</strong> start at <strong>100 sets MOQ</strong> with a <strong>5–20 working day</strong> sampling lead time. Physical sample kits ($10–$200/set) and courier air transit are quoted separately from bulk FOB container production and are 100% credited against your final bulk invoice.</div>
     <div class="qa-grid">
       <div class="qa-item">
-        <div class="qa-label">Gifting Trial MOQ</div>
-        <div class="qa-val">20 – 24 Sets</div>
+        <div class="qa-label">In-Stock Laser Sample</div>
+        <div class="qa-val">1 Business Day</div>
+        <div class="qa-note">Upon stock & vector artwork confirmation</div>
       </div>
       <div class="qa-item">
-        <div class="qa-label">Proofing Turnaround</div>
-        <div class="qa-val">1 – 3 Days Fast Sample</div>
+        <div class="qa-label">Custom Non-Stock MOQ</div>
+        <div class="qa-val">From 100 Sets</div>
+        <div class="qa-note">Sampling: 5–20 working days</div>
       </div>
       <div class="qa-item">
-        <div class="qa-label">Indicative FOB Price</div>
-        <div class="qa-val">About $3.80 – $18.50 / set</div>
+        <div class="qa-label">Sample Kit Pricing</div>
+        <div class="qa-val">$10 – $200 / kit</div>
+        <div class="qa-note">Separated from bulk pricing; 100% refundable</div>
       </div>
       <div class="qa-item">
-        <div class="qa-label">Packaging Options</div>
-        <div class="qa-val">Wood Crates & Rigid Boxes</div>
+        <div class="qa-label">Bulk Lead Time & Freight</div>
+        <div class="qa-val">15 – 25 Days Bulk</div>
+        <div class="qa-note">Air sample vs ocean bulk freight separated</div>
       </div>
-
     </div>
   </div>
 </div>
 
-<section class="content-sec">
-  <div class="sec-header">
-    <div class="sec-tag">Buyer Pain Points</div>
-    <h2 class="sec-title">Key Sourcing Challenges We Solve</h2>
-    <p class="sec-sub">Tailored manufacturing workflows to eliminate the common pitfalls of commercial glassware procurement.</p>
+<!-- Two-Track Fulfillment Framework -->
+<section class="terms-sec">
+  <div class="sec-header" style="margin-bottom: 24px;">
+    <div class="sec-tag">Procurement Framework</div>
+    <h2 class="sec-title" style="font-size: 2rem;">Turnkey Sampling & Bulk Terms</h2>
+    <p class="sec-sub">Clear separation between rapid in-stock logo customization and full bespoke OEM manufacturing.</p>
   </div>
-  <div class="pain-grid">
-      <div class="pain-card">
-        <div class="pain-icon">📦</div>
-        <h3 class="pain-title">Multi-Vendor Packaging Fragmentation</h3>
-        <p class="pain-desc">Coordinating glassware from one supplier and wooden boxes/inserts from another leads to sizing mismatches and transit breakage. We deliver 100% turnkey assembled sets.</p>
+  <div class="terms-grid">
+    <div class="term-box instock">
+      <span class="term-badge">Track 1 · Rapid In-Stock Branding</span>
+      <h3 class="term-title">In-Stock Sets with Custom Laser Logo</h3>
+      <p class="term-desc">Ideal for corporate event deadlines, executive VIP welcome gifts, and annual holiday tokens requiring rapid turnaround.</p>
+      <ul class="term-list">
+        <li><span>⚡</span><strong>Sample Speed:</strong> 1 business day sample dispatch upon stock verification and vector logo approval.</li>
+        <li><span>🎯</span><strong>Branding Mode:</strong> High-precision fiber laser etching on glassware and deep CO2 laser burning on wooden box lids.</li>
+        <li><span>📦</span><strong>Batch MOQ:</strong> Low reorder threshold from standard master export cartons.</li>
+      </ul>
+    </div>
+    <div class="term-box custom">
+      <span class="term-badge">Track 2 · Full Bespoke OEM</span>
+      <h3 class="term-title">Custom Non-Stock Gift Sets</h3>
+      <p class="term-desc">Designed for bespoke corporate gift box dimensions, custom interior EVA foam cutouts, dyed wood stains, or new glassware molds.</p>
+      <ul class="term-list">
+        <li><span>📐</span><strong>Minimum Order:</strong> Starts from 100 sets for custom-fabricated packaging and inserts.</li>
+        <li><span>🛠️</span><strong>Sampling Lead Time:</strong> 5–20 working days depending on tooling complexity and specialty wood finishes.</li>
+        <li><span>💰</span><strong>Transparent Pricing:</strong> Sample fee ($10–$200) covers proofing & setup, 100% credited against subsequent bulk orders.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Matched Verified SKUs -->
+<section class="content-sec" style="padding-top: 10px;">
+  <div class="sec-header">
+    <div class="sec-tag">Official Catalog Selection</div>
+    <h2 class="sec-title">Recommended Corporate Gift Sets</h2>
+    <p class="sec-sub">Four core gift set configurations verified against Huahang official factory catalog records.</p>
+  </div>
+  <div class="sku-grid">
+
+    <!-- SKU 1: XZM008 -->
+    <div class="sku-card">
+      <div>
+        <span class="sku-tag">Model XZM008 · Wooden Crate Series</span>
+        <h4 class="sku-title">Whiskey Stones & Rocks Glass Wooden Crate Set</h4>
+        <div class="sku-config">
+          <strong>📦 Standard Contents & Configuration:</strong>
+          • 1x Solid Pine / Burnt Wooden Box<br>
+          • 2x Faceted Crystal Rocks Glasses<br>
+          • 8x Natural Granite Chilling Stones + Velvet Pouch<br>
+          • 1x Stainless Steel Ice Tongs<br>
+          • 2x Natural Slate Drink Coasters
+        </div>
+        <table class="sku-meta-table">
+          <tr><td>In-Stock Laser Sample</td><td>1 Business Day</td></tr>
+          <tr><td>Custom Non-Stock MOQ</td><td>100 Sets (5–20d Sample)</td></tr>
+          <tr><td>Catalog Citation</td><td>Huahang Master Catalog</td></tr>
+        </table>
       </div>
-      <div class="pain-card">
-        <div class="pain-icon">⏳</div>
-        <h3 class="pain-title">Slow Proofing for Executive Approval</h3>
-        <p class="pain-desc">Corporate gifting programs operate on strict event deadlines. We provide 3D visual mockups in 24h and physical sample dispatch in 1–3 days.</p>
+      <div>
+        <div class="sku-pricing-box">
+          <div class="sku-pricing-row"><span>Sample Kit Cost:</span><strong>About $15 – $35 / kit</strong></div>
+          <div class="sku-pricing-row"><span>Bulk FOB Estimate:</span><strong>About $4.20 – $7.50 / set</strong></div>
+          <div class="sku-pricing-row" style="font-size:0.75rem;color:#78350f;"><span>*Sample 100% credited against bulk order</span></div>
+        </div>
+        <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20am%20interested%20in%20Model%20XZM008%20Whiskey%20Gift%20Set." class="sku-btn" target="_blank" rel="noopener">Inquire Model XZM008 →</a>
       </div>
-      <div class="pain-card">
-        <div class="pain-icon">📉</div>
-        <h3 class="pain-title">Rigid Minimums for VIP Executive Tiers</h3>
-        <p class="pain-desc">High minimums prevent bespoke VIP gifts. We offer low MOQ tiering starting at just 20 sets for executive and shareholder gifting.</p>
+    </div>
+
+    <!-- SKU 2: XZM015 -->
+    <div class="sku-card">
+      <div>
+        <span class="sku-tag">Model XZM015 · Executive Luxury Series</span>
+        <h4 class="sku-title">Burnished Wood Connoisseur Whiskey Set</h4>
+        <div class="sku-config">
+          <strong>📦 Standard Contents & Configuration:</strong>
+          • 1x Burnished Pine Box with Bronze Latch<br>
+          • 2x 310ml Diamond-Faceted Crystal Rock Glasses<br>
+          • 8x Natural Granite Whiskey Stones<br>
+          • 1x Silicone-Tipped Stainless Tongs<br>
+          • 1x Velvet Pouch + 2x Slate Coasters
+        </div>
+        <table class="sku-meta-table">
+          <tr><td>In-Stock Laser Sample</td><td>1 Business Day</td></tr>
+          <tr><td>Custom Non-Stock MOQ</td><td>100 Sets (5–20d Sample)</td></tr>
+          <tr><td>Catalog Citation</td><td>Huahang Master Catalog</td></tr>
+        </table>
       </div>
+      <div>
+        <div class="sku-pricing-box">
+          <div class="sku-pricing-row"><span>Sample Kit Cost:</span><strong>About $18 – $45 / kit</strong></div>
+          <div class="sku-pricing-row"><span>Bulk FOB Estimate:</span><strong>About $5.00 – $8.80 / set</strong></div>
+          <div class="sku-pricing-row" style="font-size:0.75rem;color:#78350f;"><span>*Sample 100% credited against bulk order</span></div>
+        </div>
+        <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20am%20interested%20in%20Model%20XZM015%20Whiskey%20Gift%20Set." class="sku-btn" target="_blank" rel="noopener">Inquire Model XZM015 →</a>
+      </div>
+    </div>
+
+    <!-- SKU 3: XZM006 -->
+    <div class="sku-card">
+      <div>
+        <span class="sku-tag">Model XZM006 · Master Decanter Chest</span>
+        <h4 class="sku-title">Decanter & Glasses Presentation Chest Set</h4>
+        <div class="sku-config">
+          <strong>📦 Standard Contents & Configuration:</strong>
+          • 1x Master Presentation Chest (38×32×16 cm)<br>
+          • 1x Crystal Spirits / Wine Decanter with Stopper<br>
+          • 2x Matching Stemmed Wine / Rocks Glasses<br>
+          • 1x Zinc Alloy Bottle Stopper<br>
+          • 1x Waiter's Corkscrew Seahorse Knife
+        </div>
+        <table class="sku-meta-table">
+          <tr><td>In-Stock Laser Sample</td><td>1 Business Day</td></tr>
+          <tr><td>Custom Non-Stock MOQ</td><td>100 Sets (5–20d Sample)</td></tr>
+          <tr><td>Catalog Citation</td><td>Huahang Master Catalog</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="sku-pricing-box">
+          <div class="sku-pricing-row"><span>Sample Kit Cost:</span><strong>About $35 – $85 / kit</strong></div>
+          <div class="sku-pricing-row"><span>Bulk FOB Estimate:</span><strong>About $11.50 – $19.50 / set</strong></div>
+          <div class="sku-pricing-row" style="font-size:0.75rem;color:#78350f;"><span>*Sample 100% credited against bulk order</span></div>
+        </div>
+        <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20am%20interested%20in%20Model%20XZM006%20Decanter%20Gift%20Set." class="sku-btn" target="_blank" rel="noopener">Inquire Model XZM006 →</a>
+      </div>
+    </div>
+
+    <!-- SKU 4: XZM063 -->
+    <div class="sku-card">
+      <div>
+        <span class="sku-tag">Model XZM063 · Sommelier & Mixology</span>
+        <h4 class="sku-title">Dual-Glass Mixology & Accessory Wooden Set</h4>
+        <div class="sku-config">
+          <strong>📦 Standard Contents & Configuration:</strong>
+          • 1x Burnt Pine Wooden Box with Velvet Lining<br>
+          • 2x XZ3310 Heavy-Base Whiskey Glasses<br>
+          • 1x Seahorse Corkscrew Knife<br>
+          • 1x Solid Round Stopper + 1x Aerator Pourer<br>
+          • 1x Foil Glass Cutter
+        </div>
+        <table class="sku-meta-table">
+          <tr><td>In-Stock Laser Sample</td><td>1 Business Day</td></tr>
+          <tr><td>Custom Non-Stock MOQ</td><td>100 Sets (5–20d Sample)</td></tr>
+          <tr><td>Catalog Citation</td><td>Huahang Master Catalog</td></tr>
+        </table>
+      </div>
+      <div>
+        <div class="sku-pricing-box">
+          <div class="sku-pricing-row"><span>Sample Kit Cost:</span><strong>About $20 – $40 / kit</strong></div>
+          <div class="sku-pricing-row"><span>Bulk FOB Estimate:</span><strong>About $5.80 – $10.50 / set</strong></div>
+          <div class="sku-pricing-row" style="font-size:0.75rem;color:#78350f;"><span>*Sample 100% credited against bulk order</span></div>
+        </div>
+        <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20am%20interested%20in%20Model%20XZM063%20Mixology%20Set." class="sku-btn" target="_blank" rel="noopener">Inquire Model XZM063 →</a>
+      </div>
+    </div>
 
   </div>
 </section>
 
+<!-- Engineering Solutions -->
 <section class="content-sec" style="background: #f8fafc; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); max-width: 100%; padding: 60px 20px;">
   <div style="max-width: 1200px; margin: 0 auto;">
     <div class="sec-header">
@@ -579,64 +796,16 @@
         <p class="solution-card-desc">Complete mixology gift sets including natural wood smoke caps, culinary torches, premium wood chips, and granite chilling stones.</p>
         <ul class="solution-bullets"><li>✓ Refillable Torches & Smoke Caps</li><li>✓ FDA-Tested Food-Grade Stainless Accessories</li><li>✓ ISTA-3A Drop-Tested Mailer Boxes</li></ul>
       </div>
-
     </div>
   </div>
 </section>
 
-<section class="content-sec">
-  <div class="sec-header">
-    <div class="sec-tag">Matched Glassware Lines</div>
-    <h2 class="sec-title">Recommended Product Configurations</h2>
-    <p class="sec-sub">Factory-direct SKUs engineered specifically for this industry application.</p>
-  </div>
-  <div class="sku-grid">
-      <div class="sku-card">
-        <h4 class="sku-title">Magnetic Hard Box Whiskey Gift Set (XZM4008-1)</h4>
-        <p class="sku-spec">2 Rocks Glasses + 8 Granite Stones + Tongs in Rigid Gift Box.</p>
-        <div class="sku-meta">
-          <span><strong>MOQ:</strong> 24 sets</span>
-          <span><strong>Price:</strong> <em style="color:#c8930a;font-style:normal;font-weight:700;">About $4.20 – $8.50 / set</em></span>
-        </div>
-        <a href="/gift-sets" class="sku-btn">View Specification →</a>
-      </div>
-      <div class="sku-card">
-        <h4 class="sku-title">Solid Pine Wood Toasting Set (xzm132)</h4>
-        <p class="sku-spec">2 Crystal Champagne Flutes in Slide-Lid Wooden Box.</p>
-        <div class="sku-meta">
-          <span><strong>MOQ:</strong> 24 sets</span>
-          <span><strong>Price:</strong> <em style="color:#c8930a;font-style:normal;font-weight:700;">About $5.50 – $11.00 / set</em></span>
-        </div>
-        <a href="/gift-sets" class="sku-btn">View Specification →</a>
-      </div>
-      <div class="sku-card">
-        <h4 class="sku-title">Executive Smoker Mixology Kit (XZ-SMK04)</h4>
-        <p class="sku-spec">Smoker Cap + Torch + 4 Wood Chips + Rocks Glass in Gift Box.</p>
-        <div class="sku-meta">
-          <span><strong>MOQ:</strong> 20 sets</span>
-          <span><strong>Price:</strong> <em style="color:#c8930a;font-style:normal;font-weight:700;">About $7.50 – $18.50 / set</em></span>
-        </div>
-        <a href="/smoked-cocktail-mixology-sets" class="sku-btn">View Specification →</a>
-      </div>
-      <div class="sku-card">
-        <h4 class="sku-title">Crystal Decanter & Glasses Crate Set (XZM015)</h4>
-        <p class="sku-spec">1 Decanter + 4 Glasses in Luxury Wooden Chest with Metal Latch.</p>
-        <div class="sku-meta">
-          <span><strong>MOQ:</strong> 20 sets</span>
-          <span><strong>Price:</strong> <em style="color:#c8930a;font-style:normal;font-weight:700;">About $8.50 – $16.50 / set</em></span>
-        </div>
-        <a href="/gift-sets" class="sku-btn">View Specification →</a>
-      </div>
-
-  </div>
-</section>
-
 <div class="cta-banner">
-  <h3>Ready to Start Your Custom Glassware Project?</h3>
-  <p>Speak directly with our engineering and export team. Get tailored DFM feedback, sample dispatch in 3–5 days, and formal FOB/DDP quotations within 1 hour.</p>
+  <h3>Ready to Start Your Corporate Gifting Project?</h3>
+  <p>Send your logo artwork and target quantities. Get 24-hour visual 3D mockups, 1-day in-stock sample dispatch, and formal FOB/DDP quotations within 1 business hour.</p>
   <div class="cta-btns">
-    <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20am%20interested%20in%20your%20custom%20glassware%20solutions." class="btn-cta-gold" target="_blank" rel="noopener">Chat on WhatsApp (1h Reply) →</a>
-    <a href="mailto:sales@jingyueglass.com?subject=Custom%20Glassware%20Inquiry%20-%20Jingyue%20Glass" class="btn-cta-outline">Email Inquiry (sales@jingyueglass.com)</a>
+    <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20am%20interested%20in%20custom%20corporate%20glassware%20gifting%20sets." class="btn-cta-gold" target="_blank" rel="noopener">Chat on WhatsApp (1h Reply) →</a>
+    <a href="mailto:sales@jingyueglass.com?subject=Corporate%20Gifting%20Inquiry%20-%20Jingyue%20Glass" class="btn-cta-outline">Email Inquiry (sales@jingyueglass.com)</a>
   </div>
 </div>
 
@@ -646,16 +815,20 @@
     <h2 class="sec-title" style="font-size: 2rem;">Frequently Asked Questions</h2>
   </div>
   <div class="faq-item">
+    <div class="faq-q">What is the MOQ and sampling lead time for custom non-stock gift sets vs in-stock sets? <span>+</span></div>
+    <div class="faq-a">For custom non-stock gift sets (bespoke box dimensions, specialty wood stains, custom EVA inserts), the MOQ starts from 100 sets with a sampling lead time of 5–20 working days. For in-stock gift sets requiring custom laser logo branding only, sample dispatch is completed within 1 business day upon stock verification and vector artwork confirmation.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">How is sample pricing structured compared to bulk production prices and shipping times? <span>+</span></div>
+    <div class="faq-a">Physical sample kits range from $10 to $200 per set depending on set complexity, materials (solid wood chests vs magnetic boxes), and accessories. Sample costs and courier air transit (3–7 days) are quoted separately from bulk FOB container pricing and ocean transit. Sample fees are 100% credited against your subsequent bulk order invoice.</div>
+  </div>
+  <div class="faq-item">
     <div class="faq-q">Can you engrave individual employee or client names on each glass/box? <span>+</span></div>
     <div class="faq-a">Yes. We offer variable laser engraving for personalized VIP and executive gifts, allowing custom recipient names across wood boxes and crystal glasses.</div>
   </div>
   <div class="faq-item">
     <div class="faq-q">Can we include custom marketing inserts, cards, or user guides inside the gift boxes? <span>+</span></div>
     <div class="faq-a">Absolutely. We provide full fulfillment services including printing and inserting custom greeting cards, cocktail recipe booklets, and branded sleeve packaging.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q">What is the production turnaround for a 500-set corporate holiday order? <span>+</span></div>
-    <div class="faq-a">Standard production lead time for 500 assembled gift box sets is 20–25 working days, with expedited 15-day rush production available upon request.</div>
   </div>
 </section>
 
