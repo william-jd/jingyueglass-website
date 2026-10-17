@@ -558,6 +558,8 @@
     </div>
 
     <form class="demo-form" action="https://formspree.io/f/mkopdvol" method="POST">
+        <!-- Anti-Spam Honeypot Field -->
+        <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" name="page_url" value="https://www.jingyueglass.com/luxury-corporate-glassware-gifts">
         <input type="hidden" name="page_path" value="/luxury-corporate-glassware-gifts">
         <input type="hidden" name="page_title" value="Luxury Corporate Glassware Gift Sets | Jingyue Glass">
@@ -596,6 +598,8 @@
         <div class="form-group">
           <label>Gift Set Type</label>
           <select name="product" class="form-control">
+            <option value="" disabled selected>Please select an option...</option>
+            
             <option value="Whiskey Decanter + 2 Glasses Wooden Box Set">Whiskey Decanter + 2 Glasses Wooden Box Set</option>
             <option value="Champagne Flute Pair Luxury Box Set">Champagne Flute Pair Luxury Box Set</option>
             <option value="4-Piece Rocks Glass + Chilling Stones Set">4-Piece Rocks Glass + Chilling Stones Set</option>
@@ -606,6 +610,8 @@
         <div class="form-group">
           <label>Packaging Preference</label>
           <select name="service_type" class="form-control">
+            <option value="" disabled selected>Please select an option...</option>
+            
             <option value="Solid Wooden Box (Pine/Bamboo)">Solid Wooden Box (Pine / Bamboo)</option>
             <option value="Magnetic Rigid Gift Box (Paperboard)">Magnetic Rigid Gift Box (Paperboard)</option>
             <option value="Book-Style Box with Ribbon">Book-Style Box with Ribbon</option>
@@ -617,6 +623,8 @@
       <div class="form-group">
         <label>Estimated Quantity (Sets)</label>
         <select name="quantity" class="form-control">
+            <option value="" disabled selected>Please select an option...</option>
+            
           <option value="20 - 50 sets (Small Batch VIP)">20 - 50 sets (Small Batch VIP)</option>
           <option value="50 - 200 sets (Corporate Event)">50 - 200 sets (Corporate Event)</option>
           <option value="200 - 500 sets (Wholesale Program)">200 - 500 sets (Wholesale Program)</option>

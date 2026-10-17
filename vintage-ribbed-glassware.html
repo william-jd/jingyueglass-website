@@ -558,6 +558,8 @@
     </div>
 
     <form class="demo-form" action="https://formspree.io/f/mkopdvol" method="POST">
+        <!-- Anti-Spam Honeypot Field -->
+        <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" name="page_url" value="https://www.jingyueglass.com/vintage-ribbed-glassware">
         <input type="hidden" name="page_path" value="/vintage-ribbed-glassware">
         <input type="hidden" name="page_title" value="Vintage Ribbed Glassware Wholesale | Jingyue Glass">
@@ -596,6 +598,8 @@
         <div class="form-group">
           <label>Ribbed Style Needed</label>
           <select name="product" class="form-control">
+            <option value="" disabled selected>Please select an option...</option>
+            
             <option value="380ml Origami Highball">380 ml Origami Highball Glass</option>
             <option value="260ml Ribbed Coupe Glass">260 ml Vintage Ribbed Coupe Glass</option>
             <option value="450ml Fluted Can Glass with Straw">450 ml Fluted Can Glass with Straw</option>
@@ -606,6 +610,8 @@
         <div class="form-group">
           <label>Service Intent</label>
           <select name="service_type" class="form-control">
+            <option value="" disabled selected>Please select an option...</option>
+            
             <option value="Standard Wholesale">Standard Wholesale (Low MOQ)</option>
             <option value="Custom Logo Printing">Custom Logo / Gold Rim</option>
             <option value="Custom Gift Packaging">Custom Box / Retail Pack</option>
@@ -617,6 +623,8 @@
       <div class="form-group">
         <label>Estimated Quantity</label>
         <select name="quantity" class="form-control">
+            <option value="" disabled selected>Please select an option...</option>
+            
           <option value="< 100 pcs (Sample / Trial)">&lt; 100 pcs (Sample / Trial)</option>
           <option value="100 - 500 pcs (Small Batch)">100 - 500 pcs (Small Batch)</option>
           <option value="500 - 2,000 pcs (Standard Batch)">500 - 2,000 pcs (Standard Batch)</option>

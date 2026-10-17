@@ -1057,6 +1057,8 @@
     </div>
 
     <form class="inquiry-form" action="https://formspree.io/f/mkopdvol" method="POST">
+        <!-- Anti-Spam Honeypot Field -->
+        <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" name="page_url" value="https://www.jingyueglass.com/smoked-cocktail-mixology-sets">
         <input type="hidden" name="page_path" value="/smoked-cocktail-mixology-sets">
         <input type="hidden" name="page_title" value="Smoked Cocktail Glassware Sets Wholesale | Jingyue Glass">
@@ -1091,6 +1093,8 @@
         <div class="form-group">
           <label>Preferred Smoker Set Model</label>
           <select name="product">
+            <option value="" disabled selected>Please select an option...</option>
+            
             <option value="XZ-SMK01 Cylinder Glass Kit">XZ-SMK01 Cylinder Infusion Glass Kit</option>
             <option value="XZ-SMK02 Hexagonal Retail Kit">XZ-SMK02 Hexagonal Multi-Flavor Retail Kit</option>
             <option value="XZ-SMK03 Executive Gold Torch Kit">XZ-SMK03 Executive Gold-Edition Kit</option>
@@ -1105,6 +1109,8 @@
         <div class="form-group">
           <label>Estimated Order Quantity</label>
           <select name="quantity">
+            <option value="" disabled selected>Please select an option...</option>
+            
             <option value="20-50 sets (Trial Order)">20–50 sets (Trial Order)</option>
             <option value="50-200 sets (Small Batch)">50–200 sets (Small Batch)</option>
             <option value="200-500 sets (Wholesale)">200–500 sets (Wholesale)</option>
