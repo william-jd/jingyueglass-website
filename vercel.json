@@ -24,22 +24,22 @@
   "redirects": [
     {
       "source": "/products",
-      "destination": "/#categories",
+      "destination": "/glassware-product-catalog",
       "permanent": true
     },
     {
       "source": "/contact",
-      "destination": "/#contact",
+      "destination": "/custom-glassware-quote-checklist",
       "permanent": true
     },
     {
       "source": "/industries",
-      "destination": "/#solutions",
+      "destination": "/hospitality-restaurant-glassware",
       "permanent": true
     },
     {
       "source": "/oem-custom-glassware",
-      "destination": "/custom-glassware-quote-checklist",
+      "destination": "/custom-logo-glassware",
       "permanent": true
     }
   ],
