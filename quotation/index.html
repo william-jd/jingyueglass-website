@@ -4,7 +4,7 @@
 </style></head><body>
 <header class="top"><div class="brand"><b>JY</b><div>晶悦达 <span>JINGYUEDA</span></div><em>报价工作台</em></div><div class="actions"><span id="saveState">本机草稿</span><button id="save">保存草稿</button><button id="load">导入草稿</button><button id="excel">导出 Excel</button><button id="print" class="primary">保存 PDF</button></div></header>
 <main><aside><div class="eyebrow">PRODUCT LIBRARY</div><h1>从产品开始</h1><p class="muted">选入产品，自动填写报价信息。</p><input id="search" type="search" placeholder="搜索货号、产品名称…" aria-label="搜索产品"><div class="filters"><button class="active" data-category="">全部</button><button data-category="木盒套装">木盒套装</button><button data-category="现货杯具">现货杯具</button></div><div class="library-meta"><span id="resultCount"></span><button id="catalogBtn" class="link">查看图册 ↗</button></div><div id="products"></div></aside>
-<section class="workspace"><div class="workspace-heading"><div><div class="eyebrow">QUOTATION STUDIO</div><h2>制作报价单</h2></div><button id="new">新建空白报价</button></div><div class="notice">价格暂留空 · 公司资料及条款来自模板 · 草稿仅保存在当前浏览器</div>
+<section class="workspace"><div class="workspace-heading"><div><div class="eyebrow">QUOTATION STUDIO</div><h2>制作报价单</h2></div><button id="new">新建空白报价</button></div><div class="notice">版本 2026.10.20.3 · 价格暂留空 · 草稿仅保存在当前浏览器</div>
 <section class="panel"><div class="section-title"><h3>01 <span>客户与报价信息</span></h3><button id="detailsBtn" class="link">公司资料及交易条款</button></div><div id="fields" class="fields"></div></section>
 <section class="panel"><div class="section-title"><h3>02 <span>已选产品</span> <small id="selectedCount"></small></h3><span class="muted">点击“编辑”核对规格与目录图片</span></div><div id="selected"></div></section>
 <div class="section-title preview-heading"><h3>03 <span>报价单预览</span></h3><span class="muted">A4 横向 · PDF 直接下载，不含浏览器页眉页脚</span></div><div class="paper-scroll"><article id="paper"></article></div></section></main>
@@ -12,13 +12,4 @@
 <dialog id="settingsDialog"><div class="dialog-head"><h2>公司资料及交易条款</h2><button data-close="settingsDialog">关闭</button></div><p class="muted">已沿用报价模板。模板交期为 30 天，产品表现货交期为 1–7 个工作日，请按订单实际情况调整。</p><div id="settingsFields" class="fields"></div><div class="dialog-foot"><button id="applySettings" class="primary">保存资料</button></div></dialog>
 <dialog id="catalogDialog"><div class="dialog-head"><h2>产品目录</h2><button data-close="catalogDialog">关闭</button></div><div class="catalog-toolbar"><label>PDF 页码 <select id="pageSelect"></select></label><span id="cropHelp">浏览原目录</span><button id="useCrop" class="primary" hidden>使用选区图片</button></div><div class="canvas-wrap"><canvas id="catalogCanvas"></canvas></div></dialog>
 <input type="file" id="importFile" accept="application/json,.json" hidden><div id="toast" role="status"></div>
-<script src="/quotation/vendor/jszip.min.js?v=20261019-pathfix"></script><script src="/quotation/vendor/pdf-lib.min.js?v=20261019-pathfix"></script><script src="/quotation/data.js?v=20261019-pathfix"></script><script src="/quotation/app.js?v=20261019-pathfix"></script><script src="/quotation/export.js?v=20261019-pathfix"></script><script src="/quotation/vendor/pdf-runtime.js?v=20261019-pathfix"></script><script src="/quotation/import.js?v=20261019-pathfix"></script><script src="/quotation/template.js?v=20261019-pathfix"></script><script>
-window.addEventListener('load', function () {
- if (!document.querySelector('#products').children.length) {
-  var n=document.createElement('div');
-  n.style.cssText='position:fixed;bottom:16px;left:16px;right:16px;padding:16px;background:#fff3cd;color:#664d03;border:1px solid #d6b75d;z-index:99999';
-  n.textContent='产品资料未加载。请检查 quotation 文件夹中的 data.js、app.js 和 vendor 文件夹是否全部上传，并确认网站发布成功。';
-  document.body.appendChild(n);
- }
-});
-</script></body></html>
+<script src="/quotation/vendor/jszip.min.js?v=20261020.3"></script><script src="/quotation/vendor/pdf-lib.min.js?v=20261020.3"></script><script src="/quotation/data.js?v=20261020.3"></script><script src="/quotation/app.js?v=20261020.3"></script><script src="/quotation/export.js?v=20261020.3"></script><script src="/quotation/vendor/pdf-runtime.js?v=20261020.3"></script><script src="/quotation/import.js?v=20261020.3"></script><script src="/quotation/template.js?v=20261020.3"></script><script>window.addEventListener('load',function(){if(!document.querySelector('#products').children.length){const n=document.createElement('div');n.style.cssText='position:fixed;bottom:16px;left:16px;right:16px;padding:16px;background:#fff3cd;color:#664d03;z-index:99999';n.textContent='产品资料未加载，请检查 quotation 文件夹内的 JS 和 vendor 文件是否完整上传。';document.body.append(n);}});</script></body></html>
