@@ -21,7 +21,45 @@
       ]
     }
   ],
+  "redirects": [
+    {
+      "source": "/products",
+      "destination": "/#categories",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/industries",
+      "destination": "/#solutions",
+      "permanent": true
+    },
+    {
+      "source": "/oem-custom-glassware",
+      "destination": "/custom-glassware-quote-checklist",
+      "permanent": true
+    }
+  ],
   "rewrites": [
+    {
+      "source": "/industries/distillery-spirits-glassware",
+      "destination": "/distillery-spirits-glassware.html"
+    },
+    {
+      "source": "/industries/hospitality-restaurant-glassware",
+      "destination": "/hospitality-restaurant-glassware.html"
+    },
+    {
+      "source": "/industries/corporate-luxury-gifting-glassware",
+      "destination": "/corporate-luxury-gifting-glassware.html"
+    },
+    {
+      "source": "/industries/amazon-dtc-brand-glassware-supply",
+      "destination": "/amazon-dtc-brand-glassware-supply.html"
+    },
     {
       "source": "/:path*",
       "destination": "/:path*"
