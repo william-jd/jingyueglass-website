@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[PREVIEW] B2B Product Detail Page Content Architecture (XZM006 / XZ5202) | Jingyue Glass</title>
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --primary-dark: #0d2540;
+    --accent: #c8930a;
+    --accent-hover: #e0a70b;
+    --light: #f8fafc;
+    --dark: #1e293b;
+    --border: #e2e8f0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: var(--dark); line-height: 1.6; background: #fff; }
+  
+  .preview-banner { background: #fef3c7; border-bottom: 2px solid #f59e0b; padding: 12px 20px; font-size: 0.9rem; color: #92400e; font-weight: 600; text-align: center; }
+  
+  .container { max-width: 1140px; margin: 40px auto; padding: 0 20px; }
+  
+  /* Product Showcase Hero */
+  .p-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; margin-bottom: 50px; }
+  @media(max-width: 860px) { .p-grid { grid-template-columns: 1fr; } }
+  
+  .img-box { background: #f1f5f9; border-radius: 12px; padding: 20px; text-align: center; border: 1px solid var(--border); }
+  .img-main { width: 100%; max-height: 420px; object-fit: contain; border-radius: 8px; }
+  .thumb-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-top: 12px; }
+  .thumb-item { border: 2px solid var(--border); border-radius: 6px; padding: 4px; background: #fff; cursor: pointer; }
+  .thumb-item.active { border-color: var(--accent); }
+  
+  .p-info h1 { font-size: 1.85rem; color: var(--primary-dark); line-height: 1.3; margin-bottom: 12px; font-weight: 800; }
+  .p-badge { display: inline-block; background: #dbeafe; color: #1e40af; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; margin-bottom: 12px; }
+  
+  .p-specs-highlight { background: var(--light); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin: 18px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.88rem; }
+  .p-specs-highlight strong { color: var(--primary); }
+  
+  .price-tier { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 20px 0; text-align: center; }
+  .tier-box { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+  .tier-qty { font-size: 0.8rem; color: #64748b; font-weight: 600; }
+  .tier-price { font-size: 1.25rem; font-weight: 800; color: #b45309; margin-top: 2px; }
+  
+  .btn-group { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+  .btn-sample { background: var(--accent); color: #fff; padding: 12px 24px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.95rem; }
+  .btn-quote { background: var(--primary); color: #fff; padding: 12px 24px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.95rem; }
+  
+  /* Deep Technical & Quality Sections */
+  .section-title { font-size: 1.45rem; color: var(--primary-dark); margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); display: flex; align-items: center; justify-content: space-between; }
+  
+  .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 24px 0; }
+  .tech-card { background: #fff; border: 1px solid var(--border); border-top: 4px solid var(--primary); border-radius: 8px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); }
+  .tech-card h3 { font-size: 1.05rem; color: var(--primary); margin-bottom: 8px; }
+  .tech-card p { font-size: 0.88rem; color: #475569; line-height: 1.55; }
+  
+  /* Packaging & Testing Proof Table */
+  table.spec-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+  table.spec-table th, table.spec-table td { border: 1px solid var(--border); padding: 12px 14px; text-align: left; }
+  table.spec-table th { background: #f8fafc; color: var(--primary); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<div class="preview-banner">
+  [草稿预览文件] 模块 2：产品详情页深度文案与技术模块标准架构（以 XZM006 威士忌醒酒器套装 为例）
+</div>
+
+<div class="container">
+  <!-- 1. Product Hero Showcase -->
+  <div class="p-grid">
+    <div class="img-box">
+      <img src="/assets/products/gift-sets/xzm001-two-glass-whiskey-stones-gift-set.webp" alt="XZM006 Luxury Whiskey Decanter Gift Set" class="img-main">
+      <div class="thumb-grid">
+        <div class="thumb-item active"><span style="font-size:0.75rem;">Full Set</span></div>
+        <div class="thumb-item"><span style="font-size:0.75rem;">Decanter</span></div>
+        <div class="thumb-item"><span style="font-size:0.75rem;">Laser Logo</span></div>
+        <div class="thumb-item"><span style="font-size:0.75rem;">Pine Box</span></div>
+      </div>
+    </div>
+    
+    <div class="p-info">
+      <span class="p-badge">Model SKU: XZM006 · Ready for Export</span>
+      <h1>Luxury Hand-Blown Whiskey Decanter & Heavy Base Rocks Glasses Gift Set</h1>
+      <p style="color:#64748b; font-size:0.95rem; margin-bottom:16px;">
+        750ml sculptural lead-free crystal decanter paired with two 300ml diamond-faceted rocks glasses, nestled in custom burnt pine wood packaging with high-density EVA velvet lining.
+      </p>
+      
+      <div class="p-specs-highlight">
+        <div><strong>Decanter Capacity:</strong> 750 ml (25.4 oz)</div>
+        <div><strong>Tumbler Capacity:</strong> 2× 300 ml (10.1 oz)</div>
+        <div><strong>Glass Material:</strong> Ultra-Clear Lead-Free Crystal</div>
+        <div><strong>Custom Branding:</strong> Laser / 580°C Decal (MOQ 48)</div>
+      </div>
+      
+      <div class="price-tier">
+        <div class="tier-box">
+          <div class="tier-qty">Sample Trial (1–5 Sets)</div>
+          <div class="tier-price">$18.50</div>
+        </div>
+        <div class="tier-box">
+          <div class="tier-qty">100–499 Sets</div>
+          <div class="tier-price">$12.80</div>
+        </div>
+        <div class="tier-box">
+          <div class="tier-qty">500+ Sets (FCL)</div>
+          <div class="tier-price">$8.80</div>
+        </div>
+      </div>
+      
+      <div class="btn-group">
+        <a href="/custom-glassware-sample-approval-process" class="btn-sample">Request Physical Sample (1-3 Days) →</a>
+        <a href="/quotation" class="btn-quote">⚡ Build Line-Item Quotation (/quotation) →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Technical Manufacturing & Optical Properties -->
+  <div class="section-title">
+    <span>🔬 Manufacturing Precision & Material Specifications</span>
+    <span style="font-size:0.8rem; color:#64748b; font-weight:normal;">FDA & LFGB Compliant</span>
+  </div>
+  
+  <div class="tech-grid">
+    <div class="tech-card">
+      <h3>Optical Purity & Refraction</h3>
+      <p>>92% light transmission rate with zero micro-bubbles and seed inclusions. High refractive index (1.54) delivering pure prismatic fire without lead oxide hazards.</p>
+    </div>
+    <div class="tech-card">
+      <h3>1.0mm Laser Cold-Cut Rim</h3>
+      <p>Precision beadless rim cut via industrial laser and flame-polished for optimal spirit flow and smooth palate entry, avoiding chip-prone rolled rims.</p>
+    </div>
+    <div class="tech-card">
+      <h3>1,000+ Wash Decal Durability</h3>
+      <p>Branded crests and monograms undergo 580°C kiln annealing, permanently fusing the ceramic glaze into the silica matrix to withstand commercial dishwashing.</p>
+    </div>
+    <div class="tech-card">
+      <h3>ISTA-1A Certified Packaging</h3>
+      <p>Custom laser-engraved solid pine wood gift box with customized dual-density EVA cradle, tested to survive 10-face 1.2M drop testing for eCommerce & Amazon FBA delivery.</p>
+    </div>
+  </div>
+
+  <!-- 3. Packaging & Logistics Planning Table -->
+  <div class="section-title">
+    <span>📦 Export Master Packaging & Container Loading Specs</span>
+  </div>
+  
+  <table class="spec-table">
+    <thead>
+      <tr>
+        <th>Specification Field</th>
+        <th>Single Gift Box Unit</th>
+        <th>Export Master Carton (8 Sets/Ctn)</th>
+        <th>20GP Full Container Loading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Dimensions (L × W × H)</strong></td>
+        <td>360 mm × 280 mm × 140 mm</td>
+        <td>580 mm × 380 mm × 310 mm</td>
+        <td>~480 Master Cartons (3,840 Sets)</td>
+      </tr>
+      <tr>
+        <td><strong>Gross Weight (GW)</strong></td>
+        <td>3.20 kg / set</td>
+        <td>26.50 kg / ctn</td>
+        <td>~12,720 kg total container payload</td>
+      </tr>
+      <tr>
+        <td><strong>Volume / CBM</strong></td>
+        <td>0.014 CBM</td>
+        <td>0.068 CBM</td>
+        <td>28.0 CBM (95% Volume Utilization)</td>
+      </tr>
+      <tr>
+        <td><strong>Customization Options</strong></td>
+        <td>Burnt pine wood, Magnetic rigid box, Piano lacquer</td>
+        <td>5-ply double-wall kraft corrugated carton</td>
+        <td>Palletized with stretch film & corner angle boards</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 4. Conversion & Quotation Studio Integration -->
+  <div style="background:linear-gradient(135deg, #0d2540 0%, #1a3a5c 100%); color:#fff; border-radius:10px; padding:32px; text-align:center; margin-top:40px;">
+    <h2 style="color:#fff; font-size:1.6rem; margin-bottom:12px;">Need a Fast Itemized Quote or Customized Mockup?</h2>
+    <p style="color:#cbd5e1; max-width:650px; margin:0 auto 20px; font-size:0.95rem;">
+      Upload your vector logo for a free 2D digital proof, calculate CIF/DDP freight rates, or export a customized Proforma Invoice in minutes.
+    </p>
+    <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+      <a href="/quotation" style="background:#c8930a; color:#fff; font-weight:700; padding:12px 28px; border-radius:6px; text-decoration:none;">Open Online Quotation Studio →</a>
+      <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20am%20interested%20in%20Model%20XZM006%20Whiskey%20Decanter%20Set." target="_blank" style="background:#25d366; color:#fff; font-weight:700; padding:12px 28px; border-radius:6px; text-decoration:none;">WhatsApp Direct Support (1h Reply)</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
