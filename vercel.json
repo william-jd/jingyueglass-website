@@ -41,6 +41,11 @@
       "source": "/oem-custom-glassware",
       "destination": "/custom-logo-glassware",
       "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -59,14 +64,6 @@
     {
       "source": "/industries/amazon-dtc-brand-glassware-supply",
       "destination": "/amazon-dtc-brand-glassware-supply.html"
-    },
-    {
-      "source": "/blog",
-      "destination": "/blog/index.html"
-    },
-    {
-      "source": "/blog/why-do-whiskey-glasses-have-heavy-bases",
-      "destination": "/blog/why-do-whiskey-glasses-have-heavy-bases.html"
     },
     {
       "source": "/:path*",
