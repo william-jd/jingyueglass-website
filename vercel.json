@@ -46,7 +46,31 @@
   "rewrites": [
     {
       "source": "/blog",
-      "destination": "/blog/index.html"
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/blog/why-do-whiskey-glasses-have-heavy-bases",
+      "destination": "/why-do-whiskey-glasses-have-heavy-bases.html"
+    },
+    {
+      "source": "/blog/can-lead-free-crystal-glasses-go-in-the-dishwasher",
+      "destination": "/can-lead-free-crystal-glasses-go-in-the-dishwasher.html"
+    },
+    {
+      "source": "/blog/borosilicate-vs-soda-lime-glass-commercial-comparison",
+      "destination": "/borosilicate-vs-soda-lime-glass-commercial-comparison.html"
+    },
+    {
+      "source": "/products/xzm006-whiskey-decanter-gift-set",
+      "destination": "/products/xzm006-whiskey-decanter-gift-set.html"
+    },
+    {
+      "source": "/products/bordeaux-wine-glass-xz5202",
+      "destination": "/products/bordeaux-wine-glass-xz5202.html"
+    },
+    {
+      "source": "/products/smoked-cocktail-kit-torch-set",
+      "destination": "/products/smoked-cocktail-kit-torch-set.html"
     },
     {
       "source": "/industries/distillery-spirits-glassware",
@@ -63,10 +87,6 @@
     {
       "source": "/industries/amazon-dtc-brand-glassware-supply",
       "destination": "/amazon-dtc-brand-glassware-supply.html"
-    },
-    {
-      "source": "/:path*",
-      "destination": "/:path*"
     }
   ]
 }
