@@ -61,18 +61,6 @@
       "destination": "/amazon-dtc-brand-glassware-supply.html"
     },
     {
-      "source": "/blog",
-      "destination": "/blog/index.html"
-    },
-    {
-      "source": "/blog/:slug",
-      "destination": "/blog/:slug.html"
-    },
-    {
-      "source": "/products/:slug",
-      "destination": "/products/:slug.html"
-    },
-    {
       "source": "/:path*",
       "destination": "/:path*"
     }
