@@ -61,6 +61,22 @@
       "destination": "/amazon-dtc-brand-glassware-supply.html"
     },
     {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/blog/why-do-whiskey-glasses-have-heavy-bases",
+      "destination": "/why-do-whiskey-glasses-have-heavy-bases.html"
+    },
+    {
+      "source": "/blog/can-lead-free-crystal-glasses-go-in-the-dishwasher",
+      "destination": "/can-lead-free-crystal-glasses-go-in-the-dishwasher.html"
+    },
+    {
+      "source": "/blog/borosilicate-vs-soda-lime-glass-commercial-comparison",
+      "destination": "/borosilicate-vs-soda-lime-glass-commercial-comparison.html"
+    },
+    {
       "source": "/:path*",
       "destination": "/:path*"
     }
