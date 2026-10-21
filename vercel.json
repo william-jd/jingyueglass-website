@@ -41,14 +41,13 @@
       "source": "/oem-custom-glassware",
       "destination": "/custom-logo-glassware",
       "permanent": true
-    },
-    {
-      "source": "/blog",
-      "destination": "/blog/",
-      "permanent": true
     }
   ],
   "rewrites": [
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    },
     {
       "source": "/industries/distillery-spirits-glassware",
       "destination": "/distillery-spirits-glassware.html"
