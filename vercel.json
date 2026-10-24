@@ -41,6 +41,11 @@
       "source": "/oem-custom-glassware",
       "destination": "/custom-logo-glassware",
       "permanent": true
+    },
+    {
+      "source": "/products/xzm006-whiskey-decanter-gift-set",
+      "destination": "/xzm006-whiskey-decanter-gift-set.html",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -59,10 +64,6 @@
     {
       "source": "/blog/borosilicate-vs-soda-lime-glass-commercial-comparison",
       "destination": "/borosilicate-vs-soda-lime-glass-commercial-comparison.html"
-    },
-    {
-      "source": "/products/xzm006-whiskey-decanter-gift-set",
-      "destination": "/xzm006-whiskey-decanter-gift-set.html"
     },
     {
       "source": "/products/bordeaux-wine-glass-xz5202",
