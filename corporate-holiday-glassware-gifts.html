@@ -17,7 +17,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Corporate Holiday & Year-End Custom Glassware Gift Sets | Jingyue Glass</title>
-  <meta name="description" content="Factory-direct custom corporate glassware gift sets: Model XZM4008-1 magnetic hard box (About $3.80-$6.00) & Model XZM015 burnished wooden box set (About $5.00-$7.00). Low MOQ 24 sets.">
+  <meta name="description" content="Factory-direct custom corporate glassware gift sets in magnetic and wooden presentation boxes. Request an itemized quote based on quantity, branding, packaging and delivery terms.">
   <link rel="canonical" href="https://www.jingyueglass.com/corporate-holiday-glassware-gifts">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -106,10 +106,10 @@
     .product-body { padding: 28px; display: flex; flex-direction: column; flex-grow: 1; }
     .product-sku { font-size: 13px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
     .product-title { font-family: var(--font-heading); font-size: 22px; font-weight: 800; color: var(--primary-dark); margin-bottom: 12px; line-height: 1.3; }
-    .product-price-bar { display: flex; align-items: baseline; gap: 8px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
-    .price-val { font-size: 26px; font-weight: 800; color: var(--accent); }
-    .price-unit { font-size: 13px; color: var(--text-muted); font-weight: 500; }
-    .moq-tag { margin-left: auto; background: var(--accent-light); color: #9a6700; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 700; }
+    .quotation-bar { margin-bottom: 18px; padding: 16px; border: 1px solid #eed99f; border-radius: var(--radius-sm); background: #fffaf0; }
+    .quotation-title { font-size: 18px; font-weight: 800; color: var(--primary-dark); margin-bottom: 4px; }
+    .quotation-note { font-size: 13px; color: var(--text-muted); }
+    .status-tag { display: inline-block; margin-top: 8px; background: var(--accent-light); color: #9a6700; padding: 4px 10px; border-radius: 4px; font-size: 12px; font-weight: 700; }
     
     .spec-list { list-style: none; margin-bottom: 24px; display: flex; flex-direction: column; gap: 10px; }
     .spec-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: var(--text); }
@@ -213,7 +213,7 @@
       "@type": "Product",
       "@id": "https://www.jingyueglass.com/corporate-holiday-glassware-gifts#product",
       "name": "Corporate Holiday & Year-End Custom Glassware Gift Sets",
-      "description": "Factory-direct custom engraved whiskey stones and rock glass sets in magnetic hard boxes (Model XZM4008-1) and burnished pine wooden boxes (Model XZM015) for year-end corporate gifting. Indicative prices shown; final quotation is calculated based on exact order quantity and destination address.",
+      "description": "Factory-direct custom engraved whiskey glass gift sets in magnetic presentation boxes and burnished pine wooden boxes for corporate gifting. Quotations are calculated from quantity, branding, packaging configuration and delivery terms.",
       "brand": {
         "@type": "Brand",
         "name": "Jingyue Glass"
@@ -223,73 +223,20 @@
         "name": "Wuhan Jingyueda Household Products Co., Ltd.",
         "url": "https://www.jingyueglass.com/"
       },
-      "offers": {
-        "@type": "AggregateOffer",
-        "priceCurrency": "USD",
-        "lowPrice": "3.80",
-        "highPrice": "7.00",
-        "offerCount": "2",
-        "priceValidUntil": "2027-12-31",
-        "itemCondition": "https://schema.org/NewCondition",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Wuhan Jingyueda Household Products Co., Ltd."
-        },
-        "hasMerchantReturnPolicy": {
-          "@type": "MerchantReturnPolicy",
-          "name": "7-Day Transit Breakage Replacement & Refund Policy",
-          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
-          "merchantReturnDays": 7,
-          "returnMethod": "https://schema.org/ReturnByMail",
-          "returnFees": "https://schema.org/FreeReturn",
-          "customerRemorseReturnFees": "https://schema.org/ReturnFeesCustomerResponsibility",
-          "returnPolicyCountry": [
-            "US",
-            "EU",
-            "GB",
-            "AU"
-          ],
-          "description": "If any item arrives damaged, notify our support team within 7 days of delivery with photos and unboxing videos for immediate 100% free replacement or refund credit."
-        },
-        "shippingDetails": {
-          "@type": "OfferShippingDetails",
-          "shippingRate": {
-            "@type": "MonetaryAmount",
-            "value": "0",
-            "currency": "USD"
-          },
-          "shippingDestination": [
-            {
-              "@type": "DefinedRegion",
-              "addressCountry": "US"
-            },
-            {
-              "@type": "DefinedRegion",
-              "addressCountry": "EU"
-            },
-            {
-              "@type": "DefinedRegion",
-              "addressCountry": "GB"
-            },
-            {
-              "@type": "DefinedRegion",
-              "addressCountry": "AU"
-            }
-          ]
-        },
-        "url": "https://www.jingyueglass.com/corporate-holiday-glassware-gifts#inquiry"
-      }
+      "additionalProperty": [
+        {"@type": "PropertyValue", "name": "Quotation basis", "value": "Quantity, branding, packaging configuration and delivery terms"},
+        {"@type": "PropertyValue", "name": "Gift box insert", "value": "Odorless EPE pearl cotton for cushioning and clean presentation"}
+      ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "What is the MOQ for custom corporate holiday gift sets?",
+          "name": "What information is required to quote custom corporate holiday gift sets?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Our MOQ starts at only 24 sets with laser engraving on glasses and pine wooden boxes. Production lead time is 1-3 working days for laser proofing."
+            "text": "Please provide the target quantity, logo artwork, preferred gift-box finish, accessory configuration, destination and required delivery date. MOQ, sample terms and timing are confirmed after the project brief is reviewed."
           }
         },
         {
@@ -302,10 +249,10 @@
         },
         {
           "@type": "Question",
-          "name": "How fast can you dispatch for urgent November/December corporate orders?",
+          "name": "How is the production and delivery schedule confirmed?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "For in-stock sets with laser branding (24-300 sets), dispatch takes 3-7 days after artwork approval. We support air express DDP (5-8 days delivery) directly to your office or fulfillment center."
+            "text": "The schedule is confirmed after product availability, artwork, packaging scope, quantity, destination and required delivery date are reviewed. The quotation separates sample, production and delivery stages."
           }
         }
       ]
@@ -349,7 +296,7 @@
     <div class="container">
       <div class="hero-badge">🎄 2026/2027 Holiday & Year-End Corporate Gifting Collection</div>
       <h1>Corporate Holiday & Year-End Custom Glassware Gift Sets</h1>
-      <p>Factory-direct custom engraved whiskey stones & rock glass sets engineered for corporate staff appreciation, VIP client gifts, promotional product distributors, and luxury year-end celebrations. Low MOQ 24 sets with 1–3 day rapid sample proofing.</p>
+      <p>Factory-direct custom whiskey glass gift sets for employee recognition, VIP clients and seasonal campaigns. Pricing is calculated for each project from quantity, branding, packaging configuration and delivery terms.</p>
       
       <div class="hero-actions">
         <a href="#sku-showcase" class="btn-primary">
@@ -365,15 +312,15 @@
         <div class="metric-item">
           <div class="metric-icon">📦</div>
           <div class="metric-info">
-            <h4>Low MOQ 24 Sets</h4>
-            <p>Laser branding from 24 sets</p>
+            <h4>Quantity-Based Quote</h4>
+            <p>MOQ confirmed by configuration</p>
           </div>
         </div>
         <div class="metric-item">
           <div class="metric-icon">⚡</div>
           <div class="metric-info">
-            <h4>1–3 Day Proofing</h4>
-            <p>Fast pre-dispatch sample sign-off</p>
+            <h4>Sample Route</h4>
+            <p>Terms confirmed after artwork review</p>
           </div>
         </div>
         <div class="metric-item">
@@ -400,7 +347,7 @@
       <div class="section-header">
         <div class="section-tag">Featured Corporate Gift Sets</div>
         <h2 class="section-title">2 Best-Selling Year-End Gift Configurations</h2>
-        <p class="section-desc">Choose between our modern magnetic presentation box (Volume Classic) or our artisan burnished wooden box (Executive Luxury). Both models support low MOQ 24-set custom logo laser branding.</p>
+        <p class="section-desc">Choose between a magnetic presentation box and a burnished wooden box, then request an itemized quotation for the selected quantity, branding, packaging and delivery requirements.</p>
       </div>
 
       <div class="product-grid">
@@ -414,10 +361,10 @@
             <div class="product-sku">Model XZM4008-1</div>
             <h3 class="product-title">Magnetic Flip-Top Hard Box Whiskey & Stones Gift Set</h3>
             
-            <div class="product-price-bar">
-              <span class="price-val">About $3.80 – $6.00</span>
-              <span class="price-unit">/ set (Indicative FOB · Final quote confirmed by quantity & destination)</span>
-              <span class="moq-tag">MOQ: 24 Sets</span>
+            <div class="quotation-bar">
+              <div class="quotation-title">Custom quotation required</div>
+              <div class="quotation-note">Pricing depends on quantity, branding, packaging configuration and delivery terms.</div>
+              <span class="status-tag">MOQ & sample terms: To be confirmed</span>
             </div>
 
             <ul class="spec-list">
@@ -431,43 +378,28 @@
               </li>
               <li class="spec-item">
                 <span class="spec-bullet">✓</span>
-                <span><strong>Packaging:</strong> Premium Matte Black Magnetic Flip-Top Hard Presentation Box with Precision Die-Cut Black EVA Foam Cavity.</span>
+                <span><strong>Packaging:</strong> Premium matte black magnetic presentation box with an odorless EPE pearl cotton insert for cushioning, component fit and clean presentation.</span>
               </li>
               <li class="spec-item">
                 <span class="spec-bullet">✓</span>
-                <span><strong>Branding:</strong> Precision Fiber Laser Logo on 2 glasses (MOQ 24 sets); Box Lid Gold Foil Stamping (MOQ 500 sets / Digital label for small batches).</span>
+                <span><strong>Branding:</strong> Glass and box-lid decoration options are quoted after the logo artwork, positions and required finish are reviewed.</span>
               </li>
             </ul>
 
-            <!-- Tier Pricing Table -->
             <div class="tier-table-wrap">
               <table class="tier-table">
-                <thead>
-                  <tr>
-                    <th>Order Quantity Tier</th>
-                    <th>24 – 99 sets</th>
-                    <th>100 – 499 sets</th>
-                    <th>500 – 1,999 sets</th>
-                    <th>2,000+ sets</th>
-                  </tr>
-                </thead>
+                <thead><tr><th colspan="2">Information Required for an Itemized Quote</th></tr></thead>
                 <tbody>
-                  <tr>
-                    <td><strong>Estimated Base Price</strong></td>
-                    <td><strong>About $5.80</strong></td>
-                    <td><strong>About $4.60</strong></td>
-                    <td><strong>About $4.10</strong></td>
-                    <td><strong style="color:var(--accent);">About $3.80</strong></td>
-                  </tr>
+                  <tr><td>Quantity</td><td>Total sets and any split-shipment plan</td></tr>
+                  <tr><td>Branding</td><td>Logo artwork, positions and personalization</td></tr>
+                  <tr><td>Packaging</td><td>Box finish, EPE layout and printed components</td></tr>
+                  <tr><td>Delivery</td><td>Destination, required date and preferred terms</td></tr>
                 </tbody>
               </table>
             </div>
-            <p style="font-size:12px; color:var(--text-muted); margin-top:-14px; margin-bottom:18px; line-height:1.4;">
-              <em>* Note: Prices shown are indicative base estimates. Final unit quotation and DDP air/sea freight are accurately calculated based on exact order quantity, customization details, and destination country/zip code.</em>
-            </p>
             <div class="product-actions">
               <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20just%20viewed%20Model%20XZM4008-1%20Magnetic%20Box%20Whiskey%20Gift%20Set%20and%20would%20like%20to%20quote%20for%20a%20project.%20Can%20we%20chat%3F" class="btn-wa-quote">
-                <span>💬 Quote Model XZM4008-1 on WhatsApp</span>
+                <span>💬 Request Itemized Quote for XZM4008-1</span>
               </a>
             </div>
           </div>
@@ -483,10 +415,10 @@
             <div class="product-sku">Model XZM015</div>
             <h3 class="product-title">Burnished Wooden Box Whiskey Stones & Glasses Executive Gift Set</h3>
             
-            <div class="product-price-bar">
-              <span class="price-val">About $5.00 – $7.00</span>
-              <span class="price-unit">/ set (Indicative FOB · Final quote confirmed by quantity & destination)</span>
-              <span class="moq-tag" style="background:#fef3c7; color:#92400e;">MOQ: 24 Sets</span>
+            <div class="quotation-bar">
+              <div class="quotation-title">Custom quotation required</div>
+              <div class="quotation-note">Pricing depends on quantity, box finish, decoration, accessory configuration and delivery terms.</div>
+              <span class="status-tag">MOQ & sample timing: To be confirmed</span>
             </div>
 
             <ul class="spec-list">
@@ -500,43 +432,28 @@
               </li>
               <li class="spec-item">
                 <span class="spec-bullet">✓</span>
-                <span><strong>Packaging:</strong> Artisan Burnished Pine Wooden Box with Antique Bronze Clasp & Metal Hinges + Velvet-Flocked Custom EVA Insert.</span>
+                <span><strong>Packaging:</strong> Artisan burnished pine wooden box with antique bronze hardware and an odorless EPE pearl cotton insert for cushioning and clean presentation.</span>
               </li>
               <li class="spec-item">
                 <span class="spec-bullet">✓</span>
-                <span><strong>Branding:</strong> <strong>Dual Laser Customization</strong> — Deep laser engraving on wooden box lid + crisp laser etching on both glasses (MOQ 24 sets).</span>
+                <span><strong>Branding:</strong> Coordinated box-lid and glass decoration options are quoted after artwork and finish requirements are reviewed.</span>
               </li>
             </ul>
 
-            <!-- Tier Pricing Table -->
             <div class="tier-table-wrap">
               <table class="tier-table">
-                <thead>
-                  <tr>
-                    <th>Order Quantity Tier</th>
-                    <th>24 – 99 sets</th>
-                    <th>100 – 499 sets</th>
-                    <th>500 – 1,999 sets</th>
-                    <th>2,000+ sets</th>
-                  </tr>
-                </thead>
+                <thead><tr><th colspan="2">Information Required for an Itemized Quote</th></tr></thead>
                 <tbody>
-                  <tr>
-                    <td><strong>Estimated Base Price</strong></td>
-                    <td><strong>About $6.80</strong></td>
-                    <td><strong>About $5.90</strong></td>
-                    <td><strong>About $5.40</strong></td>
-                    <td><strong style="color:var(--accent);">About $5.00</strong></td>
-                  </tr>
+                  <tr><td>Quantity</td><td>Total sets and reorder expectations</td></tr>
+                  <tr><td>Branding</td><td>Logo artwork, positions and personalization</td></tr>
+                  <tr><td>Packaging</td><td>Wood finish, EPE layout and accessory mix</td></tr>
+                  <tr><td>Delivery</td><td>Destination, required date and preferred terms</td></tr>
                 </tbody>
               </table>
             </div>
-            <p style="font-size:12px; color:var(--text-muted); margin-top:-14px; margin-bottom:18px; line-height:1.4;">
-              <em>* Note: Prices shown are indicative base estimates. Final unit quotation and DDP air/sea freight are accurately calculated based on exact order quantity, customization details, and destination country/zip code.</em>
-            </p>
             <div class="product-actions">
               <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20just%20viewed%20Model%20XZM015%20Burnished%20Wooden%20Box%20Whiskey%20Gift%20Set%20and%20would%20like%20to%20quote%20for%20a%20project.%20Can%20we%20chat%3F" class="btn-wa-quote" style="background:#b45309;">
-                <span>💬 Quote Model XZM015 on WhatsApp</span>
+                <span>💬 Request Itemized Quote for XZM015</span>
               </a>
             </div>
           </div>
@@ -552,18 +469,18 @@
         </div>
         <div class="feature-card">
           <div class="feature-icon">🛡️</div>
-          <h3>1.2M Drop-Tested EVA</h3>
-          <p>High-density custom cut EVA foam prevents stone-to-glass collisions, passing ISTA-1A international transit tests.</p>
+          <h3>Odorless EPE Pearl Cotton</h3>
+          <p>Custom-cut EPE pearl cotton supports cushioning, component separation and a clean gift-box presentation without a noticeable chemical odor.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">🧊</div>
           <h3>Food-Safe Chilling Stones</h3>
-          <p>Non-porous, odorless natural granite stones chill liquor without dilution. 100% compliant with FDA CPG 545.400 & LFGB.</p>
+          <p>Natural granite stone options can be reviewed with the product configuration; applicable food-contact documentation is confirmed for the selected accessory.</p>
         </div>
         <div class="feature-card">
           <div class="feature-icon">✈️</div>
-          <h3>Fast Holiday Dispatch</h3>
-          <p>24–300 sets dispatch in 3–7 business days. Air express DDP (5–8 days) or sea container shipping with tracking.</p>
+          <h3>Project-Based Delivery Plan</h3>
+          <p>Production and delivery schedules are confirmed from product availability, artwork approval, quantity, destination and the required arrival date.</p>
         </div>
       </div>
 
@@ -582,12 +499,12 @@
           <div class="timeline-step">
             <div class="step-num">2</div>
             <div class="step-title">Bulk Production (Day 4–7)</div>
-            <div class="step-desc">Automated laser batching, ultrasonic stone cleaning, precision EVA kitting, and strict AQL 2.5 quality control inspection.</div>
+            <div class="step-desc">Branding, cleaning, odorless EPE pearl cotton kitting and quality checks follow the approved project specification.</div>
           </div>
           <div class="timeline-step">
             <div class="step-num">3</div>
             <div class="step-title">DDP Direct Delivery</div>
-            <div class="step-desc">Air Express DDP (5–8 days) directly to corporate offices/events, or ocean pallet shipping for large distributor distributions.</div>
+            <div class="step-desc">The delivery route, destination, trade terms and required arrival date are confirmed in the itemized quotation.</div>
           </div>
         </div>
       </div>
@@ -605,15 +522,15 @@
         </div>
         <div class="faq-item">
           <h3>Are the natural granite chilling stones safe and certified for drinking?</h3>
-          <p>Yes. Our stones are cut from 100% natural solid granite and basalt, rounded to prevent glass scratching, and thoroughly tumbled. They are non-porous, odorless, and certified under FDA 21 CFR 175.300 and EU LFGB food-contact safety standards.</p>
+          <p>Natural granite and basalt accessory options can be reviewed for the selected set. Material and food-contact documentation are confirmed against the exact accessory included in the quotation.</p>
         </div>
         <div class="faq-item">
           <h3>What is the minimum order quantity (MOQ) and sample policy?</h3>
-          <p>Our MOQ is only 24 sets for both XZM4008-1 and XZM015 with custom laser branding. For physical sample testing, sample fees are 100% refundable and credited against your bulk order invoice.</p>
+          <p>MOQ, sample fees and any credit policy are confirmed in the itemized quotation after the set configuration, artwork, quantity and destination are reviewed.</p>
         </div>
         <div class="faq-item">
-          <h3>How do you ensure zero breakage during international courier or Amazon FBA delivery?</h3>
-          <p>Each set is cushioned in high-density closed-cell EVA foam (recessed cavities for each individual glass and stone), encased in a 1,200g rigid box/solid pine wood, and packed inside a 5-ply export master carton with corner protectors. Breakage rate is guaranteed under 0.5% with free replacement coverage.</p>
+          <h3>How is the gift set prepared for international delivery?</h3>
+          <p>Each confirmed configuration uses an odorless EPE pearl cotton insert to help cushion and separate the contents. The outer packing method and any transit-testing requirements are confirmed for the selected product, quantity and delivery route.</p>
         </div>
       </div>
 
@@ -636,7 +553,7 @@
           </div>
           <div class="cluster-card">
             <h3>Sample Approval Process SOP</h3>
-            <p>Review Jingyue Glass 1-3 day free laser proofing & refundable sample terms.</p>
+            <p>Review the sample approval process and confirm project-specific sample terms.</p>
             <a href="https://www.jingyueglass.com/custom-glassware-sample-approval-process">Read Sample SOP →</a>
           </div>
           <div class="cluster-card">
