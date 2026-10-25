@@ -61,6 +61,16 @@
       "source": "/blog/what-certificates-required-for-us-eu-glassware-customs",
       "destination": "/what-certificates-required-for-us-eu-glassware-customs",
       "permanent": true
+    },
+    {
+      "source": "/products/bordeaux-wine-glass-xz5202",
+      "destination": "/bordeaux-wine-glass-xz5202",
+      "permanent": true
+    },
+    {
+      "source": "/products/smoked-cocktail-kit-torch-set",
+      "destination": "/smoked-cocktail-kit-torch-set",
+      "permanent": true
     }
   ],
   "rewrites": [
