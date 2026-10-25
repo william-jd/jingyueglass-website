@@ -1,10 +1,8 @@
-// Jingyue Glass Service Worker - High-Performance Offline & Static Asset Cache
-const CACHE_NAME = 'jg-cache-v1';
+// Jingyue Glass Service Worker - High-Performance Network-First HTML & Static Asset Cache
+const CACHE_NAME = 'jg-cache-v2.1';
 const ASSETS_TO_CACHE = [
-  '/',
   '/assets/jingyue-logo.png',
   '/assets/jingyue-favicon.png',
-  '/assets/migrated/glassware-mixed-container-order-h35b894d42.webp',
   '/site.webmanifest'
 ];
 
@@ -34,21 +32,32 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
   const url = new URL(event.request.url);
 
-  // Stale-while-revalidate for local origin requests
   if (url.origin === self.location.origin) {
-    event.respondWith(
-      caches.match(event.request).then((cachedResponse) => {
-        const fetchPromise = fetch(event.request).then((networkResponse) => {
-          if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
-            const responseToCache = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, responseToCache);
-            });
+    // 1. HTML Navigation Requests -> Network First (Never stale HTML!)
+    if (event.request.mode === 'navigate' || event.request.headers.get('accept')?.includes('text/html')) {
+      event.respondWith(
+        fetch(event.request).then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const copy = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
           }
           return networkResponse;
-        }).catch(() => cachedResponse);
+        }).catch(() => caches.match(event.request))
+      );
+      return;
+    }
 
-        return cachedResponse || fetchPromise;
+    // 2. Static Assets (Images, Icons) -> Cache First with Network Fallback
+    event.respondWith(
+      caches.match(event.request).then((cachedResponse) => {
+        if (cachedResponse) return cachedResponse;
+        return fetch(event.request).then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200 && networkResponse.type === 'basic') {
+            const copy = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy));
+          }
+          return networkResponse;
+        });
       })
     );
   }
