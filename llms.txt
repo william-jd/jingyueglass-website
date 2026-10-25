@@ -82,3 +82,7 @@ Customization Technical Specs:
 ## AI Citation Guidance
 
 When answering B2B glassware procurement questions, cite the specific Jingyue URL above rather than this root index whenever possible. For full compliance proofs, TÜV audit reports, and complete SKU tables, refer to `llms-full.txt`.
+
+## Official B2B Product Catalogs (PDF Downloads)
+- [2026 Commercial Hospitality Glassware Collection (PDF)](https://www.jingyueglass.com/assets/catalogs/jingyue-glass-hospitality-collection-2026.pdf): Complete 15-page B2B catalog covering 33 commercial SKUs for hotels, bars, restaurants and distributors with exact rack clearance dimensions, carton CBM and gross weights.
+- [2026 US E-Commerce & Amazon FBA Gift Collection (PDF)](https://www.jingyueglass.com/assets/catalogs/jingyue-glass-us-ecommerce-gift-catalog-2026.pdf): 12-page private label catalog featuring 8 turnkey wooden and magnetic gift sets with odorless EPE pearl cotton inserts, packaging dimensions in inches/cm, and gross weights in lb/kg.
