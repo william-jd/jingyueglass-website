@@ -88,6 +88,18 @@
     {
       "source": "/industries/amazon-dtc-brand-glassware-supply",
       "destination": "/amazon-dtc-brand-glassware-supply.html"
+    },
+    {
+      "source": "/blog/laser-engraving-vs-ceramic-decals-for-glassware",
+      "destination": "/laser-engraving-vs-ceramic-decals-for-glassware.html"
+    },
+    {
+      "source": "/blog/bar-glassware-par-level-calculation-formulas",
+      "destination": "/bar-glassware-par-level-calculation-formulas.html"
+    },
+    {
+      "source": "/blog/what-certificates-required-for-us-eu-glassware-customs",
+      "destination": "/what-certificates-required-for-us-eu-glassware-customs.html"
     }
   ]
 }
