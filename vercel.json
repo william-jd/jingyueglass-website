@@ -46,6 +46,21 @@
       "source": "/products/xzm006-whiskey-decanter-gift-set",
       "destination": "/xzm006-whiskey-decanter-gift-set",
       "permanent": true
+    },
+    {
+      "source": "/blog/laser-engraving-vs-ceramic-decals-for-glassware",
+      "destination": "/laser-engraving-vs-ceramic-decals-for-glassware",
+      "permanent": true
+    },
+    {
+      "source": "/blog/bar-glassware-par-level-calculation-formulas",
+      "destination": "/bar-glassware-par-level-calculation-formulas",
+      "permanent": true
+    },
+    {
+      "source": "/blog/what-certificates-required-for-us-eu-glassware-customs",
+      "destination": "/what-certificates-required-for-us-eu-glassware-customs",
+      "permanent": true
     }
   ],
   "rewrites": [
