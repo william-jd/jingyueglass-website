@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) - GA4 G-J6CW9S3D7Q -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-J6CW9S3D7Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-J6CW9S3D7Q', {
+    'send_page_view': true,
+    'cookie_flags': 'SameSite=None;Secure'
+  });
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glassware Insights, Manufacturing Science & B2B Sourcing Blog | Jingyue Glass</title>
+<title>B2B Glassware Knowledge Hub &amp; Engineering Insights | Jingyue Glass</title>
 <meta name="description" content="Official B2B glassware blog: Deep-dive articles on glass materials, laser engraving, dishwashing durability, bar par levels, and import customs compliance.">
 <link rel="canonical" href="https://www.jingyueglass.com/blog">
-<link rel="alternate" hreflang="en" href="https://www.jingyueglass.com/blog">
-<link rel="alternate" hreflang="x-default" href="https://www.jingyueglass.com/blog">
 <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
 
-<!-- OpenGraph / Twitter -->
 <style>
   :root {
     --primary: #1a3a5c;
     --primary-dark: #0d2540;
     --accent: #c8930a;
     --accent-hover: #e0a70b;
+    --accent-light: #fef8eb;
     --light: #f8fafc;
     --dark: #1e293b;
     --border: #e2e8f0;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 2px 8px rgba(13,37,64,0.06);
+    --shadow-md: 0 12px 28px rgba(13,37,64,0.08);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: var(--dark); line-height: 1.6; background: #fff; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: var(--dark); line-height: 1.6; background: #f5f5f0; }
 
   /* Nav */
   header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
@@ -35,46 +49,61 @@
   .btn-nav-quote { background: var(--accent); color: #fff !important; padding: 8px 18px; border-radius: 6px; font-weight: 700 !important; }
 
   /* Hero */
-  .hero-blog { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding: 56px 20px; text-align: center; }
-  .hero-blog h1 { font-size: 2.2rem; font-weight: 800; margin-bottom: 12px; }
-  .hero-blog p { font-size: 1.05rem; color: #cbd5e1; max-width: 680px; margin: 0 auto; }
+  .hero-blog { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding: 56px 20px 48px; text-align: center; }
+  .hero-blog h1 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; margin-bottom: 12px; }
+  .hero-blog p { font-size: 1.05rem; color: #cbd5e1; max-width: 720px; margin: 0 auto 20px; }
+  .hero-badge { display: inline-block; background: rgba(200,147,10,0.2); border: 1px solid rgba(200,147,10,0.4); color: #fef08a; padding: 4px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; }
 
-  .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+  .container { max-width: 1200px; margin: 36px auto 60px; padding: 0 20px; }
 
-  /* Blog Grid with Cover Images */
-  .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 28px; }
-  .blog-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
-  .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.08); }
+  /* Filter Tabs */
+  .filter-tabs { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 32px; }
+  .filter-btn { background: #fff; border: 1px solid var(--border); padding: 8px 18px; border-radius: 30px; font-size: 0.88rem; font-weight: 700; color: #475569; cursor: pointer; transition: all 0.2s; }
+  .filter-btn:hover { border-color: var(--accent); color: var(--primary); }
+  .filter-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); box-shadow: 0 4px 12px rgba(26,58,92,0.18); }
+
+  /* Search & Meta Count Bar */
+  .hub-toolbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; padding: 0 4px; flex-wrap: wrap; gap: 12px; }
+  .article-count { font-size: 0.92rem; font-weight: 700; color: #64748b; }
+  .article-count span { color: var(--primary); font-weight: 800; }
+
+  /* Blog 3x3 Grid */
+  .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 26px; }
   
-  .card-img-wrap { height: 210px; overflow: hidden; position: relative; background: #f1f5f9; }
-  .card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+  .blog-card { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: #fff; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; box-shadow: var(--shadow-sm); }
+  .blog-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: #cbd5e1; }
+  
+  .card-img-wrap { height: 200px; overflow: hidden; position: relative; background: #e2e8f0; }
+  .card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
   .blog-card:hover .card-img { transform: scale(1.05); }
   
   .card-body { padding: 22px; flex: 1; display: flex; flex-direction: column; }
-  .card-tag { font-size: 0.75rem; text-transform: uppercase; font-weight: 700; color: #0284c7; margin-bottom: 8px; letter-spacing: 0.5px; }
-  .card-title { font-size: 1.22rem; color: var(--primary-dark); font-weight: 700; margin-bottom: 10px; line-height: 1.4; text-decoration: none; }
+  .card-tag { display: inline-block; font-size: 0.72rem; text-transform: uppercase; font-weight: 800; color: #9a6700; background: rgba(200,147,10,0.12); padding: 3px 10px; border-radius: 12px; margin-bottom: 10px; letter-spacing: 0.5px; align-self: flex-start; }
+  .card-title { font-size: 1.15rem; color: var(--primary-dark); font-weight: 800; margin-bottom: 10px; line-height: 1.4; text-decoration: none; }
   .card-title:hover { color: var(--accent); }
-  .card-excerpt { font-size: 0.88rem; color: #64748b; line-height: 1.55; margin-bottom: 16px; flex: 1; }
-  .card-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.8rem; color: #94a3b8; border-top: 1px solid #f1f5f9; padding-top: 12px; }
-  .card-meta a { color: var(--accent); font-weight: 700; text-decoration: none; }
+  .card-excerpt { font-size: 0.88rem; color: #64748b; line-height: 1.6; margin-bottom: 18px; flex: 1; }
+  
+  .card-meta { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; color: #94a3b8; border-top: 1px solid #f1f5f9; padding-top: 14px; font-weight: 600; }
+  .card-link { color: var(--primary); font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 4px; }
+  .card-link:hover { color: var(--accent); }
+
+  /* Pagination Bar */
+  .pagination-bar { display: flex; justify-content: center; align-items: center; gap: 8px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border); }
+  .page-btn { min-width: 40px; height: 40px; padding: 0 12px; display: inline-flex; justify-content: center; align-items: center; background: #fff; border: 1px solid var(--border); border-radius: 8px; font-size: 0.92rem; font-weight: 700; color: #475569; text-decoration: none; cursor: pointer; transition: all 0.2s; }
+  .page-btn:hover:not(.disabled) { border-color: var(--accent); color: var(--primary); }
+  .page-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+  .page-btn.disabled { opacity: 0.4; cursor: not-allowed; }
 
   /* Footer */
   footer { background: var(--primary-dark); color: #94a3b8; padding: 40px 20px; font-size: 0.88rem; text-align: center; margin-top: 60px; }
   footer a { color: #cbd5e1; text-decoration: none; margin: 0 10px; }
   footer a:hover { color: #fff; }
-</style>
 
-<!-- Open Graph & Twitter Cards -->
-<meta property="og:site_name" content="Jingyue Glass">
-<meta property="og:title" content="Glassware Insights, Manufacturing Science & B2B Sourcing Blog | Jingyue Glass">
-<meta property="og:description" content="Official B2B glassware blog: Deep-dive articles on glass materials, laser engraving, dishwashing durability, bar par levels, and import customs compliance.">
-<meta property="og:url" content="https://www.jingyueglass.com/blog">
-<meta property="og:type" content="website">
-<meta property="og:image" content="https://www.jingyueglass.com/assets/home/categories/home-category-wine-glasses-final-20260919.webp">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Glassware Insights, Manufacturing Science & B2B Sourcing Blog | Jingyue Glass">
-<meta name="twitter:description" content="Official B2B glassware blog: Deep-dive articles on glass materials, laser engraving, dishwashing durability, bar par levels, and import customs compliance.">
-<meta name="twitter:image" content="https://www.jingyueglass.com/assets/home/categories/home-category-wine-glasses-final-20260919.webp">
+  @media (max-width: 768px) {
+    .blog-grid { grid-template-columns: 1fr; }
+    .filter-tabs { justify-content: flex-start; overflow-x: auto; padding-bottom: 8px; }
+  }
+</style>
 
 <script type="application/ld+json">
 {
@@ -94,142 +123,520 @@
   <div class="nav-container">
     <a href="/" class="logo">JINGYUE <span>GLASS</span></a>
     <nav class="nav-links">
-      <a href="/glassware-product-catalog">Products</a>
-      <a href="/custom-logo-glassware">OEM & Custom</a>
+      <a href="/glassware-product-catalog">Catalog</a>
+      <a href="/gift-sets">Gift Sets</a>
       <a href="/container-cbm-calculator">CBM Calculator</a>
-      <a href="/blog" class="active">Blog & Guides</a>
-      <a href="/about">About Us</a>
-      <a href="/quotation" class="btn-nav-quote">⚡ Online Quote</a>
+      <a href="/blog" class="active">Knowledge Hub</a>
+      <a href="/download-center">Downloads</a>
+      <a href="/custom-glassware-quote-checklist" class="btn-nav-quote">⚡ Request Quote</a>
     </nav>
   </div>
 </header>
 
 <div class="hero-blog">
-  <h1>Glassware Manufacturing & Procurement Insights</h1>
-  <p>Engineering breakdowns, material science comparisons, commercial care guides, and customs compliance for global drinkware importers.</p>
+  <div class="hero-badge">B2B Glassware Knowledge Hub</div>
+  <h1 style="margin-top:10px;">Glassware Manufacturing &amp; Procurement Insights</h1>
+  <p>Engineering breakdowns, material science comparisons, packaging standards, and import compliance for global drinkware importers.</p>
 </div>
 
-<div class="container">
-  <div class="blog-grid">
-    <!-- Article 1 -->
-    <div class="blog-card">
+<div class="container" id="hub-container">
+  
+  <!-- Category Filter Tabs -->
+  <div class="filter-tabs">
+    <button class="filter-btn active" data-cat="all" onclick="filterCategory('all', this)">All Articles (23)</button>
+    <button class="filter-btn" data-cat="compliance" onclick="filterCategory('compliance', this)">Compliance &amp; Customs (5)</button>
+    <button class="filter-btn" data-cat="decoration" onclick="filterCategory('decoration', this)">Custom Decoration (3)</button>
+    <button class="filter-btn" data-cat="packaging" onclick="filterCategory('packaging', this)">Packaging &amp; Sourcing (5)</button>
+    <button class="filter-btn" data-cat="hospitality" onclick="filterCategory('hospitality', this)">Hospitality &amp; Bar (5)</button>
+    <button class="filter-btn" data-cat="material" onclick="filterCategory('material', this)">Material Science &amp; Tooling (5)</button>
+  </div>
+
+  <div class="hub-toolbar">
+    <div class="article-count" id="articleCountText">Showing <span>9</span> of 23 articles</div>
+    <div style="font-size:0.85rem; color:#94a3b8; font-weight:600;">9 articles per page</div>
+  </div>
+
+  <!-- 3x3 Grid (9 per page) -->
+  <div class="blog-grid" id="blogGrid">
+
+    <!-- Article Card 1 -->
+    <div class="blog-card" data-cat="decoration" data-index="0">
       <div class="card-img-wrap">
-        <img src="/assets/products/tumblers-highballs/xz5163-2-300-ml-six-sided-whiskey-tumbler.webp" alt="Heavy Base Whiskey Glass Physics" class="card-img">
+        <img src="/assets/blog/laser-engraving-craft-detail-20261025.jpg" alt="Laser Engraving vs. Ceramic Decals: Which Branding Method Lasts Longer?" class="card-img" loading="lazy">
       </div>
       <div class="card-body">
-        <span class="card-tag">Material & Physics</span>
-        <a href="/why-do-whiskey-glasses-have-heavy-bases.html" class="card-title">Why Do Whiskey Glasses Have Heavy Bases? The Science of Thermal Mass & Balance</a>
-        <p class="card-excerpt">
-          Explore the metallurgical and physical reasons behind heavy-base old fashioned tumblers: lowering center of gravity, retarding ice melting rate, and enhancing bar bussing durability.
-        </p>
+        <span class="card-tag">Custom Decoration</span>
+        <a href="/laser-engraving-vs-ceramic-decals-for-glassware" class="card-title">Laser Engraving vs. Ceramic Decals: Which Branding Method Lasts Longer?</a>
+        <p class="card-excerpt">Technical evaluation of 580°C kiln-fired ceramic decals (1,000+ commercial wash resistance) versus precision 3D surface laser etching for corporate VIP gift sets.</p>
         <div class="card-meta">
-          <span>5 Min Read · Oct 2026</span>
-          <a href="/why-do-whiskey-glasses-have-heavy-bases.html">Read Guide →</a>
+          <span>4 Min Read · Oct 2026</span>
+          <a href="/laser-engraving-vs-ceramic-decals-for-glassware" class="card-link">Read Guide →</a>
         </div>
       </div>
     </div>
 
-    <!-- Article 2 -->
-    <div class="blog-card">
+    <!-- Article Card 2 -->
+    <div class="blog-card" data-cat="hospitality" data-index="1">
       <div class="card-img-wrap">
-        <img src="/assets/products/wine-glasses/xz9001-concave-base-tall-red-wine-glass.webp" alt="Lead-Free Crystal Dishwasher Testing" class="card-img">
+        <img src="/assets/blog/hospitality-cocktail-service-bar-20261025.jpg" alt="How to Calculate Glassware Par Levels for a New Bar or Restaurant Opening?" class="card-img" loading="lazy">
       </div>
       <div class="card-body">
-        <span class="card-tag">Hospitality Care</span>
-        <a href="/can-lead-free-crystal-glasses-go-in-the-dishwasher.html" class="card-title">Can Lead-Free Crystal Glasses Go in the Dishwasher? (Commercial Care Guide)</a>
-        <p class="card-excerpt">
-          Demystifying thermal shock limits, alkaline detergent clouding, and 1,000+ cycle industrial dishwashing SOPs for high-volume hotels and fine-dining restaurants.
-        </p>
+        <span class="card-tag">Hospitality & Bar</span>
+        <a href="/bar-glassware-par-level-calculation-formulas" class="card-title">How to Calculate Glassware Par Levels for a New Bar or Restaurant Opening?</a>
+        <p class="card-excerpt">Standard multiplier formulas (3× seating capacity for rocks, 2.5× for stemware) to avoid rush restocking and manage breakage reserve budgets.</p>
         <div class="card-meta">
           <span>6 Min Read · Oct 2026</span>
-          <a href="/can-lead-free-crystal-glasses-go-in-the-dishwasher.html">Read Guide →</a>
+          <a href="/bar-glassware-par-level-calculation-formulas" class="card-link">Read Guide →</a>
         </div>
       </div>
     </div>
 
-    <!-- Article 3 -->
-    <div class="blog-card">
+    <!-- Article Card 3 -->
+    <div class="blog-card" data-cat="compliance" data-index="2">
       <div class="card-img-wrap">
-        <img src="/assets/products/coffee-tea-mugs/xzdc-250-58-double-wall-cup-250-ml-new-20260918.webp" alt="Borosilicate vs Soda Lime Glass" class="card-img">
+        <img src="/assets/blog/stq-california-prop65-test-report-preview-20261025.jpg" alt="What Certificates Are Required for US & EU Commercial Glassware Customs Clearance?" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Compliance & Customs</span>
+        <a href="/what-certificates-required-for-us-eu-glassware-customs" class="card-title">What Certificates Are Required for US & EU Commercial Glassware Customs Clearance?</a>
+        <p class="card-excerpt">Navigating FDA CPG 545.400, California Proposition 65 leachable lead limits (STQ Report SZ2025091217-4E), and EU LFGB food safety dossiers for smooth port release.</p>
+        <div class="card-meta">
+          <span>5 Min Read · Oct 2026</span>
+          <a href="/what-certificates-required-for-us-eu-glassware-customs" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 4 -->
+    <div class="blog-card" data-cat="packaging" data-index="3">
+      <div class="card-img-wrap">
+        <img src="/assets/blog/factory-shipping-master-cartons-20261025.jpg" alt="How to Choose Packaging for High-End Glassware Gift Sets (ISTA-1A Certified)" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Packaging & Logistics</span>
+        <a href="/how-to-choose-packaging-for-glassware-gift-sets" class="card-title">How to Choose Packaging for High-End Glassware Gift Sets (ISTA-1A Certified)</a>
+        <p class="card-excerpt">Comparing solid pine wooden chests, magnetic rigid book boxes, and odorless EPE pearl cotton inserts under standardized 1.2-meter drop test protocols.</p>
+        <div class="card-meta">
+          <span>6 Min Read · Oct 2026</span>
+          <a href="/how-to-choose-packaging-for-glassware-gift-sets" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 5 -->
+    <div class="blog-card" data-cat="material" data-index="4">
+      <div class="card-img-wrap">
+        <img src="/assets/products/coffee-tea-mugs/xzdc-250-58-double-wall-cup-250-ml-new-20260918.webp" alt="Borosilicate vs. Soda-Lime Glass: Which Is Best for Your Drinkware Line?" class="card-img" loading="lazy">
       </div>
       <div class="card-body">
         <span class="card-tag">Material Science</span>
-        <a href="/borosilicate-vs-soda-lime-glass-commercial-comparison.html" class="card-title">Borosilicate vs. Soda-Lime Glass: Which Is Best for Your Drinkware Line?</a>
-        <p class="card-excerpt">
-          Compare COE 3.3 thermal shock resistance, impact toughness, manufacturing mold costs, and ideal use cases between double-wall borosilicate and commercial soda-lime glass.
-        </p>
+        <a href="/borosilicate-vs-soda-lime-glass-commercial-comparison" class="card-title">Borosilicate vs. Soda-Lime Glass: Which Is Best for Your Drinkware Line?</a>
+        <p class="card-excerpt">Compare COE 3.3 thermal shock resistance (-20°C to 150°C), impact toughness, mold costs, and ideal use cases between double-wall and soda-lime glass.</p>
         <div class="card-meta">
           <span>5 Min Read · Oct 2026</span>
-          <a href="/borosilicate-vs-soda-lime-glass-commercial-comparison.html">Read Guide →</a>
+          <a href="/borosilicate-vs-soda-lime-glass-commercial-comparison" class="card-link">Read Guide →</a>
         </div>
       </div>
     </div>
 
-    <!-- Article 4 -->
-    <div class="blog-card">
+    <!-- Article Card 6 -->
+    <div class="blog-card" data-cat="hospitality" data-index="5">
       <div class="card-img-wrap">
-        <img src="/assets/home/finishing/laser-engraving-glassware-20260918.webp" alt="Laser Engraving vs Ceramic Decals" class="card-img">
+        <img src="/assets/blog/hospitality-restaurant-table-setting-20261025.jpg" alt="Can Lead-Free Crystal Glasses Go in the Dishwasher? (Commercial Care Guide)" class="card-img" loading="lazy">
       </div>
       <div class="card-body">
-        <span class="card-tag">Custom Branding</span>
-        <a href="/laser-engraving-vs-ceramic-decals-for-glassware" class="card-title">Laser Engraving vs. Ceramic Decals: Which Branding Method Lasts Longer?</a>
-        <p class="card-excerpt">
-          Technical evaluation of 580°C kiln-fired ceramic decals (1000+ commercial wash resistance) versus precision 3D surface laser etching for corporate VIP gift sets.
-        </p>
-        <div class="card-meta">
-          <span>4 Min Read · Oct 2026</span>
-          <a href="/laser-engraving-vs-ceramic-decals-for-glassware">Read Guide →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Article 5 -->
-    <div class="blog-card">
-      <div class="card-img-wrap">
-        <img src="/assets/products/beer-glasses/xz7010-570-ml-straight-pub-beer-glass.webp" alt="Bar Glassware Par Levels" class="card-img">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Bar & Hospitality</span>
-        <a href="/bar-glassware-par-level-calculation-formulas" class="card-title">How to Calculate Glassware Par Levels for a New Bar or Restaurant Opening?</a>
-        <p class="card-excerpt">
-          Standard multiplier formulas (3× seating capacity for rocks, 2.5× for stemware) to avoid rush restocking and manage breakage reserve budgets.
-        </p>
+        <span class="card-tag">Hospitality & Bar</span>
+        <a href="/can-lead-free-crystal-glasses-go-in-the-dishwasher" class="card-title">Can Lead-Free Crystal Glasses Go in the Dishwasher? (Commercial Care Guide)</a>
+        <p class="card-excerpt">Demystifying thermal shock limits, alkaline detergent clouding, and 1,000+ cycle industrial dishwashing SOPs for high-volume hotels and fine-dining restaurants.</p>
         <div class="card-meta">
           <span>6 Min Read · Oct 2026</span>
-          <a href="/bar-glassware-par-level-calculation-formulas">Read Guide →</a>
+          <a href="/can-lead-free-crystal-glasses-go-in-the-dishwasher" class="card-link">Read Guide →</a>
         </div>
       </div>
     </div>
 
-    <!-- Article 6 -->
-    <div class="blog-card">
+    <!-- Article Card 7 -->
+    <div class="blog-card" data-cat="material" data-index="6">
       <div class="card-img-wrap">
-        <img src="/assets/solutions/trusted-buyers.webp" alt="Customs Certificates FDA LFGB" class="card-img">
+        <img src="/assets/products/tumblers-highballs/xz5163-2-300-ml-six-sided-whiskey-tumbler.webp" alt="Why Do Whiskey Glasses Have Heavy Bases? The Science of Thermal Mass & Balance" class="card-img" loading="lazy">
       </div>
       <div class="card-body">
-        <span class="card-tag">Trade & Customs</span>
-        <a href="/what-certificates-required-for-us-eu-glassware-customs" class="card-title">What Certificates Are Required for US & EU Commercial Glassware Customs Clearance?</a>
-        <p class="card-excerpt">
-          Navigating FDA CPG 545.400, California Proposition 65 leachable lead limits, and EU LFGB food safety dossiers for smooth port release.
-        </p>
+        <span class="card-tag">Material Science</span>
+        <a href="/why-do-whiskey-glasses-have-heavy-bases" class="card-title">Why Do Whiskey Glasses Have Heavy Bases? The Science of Thermal Mass & Balance</a>
+        <p class="card-excerpt">Explore the metallurgical and physical reasons behind heavy-base tumblers: lowering center of gravity, retarding ice melting, and enhancing durability.</p>
         <div class="card-meta">
           <span>5 Min Read · Oct 2026</span>
-          <a href="/what-certificates-required-for-us-eu-glassware-customs">Read Guide →</a>
+          <a href="/why-do-whiskey-glasses-have-heavy-bases" class="card-link">Read Guide →</a>
         </div>
       </div>
     </div>
+
+    <!-- Article Card 8 -->
+    <div class="blog-card" data-cat="material" data-index="7">
+      <div class="card-img-wrap">
+        <img src="/assets/products/wine-glasses/xz9001-concave-base-tall-red-wine-glass.webp" alt="OEM Custom Glassware Mold Development & Rapid Prototyping Guide" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Engineering & Tooling</span>
+        <a href="/oem-custom-mold-development-sop" class="card-title">OEM Custom Glassware Mold Development & Rapid Prototyping Guide</a>
+        <p class="card-excerpt">Accelerate bespoke glassware tooling: 48h DFM engineering review, 1:1 SLA resin hand prototypes, sample mold blowing, and 100% mold rebate terms.</p>
+        <div class="card-meta">
+          <span>7 Min Read · Oct 2026</span>
+          <a href="/oem-custom-mold-development-sop" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 9 -->
+    <div class="blog-card" data-cat="decoration" data-index="8">
+      <div class="card-img-wrap">
+        <img src="/assets/blog/ceramic-decal-firing-kiln-20261025.jpg" alt="Custom Glassware Decoration Guide: High-Temp Decals, Laser & Real Gold Rims" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Custom Decoration</span>
+        <a href="/glassware-custom-decoration-methods-guide" class="card-title">Custom Glassware Decoration Guide: High-Temp Decals, Laser & Real Gold Rims</a>
+        <p class="card-excerpt">Comparing 580°C kiln-fired ceramic decals, laser micro-etching, hand-painted 24K gold rims, and acid frosting by dishwasher durability and MOQ.</p>
+        <div class="card-meta">
+          <span>6 Min Read · Oct 2026</span>
+          <a href="/glassware-custom-decoration-methods-guide" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 10 -->
+    <div class="blog-card" data-cat="compliance" data-index="9">
+      <div class="card-img-wrap">
+        <img src="/assets/blog/factory-shipping-master-cartons-20261025.jpg" alt="EU PPWR Glassware Packaging Compliance Guide: Zero-Plastic Recyclability" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Compliance & Customs</span>
+        <a href="/eu-ppwr-glassware-packaging-compliance-guide" class="card-title">EU PPWR Glassware Packaging Compliance Guide: Zero-Plastic Recyclability</a>
+        <p class="card-excerpt">How European distributors achieve 100% curbside recyclable packaging using molded sugarcane pulp and FSC paperboard while passing ISTA-1A drop tests.</p>
+        <div class="card-meta">
+          <span>6 Min Read · Oct 2026</span>
+          <a href="/eu-ppwr-glassware-packaging-compliance-guide" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 11 -->
+    <div class="blog-card" data-cat="packaging" data-index="10">
+      <div class="card-img-wrap">
+        <img src="/assets/home/categories/home-category-wine-glasses-final-20260919.webp" alt="Wholesale Glassware Pricing Factors & Custom RFQ Procurement Guide" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">B2B Procurement</span>
+        <a href="/wholesale-glassware-pricing-guide" class="card-title">Wholesale Glassware Pricing Factors & Custom RFQ Procurement Guide</a>
+        <p class="card-excerpt">Understanding manufacturing variables, volume scaling, decoration, and packaging drivers that determine custom glassware project costs.</p>
+        <div class="card-meta">
+          <span>6 Min Read · Oct 2026</span>
+          <a href="/wholesale-glassware-pricing-guide" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 12 -->
+    <div class="blog-card" data-cat="compliance" data-index="11">
+      <div class="card-img-wrap">
+        <img src="/assets/blog/stq-california-prop65-test-report-preview-20261025.jpg" alt="California Proposition 65 & FDA Glassware Compliance Guide" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Compliance & Customs</span>
+        <a href="/california-prop-65-glassware-compliance-guide" class="card-title">California Proposition 65 & FDA Glassware Compliance Guide</a>
+        <p class="card-excerpt">Testing protocols for lead and cadmium leachable limits under ASTM C738 and FDA CPG 7117.06 with lab report accreditation.</p>
+        <div class="card-meta">
+          <span>5 Min Read · Oct 2026</span>
+          <a href="/california-prop-65-glassware-compliance-guide" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 13 -->
+    <div class="blog-card" data-cat="packaging" data-index="12">
+      <div class="card-img-wrap">
+        <img src="/assets/blog/container-loading-pallet-strapping-20261025.jpg" alt="Glassware Ocean Shipping & Container Pallet Protection SOP" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Packaging & Logistics</span>
+        <a href="/glassware-ocean-shipping-packaging-guide" class="card-title">Glassware Ocean Shipping & Container Pallet Protection SOP</a>
+        <p class="card-excerpt">Master carton partition engineering, shrink-wrapped pallet strapping standards, container desiccant formulas, and 0% ocean freight breakage SOP.</p>
+        <div class="card-meta">
+          <span>6 Min Read · Oct 2026</span>
+          <a href="/glassware-ocean-shipping-packaging-guide" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 14 -->
+    <div class="blog-card" data-cat="compliance" data-index="13">
+      <div class="card-img-wrap">
+        <img src="/assets/blog/stq-california-prop65-test-report-preview-20261025.jpg" alt="Glassware Inspection & AQL 2.5 Quality Acceptance Standards" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Quality & Standards</span>
+        <a href="/glassware-inspection-aql-standards-guide" class="card-title">Glassware Inspection & AQL 2.5 Quality Acceptance Standards</a>
+        <p class="card-excerpt">Defining Critical (0.0), Major (1.5), and Minor (4.0) defects in machine-blown and hand-crafted crystal glassware under ISO 2859-1 standards.</p>
+        <div class="card-meta">
+          <span>5 Min Read · Oct 2026</span>
+          <a href="/glassware-inspection-aql-standards-guide" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 15 -->
+    <div class="blog-card" data-cat="compliance" data-index="14">
+      <div class="card-img-wrap">
+        <img src="/assets/home/categories/home-category-wine-glasses-final-20260919.webp" alt="Glassware HS Code Classification & Global Import Tariff Guide" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Compliance & Customs</span>
+        <a href="/glassware-hs-code-import-tariff-guide" class="card-title">Glassware HS Code Classification & Global Import Tariff Guide</a>
+        <p class="card-excerpt">Navigating HS 7013.28, 7013.37, and 7013.99 for commercial drinking glasses, lead-free crystal stemware, and decorative decanters across US and EU customs.</p>
+        <div class="card-meta">
+          <span>5 Min Read · Oct 2026</span>
+          <a href="/glassware-hs-code-import-tariff-guide" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 16 -->
+    <div class="blog-card" data-cat="packaging" data-index="15">
+      <div class="card-img-wrap">
+        <img src="/assets/home/categories/home-category-wine-glasses-final-20260919.webp" alt="B2B Glassware Procurement Terms & Proforma Invoice (PI) Walkthrough" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">B2B Procurement</span>
+        <a href="/b2b-glassware-procurement-terms-pi-guide" class="card-title">B2B Glassware Procurement Terms & Proforma Invoice (PI) Walkthrough</a>
+        <p class="card-excerpt">Understanding Incoterms (FOB/CIF/DDP), payment milestones, tooling amortization clauses, and defect credit terms in international glassware contracts.</p>
+        <div class="card-meta">
+          <span>5 Min Read · Oct 2026</span>
+          <a href="/b2b-glassware-procurement-terms-pi-guide" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 17 -->
+    <div class="blog-card" data-cat="material" data-index="16">
+      <div class="card-img-wrap">
+        <img src="/assets/blog/laser-engraving-craft-detail-20261025.jpg" alt="Custom Glassware Sample Approval SOP: From 3D CAD to Physical Sign-Off" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Engineering & Tooling</span>
+        <a href="/custom-glassware-sample-approval-process" class="card-title">Custom Glassware Sample Approval SOP: From 3D CAD to Physical Sign-Off</a>
+        <p class="card-excerpt">Step-by-step checklist for evaluating sample clarity, weight, wall thickness, logo registration, and dishwasher durability before mass production.</p>
+        <div class="card-meta">
+          <span>5 Min Read · Oct 2026</span>
+          <a href="/custom-glassware-sample-approval-process" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 18 -->
+    <div class="blog-card" data-cat="hospitality" data-index="17">
+      <div class="card-img-wrap">
+        <img src="/assets/blog/whiskey-glassware-flight-tasting-20261025.jpg" alt="How to Clean and Maintain Lead-Free Crystal Wine Decanters" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Hospitality & Bar</span>
+        <a href="/how-to-clean-and-care-for-crystal-wine-decanters" class="card-title">How to Clean and Maintain Lead-Free Crystal Wine Decanters</a>
+        <p class="card-excerpt">Professional sommelier techniques for removing tannin stains, utilizing stainless steel cleaning beads, and streak-free air drying.</p>
+        <div class="card-meta">
+          <span>4 Min Read · Oct 2026</span>
+          <a href="/how-to-clean-and-care-for-crystal-wine-decanters" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 19 -->
+    <div class="blog-card" data-cat="hospitality" data-index="18">
+      <div class="card-img-wrap">
+        <img src="/assets/blog/hospitality-restaurant-table-setting-20261025.jpg" alt="Complete Commercial Glassware Opening Checklist for Bars & Restaurants" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Hospitality & Bar</span>
+        <a href="/bar-restaurant-glassware-opening-checklist" class="card-title">Complete Commercial Glassware Opening Checklist for Bars & Restaurants</a>
+        <p class="card-excerpt">Curating glassware SKUs by beverage menu: water tumblers, wine stems, cocktail coupettes, beer steins, and bar caddy accessories.</p>
+        <div class="card-meta">
+          <span>6 Min Read · Oct 2026</span>
+          <a href="/bar-restaurant-glassware-opening-checklist" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 20 -->
+    <div class="blog-card" data-cat="compliance" data-index="19">
+      <div class="card-img-wrap">
+        <img src="/assets/blog/stq-california-prop65-test-report-preview-20261025.jpg" alt="Pre-Shipment Quality Control Checklist for B2B Glassware Importers" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Quality & Standards</span>
+        <a href="/glassware-quality-control-checklist" class="card-title">Pre-Shipment Quality Control Checklist for B2B Glassware Importers</a>
+        <p class="card-excerpt">Inspection points for thermal shock resistance, rim smoothness, bottom stability, logo rub-off tests, and barcode scannability.</p>
+        <div class="card-meta">
+          <span>5 Min Read · Oct 2026</span>
+          <a href="/glassware-quality-control-checklist" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 21 -->
+    <div class="blog-card" data-cat="material" data-index="20">
+      <div class="card-img-wrap">
+        <img src="/assets/products/coffee-tea-mugs/xzdc-250-58-double-wall-cup-250-ml-new-20260918.webp" alt="Commercial Borosilicate Glass Sourcing Guide: Double-Wall Engineering" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Material Science</span>
+        <a href="/borosilicate-vs-soda-lime-glass-sourcing-guide" class="card-title">Commercial Borosilicate Glass Sourcing Guide: Double-Wall Engineering</a>
+        <p class="card-excerpt">Deep dive into manual flame-sealing, hydrophobic silicone vent valves, and dishwasher safety for double-wall borosilicate coffee mugs.</p>
+        <div class="card-meta">
+          <span>5 Min Read · Oct 2026</span>
+          <a href="/borosilicate-vs-soda-lime-glass-sourcing-guide" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 22 -->
+    <div class="blog-card" data-cat="packaging" data-index="21">
+      <div class="card-img-wrap">
+        <img src="/assets/home/categories/home-category-wine-glasses-final-20260919.webp" alt="Glassware Minimum Order Quantities (MOQ) Explained: Stock vs. Custom Runs" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">B2B Procurement</span>
+        <a href="/glassware-moq-guide" class="card-title">Glassware Minimum Order Quantities (MOQ) Explained: Stock vs. Custom Runs</a>
+        <p class="card-excerpt">Why automated machine lines require 3,000–5,000 pcs while in-stock blank laser engraving allows flexible 24–48 set trial orders.</p>
+        <div class="card-meta">
+          <span>5 Min Read · Oct 2026</span>
+          <a href="/glassware-moq-guide" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Article Card 23 -->
+    <div class="blog-card" data-cat="hospitality" data-index="22">
+      <div class="card-img-wrap">
+        <img src="/assets/blog/beer-flight-craft-tasting-20261025.jpg" alt="Custom Wedding & Event Glassware Souvenirs: Volume Sourcing Guide" class="card-img" loading="lazy">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Hospitality & Bar</span>
+        <a href="/wedding-event-glassware-souvenirs-guide" class="card-title">Custom Wedding & Event Glassware Souvenirs: Volume Sourcing Guide</a>
+        <p class="card-excerpt">Designing personalized champagne flute favors, printed stemless wine glasses, and commemorative gift sets for luxury event planners.</p>
+        <div class="card-meta">
+          <span>5 Min Read · Oct 2026</span>
+          <a href="/wedding-event-glassware-souvenirs-guide" class="card-link">Read Guide →</a>
+        </div>
+      </div>
+    </div>
+
   </div>
+
+  <!-- Dynamic Pagination Bar -->
+  <div class="pagination-bar" id="paginationBar">
+    <!-- Populated by JavaScript -->
+  </div>
+
 </div>
 
+<!-- Interactive Client-side Filter & Pagination Engine -->
+<script>
+  var currentPage = 1;
+  var itemsPerPage = 9;
+  var currentCategory = 'all';
+
+  function renderHub() {
+    var cards = document.querySelectorAll('.blog-card');
+    var matchedCards = [];
+
+    cards.forEach(function(card) {
+      var cat = card.getAttribute('data-cat');
+      if (currentCategory === 'all' || cat === currentCategory) {
+        matchedCards.push(card);
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    var totalItems = matchedCards.length;
+    var totalPages = Math.ceil(totalItems / itemsPerPage) || 1;
+    if (currentPage > totalPages) currentPage = 1;
+
+    var startIndex = (currentPage - 1) * itemsPerPage;
+    var endIndex = startIndex + itemsPerPage;
+
+    matchedCards.forEach(function(card, index) {
+      if (index >= startIndex && index < endIndex) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Update count text
+    var countText = document.getElementById('articleCountText');
+    var showingCount = Math.min(itemsPerPage, totalItems - startIndex);
+    if (totalItems === 0) {
+      countText.innerHTML = 'Showing <span>0</span> articles';
+    } else {
+      countText.innerHTML = 'Showing <span>' + (startIndex + 1) + '–' + (startIndex + showingCount) + '</span> of ' + totalItems + ' articles';
+    }
+
+    // Render Pagination Bar
+    var pagBar = document.getElementById('paginationBar');
+    if (totalPages <= 1) {
+      pagBar.style.display = 'none';
+      return;
+    }
+    pagBar.style.display = 'flex';
+
+    var pagHtml = '';
+    // Previous Button
+    pagHtml += '<button class="page-btn ' + (currentPage === 1 ? 'disabled' : '') + '" onclick="changePage(' + (currentPage - 1) + ')" ' + (currentPage === 1 ? 'disabled' : '') + '>← Prev</button>';
+
+    // Page numbers
+    for (var p = 1; p <= totalPages; p++) {
+      pagHtml += '<button class="page-btn ' + (p === currentPage ? 'active' : '') + '" onclick="changePage(' + p + ')">' + p + '</button>';
+    }
+
+    // Next Button
+    pagHtml += '<button class="page-btn ' + (currentPage === totalPages ? 'disabled' : '') + '" onclick="changePage(' + (currentPage + 1) + ')" ' + (currentPage === totalPages ? 'disabled' : '') + '>Next →</button>';
+
+    pagBar.innerHTML = pagHtml;
+  }
+
+  function changePage(newPage) {
+    currentPage = newPage;
+    renderHub();
+    var topEl = document.getElementById('hub-container');
+    if (topEl) {
+      topEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function filterCategory(cat, btn) {
+    currentCategory = cat;
+    currentPage = 1;
+    document.querySelectorAll('.filter-btn').forEach(function(b) {
+      b.classList.remove('active');
+    });
+    if (btn) btn.classList.add('active');
+    renderHub();
+  }
+
+  // Initial Run
+  document.addEventListener('DOMContentLoaded', function() {
+    renderHub();
+  });
+</script>
+
 <footer>
-  <p>© 2026 Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass). All Rights Reserved.</p>
-  <p style="margin-top:10px;">
+  <div style="max-width:1200px; margin:0 auto 16px;">
+    <a href="/">Home</a> |
     <a href="/glassware-product-catalog">Catalog</a> |
-    <a href="/custom-logo-glassware">Customization</a> |
-    <a href="/container-cbm-calculator">CBM Calculator</a> |
-    <a href="/blog">Blog</a> |
-    <a href="/quotation">Online Quote Studio</a>
-  </p>
+    <a href="/gift-sets">Gift Sets</a> |
+    <a href="/blog">Knowledge Hub</a> |
+    <a href="/download-center">Downloads</a> |
+    <a href="/custom-glassware-quote-checklist">RFQ Checklist</a>
+  </div>
+  <p>&copy; 2026 Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass). All rights reserved.</p>
 </footer>
 
 </body>
