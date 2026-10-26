@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Complete Tumblers & Highballs Suite (9 Dedicated PDPs) - Jingyue Glass</title>
+  <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f0;
+      color: #333;
+      line-height: 1.6;
+    }
+    .preview-header {
+      background: linear-gradient(135deg, #1a3a5c 0%, #0d2540 100%);
+      color: #fff;
+      padding: 40px 24px;
+      text-align: center;
+      border-bottom: 4px solid #c8930a;
+    }
+    .preview-badge {
+      display: inline-block;
+      background: #c8930a;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .preview-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .preview-header p {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 36px auto 60px;
+      padding: 0 20px;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #1a3a5c;
+      margin: 32px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #cbd5e1;
+    }
+
+    .pdp-suite-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    
+    .pdp-preview-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pdp-preview-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(26,58,92,0.12);
+      border-color: #c8930a;
+    }
+    
+    .card-img-wrap {
+      position: relative;
+      background: #ffffff;
+      height: 260px;
+      overflow: hidden;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+    .pdp-preview-card:hover .card-img-wrap img {
+      transform: scale(1.04);
+    }
+    .card-model-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #1a3a5c;
+      color: #c8930a;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .card-status-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #25D366;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #c8930a;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .card-body h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      color: #1a3a5c;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    
+    .spec-table-mini {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+    }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-k { color: #64748B; font-weight: 600; }
+    .spec-v { color: #1a3a5c; font-weight: 700; text-align: right; max-width: 60%; }
+    
+    .card-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-view-pdp {
+      flex: 1;
+      background: #1a3a5c;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-view-pdp:hover {
+      background: #c8930a;
+      color: #fff;
+    }
+
+    .standards-summary {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #c8930a;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 32px;
+    }
+    .standards-summary h3 {
+      font-size: 1.1rem;
+      color: #1a3a5c;
+      margin-bottom: 10px;
+    }
+    .standards-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #334155;
+    }
+    .standards-list li::before {
+      content: '✅ ';
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="preview-header">
+  <span class="preview-badge">ALL 9 TUMBLER &amp; HIGHBALL MODELS · B2B PDP PREVIEW</span>
+  <h1>Tumblers &amp; Highballs Suite &amp; Dedicated PDPs</h1>
+  <p>Previewing 9 dedicated Commercial Drinking Glasses &amp; Highballs PDPs (HS6H110, HS75H145, XZ032-3, XZ0486, XZ0603, XZ2016, XZ5008-3, XZ5163-2, XZ5215) with unified WhatsApp/WeChat (+86 132 5662 7201), 1:1 square contain canvas, de-priced itemized quoting, and 6-card custom service matrix (Laser / Decal / Screen Print / Gold Rim / Color Spraying / Ion Plating).</p>
+</div>
+
+<div class="container">
+
+  <div class="section-title">Complete 9-Model Tumblers &amp; Highballs Catalog</div>
+  <div class="pdp-suite-grid">
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">HS6H110</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/tumblers-highballs/hs6h110-320-ml-cold-cut-highball-drinking-glass-new-20260917.webp" alt="320ml Cold-Cut Highball Drinking Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Cold-Cut Rim</span>
+        <h2>320ml Cold-Cut Highball Drinking Glass</h2>
+        <p class="card-desc">320ml straight highball glass featuring laser cold-cut rim and heavy base for commercial beverage and cocktail service.</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">320 ml (10.8 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Rim Ø 6.9 cm × H 11.0 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs/carton</span></div>
+          <div class="spec-row"><span class="spec-k">Carton Size</span><span class="spec-v">36.8 × 26.2 × 35.5 cm</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../cold-cut-highball-glass-hs6h110.html" target="_blank">Open Dedicated PDP (HS6H110) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">HS75H145</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/tumblers-highballs/hero-tumblers-highballs.webp" alt="500ml Cold-Cut Highball Drinking Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Large Capacity</span>
+        <h2>500ml Cold-Cut Highball Drinking Glass</h2>
+        <p class="card-desc">500ml tall highball glass designed for high-capacity mixed drinks, iced beverages, and premium hotel tabletop service.</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">500 ml (16.9 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Rim Ø 7.5 cm × H 14.5 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs/carton</span></div>
+          <div class="spec-row"><span class="spec-k">Carton Size</span><span class="spec-v">47.5 × 32.5 × 31.4 cm</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../tall-cold-cut-highball-glass-hs75h145.html" target="_blank">Open Dedicated PDP (HS75H145) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ032-3</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/tumblers-highballs/xz032-3-highball-drinking-tumbler-new-20260917.webp" alt="330ml Highball Drinking Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Commercial Standard</span>
+        <h2>330ml Highball Drinking Tumbler</h2>
+        <p class="card-desc">330ml classic highball tumbler with solid weighted sham, optimized for high-turnover dining and hospitality venues.</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">330 ml (11.2 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Rim Ø 7.2 cm × H 13.8 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs/carton</span></div>
+          <div class="spec-row"><span class="spec-k">Carton Size</span><span class="spec-v">42.7 × 29.5 × 32.3 cm</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../highball-drinking-tumbler-xz032-3.html" target="_blank">Open Dedicated PDP (XZ032-3) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ0486</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/tumblers-highballs/xz0486-200-ml-stackable-water-tumbler-new-20260917.webp" alt="200ml Stackable Water Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Space-Saving Stackable</span>
+        <h2>200ml Stackable Water Tumbler</h2>
+        <p class="card-desc">200ml stackable water tumbler with space-saving geometry, engineered for cafes, school catering, and hotel breakfast buffets.</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">200 ml (6.8 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 9.0 cm × Top Ø 8.0 cm × Base Ø 5.0 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">72 pcs/carton</span></div>
+          <div class="spec-row"><span class="spec-k">Carton Size</span><span class="spec-v">43.5 × 41.0 × 21.5 cm</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../stackable-water-tumbler-xz0486.html" target="_blank">Open Dedicated PDP (XZ0486) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ0603</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/tumblers-highballs/xz0603-250-ml-diamond-cut-water-tumbler-new-20260917.webp" alt="250ml Diamond-Cut Water Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Diamond Faceted</span>
+        <h2>250ml Diamond-Cut Water Tumbler</h2>
+        <p class="card-desc">250ml faceted diamond-pattern tumbler delivering tactile grip and luxury vintage aesthetic for upscale tablescapes.</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">250 ml (8.5 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Rim Ø 6.5 cm × H 12.5 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">72 pcs/carton</span></div>
+          <div class="spec-row"><span class="spec-k">Carton Size</span><span class="spec-v">45.0 × 30.8 × 32.3 cm</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../diamond-cut-water-tumbler-xz0603.html" target="_blank">Open Dedicated PDP (XZ0603) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ2016</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/tumblers-highballs/xz2016-470-ml-water-tumbler-new-20260917.webp" alt="470ml Large Water & Beverage Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Generous Volume</span>
+        <h2>470ml Large Water & Beverage Tumbler</h2>
+        <p class="card-desc">470ml all-purpose drinking tumbler with thick sham, designed for family restaurants, casual dining, and sports bars.</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">470 ml (15.9 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Rim Ø 8.7 cm × H 16.3 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs/carton</span></div>
+          <div class="spec-row"><span class="spec-k">Carton Size</span><span class="spec-v">51.0 × 25.1 × 35.5 cm</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../large-water-tumbler-xz2016.html" target="_blank">Open Dedicated PDP (XZ2016) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ5008-3</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/tumblers-highballs/xz5008-3-380-ml-stackable-drinking-tumbler-new-20260917.webp" alt="380ml Wide-Mouth Stackable Drinking Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Wide Stackable</span>
+        <h2>380ml Wide-Mouth Stackable Drinking Tumbler</h2>
+        <p class="card-desc">380ml wide-mouth stackable tumbler combining contemporary low profile with stackable efficiency.</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">380 ml (12.8 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Rim Ø 10.2 cm × H 8.2 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs/carton</span></div>
+          <div class="spec-row"><span class="spec-k">Carton Size</span><span class="spec-v">51.0 × 34.5 × 26.0 cm</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../wide-mouth-stackable-tumbler-xz5008-3.html" target="_blank">Open Dedicated PDP (XZ5008-3) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ5163-2</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/tumblers-highballs/xz5163-2-300-ml-six-sided-whiskey-tumbler-new-20260917.webp" alt="300ml Six-Sided Geometric Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Hexagonal Silhouette</span>
+        <h2>300ml Six-Sided Geometric Tumbler</h2>
+        <p class="card-desc">300ml geometric six-sided glass tumbler blending contemporary styling with commercial durability.</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">300 ml (10.1 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Rim Ø 6.9 cm × H 9.2 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">72 pcs/carton</span></div>
+          <div class="spec-row"><span class="spec-k">Carton Size</span><span class="spec-v">50.3 × 39.0 × 31.2 cm</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../six-sided-whiskey-tumbler-xz5163-2.html" target="_blank">Open Dedicated PDP (XZ5163-2) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ5215</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/tumblers-highballs/xz5215-360-ml-high-ball-glass-tumbler-new-20260917.webp" alt="360ml Heavy-Base Highball Glass Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Solid Sham Highball</span>
+        <h2>360ml Heavy-Base Highball Glass Tumbler</h2>
+        <p class="card-desc">360ml classic heavy-sham highball glass, the quintessential cocktail vessel for luxury bars, lounges, and hospitality brands.</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">360 ml (12.2 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Rim Ø 6.8 cm × H 14.8 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs/carton</span></div>
+          <div class="spec-row"><span class="spec-k">Carton Size</span><span class="spec-v">44.5 × 30.5 × 32.5 cm</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../heavy-base-highball-glass-xz5215.html" target="_blank">Open Dedicated PDP (XZ5215) ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="standards-summary">
+    <h3>B2B High-Conversion Quality Standards Implemented Across All 9 PDPs</h3>
+    <ul class="standards-list">
+      <li>1:1 Square Gold Ratio (aspect-ratio: 1/1, object-fit: contain) white-background imagery</li>
+      <li>100% Pure English Content (0 Chinese characters across metadata, body, and tables)</li>
+      <li>Unified Contact Desk: WhatsApp &amp; WeChat (+86 132 5662 7201) and Email (sales@jingyueglass.com)</li>
+      <li>B2B De-Pricing Policy: Itemized Quotation based on quantity, decoration, packaging, and freight</li>
+      <li>Standardized Odorless EPE Pearl Cotton Packaging descriptions (zero crumbly polystyrene or low-grade foam plastics)</li>
+      <li>6-Card In-House Customization Matrix (Laser, 580°C Decal, Silk Screen, Hand-Painted Real Gold Rim / Color Spraying / Ion Plating, EPE Packaging, Mixed Sourcing)</li>
+      <li>4-Card Complementary Drinkware Recommendations &amp; High-Conversion Navy-Gold Factory CTA Banner</li>
+      <li>Schema.org JSON-LD (Product, BreadcrumbList, and FAQPage with AggregateOffer)</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>

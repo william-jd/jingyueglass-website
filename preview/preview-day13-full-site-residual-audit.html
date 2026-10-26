@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Jingyue Glass — Day 13 Full Site Depricing & Schema Residual Audit Preview</title>
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --primary-dark: #0d2540;
+      --accent: #c8930a;
+      --accent-hover: #e0a70b;
+      --accent-gold: #c9a84c;
+      --bg-warm: #f5f5f0;
+      --surface: #ffffff;
+      --text-main: #2c3e50;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --status-success-bg: #ecfdf5;
+      --status-success-text: #065f46;
+      --status-warning-bg: #fffbeb;
+      --status-warning-text: #92400e;
+      --status-danger-bg: #fef2f2;
+      --status-danger-text: #991b1b;
+      --radius: 8px;
+      --shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-warm);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #ffffff;
+      padding: 40px 24px;
+      border-bottom: 3px solid var(--accent);
+    }
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .badge-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-gold {
+      background-color: var(--accent);
+      color: #ffffff;
+    }
+
+    .badge-preview {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #f1f5f9;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 900px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 32px auto;
+      padding: 0 20px;
+    }
+
+    .notice-card {
+      background: #ffffff;
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+    }
+
+    .notice-card h3 {
+      color: var(--primary);
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    .notice-card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease;
+    }
+
+    .kpi-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .kpi-num {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .kpi-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .kpi-status {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .status-pass {
+      background: var(--status-success-bg);
+      color: var(--status-success-text);
+    }
+
+    .status-pending {
+      background: var(--status-warning-bg);
+      color: var(--status-warning-text);
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      color: var(--primary-dark);
+      margin: 36px 0 16px 0;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--accent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow);
+      margin-bottom: 28px;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9rem;
+      min-width: 650px;
+    }
+
+    th {
+      background-color: #f8fafc;
+      color: var(--primary);
+      font-weight: 600;
+      padding: 14px 16px;
+      border-bottom: 2px solid var(--border-color);
+      white-space: nowrap;
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-color);
+      color: var(--text-main);
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover {
+      background-color: #f8fafc;
+    }
+
+    .code-tag {
+      font-family: monospace;
+      font-size: 0.85rem;
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--primary);
+    }
+
+    .cta-container {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold {
+      display: inline-block;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(200, 147, 10, 0.3);
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .btn-gold:hover {
+      background: var(--accent-hover);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      display: inline-block;
+      background: var(--surface);
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      text-decoration: none;
+      border: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-secondary:hover {
+      background: #f8fafc;
+    }
+
+    footer {
+      background: var(--primary-dark);
+      color: #94a3b8;
+      text-align: center;
+      padding: 24px;
+      font-size: 0.85rem;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 1.5rem; }
+      .header-container { padding: 0 10px; }
+      .kpi-grid { grid-template-columns: 1fr 1fr; }
+      .section-title { font-size: 1.15rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="badge-bar">
+        <span class="badge badge-gold">Day 13 · 全站复查批次</span>
+        <span class="badge badge-preview">Local Standalone Preview Only</span>
+        <span class="badge badge-preview">Zero Production Modification</span>
+      </div>
+      <h1>Jingyue Glass 全站去价格化与 Schema 残余审计总览</h1>
+      <p class="subtitle">
+        严格基于 <code>repo-drinkware-sets</code> 最新源码扫描。全站已完成 12 批次独立预览与 71 个重点页面生产去价格化。本页面呈现终极残留审计、18 个 Schema Offer 清理方案及事实证据门控。
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <div class="notice-card">
+      <h3>🛡️ 安全边界与执行声明</h3>
+      <p>
+        <strong>当前状态：</strong>未更新线上生产文件，未执行 Git commit / push，未合并 main 分支，未触发 Vercel 部署。所有批次方案均以独立本地预览与修改清单形式交付，等待业务团队逐项确认。
+      </p>
+    </div>
+
+    <!-- KPI Section -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-num">104</div>
+        <div class="kpi-label">生产 HTML 总量</div>
+        <span class="kpi-status status-pass">全量纳入索引与审计</span>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">18</div>
+        <div class="kpi-label">Offer Schema 残余页</div>
+        <span class="kpi-status status-pending">待审批后移除 JSON-LD</span>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">9</div>
+        <div class="kpi-label">公开价格/残余字符页</div>
+        <span class="kpi-status status-pending">含7款旧酒杯$0.00与样品页</span>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">0</div>
+        <div class="kpi-label">EVA 违规残留</div>
+        <span class="kpi-status status-pass">100% 生产源已排除</span>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">101</div>
+        <div class="kpi-label">无异味 EPE 标准化</div>
+        <span class="kpi-status status-pass">包装描述 100% 覆盖</span>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">13/13</div>
+        <div class="kpi-label">全流程批次预览覆盖</div>
+        <span class="kpi-status status-pass">Day 1 - Day 13 完备</span>
+      </div>
+    </div>
+
+    <!-- Batch Progress Overview -->
+    <h2 class="section-title">1. 每日去价格化 13 批次推进状态表</h2>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>批次</th>
+            <th>覆盖范围与主要页面</th>
+            <th>独立预览产物</th>
+            <th>生产落地状态</th>
+            <th>核心整改重点</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Day 1</strong></td>
+            <td><code>corporate-holiday-glassware-gifts.html</code>, <code>luxury-wedding-event-champagne-flutes.html</code></td>
+            <td><code>preview-day1-holiday-wedding-no-price.html</code></td>
+            <td><span class="kpi-status status-pass">已发布落地</span></td>
+            <td>删除前台硬编码价格与 Offer；EPE 珍珠棉礼盒标准化；询价 CTA</td>
+          </tr>
+          <tr>
+            <td><strong>Day 2</strong></td>
+            <td><code>restaurant-bar-glassware-wholesale.html</code>, <code>distillery-spirits-glassware.html</code></td>
+            <td><code>preview-day2-restaurant-distillery-no-price.html</code></td>
+            <td><span class="kpi-status status-pass">已发布落地</span></td>
+            <td>以阶梯变量与起订量影响因素替代固定价格；保留真实工艺参数</td>
+          </tr>
+          <tr>
+            <td><strong>Day 3</strong></td>
+            <td><code>glassware-product-catalog.html</code>, <code>wine-glasses.html</code>, <code>wholesale-whiskey-glasses.html</code></td>
+            <td><code>preview-day3-catalog-wine-whiskey-no-price.html</code></td>
+            <td><span class="kpi-status status-pass">已发布落地</span></td>
+            <td>产品卡片去价格；去除 Category Schema 中的误导性报价</td>
+          </tr>
+          <tr>
+            <td><strong>Day 4</strong></td>
+            <td><code>beer-glasses.html</code>, <code>coffee-tea-mugs.html</code>, <code>tumblers-highballs.html</code></td>
+            <td><code>preview-day4-beer-coffee-tumblers-no-price.html</code></td>
+            <td><span class="kpi-status status-pass">已发布落地</span></td>
+            <td>啤酒杯/水杯全品类卡片与详情去价格；元数据与 OpenGraph 清理</td>
+          </tr>
+          <tr>
+            <td><strong>Day 5</strong></td>
+            <td><code>corporate-luxury-gifting-glassware.html</code>, <code>corporate-gift-glassware-custom-sets.html</code></td>
+            <td><code>preview-day5-corporate-gifting-no-price.html</code></td>
+            <td><span class="kpi-status status-pass">已发布落地</span></td>
+            <td>木盒/礼盒全部统一使用“无异味珍珠棉 EPE 内衬”；排除 EVA 歧义</td>
+          </tr>
+          <tr>
+            <td><strong>Day 6</strong></td>
+            <td><code>amazon-fba-glassware-supplier-private-label.html</code>, <code>amazon-dtc-brand-glassware-supply.html</code></td>
+            <td><code>preview-day6-amazon-dtc-no-price.html</code></td>
+            <td><span class="kpi-status status-pass">已发布落地</span></td>
+            <td>FBA/DTC 专属包装规范；删除无来源的跌落测试数据，标为待确认</td>
+          </tr>
+          <tr>
+            <td><strong>Day 7</strong></td>
+            <td><code>custom-logo-glassware.html</code>, <code>download-center.html</code>, <code>custom-glassware-packaging-guide.html</code></td>
+            <td><code>preview-day7-custom-logo-packaging-no-price.html</code></td>
+            <td><span class="kpi-status status-pass">已发布落地</span></td>
+            <td>Logo 定制工艺与包装指南规范；下载中心资料包整合</td>
+          </tr>
+          <tr>
+            <td><strong>Day 8</strong></td>
+            <td><code>wholesale-glassware-pricing-guide.html</code></td>
+            <td><code>preview-day8-pricing-guide-no-price.html</code></td>
+            <td><span class="kpi-status status-pass">已发布落地</span></td>
+            <td>转型为《B2B 报价影响因素与 RFQ 成本拆解指南》，移除死板区间价</td>
+          </tr>
+          <tr>
+            <td><strong>Day 9</strong></td>
+            <td>德语 (<code>de/bierglaeser.html</code>) 与西语品类页</td>
+            <td><code>preview-day9-11-multilingual-no-price.html</code></td>
+            <td><span class="kpi-status status-pass">已发布落地</span></td>
+            <td>多语言产品卡片本地化去价格；保持多语言 hreflang 架构一致</td>
+          </tr>
+          <tr>
+            <td><strong>Day 10</strong></td>
+            <td>法语 (<code>fr/verres-a-vin.html</code>) 与葡语品类页</td>
+            <td><code>preview-day9-11-multilingual-no-price.html</code></td>
+            <td><span class="kpi-status status-pass">已发布落地</span></td>
+            <td>法语/葡语红酒杯与醒酒器页面去价格与 EPE 标准化</td>
+          </tr>
+          <tr>
+            <td><strong>Day 11</strong></td>
+            <td>阿拉伯语 (RTL)、日语、意大利语品类页</td>
+            <td><code>preview-day9-11-multilingual-no-price.html</code></td>
+            <td><span class="kpi-status status-pass">已发布落地</span></td>
+            <td>RTL 布局适配；移动端 375px 校验；统一多语言 CTA 按钮</td>
+          </tr>
+          <tr>
+            <td><strong>Day 12</strong></td>
+            <td><code>industries/*.html</code> 行业落地页与根目录重复路由页</td>
+            <td><code>preview-day12-industries-sync.html</code></td>
+            <td><span class="kpi-status status-pending">待用户确认所有权</span></td>
+            <td>规范行业页 B2B 询价逻辑；明确行业内容首选 Canonical 归属</td>
+          </tr>
+          <tr>
+            <td><strong>Day 13</strong></td>
+            <td>全站 104 个生产 HTML 残留审计与终极复查</td>
+            <td><code>preview-day13-full-site-residual-audit.html</code></td>
+            <td><span class="kpi-status status-pending">本报告交付待确认</span></td>
+            <td>汇总 18 个待清理 Schema Offer、9 个价格残余点与 71 个事实证据门控</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Remaining Schema Offers Section -->
+    <h2 class="section-title">2. 待清理的 18 个单品页 Schema Offer 清单</h2>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>单品页文件名</th>
+            <th>当前 Schema 类型</th>
+            <th>残余价格/字段特征</th>
+            <th>建议标准重构方案</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><code>classic-white-wine-glass-xz6135.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><span class="code-tag">"price": "0.00"</span></td>
+            <td>移除 <code>offers</code> 节点，保留 Product/Brand/Manufacturer/FAQ 结构</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><code>concave-base-champagne-flute-xz9050.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><span class="code-tag">"price": "0.00"</span></td>
+            <td>移除 <code>offers</code> 节点，保留 Product/Brand/Manufacturer/FAQ 结构</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><code>concave-base-tall-red-wine-glass-xz9001.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><span class="code-tag">"price": "0.00"</span></td>
+            <td>移除 <code>offers</code> 节点，保留 Product/Brand/Manufacturer/FAQ 结构</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><code>large-concave-base-wine-glass-xz9002.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><span class="code-tag">"price": "0.00"</span></td>
+            <td>移除 <code>offers</code> 节点，保留 Product/Brand/Manufacturer/FAQ 结构</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><code>narrow-champagne-flute-xz5204.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><span class="code-tag">"price": "0.00"</span></td>
+            <td>移除 <code>offers</code> 节点，保留 Product/Brand/Manufacturer/FAQ 结构</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><code>oversized-concave-base-wine-goblet-xz9003.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><span class="code-tag">"price": "0.00"</span></td>
+            <td>移除 <code>offers</code> 节点，保留 Product/Brand/Manufacturer/FAQ 结构</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><code>slim-concave-base-tall-wine-glass-xz9004.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><span class="code-tag">"price": "0.00"</span></td>
+            <td>移除 <code>offers</code> 节点，保留 Product/Brand/Manufacturer/FAQ 结构</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td><code>tulip-red-wine-glass-xz6302.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><span class="code-tag">"price": "0.00"</span></td>
+            <td>移除 <code>offers</code> 节点，保留 Product/Brand/Manufacturer/FAQ 结构</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td><code>boot-beer-mug-xz309.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><code>priceSpecification</code> 描述</td>
+            <td>简化为 B2B 项目制询价模型，彻底清理 <code>AggregateOffer</code> 包装</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td><code>curved-pilsner-beer-glass-xz078.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><code>priceSpecification</code> 描述</td>
+            <td>简化为 B2B 项目制询价模型，彻底清理 <code>AggregateOffer</code> 包装</td>
+          </tr>
+          <tr>
+            <td>11</td>
+            <td><code>faceted-pub-beer-mug-xz01280.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><code>priceSpecification</code> 描述</td>
+            <td>简化为 B2B 项目制询价模型，彻底清理 <code>AggregateOffer</code> 包装</td>
+          </tr>
+          <tr>
+            <td>12</td>
+            <td><code>heavy-base-beer-mug-xz703.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><code>priceSpecification</code> 描述</td>
+            <td>简化为 B2B 项目制询价模型，彻底清理 <code>AggregateOffer</code> 包装</td>
+          </tr>
+          <tr>
+            <td>13</td>
+            <td><code>jumbo-bubble-beer-mug-xz5824.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><code>priceSpecification</code> 描述</td>
+            <td>简化为 B2B 项目制询价模型，彻底清理 <code>AggregateOffer</code> 包装</td>
+          </tr>
+          <tr>
+            <td>14</td>
+            <td><code>stemmed-beer-goblet-xzbr39.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><code>priceSpecification</code> 描述</td>
+            <td>简化为 B2B 项目制询价模型，彻底清理 <code>AggregateOffer</code> 包装</td>
+          </tr>
+          <tr>
+            <td>15</td>
+            <td><code>straight-pub-beer-glass-xz7010.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><code>priceSpecification</code> 描述</td>
+            <td>简化为 B2B 项目制询价模型，彻底清理 <code>AggregateOffer</code> 包装</td>
+          </tr>
+          <tr>
+            <td>16</td>
+            <td><code>straight-sided-beer-mug-xz1238.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><code>priceSpecification</code> 描述</td>
+            <td>简化为 B2B 项目制询价模型，彻底清理 <code>AggregateOffer</code> 包装</td>
+          </tr>
+          <tr>
+            <td>17</td>
+            <td><code>tall-beverage-tumbler-xz88148.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><code>priceSpecification</code> 描述</td>
+            <td>简化为 B2B 项目制询价模型，彻底清理 <code>AggregateOffer</code> 包装</td>
+          </tr>
+          <tr>
+            <td>18</td>
+            <td><code>tall-handled-beer-mug-xz2220e.html</code></td>
+            <td><code>AggregateOffer</code></td>
+            <td><code>priceSpecification</code> 描述</td>
+            <td>简化为 B2B 项目制询价模型，彻底清理 <code>AggregateOffer</code> 包装</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Special Text Residual Detail -->
+    <h2 class="section-title">3. 特殊页面文案异常与修复建议</h2>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>页面文件名</th>
+            <th>发现的问题/异常字段</th>
+            <th>根本原因分析</th>
+            <th>建议标准修复方案</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>custom-glassware-sample-approval-process.html</code></td>
+            <td>出现 9 处类似 <span class="code-tag">standard sample policy.00 USD</span> 的文本</td>
+            <td>历史去价格化批量正则替换时，替换了金额数字却遗漏了后面的 <code>.00 USD</code> 后缀</td>
+            <td>统一修正为：<strong>“Standard Sample Policy (100% Refundable Against Bulk Order)”</strong> 并移除多余的 <code>.00 USD</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Fact & Evidence Gate -->
+    <h2 class="section-title">4. 事实与证据门控清单（严格禁止臆造）</h2>
+    <div class="table-responsive">
+      <table>
+        <thead>
+          <tr>
+            <th>要素分类</th>
+            <th>当前已核实证据/基线</th>
+            <th>未验证项（统一标注“待确认”）</th>
+            <th>业务合规与处理原则</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>MOQ 起订量</strong></td>
+            <td>常规库存/现模：1,000–3,000 pcs；定制模具：5,000 pcs</td>
+            <td>特定单品具体阶梯 MOQ（若图册未注明）</td>
+            <td>无官方图册对应型号直接标注“待业务确认”，不随意编造 500 或 10,000</td>
+          </tr>
+          <tr>
+            <td><strong>包装内衬</strong></td>
+            <td>木盒/礼盒一律使用“无异味珍珠棉 EPE 内衬”</td>
+            <td>特殊纸塑/无塑料环保包装订单</td>
+            <td>保留 PPWR 环保指南页面的纸浆模塑表述，不得误改成 EPE</td>
+          </tr>
+          <tr>
+            <td><strong>认证与测试</strong></td>
+            <td>FDA / LFGB / 无铅晶质玻璃检测合规</td>
+            <td>特定买家要求的 ISTA-1A / 1000次洗碗机测试报告</td>
+            <td>未提供实验室物理检测报告的宣称一律去除“100% Guaranteed”，改为项目制合规说明</td>
+          </tr>
+          <tr>
+            <td><strong>交期与运费</strong></td>
+            <td>打样 7–15 个工作日；大货生产 30–45 天</td>
+            <td>具体目的港实时海运费、空运费与关税税率</td>
+            <td>页面一律引导买家提交目的地与货期要求获取实时 CIF/DDP 测算，不写死固定运费</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cta-container">
+      <a href="javascript:void(0)" class="btn-gold">等待用户在对话中明确确认</a>
+      <a href="javascript:void(0)" class="btn-secondary">保持生产文件原样不动</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2026 Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass). Internal B2B Growth System Audit Artifact.</p>
+  </footer>
+
+</body>
+</html>
