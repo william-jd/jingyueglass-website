@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Complete Wine & Whiskey Decanters Suite (10 Dedicated PDPs) - Jingyue Glass</title>
+  <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f0;
+      color: #333;
+      line-height: 1.6;
+    }
+    .preview-header {
+      background: linear-gradient(135deg, #1a3a5c 0%, #0d2540 100%);
+      color: #fff;
+      padding: 40px 24px;
+      text-align: center;
+      border-bottom: 4px solid #c8930a;
+    }
+    .preview-badge {
+      display: inline-block;
+      background: #c8930a;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .preview-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .preview-header p {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 36px auto 60px;
+      padding: 0 20px;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #1a3a5c;
+      margin: 32px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #cbd5e1;
+    }
+
+    .pdp-suite-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    
+    .pdp-preview-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pdp-preview-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(26,58,92,0.12);
+      border-color: #c8930a;
+    }
+    
+    .card-img-wrap {
+      position: relative;
+      background: #ffffff;
+      height: 280px;
+      overflow: hidden;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+    .pdp-preview-card:hover .card-img-wrap img {
+      transform: scale(1.04);
+    }
+    .card-model-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #1a3a5c;
+      color: #c8930a;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .card-status-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #10b981;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #c8930a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    .card-body h2 {
+      font-size: 1.15rem;
+      color: #1a3a5c;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .spec-table-mini {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+    }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-k { color: #64748b; font-weight: 500; }
+    .spec-v { color: #1a3a5c; font-weight: 600; text-align: right; max-width: 65%; }
+
+    .card-actions {
+      margin-top: auto;
+    }
+    .btn-view-pdp {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #1a3a5c;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: background 0.2s;
+    }
+    .btn-view-pdp:hover {
+      background: #c8930a;
+    }
+
+    .standard-features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .feature-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 18px;
+    }
+    .feature-card h3 {
+      font-size: 0.95rem;
+      color: #1a3a5c;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .feature-card p {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="preview-header">
+    <div class="preview-badge">Client Review & Verification Portal</div>
+    <h1>Wine & Whiskey Decanters · 10 High-Converting B2B PDPs</h1>
+    <p>Complete set of 10 dedicated B2B Product Detail Pages (PDPs) for Jingyue Glassware Decanter Collection, engineered with 1:1 square gold-ratio gallery views, de-pricing B2B inquiry structure, certified odorless EPE pearl cotton packaging, and complete Schema.org JSON-LD structured data.</p>
+  </header>
+
+  <div class="container">
+
+    <div class="section-title">Core Engineering & Compliance Standards Applied</div>
+    <div class="standard-features-grid">
+      <div class="feature-card">
+        <h3><span>🖼️</span> 1:1 Pure White-Back Gallery</h3>
+        <p>Fixed square canvas (<code>aspect-ratio: 1 / 1; object-fit: contain;</code>) preventing aspect-ratio distortion and edge clipping across all desktop and mobile viewports.</p>
+      </div>
+      <div class="feature-card">
+        <h3><span>💼</span> B2B De-Pricing Architecture</h3>
+        <p>Removed fixed public unit prices and rigid tier anchors, replaced with transparent itemized quotation variables (MOQ, decoration, packaging, destination).</p>
+      </div>
+      <div class="feature-card">
+        <h3><span>📦</span> Odorless EPE Pearl Cotton</h3>
+        <p>100% standardized custom-cut high-density EPE foam cradles passing ISTA-1A drop tests without chemical odors or crumbly polystyrene debris.</p>
+      </div>
+      <div class="feature-card">
+        <h3><span>⚡</span> Unified Multi-Channel Contact</h3>
+        <p>Standardized contact desk across WhatsApp & WeChat (<code>+86 132 5662 7201</code>) and official export desk (<code>sales@jingyueglass.com</code>).</p>
+      </div>
+    </div>
+
+    <div class="section-title">Decanter Product Detail Pages (10 Dedicated PDPs)</div>
+    <div class="pdp-suite-grid">
+      
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ-0075</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/decanters/xz0075-1500-ml-u-shaped-sculptural-wine-decanter-new-20260917.webp" alt="1500ml U-Shaped Sculptural Crystal Wine Decanter">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Sculptural Masterpiece</span>
+        <h2>1500ml U-Shaped Sculptural Wine Decanter</h2>
+        <p class="card-desc">XZ-0075 is a masterfully hand-blown 1500ml crystal wine decanter featuring an iconic U-shaped sculptural silhouette. Engineered with dual asymmetrical pouring s...</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">1500 ml (50.7 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Height 35.0 cm (13.8 in) · Max Width 20.0 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Material</span><span class="spec-v">Hand-Blown Lead-Free Acoustic Cryst...</span></div>
+          <div class="spec-row"><span class="spec-k">Trial MOQ</span><span class="spec-v">10 pcs (Flexible Trial Tier)</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../u-shaped-sculptural-wine-decanter-xz0075.html" target="_blank">Open Dedicated PDP (XZ-0075) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ-0020</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/decanters/xz0020-1500-ml-wide-belly-swan-neck-wine-decanter-new-20260917.webp" alt="1500ml Wide-Belly Swan-Neck Crystal Wine Decanter">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Classic Wide Aerator</span>
+        <h2>1500ml Wide-Belly Swan-Neck Wine Decanter</h2>
+        <p class="card-desc">XZ-0020 combines an expansive 1500ml aeration bowl with a graceful, drip-free swan neck. The wide bottom chamber allows full 750ml standard wine bottles to spre...</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">1500 ml (50.7 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Height 24.0 cm (9.4 in) · Base Ø 21.0 cm · Rim Ø 7.2 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Material</span><span class="spec-v">Hand-Blown Lead-Free Acoustic Cryst...</span></div>
+          <div class="spec-row"><span class="spec-k">Trial MOQ</span><span class="spec-v">12 pcs (Flexible Trial Tier)</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../wide-belly-swan-neck-wine-decanter-xz0020.html" target="_blank">Open Dedicated PDP (XZ-0020) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ-0118</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/decanters/xz0118-1000-ml-rotating-crystal-wine-decanter-with-glass-base-new-20260917.webp" alt="1000ml Rotating Crystal Wine Decanter with Glass Base">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">360° Gyroscope Kinetic Aerator</span>
+        <h2>1000ml Rotating Crystal Wine Decanter</h2>
+        <p class="card-desc">XZ-0118 is an innovative 1000ml rotating kinetic wine decanter engineered with a center-balanced pivot point and a heavy matching glass presentation base. A gen...</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">1000 ml (33.8 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Height 24.0 cm (9.4 in) · Base Ø 19.5 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Material</span><span class="spec-v">Hand-Blown Lead-Free Crystal + Heav...</span></div>
+          <div class="spec-row"><span class="spec-k">Trial MOQ</span><span class="spec-v">6 pcs (Flexible Trial Tier)</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../rotating-crystal-wine-decanter-xz0118.html" target="_blank">Open Dedicated PDP (XZ-0118) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ-0054</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/decanters/xz0054-1400-ml-long-neck-hollow-center-wine-decanter-new-20260917.webp" alt="1400ml Long-Neck Hollow-Center Crystal Wine Decanter">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Architectural Centerpiece</span>
+        <h2>1400ml Long-Neck Hollow-Center Decanter</h2>
+        <p class="card-desc">XZ-0054 features a bold architectural hollow center (torus ring) and an extended slanted pouring spout standing 370mm high. The ergonomic circular aperture acts...</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">1400 ml (47.3 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Height 37.0 cm (14.6 in) · Max Width 22.0 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Material</span><span class="spec-v">Hand-Blown Lead-Free Acoustic Cryst...</span></div>
+          <div class="spec-row"><span class="spec-k">Trial MOQ</span><span class="spec-v">10 pcs (Flexible Trial Tier)</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../long-neck-hollow-center-wine-decanter-xz0054.html" target="_blank">Open Dedicated PDP (XZ-0054) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ-0114</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/decanters/xz0114-1200-ml-lyre-shaped-crystal-wine-decanter-new-20260917.webp" alt="1200ml Lyre-Shaped Crystal Wine Decanter">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Classical Musical Curve</span>
+        <h2>1200ml Lyre-Shaped Crystal Decanter</h2>
+        <p class="card-desc">XZ-0114 is inspired by the classical Greek lyre harp, featuring a continuous sweeping curve that doubles as an aeration conduit and pourer. Its open sculptural ...</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">1200 ml (40.6 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Height 35.0 cm (13.8 in) · Max Width 19.5 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Material</span><span class="spec-v">Hand-Blown Lead-Free Acoustic Cryst...</span></div>
+          <div class="spec-row"><span class="spec-k">Trial MOQ</span><span class="spec-v">10 pcs (Flexible Trial Tier)</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../lyre-shaped-crystal-wine-decanter-xz0114.html" target="_blank">Open Dedicated PDP (XZ-0114) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ-0037</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/decanters/xz0037-1500-ml-fast-aerating-glass-wine-decanter-new-20260917.webp" alt="1500ml Fast-Aerating Crystal Wine Decanter with Pourer">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Cascading Fast Aeration</span>
+        <h2>1500ml Fast-Aerating Glass Wine Decanter</h2>
+        <p class="card-desc">XZ-0037 is engineered for immediate enjoyment of young, tannic vintages. Featuring a faceted wide aeration base and an integrated micro-strainer pouring crown, ...</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">1500 ml (50.7 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Height 22.0 cm (8.7 in) · Base Ø 20.0 cm · Rim Ø 7.5 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Material</span><span class="spec-v">Hand-Blown Lead-Free Crystal + Inte...</span></div>
+          <div class="spec-row"><span class="spec-k">Trial MOQ</span><span class="spec-v">12 pcs (Flexible Trial Tier)</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../fast-aerating-glass-wine-decanter-xz0037.html" target="_blank">Open Dedicated PDP (XZ-0037) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ-0092</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/decanters/xz0092-1240-ml-figure-six-crystal-wine-decanter-new-20260917.webp" alt="1240ml Figure-Six Crystal Wine Decanter">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Flowing Figure-6 Silhouette</span>
+        <h2>1240ml Figure-Six Crystal Decanter</h2>
+        <p class="card-desc">XZ-0092 stands an impressive 410mm tall, shaped into a sinuous figure-six contour. The towering neck transitions into a hollow loop base, generating laminar swi...</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">1240 ml (41.9 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Height 41.0 cm (16.1 in) · Max Width 21.0 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Material</span><span class="spec-v">Hand-Blown Lead-Free Acoustic Cryst...</span></div>
+          <div class="spec-row"><span class="spec-k">Trial MOQ</span><span class="spec-v">8 pcs (Flexible Trial Tier)</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../figure-six-crystal-wine-decanter-xz0092.html" target="_blank">Open Dedicated PDP (XZ-0092) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ-0093</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/decanters/xz0093-1200-ml-large-serpentine-crystal-wine-decanter-new-20260917.webp" alt="1200ml Large Serpentine Crystal Wine Decanter">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">53cm Majestic Serpentine</span>
+        <h2>1200ml Large Serpentine Crystal Decanter</h2>
+        <p class="card-desc">XZ-0093 is an extraordinary 530mm high statement decanter featuring an elongated serpentine neck and a broad low circular aeration base. Designed for theatrical...</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">1200 ml (40.6 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">Height 53.0 cm (20.9 in) · Base Ø 22.0 cm</span></div>
+          <div class="spec-row"><span class="spec-k">Material</span><span class="spec-v">Hand-Blown Lead-Free Acoustic Cryst...</span></div>
+          <div class="spec-row"><span class="spec-k">Trial MOQ</span><span class="spec-v">100 pcs (Custom Mold / Master Craft Batch)</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../large-serpentine-crystal-wine-decanter-xz0093.html" target="_blank">Open Dedicated PDP (XZ-0093) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ3006</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/decanters/xz3006-750-ml-minimalist-square-whiskey-decanter-new-20260917.webp" alt="750ml Minimalist Square Whiskey Decanter with Glass Stopper">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Modern Heavy-Base Square</span>
+        <h2>750ml Minimalist Square Whiskey Decanter</h2>
+        <p class="card-desc">XZ3006 is a clean, contemporary 750ml square whiskey decanter crafted with razor-sharp corners and a substantial 25mm thick solid glass base. Fitted with an air...</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">750 ml (25.4 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">9.1 × 9.1 cm Base · Height 22.3 cm (8.8 in)</span></div>
+          <div class="spec-row"><span class="spec-k">Material</span><span class="spec-v">High-Clarity Extra-Flint Lead-Free ...</span></div>
+          <div class="spec-row"><span class="spec-k">Trial MOQ</span><span class="spec-v">12 pcs (Flexible Trial Tier)</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../minimalist-square-whiskey-decanter-xz3006.html" target="_blank">Open Dedicated PDP (XZ3006) ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ10125</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/decanters/xz10125-800-ml-twisted-texture-whiskey-decanter-new-20260917.webp" alt="800ml Twisted-Texture Whiskey Decanter with Sculpted Stopper">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Tactile Twisted Prism</span>
+        <h2>800ml Twisted-Texture Whiskey Decanter</h2>
+        <p class="card-desc">XZ10125 is an 800ml premium spirits decanter featuring a dynamic twisted lower wall texture that catches ambient light with diamond-like brilliance. Paired with...</p>
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">800 ml (27.0 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">11.2 × 11.2 cm Base · Height 27.1 cm (10.7 in)</span></div>
+          <div class="spec-row"><span class="spec-k">Material</span><span class="spec-v">High-Clarity Extra-Flint Lead-Free ...</span></div>
+          <div class="spec-row"><span class="spec-k">Trial MOQ</span><span class="spec-v">12 pcs (Flexible Trial Tier)</span></div>
+        </div>
+        <div class="card-actions">
+          <a class="btn-view-pdp" href="../twisted-texture-whiskey-decanter-xz10125.html" target="_blank">Open Dedicated PDP (XZ10125) ↗</a>
+        </div>
+      </div>
+    </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
