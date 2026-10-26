@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: 6 Handmade Crystal Wine Glasses Integration | Jingyue Glass</title>
+  <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --primary-dark: #0d2540;
+      --accent: #c8930a;
+      --accent-hover: #e0a70b;
+      --accent-light: #fef8eb;
+      --bg: #f5f5f0;
+      --card-bg: #ffffff;
+      --border: #dde3ea;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --radius: 8px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+    
+    header {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+      color: #fff;
+      padding: 32px 24px;
+      border-bottom: 3px solid var(--accent);
+    }
+    .header-wrap {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header-title h1 {
+      font-size: 1.65rem;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .header-title p {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+    }
+    .badge-staging {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 9px 18px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: none;
+    }
+    .btn-gold {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-gold:hover {
+      background: var(--accent-hover);
+    }
+    .btn-outline {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.22);
+    }
+
+    .wrap {
+      max-width: 1280px;
+      margin: 28px auto 0;
+      padding: 0 20px;
+    }
+
+    /* Tabs */
+    .tab-bar {
+      display: flex;
+      gap: 8px;
+      border-bottom: 2px solid var(--border);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      background: transparent;
+      border: none;
+      padding: 12px 20px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: all 0.2s;
+    }
+    .tab-btn:hover {
+      color: var(--primary);
+    }
+    .tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--accent);
+      background: #fff;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Cards Grid */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 22px;
+      margin-bottom: 36px;
+    }
+    .sku-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(13,37,64,0.04);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .sku-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(13,37,64,0.08);
+      border-color: var(--accent);
+    }
+    .card-top {
+      display: flex;
+      background: #ffffff;
+      border-bottom: 1px solid #f1f5f9;
+      padding: 16px;
+      gap: 16px;
+      align-items: center;
+    }
+    .card-thumb {
+      width: 120px;
+      height: 120px;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 6px;
+      flex-shrink: 0;
+    }
+    .card-headline {
+      flex: 1;
+    }
+    .card-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .card-headline h3 {
+      font-size: 1.05rem;
+      color: var(--primary);
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+    .card-meta-dim {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-bottom: 14px;
+    }
+    .spec-table td {
+      padding: 6px 8px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .spec-table td.lbl {
+      color: var(--text-muted);
+      font-weight: 600;
+      width: 38%;
+    }
+    .spec-table td.val {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .card-actions {
+      margin-top: auto;
+      display: flex;
+      gap: 8px;
+    }
+    .card-actions a {
+      flex: 1;
+      text-align: center;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .btn-view-pdp {
+      background: var(--primary);
+      color: #fff;
+    }
+    .btn-view-pdp:hover {
+      background: var(--primary-dark);
+    }
+    .btn-preview-modal {
+      background: #f1f5f9;
+      color: var(--primary);
+      border: 1px solid var(--border);
+    }
+    .btn-preview-modal:hover {
+      background: #e2e8f0;
+    }
+
+    /* Comparison Table */
+    .table-container {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow-x: auto;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 12px rgba(13,37,64,0.04);
+    }
+    table.data-matrix {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      text-align: left;
+    }
+    table.data-matrix th {
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    table.data-matrix td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      color: #334155;
+    }
+    table.data-matrix tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+    table.data-matrix tr:hover td {
+      background: #fefce8;
+    }
+
+    /* Iframe Live Viewer */
+    .viewer-container {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 32px;
+    }
+    .viewer-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .sku-selector {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .sku-btn {
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: #f8fafc;
+      color: var(--primary);
+      cursor: pointer;
+    }
+    .sku-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+    .device-toggle {
+      display: flex;
+      gap: 6px;
+    }
+    .dev-btn {
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: #fff;
+      cursor: pointer;
+    }
+    .dev-btn.active {
+      background: var(--accent);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .iframe-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      background: #e2e8f0;
+      padding: 16px;
+      border-radius: 8px;
+    }
+    iframe#pdpIframe {
+      width: 100%;
+      height: 720px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
+      transition: width 0.3s;
+    }
+
+    /* Checklist Box */
+    .checklist-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 12px 14px;
+      font-size: 0.86rem;
+    }
+    .check-icon {
+      color: #16a34a;
+      font-weight: 900;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-wrap">
+    <div class="header-title">
+      <span class="badge-staging">Staging Review Portal</span>
+      <h1>Handmade Crystal Wine Glasses (6 Models) Integration Preview</h1>
+      <p>Source: 手工高脚杯 Jingyue_Glass_Product_Info_Completed_Visible_20260930.xlsx · Catalog Target: /wine-glasses</p>
+    </div>
+    <div class="header-actions">
+      <a href="/wine-glasses" target="_blank" class="btn btn-outline">📂 Open Catalog (/wine-glasses)</a>
+      <a href="#viewer" onclick="switchTab('tab-viewer')" class="btn btn-gold">👁 Interactive PDP Viewer</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- Nav Tabs -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('tab-cards', this)">1. 6 SKUs Overview &amp; Cards</button>
+    <button class="tab-btn" onclick="switchTab('tab-matrix', this)">2. Technical Specification Matrix</button>
+    <button class="tab-btn" onclick="switchTab('tab-viewer', this)">3. Interactive Live PDP Viewer</button>
+    <button class="tab-btn" onclick="switchTab('tab-catalog', this)">4. Category Catalog Integration</button>
+    <button class="tab-btn" onclick="switchTab('tab-standards', this)">5. Quality &amp; Compliance Checklist</button>
+  </div>
+
+  <!-- TAB 1: Cards Overview -->
+  <div id="tab-cards" class="tab-content active">
+    <div style="margin-bottom:18px;">
+      <h2 style="font-size:1.3rem; color:var(--primary); margin-bottom:4px;">Newly Generated Standalone B2B Product Detail Pages</h2>
+      <p style="font-size:0.88rem; color:var(--text-muted);">Each product page follows the standardized Jingyue Glass de-pricing B2B layout with 1:1 contain square hero imagery, itemized RFQ calculation, and odorless EPE pearl cotton packaging specification.</p>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- Card XZ92402R -->
+      <div class="sku-card">
+        <div class="card-top">
+          <img src="/assets/products/wine-glasses/xz92402r-thin-crystal-bowl-profile-wine-glass.webp" alt="XZ92402R" class="card-thumb">
+          <div class="card-headline">
+            <div class="card-tag">Model XZ92402R · 400 ml</div>
+            <h3>Thin Crystal Bowl Profile Wine Glass</h3>
+            <div class="card-meta-dim">Rim Ø 62 × Base Ø 86 × H 245 mm · 250g</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="spec-table">
+            <tr><td class="lbl">Category</td><td class="val">Ultra-Thin Handmade Crystal</td></tr>
+            <tr><td class="lbl">Craft / Feature</td><td class="val">Handmade + Embedded Filament</td></tr>
+            <tr><td class="lbl">Carton Pack</td><td class="val">24 pcs/ctn (58 × 40 × 28 cm)</td></tr>
+            <tr><td class="lbl">Target Use</td><td class="val">White Wine / Sauvignon Blanc</td></tr>
+            <tr><td class="lbl">Certification</td><td class="val">FDA CPG &amp; EU LFGB Passed</td></tr>
+          </table>
+          <div class="card-actions">
+            <a href="/thin-crystal-bowl-profile-wine-glass-xz92402r" target="_blank" class="btn-view-pdp">Open Full PDP →</a>
+            <button onclick="loadIframe('/thin-crystal-bowl-profile-wine-glass-xz92402r', 'XZ92402R')" class="btn-preview-modal">Live Preview</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card XZ92403R -->
+      <div class="sku-card">
+        <div class="card-top">
+          <img src="/assets/products/wine-glasses/xz92403r-thin-crystal-bowl-profile-wine-glass.webp" alt="XZ92403R" class="card-thumb">
+          <div class="card-headline">
+            <div class="card-tag">Model XZ92403R · 700 ml</div>
+            <h3>Thin Crystal Bowl Profile Wine Glass</h3>
+            <div class="card-meta-dim">Rim Ø 95 × Base Ø 87 × H 247 mm · 240g</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="spec-table">
+            <tr><td class="lbl">Category</td><td class="val">Ultra-Thin Handmade Crystal</td></tr>
+            <tr><td class="lbl">Craft / Feature</td><td class="val">Handmade + Embedded Filament</td></tr>
+            <tr><td class="lbl">Carton Pack</td><td class="val">24 pcs/ctn (67 × 46 × 27.5 cm)</td></tr>
+            <tr><td class="lbl">Target Use</td><td class="val">Burgundy / Pinot Noir Aeration</td></tr>
+            <tr><td class="lbl">Certification</td><td class="val">FDA CPG &amp; EU LFGB Passed</td></tr>
+          </table>
+          <div class="card-actions">
+            <a href="/thin-crystal-bowl-profile-wine-glass-xz92403r" target="_blank" class="btn-view-pdp">Open Full PDP →</a>
+            <button onclick="loadIframe('/thin-crystal-bowl-profile-wine-glass-xz92403r', 'XZ92403R')" class="btn-preview-modal">Live Preview</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card XZ92404R -->
+      <div class="sku-card">
+        <div class="card-top">
+          <img src="/assets/products/wine-glasses/xz92404r-colored-stem-contrast-wine-glass.webp" alt="XZ92404R" class="card-thumb">
+          <div class="card-headline">
+            <div class="card-tag">Model XZ92404R · 500 ml</div>
+            <h3>Colored Stem Contrast Wine Glass</h3>
+            <div class="card-meta-dim">Rim Ø 80 × Base Ø 82 × H 246 mm · 246g</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="spec-table">
+            <tr><td class="lbl">Category</td><td class="val">Colored Stem Handmade Crystal</td></tr>
+            <tr><td class="lbl">Craft / Feature</td><td class="val">Two-Tone Ruby Red Contrast Stem</td></tr>
+            <tr><td class="lbl">Carton Pack</td><td class="val">24 pcs/ctn (42 × 42 × 30 cm)</td></tr>
+            <tr><td class="lbl">Target Use</td><td class="val">White Wine / Rosé / Tasting Rooms</td></tr>
+            <tr><td class="lbl">Certification</td><td class="val">FDA CPG &amp; EU LFGB Passed</td></tr>
+          </table>
+          <div class="card-actions">
+            <a href="/colored-stem-contrast-wine-glass-xz92404r" target="_blank" class="btn-view-pdp">Open Full PDP →</a>
+            <button onclick="loadIframe('/colored-stem-contrast-wine-glass-xz92404r', 'XZ92404R')" class="btn-preview-modal">Live Preview</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card XZ92405R -->
+      <div class="sku-card">
+        <div class="card-top">
+          <img src="/assets/products/wine-glasses/xz92405r-colored-stem-contrast-wine-glass.webp" alt="XZ92405R" class="card-thumb">
+          <div class="card-headline">
+            <div class="card-tag">Model XZ92405R · 730 ml</div>
+            <h3>Colored Stem Contrast Wine Glass</h3>
+            <div class="card-meta-dim">Rim Ø 70 × Base Ø 100 × H 250 mm · 278g</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="spec-table">
+            <tr><td class="lbl">Category</td><td class="val">Colored Stem Handmade Crystal</td></tr>
+            <tr><td class="lbl">Craft / Feature</td><td class="val">Two-Tone Ruby Red Contrast Stem</td></tr>
+            <tr><td class="lbl">Carton Pack</td><td class="val">24 pcs/ctn (46 × 47 × 33.5 cm)</td></tr>
+            <tr><td class="lbl">Target Use</td><td class="val">Bordeaux / Cabernet Sauvignon</td></tr>
+            <tr><td class="lbl">Certification</td><td class="val">FDA CPG &amp; EU LFGB Passed</td></tr>
+          </table>
+          <div class="card-actions">
+            <a href="/colored-stem-contrast-wine-glass-xz92405r" target="_blank" class="btn-view-pdp">Open Full PDP →</a>
+            <button onclick="loadIframe('/colored-stem-contrast-wine-glass-xz92405r', 'XZ92405R')" class="btn-preview-modal">Live Preview</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card XZ92406R -->
+      <div class="sku-card">
+        <div class="card-top">
+          <img src="/assets/products/wine-glasses/xz92406r-colored-stem-contrast-wine-glass.webp" alt="XZ92406R" class="card-thumb">
+          <div class="card-headline">
+            <div class="card-tag">Model XZ92406R · 800 ml</div>
+            <h3>Colored Stem Contrast Wine Glass</h3>
+            <div class="card-meta-dim">Rim Ø 70 × Base Ø 120 × H 240 mm · 260g</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="spec-table">
+            <tr><td class="lbl">Category</td><td class="val">Colored Stem Handmade Crystal</td></tr>
+            <tr><td class="lbl">Craft / Feature</td><td class="val">Two-Tone Ruby Red Contrast Stem</td></tr>
+            <tr><td class="lbl">Carton Pack</td><td class="val">16 pcs/ctn (55 × 54 × 30 cm)</td></tr>
+            <tr><td class="lbl">Target Use</td><td class="val">Burgundy / Grand Cru Vintage Cellar</td></tr>
+            <tr><td class="lbl">Certification</td><td class="val">FDA CPG &amp; EU LFGB Passed</td></tr>
+          </table>
+          <div class="card-actions">
+            <a href="/colored-stem-contrast-wine-glass-xz92406r" target="_blank" class="btn-view-pdp">Open Full PDP →</a>
+            <button onclick="loadIframe('/colored-stem-contrast-wine-glass-xz92406r', 'XZ92406R')" class="btn-preview-modal">Live Preview</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card XZ92407R -->
+      <div class="sku-card">
+        <div class="card-top">
+          <img src="/assets/products/wine-glasses/xz92407r-colored-stem-contrast-wine-glass.webp" alt="XZ92407R" class="card-thumb">
+          <div class="card-headline">
+            <div class="card-tag">Model XZ92407R · 770 ml</div>
+            <h3>Colored Stem Contrast Wine Glass</h3>
+            <div class="card-meta-dim">Rim Ø 72 × Base Ø 108 × H 256 mm · 256g</div>
+          </div>
+        </div>
+        <div class="card-body">
+          <table class="spec-table">
+            <tr><td class="lbl">Category</td><td class="val">Colored Stem Handmade Crystal</td></tr>
+            <tr><td class="lbl">Craft / Feature</td><td class="val">Two-Tone Ruby Red Contrast Stem</td></tr>
+            <tr><td class="lbl">Carton Pack</td><td class="val">16 pcs/ctn (49 × 48 × 32 cm)</td></tr>
+            <tr><td class="lbl">Target Use</td><td class="val">Burgundy / Syrah / Sommelier Tasting</td></tr>
+            <tr><td class="lbl">Certification</td><td class="val">FDA CPG &amp; EU LFGB Passed</td></tr>
+          </table>
+          <div class="card-actions">
+            <a href="/colored-stem-contrast-wine-glass-xz92407r" target="_blank" class="btn-view-pdp">Open Full PDP →</a>
+            <button onclick="loadIframe('/colored-stem-contrast-wine-glass-xz92407r', 'XZ92407R')" class="btn-preview-modal">Live Preview</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TAB 2: Technical Specification Matrix -->
+  <div id="tab-matrix" class="tab-content">
+    <div style="margin-bottom:18px;">
+      <h2 style="font-size:1.3rem; color:var(--primary); margin-bottom:4px;">Technical Engineering &amp; Sourcing Matrix</h2>
+      <p style="font-size:0.88rem; color:var(--text-muted);">Exact physical parameters, carton volumes, and testing compliance extracted from factory documentation.</p>
+    </div>
+
+    <div class="table-container">
+      <table class="data-matrix">
+        <thead>
+          <tr>
+            <th>Model Code</th>
+            <th>B2B Product Title</th>
+            <th>Volume</th>
+            <th>Dimensions (Rim × Base × H)</th>
+            <th>Weight</th>
+            <th>Forming Craft</th>
+            <th>Packing</th>
+            <th>Carton Size (cm)</th>
+            <th>Compliance</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>XZ92402R</strong></td>
+            <td>400 ml Thin Crystal Bowl Profile Wine Glass</td>
+            <td><strong>400 ml</strong></td>
+            <td>Ø 62 × Ø 86 × 245 mm</td>
+            <td>250 g</td>
+            <td>Handmade Crystal (Filament Stem)</td>
+            <td>24 pcs/ctn</td>
+            <td>58 × 40 × 28</td>
+            <td>FDA / LFGB</td>
+            <td><a href="/thin-crystal-bowl-profile-wine-glass-xz92402r" target="_blank" style="color:var(--accent); font-weight:700;">View PDP</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ92403R</strong></td>
+            <td>700 ml Thin Crystal Bowl Profile Wine Glass</td>
+            <td><strong>700 ml</strong></td>
+            <td>Ø 95 × Ø 87 × 247 mm</td>
+            <td>240 g</td>
+            <td>Handmade Crystal (Filament Stem)</td>
+            <td>24 pcs/ctn</td>
+            <td>67 × 46 × 27.5</td>
+            <td>FDA / LFGB</td>
+            <td><a href="/thin-crystal-bowl-profile-wine-glass-xz92403r" target="_blank" style="color:var(--accent); font-weight:700;">View PDP</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ92404R</strong></td>
+            <td>500 ml Colored Stem Contrast Wine Glass</td>
+            <td><strong>500 ml</strong></td>
+            <td>Ø 80 × Ø 82 × 246 mm</td>
+            <td>246 g</td>
+            <td>Handmade Crystal (Red Stem)</td>
+            <td>24 pcs/ctn</td>
+            <td>42 × 42 × 30</td>
+            <td>FDA / LFGB</td>
+            <td><a href="/colored-stem-contrast-wine-glass-xz92404r" target="_blank" style="color:var(--accent); font-weight:700;">View PDP</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ92405R</strong></td>
+            <td>730 ml Colored Stem Contrast Wine Glass</td>
+            <td><strong>730 ml</strong></td>
+            <td>Ø 70 × Ø 100 × 250 mm</td>
+            <td>278 g</td>
+            <td>Handmade Crystal (Red Stem)</td>
+            <td>24 pcs/ctn</td>
+            <td>46 × 47 × 33.5</td>
+            <td>FDA / LFGB</td>
+            <td><a href="/colored-stem-contrast-wine-glass-xz92405r" target="_blank" style="color:var(--accent); font-weight:700;">View PDP</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ92406R</strong></td>
+            <td>800 ml Colored Stem Contrast Wine Glass</td>
+            <td><strong>800 ml</strong></td>
+            <td>Ø 70 × Ø 120 × 240 mm</td>
+            <td>260 g</td>
+            <td>Handmade Crystal (Red Stem)</td>
+            <td>16 pcs/ctn</td>
+            <td>55 × 54 × 30</td>
+            <td>FDA / LFGB</td>
+            <td><a href="/colored-stem-contrast-wine-glass-xz92406r" target="_blank" style="color:var(--accent); font-weight:700;">View PDP</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ92407R</strong></td>
+            <td>770 ml Colored Stem Contrast Wine Glass</td>
+            <td><strong>770 ml</strong></td>
+            <td>Ø 72 × Ø 108 × 256 mm</td>
+            <td>256 g</td>
+            <td>Handmade Crystal (Red Stem)</td>
+            <td>16 pcs/ctn</td>
+            <td>49 × 48 × 32</td>
+            <td>FDA / LFGB</td>
+            <td><a href="/colored-stem-contrast-wine-glass-xz92407r" target="_blank" style="color:var(--accent); font-weight:700;">View PDP</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- TAB 3: Interactive Live PDP Viewer -->
+  <div id="tab-viewer" class="tab-content">
+    <div class="viewer-container">
+      <div class="viewer-controls">
+        <div>
+          <span style="font-size:0.85rem; font-weight:700; color:var(--text-muted); margin-right:8px;">Select Model to Preview:</span>
+          <div class="sku-selector" style="display:inline-flex;">
+            <button class="sku-btn active" onclick="loadIframe('/thin-crystal-bowl-profile-wine-glass-xz92402r', 'XZ92402R', this)">XZ92402R (400ml)</button>
+            <button class="sku-btn" onclick="loadIframe('/thin-crystal-bowl-profile-wine-glass-xz92403r', 'XZ92403R', this)">XZ92403R (700ml)</button>
+            <button class="sku-btn" onclick="loadIframe('/colored-stem-contrast-wine-glass-xz92404r', 'XZ92404R', this)">XZ92404R (500ml)</button>
+            <button class="sku-btn" onclick="loadIframe('/colored-stem-contrast-wine-glass-xz92405r', 'XZ92405R', this)">XZ92405R (730ml)</button>
+            <button class="sku-btn" onclick="loadIframe('/colored-stem-contrast-wine-glass-xz92406r', 'XZ92406R', this)">XZ92406R (800ml)</button>
+            <button class="sku-btn" onclick="loadIframe('/colored-stem-contrast-wine-glass-xz92407r', 'XZ92407R', this)">XZ92407R (770ml)</button>
+          </div>
+        </div>
+
+        <div class="device-toggle">
+          <button class="dev-btn active" onclick="setDevice('100%', this)">🖥 Desktop (100%)</button>
+          <button class="dev-btn" onclick="setDevice('768px', this)">📱 Tablet (768px)</button>
+          <button class="dev-btn" onclick="setDevice('375px', this)">📱 Mobile (375px)</button>
+        </div>
+      </div>
+
+      <div style="font-size:0.84rem; color:var(--text-muted); margin-bottom:10px; display:flex; justify-content:space-between;">
+        <span>Current Active Staging URL: <strong id="currentUrlText" style="color:var(--primary);">/thin-crystal-bowl-profile-wine-glass-xz92402r</strong></span>
+        <a id="currentUrlLink" href="/thin-crystal-bowl-profile-wine-glass-xz92402r" target="_blank" style="color:var(--accent); font-weight:700;">Open in New Tab ↗</a>
+      </div>
+
+      <div class="iframe-wrapper">
+        <iframe id="pdpIframe" src="/thin-crystal-bowl-profile-wine-glass-xz92402r"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: Catalog Integration -->
+  <div id="tab-catalog" class="tab-content">
+    <div style="margin-bottom:18px;">
+      <h2 style="font-size:1.3rem; color:var(--primary); margin-bottom:4px;">Wine Glasses Category Catalog Integration (/wine-glasses)</h2>
+      <p style="font-size:0.88rem; color:var(--text-muted);">The 6 new models have been appended to the Selection Matrix Table and Featured Products Grid in <a href="/wine-glasses" target="_blank" style="color:var(--accent); font-weight:700;">wine-glasses.html</a>.</p>
+    </div>
+
+    <div class="viewer-container">
+      <div style="margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
+        <strong style="color:var(--primary);">Live Catalog View: /wine-glasses#products</strong>
+        <a href="/wine-glasses" target="_blank" class="btn btn-gold" style="font-size:0.82rem; padding:6px 14px;">Open /wine-glasses ↗</a>
+      </div>
+      <div class="iframe-wrapper">
+        <iframe src="/wine-glasses#products" style="width:100%; height:700px; border:1px solid var(--border); border-radius:6px; background:#fff;"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 5: Quality & Compliance Checklist -->
+  <div id="tab-standards" class="tab-content">
+    <div class="checklist-box">
+      <h2 style="font-size:1.3rem; color:var(--primary); margin-bottom:6px;">Jingyue Glass B2B Compliance &amp; Engineering Audit</h2>
+      <p style="font-size:0.88rem; color:var(--text-muted); margin-bottom:16px;">Rigorous pre-flight checklist applied to all 6 generated product detail pages and catalog integration.</p>
+
+      <div class="check-grid">
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div><strong>100% Pure English Copy</strong><br><span style="color:var(--text-muted); font-size:0.8rem;">0 Chinese characters in generated production files.</span></div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div><strong>Complete De-Pricing Policy</strong><br><span style="color:var(--text-muted); font-size:0.8rem;">Transparent itemized RFQ calculation based on quantity, decoration &amp; shipping.</span></div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div><strong>1:1 Square Contain Imagery</strong><br><span style="color:var(--text-muted); font-size:0.8rem;">Standardized 1:1 square canvas with #ffffff background &amp; crisp border.</span></div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div><strong>Odorless EPE Pearl Cotton</strong><br><span style="color:var(--text-muted); font-size:0.8rem;">Drop-tested ISTA-1A packaging specification for all presentation gift sets.</span></div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div><strong>Unified Direct Contact</strong><br><span style="color:var(--text-muted); font-size:0.8rem;">WhatsApp: +86 132 5662 7201 | Email: sales@jingyueglass.com.</span></div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div><strong>Schema.org JSON-LD Graph</strong><br><span style="color:var(--text-muted); font-size:0.8rem;">Embedded Product, BreadcrumbList, and Brand structured metadata.</span></div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div><strong>6-Card Post-Processing Customization</strong><br><span style="color:var(--text-muted); font-size:0.8rem;">Laser engraving, 580°C decal, silk screen, real gold rim, custom boxes, mixed batch.</span></div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div><strong>Responsive Multi-Viewport Layout</strong><br><span style="color:var(--text-muted); font-size:0.8rem;">Verified 0 horizontal overflow on 375px mobile and 1440px desktop screens.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>&copy; 2026 Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass). Staging Review Portal.</p>
+</footer>
+
+<script>
+  function switchTab(tabId, btn) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+    const target = document.getElementById(tabId);
+    if (target) target.classList.add('active');
+    if (btn) btn.classList.add('active');
+  }
+
+  function loadIframe(url, sku, btn) {
+    const iframe = document.getElementById('pdpIframe');
+    iframe.src = url;
+    document.getElementById('currentUrlText').innerText = url;
+    document.getElementById('currentUrlLink').href = url;
+    
+    document.querySelectorAll('.sku-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    // Switch to viewer tab
+    switchTab('tab-viewer');
+    document.querySelectorAll('.tab-btn')[2].classList.add('active');
+  }
+
+  function setDevice(width, btn) {
+    const iframe = document.getElementById('pdpIframe');
+    iframe.style.width = width;
+    document.querySelectorAll('.dev-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
