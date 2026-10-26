@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Wholesale Glassware Gift Sets Suite (10 Dedicated PDPs) - Jingyue Glass</title>
+  <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f0;
+      color: #333;
+      line-height: 1.6;
+    }
+    .preview-header {
+      background: linear-gradient(135deg, #1a3a5c 0%, #0d2540 100%);
+      color: #fff;
+      padding: 40px 24px;
+      text-align: center;
+      border-bottom: 4px solid #c8930a;
+    }
+    .preview-badge {
+      display: inline-block;
+      background: #c8930a;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .preview-header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+    .preview-header p {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 36px auto 60px;
+      padding: 0 20px;
+    }
+    
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #1a3a5c;
+      margin: 32px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #cbd5e1;
+    }
+
+    .standards-banner {
+      background: #fff;
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #c8930a;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin-bottom: 32px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+    .standards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 14px;
+    }
+    .standard-item {
+      background: #f8fafc;
+      padding: 12px 14px;
+      border-radius: 6px;
+      border: 1px solid #e2e8f0;
+      font-size: 0.85rem;
+    }
+    .standard-item strong {
+      color: #1a3a5c;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .pdp-suite-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    
+    .pdp-preview-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pdp-preview-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(26,58,92,0.12);
+      border-color: #c8930a;
+    }
+    
+    .card-img-wrap {
+      position: relative;
+      background: #ffffff;
+      height: 280px;
+      overflow: hidden;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+    .pdp-preview-card:hover .card-img-wrap img {
+      transform: scale(1.04);
+    }
+    .card-model-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #1a3a5c;
+      color: #c8930a;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+    .card-status-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #10b981;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #c8930a;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 6px;
+    }
+    .card-body h2 {
+      font-size: 1.15rem;
+      color: #1a3a5c;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: #64748b;
+      line-height: 1.5;
+      margin-bottom: 14px;
+      flex: 1;
+    }
+
+    .spec-table-mini {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+    }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-k { color: #64748b; font-weight: 500; }
+    .spec-v { color: #1a3a5c; font-weight: 600; text-align: right; max-width: 65%; }
+
+    .card-actions {
+      margin-top: auto;
+    }
+    .btn-view-pdp {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #1a3a5c;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      transition: background 0.2s;
+    }
+    .btn-view-pdp:hover {
+      background: #c8930a;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="preview-header">
+    <div class="preview-badge">Staging Preview & Verification Portal</div>
+    <h1>Wholesale Glassware Gift Sets Suite (10 Dedicated PDPs)</h1>
+    <p>Comprehensive B2B standalone product detail pages for Jingyue Glass luxury wooden box gift sets, wedding flute presentations, and magnetic whiskey suites.</p>
+  </header>
+
+  <div class="container">
+    <div class="standards-banner">
+      <h3 style="color:#1a3a5c; font-size:1.1rem; margin-bottom:8px;">Standardized B2B PDP Quality Architecture</h3>
+      <p style="font-size:0.9rem; color:#475569;">All 10 product pages adhere strictly to the unified Jingyue Glass B2B conversion standard:</p>
+      <div class="standards-grid">
+        <div class="standard-item">
+          <strong>1. Complete De-Pricing</strong>
+          Eliminated public price anchors; replaced with structured itemized RFQ notices and transparent manufacturing cost factors.
+        </div>
+        <div class="standard-item">
+          <strong>2. 1:1 Contain Photography</strong>
+          Standardized 1:1 square canvas with white background containment and luxury model badges.
+        </div>
+        <div class="standard-item">
+          <strong>3. Odorless EPE Pearl Cotton</strong>
+          Standardized packaging descriptions with ISTA-1A drop-test certified odorless pearl cotton cutouts.
+        </div>
+        <div class="standard-item">
+          <strong>4. Verified Direct Contact</strong>
+          Unified WhatsApp/WeChat: <code>+86 132 5662 7201</code>, Email: <code>sales@jingyueglass.com</code>.
+        </div>
+        <div class="standard-item">
+          <strong>5. Full Schema.org JSON-LD</strong>
+          Rich snippet integration covering Product, AggregateOffer, BreadcrumbList, and FAQPage.
+        </div>
+        <div class="standard-item">
+          <strong>6. 100% Pure English Copy</strong>
+          Professional international trade terminology with zero untranslated Chinese characters.
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <span>10 Dedicated Gift Set Product Pages</span>
+    </div>
+
+    <div class="pdp-suite-grid">
+      
+      <div class="pdp-preview-card">
+        <div class="card-img-wrap">
+          <span class="card-model-badge">XZM132-1</span>
+          <span class="card-status-badge">Ready for Review</span>
+          <img src="/assets/products/gift-sets/xzm1321-wedding-narrow-flute-accessory-gift-set.webp" alt="XZM132-1 Wedding Narrow-Flute Accessory Gift Set - Jingyue Glass Factory" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Wine & Champagne Gift Sets · Model XZM132-1</div>
+          <h2>Wedding Narrow-Flute Accessory Gift Set</h2>
+          <p class="card-desc">The XZM132-1 wedding narrow-flute accessory gift set features a fitted solid burnt pine wooden crate containing 2 hand-crafted XZ5204 narrow champagne flutes, a...</p>
+          <div class="spec-table-mini">
+            <div class="spec-row">
+              <span class="spec-k">Set Contents:</span>
+              <span class="spec-v">1 Wooden Box, 2 XZ5204 Champagne Flutes, 1 Heart Stopper, 1 Seahorse Knife</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Box Dimensions:</span>
+              <span class="spec-v">29.5 × 20.5 × 10 cm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Master Carton:</span>
+              <span class="spec-v">48 × 33.5 × 39 cm · 8 sets/ctn</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Trial Order MOQ:</span>
+              <span class="spec-v">8 sets (Trial)</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="/wedding-narrow-flute-accessory-gift-set-xzm132-1" target="_blank" class="btn-view-pdp">View Standalone PDP →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pdp-preview-card">
+        <div class="card-img-wrap">
+          <span class="card-model-badge">XZ4008-1</span>
+          <span class="card-status-badge">Ready for Review</span>
+          <img src="/assets/products/gift-sets/xz40081-two-glass-magnetic-whiskey-gift-box.webp" alt="XZ4008-1 Two-Glass Magnetic Whiskey Gift Box - Jingyue Glass Factory" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Whiskey Gift Sets · Model XZ4008-1</div>
+          <h2>Two-Glass Magnetic Whiskey Gift Box</h2>
+          <p class="card-desc">The XZ4008-1 two-glass magnetic whiskey gift set combines 2 classic XZ4008 square heavy-base whiskey tumblers with 6 polished natural chilling granite stones an...</p>
+          <div class="spec-table-mini">
+            <div class="spec-row">
+              <span class="spec-k">Set Contents:</span>
+              <span class="spec-v">1 Magnetic Presentation Gift Box, 2 XZ4008 Whiskey Glasses, 6 Granite Whiskey Stones with Velvet Pouch, 1 Stainless Steel Ice Tong</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Box Dimensions:</span>
+              <span class="spec-v">27.5 × 17 × 12 cm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Master Carton:</span>
+              <span class="spec-v">59 × 37.5 × 29 cm · 12 sets/ctn</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Trial Order MOQ:</span>
+              <span class="spec-v">12 sets (Trial)</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="/two-glass-magnetic-whiskey-gift-box-xz4008-1" target="_blank" class="btn-view-pdp">View Standalone PDP →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pdp-preview-card">
+        <div class="card-img-wrap">
+          <span class="card-model-badge">XZM001</span>
+          <span class="card-status-badge">Ready for Review</span>
+          <img src="/assets/products/gift-sets/xzm001-two-glass-whiskey-stones-gift-set.webp" alt="XZM001 Two-Glass Whiskey Stones Gift Set - Jingyue Glass Factory" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Whiskey Gift Sets · Model XZM001</div>
+          <h2>Two-Glass Whiskey Stones Gift Set</h2>
+          <p class="card-desc">The XZM001 whiskey connoisseur gift set features a rustic handcrafted burnt pine wooden crate with a vintage brass latch, holding 2 premium heavy-base whiskey g...</p>
+          <div class="spec-table-mini">
+            <div class="spec-row">
+              <span class="spec-k">Set Contents:</span>
+              <span class="spec-v">1 Burnt Pine Wooden Crate with Brass Clasp, 2 Classic Old Fashioned Whiskey Glasses (270–345 ml), 6 Granite Chilling Stones with Velvet Bag</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Box Dimensions:</span>
+              <span class="spec-v">24 × 18.3 × 13.3 cm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Master Carton:</span>
+              <span class="spec-v">50.5 × 38.6 × 29.6 cm · 8 sets/ctn</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Trial Order MOQ:</span>
+              <span class="spec-v">8 sets (Trial)</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="/two-glass-whiskey-stones-gift-set-xzm001" target="_blank" class="btn-view-pdp">View Standalone PDP →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pdp-preview-card">
+        <div class="card-img-wrap">
+          <span class="card-model-badge">XZM006-1</span>
+          <span class="card-status-badge">Ready for Review</span>
+          <img src="/assets/products/gift-sets/xzm0061-wine-decanter-and-two-stemmed-glasses-gift-set.webp" alt="XZM006-1 Wine Decanter and Two Stemmed Glasses Gift Set - Jingyue Glass Factory" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Luxury Wine Gift Sets · Model XZM006-1</div>
+          <h2>Wine Decanter and Two Stemmed Glasses Gift Set</h2>
+          <p class="card-desc">The XZM006-1 is a flagship executive wine presentation set featuring a generous hand-blown crystal wine decanter, 2 elegant stemmed wine goblets, an alloy heart...</p>
+          <div class="spec-table-mini">
+            <div class="spec-row">
+              <span class="spec-k">Set Contents:</span>
+              <span class="spec-v">1 Solid Burnt Pine Chest, 1 Hand-Blown Crystal Wine Aerating Decanter, 2 Stemmed Red Wine Glasses, 1 Heart Wine Stopper, 1 Seahorse Corkscrew</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Box Dimensions:</span>
+              <span class="spec-v">38 × 32 × 16 cm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Master Carton:</span>
+              <span class="spec-v">43 × 37 × 51.5 cm · 3 sets/ctn</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Trial Order MOQ:</span>
+              <span class="spec-v">3 sets (Trial)</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="/wine-decanter-two-stemmed-glasses-gift-set-xzm006-1" target="_blank" class="btn-view-pdp">View Standalone PDP →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pdp-preview-card">
+        <div class="card-img-wrap">
+          <span class="card-model-badge">XZM043-1A</span>
+          <span class="card-status-badge">Ready for Review</span>
+          <img src="/assets/products/gift-sets/xzm0431a-tall-decanter-two-glass-wooden-set.webp" alt="XZM043-1A Tall-Decanter Two-Glass Wooden Set - Jingyue Glass Factory" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Spirits & Decanter Gift Sets · Model XZM043-1A</div>
+          <h2>Tall-Decanter Two-Glass Wooden Set</h2>
+          <p class="card-desc">The XZM043-1A tall-decanter gift suite pairs an elegant tall-profile glass spirits decanter with 2 coordinating heavy-base rocks tumblers in a solid burnt pine ...</p>
+          <div class="spec-table-mini">
+            <div class="spec-row">
+              <span class="spec-k">Set Contents:</span>
+              <span class="spec-v">1 Burnt Pine Wooden Crate, 1 Tall Sculptural Spirits Decanter with Glass Stopper, 2 Matching Heavy-Base Rocks Tumblers</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Box Dimensions:</span>
+              <span class="spec-v">32 × 25 × 14 cm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Master Carton:</span>
+              <span class="spec-v">37 × 33 × 56 cm · 3 sets/ctn</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Trial Order MOQ:</span>
+              <span class="spec-v">3 sets (Trial)</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="/tall-decanter-two-glass-wooden-set-xzm043-1a" target="_blank" class="btn-view-pdp">View Standalone PDP →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pdp-preview-card">
+        <div class="card-img-wrap">
+          <span class="card-model-badge">XZM043-1B</span>
+          <span class="card-status-badge">Ready for Review</span>
+          <img src="/assets/products/gift-sets/xzm0431b-faceted-decanter-two-glass-wooden-set.webp" alt="XZM043-1B Faceted-Decanter Two-Glass Wooden Set - Jingyue Glass Factory" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Whiskey Decanter Gift Sets · Model XZM043-1B</div>
+          <h2>Faceted-Decanter Two-Glass Wooden Set</h2>
+          <p class="card-desc">The XZM043-1B faceted whiskey gift set showcases a bold geometric faceted decanter paired with 2 matching faceted crystal rocks glasses, organized in a rustic b...</p>
+          <div class="spec-table-mini">
+            <div class="spec-row">
+              <span class="spec-k">Set Contents:</span>
+              <span class="spec-v">1 Burnt Pine Wooden Crate, 1 Faceted Geometric Crystal Decanter with Precision Glass Stopper, 2 Faceted Lowball Whiskey Glasses</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Box Dimensions:</span>
+              <span class="spec-v">32 × 25 × 14 cm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Master Carton:</span>
+              <span class="spec-v">37 × 33 × 56 cm · 3 sets/ctn</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Trial Order MOQ:</span>
+              <span class="spec-v">3 sets (Trial)</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="/faceted-decanter-two-glass-wooden-set-xzm043-1b" target="_blank" class="btn-view-pdp">View Standalone PDP →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pdp-preview-card">
+        <div class="card-img-wrap">
+          <span class="card-model-badge">XZM063-A</span>
+          <span class="card-status-badge">Ready for Review</span>
+          <img src="/assets/products/gift-sets/xzm063a-two-glass-whiskey-accessory-gift-set.webp" alt="XZM063-A Two-Glass Whiskey Accessory Gift Set - Jingyue Glass Factory" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Whiskey & Bar Accessory Sets · Model XZM063-A</div>
+          <h2>Two-Glass Whiskey Accessory Gift Set</h2>
+          <p class="card-desc">The XZM063-A complete whiskey and bar accessory gift set incorporates 2 XZ3310 heavy-bottom rocks glasses alongside a full suite of sommelier-grade tools (seaho...</p>
+          <div class="spec-table-mini">
+            <div class="spec-row">
+              <span class="spec-k">Set Contents:</span>
+              <span class="spec-v">1 Burnt Pine Wooden Box, 2 XZ3310 Heavy-Base Whiskey Glasses, 1 Seahorse Corkscrew Knife, 1 Round Alloy Stopper, 1 Wine Pourer Aerator, 1 Foil Cutter</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Box Dimensions:</span>
+              <span class="spec-v">23 × 14 × 13.5 cm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Master Carton:</span>
+              <span class="spec-v">48.5 × 32 × 45.5 cm · 12 sets/ctn</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Trial Order MOQ:</span>
+              <span class="spec-v">12 sets (Trial)</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="/two-glass-whiskey-accessory-gift-set-xzm063-a" target="_blank" class="btn-view-pdp">View Standalone PDP →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pdp-preview-card">
+        <div class="card-img-wrap">
+          <span class="card-model-badge">XZM107-A</span>
+          <span class="card-status-badge">Ready for Review</span>
+          <img src="/assets/products/gift-sets/xzm107a-single-stemmed-wine-glass-accessory-gift-set.webp" alt="XZM107-A Single Stemmed Wine Glass Accessory Gift Set - Jingyue Glass Factory" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Wine Tool & Glass Sets · Model XZM107-A</div>
+          <h2>Single Stemmed Wine Glass Accessory Gift Set</h2>
+          <p class="card-desc">The XZM107-A single stemmed wine glass accessory set is specifically designed for curated single-bottle wine gifting pairings. Featuring 1 signature XZ6425 hand...</p>
+          <div class="spec-table-mini">
+            <div class="spec-row">
+              <span class="spec-k">Set Contents:</span>
+              <span class="spec-v">1 Solid Wooden Presentation Box, 1 XZ6425 Bordeaux Stemmed Wine Glass, 1 Seahorse Corkscrew Knife, 1 Wine Pourer, 1 Foil Cutter, 1 Vacuum Stopper, 1 Drip Stop Wine Ring</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Box Dimensions:</span>
+              <span class="spec-v">17 × 26 × 12 cm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Master Carton:</span>
+              <span class="spec-v">58 × 42 × 43.5 cm · 12 sets/ctn</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Trial Order MOQ:</span>
+              <span class="spec-v">12 sets (Trial)</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="/single-stemmed-wine-glass-accessory-gift-set-xzm107-a" target="_blank" class="btn-view-pdp">View Standalone PDP →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pdp-preview-card">
+        <div class="card-img-wrap">
+          <span class="card-model-badge">XZM108-A</span>
+          <span class="card-status-badge">Ready for Review</span>
+          <img src="/assets/products/gift-sets/xzm108a-two-slim-wine-glasses-accessory-gift-set.webp" alt="XZM108-A Two Slim Wine Glasses Accessory Gift Set - Jingyue Glass Factory" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Stemmed Wine Gift Sets · Model XZM108-A</div>
+          <h2>Two Slim Wine Glasses Accessory Gift Set</h2>
+          <p class="card-desc">The XZM108-A features 2 ultra-slim XZ9425 hand-blown stemmed crystal wine glasses accompanied by 4 essential wine service accessories in a lightweight, beautifu...</p>
+          <div class="spec-table-mini">
+            <div class="spec-row">
+              <span class="spec-k">Set Contents:</span>
+              <span class="spec-v">1 Burnt Paulownia Wooden Box with Antique Metal Clasp, 2 XZ9425 Ultra-Slim Stemmed Wine Glasses, 1 Seahorse Corkscrew Knife, 1 Stainless Steel Wine Pourer, 1 Foil Cutter, 1 Vacuum Stopper</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Box Dimensions:</span>
+              <span class="spec-v">26 × 26 × 12 cm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Master Carton:</span>
+              <span class="spec-v">53 × 32 × 44 cm · 6 sets/ctn</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Trial Order MOQ:</span>
+              <span class="spec-v">6 sets (Trial)</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="/two-slim-wine-glasses-accessory-gift-set-xzm108-a" target="_blank" class="btn-view-pdp">View Standalone PDP →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="pdp-preview-card">
+        <div class="card-img-wrap">
+          <span class="card-model-badge">XZM132</span>
+          <span class="card-status-badge">Ready for Review</span>
+          <img src="/assets/products/gift-sets/xzm132-wedding-champagne-flute-accessory-gift-set-new-20260918.webp" alt="XZM132 Wedding Champagne Flute Accessory Gift Set - Jingyue Glass Factory" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Wedding & Celebration Sets · Model XZM132</div>
+          <h2>Wedding Champagne Flute Accessory Gift Set</h2>
+          <p class="card-desc">The XZM132 wedding champagne flute gift set is Jingyue Glass's premier bridal and celebration package, combining 2 XZ6304 tall crystal flutes, a polished heart ...</p>
+          <div class="spec-table-mini">
+            <div class="spec-row">
+              <span class="spec-k">Set Contents:</span>
+              <span class="spec-v">1 Burnt Pine Wooden Box with Metal Clasp, 2 XZ6304 Classic Champagne Flutes, 1 Alloy Heart Stopper, 1 Seahorse Corkscrew Knife</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Box Dimensions:</span>
+              <span class="spec-v">29.5 × 20.5 × 10 cm</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Master Carton:</span>
+              <span class="spec-v">48 × 33.5 × 39 cm · 8 sets/ctn</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-k">Trial Order MOQ:</span>
+              <span class="spec-v">8 sets (Trial)</span>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a href="/wedding-champagne-flute-accessory-gift-set-xzm132" target="_blank" class="btn-view-pdp">View Standalone PDP →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
