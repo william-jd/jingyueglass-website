@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preview: Complete Whiskey Glass Suite (17 Dedicated PDPs) - Jingyue Glass</title>
+  <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f0;
+      color: #333;
+      line-height: 1.6;
+    }
+    .preview-header {
+      background: linear-gradient(135deg, #1a3a5c 0%, #0d2540 100%);
+      color: #fff;
+      padding: 40px 24px;
+      text-align: center;
+      border-bottom: 4px solid #c8930a;
+    }
+    .preview-badge {
+      display: inline-block;
+      background: #c8930a;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .preview-header h1 {
+      font-size: 2.2rem;
+      color: #fff;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+    .preview-header p {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 840px;
+      margin: 0 auto;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 36px auto 60px;
+      padding: 0 20px;
+    }
+    
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #1a3a5c;
+      margin: 32px 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #cbd5e1;
+    }
+
+    .pdp-suite-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    
+    .pdp-preview-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .pdp-preview-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(26,58,92,0.12);
+      border-color: #c8930a;
+    }
+    
+    .card-img-wrap {
+      position: relative;
+      background: #ffffff;
+      height: 260px;
+      overflow: hidden;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s;
+    }
+    .pdp-preview-card:hover .card-img-wrap img {
+      transform: scale(1.04);
+    }
+    .card-model-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #1a3a5c;
+      color: #c8930a;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .card-status-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #25D366;
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+    
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #c8930a;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .card-body h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a3a5c;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+    .card-desc {
+      font-size: 0.85rem;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    
+    .spec-table-mini {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 12px;
+      margin-bottom: 16px;
+      font-size: 0.8rem;
+    }
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 3px 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-k { color: #64748B; font-weight: 600; }
+    .spec-v { color: #1a3a5c; font-weight: 700; text-align: right; max-width: 60%; }
+    
+    .card-actions {
+      display: flex;
+      gap: 10px;
+    }
+    .btn-view-pdp {
+      flex: 1;
+      background: #1a3a5c;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-view-pdp:hover {
+      background: #c8930a;
+      color: #fff;
+    }
+
+    .standards-summary {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #c8930a;
+      border-radius: 8px;
+      padding: 24px;
+      margin-top: 32px;
+    }
+    .standards-summary h3 {
+      font-size: 1.1rem;
+      color: #1a3a5c;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    .standards-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #334155;
+    }
+    .standards-list li::before {
+      content: '✓ ';
+      color: #c8930a;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="preview-header">
+  <span class="preview-badge">ALL 17 WHISKEY GLASS MODELS · B2B PDP PREVIEW PORTAL</span>
+  <h1>Whiskey Glass Product Suite &amp; Dedicated PDPs</h1>
+  <p>Previewing 17 dedicated Commercial Whiskey Glassware PDPs (XZ5411, XZ20125-X, XZ1280, XZ3013-3, XZ0609, XZ1093, XZ1281, XZ1282, XZ1283, XZ2003, XZ2103, XZ4008, XZ4011, XZ5212, XZ20114, XZ20125, XZ20142) with updated WhatsApp / WeChat (+86 132 5662 7201) and customized post-processing services.</p>
+</div>
+
+<div class="container">
+
+  <div class="standards-summary">
+    <h3>Standard B2B PDP Architectural Compliance Matrix</h3>
+    <ul class="standards-list">
+      <li><strong>1:1 Gold Ratio Visuals:</strong> Square aspect ratio (1 / 1) with object-fit contain on white background.</li>
+      <li><strong>Unified Contact Channels:</strong> WhatsApp &amp; WeChat updated to +86 132 5662 7201; Email: sales@jingyueglass.com.</li>
+      <li><strong>B2B De-Pricing Standard:</strong> No public prices; customized itemized quotation parameters.</li>
+      <li><strong>6-Card Service Matrix:</strong> Laser engraving, 580°C decal, silk screen, metal badges, EPE/wood boxes, mixed containers.</li>
+      <li><strong>100% English Content:</strong> 0 Chinese characters across all production PDPs and preview markup.</li>
+      <li><strong>SEO &amp; Schema Integrity:</strong> Product, BreadcrumbList, and FAQPage JSON-LD embedded on every page.</li>
+    </ul>
+  </div>
+
+  <div class="section-title">Complete 17-Model Commercial Whiskey Glassware Catalog</div>
+  <div class="pdp-suite-grid">
+    
+    <div class="pdp-preview-card" data-category="Diamond & Cut Glass">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ5411</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz-dc310-diamond-cut-rock-glass-310ml.webp" alt="310ml Diamond-Cut Rock Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Diamond & Cut Glass · Model XZ5411</span>
+        <h2>310ml Diamond-Cut Rock Glass</h2>
+        <p class="card-desc">Commercial wholesale 310ml diamond-cut whiskey rocks glass crafted with ultra-clear lead-free crystal. Featuring geometric faceted...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">310 ml (10.5 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 95 × Top Ø 83 × Base Ø 75 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs / export carton (Divider Box)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../diamond-cut-rock-glass-xz5411.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Twisted & Glacier">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ20125-X</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz20125-x-twisted-crystal-tumbler-270ml.webp" alt="270ml Twisted Crystal Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Twisted & Glacier · Model XZ20125-X</span>
+        <h2>270ml Twisted Crystal Tumbler</h2>
+        <p class="card-desc">Sculptural 270ml twisted crystal whiskey tumbler featuring an ergonomic rotating spiral silhouette that fits effortlessly into the...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">270 ml (9.1 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 105 × Top Ø 95 × Base Ø 60 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">36 pcs / export carton (Divider Box)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../twisted-crystal-tumbler-xz20125-x.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Classic Old Fashioned">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ1280</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz-of345-classic-old-fashioned-glass-345ml.webp" alt="350ml Classic Old Fashioned Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Classic Old Fashioned · Model XZ1280</span>
+        <h2>350ml Classic Old Fashioned Glass</h2>
+        <p class="card-desc">Timeless 350ml (345ml brimful) commercial old fashioned rocks glass with straight cylindrical walls and an ultra-thick solid base....</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">345 ml (11.7 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 92.5 × Top Ø 86 × Base Ø 80 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">36 pcs / export carton (Divider Box)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../classic-old-fashioned-glass-xz1280.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Aroma Snifter">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ3013-3</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz3113-3-aroma-snifter-tasting-glass-190ml.webp" alt="190ml Aroma Snifter Tasting Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Aroma Snifter · Model XZ3013-3</span>
+        <h2>190ml Aroma Snifter Tasting Glass</h2>
+        <p class="card-desc">Professional 190ml tulip aroma snifter glass engineered for whiskey distilleries, master blenders, and spirits competition judging...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">190 ml (6.4 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 115 × Top Ø 48 × Base Ø 67 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">72 pcs / export carton (Divider Box)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../aroma-snifter-tasting-glass-xz3013-3.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Diamond & Cut Glass">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ0609</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz0609-crackle-pattern-whiskey-glass-290ml.webp" alt="290ml Crackle-Pattern Whiskey Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Diamond & Cut Glass · Model XZ0609</span>
+        <h2>290ml Crackle-Pattern Whiskey Glass</h2>
+        <p class="card-desc">Artisanal 290ml crackle-pattern whiskey rocks glass featuring intricate ice-fracture texture and a weighted base sham. Delivers ex...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">290 ml (9.8 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 90 × Top Ø 82 × Base Ø 74 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">72 pcs / export carton (55.4×38.6×30.4 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../crackle-pattern-whiskey-glass-xz0609.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Diamond & Cut Glass">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ1093</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz1093-rock-pattern-whiskey-glass-280ml.webp" alt="280ml Rock-Pattern Whiskey Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Diamond & Cut Glass · Model XZ1093</span>
+        <h2>280ml Rock-Pattern Whiskey Tumbler</h2>
+        <p class="card-desc">Bold 280ml geological rock-pattern whiskey tumbler featuring rugged mineral-relief sidewalls and a heavyweight solid base. Designe...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">280 ml (9.5 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 90 × Top Ø 90 × Base Ø 80 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">36 pcs / export carton (39.5×26.7×33.7 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../rock-pattern-whiskey-tumbler-xz1093.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Classic Old Fashioned">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ1281</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz1281-football-pattern-whiskey-glass-300ml.webp" alt="300ml Football-Relief Old Fashioned Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Classic Old Fashioned · Model XZ1281</span>
+        <h2>300ml Football-Relief Old Fashioned Glass</h2>
+        <p class="card-desc">Distinctive 300ml old fashioned rocks glass with interlocking hexagonal football relief embossing and a thick weighted sham. An in...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">300 ml (10.1 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 93 × Top Ø 86 × Base Ø 78 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">24 pcs / export carton (39×29×23 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../football-relief-old-fashioned-glass-xz1281.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Classic Old Fashioned">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ1282</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz1282-tennis-pattern-whiskey-glass-300ml.webp" alt="300ml Tennis-Pattern Lowball Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Classic Old Fashioned · Model XZ1282</span>
+        <h2>300ml Tennis-Pattern Lowball Glass</h2>
+        <p class="card-desc">Sporting elegance 300ml lowball rocks glass featuring curved tennis ball seam relief banding and a solid weighted base. Tailored f...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">300 ml (10.1 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 93 × Top Ø 86 × Base Ø 78 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">24 pcs / export carton (39×39×23 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../tennis-pattern-lowball-glass-xz1282.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Classic Old Fashioned">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ1283</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz1283-tire-pattern-whiskey-glass-300ml.webp" alt="300ml Tire-Pattern Heavy Base Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Classic Old Fashioned · Model XZ1283</span>
+        <h2>300ml Tire-Pattern Heavy Base Glass</h2>
+        <p class="card-desc">Industrial-grade 300ml heavy base whiskey glass featuring rugged tire-tread relief banding. Designed for automotive brand merchand...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">300 ml (10.1 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 93 × Top Ø 86 × Base Ø 78 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">24 pcs / export carton (39×39×23 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../tire-pattern-heavy-base-glass-xz1283.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Diamond & Cut Glass">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ2003</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz2003-yulin-carved-whiskey-glass-300ml.webp" alt="300ml Yulin Carved Crystal Rock Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Diamond & Cut Glass · Model XZ2003</span>
+        <h2>300ml Yulin Carved Crystal Rock Glass</h2>
+        <p class="card-desc">Vintage European heritage 300ml carved crystal whiskey rocks glass with traditional cross-hatch intaglio engravings and a brillian...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">300 ml (10.1 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 90 × Top Ø 82 × Base Ø 75 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs / export carton (54×36×21 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../yulin-carved-crystal-rock-glass-xz2003.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Diamond & Cut Glass">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ2103</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz2103-patterned-base-whiskey-glass-315ml.webp" alt="315ml Sunburst Pattern Base Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Diamond & Cut Glass · Model XZ2103</span>
+        <h2>315ml Sunburst Pattern Base Glass</h2>
+        <p class="card-desc">Elegant 315ml whiskey rocks glass featuring a radial sunburst star pattern carved into the heavy base and subtle vertical lower fl...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">315 ml (10.7 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 95 × Top Ø 83 × Base Ø 76 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs / export carton (53×35×21 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../sunburst-pattern-base-glass-xz2103.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Square & Heavy Base">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ4008</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz4008-square-rock-whiskey-glass-270ml.webp" alt="270ml Square Lowball Whiskey Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Square & Heavy Base · Model XZ4008</span>
+        <h2>270ml Square Lowball Whiskey Glass</h2>
+        <p class="card-desc">Contemporary 270ml square-to-round lowball rocks glass featuring a solid square sham and smooth rounded drinking rim. The modern a...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">270 ml (9.1 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 82 × Top Ø 89 × Base 72×72 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs / export carton (52.3×35×19 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../square-lowball-whiskey-glass-xz4008.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Twisted & Glacier">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ4011</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz4011-layered-glacier-whiskey-glass-280ml.webp" alt="280ml Layered Glacier Whiskey Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Twisted & Glacier · Model XZ4011</span>
+        <h2>280ml Layered Glacier Whiskey Glass</h2>
+        <p class="card-desc">Architectural 280ml layered glacier whiskey glass with a stepped ice-shelf base and textured geometric body. Evokes Nordic glacier...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">280 ml (9.5 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 88 × Top Ø 85 × Base Ø 75 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs / export carton (53.5×38.2×21.8 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../layered-glacier-whiskey-glass-xz4011.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Classic Old Fashioned">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ5212</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz5212-alicia-fluted-whiskey-glass-300ml.webp" alt="300ml Alicia Fluted Whiskey Glass">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Classic Old Fashioned · Model XZ5212</span>
+        <h2>300ml Alicia Fluted Whiskey Glass</h2>
+        <p class="card-desc">Sophisticated 300ml vertical fluted whiskey rocks glass with vintage Art Deco ribbed columns and a solid heavy sham. A timeless ce...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">300 ml (10.1 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 92 × Top Ø 80 × Base Ø 74 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs / export carton (51×34×21 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../alicia-fluted-whiskey-glass-xz5212.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Square & Heavy Base">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ20114</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz20114-square-heavy-base-whiskey-glass-320ml.webp" alt="320ml Square Heavy-Base Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Square & Heavy Base · Model XZ20114</span>
+        <h2>320ml Square Heavy-Base Tumbler</h2>
+        <p class="card-desc">Substantial 320ml heavy-base square whiskey tumbler with a solid 25mm thick base sham and rounded top rim. Built for generous spir...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">320 ml (10.8 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 90 × Top Ø 91 × Base 75×75 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs / export carton (57×40×22 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../square-heavy-base-tumbler-xz20114.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Twisted & Glacier">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ20125</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz20125-twisted-crystal-whiskey-glass-280ml.webp" alt="280ml Twisted Crystal Rocks Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Twisted & Glacier · Model XZ20125</span>
+        <h2>280ml Twisted Crystal Rocks Tumbler</h2>
+        <p class="card-desc">Dynamic 280ml twisted crystal rocks tumbler with sweeping 3D vortex contours and a weighted base. A proven international best-sell...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">280 ml (9.5 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 95 × Top Ø 91 × Base Ø 62 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs / export carton (60×40×35 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../twisted-crystal-rocks-tumbler-xz20125.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="pdp-preview-card" data-category="Twisted & Glacier">
+      <div class="card-img-wrap">
+        <span class="card-model-badge">XZ20142</span>
+        <span class="card-status-badge">1:1 GOLD RATIO</span>
+        <img src="/assets/products/whiskey-glasses/xz20142-crinkled-rock-whiskey-glass-300ml.webp" alt="300ml Crinkled Rock Iceberg Tumbler">
+      </div>
+      <div class="card-body">
+        <span class="card-tag">Twisted & Glacier · Model XZ20142</span>
+        <h2>300ml Crinkled Rock Iceberg Tumbler</h2>
+        <p class="card-desc">Artisanal 300ml crinkled rock iceberg tumbler featuring an organic melted-ice crumpled texture and heavyweight base. A contemporar...</p>
+        
+        <div class="spec-table-mini">
+          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">300 ml (10.1 oz)</span></div>
+          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 90 × Top Ø 85 × Base Ø 76 mm</span></div>
+          <div class="spec-row"><span class="spec-k">Packaging</span><span class="spec-v">48 pcs / export carton (54×36×22 cm)</span></div>
+          <div class="spec-row"><span class="spec-k">Sample Time</span><span class="spec-v">1–3 Days</span></div>
+        </div>
+        
+        <div class="card-actions">
+          <a href="../crinkled-rock-iceberg-tumbler-xz20142.html" class="btn-view-pdp" target="_blank">Open Dedicated PDP ↗</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
