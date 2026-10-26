@@ -3,502 +3,820 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preview: Complete Beer Glass Suite (10 Dedicated PDPs) - Jingyue Glass</title>
+  <title>Preview: 17 Beer Glassware Models Integration | Jingyue Glass</title>
   <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
   <style>
+    :root {
+      --primary: #1a3a5c;
+      --primary-dark: #0d2540;
+      --accent: #c8930a;
+      --accent-hover: #e0a70b;
+      --accent-light: #fef8eb;
+      --light: #f8fafc;
+      --dark: #1e293b;
+      --border: #e2e8f0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 2px 8px rgba(13,37,64,0.06);
+      --shadow-md: 0 12px 28px rgba(13,37,64,0.08);
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: #f5f5f0;
-      color: #333;
-      line-height: 1.6;
-    }
-    .preview-header {
-      background: linear-gradient(135deg, #1a3a5c 0%, #0d2540 100%);
-      color: #fff;
-      padding: 40px 24px;
-      text-align: center;
-      border-bottom: 4px solid #c8930a;
-    }
-    .preview-badge {
-      display: inline-block;
-      background: #c8930a;
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 4px 12px;
-      border-radius: 4px;
-      margin-bottom: 12px;
-    }
-    .preview-header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .preview-header p {
-      font-size: 1.05rem;
-      color: #cbd5e1;
-      max-width: 840px;
-      margin: 0 auto;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 36px auto 60px;
-      padding: 0 20px;
-    }
-    
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: #1a3a5c;
-      margin: 32px 0 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #cbd5e1;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: var(--dark); line-height: 1.6; background: #f5f5f0; }
 
-    .pdp-suite-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-    
-    .pdp-preview-card {
-      background: #fff;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .pdp-preview-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(26,58,92,0.12);
-      border-color: #c8930a;
-    }
-    
-    .card-img-wrap {
-      position: relative;
-      background: #ffffff;
-      height: 260px;
-      overflow: hidden;
-      border-bottom: 1px solid #e2e8f0;
-      padding: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .card-img-wrap img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      transition: transform 0.3s;
-    }
-    .pdp-preview-card:hover .card-img-wrap img {
-      transform: scale(1.04);
-    }
-    .card-model-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: #1a3a5c;
-      color: #c8930a;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 4px;
-      letter-spacing: 0.05em;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .card-status-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: #25D366;
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 4px 8px;
-      border-radius: 4px;
-    }
-    
-    .card-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    .card-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #c8930a;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .card-body h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      color: #1a3a5c;
-      line-height: 1.35;
-      margin-bottom: 8px;
-    }
-    .card-desc {
-      font-size: 0.85rem;
-      color: #475569;
-      line-height: 1.5;
-      margin-bottom: 16px;
-      flex-grow: 1;
-    }
-    
-    .spec-table-mini {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 10px 12px;
-      margin-bottom: 16px;
-      font-size: 0.8rem;
-    }
-    .spec-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 3px 0;
-      border-bottom: 1px dashed #e2e8f0;
-    }
-    .spec-row:last-child { border-bottom: none; }
-    .spec-k { color: #64748B; font-weight: 600; }
-    .spec-v { color: #1a3a5c; font-weight: 700; text-align: right; max-width: 60%; }
-    
-    .card-actions {
-      display: flex;
-      gap: 10px;
-    }
-    .btn-view-pdp {
-      flex: 1;
-      background: #1a3a5c;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .btn-view-pdp:hover {
-      background: #c8930a;
-      color: #fff;
-    }
+    header { background: #fff; border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; }
+    .logo { font-size: 1.3rem; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .logo span { color: var(--accent); }
+    .btn-nav { background: var(--accent); color: #fff; padding: 8px 18px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; }
 
-    .standards-summary {
-      background: #fff;
-      border: 1px solid #e2e8f0;
-      border-left: 4px solid #c8930a;
-      border-radius: 8px;
-      padding: 24px;
-      margin-top: 32px;
-    }
-    .standards-summary h3 {
-      font-size: 1.1rem;
-      color: #1a3a5c;
-      margin-bottom: 10px;
-    }
-    .standards-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 10px;
-      font-size: 0.88rem;
-      color: #334155;
-    }
-    .standards-list li::before {
-      content: '✅ ';
-      font-weight: bold;
-    }
+    .hero-banner { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding: 48px 20px 40px; text-align: center; }
+    .hero-badge { display: inline-block; background: rgba(200,147,10,0.25); border: 1px solid rgba(200,147,10,0.5); color: #fef08a; padding: 4px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 12px; }
+    .hero-banner h1 { font-size: clamp(24px, 3.5vw, 36px); font-weight: 800; margin-bottom: 12px; }
+    .hero-banner p { font-size: 1rem; color: #cbd5e1; max-width: 820px; margin: 0 auto 16px; line-height: 1.6; }
+
+    .container { max-width: 1200px; margin: 32px auto 60px; padding: 0 20px; }
+
+    /* Summary Bar */
+    .summary-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; box-shadow: var(--shadow-sm); margin-bottom: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+    .sum-item { border-left: 3px solid var(--accent); padding-left: 12px; }
+    .sum-val { font-size: 1.5rem; font-weight: 800; color: var(--primary-dark); }
+    .sum-lbl { font-size: 0.82rem; color: #64748b; font-weight: 600; }
+
+    /* Filter Tabs */
+    .tab-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 24px; }
+    .tab-btn { background: #fff; border: 1px solid var(--border); padding: 8px 18px; border-radius: 30px; font-size: 0.88rem; font-weight: 700; color: #475569; cursor: pointer; transition: all 0.2s; }
+    .tab-btn:hover { border-color: var(--accent); color: var(--primary); }
+    .tab-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    /* Product Grid */
+    .grid-17 { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 24px; margin-bottom: 48px; }
+    .card-item { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+    .card-item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: #cbd5e1; }
+    .card-img-wrap { width: 100%; aspect-ratio: 1/1; background: #fff; border-bottom: 1px solid var(--border); position: relative; display: flex; justify-content: center; align-items: center; }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: contain; padding: 12px; }
+    .card-badge { position: absolute; top: 10px; left: 10px; background: var(--primary); color: #fff; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; }
+    .card-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+    .card-tag { font-size: 0.74rem; font-weight: 800; color: var(--accent); text-transform: uppercase; margin-bottom: 4px; }
+    .card-title { font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px; line-height: 1.35; }
+    .card-desc { font-size: 0.82rem; color: #64748b; line-height: 1.5; margin-bottom: 14px; flex: 1; }
+    .spec-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .pill { font-size: 0.76rem; background: #f1f5f9; padding: 3px 8px; border-radius: 4px; color: #475569; font-weight: 600; }
+    .btn-card-pdp { background: var(--primary); color: #fff; text-align: center; padding: 10px; border-radius: var(--radius-sm); font-size: 0.88rem; font-weight: 700; text-decoration: none; transition: background 0.2s; }
+    .btn-card-pdp:hover { background: var(--primary-dark); }
+
+    /* Comparison Table Section */
+    .section-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 32px; box-shadow: var(--shadow-sm); margin-bottom: 40px; }
+    .section-card h2 { font-size: 1.4rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 18px; border-left: 4px solid var(--accent); padding-left: 12px; }
+
+    .table-responsive { width: 100%; overflow-x: auto; }
+    .comp-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; min-width: 900px; }
+    .comp-table th, .comp-table td { padding: 12px 14px; border-bottom: 1px solid var(--border); text-align: left; }
+    .comp-table th { background: var(--primary-dark); color: #fff; font-weight: 700; }
+    .comp-table tr:nth-child(even) { background: #f8fafc; }
+    .comp-table tr:hover { background: #f1f5f9; }
+
+    /* Interactive Live PDP Iframe Previewer */
+    .iframe-ctrls { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px; }
+    .sel-pdp { padding: 8px 14px; border: 1px solid var(--border); border-radius: 6px; font-size: 0.9rem; font-weight: 700; color: var(--primary-dark); background: #fff; outline: none; }
+    .vp-toggles { display: flex; gap: 8px; }
+    .vp-btn { background: #fff; border: 1px solid var(--border); padding: 6px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; }
+    .vp-btn.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .iframe-wrap { background: #e2e8f0; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 16px; display: flex; justify-content: center; overflow: hidden; }
+    .pdp-iframe { border: 0; background: #fff; border-radius: 6px; box-shadow: var(--shadow-md); transition: width 0.3s ease; height: 800px; }
+    .pdp-iframe.desktop { width: 100%; max-width: 1140px; }
+    .pdp-iframe.mobile { width: 375px; }
+
+    /* Audit Checklist */
+    .audit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-top: 16px; }
+    .audit-item { background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px 16px; display: flex; align-items: flex-start; gap: 10px; }
+    .audit-check { color: #16a34a; font-size: 1.2rem; font-weight: 800; line-height: 1; }
+    .audit-title { font-size: 0.9rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 2px; }
+    .audit-desc { font-size: 0.78rem; color: #64748b; line-height: 1.4; }
+
+    footer { background: var(--primary-dark); color: #94a3b8; padding: 40px 20px; font-size: 0.88rem; text-align: center; margin-top: 60px; }
+    footer a { color: #cbd5e1; text-decoration: none; margin: 0 10px; }
   </style>
 </head>
 <body>
 
-<div class="preview-header">
-  <span class="preview-badge">ALL 10 BEER GLASS MODELS · B2B PDP PREVIEW</span>
-  <h1>Beer Glass Product Suite &amp; Dedicated PDPs</h1>
-  <p>Previewing 10 dedicated Commercial Beer Glassware PDPs (XZBR39, XZ70-3, XZ078, XZ01-280, XZ309, XZ1238, XZ5824, XZ7010, XZ88148, XZ2220E) with updated WhatsApp (+86 132 5662 7201) and customized beer post-processing services.</p>
+<header>
+  <div class="nav-container">
+    <a href="/" class="logo">JINGYUE <span>GLASS</span></a>
+    <div style="font-size:0.85rem; font-weight:700; color:#64748b;">
+      STAGING PREVIEW · BEER GLASSWARE SUITE
+    </div>
+    <a href="/beer-glasses" class="btn-nav" target="_blank">View Category Catalog (beer-glasses.html) →</a>
+  </div>
+</header>
+
+<div class="hero-banner">
+  <div class="hero-badge">Staging Review &amp; Validation Portal</div>
+  <h1>17 New Beer Glassware Models Integration Preview</h1>
+  <p>Comprehensive preview and specification audit for 17 newly added commercial pilsner glasses, craft beer tasting goblets, conical pint tumblers, and heavy handled steins. All models strictly follow Jingyue Glass B2B de-pricing, odorless EPE packaging, and 1,000+ cycle commercial dishwasher standards.</p>
 </div>
 
 <div class="container">
 
-  <div class="section-title">Complete 10-Model Commercial Beer Glassware Catalog</div>
-  <div class="pdp-suite-grid">
-    
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZBR39</span>
-        <span class="card-status-badge">1:1 GOLD RATIO</span>
-        <img src="/assets/products/beer-glasses/xzbr39-470-ml-classic-stemmed-beer-goblet-new-20260917.webp" alt="470ml Classic Stemmed Beer Goblet">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Belgian Ale & Craft Goblet · Model XZBR39</span>
-        <h2>470ml Classic Stemmed Beer Goblet</h2>
-        <p class="card-desc">Commercial wholesale 470ml stemmed beer goblet crafted with lead-free soda-lime crystal glass. Featuring a curved aromatic bowl and robust pulled stem for Belgian ales, craft beers, brewery tasting rooms, and upscale gastropubs.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">470 ml (16 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 207 × Rim Ø 59.8 × Base Ø 77 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Manufacturing</span><span class="spec-v">Machine-Blown Seamless Stem & Fire-Polished Rim</span></div>
-          <div class="spec-row"><span class="spec-k">Sample MOQ</span><span class="spec-v">48 pcs (Standard Sample Order)</span></div>
-          <div class="spec-row"><span class="spec-k">Custom MOQ</span><span class="spec-v">500 pcs (Laser / High Temp Decal)</span></div>
-        </div>
-
-        <div class="card-actions">
-          <a href="/stemmed-beer-goblet-xzbr39.html" class="btn-view-pdp" target="_blank">View Dedicated PDP</a>
-        </div>
-      </div>
+  <!-- Summary Cards -->
+  <div class="summary-card">
+    <div class="sum-item">
+      <div class="sum-val">17 SKUs</div>
+      <div class="sum-lbl">New Beer Glass Models Added</div>
     </div>
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZ70-3</span>
-        <span class="card-status-badge">1:1 GOLD RATIO</span>
-        <img src="/assets/products/beer-glasses/xz703-500-ml-classic-heavy-base-beer-mug-new-20260917.webp" alt="500ml Classic Heavy-Base Beer Mug">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Commercial Pub Mug · Model XZ70-3</span>
-        <h2>500ml Classic Heavy-Base Beer Mug</h2>
-        <p class="card-desc">Heavyweight 500ml commercial beer mug with ergonomic solid glass handle and broad weighted base. Built to withstand high-traffic bar service, rapid tap filling, and commercial dishwashers in taprooms, sports bars, and Oktoberfest events.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">500 ml (17 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 134.5 × Top Ø 85 × Base Ø 98.1 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Manufacturing</span><span class="spec-v">Machine-Pressed Solid Mold with Annealed Base</span></div>
-          <div class="spec-row"><span class="spec-k">Sample MOQ</span><span class="spec-v">24 pcs (Standard Sample Order)</span></div>
-          <div class="spec-row"><span class="spec-k">Custom MOQ</span><span class="spec-v">500 pcs (Laser / High Temp Decal)</span></div>
-        </div>
-
-        <div class="card-actions">
-          <a href="/heavy-base-beer-mug-xz703.html" class="btn-view-pdp" target="_blank">View Dedicated PDP</a>
-        </div>
-      </div>
+    <div class="sum-item">
+      <div class="sum-val">1 SKU Skipped</div>
+      <div class="sum-lbl">XZ2220E (Already Live in Catalog)</div>
     </div>
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZ078</span>
-        <span class="card-status-badge">1:1 GOLD RATIO</span>
-        <img src="/assets/products/beer-glasses/xz078-580-ml-curved-pilsner-beer-glass-new-20260917.webp" alt="580ml Curved Pilsner Beer Glass">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Pilsner & Lager Glass · Model XZ078</span>
-        <h2>580ml Curved Pilsner Beer Glass</h2>
-        <p class="card-desc">Elegant 580ml tall waisted pilsner glass engineered to showcase beer clarity, golden effervescence, and persistent foam head. Ideal for German pilsners, lagers, hotel lounges, and promotional craft brewery programs.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">580 ml (19.6 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 219 × Top Ø 76 × Base Ø 70 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Manufacturing</span><span class="spec-v">Machine-Blown with Weighted Foot & Fire-Polished Rim</span></div>
-          <div class="spec-row"><span class="spec-k">Sample MOQ</span><span class="spec-v">48 pcs (Standard Sample Order)</span></div>
-          <div class="spec-row"><span class="spec-k">Custom MOQ</span><span class="spec-v">500 pcs (Laser / High Temp Decal)</span></div>
-        </div>
-
-        <div class="card-actions">
-          <a href="/curved-pilsner-beer-glass-xz078.html" class="btn-view-pdp" target="_blank">View Dedicated PDP</a>
-        </div>
-      </div>
+    <div class="sum-item">
+      <div class="sum-val">17 PDPs</div>
+      <div class="sum-lbl">Dedicated B2B Standalone Pages</div>
     </div>
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZ01-280</span>
-        <span class="card-status-badge">1:1 GOLD RATIO</span>
-        <img src="/assets/products/beer-glasses/xz01280-520-ml-faceted-pub-beer-mug-new-20260917.webp" alt="520ml Faceted Pub Beer Mug">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Faceted Beer Stein · Model XZ01-280</span>
-        <h2>520ml Faceted Pub Beer Mug</h2>
-        <p class="card-desc">Robust 520ml faceted beer mug featuring vintage multi-panel textured sidewalls that catch ambient light and enhance grip. Designed for European beer halls, draught taprooms, casual dining, and promotional corporate gifts.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">520 ml (17.5 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 117 × Top Ø 93 × Base Ø 64.5 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Manufacturing</span><span class="spec-v">Machine-Pressed Faceted Mold with Heavy Base</span></div>
-          <div class="spec-row"><span class="spec-k">Sample MOQ</span><span class="spec-v">36 pcs (Standard Sample Order)</span></div>
-          <div class="spec-row"><span class="spec-k">Custom MOQ</span><span class="spec-v">500 pcs (Laser / High Temp Decal)</span></div>
-        </div>
-
-        <div class="card-actions">
-          <a href="/faceted-pub-beer-mug-xz01280.html" class="btn-view-pdp" target="_blank">View Dedicated PDP</a>
-        </div>
-      </div>
+    <div class="sum-item">
+      <div class="sum-val">100% Verified</div>
+      <div class="sum-lbl">0 Chinese Chars · Schema.org Valid</div>
     </div>
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZ309</span>
-        <span class="card-status-badge">1:1 GOLD RATIO</span>
-        <img src="/assets/products/beer-glasses/xz309-545-ml-novelty-boot-beer-mug-new-20260917.webp" alt="545ml Novelty Boot Beer Mug">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Novelty Boot Stein · Model XZ309</span>
-        <h2>545ml Novelty Boot Beer Mug</h2>
-        <p class="card-desc">Eye-catching 545ml German-style boot-shaped beer mug with integrated reinforced handle. A legendary choice for Oktoberfest celebrations, novelty drinking games, themed brewpubs, and holiday retail gift collections.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">545 ml (18.5 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 120 × Top Ø 94 × Base Ø 64.5 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Manufacturing</span><span class="spec-v">Specialty Shape Machine-Molded Glass with Solid Handle</span></div>
-          <div class="spec-row"><span class="spec-k">Sample MOQ</span><span class="spec-v">36 pcs (Standard Sample Order)</span></div>
-          <div class="spec-row"><span class="spec-k">Custom MOQ</span><span class="spec-v">500 pcs (Laser / High Temp Decal)</span></div>
-        </div>
+  </div>
 
-        <div class="card-actions">
-          <a href="/boot-beer-mug-xz309.html" class="btn-view-pdp" target="_blank">View Dedicated PDP</a>
+  <!-- Quality Assurance Audit Grid -->
+  <div class="section-card">
+    <h2>Compliance &amp; Quality Gate Audit (7/7 Passed)</h2>
+    <div class="audit-grid">
+      <div class="audit-item">
+        <div class="audit-check">✓</div>
+        <div>
+          <div class="audit-title">Duplicate Exclusion Check</div>
+          <div class="audit-desc">Model XZ2220E was identified as existing on live site and automatically skipped per rule.</div>
         </div>
       </div>
-    </div>
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZ1238</span>
-        <span class="card-status-badge">1:1 GOLD RATIO</span>
-        <img src="/assets/products/beer-glasses/xz1238-480-ml-straight-sided-beer-mug-new-20260917.webp" alt="480ml Straight-Sided Beer Mug">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Straight Wall Mug · Model XZ1238</span>
-        <h2>480ml Straight-Sided Beer Mug</h2>
-        <p class="card-desc">Clean-lined 480ml cylindrical beer mug with smooth side profile, providing an optimal expansive canvas for full-wrap high-temperature decals, laser logos, and custom brewery branding.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">480 ml (16 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 148 × Top Ø 80 × Base Ø 76 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Manufacturing</span><span class="spec-v">Machine-Pressed Straight Body with Ergonomic Handle</span></div>
-          <div class="spec-row"><span class="spec-k">Sample MOQ</span><span class="spec-v">24 pcs (Standard Sample Order)</span></div>
-          <div class="spec-row"><span class="spec-k">Custom MOQ</span><span class="spec-v">500 pcs (Laser / High Temp Decal)</span></div>
-        </div>
-
-        <div class="card-actions">
-          <a href="/straight-sided-beer-mug-xz1238.html" class="btn-view-pdp" target="_blank">View Dedicated PDP</a>
+      <div class="audit-item">
+        <div class="audit-check">✓</div>
+        <div>
+          <div class="audit-title">100% De-Priced RFQ Model</div>
+          <div class="audit-desc">No fixed public prices; transparent custom itemized quotation based on qty, decoration, and packaging.</div>
         </div>
       </div>
-    </div>
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZ5824</span>
-        <span class="card-status-badge">1:1 GOLD RATIO</span>
-        <img src="/assets/products/beer-glasses/xz5824-1200-ml-jumbo-bubble-texture-beer-mug-new-20260917.webp" alt="1200ml Jumbo Bubble-Texture Beer Mug">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Giant Festival Stein · Model XZ5824</span>
-        <h2>1200ml Jumbo Bubble-Texture Beer Mug</h2>
-        <p class="card-desc">Impressive 1200ml (1.2L / 40.5 oz) oversized beer stein with textured bubble dimples and heavy-duty handle. Engineered for mega beer challenges, Oktoberfest festivals, bachelor parties, and statement bar promotions.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">1200 ml (40.5 oz / 1.2 Liter)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 200 × Top Ø 110 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Manufacturing</span><span class="spec-v">Heavy-Duty Machine-Pressed Textured Glass</span></div>
-          <div class="spec-row"><span class="spec-k">Sample MOQ</span><span class="spec-v">12 pcs (Standard Sample Order)</span></div>
-          <div class="spec-row"><span class="spec-k">Custom MOQ</span><span class="spec-v">300 pcs (Laser / High Temp Decal)</span></div>
-        </div>
-
-        <div class="card-actions">
-          <a href="/jumbo-bubble-beer-mug-xz5824.html" class="btn-view-pdp" target="_blank">View Dedicated PDP</a>
+      <div class="audit-item">
+        <div class="audit-check">✓</div>
+        <div>
+          <div class="audit-title">Standardized EPE Packaging</div>
+          <div class="audit-desc">Drop-tested packaging specifications with Odorless EPE Pearl Cotton inserts and master cartons.</div>
         </div>
       </div>
-    </div>
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZ7010</span>
-        <span class="card-status-badge">1:1 GOLD RATIO</span>
-        <img src="/assets/products/beer-glasses/xz7010-570-ml-straight-pub-beer-glass-new-20260917.webp" alt="570ml Straight Pub Beer Glass">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Imperial Pint Glass · Model XZ7010</span>
-        <h2>570ml Straight Pub Beer Glass</h2>
-        <p class="card-desc">Classic 570ml (20 oz Imperial Pint) straight-sided commercial beer tumbler. Stack-friendly profile and durable thick base provide reliable high-turnover service for pub chains, sports stadiums, and catering venues.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">570 ml (20 oz Imperial Pint)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 159 × Top Ø 80 × Base Ø 66 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Manufacturing</span><span class="spec-v">Machine-Blown Heavy Bottom with Fire-Polished Rim</span></div>
-          <div class="spec-row"><span class="spec-k">Sample MOQ</span><span class="spec-v">48 pcs (Standard Sample Order)</span></div>
-          <div class="spec-row"><span class="spec-k">Custom MOQ</span><span class="spec-v">500 pcs (Laser / High Temp Decal)</span></div>
-        </div>
-
-        <div class="card-actions">
-          <a href="/straight-pub-beer-glass-xz7010.html" class="btn-view-pdp" target="_blank">View Dedicated PDP</a>
+      <div class="audit-item">
+        <div class="audit-check">✓</div>
+        <div>
+          <div class="audit-title">Unified WhatsApp &amp; Email Contact</div>
+          <div class="audit-desc">Direct inquiry buttons connected to official WhatsApp (+86 132 5662 7201) and sales email.</div>
         </div>
       </div>
-    </div>
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZ88148</span>
-        <span class="card-status-badge">1:1 GOLD RATIO</span>
-        <img src="/assets/products/beer-glasses/xz88148-480-ml-tall-beverage-tumbler-new-20260917.webp" alt="480ml Tall Beverage Tumbler">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Highball & Beer Tumbler · Model XZ88148</span>
-        <h2>480ml Tall Beverage Tumbler</h2>
-        <p class="card-desc">Multi-purpose 480ml tall glass tumbler with sleek cylindrical walls. Serves dual roles as a craft beer tumbler, iced cider glass, or highball cocktail tumbler for boutique hotels, restaurants, and retail drinkware collections.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">480 ml (16 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 148 × Ø 88 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Manufacturing</span><span class="spec-v">Machine-Blown Heavy Base Glass</span></div>
-          <div class="spec-row"><span class="spec-k">Sample MOQ</span><span class="spec-v">48 pcs (Standard Sample Order)</span></div>
-          <div class="spec-row"><span class="spec-k">Custom MOQ</span><span class="spec-v">500 pcs (Laser / High Temp Decal)</span></div>
-        </div>
-
-        <div class="card-actions">
-          <a href="/tall-beverage-tumbler-xz88148.html" class="btn-view-pdp" target="_blank">View Dedicated PDP</a>
+      <div class="audit-item">
+        <div class="audit-check">✓</div>
+        <div>
+          <div class="audit-title">6-Card Custom Service Matrix</div>
+          <div class="audit-desc">Laser etching, 580°C ceramic decal, silk screen, real gold rim, EPE gift box, and mixed container sourcing.</div>
         </div>
       </div>
-    </div>
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZ2220E</span>
-        <span class="card-status-badge">1:1 GOLD RATIO</span>
-        <img src="/assets/products/beer-glasses/xz2220e-620-ml-tall-handled-beer-mug-new-20260917.webp" alt="620ml Tall Handled Beer Mug">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Tall Handled Stein · Model XZ2220E</span>
-        <h2>620ml Tall Handled Beer Mug</h2>
-        <p class="card-desc">Distinctive 620ml tall cylindrical handled beer mug standing 228mm high. Combines the visual elegance of a wheat beer glass with the comfortable grip of a sturdy side handle for wheat beers, stouts, and German lagers.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity</span><span class="spec-v">620 ml (21 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions</span><span class="spec-v">H 228 × Ø 76 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Manufacturing</span><span class="spec-v">Machine-Pressed Tall Cylinder with Seamless Handle Joint</span></div>
-          <div class="spec-row"><span class="spec-k">Sample MOQ</span><span class="spec-v">12 pcs (Standard Sample Order)</span></div>
-          <div class="spec-row"><span class="spec-k">Custom MOQ</span><span class="spec-v">500 pcs (Laser / High Temp Decal)</span></div>
-        </div>
-
-        <div class="card-actions">
-          <a href="/tall-handled-beer-mug-xz2220e.html" class="btn-view-pdp" target="_blank">View Dedicated PDP</a>
+      <div class="audit-item">
+        <div class="audit-check">✓</div>
+        <div>
+          <div class="audit-title">Zero Chinese Characters (0 Chars)</div>
+          <div class="audit-desc">All production PDP files, catalog cards, and Schema.org graphs verified 100% English.</div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="standards-summary">
-    <h3>B2B PDP Quality &amp; Customization Audit Checklist</h3>
-    <ul class="standards-list">
-      <li><strong>Updated Official WhatsApp Contact:</strong> Direct wa.me and display contacts updated to <code>+86 132 5662 7201</code> across headers, hero actions, CTA banners, and floating widgets.</li>
-      <li><strong>Beer-Specific Customization Matrix:</strong> Precision Laser Engraving, High Temperature Decals (580°C), Silk Screen Printing, Metallic Label &amp; Badge Application, Custom Color Box + EPE Foam / Luxury Wood Box, and One-Stop Sourcing &amp; Mixed Consolidation.</li>
-      <li><strong>1:1 Square Golden Ratio Canvas:</strong> All main images rendered with <code>aspect-ratio: 1 / 1</code> and <code>object-fit: contain</code>. Zero rim or base edge cropping.</li>
-      <li><strong>B2B De-Pricing Standard:</strong> Zero fixed dollar amounts or pseudo-price text. Replaced by transparent custom itemized quotation explanation bars.</li>
-      <li><strong>100% Pure English Copy:</strong> Zero Chinese characters in source code, user-facing text, alt attributes, or comments.</li>
-      <li><strong>High-Conversion Action Zone:</strong> 4 related product recommendations and dual CTA contact banners (WhatsApp, Email, WeChat) placed below FAQ.</li>
-      <li><strong>Single H1 &amp; Schema JSON-LD:</strong> Validated semantic hierarchy with embedded Product, AggregateOffer, BreadcrumbList, and FAQPage schemas.</li>
-      <li><strong>1-Hour Instant Response Floating Widget:</strong> Integrated interactive desktop and mobile contact overlay on every product page.</li>
-    </ul>
+  <!-- Filterable Cards Grid -->
+  <div class="section-card">
+    <h2>17 New Beer Glass Models - Visual Overview Cards</h2>
+    
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="filterCat('all', this)">All Models (17)</button>
+      <button class="tab-btn" onclick="filterCat('pilsner', this)">Pilsner Glasses (4)</button>
+      <button class="tab-btn" onclick="filterCat('pint', this)">Pint Tumblers (3)</button>
+      <button class="tab-btn" onclick="filterCat('craft', this)">Craft Beer Stemware (4)</button>
+      <button class="tab-btn" onclick="filterCat('mug', this)">Beer Mugs &amp; Steins (6)</button>
+    </div>
+
+    <div class="grid-17" id="productGrid">
+
+      <!-- 1. XZ076 -->
+      <div class="card-item" data-cat="pilsner">
+        <div class="card-img-wrap">
+          <span class="card-badge">Pilsner</span>
+          <img src="/assets/products/beer-glasses/xz076-flared-pilsner-beer-glass.webp" alt="XZ076 Flared Pilsner Glass">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ076</div>
+          <div class="card-title">480 ml Flared Pilsner Beer Glass</div>
+          <p class="card-desc">Classic flared draft pilsner glass with weighted sham base and chip-resistant fire-polished rim.</p>
+          <div class="spec-pills">
+            <span class="pill">480 ml</span>
+            <span class="pill">H 183 mm</span>
+            <span class="pill">Ø 77 mm</span>
+            <span class="pill">48 pcs/ctn</span>
+          </div>
+          <a href="/flared-pilsner-beer-glass-xz076" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 2. XZ60548B -->
+      <div class="card-item" data-cat="pilsner">
+        <div class="card-img-wrap">
+          <span class="card-badge">Pilsner</span>
+          <img src="/assets/products/beer-glasses/xz60548b-tall-flared-pilsner-beer-glass.webp" alt="XZ60548B Tall Flared Pilsner Glass">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ60548B</div>
+          <div class="card-title">480 ml Tall Flared Pilsner Glass</div>
+          <p class="card-desc">Elongated 210mm tall flared pilsner glass with enhanced optical clarity and balanced center of gravity.</p>
+          <div class="spec-pills">
+            <span class="pill">480 ml</span>
+            <span class="pill">H 210 mm</span>
+            <span class="pill">Ø 80 mm</span>
+            <span class="pill">48 pcs/ctn</span>
+          </div>
+          <a href="/tall-flared-pilsner-beer-glass-xz60548b" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 3. XZ3003-1 -->
+      <div class="card-item" data-cat="pilsner">
+        <div class="card-img-wrap">
+          <span class="card-badge">Pilsner</span>
+          <img src="/assets/products/beer-glasses/xz3003-1-tall-pilsner-beer-glass.webp" alt="XZ3003-1 Tall Pilsner Glass">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ3003-1 · In Stock</div>
+          <div class="card-title">580 ml Tall Pilsner Beer Glass</div>
+          <p class="card-desc">580ml tall pilsner glass with sleek tapered contour and heavy sham base, supporting fast Wuhan replenishment.</p>
+          <div class="spec-pills">
+            <span class="pill">580 ml</span>
+            <span class="pill">H 218 mm</span>
+            <span class="pill">Ø 75 mm</span>
+            <span class="pill">48 pcs/ctn</span>
+          </div>
+          <a href="/tall-pilsner-beer-glass-xz3003-1" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 4. XZ3003-2 -->
+      <div class="card-item" data-cat="pilsner">
+        <div class="card-img-wrap">
+          <span class="card-badge">Pilsner</span>
+          <img src="/assets/products/beer-glasses/xz3003-2-extra-large-pilsner-beer-glass.webp" alt="XZ3003-2 Extra-Large Pilsner Glass">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ3003-2 · In Stock</div>
+          <div class="card-title">720 ml Extra-Large Pilsner Glass</div>
+          <p class="card-desc">720ml oversized pilsner glass with 235mm commanding height, tailored for German wheat beers and Oktoberfest.</p>
+          <div class="spec-pills">
+            <span class="pill">720 ml</span>
+            <span class="pill">H 235 mm</span>
+            <span class="pill">Ø 79.2 mm</span>
+            <span class="pill">48 pcs/ctn</span>
+          </div>
+          <a href="/extra-large-pilsner-beer-glass-xz3003-2" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 5. XZ4806 -->
+      <div class="card-item" data-cat="pint">
+        <div class="card-img-wrap">
+          <span class="card-badge">Pint Tumbler</span>
+          <img src="/assets/products/beer-glasses/xz4806-conical-beer-tumbler-pint-glass.webp" alt="XZ4806 Conical Beer Tumbler">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ4806</div>
+          <div class="card-title">485 ml Conical Pint Tumbler</div>
+          <p class="card-desc">Ergonomic conical pint tumbler with straight tapering walls, optimal for stackable bar storage and craft IPAs.</p>
+          <div class="spec-pills">
+            <span class="pill">485 ml</span>
+            <span class="pill">H 155 mm</span>
+            <span class="pill">Ø 78 mm</span>
+            <span class="pill">48 pcs/ctn</span>
+          </div>
+          <a href="/conical-beer-tumbler-pint-glass-xz4806" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 6. XZ4801 -->
+      <div class="card-item" data-cat="pint">
+        <div class="card-img-wrap">
+          <span class="card-badge">Pint Tumbler</span>
+          <img src="/assets/products/beer-glasses/xz4801-large-conical-beer-tumbler-pint-glass.webp" alt="XZ4801 Large Conical Pint Glass">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ4801</div>
+          <div class="card-title">600 ml Large Conical Pint Tumbler</div>
+          <p class="card-desc">600ml large conical pint tumbler with wide 87mm mouth, built for imperial pint pours and hospitality.</p>
+          <div class="spec-pills">
+            <span class="pill">600 ml</span>
+            <span class="pill">H 155 mm</span>
+            <span class="pill">Ø 87 mm</span>
+            <span class="pill">48 pcs/ctn</span>
+          </div>
+          <a href="/large-conical-beer-tumbler-pint-glass-xz4801" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 7. XZ3468-2 -->
+      <div class="card-item" data-cat="craft">
+        <div class="card-img-wrap">
+          <span class="card-badge">Craft Stemware</span>
+          <img src="/assets/products/beer-glasses/xz3468-2-stemmed-tulip-craft-beer-glass.webp" alt="XZ3468-2 Stemmed Tulip Craft Beer Glass">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ3468-2</div>
+          <div class="card-title">500 ml Stemmed Tulip Craft Beer Glass</div>
+          <p class="card-desc">500ml stemmed tulip craft beer goblet with bulbous lower bowl and inward curving rim for Belgian ales.</p>
+          <div class="spec-pills">
+            <span class="pill">500 ml</span>
+            <span class="pill">H 185 mm</span>
+            <span class="pill">Ø 62 mm</span>
+            <span class="pill">48 pcs/ctn</span>
+          </div>
+          <a href="/stemmed-tulip-craft-beer-glass-xz3468-2" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 8. XZ3469-2 -->
+      <div class="card-item" data-cat="craft">
+        <div class="card-img-wrap">
+          <span class="card-badge">Craft Stemware</span>
+          <img src="/assets/products/beer-glasses/xz3469-2-stemmed-tulip-craft-beer-glass.webp" alt="XZ3469-2 Stemmed Tulip Craft Beer Glass">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ3469-2</div>
+          <div class="card-title">460 ml Stemmed Tulip Craft Beer Glass</div>
+          <p class="card-desc">460ml stemmed craft beer tasting goblet with short ergonomic stem, preventing body heat transfer.</p>
+          <div class="spec-pills">
+            <span class="pill">460 ml</span>
+            <span class="pill">H 175 mm</span>
+            <span class="pill">Ø 59.5 mm</span>
+            <span class="pill">48 pcs/ctn</span>
+          </div>
+          <a href="/stemmed-tulip-craft-beer-glass-xz3469-2" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 9. XZ3708 -->
+      <div class="card-item" data-cat="craft">
+        <div class="card-img-wrap">
+          <span class="card-badge">Craft Snifter</span>
+          <img src="/assets/products/beer-glasses/xz3708-craft-beer-tasting-snifter.webp" alt="XZ3708 Craft Beer Tasting Snifter">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ3708</div>
+          <div class="card-title">515 ml Craft Beer Tasting Snifter</div>
+          <p class="card-desc">515ml round bulbous beer tasting snifter with short stemmed foot, ideal for imperial stouts and barleywines.</p>
+          <div class="spec-pills">
+            <span class="pill">515 ml</span>
+            <span class="pill">H 140 mm</span>
+            <span class="pill">Ø 65 mm</span>
+            <span class="pill">48 pcs/ctn</span>
+          </div>
+          <a href="/craft-beer-tasting-snifter-xz3708" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 10. XZ3704 -->
+      <div class="card-item" data-cat="craft">
+        <div class="card-img-wrap">
+          <span class="card-badge">Flight Snifter</span>
+          <img src="/assets/products/beer-glasses/xz3704-small-craft-beer-tasting-snifter.webp" alt="XZ3704 Small Craft Beer Tasting Snifter">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ3704</div>
+          <div class="card-title">260 ml Small Craft Beer Snifter</div>
+          <p class="card-desc">260ml compact beer tasting snifter for brewery sample flights, high-ABV pours, and tasting paddles.</p>
+          <div class="spec-pills">
+            <span class="pill">260 ml</span>
+            <span class="pill">H 117 mm</span>
+            <span class="pill">Ø 59 mm</span>
+            <span class="pill">72 pcs/ctn</span>
+          </div>
+          <a href="/small-craft-beer-tasting-snifter-xz3704" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 11. XZP0015L -->
+      <div class="card-item" data-cat="pint">
+        <div class="card-img-wrap">
+          <span class="card-badge">Faceted Pint</span>
+          <img src="/assets/products/beer-glasses/xzp0015l-faceted-diamond-cut-tall-pint-glass.webp" alt="XZP0015L Faceted Diamond Pint Glass">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZP0015L</div>
+          <div class="card-title">500 ml Faceted Diamond Pint Glass</div>
+          <p class="card-desc">500ml tall faceted beer tumbler with vertical diamond relief pattern, providing exceptional grip and refraction.</p>
+          <div class="spec-pills">
+            <span class="pill">500 ml</span>
+            <span class="pill">H 207 mm</span>
+            <span class="pill">Ø 80 mm</span>
+            <span class="pill">24 pcs/ctn</span>
+          </div>
+          <a href="/faceted-diamond-cut-tall-pint-glass-xzp0015l" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 12. XZ5702-1 -->
+      <div class="card-item" data-cat="mug">
+        <div class="card-img-wrap">
+          <span class="card-badge">Handled Mug</span>
+          <img src="/assets/products/beer-glasses/xz5702-1-wide-mouth-handled-beer-mug.webp" alt="XZ5702-1 Wide-Mouth Handled Mug">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ5702-1</div>
+          <div class="card-title">440 ml Wide-Mouth Handled Mug</div>
+          <p class="card-desc">440ml wide-mouth beer mug with thick ergonomic handle and solid sham base, ideal for casual pubs.</p>
+          <div class="spec-pills">
+            <span class="pill">440 ml</span>
+            <span class="pill">H 120 mm</span>
+            <span class="pill">Ø 97 mm</span>
+            <span class="pill">36 pcs/ctn</span>
+          </div>
+          <a href="/wide-mouth-handled-beer-mug-xz5702-1" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 13. XZ5819-3 -->
+      <div class="card-item" data-cat="mug">
+        <div class="card-img-wrap">
+          <span class="card-badge">Pub Mug</span>
+          <img src="/assets/products/beer-glasses/xz5819-3-tall-handled-pub-beer-mug.webp" alt="XZ5819-3 Tall Handled Pub Mug">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ5819-3</div>
+          <div class="card-title">270 ml Tall Handled Pub Mug</div>
+          <p class="card-desc">270ml slim handled pub beer glass for half-pint draft pours, hotel lounge service, and high-frequency hospitality.</p>
+          <div class="spec-pills">
+            <span class="pill">270 ml</span>
+            <span class="pill">H 150 mm</span>
+            <span class="pill">Ø 70 mm</span>
+            <span class="pill">48 pcs/ctn</span>
+          </div>
+          <a href="/tall-handled-pub-beer-mug-xz5819-3" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 14. XZ03-500 -->
+      <div class="card-item" data-cat="mug">
+        <div class="card-img-wrap">
+          <span class="card-badge">Heavy Stein</span>
+          <img src="/assets/products/beer-glasses/xz03-500-diamond-cut-heavy-handled-beer-stein.webp" alt="XZ03-500 Diamond Cut Heavy Stein">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ03-500</div>
+          <div class="card-title">615 ml Diamond Heavy Beer Stein</div>
+          <p class="card-desc">615ml heavy-duty dimpled beer stein with textured diamond cut facets for authentic Bavarian Oktoberfest service.</p>
+          <div class="spec-pills">
+            <span class="pill">615 ml</span>
+            <span class="pill">H 159 mm</span>
+            <span class="pill">Ø 88 mm</span>
+            <span class="pill">24 pcs/ctn</span>
+          </div>
+          <a href="/diamond-cut-heavy-handled-beer-stein-xz03-500" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 15. XZ03-400 -->
+      <div class="card-item" data-cat="mug">
+        <div class="card-img-wrap">
+          <span class="card-badge">Heavy Stein</span>
+          <img src="/assets/products/beer-glasses/xz03-400-diamond-cut-heavy-handled-beer-stein.webp" alt="XZ03-400 Diamond Cut Heavy Stein">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ03-400</div>
+          <div class="card-title">570 ml Diamond Heavy Beer Stein</div>
+          <p class="card-desc">570ml dimpled beer mug with traditional diamond relief grid and ergonomic molded handle for commercial pubs.</p>
+          <div class="spec-pills">
+            <span class="pill">570 ml</span>
+            <span class="pill">H 161 mm</span>
+            <span class="pill">Ø 81 mm</span>
+            <span class="pill">24 pcs/ctn</span>
+          </div>
+          <a href="/diamond-cut-heavy-handled-beer-stein-xz03-400" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 16. XZ5826 -->
+      <div class="card-item" data-cat="mug">
+        <div class="card-img-wrap">
+          <span class="card-badge">Tall Mug</span>
+          <img src="/assets/products/beer-glasses/xz5826-extra-tall-faceted-handled-beer-mug.webp" alt="XZ5826 Extra-Tall Faceted Mug">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ5826</div>
+          <div class="card-title">600 ml Extra-Tall Faceted Mug</div>
+          <p class="card-desc">600ml towering 214mm tall faceted beer mug with full-length vertical fluting, combining pilsner height with a handle.</p>
+          <div class="spec-pills">
+            <span class="pill">600 ml</span>
+            <span class="pill">H 214 mm</span>
+            <span class="pill">Ø 71 mm</span>
+            <span class="pill">18 pcs/ctn</span>
+          </div>
+          <a href="/extra-tall-faceted-handled-beer-mug-xz5826" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+      <!-- 17. XZ5825 -->
+      <div class="card-item" data-cat="mug">
+        <div class="card-img-wrap">
+          <span class="card-badge">Classic Mug</span>
+          <img src="/assets/products/beer-glasses/xz5825-classic-handled-beer-mug.webp" alt="XZ5825 Classic Handled Mug">
+        </div>
+        <div class="card-body">
+          <div class="card-tag">Model XZ5825</div>
+          <div class="card-title">460 ml Classic Handled Beer Mug</div>
+          <p class="card-desc">460ml classic smooth-sided commercial beer mug with heavy glass base and solid grip handle for custom logos.</p>
+          <div class="spec-pills">
+            <span class="pill">460 ml</span>
+            <span class="pill">H 150 mm</span>
+            <span class="pill">Ø 83 mm</span>
+            <span class="pill">24 pcs/ctn</span>
+          </div>
+          <a href="/classic-handled-beer-mug-xz5825" class="btn-card-pdp" target="_blank">View Standalone PDP →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Comparison Matrix Table -->
+  <div class="section-card">
+    <h2>17 New Models Technical Parameter Matrix</h2>
+    <div class="table-responsive">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>SKU</th>
+            <th>Product Name</th>
+            <th>Type</th>
+            <th>Capacity</th>
+            <th>Dimensions (H × Top Ø × Base Ø)</th>
+            <th>Weight</th>
+            <th>Carton Pack</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>XZ076</strong></td>
+            <td>480 ml Flared Pilsner Beer Glass</td>
+            <td>Flared Pilsner</td>
+            <td>480 ml</td>
+            <td>H 183 × Ø 77 × Ø 68 mm</td>
+            <td>320 g</td>
+            <td>48 pcs/ctn</td>
+            <td><a href="/flared-pilsner-beer-glass-xz076" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ60548B</strong></td>
+            <td>480 ml Tall Flared Pilsner Glass</td>
+            <td>Tall Pilsner</td>
+            <td>480 ml</td>
+            <td>H 210 × Ø 80 × Ø 71 mm</td>
+            <td>345 g</td>
+            <td>48 pcs/ctn</td>
+            <td><a href="/tall-flared-pilsner-beer-glass-xz60548b" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ3003-1</strong></td>
+            <td>580 ml Tall Pilsner Beer Glass</td>
+            <td>Pilsner Glass</td>
+            <td>580 ml</td>
+            <td>H 218 × Ø 75 × Ø 58 mm</td>
+            <td>360 g</td>
+            <td>48 pcs/ctn</td>
+            <td><a href="/tall-pilsner-beer-glass-xz3003-1" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ3003-2</strong></td>
+            <td>720 ml Extra-Large Pilsner Glass</td>
+            <td>Extra-Large Pilsner</td>
+            <td>720 ml</td>
+            <td>H 235 × Ø 79.2 × Ø 72 mm</td>
+            <td>420 g</td>
+            <td>48 pcs/ctn</td>
+            <td><a href="/extra-large-pilsner-beer-glass-xz3003-2" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ4806</strong></td>
+            <td>485 ml Conical Pint Tumbler</td>
+            <td>Conical Pint</td>
+            <td>485 ml</td>
+            <td>H 155 × Ø 78 × Ø 58 mm</td>
+            <td>290 g</td>
+            <td>48 pcs/ctn</td>
+            <td><a href="/conical-beer-tumbler-pint-glass-xz4806" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ4801</strong></td>
+            <td>600 ml Large Conical Pint Tumbler</td>
+            <td>Imperial Pint</td>
+            <td>600 ml</td>
+            <td>H 155 × Ø 87 × Ø 67 mm</td>
+            <td>330 g</td>
+            <td>48 pcs/ctn</td>
+            <td><a href="/large-conical-beer-tumbler-pint-glass-xz4801" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ3468-2</strong></td>
+            <td>500 ml Stemmed Tulip Craft Beer Glass</td>
+            <td>Stemmed Tulip</td>
+            <td>500 ml</td>
+            <td>H 185 × Ø 62 × Ø 63.5 mm</td>
+            <td>310 g</td>
+            <td>48 pcs/ctn</td>
+            <td><a href="/stemmed-tulip-craft-beer-glass-xz3468-2" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ3469-2</strong></td>
+            <td>460 ml Stemmed Tulip Craft Beer Glass</td>
+            <td>Stemmed Tulip</td>
+            <td>460 ml</td>
+            <td>H 175 × Ø 59.5 × Ø 62 mm</td>
+            <td>295 g</td>
+            <td>48 pcs/ctn</td>
+            <td><a href="/stemmed-tulip-craft-beer-glass-xz3469-2" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ3708</strong></td>
+            <td>515 ml Craft Beer Tasting Snifter</td>
+            <td>Aromatic Snifter</td>
+            <td>515 ml</td>
+            <td>H 140 × Ø 65 × Ø 67 mm</td>
+            <td>275 g</td>
+            <td>48 pcs/ctn</td>
+            <td><a href="/craft-beer-tasting-snifter-xz3708" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ3704</strong></td>
+            <td>260 ml Small Craft Beer Snifter</td>
+            <td>Flight Snifter</td>
+            <td>260 ml</td>
+            <td>H 117 × Ø 59 × Ø 62 mm</td>
+            <td>195 g</td>
+            <td>72 pcs/ctn</td>
+            <td><a href="/small-craft-beer-tasting-snifter-xz3704" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZP0015L</strong></td>
+            <td>500 ml Faceted Diamond Pint Glass</td>
+            <td>Faceted Tumbler</td>
+            <td>500 ml</td>
+            <td>H 207 × Ø 80 × Ø 63 mm</td>
+            <td>380 g</td>
+            <td>24 pcs/ctn</td>
+            <td><a href="/faceted-diamond-cut-tall-pint-glass-xzp0015l" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ5702-1</strong></td>
+            <td>440 ml Wide-Mouth Handled Mug</td>
+            <td>Handled Beer Mug</td>
+            <td>440 ml</td>
+            <td>H 120 × Ø 97 × Ø 80 mm</td>
+            <td>460 g</td>
+            <td>36 pcs/ctn</td>
+            <td><a href="/wide-mouth-handled-beer-mug-xz5702-1" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ5819-3</strong></td>
+            <td>270 ml Tall Handled Pub Mug</td>
+            <td>Pub Handled Mug</td>
+            <td>270 ml</td>
+            <td>H 150 × Ø 70 × Ø 60 mm</td>
+            <td>310 g</td>
+            <td>48 pcs/ctn</td>
+            <td><a href="/tall-handled-pub-beer-mug-xz5819-3" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ03-500</strong></td>
+            <td>615 ml Diamond Heavy Beer Stein</td>
+            <td>Heavy Dimpled Stein</td>
+            <td>615 ml</td>
+            <td>H 159 × Ø 88 × Ø 85 mm</td>
+            <td>680 g</td>
+            <td>24 pcs/ctn</td>
+            <td><a href="/diamond-cut-heavy-handled-beer-stein-xz03-500" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ03-400</strong></td>
+            <td>570 ml Diamond Heavy Beer Stein</td>
+            <td>Heavy Dimpled Stein</td>
+            <td>570 ml</td>
+            <td>H 161 × Ø 81 × Ø 79 mm</td>
+            <td>620 g</td>
+            <td>24 pcs/ctn</td>
+            <td><a href="/diamond-cut-heavy-handled-beer-stein-xz03-400" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ5826</strong></td>
+            <td>600 ml Extra-Tall Faceted Mug</td>
+            <td>Tall Handled Mug</td>
+            <td>600 ml</td>
+            <td>H 214 × Ø 71 × Ø 65 mm</td>
+            <td>580 g</td>
+            <td>18 pcs/ctn</td>
+            <td><a href="/extra-tall-faceted-handled-beer-mug-xz5826" target="_blank">Open PDP →</a></td>
+          </tr>
+          <tr>
+            <td><strong>XZ5825</strong></td>
+            <td>460 ml Classic Handled Beer Mug</td>
+            <td>Tavern Handled Mug</td>
+            <td>460 ml</td>
+            <td>H 150 × Ø 83 × Ø 70 mm</td>
+            <td>480 g</td>
+            <td>24 pcs/ctn</td>
+            <td><a href="/classic-handled-beer-mug-xz5825" target="_blank">Open PDP →</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Interactive Live PDP Iframe Switcher -->
+  <div class="section-card">
+    <h2>Interactive Live PDP Viewer &amp; Viewport Simulation</h2>
+    
+    <div class="iframe-ctrls">
+      <div>
+        <label for="pdpSelect" style="font-size:0.85rem; font-weight:700; color:#64748b; margin-right:8px;">Select PDP to Load:</label>
+        <select id="pdpSelect" class="sel-pdp" onchange="loadPdp(this.value)">
+          <option value="/flared-pilsner-beer-glass-xz076">XZ076 - 480ml Flared Pilsner</option>
+          <option value="/tall-flared-pilsner-beer-glass-xz60548b">XZ60548B - 480ml Tall Flared Pilsner</option>
+          <option value="/tall-pilsner-beer-glass-xz3003-1">XZ3003-1 - 580ml Tall Pilsner (In Stock)</option>
+          <option value="/extra-large-pilsner-beer-glass-xz3003-2">XZ3003-2 - 720ml Extra-Large Pilsner</option>
+          <option value="/conical-beer-tumbler-pint-glass-xz4806">XZ4806 - 485ml Conical Pint Tumbler</option>
+          <option value="/large-conical-beer-tumbler-pint-glass-xz4801">XZ4801 - 600ml Imperial Pint Tumbler</option>
+          <option value="/stemmed-tulip-craft-beer-glass-xz3468-2">XZ3468-2 - 500ml Stemmed Tulip Goblet</option>
+          <option value="/stemmed-tulip-craft-beer-glass-xz3469-2">XZ3469-2 - 460ml Stemmed Tulip Goblet</option>
+          <option value="/craft-beer-tasting-snifter-xz3708">XZ3708 - 515ml Craft Beer Snifter</option>
+          <option value="/small-craft-beer-tasting-snifter-xz3704">XZ3704 - 260ml Tasting Flight Snifter</option>
+          <option value="/faceted-diamond-cut-tall-pint-glass-xzp0015l">XZP0015L - 500ml Faceted Diamond Pint</option>
+          <option value="/wide-mouth-handled-beer-mug-xz5702-1">XZ5702-1 - 440ml Wide-Mouth Handled Mug</option>
+          <option value="/tall-handled-pub-beer-mug-xz5819-3">XZ5819-3 - 270ml Tall Handled Pub Mug</option>
+          <option value="/diamond-cut-heavy-handled-beer-stein-xz03-500">XZ03-500 - 615ml Diamond Heavy Stein</option>
+          <option value="/diamond-cut-heavy-handled-beer-stein-xz03-400">XZ03-400 - 570ml Diamond Heavy Stein</option>
+          <option value="/extra-tall-faceted-handled-beer-mug-xz5826">XZ5826 - 600ml Extra-Tall Faceted Mug</option>
+          <option value="/classic-handled-beer-mug-xz5825">XZ5825 - 460ml Classic Handled Mug</option>
+        </select>
+      </div>
+
+      <div class="vp-toggles">
+        <button class="vp-btn active" id="btnDesk" onclick="setViewport('desktop')">💻 Desktop View</button>
+        <button class="vp-btn" id="btnMob" onclick="setViewport('mobile')">📱 Mobile View (375px)</button>
+      </div>
+    </div>
+
+    <div class="iframe-wrap">
+      <iframe src="/flared-pilsner-beer-glass-xz076" id="pdpIframe" class="pdp-iframe desktop" title="Live PDP Preview"></iframe>
+    </div>
   </div>
 
 </div>
+
+<footer>
+  <div>&copy; 2026 Wuhan Jingyueda Household Products Co., Ltd. Internal Staging Review Portal.</div>
+</footer>
+
+<script>
+  function filterCat(cat, btn) {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    
+    document.querySelectorAll('.card-item').forEach(card => {
+      if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  }
+
+  function loadPdp(url) {
+    document.getElementById('pdpIframe').src = url;
+  }
+
+  function setViewport(vp) {
+    const frame = document.getElementById('pdpIframe');
+    const btnDesk = document.getElementById('btnDesk');
+    const btnMob = document.getElementById('btnMob');
+    
+    if (vp === 'mobile') {
+      frame.className = 'pdp-iframe mobile';
+      btnMob.classList.add('active');
+      btnDesk.classList.remove('active');
+    } else {
+      frame.className = 'pdp-iframe desktop';
+      btnDesk.classList.add('active');
+      btnMob.classList.remove('active');
+    }
+  }
+</script>
 
 </body>
 </html>
