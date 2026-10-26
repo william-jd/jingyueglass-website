@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Preview: B2B Catalog Download & Authority Integration | Jingyue Glass</title>
+  <meta name="description" content="Local preview demonstrating dual-channel PDF catalog integration across Download Center, landing pages, navigation, and GEO protocols.">
+  <style>
+    :root {
+      --primary-navy: #1a3a5c;
+      --primary-dark: #0d2540;
+      --accent-gold: #c8930a;
+      --accent-hover: #e0a70b;
+      --accent-light: #fef8eb;
+      --bg-warm: #f5f5f0;
+      --bg-white: #ffffff;
+      --text-ink: #1e293b;
+      --text-muted: #64748b;
+      --line-border: #e2e8f0;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --shadow-sm: 0 2px 8px rgba(13,37,64,0.06);
+      --shadow-md: 0 6px 20px rgba(13,37,64,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; background: var(--bg-warm); color: var(--text-ink); line-height: 1.6; }
+    
+    /* Top Preview Notification Bar */
+    .preview-bar { background: #fff3cd; color: #856404; padding: 10px 16px; font-size: 13px; text-align: center; border-bottom: 1px solid #ffeeba; position: sticky; top: 0; z-index: 1000; font-weight: 600; }
+    
+    /* Layout Wrapper */
+    .shell { width: min(100% - 32px, 1180px); margin: 0 auto; }
+    
+    /* Header */
+    header { background: var(--primary-dark); color: #fff; padding: 14px 0; border-bottom: 2px solid var(--accent-gold); }
+    .header-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+    .brand { font-size: 19px; font-weight: 800; letter-spacing: 0.5px; color: #fff; text-decoration: none; }
+    .brand span { color: var(--accent-gold); }
+    .nav-mock { display: flex; gap: 16px; font-size: 13.5px; font-weight: 600; flex-wrap: wrap; }
+    .nav-mock a { color: #cbd5e1; text-decoration: none; transition: color .2s; }
+    .nav-mock a:hover, .nav-mock a.active { color: var(--accent-gold); }
+    
+    /* Hero */
+    .hero { background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-navy) 100%); color: #fff; padding: 56px 0 44px; text-align: center; }
+    .hero-badge { display: inline-block; background: rgba(200,147,10,0.2); border: 1px solid var(--accent-gold); color: #f6d27e; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 5px 14px; border-radius: 20px; margin-bottom: 16px; }
+    .hero h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 14px; line-height: 1.25; }
+    .hero p { max-width: 760px; margin: 0 auto 24px; font-size: 16px; color: #cbd5e1; }
+    
+    /* Section Tabs */
+    .preview-tabs { display: flex; justify-content: center; gap: 10px; margin: 28px 0; flex-wrap: wrap; }
+    .tab-btn { background: #fff; border: 1px solid var(--line-border); color: var(--primary-navy); padding: 10px 18px; border-radius: 24px; font-size: 14px; font-weight: 700; cursor: pointer; transition: all .2s; text-decoration: none; }
+    .tab-btn:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+    .tab-btn.active { background: var(--primary-navy); color: #fff; border-color: var(--primary-navy); box-shadow: var(--shadow-sm); }
+    
+    /* Container Sections */
+    .demo-section { background: #fff; border-radius: var(--radius-lg); padding: 36px 32px; margin-bottom: 36px; border: 1px solid var(--line-border); box-shadow: var(--shadow-sm); }
+    .section-title { font-size: 22px; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+    .section-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 28px; }
+    
+    /* Dual Catalog Grid */
+    .catalog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 24px; margin-bottom: 28px; }
+    .catalog-card { background: #fff; border: 1.5px solid #e2e8f0; border-radius: var(--radius-md); overflow: hidden; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s, border-color .2s; box-shadow: var(--shadow-sm); }
+    .catalog-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--accent-gold); }
+    
+    .catalog-header { padding: 22px 24px; background: var(--primary-dark); color: #fff; border-bottom: 3px solid var(--accent-gold); }
+    .catalog-tag { display: inline-block; font-size: 11px; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; margin-bottom: 8px; }
+    .tag-hospitality { background: #2563eb; color: #fff; }
+    .tag-ecommerce { background: #059669; color: #fff; }
+    .catalog-title { font-size: 19px; font-weight: 800; line-height: 1.35; margin-bottom: 6px; }
+    .catalog-meta { font-size: 12px; color: #94a3b8; display: flex; gap: 14px; }
+    
+    .catalog-body { padding: 22px 24px; flex-grow: 1; display: flex; flex-direction: column; }
+    .catalog-desc { font-size: 14px; color: #334155; margin-bottom: 16px; line-height: 1.55; }
+    
+    .spec-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .spec-pill { background: #f1f5f9; color: #475569; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 6px; border: 1px solid #e2e8f0; }
+    
+    .sku-list-box { background: var(--bg-warm); border: 1px solid #e5e7eb; border-radius: var(--radius-sm); padding: 14px; margin-bottom: 22px; }
+    .sku-list-title { font-size: 12px; font-weight: 700; color: var(--primary-navy); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+    .sku-list-items { font-size: 12.5px; color: #475569; display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+    .sku-list-items span::before { content: "• "; color: var(--accent-gold); font-weight: bold; }
+    
+    .catalog-actions { margin-top: auto; display: flex; flex-direction: column; gap: 10px; }
+    .btn-row { display: flex; gap: 10px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 6px; padding: 11px 16px; border-radius: var(--radius-sm); font-size: 13.5px; font-weight: 700; text-decoration: none; cursor: pointer; transition: all .2s; border: none; }
+    .btn-primary { background: var(--accent-gold); color: #fff; flex: 1; }
+    .btn-primary:hover { background: var(--accent-hover); }
+    .btn-secondary { background: #fff; color: var(--primary-navy); border: 1.5px solid var(--primary-navy); flex: 1; }
+    .btn-secondary:hover { background: #f8fafc; border-color: var(--accent-gold); color: var(--accent-gold); }
+    .btn-outline-quote { background: #fff; color: var(--primary-navy); border: 1px solid #cbd5e1; font-size: 13px; padding: 8px 12px; width: 100%; }
+    .btn-outline-quote:hover { border-color: var(--accent-gold); color: var(--accent-gold); background: var(--accent-light); }
+    
+    /* Inline Landing Page Banner Mockup */
+    .landing-banner-mock { background: linear-gradient(135deg, #0d2540 0%, #1a3a5c 100%); border-radius: var(--radius-md); padding: 26px 28px; color: #fff; display: flex; justify-content: space-between; align-items: center; gap: 20px; border-left: 5px solid var(--accent-gold); margin-bottom: 24px; }
+    .banner-text h3 { font-size: 18px; font-weight: 800; margin-bottom: 6px; }
+    .banner-text p { font-size: 13.5px; color: #cbd5e1; max-width: 620px; margin: 0; }
+    .banner-action { flex-shrink: 0; }
+    
+    /* Footer Mockup */
+    footer { background: #0b1d31; color: #94a3b8; padding: 36px 0 20px; font-size: 13px; border-top: 1px solid #1e293b; }
+    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 24px; }
+    .footer-col h4 { color: #fff; font-size: 14px; font-weight: 700; margin-bottom: 12px; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: #94a3b8; text-decoration: none; transition: color .2s; }
+    .footer-col a:hover { color: var(--accent-gold); }
+    .footer-bottom { border-top: 1px solid #1e293b; padding-top: 16px; text-align: center; font-size: 12px; color: #64748b; }
+    
+    /* Code Mockup Box */
+    .code-box { background: #0f172a; color: #e2e8f0; padding: 16px; border-radius: var(--radius-sm); font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 12px; line-height: 1.55; overflow-x: auto; white-space: pre-wrap; word-break: break-all; border: 1px solid #334155; }
+    .code-box .kw { color: #f43f5e; font-weight: bold; }
+    .code-box .str { color: #38bdf8; }
+    .code-box .comm { color: #64748b; font-style: italic; }
+    
+    @media (max-width: 768px) {
+      body { overflow-x: hidden; }
+      .shell { width: min(100% - 24px, 1180px); }
+      .header-inner { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .nav-mock { font-size: 12px; gap: 10px; }
+      .nav-mock a:not(:last-child):not(.active) { display: none; }
+      .hero { padding: 40px 0 32px; }
+      .hero h1 { font-size: 24px; }
+      .hero p { font-size: 14px; }
+      .preview-tabs { flex-direction: column; width: 100%; }
+      .tab-btn { text-align: center; width: 100%; }
+      .demo-section { padding: 20px 16px; }
+      .catalog-grid { grid-template-columns: 1fr; }
+      .landing-banner-mock { flex-direction: column; align-items: flex-start; padding: 20px 16px; }
+      .banner-action { width: 100%; }
+      .banner-action .btn { width: 100%; }
+      .btn-row { flex-direction: column; }
+      .sku-list-items { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Preview Bar -->
+  <div class="preview-bar">
+    🔍 [PREVIEW ONLY · 本地效果预览] B2B 双通道画册集成方案 (未修改生产网站 · 待用户确认后执行)
+  </div>
+
+  <!-- Header Mockup -->
+  <header>
+    <div class="shell header-inner">
+      <a href="#" class="brand">JINGYUE <span>GLASS</span></a>
+      <nav class="nav-mock">
+        <a href="#">Products</a>
+        <a href="#">Hospitality & Bar</a>
+        <a href="#">Amazon & DTC</a>
+        <a href="#" class="active">Download Center</a>
+        <a href="#">RFQ Checklist</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="shell">
+      <div class="hero-badge">Official B2B Resource Hub</div>
+      <h1>Download Product Catalogs & Specification Books</h1>
+      <p>Direct factory PDF catalogs engineered for commercial hospitality procurement and private-label e-commerce sellers. Calibrated dimensions, carton weights, CBM calculations and customizable packaging suites.</p>
+      
+      <div class="preview-tabs">
+        <a href="#download-center-demo" class="tab-btn active">1. Download Center Integration</a>
+        <a href="#landing-banners-demo" class="tab-btn">2. Landing Page Banners</a>
+        <a href="#geo-protocol-demo" class="tab-btn">3. GEO & AI Search Protocols</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="shell" style="padding-top: 36px;">
+
+    <!-- DEMO 1: Download Center Core Cards -->
+    <section id="download-center-demo" class="demo-section">
+      <div class="section-title">
+        <span>📦</span> 1. 资料下载中心（/download-center）双通道落地卡片
+      </div>
+      <div class="section-desc">
+        将两份 PDF 按照买家采购通路精准分流，提供在线直接浏览（View Online）、原件下载（Download PDF）以及针对目录 SKU 的直接报价入口（Request Quote）。
+      </div>
+
+      <div class="catalog-grid">
+        <!-- Card 1: Hospitality -->
+        <div class="catalog-card">
+          <div class="catalog-header">
+            <span class="catalog-tag tag-hospitality">Commercial Hospitality Channel</span>
+            <div class="catalog-title">2026 Commercial Hospitality Glassware Collection</div>
+            <div class="catalog-meta">
+              <span>📄 15 Pages PDF</span>
+              <span>💾 1.4 MB</span>
+              <span>🏢 B2B Verified</span>
+            </div>
+          </div>
+          <div class="catalog-body">
+            <div class="catalog-desc">
+              Engineered for hotel banquet managers, bar operators, restaurant chains and glassware distributors. Includes exact rack-clearance bowl diameters, commercial dishwasher durability specifications, carton pack quantities, and shipping CBM calculations.
+            </div>
+            
+            <div class="spec-pills">
+              <span class="spec-pill">🍷 11 Categories / 33 SKUs</span>
+              <span class="spec-pill">🧼 Commercial Dishwasher Safe</span>
+              <span class="spec-pill">📦 Carton CBM & Gross Weights</span>
+              <span class="spec-pill">🏷️ Laser Logo & Rim Decoration</span>
+            </div>
+
+            <div class="sku-list-box">
+              <div class="sku-list-title">Key Models Covered:</div>
+              <div class="sku-list-items">
+                <span>XZ6425 / XZ9425 Bordeaux</span>
+                <span>XZ9050 Champagne Flute</span>
+                <span>XZ01280 Heavy Pub Mug</span>
+                <span>XZ3006 Decanter Suite</span>
+                <span>XZ2016 Water Tumbler</span>
+                <span>VR-J012C Cocktail Glass</span>
+              </div>
+            </div>
+
+            <div class="catalog-actions">
+              <div class="btn-row">
+                <a href="../assets/catalogs/jingyue-glass-hospitality-collection-2026.pdf" target="_blank" class="btn btn-secondary">📖 View Online</a>
+                <a href="../assets/catalogs/jingyue-glass-hospitality-collection-2026.pdf" download class="btn btn-primary">⬇️ Download PDF</a>
+              </div>
+              <a href="/custom-glassware-quote-checklist" class="btn btn-outline-quote">💬 Request Itemized Quote on Hospitality SKUs →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: E-Commerce & Gift Sets -->
+        <div class="catalog-card">
+          <div class="catalog-header">
+            <span class="catalog-tag tag-ecommerce">E-Commerce & Amazon FBA Channel</span>
+            <div class="catalog-title">2026 US E-Commerce & Amazon FBA Gift Collection</div>
+            <div class="catalog-meta">
+              <span>📄 12 Pages PDF</span>
+              <span>💾 1.9 MB</span>
+              <span>⚡ Fast Sample Proofing</span>
+            </div>
+          </div>
+          <div class="catalog-body">
+            <div class="catalog-desc">
+              Tailored for Amazon FBA private label brands, Etsy personalized gift sellers, Shopify DTC stores and corporate gifting coordinators. Features pre-tested solid wood chests, magnetic presentation boxes, odorless EPE pearl cotton inserts, and individual mailer specifications.
+            </div>
+            
+            <div class="spec-pills">
+              <span class="spec-pill">🎁 8 Turnkey Gift Set Suites</span>
+              <span class="spec-pill">🛡️ Odorless EPE Pearl Cotton</span>
+              <span class="spec-pill">📦 Dimensions in cm &amp; inches</span>
+              <span class="spec-pill">⚖️ Weights in kg &amp; lb</span>
+            </div>
+
+            <div class="sku-list-box">
+              <div class="sku-list-title">Key Gift Suites Covered:</div>
+              <div class="sku-list-items">
+                <span>XZM006 Pine Decanter Set</span>
+                <span>XZM4008-1 Magnetic Box</span>
+                <span>XZM015 Burnished Wood Box</span>
+                <span>XZM132 Flute & Opener Kit</span>
+                <span>XZM063 Whiskey Accessory Box</span>
+                <span>XZM105-1 Bottle Dispenser</span>
+              </div>
+            </div>
+
+            <div class="catalog-actions">
+              <div class="btn-row">
+                <a href="../assets/catalogs/jingyue-glass-us-ecommerce-gift-catalog-2026.pdf" target="_blank" class="btn btn-secondary">📖 View Online</a>
+                <a href="../assets/catalogs/jingyue-glass-us-ecommerce-gift-catalog-2026.pdf" download class="btn btn-primary">⬇️ Download PDF</a>
+              </div>
+              <a href="/custom-glassware-quote-checklist" class="btn btn-outline-quote">💬 Request Sample &amp; Custom Packaging Quote →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO 2: Landing Page Banners -->
+    <section id="landing-banners-demo" class="demo-section">
+      <div class="section-title">
+        <span>🎯</span> 2. 核心行业落地页嵌入横幅展示
+      </div>
+      <div class="section-desc">
+        在商业落地页的 Hero 与产品矩阵之间插入场景化下载横幅，将自然流量转化为 PDF 阅读与留资线索。
+      </div>
+
+      <!-- Banner A: Hospitality Page -->
+      <div style="margin-bottom: 20px;">
+        <div style="font-size: 13px; font-weight: 700; color: var(--primary-navy); margin-bottom: 8px;">
+          📍 嵌入页面：<code>/restaurant-bar-glassware-wholesale</code> &amp; <code>/industries/distillery-spirits-glassware</code>
+        </div>
+        <div class="landing-banner-mock">
+          <div class="banner-text">
+            <h3>Download the Complete 2026 Commercial Hospitality Glassware Catalog (PDF)</h3>
+            <p>Access full dimensional specifications, rack clearances, master carton CBM calculations, and commercial dishwashing durability details across 33 hospitality SKUs.</p>
+          </div>
+          <div class="banner-action">
+            <a href="../assets/catalogs/jingyue-glass-hospitality-collection-2026.pdf" target="_blank" class="btn btn-primary">⬇️ Download PDF (1.4 MB)</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner B: Ecommerce Page -->
+      <div>
+        <div style="font-size: 13px; font-weight: 700; color: var(--primary-navy); margin-bottom: 8px;">
+          📍 嵌入页面：<code>/amazon-fba-glassware-supplier-private-label</code> &amp; <code>/industries/amazon-dtc-brand-glassware-supply</code>
+        </div>
+        <div class="landing-banner-mock">
+          <div class="banner-text">
+            <h3>Planning an Amazon or DTC Product Launch? Download Our 2026 Gift Collection (PDF)</h3>
+            <p>Complete unboxing specs, drop-tested odorless EPE pearl cotton insert layouts, carton gross weights in lb/kg, and custom laser branding options for 8 top-selling suites.</p>
+          </div>
+          <div class="banner-action">
+            <a href="../assets/catalogs/jingyue-glass-us-ecommerce-gift-catalog-2026.pdf" target="_blank" class="btn btn-primary">⬇️ Download PDF (1.9 MB)</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEMO 3: GEO and Schema Protocols -->
+    <section id="geo-protocol-demo" class="demo-section">
+      <div class="section-title">
+        <span>🤖</span> 3. GEO（AI 搜索）与 Schema 结构化数据协议配置
+      </div>
+      <div class="section-desc">
+        将 PDF 目录注册到 <code>llms.txt</code>、<code>llms-full.txt</code> 及页面的 <code>DigitalDocument</code> Schema 中，确保 ChatGPT、Perplexity、Google AI Overview 在回答相关采购问题时精准引用。
+      </div>
+
+      <div style="margin-bottom: 20px;">
+        <div style="font-size: 13px; font-weight: 700; color: var(--primary-navy); margin-bottom: 8px;">
+          📄 拟追加至 <code>llms.txt</code> 的协议内容：
+        </div>
+        <div class="code-box">
+<span class="comm">## Official Product Catalogs (PDF Downloads)</span>
+- [2026 Commercial Hospitality Glassware Collection](<span class="str">https://www.jingyueglass.com/assets/catalogs/jingyue-glass-hospitality-collection-2026.pdf</span>): Complete 15-page B2B catalog covering 33 commercial SKUs for hotels, bars, restaurants and distributors with exact rack clearance dimensions, carton CBM and gross weights.
+- [2026 US E-Commerce & Amazon FBA Gift Collection](<span class="str">https://www.jingyueglass.com/assets/catalogs/jingyue-glass-us-ecommerce-gift-catalog-2026.pdf</span>): 12-page private label catalog featuring 8 turnkey wooden and magnetic gift sets with odorless EPE pearl cotton inserts, packaging dimensions in inches/cm, and gross weights in lb/kg.
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size: 13px; font-weight: 700; color: var(--primary-navy); margin-bottom: 8px;">
+          🏷️ 拟追加至 <code>/download-center</code> 的 <code>DigitalDocument</code> Schema：
+        </div>
+        <div class="code-box">
+{
+  <span class="kw">"@context"</span>: <span class="str">"https://schema.org"</span>,
+  <span class="kw">"@type"</span>: <span class="str">"DigitalDocument"</span>,
+  <span class="kw">"name"</span>: <span class="str">"Jingyue Glass 2026 Commercial Hospitality Glassware Collection"</span>,
+  <span class="kw">"encodingFormat"</span>: <span class="str">"application/pdf"</span>,
+  <span class="kw">"url"</span>: <span class="str">"https://www.jingyueglass.com/assets/catalogs/jingyue-glass-hospitality-collection-2026.pdf"</span>,
+  <span class="kw">"publisher"</span>: {
+    <span class="kw">"@type"</span>: <span class="str">"Organization"</span>,
+    <span class="kw">"name"</span>: <span class="str">"Wuhan Jingyueda Household Products Co., Ltd."</span>
+  }
+}
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Mockup -->
+  <footer>
+    <div class="shell">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Jingyue Glass</h4>
+          <p style="color: #64748b; line-height: 1.6;">Direct factory glassware manufacturing, OEM/ODM private mold development, and custom gift box packaging solutions.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product Lines</h4>
+          <ul>
+            <li><a href="#">Wine Glasses</a></li>
+            <li><a href="#">Whiskey Glasses</a></li>
+            <li><a href="#">Beer Glasses</a></li>
+            <li><a href="#">Gift Sets & Decanters</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>B2B Catalogs (PDF)</h4>
+          <ul>
+            <li><a href="../assets/catalogs/jingyue-glass-hospitality-collection-2026.pdf" target="_blank">⬇️ Hospitality Collection (PDF)</a></li>
+            <li><a href="../assets/catalogs/jingyue-glass-us-ecommerce-gift-catalog-2026.pdf" target="_blank">⬇️ US E-Commerce Catalog (PDF)</a></li>
+            <li><a href="/download-center">All Specification Books</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Buyer RFQ</h4>
+          <ul>
+            <li><a href="/custom-glassware-quote-checklist">Start RFQ Checklist</a></li>
+            <li><a href="/custom-glassware-sample-approval-process">Sample Approval Process</a></li>
+            <li><a href="/custom-glassware-packaging-guide">Packaging Specifications</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass). All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

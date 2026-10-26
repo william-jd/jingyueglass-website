@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview · Batch 1 Catalog Category Pages B2B De-Pricing | Jingyue Glass</title>
+<style>
+  :root {
+    --primary-navy: #1a3a5c;
+    --primary-dark: #0d2540;
+    --accent-gold: #c8930a;
+    --accent-hover: #e0a70b;
+    --accent-light: #fef8eb;
+    --bg-warm: #f5f5f0;
+    --text-ink: #1e293b;
+    --text-muted: #64748b;
+    --line-border: #e2e8f0;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 2px 8px rgba(13,37,64,0.06);
+    --shadow-md: 0 8px 24px rgba(13,37,64,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-warm); color: var(--text-ink); line-height: 1.6; overflow-x: hidden; }
+  
+  header { background: #fff; border-bottom: 1px solid var(--line-border); position: sticky; top: 0; z-index: 100; }
+  .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; flex-wrap: wrap; gap: 10px; }
+  .logo { font-size: 1.25rem; font-weight: 800; color: var(--primary-navy); }
+  .logo span { color: var(--accent-gold); }
+  .badge { background: #fef3c7; color: #92400e; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
+
+  .page-container { max-width: 1140px; margin: 24px auto 60px; padding: 0 20px; }
+  .preview-banner { background: #fff; border-left: 5px solid var(--accent-gold); padding: 16px 20px; border-radius: var(--radius-sm); margin-bottom: 24px; box-shadow: var(--shadow-sm); }
+  .preview-banner h1 { font-size: 1.3rem; color: var(--primary-navy); margin-bottom: 6px; font-weight: 800; }
+  .preview-banner p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+
+  /* Tab Navigation */
+  .tab-nav { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; background: #e2e8f0; padding: 6px; border-radius: var(--radius-md); }
+  .tab-btn { background: transparent; border: none; padding: 10px 16px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 700; color: #475569; cursor: pointer; transition: all .2s; }
+  .tab-btn.active { background: #fff; color: var(--primary-navy); box-shadow: var(--shadow-sm); }
+  .tab-pane { display: none; background: #fff; border-radius: var(--radius-lg); padding: clamp(20px, 3.5vw, 36px); border: 1px solid var(--line-border); box-shadow: var(--shadow-sm); }
+  .tab-pane.active { display: block; }
+
+  .change-card { background: #f8fafc; border: 1px solid var(--line-border); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px; }
+  .change-title { font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; }
+  .change-tag { font-size: 0.75rem; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 700; }
+  
+  .diff-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 12px 0; }
+  .diff-table th { background: #f1f5f9; padding: 10px 12px; text-align: left; font-weight: 700; color: var(--primary-navy); border: 1px solid var(--line-border); }
+  .diff-table td { padding: 10px 12px; border: 1px solid var(--line-border); vertical-align: top; }
+  .diff-old { background: #fef2f2; color: #991b1b; }
+  .diff-new { background: #f0fdf4; color: #166534; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .diff-table, .diff-table thead, .diff-table tbody, .diff-table tr, .diff-table th, .diff-table td { display: block; width: 100%; }
+    .diff-table thead { display: none; }
+    .diff-table tr { margin-bottom: 12px; border: 1px solid var(--line-border); border-radius: 6px; overflow: hidden; }
+    .diff-table td { border: none; border-bottom: 1px solid #f1f5f9; }
+    .tab-nav { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo">JINGYUE <span>GLASS</span> <span class="badge">Batch 1 Preview</span></div>
+    <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">Category Catalog Pages De-Pricing</div>
+  </div>
+</header>
+
+<div class="page-container">
+  <div class="preview-banner">
+    <h1>第 1 批修改方案预览：核心产品分类与汇总聚合页去价格化</h1>
+    <p>处理 <code>drinkware-sets.html</code>、<code>gift-sets.html</code>、<code>wine-decanters.html</code>、<code>smoked-cocktail-mixology-sets.html</code> 4 个核心分类聚合页，移除卡片价格标签（如 From $9.2/set）、清除 179 处 Schema Offer 价格、统一礼盒内衬为无异味 EPE 珍珠棉。</p>
+  </div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('tab1', this)">1. 套装汇总 (drinkware-sets)</button>
+    <button class="tab-btn" onclick="switchTab('tab2', this)">2. 礼品套装 (gift-sets)</button>
+    <button class="tab-btn" onclick="switchTab('tab3', this)">3. 醒酒器汇总 (wine-decanters)</button>
+    <button class="tab-btn" onclick="switchTab('tab4', this)">4. 烟熏酒具 (smoked-cocktail)</button>
+  </div>
+
+  <!-- Tab 1: drinkware-sets -->
+  <div id="tab1" class="tab-pane active">
+    <h2>1. 套装汇总聚合页 (`drinkware-sets.html`)</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">移除 54 处价格数字、85 处 Schema Offer 字段，统一将礼盒内衬改为无异味 EPE 珍珠棉。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项：产品卡片价格标签与 CTA 重构</span>
+        <span class="change-tag">去价格化 + Schema优化</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本（含公开价格与 Offer Schema）</th>
+            <th style="width:50%;">修改后预览（工程参数与询盘引导）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • 卡片价格: "From $9.2/set · MOQ 24 sets", "From $8.8/set · MOQ 24 sets"<br>
+              • 价格明细: 包含 54 处美元数字<br>
+              • Schema: 包含 85 处 offers (price, priceCurrency)<br>
+              • 内衬表述: 包含 2 处 EVA
+            </td>
+            <td class="diff-new">
+              • <strong>卡片替换为：</strong> "Custom Project Quote · Low MOQ Trial 24 sets · Fast Proofing 1–3 Days"<br>
+              • <strong>CTA 统一为：</strong> "💬 Request Itemized Quote" &amp; "View Set Specs"<br>
+              • <strong>Schema：</strong> 彻底移除所有 offers 字段，保留 Product、Manufacturer 及 additionalProperty<br>
+              • <strong>内衬统一为：</strong> "Odorless EPE pearl cotton insert"
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab 2: gift-sets -->
+  <div id="tab2" class="tab-pane">
+    <h2>2. 礼品套装聚合页 (`gift-sets.html`)</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">移除 24 处价格数字、40 处 Schema Offer 字段，规格表格中移除 Unit Price (FOB) 列。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项：卡片价格与对比表格重构</span>
+        <span class="change-tag">去价格化 + 表格优化</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本</th>
+            <th style="width:50%;">修改后预览</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • FOB Price: "$3.80 – $15.00 / set"<br>
+              • 表格表头: "Unit Price (FOB)"<br>
+              • Schema: 包含 40 处 offers<br>
+              • 内衬: 包含 5 处 EVA 表述
+            </td>
+            <td class="diff-new">
+              • <strong>卡片替换为：</strong> "Turnkey Gifting Suite · Custom Laser Branding · EPE Pearl Cotton"<br>
+              • <strong>表格表头替换为：</strong> "Packaging Specification &amp; Insert Material"（展示实木盒/磁吸硬盒及 EPE 开槽）<br>
+              • <strong>Schema：</strong> 移除所有 offers<br>
+              • <strong>内衬：</strong> 统一为 odorless EPE pearl cotton
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab 3: wine-decanters -->
+  <div id="tab3" class="tab-pane">
+    <h2>3. 醒酒器汇总聚合页 (`wine-decanters.html`)</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">移除 22 处价格数字、34 处 Schema Offer 字段，移除表格价格列。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项：醒酒器卡片与规格表价格移除</span>
+        <span class="change-tag">去价格化 + 工艺参数</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本</th>
+            <th style="width:50%;">修改后预览</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • 卡片价格: "From $1.85 – $6.50 / pc"<br>
+              • 表格表头: "Unit Price (FOB)"<br>
+              • Schema: 包含 34 处 offers
+            </td>
+            <td class="diff-new">
+              • <strong>卡片替换为：</strong> "Lead-Free Crystal · Hand-Blown / Machine Aerating Decanter"<br>
+              • <strong>表格表头替换为：</strong> "Aeration Architecture &amp; Stopper Ground-Joint Spec"<br>
+              • <strong>Schema：</strong> 清理 offers，保留容量、口径、高度与包装箱规
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab 4: smoked-cocktail -->
+  <div id="tab4" class="tab-pane">
+    <h2>4. 烟熏酒具汇总页 (`smoked-cocktail-mixology-sets.html`)</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">移除价格区间，清理 20 处 Schema Offer，彻底替换 9 处旧版 EVA 词汇。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项：烟熏酒具套装内衬与价格优化</span>
+        <span class="change-tag">EPE内衬标准化</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本</th>
+            <th style="width:50%;">修改后预览</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • FOB Price: "$6.50 – $18.50"<br>
+              • Schema: 包含 20 处 offers<br>
+              • 内衬: 9 处 "EVA foam insert" / "custom EVA cutouts"
+            </td>
+            <td class="diff-new">
+              • <strong>替换为：</strong> "Turnkey Mixology Suite · Refillable Torch · Natural Hardwood Chimney"<br>
+              • <strong>Schema：</strong> 清理 offers 字段<br>
+              • <strong>内衬：</strong> 全面替换为 "custom-cut odorless EPE pearl cotton insert"（防晃动、无异味、通过跌落测试）
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px; padding: 20px; background: #fff; border-radius: var(--radius-md); border: 1px solid var(--line-border);">
+    <h3 style="color:var(--primary-navy); margin-bottom:8px;">第 1 批方案已准备就绪</h3>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">随时可以继续执行第 1 批的生产更新与全网发布！</p>
+  </div>
+</div>
+
+<script>
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>

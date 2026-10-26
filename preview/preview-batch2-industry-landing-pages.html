@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview · Batch 2 Industry Landing Pages & Homepage B2B De-Pricing | Jingyue Glass</title>
+<style>
+  :root {
+    --primary-navy: #1a3a5c;
+    --primary-dark: #0d2540;
+    --accent-gold: #c8930a;
+    --accent-hover: #e0a70b;
+    --accent-light: #fef8eb;
+    --bg-warm: #f5f5f0;
+    --text-ink: #1e293b;
+    --text-muted: #64748b;
+    --line-border: #e2e8f0;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 2px 8px rgba(13,37,64,0.06);
+    --shadow-md: 0 8px 24px rgba(13,37,64,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-warm); color: var(--text-ink); line-height: 1.6; overflow-x: hidden; }
+  
+  header { background: #fff; border-bottom: 1px solid var(--line-border); position: sticky; top: 0; z-index: 100; }
+  .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; flex-wrap: wrap; gap: 10px; }
+  .logo { font-size: 1.25rem; font-weight: 800; color: var(--primary-navy); }
+  .logo span { color: var(--accent-gold); }
+  .badge { background: #e0f2fe; color: #0369a1; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
+
+  .page-container { max-width: 1140px; margin: 24px auto 60px; padding: 0 20px; }
+  .preview-banner { background: #fff; border-left: 5px solid var(--accent-gold); padding: 16px 20px; border-radius: var(--radius-sm); margin-bottom: 24px; box-shadow: var(--shadow-sm); }
+  .preview-banner h1 { font-size: 1.3rem; color: var(--primary-navy); margin-bottom: 6px; font-weight: 800; }
+  .preview-banner p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+
+  /* Tab Navigation */
+  .tab-nav { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; background: #e2e8f0; padding: 6px; border-radius: var(--radius-md); }
+  .tab-btn { background: transparent; border: none; padding: 10px 16px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 700; color: #475569; cursor: pointer; transition: all .2s; }
+  .tab-btn.active { background: #fff; color: var(--primary-navy); box-shadow: var(--shadow-sm); }
+  .tab-pane { display: none; background: #fff; border-radius: var(--radius-lg); padding: clamp(20px, 3.5vw, 36px); border: 1px solid var(--line-border); box-shadow: var(--shadow-sm); }
+  .tab-pane.active { display: block; }
+
+  .change-card { background: #f8fafc; border: 1px solid var(--line-border); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px; }
+  .change-title { font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; }
+  .change-tag { font-size: 0.75rem; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 700; }
+  
+  .diff-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 12px 0; }
+  .diff-table th { background: #f1f5f9; padding: 10px 12px; text-align: left; font-weight: 700; color: var(--primary-navy); border: 1px solid var(--line-border); }
+  .diff-table td { padding: 10px 12px; border: 1px solid var(--line-border); vertical-align: top; }
+  .diff-old { background: #fef2f2; color: #991b1b; }
+  .diff-new { background: #f0fdf4; color: #166534; font-weight: 600; }
+
+  .spec-highlight { background: var(--accent-light); border: 1px solid #eed99f; border-radius: var(--radius-sm); padding: 12px 16px; margin-top: 14px; }
+  .spec-highlight-title { font-size: 0.92rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 4px; }
+  .spec-highlight-desc { font-size: 0.85rem; color: #475569; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 10px 18px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 700; text-decoration: none; cursor: pointer; transition: all .2s; }
+  .btn-gold { background: var(--accent-gold); color: #fff; }
+  .btn-gold:hover { background: var(--accent-hover); }
+
+  @media (max-width: 768px) {
+    .diff-table, .diff-table thead, .diff-table tbody, .diff-table tr, .diff-table th, .diff-table td { display: block; width: 100%; }
+    .diff-table thead { display: none; }
+    .diff-table tr { margin-bottom: 12px; border: 1px solid var(--line-border); border-radius: 6px; overflow: hidden; }
+    .diff-table td { border: none; border-bottom: 1px solid #f1f5f9; }
+    .tab-nav { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo">JINGYUE <span>GLASS</span> <span class="badge">Preview Mode</span></div>
+    <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">Batch 2: Industry Landing Pages &amp; Homepage</div>
+  </div>
+</header>
+
+<div class="page-container">
+  <div class="preview-banner">
+    <h1>第 2 批修改方案预览：官方首页与 5 大行业解决方案落地页去价格化</h1>
+    <p>移除首页及各行业落地页中的公开 FOB 价格数字、美元符号与 Schema Offer 字段，统一将礼盒内衬标准化为无异味 EPE 珍珠棉，重构为透明 B2B 项目制核算说明与工程参数矩阵。</p>
+  </div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('tab1', this)">1. 官方首页 (index.html)</button>
+    <button class="tab-btn" onclick="switchTab('tab2', this)">2. 雪茄威士忌酒廊 (cigar-lounge)</button>
+    <button class="tab-btn" onclick="switchTab('tab3', this)">3. 精酿啤酒厂 (craft-brewery)</button>
+    <button class="tab-btn" onclick="switchTab('tab4', this)">4. 婚礼宴会活动 (wedding-event)</button>
+    <button class="tab-btn" onclick="switchTab('tab5', this)">5. 酒店与餐饮连锁 (hospitality/hotel)</button>
+  </div>
+
+  <!-- Tab 1: index.html -->
+  <div id="tab1" class="tab-pane active">
+    <h2>1. 官方首页 (`index.html`) 去价格化与内衬规范</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">移除首页中残留的 12 处参考价格数字与 3 处 EVA 表述，将价格参考表升级为“B2B 定制项目核算说明”。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项 A：首页 B2B 报价对比表重构</span>
+        <span class="change-tag">去价格化</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本（含固定参考价格）</th>
+            <th style="width:50%;">修改后预览（项目制核算与参数化）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              <strong>表头：</strong> Indicative FOB Price<br>
+              • Decanters: About $1.85 – $6.50 / pc<br>
+              • Tumblers: About $0.38 – $1.25 / pc<br>
+              • Beer Mugs: About $0.55 – $2.10 / pc<br>
+              • Stemware: About $0.45 – $1.40 / pc<br>
+              • Gift Sets: About $6.50 – $18.50 / set<br>
+              • Whiskey Sets: About $3.80 – $15.00 / set
+            </td>
+            <td class="diff-new">
+              <strong>表头：</strong> Commercial Sourcing &amp; Quotation Basis<br>
+              • <strong>Decanters:</strong> Quoted per mold complexity, stopper fit &amp; carton CBM<br>
+              • <strong>Tumblers:</strong> Quoted per base weight, rim laser finish &amp; volume<br>
+              • <strong>Beer Mugs:</strong> Quoted per capacity, handle durability &amp; pallet batch<br>
+              • <strong>Stemware:</strong> Quoted per machine/pulled stem craft &amp; logo method<br>
+              • <strong>Gift Sets:</strong> Quoted per wooden chest finish &amp; EPE insert layout<br>
+              • <strong>Whiskey Sets:</strong> Quoted per stone count, glass type &amp; packaging suite
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项 B：包装描述与表单占位提示规范</span>
+        <span class="change-tag">EPE内衬标准化</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本（含 EVA 词汇）</th>
+            <th style="width:50%;">修改后预览（无异味 EPE 珍珠棉）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • "...EVA foam cushioning and ISTA-1A drop test..."<br>
+              • "...custom EVA gift sets..."<br>
+              • Placeholder: "...target unit price, or destination port..."
+            </td>
+            <td class="diff-new">
+              • "...<strong>odorless EPE pearl cotton cushioning</strong> and ISTA-1A drop test..."<br>
+              • "...<strong>custom odorless EPE pearl cotton gift suites</strong>..."<br>
+              • Placeholder: "...<strong>order volume, branding technique, packaging type, or destination port...</strong>"
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab 2: cigar-lounge -->
+  <div id="tab2" class="tab-pane">
+    <h2>2. 雪茄威士忌酒廊落地页 (`cigar-lounge-whiskey-tasting-glassware.html`)</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">移除 30 处单价及阶梯价格表，清理 4 处 Schema Offer 字段，重构为酒廊商用器皿选型矩阵。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项：选型价格卡片与阶梯报价表重构</span>
+        <span class="change-tag">去价格化 + Schema优化</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本（含价格与 Offer Schema）</th>
+            <th style="width:50%;">修改后预览（商用规格与定制选项）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • 卡片单价: $1.35 – $2.90 / pc, $1.20 – $2.60 / pc, $0.85 – $1.95 / pc<br>
+              • 阶梯表: 500 pcs ($2.40-$2.90), 2000 pcs ($1.85-$2.30), 5000 pcs ($1.35-$1.65)<br>
+              • Schema: 包含 "offers": {"@type":"AggregateOffer", "lowPrice":"0.85", "highPrice":"2.90"}
+            </td>
+            <td class="diff-new">
+              • <strong>卡片替换为：</strong> "Commercial Dishwasher Tested · Heavy Solid Base · Custom Laser Engraving"<br>
+              • <strong>阶梯表替换为：</strong> "Lounge Sourcing Matrix"（涵盖容量、杯壁厚度、雕刻位预留、箱规 CBM、托盘装载量）<br>
+              • <strong>Schema：</strong> 完全移除 Offer/Price 字段，保留 Product、Manufacturer、additionalProperty 物理规格
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab 3: craft-brewery -->
+  <div id="tab3" class="tab-pane">
+    <h2>3. 精酿啤酒厂落地页 (`craft-brewery-taproom-glassware-supply.html`)</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">移除 30 处啤酒杯单价，清理 4 处 Schema Offer 字段，重构为酒厂商业装箱与印刷工艺矩阵。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项：Wholesale Price Range 表格重构</span>
+        <span class="change-tag">去价格化 + 工业参数</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本（含价格阶梯）</th>
+            <th style="width:50%;">修改后预览（工艺与箱规矩阵）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • 标题: "Wholesale Price Range &amp; Packaging Overview"<br>
+              • 卡片价格: $0.80 – $1.65 / pc, $0.75 – $1.45 / pc<br>
+              • 阶梯价格: 500 pcs ($1.45-$1.65), 5000 pcs ($0.80-$0.95)<br>
+              • Schema: 包含 "offers" 价格区间
+            </td>
+            <td class="diff-new">
+              • <strong>标题：</strong> "Taproom Glassware Engineering &amp; Packaging Specifications"<br>
+              • <strong>卡片替换为：</strong> "580°C Ceramic Decal Tested · Nucleated Base Option · Stackable Design"<br>
+              • <strong>表格重构为：</strong> "Model SKU | Capacity (ml/oz) | Carton Pack (pcs) | CBM (m³) | Decal Wash Cycles"<br>
+              • <strong>Schema：</strong> 移除 offers，强化品牌与 580°C 花纸附着力指标
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab 4: wedding-event -->
+  <div id="tab4" class="tab-pane">
+    <h2>4. 婚礼宴会活动落地页 (`wedding-event-venue-glassware-supply.html`)</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">移除 18 处宴会高脚杯单价，清理 4 处 Schema Offer 字段，突出托盘抗震装箱与周转率。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项：Tier Price 与 FOB Price Range 表格重构</span>
+        <span class="change-tag">去价格化 + 托盘方案</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本（含价格阶梯）</th>
+            <th style="width:50%;">修改后预览（活动租赁与周转规范）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • Tier Price: $1.15 – $2.10 / pc, $1.35 – $2.60 / pc<br>
+              • 表格表头: "Stemware FOB Price Range", "Tumbler FOB Price Range"<br>
+              • Schema: 包含 offers 与 priceValidUntil
+            </td>
+            <td class="diff-new">
+              • <strong>替换为：</strong> "Commercial Rental Turnkey Suite · High-Turnover Reinforced Rim"<br>
+              • <strong>表格表头重构为：</strong> "Rack Clearance &amp; Pallet Batch Allocation"（涵盖清洗筐适配高度、每托盘箱数、周转损耗防护）<br>
+              • <strong>Schema：</strong> 移除 offers 字段，保留适用场景与洗碗机安全认证
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab 5: hospitality/hotel -->
+  <div id="tab5" class="tab-pane">
+    <h2>5. 酒店餐饮落地页 (`hospitality-restaurant-glassware.html` / `hotel-restaurant-glassware-supply.html`)</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">移除各 12 处参考单价（`$0.42 – $2.10` 等），重构为餐饮连锁采购清单与洗碗机耐用标准。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项：Quick Answer 与明细价格移除</span>
+        <span class="change-tag">去价格化</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本（含价格区间）</th>
+            <th style="width:50%;">修改后预览（品质标准与询价指引）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • Quick Answer: "About $0.42 – $2.10 / pc"<br>
+              • 明细列表: 5 处 "About $0.42 – $0.95 / pc", "About $0.65 – $1.85 / pc" 等
+            </td>
+            <td class="diff-new">
+              • <strong>Quick Answer 替换为：</strong> "Custom quoted based on dining concept tier, stemware vs tumbler ratio, logo decoration, and shipping terms."<br>
+              • <strong>明细列表替换为：</strong> "Machine-Blown Crystal / Heavy Soda-Lime · 1,500+ Commercial Wash Cycles · Laser Fire-Polished Rim"
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px; padding: 20px; background: #fff; border-radius: var(--radius-md); border: 1px solid var(--line-border);">
+    <h3 style="color:var(--primary-navy); margin-bottom:8px;">审核通过后即可一键部署上线</h3>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">确认预览方案无误后，我将把上述 6 个页面的优化正式应用到网站，完成 Git 提交、Vercel 生产构建与全网实测！</p>
+  </div>
+</div>
+
+<script>
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>

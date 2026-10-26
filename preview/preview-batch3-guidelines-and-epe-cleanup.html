@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview · Batch 3 Guidelines &amp; 全站 EPE 收尾标准化 | Jingyue Glass</title>
+<style>
+  :root {
+    --primary-navy: #1a3a5c;
+    --primary-dark: #0d2540;
+    --accent-gold: #c8930a;
+    --accent-hover: #e0a70b;
+    --accent-light: #fef8eb;
+    --bg-warm: #f5f5f0;
+    --text-ink: #1e293b;
+    --text-muted: #64748b;
+    --line-border: #e2e8f0;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 2px 8px rgba(13,37,64,0.06);
+    --shadow-md: 0 8px 24px rgba(13,37,64,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-warm); color: var(--text-ink); line-height: 1.6; overflow-x: hidden; }
+  
+  header { background: #fff; border-bottom: 1px solid var(--line-border); position: sticky; top: 0; z-index: 100; }
+  .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; flex-wrap: wrap; gap: 10px; }
+  .logo { font-size: 1.25rem; font-weight: 800; color: var(--primary-navy); }
+  .logo span { color: var(--accent-gold); }
+  .badge { background: #dcfce7; color: #15803d; padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
+
+  .page-container { max-width: 1140px; margin: 24px auto 60px; padding: 0 20px; }
+  .preview-banner { background: #fff; border-left: 5px solid var(--accent-gold); padding: 16px 20px; border-radius: var(--radius-sm); margin-bottom: 24px; box-shadow: var(--shadow-sm); }
+  .preview-banner h1 { font-size: 1.3rem; color: var(--primary-navy); margin-bottom: 6px; font-weight: 800; }
+  .preview-banner p { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+
+  /* Tab Navigation */
+  .tab-nav { display: flex; gap: 8px; margin-bottom: 20px; flex-wrap: wrap; background: #e2e8f0; padding: 6px; border-radius: var(--radius-md); }
+  .tab-btn { background: transparent; border: none; padding: 10px 16px; border-radius: var(--radius-sm); font-size: 0.9rem; font-weight: 700; color: #475569; cursor: pointer; transition: all .2s; }
+  .tab-btn.active { background: #fff; color: var(--primary-navy); box-shadow: var(--shadow-sm); }
+  .tab-pane { display: none; background: #fff; border-radius: var(--radius-lg); padding: clamp(20px, 3.5vw, 36px); border: 1px solid var(--line-border); box-shadow: var(--shadow-sm); }
+  .tab-pane.active { display: block; }
+
+  .change-card { background: #f8fafc; border: 1px solid var(--line-border); border-radius: var(--radius-md); padding: 16px; margin-bottom: 20px; }
+  .change-title { font-size: 1.05rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; }
+  .change-tag { font-size: 0.75rem; background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 4px; font-weight: 700; }
+  
+  .diff-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; margin: 12px 0; }
+  .diff-table th { background: #f1f5f9; padding: 10px 12px; text-align: left; font-weight: 700; color: var(--primary-navy); border: 1px solid var(--line-border); }
+  .diff-table td { padding: 10px 12px; border: 1px solid var(--line-border); vertical-align: top; }
+  .diff-old { background: #fef2f2; color: #991b1b; }
+  .diff-new { background: #f0fdf4; color: #166534; font-weight: 600; }
+
+  @media (max-width: 768px) {
+    .diff-table, .diff-table thead, .diff-table tbody, .diff-table tr, .diff-table th, .diff-table td { display: block; width: 100%; }
+    .diff-table thead { display: none; }
+    .diff-table tr { margin-bottom: 12px; border: 1px solid var(--line-border); border-radius: 6px; overflow: hidden; }
+    .diff-table td { border: none; border-bottom: 1px solid #f1f5f9; }
+    .tab-nav { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo">JINGYUE <span>GLASS</span> <span class="badge">Batch 3 Preview</span></div>
+    <div style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">Guidelines, SOP &amp; Global EPE Standardization</div>
+  </div>
+</header>
+
+<div class="page-container">
+  <div class="preview-banner">
+    <h1>第 3 批修改方案预览：采购指南示例去价格化与全站 EPE 内衬收尾</h1>
+    <p>重构私模 SOP、工艺指南、打样流程及包装指南中的教学示例价格，清理全站剩余 12 个辅助页面中的 Schema Offer 价格与旧版 EVA 词汇，实现全站 100% EPE 珍珠棉描述与 B2B 项目制核算对齐。</p>
+  </div>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('tab1', this)">1. 私模开发 SOP</button>
+    <button class="tab-btn" onclick="switchTab('tab2', this)">2. 加工工艺指南</button>
+    <button class="tab-btn" onclick="switchTab('tab3', this)">3. 打样与包装指南</button>
+    <button class="tab-btn" onclick="switchTab('tab4', this)">4. 全站辅助页与EVA收尾</button>
+  </div>
+
+  <!-- Tab 1: Mold SOP -->
+  <div id="tab1" class="tab-pane active">
+    <h2>1. 私模开发 SOP (`oem-custom-mold-development-sop.html`)</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">将固定模具费示例（$400-$800, $1200-$2800）替换为影响开模成本的核心工程变量矩阵。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项：模具费用与成本动因分析重构</span>
+        <span class="change-tag">去价格化 + 工程变量</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本（含固定模具费估算）</th>
+            <th style="width:50%;">修改后预览（工程参数驱动）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • "...sample pilot molds range from $400 to $800 USD. Full multi-cavity automated steel production molds range from $1,200 to $2,800 USD..."<br>
+              • 提及固定开模费用数字
+            </td>
+            <td class="diff-new">
+              • "...<strong>Single-cavity pilot prototype molds</strong> are evaluated based on vessel geometry and 3D CAD complexity. <strong>Full multi-cavity automated production steel molds</strong> are engineered according to machine tonnage, cavity count (4/6/8-cavity), and embossed relief detail, with mold fees credited proportionally against mass production contracts..."
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab 2: Decoration Methods Guide -->
+  <div id="tab2" class="tab-pane">
+    <h2>2. 定制加工工艺指南 (`glassware-custom-decoration-methods-guide.html`)</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">移除各工艺表格中的单件加工参考费用（$0.10-$0.40），重构为附着力等级、损耗率与耐洗循环对比。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项：工艺对比表格价格列重构</span>
+        <span class="change-tag">去价格化 + 技术指标</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本（含单件加工费）</th>
+            <th style="width:50%;">修改后预览（技术耐久与适用批量）</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • 表格表头: "Unit Cost (USD)"<br>
+              • 内容: $0.15–$0.35, $0.10–$0.25, $0.20–$0.40
+            </td>
+            <td class="diff-new">
+              • <strong>表头替换为：</strong> "Durability &amp; Commercial Dishwasher Rating"<br>
+              • <strong>内容重构为：</strong> "580°C Kiln-Fired (1,500+ Wash Cycles) · ASTM Cross-Hatch 5B Pass · Low Scrap Rate < 1.5%"
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab 3: Sample & Packaging Guides -->
+  <div id="tab3" class="tab-pane">
+    <h2>3. 样品审批与包装指南 (`custom-glassware-sample-approval-process.html` 等)</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">规范打样费用说明（标准样免费、定制样按项目评估），全面将礼盒包装内衬标准化为无异味 EPE 珍珠棉。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>修改项：打样费用与包装内衬规范</span>
+        <span class="change-tag">EPE标准化 + 样品政策</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th style="width:50%;">现有版本</th>
+            <th style="width:50%;">修改后预览</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="diff-old">
+              • 打样指南: 包含多处 $50-$100 快递费与打样费数字<br>
+              • 包装指南: 包含 $15-$85 礼盒成本数字及 6 处 EVA foam 描述
+            </td>
+            <td class="diff-new">
+              • <strong>打样指南：</strong> 明确“标准库在库素杯（最多5只）及激光打样免费提供；定制开模与复杂开版按项目评估，大货订单按比例全额抵扣；国际快递运费买方承担或提供到付账号”<br>
+              • <strong>包装指南：</strong> 彻底清理 6 处 EVA，统一为“odorless EPE pearl cotton insert（无异味、通过 ISTA-1A 1.2m 跌落测试、高密度抗压开槽）”
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Tab 4: Residual cleanup -->
+  <div id="tab4" class="tab-pane">
+    <h2>4. 全站辅助页面与 Schema/EVA 残留清理（12 个页面）</h2>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">清理剩余 12 个辅助页面中的 Schema Offer 价格与旧版 EVA 词汇。</p>
+
+    <div class="change-card">
+      <div class="change-title">
+        <span>涉及文件与修改清单</span>
+        <span class="change-tag">全站收尾</span>
+      </div>
+      <table class="diff-table">
+        <thead>
+          <tr>
+            <th>文件名称</th>
+            <th>现有残留问题</th>
+            <th>处理方案</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>`whiskey-decanter-gift-sets.html`</strong></td>
+            <td>4 处 Schema offers, 5 处 EVA</td>
+            <td>清理 offers，统一为 odorless EPE pearl cotton</td>
+          </tr>
+          <tr>
+            <td><strong>`luxury-corporate-glassware-gifts.html`</strong></td>
+            <td>4 处 Schema offers, 6 处 EVA</td>
+            <td>清理 offers，统一为 odorless EPE pearl cotton</td>
+          </tr>
+          <tr>
+            <td><strong>`vintage-ribbed-glassware.html`</strong></td>
+            <td>4 处 Schema offers, 1 处 EVA</td>
+            <td>清理 offers，统一为 odorless EPE pearl cotton</td>
+          </tr>
+          <tr>
+            <td><strong>`glassware-ocean-shipping-packaging-guide.html`</strong></td>
+            <td>7 处 EVA 描述</td>
+            <td>全面替换为 odorless EPE pearl cotton</td>
+          </tr>
+          <tr>
+            <td><strong>`about.html` / `certifications.html` / `download-center.html` / `terms-of-service.html` 等</strong></td>
+            <td>各 1 处 EVA 词汇</td>
+            <td>统一为 odorless EPE pearl cotton 描述</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div style="text-align: center; margin-top: 30px; padding: 20px; background: #fff; border-radius: var(--radius-md); border: 1px solid var(--line-border);">
+    <h3 style="color:var(--primary-navy); margin-bottom:8px;">确认后即可完成全站最终收尾</h3>
+    <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:16px;">确认方案无误后，我将执行第 3 批的生产部署与上线，实现全站 100% 去价格化与 EPE 珍珠棉标准化！</p>
+  </div>
+</div>
+
+<script>
+function switchTab(tabId, btn) {
+  document.querySelectorAll('.tab-pane').forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+
+</body>
+</html>
