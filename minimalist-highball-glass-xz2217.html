@@ -116,6 +116,247 @@
       .pdp-gallery { position: static; }
       .pdp-main-img { height: auto; max-height: 380px; }
     }
+  
+    /* FAQ Section Styles */
+    .faq-section {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border, #e2e8f0);
+    }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .faq-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+    .faq-card:hover {
+      border-color: var(--accent, #c8930a);
+    }
+    .faq-q {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--primary-dark, #0d2540);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .faq-q::before {
+      content: 'Q:';
+      color: var(--accent, #c8930a);
+      font-weight: 800;
+    }
+    .faq-a {
+      font-size: 0.88rem;
+      color: #475569;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Related Products Section Styles */
+    .related-section {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border, #e2e8f0);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    @media (max-width: 1024px) {
+      .related-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 480px) {
+      .related-grid { grid-template-columns: 1fr; }
+    }
+    .related-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(13,37,64,0.08);
+      border-color: var(--accent, #c8930a);
+    }
+    .related-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: contain;
+      background: #f8fafc;
+      padding: 10px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .related-card-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .related-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent, #c8930a);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .related-card h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-dark, #0d2540);
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+    .related-card p {
+      font-size: 0.82rem;
+      color: #64748b;
+      line-height: 1.45;
+      margin-bottom: 10px;
+      flex-grow: 1;
+    }
+    .related-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 12px;
+    }
+    .spec-chip {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--primary, #1a3a5c);
+      background: #f1f5f9;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+    .related-btn {
+      display: block;
+      text-align: center;
+      background: var(--primary, #1a3a5c);
+      color: #fff !important;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .related-btn:hover {
+      background: var(--accent, #c8930a);
+      color: #fff !important;
+    }
+
+    /* High-Conversion CTA Banner */
+    .pdp-cta-banner {
+      background: linear-gradient(135deg, #1a3a5c 0%, #0d2540 100%);
+      border-radius: 12px;
+      padding: 36px 28px;
+      margin: 48px 0 20px;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(13,37,64,0.18);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(200,147,10,0.3);
+    }
+    .cta-badge {
+      display: inline-block;
+      background: rgba(200,147,10,0.25);
+      border: 1px solid #c8930a;
+      color: #f1c40f;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .pdp-cta-banner h2 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .pdp-cta-banner p {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+    .cta-contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .contact-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 6px;
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      color: #fff !important;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .contact-chip:hover {
+      background: rgba(200,147,10,0.25);
+      border-color: #c8930a;
+      color: #f1c40f !important;
+    }
+    .contact-chip.static:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+      color: #fff !important;
+    }
+    .cta-banner-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-gold {
+      background: #c8930a;
+      color: #fff !important;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .btn-gold:hover {
+      background: #e0a70b;
+    }
+    .btn-outline-white {
+      background: transparent;
+      color: #fff !important;
+      border: 1px solid rgba(255,255,255,0.4);
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: 4px;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: #fff;
+    }
+
   </style>
 
   <!-- Schema.org Product & Breadcrumb Structured Data -->
@@ -359,6 +600,98 @@
           <span class="pkg-tag">Odorless EPE Pearl Cotton</span>
           <span class="pkg-tag">Fumigated Export Pallets</span>
           <span class="pkg-tag">Direct Sea / Air Freight</span>
+        </div>
+      </div>
+
+      <!-- B2B Procurement & Sourcing FAQ -->
+      <section class="faq-section" id="pdp-faq">
+        <h2 class="section-heading">Frequently Asked Questions · Model XZ2217</h2>
+        <div class="faq-grid">
+          <div class="faq-card">
+            <div class="faq-q">What beverage applications are best suited for Model XZ2217?</div>
+            <p class="faq-a">Model XZ2217 (300 ml (10.1 oz)) is engineered for highball cocktails (Gin & Tonic, Highballs, Mojitos), iced beverages, soft drinks, and table water service in high-volume hospitality venues, bars, and catering.</p>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q">Can we add our custom venue or brand logo to this glass?</div>
+            <p class="faq-a">Yes. We provide precision CO2 laser etching (ideal for low MOQ from 48 pcs), 580°C kiln-fired ceramic decals (up to 8 Pantone colors), and satin frosted finishes with 1,000+ commercial wash cycle durability.</p>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q">What are the packaging options and transit safety ratings?</div>
+            <p class="faq-a">Standard packing uses 5-ply corrugated export master cartons lined with odorless EPE pearl cotton inserts. Built to ISTA-1A drop test standards with less than 0.5% historical breakage across ocean and air freight.</p>
+          </div>
+          <div class="faq-card">
+            <div class="faq-q">What food safety and regulatory certifications are available?</div>
+            <p class="faq-a">Model XZ2217 is 100% lead-free and fully compliant with US FDA CPG 7117.06/07, California Proposition 65, and European LFGB (EC 1935/2004) food contact safety regulations.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Related Complementary Glassware -->
+      <section class="related-section" id="pdp-related">
+        <h2 class="section-heading">Explore Complementary Highball &amp; Tumbler Glassware</h2>
+        <div class="related-grid">
+        <div class="related-card">
+          <a href="/soccer-relief-base-highball-glass-xz2209"><img src="/assets/products/tumblers-highballs/xz2209-soccer-relief-base-highball-glass.webp" alt="XZ2209 400ml Soccer Relief Base Highball Glass - Jingyue Glass" loading="lazy" decoding="async"></a>
+          <div class="related-card-body">
+            <span class="related-tag">Highball Glass · Model XZ2209</span>
+            <h3><a href="/soccer-relief-base-highball-glass-xz2209" style="color:inherit;text-decoration:none;">400ml Soccer Base Highball Glass</a></h3>
+            <p>Commercial lead-free highball drinking glass for bars and hospitality....</p>
+            <div class="related-specs"><span class="spec-chip">400 ml (13.5 oz)</span><span class="spec-chip">H H 13.9 cm × Ø 77 mm</span><span class="spec-chip">MOQ 48 pcs</span></div>
+            <a href="/soccer-relief-base-highball-glass-xz2209" class="related-btn">View Product Detail</a>
+          </div>
+        </div>
+        <div class="related-card">
+          <a href="/beverage-highball-glass-xz2210"><img src="/assets/products/tumblers-highballs/xz2210-beverage-highball-glass.webp" alt="XZ2210 400ml Commercial Beverage Highball Glass - Jingyue Glass" loading="lazy" decoding="async"></a>
+          <div class="related-card-body">
+            <span class="related-tag">Highball Glass · Model XZ2210</span>
+            <h3><a href="/beverage-highball-glass-xz2210" style="color:inherit;text-decoration:none;">400ml Beverage Highball Glass</a></h3>
+            <p>Commercial lead-free highball drinking glass for bars and hospitality....</p>
+            <div class="related-specs"><span class="spec-chip">400 ml (13.5 oz)</span><span class="spec-chip">H H 13.9 cm × Ø 77 mm</span><span class="spec-chip">MOQ 48 pcs</span></div>
+            <a href="/beverage-highball-glass-xz2210" class="related-btn">View Product Detail</a>
+          </div>
+        </div>
+        <div class="related-card">
+          <a href="/golf-pattern-base-highball-glass-xz2224"><img src="/assets/products/tumblers-highballs/xz2224-golf-pattern-base-highball-glass.webp" alt="XZ2224 400ml Golf Pattern Base Highball Glass - Jingyue Glass" loading="lazy" decoding="async"></a>
+          <div class="related-card-body">
+            <span class="related-tag">Highball Glass · Model XZ2224</span>
+            <h3><a href="/golf-pattern-base-highball-glass-xz2224" style="color:inherit;text-decoration:none;">400ml Golf Base Highball Glass</a></h3>
+            <p>Commercial lead-free highball drinking glass for bars and hospitality....</p>
+            <div class="related-specs"><span class="spec-chip">400 ml (13.5 oz)</span><span class="spec-chip">H H 13.9 cm × Ø 77 mm</span><span class="spec-chip">MOQ 48 pcs</span></div>
+            <a href="/golf-pattern-base-highball-glass-xz2224" class="related-btn">View Product Detail</a>
+          </div>
+        </div>
+        <div class="related-card">
+          <a href="/eagle-relief-base-highball-glass-xz2213-eagle"><img src="/assets/products/tumblers-highballs/xz2213-eagle-relief-base-highball-glass.webp" alt="XZ2213-EAGLE 400ml Eagle Relief Base Highball Glass - Jingyue Glass" loading="lazy" decoding="async"></a>
+          <div class="related-card-body">
+            <span class="related-tag">Highball Glass · Model XZ2213-EAGLE</span>
+            <h3><a href="/eagle-relief-base-highball-glass-xz2213-eagle" style="color:inherit;text-decoration:none;">400ml Eagle Base Highball Glass</a></h3>
+            <p>Commercial lead-free highball drinking glass for bars and hospitality....</p>
+            <div class="related-specs"><span class="spec-chip">400 ml (13.5 oz)</span><span class="spec-chip">H H 13.9 cm × Ø 77 mm</span><span class="spec-chip">MOQ 48 pcs</span></div>
+            <a href="/eagle-relief-base-highball-glass-xz2213-eagle" class="related-btn">View Product Detail</a>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- High-Conversion Direct Factory CTA Banner -->
+      <div class="pdp-cta-banner">
+        <span class="cta-badge">Direct Factory Quotation</span>
+        <h2>Ready to Source Model XZ2217 for Your Venue or Brand?</h2>
+        <p>Contact our commercial export team for itemized volume quotes, digital logo mockups, or sample dispatch within 24 hours. Direct factory pricing with zero middlemen markup.</p>
+        <div class="cta-contact-chips">
+          <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20would%20like%20an%20itemized%20quote%20for%20Model%20XZ2217." target="_blank" rel="noopener noreferrer" class="contact-chip">
+            💬 WhatsApp: +86 132 5662 7201
+          </a>
+          <a href="mailto:sales@jingyueglass.com?subject=Wholesale%20Quotation%20Request%20-%20Model%20XZ2217" class="contact-chip">
+            ✉️ Email: sales@jingyueglass.com
+          </a>
+          <span class="contact-chip static">
+            ⏱ 1-Hour Fast Response Commitment
+          </span>
+        </div>
+        <div class="cta-banner-actions">
+          <a href="/custom-glassware-quote-checklist" class="btn-gold">Request Itemized Quotation</a>
+          <a href="/custom-glassware-sample-approval-process" class="btn-outline-white">Request Physical Sample</a>
         </div>
       </div>
 
