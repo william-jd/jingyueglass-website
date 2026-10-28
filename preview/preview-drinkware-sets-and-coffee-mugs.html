@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drinkware Sets (27 PDPs) & Coffee Mugs Quote Routing Preview - Jingyue Glass</title>
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --primary-dark: #0d2540;
+      --accent: #c8930a;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --text: #1e293b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #fff; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+    
+    /* Top Bar */
+    header { background: var(--primary-dark); padding: 10px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); flex-shrink: 0; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand h1 { font-size: 1.05rem; font-weight: 700; color: #fff; }
+    .brand span { background: var(--accent); color: #fff; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; }
+
+    .preview-notice { background: rgba(200,147,10,0.15); border: 1px solid var(--accent); color: #f1c40f; padding: 4px 12px; border-radius: 6px; font-size: 0.76rem; }
+
+    .viewport-controls { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 4px; border-radius: 8px; }
+    .vp-btn { background: transparent; border: none; color: #94a3b8; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .vp-btn.active, .vp-btn:hover { background: var(--accent); color: #fff; }
+
+    .header-actions { display: flex; align-items: center; gap: 14px; }
+    .status-pill { background: #10b981; color: #fff; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; display: flex; align-items: center; gap: 6px; }
+
+    /* Layout */
+    .main-wrap { display: flex; flex: 1; height: calc(100vh - 56px); overflow: hidden; }
+    
+    /* Sidebar */
+    .sidebar { width: 340px; background: #1e293b; border-right: 1px solid #334155; display: flex; flex-direction: column; flex-shrink: 0; }
+    .sidebar-head { padding: 14px 16px; border-bottom: 1px solid #334155; }
+    .sidebar-head h2 { font-size: 0.92rem; font-weight: 700; color: #f1f5f9; margin-bottom: 2px; }
+    .sidebar-head p { font-size: 0.74rem; color: #94a3b8; }
+
+    .sku-list { flex: 1; overflow-y: auto; padding: 8px; }
+    .sku-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; cursor: pointer; transition: all 0.15s; margin-bottom: 4px; border: 1px solid transparent; }
+    .sku-item:hover { background: rgba(255,255,255,0.05); }
+    .sku-item.active { background: rgba(200, 147, 10, 0.15); border-color: var(--accent); }
+    
+    .sku-badge { background: #334155; color: #f1f5f9; font-size: 0.72rem; font-weight: 800; padding: 4px 6px; border-radius: 4px; min-width: 60px; text-align: center; }
+    .sku-badge.hub { background: var(--accent); color: #fff; }
+    .sku-item.active .sku-badge { background: var(--accent); color: #fff; }
+    
+    .sku-details { flex: 1; min-width: 0; }
+    .sku-title { font-size: 0.84rem; font-weight: 600; color: #f1f5f9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sku-meta { font-size: 0.72rem; color: #94a3b8; }
+
+    /* Preview Stage */
+    .preview-stage { flex: 1; background: #0f172a; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 12px 16px; overflow-y: auto; }
+    .stage-header { width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.86rem; color: #94a3b8; }
+    .stage-title { font-weight: 700; color: #f1f5f9; }
+    
+    .iframe-wrapper { background: #fff; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); overflow: hidden; transition: max-width 0.3s ease; height: calc(100vh - 110px); width: 100%; max-width: 100%; }
+    iframe { width: 100%; height: 100%; border: none; display: block; }
+
+    /* Verification Drawer */
+    .audit-bar { background: #1e293b; border-top: 1px solid #334155; padding: 10px 24px; display: flex; gap: 20px; font-size: 0.78rem; color: #cbd5e1; justify-content: center; flex-wrap: wrap; }
+    .audit-item { display: flex; align-items: center; gap: 6px; }
+    .audit-item strong { color: #10b981; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header>
+    <div class="brand">
+      <h1>Jingyue Glass</h1>
+      <span>Drinkware Sets &amp; Coffee Mugs Routing Fix</span>
+    </div>
+
+    <div class="preview-notice">
+      ℹ️ Note: Top bar &amp; sidebar are local preview controls only. Live site is 100% clean full-width.
+    </div>
+
+    <!-- Responsive Viewport Switcher -->
+    <div class="viewport-controls">
+      <button class="vp-btn active" onclick="setViewport('100%', this)">Desktop (5-Col Full)</button>
+      <button class="vp-btn" onclick="setViewport('768px', this)">Tablet (768px)</button>
+      <button class="vp-btn" onclick="setViewport('375px', this)">Mobile (375px)</button>
+    </div>
+
+    <div class="header-actions">
+      <div class="status-pill">● 27 PDPs + Quote Routing Fixed</div>
+    </div>
+  </header>
+
+  <!-- Main Work Area -->
+  <div class="main-wrap">
+    <!-- Sidebar SKU Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <h2>Drinkware Sets &amp; Mugs Routing</h2>
+        <p>Click item to inspect standalone PDP or Catalog Hub</p>
+      </div>
+      <div class="sku-list">
+        
+      <div class="sku-item active" onclick="loadPreview('../drinkware-sets.html', this, 'Drinkware Sets Catalog Hub (27 SKUs · 5 Columns)')">
+        <div class="sku-badge hub">HUB</div>
+        <div class="sku-details">
+          <div class="sku-title">Drinkware Sets Catalog</div>
+          <div class="sku-meta">27 Models · Full Clickable Routing</div>
+        </div>
+      </div>
+      <div class="sku-item" onclick="loadPreview('../coffee-tea-mugs.html', this, 'Coffee & Tea Mugs Catalog (12 SKUs · Quote Routing Fixed)')">
+        <div class="sku-badge hub">HUB</div>
+        <div class="sku-details">
+          <div class="sku-title">Coffee & Tea Mugs Catalog</div>
+          <div class="sku-meta">12 Models · Quote Buttons Fixed</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../320-ml-butterfly-coupe-champagne-glass-xzr1006.html', this, 'Model XZR1006 (320 ml Butterfly Coupe Champagne Glass)')">
+        <div class="sku-badge">XZR1006</div>
+        <div class="sku-details">
+          <div class="sku-title">320 ml Butterfly Coupe Champagne Glass</div>
+          <div class="sku-meta">320 ml · Novelty Coupe · XZR1006</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../stepped-margarita-cocktail-glass-xz1529.html', this, 'Model XZ1529 (Stepped Margarita Cocktail Glass)')">
+        <div class="sku-badge">XZ1529</div>
+        <div class="sku-details">
+          <div class="sku-title">Stepped Margarita Cocktail Glass</div>
+          <div class="sku-meta">240 ml · Margarita Glass · XZ1529</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../300-ml-dublin-cut-stemmed-wine-glass-xz3050.html', this, 'Model XZ3050 (300 ml Dublin Cut Stemmed Wine Glass)')">
+        <div class="sku-badge">XZ3050</div>
+        <div class="sku-details">
+          <div class="sku-title">300 ml Dublin Cut Stemmed Wine Glass</div>
+          <div class="sku-meta">300 ml · Cut Stemware · XZ3050</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../150-ml-diamond-cut-short-stem-wine-glass-xz8001.html', this, 'Model XZ8001 (150 ml Diamond-Cut Short Stem Wine Glass)')">
+        <div class="sku-badge">XZ8001</div>
+        <div class="sku-details">
+          <div class="sku-title">150 ml Diamond-Cut Short Stem Wine Glass</div>
+          <div class="sku-meta">150 ml · Diamond Stemware · XZ8001</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../concave-base-coupe-champagne-glass-xz9027.html', this, 'Model XZ9027 (Concave-Base Coupe Champagne Glass)')">
+        <div class="sku-badge">XZ9027</div>
+        <div class="sku-details">
+          <div class="sku-title">Concave-Base Coupe Champagne Glass</div>
+          <div class="sku-meta">200 ml · Coupe Champagne · XZ9027</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../wide-coupe-champagne-glass-xz9029.html', this, 'Model XZ9029 (Wide Coupe Champagne Glass)')">
+        <div class="sku-badge">XZ9029</div>
+        <div class="sku-details">
+          <div class="sku-title">Wide Coupe Champagne Glass</div>
+          <div class="sku-meta">275 ml · Wide Coupe · XZ9029</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../vertical-ribbed-stemmed-drink-glass-xzj0724.html', this, 'Model XZJ0724 (Vertical Ribbed Stemmed Drink Glass)')">
+        <div class="sku-badge">XZJ0724</div>
+        <div class="sku-details">
+          <div class="sku-title">Vertical Ribbed Stemmed Drink Glass</div>
+          <div class="sku-meta">245 ml · Ribbed Stemmed · XZJ0724</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../six-edge-ice-smoke-decanter-set-with-cups-xzws-001g.html', this, 'Model XZWS-001G (Six-Edge Ice-Smoke Decanter Set with Cups)')">
+        <div class="sku-badge">XZWS-001G</div>
+        <div class="sku-details">
+          <div class="sku-title">Six-Edge Ice-Smoke Decanter Set with Cups</div>
+          <div class="sku-meta">Pitcher 1230 ml; Cup 300 ml · Smoke Water Set · XZWS-001G</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../straight-ice-clear-pitcher-set-with-cups-xzws-002.html', this, 'Model XZWS-002 (Straight Ice-Clear Pitcher Set with Cups)')">
+        <div class="sku-badge">XZWS-002</div>
+        <div class="sku-details">
+          <div class="sku-title">Straight Ice-Clear Pitcher Set with Cups</div>
+          <div class="sku-meta">Pitcher 1180 ml; Cup 250 ml · Clear Pitcher Set · XZWS-002</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../six-edge-ice-clear-decanter-set-with-round-stopper-xzws-001.html', this, 'Model XZWS-001 (Six-Edge Ice-Clear Decanter Set with Round Stopper)')">
+        <div class="sku-badge">XZWS-001</div>
+        <div class="sku-details">
+          <div class="sku-title">Six-Edge Ice-Clear Decanter Set with Round Stopper</div>
+          <div class="sku-meta">Pitcher 1230 ml; Cup 300 ml · Clear Water Set · XZWS-001</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../six-edge-ice-colored-decanter-set-with-cups-xzws-001r.html', this, 'Model XZWS-001R (Six-Edge Ice-Colored Decanter Set with Cups)')">
+        <div class="sku-badge">XZWS-001R</div>
+        <div class="sku-details">
+          <div class="sku-title">Six-Edge Ice-Colored Decanter Set with Cups</div>
+          <div class="sku-meta">Pitcher 1230 ml; Cup 300 ml · Colored Water Set · XZWS-001R</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../straight-ice-amber-pitcher-set-with-cups-xzws-002a.html', this, 'Model XZWS-002A (Straight Ice-Amber Pitcher Set with Cups)')">
+        <div class="sku-badge">XZWS-002A</div>
+        <div class="sku-details">
+          <div class="sku-title">Straight Ice-Amber Pitcher Set with Cups</div>
+          <div class="sku-meta">Pitcher 1180 ml; Cup 250 ml · Amber Pitcher Set · XZWS-002A</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../straight-ice-smoke-or-multi-color-pitcher-set-xzws-002r.html', this, 'Model XZWS-002R (Straight Ice Smoke or Multi-Color Pitcher Set)')">
+        <div class="sku-badge">XZWS-002R</div>
+        <div class="sku-details">
+          <div class="sku-title">Straight Ice Smoke or Multi-Color Pitcher Set</div>
+          <div class="sku-meta">Pitcher 1180 ml; Cup 250 ml · Smoke Multi-Color Set · XZWS-002R</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../v-shaped-martini-cocktail-glass-vr-j012c.html', this, 'Model VR-J012C (V-Shaped Martini Cocktail Glass)')">
+        <div class="sku-badge">VR-J012C</div>
+        <div class="sku-details">
+          <div class="sku-title">V-Shaped Martini Cocktail Glass</div>
+          <div class="sku-meta">220 ml · V Martini Glass · VR-J012C</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../230-ml-coupe-dessert-cup-xz293b.html', this, 'Model XZ293B (230 ml Coupe Dessert Cup)')">
+        <div class="sku-badge">XZ293B</div>
+        <div class="sku-details">
+          <div class="sku-title">230 ml Coupe Dessert Cup</div>
+          <div class="sku-meta">230 ml · Coupe Dessert Cup · XZ293B</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../250-ml-straight-water-glass-xz295b.html', this, 'Model XZ295B (250 ml Straight Water Glass)')">
+        <div class="sku-badge">XZ295B</div>
+        <div class="sku-details">
+          <div class="sku-title">250 ml Straight Water Glass</div>
+          <div class="sku-meta">250 ml · Straight Water Glass · XZ295B</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../150-ml-grappa-nosing-glass-xz1022-14.html', this, 'Model XZ1022-14 (150 ml Grappa Nosing Glass)')">
+        <div class="sku-badge">XZ1022-14</div>
+        <div class="sku-details">
+          <div class="sku-title">150 ml Grappa Nosing Glass</div>
+          <div class="sku-meta">150 ml · Grappa Tasting Glass · XZ1022-14</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../150-ml-compact-tasting-glass-xz1022-103.html', this, 'Model XZ1022-103 (150 ml Compact Tasting Glass)')">
+        <div class="sku-badge">XZ1022-103</div>
+        <div class="sku-details">
+          <div class="sku-title">150 ml Compact Tasting Glass</div>
+          <div class="sku-meta">150 ml · Compact Tasting Glass · XZ1022-103</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../250-ml-reiss-wide-coupe-glass-xzj0125.html', this, 'Model XZJ0125 (250 ml Reiss Wide Coupe Glass)')">
+        <div class="sku-badge">XZJ0125</div>
+        <div class="sku-details">
+          <div class="sku-title">250 ml Reiss Wide Coupe Glass</div>
+          <div class="sku-meta">250 ml · Reiss Wide Coupe · XZJ0125</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../320-ml-reiss-cut-goblet-wine-glass-xzj0132.html', this, 'Model XZJ0132 (320 ml Reiss Cut Goblet Wine Glass)')">
+        <div class="sku-badge">XZJ0132</div>
+        <div class="sku-details">
+          <div class="sku-title">320 ml Reiss Cut Goblet Wine Glass</div>
+          <div class="sku-meta">320 ml · Reiss Cut Goblet · XZJ0132</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../500-ml-tall-multi-purpose-goblet-xzj0160.html', this, 'Model XZJ0160 (500 ml Tall Multi-Purpose Goblet)')">
+        <div class="sku-badge">XZJ0160</div>
+        <div class="sku-details">
+          <div class="sku-title">500 ml Tall Multi-Purpose Goblet</div>
+          <div class="sku-meta">500 ml · Tall Multi-Purpose Goblet · XZJ0160</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../kelbo-champagne-flute-xzj0217.html', this, 'Model XZJ0217 (Kelbo Champagne Flute)')">
+        <div class="sku-badge">XZJ0217</div>
+        <div class="sku-details">
+          <div class="sku-title">Kelbo Champagne Flute</div>
+          <div class="sku-meta"> · Kelbo Champagne Flute · XZJ0217</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../250-ml-stemmed-dessert-cup-xzj0231.html', this, 'Model XZJ0231 (250 ml Stemmed Dessert Cup)')">
+        <div class="sku-badge">XZJ0231</div>
+        <div class="sku-details">
+          <div class="sku-title">250 ml Stemmed Dessert Cup</div>
+          <div class="sku-meta">250 ml · Stemmed Dessert Cup · XZJ0231</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../kelbo-stemmed-wine-goblet-xzj0232.html', this, 'Model XZJ0232 (Kelbo Stemmed Wine Goblet)')">
+        <div class="sku-badge">XZJ0232</div>
+        <div class="sku-details">
+          <div class="sku-title">Kelbo Stemmed Wine Goblet</div>
+          <div class="sku-meta">320 ml · Kelbo Wine Goblet · XZJ0232</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../500-ml-large-multi-purpose-stemmed-bowl-xzj0250.html', this, 'Model XZJ0250 (500 ml Large Multi-Purpose Stemmed Bowl)')">
+        <div class="sku-badge">XZJ0250</div>
+        <div class="sku-details">
+          <div class="sku-title">500 ml Large Multi-Purpose Stemmed Bowl</div>
+          <div class="sku-meta">500 ml · Large Stemmed Bowl · XZJ0250</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../stemmed-bar-cocktail-glass-vr-j004c.html', this, 'Model VR-J004C (Stemmed Bar Cocktail Glass)')">
+        <div class="sku-badge">VR-J004C</div>
+        <div class="sku-details">
+          <div class="sku-title">Stemmed Bar Cocktail Glass</div>
+          <div class="sku-meta">220 ml · Stemmed Bar Cocktail · VR-J004C</div>
+        </div>
+      </div>
+
+
+      <div class="sku-item" onclick="loadPreview('../classic-stemmed-cocktail-glass-vr-j011c.html', this, 'Model VR-J011C (Classic Stemmed Cocktail Glass)')">
+        <div class="sku-badge">VR-J011C</div>
+        <div class="sku-details">
+          <div class="sku-title">Classic Stemmed Cocktail Glass</div>
+          <div class="sku-meta">220 ml · Classic Stemmed Cocktail · VR-J011C</div>
+        </div>
+      </div>
+
+      </div>
+    </aside>
+
+    <!-- Center Iframe Preview Stage -->
+    <main class="preview-stage">
+      <div class="stage-header">
+        <div>Current View: <strong class="stage-title" id="stageTitle">Drinkware Sets Catalog Hub (27 SKUs · 5 Columns)</strong></div>
+        <div id="urlIndicator" style="font-family:monospace; font-size:0.8rem; color:#64748b;">drinkware-sets.html</div>
+      </div>
+      <div class="iframe-wrapper" id="iframeWrap">
+        <iframe id="previewFrame" src="../drinkware-sets.html"></iframe>
+      </div>
+    </main>
+  </div>
+
+  <!-- Verification Badges Footer -->
+  <footer class="audit-bar">
+    <div class="audit-item">✓ <strong>27 Standalone PDPs</strong> Generated</div>
+    <div class="audit-item">✓ <strong>Drinkware Sets Image/Title Clickable</strong> (Linked to PDPs)</div>
+    <div class="audit-item">✓ <strong>Coffee Mugs &amp; Double-Wall Cups Quote Jump Fixed</strong> (Direct to Quote Checklist)</div>
+    <div class="audit-item">✓ <strong>5-Column Grid Layout</strong> Standardized</div>
+    <div class="audit-item">✓ <strong>Zero-Pricing</strong> B2B Compliance</div>
+    <div class="audit-item">✓ <strong>0 Chinese Characters</strong> in Production Code</div>
+  </footer>
+
+  <script>
+    function loadPreview(url, el, title) {
+      document.getElementById('previewFrame').src = url;
+      document.getElementById('stageTitle').innerText = title;
+      document.getElementById('urlIndicator').innerText = url.replace('../', '');
+      
+      const items = document.querySelectorAll('.sku-item');
+      items.forEach(item => item.classList.remove('active'));
+      if (el) el.classList.add('active');
+    }
+
+    function setViewport(width, btn) {
+      const wrap = document.getElementById('iframeWrap');
+      wrap.style.maxWidth = width;
+      
+      const btns = document.querySelectorAll('.vp-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>

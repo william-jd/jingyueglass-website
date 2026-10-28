@@ -529,10 +529,27 @@
     .section-title { font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 700; color: var(--dark); margin-bottom: 0.8rem; }
     .section-sub { color: #666; font-size: 1rem; max-width: 560px; margin-bottom: 3rem; }
     .products-section { background: var(--light-bg); }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+        .products-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    @media (max-width: 1440px) {
+      .products-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+    @media (max-width: 1100px) {
+      .products-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 768px) {
+      .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
     .product-card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.25s, box-shadow 0.25s; }
     .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-    .product-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .product-card img { width: 100%; height: 210px; object-fit: contain; background: #fff; display: block; padding: 10px; transition: transform 0.2s; }
+    .product-card:hover img { transform: scale(1.03); }
     .product-card-body { padding: 1.2rem 1.4rem 1.5rem; }
     .product-tag { display: inline-block; background: rgba(201,168,76,0.12); color: #9a7a30; font-size: 0.75rem; padding: 3px 10px; border-radius: 4px; margin-bottom: 0.6rem; font-weight: 600; }
     .product-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
@@ -808,7 +825,7 @@
   <a href="/" class="nav-logo" aria-label="Jingyue Glass home"><img src="/assets/jingyue-logo.png" alt="Jingyue Glass — wholesale glassware supplier"></a>
   <div class="nav-links">
     <a href="/">Home</a><a href="/#products">Products</a><a href="/#why">Why Us</a><a href="/about">About</a>
-    <a href="#inquiry" class="nav-cta">Get Quote</a>
+    <a href="/custom-glassware-quote-checklist" class="nav-cta">Get Quote</a>
   </div>
 </nav>
 <section class="hero">
@@ -817,7 +834,7 @@
     <h1 class="hero-title" data-i18n="hero_title">Wholesale <span>Glass Coffee Mugs & Double Wall Cups</span> Manufacturer</h1>
     <p>Source high borosilicate double-wall cups, coffee mugs, and novelty glass drinkware direct from factory. In-stock styles from 36–100 pcs, bespoke OEM packaging from 300 pcs. Thermal shock tested (ΔT 120°C).</p>
     <div class="hero-btns">
-      <a href="#inquiry" class="btn-primary">Request Free Sample</a>
+      <a href="/custom-glassware-quote-checklist" class="btn-primary">Request Custom Quote</a>
       <a href="#products" class="btn-outline">Browse Styles ↓</a>
     </div>
   </div>
@@ -1086,7 +1103,7 @@
   <h2>Ready to Brand Your Own Glass Mugs?</h2>
   <p>Send us your logo and requirements — we'll deliver a free digital mockup within 1 hour.</p>
   <div class="cta-btns">
-    <a href="#inquiry" class="cta-btn-dark">Request a Quote</a>
+    <a href="/custom-glassware-quote-checklist" class="cta-btn-dark">Request Custom Quote</a>
     <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20just%20viewed%20your%20Borosilicate%20Double-Wall%20Glass%20Mugs%20and%20would%20like%20to%20discuss%20an%20order." class="cta-btn-light" target="_blank">WhatsApp Us Now</a>
   </div>
 </section>

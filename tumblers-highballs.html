@@ -491,10 +491,27 @@
     .section-title { font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 700; color: var(--dark); margin-bottom: 0.8rem; }
     .section-sub { color: #666; font-size: 1rem; max-width: 560px; margin-bottom: 3rem; }
     .products-section { background: var(--light-bg); }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+        .products-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1.25rem;
+    }
+    @media (max-width: 1440px) {
+      .products-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    }
+    @media (max-width: 1100px) {
+      .products-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+    @media (max-width: 768px) {
+      .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+    }
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; }
+    }
     .product-card { background: var(--white); border-radius: 10px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.07); transition: transform 0.25s, box-shadow 0.25s; }
     .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
-    .product-card img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .product-card img { width: 100%; height: 210px; object-fit: contain; background: #fff; display: block; padding: 10px; transition: transform 0.2s; }
+    .product-card:hover img { transform: scale(1.03); }
     .product-card-body { padding: 1.2rem 1.4rem 1.5rem; }
     .product-tag { display: inline-block; background: rgba(201,168,76,0.12); color: #9a7a30; font-size: 0.75rem; padding: 3px 10px; border-radius: 4px; margin-bottom: 0.6rem; font-weight: 600; }
     .product-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 0.4rem; }
@@ -777,8 +794,8 @@
   <div class="hero-text">
     <div class="hero-badge">China Factory · Direct Price</div>
     <h1 class="hero-title" data-i18n="hero_title">Wholesale <span>Highball Glasses & Beverage Tumblers</span> Manufacturer</h1>
-    <p>Source updated water glasses, highball tumblers and whiskey glasses direct from Jingyue Glass. Nine SKU products are available for mixed batch ordering, custom logo review and carton-pack sourcing.</p>
-    <div class="hero-btns"><a href="#inquiry" class="btn-primary">Request Quote</a><a href="#products" class="btn-outline">Browse 9 SKUs ↓</a></div>
+    <p>Source updated water glasses, highball tumblers and whiskey glasses direct from Jingyue Glass. 46 SKU products are available for mixed batch ordering, custom logo review and carton-pack sourcing.</p>
+    <div class="hero-btns"><a href="#inquiry" class="btn-primary">Request Quote</a><a href="#products" class="btn-outline">Browse 46 SKUs ↓</a></div>
   </div>
   <div class="hero-image"><img src="/assets/products/tumblers-highballs/hero-tumblers-highballs.webp" alt="Wholesale tumblers and highball glasses from Jingyue Glass" loading="eager"></div>
 </section>
@@ -816,96 +833,467 @@
 <section class="products-section" id="products">
   <div class="section-label">Our Collection</div>
   <div class="section-title">Updated Tumbler & Highball SKU Styles</div>
-  <p class="section-sub">Nine updated SKUs from the Jingyue Red Box stemware, tumbler and whiskey glass specification sheet. Standard product data is shown as provided; missing fields remain marked as To confirm.</p>
+  <p class="section-sub">46 Comprehensive SKUs from the Jingyue Red Box stemware, tumbler and whiskey glass specification sheet. Standard product data is shown as provided; missing fields remain marked as To confirm.</p>
   <div class="products-grid">
-    <div class="product-card" id="hs6h110">
-      <a href="/cold-cut-highball-glass-hs6h110"><img src="/assets/products/tumblers-highballs/hs6h110-320-ml-cold-cut-highball-drinking-glass-new-20260917.webp" alt="320 ml Cold-Cut Highball Drinking Glass - HS6H110 - Wholesale Factory Direct China" loading="lazy"></a>
+        <div class="product-card" id="hs6h110">
+      <a href="/cold-cut-highball-glass-hs6h110"><img src="/assets/products/tumblers-highballs/hs6h110-320-ml-cold-cut-highball-drinking-glass-new-20260917.webp" alt="320ml Cold-Cut Highball Drinking Glass - HS6H110 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
       <div class="product-card-body">
-        <span class="product-tag">Tumbler · HS6H110</span>
-        <h2><a href="/cold-cut-highball-glass-hs6h110" style="color:inherit;text-decoration:none;">320 ml Cold-Cut Highball Drinking Glass</a></h2>
-        <p>HS6H110 is a 320 ml glassware item featuring cold-cut silhouette. It is listed with Rim Ø 6.9 × H 11.0, 48 pcs per carton, and outer carton reference 36.8 × 26.2 × 35.5. The machine-made soda-lime glass construction and retail-ready shape make it suitable for bar service, restaurant tableware, hotel drink programs, gift sets, promotional drinkware and private-label B2B glassware sourcing.</p>
-        <div class="product-specs"><span class="spec-tag">320 ml</span><span class="spec-tag">Rim Ø 6.9 × H 11.0</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <span class="product-tag">Highball Glass · Model HS6H110</span>
+        <h3><a href="/cold-cut-highball-glass-hs6h110" style="color:inherit;text-decoration:none;">320ml Cold-Cut Highball Glass</a></h3>
+        <p>HS6H110 is a 320ml commercial cold-cut highball tumbler with laser-cut rim and heavy sham base for craft cocktails, sodas, and restaurant service.</p>
+        <div class="product-specs"><span class="spec-tag">320 ml</span><span class="spec-tag">H 11.0 × Ø 6.9 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
         <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model HS6H110</a>
       </div>
     </div>
     <div class="product-card" id="hs75h145">
-      <a href="/tall-cold-cut-highball-glass-hs75h145"><img src="/assets/products/tumblers-highballs/hero-tumblers-highballs.webp" alt="500 ml Cold-Cut Highball Drinking Glass - HS75H145 - Wholesale Factory Direct China" loading="lazy"></a>
+      <a href="/tall-cold-cut-highball-glass-hs75h145"><img src="/assets/products/tumblers-highballs/hero-tumblers-highballs.webp" alt="500ml Cold-Cut Highball Drinking Glass - HS75H145 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
       <div class="product-card-body">
-        <span class="product-tag">Highball Glass · HS75H145</span>
-        <h3><a href="/tall-cold-cut-highball-glass-hs75h145" style="color:inherit;text-decoration:none;">500 ml Cold-Cut Highball Drinking Glass - HS75H145</a></h3>
-        <p>HS75H145 is a 500 ml glassware item featuring cold-cut silhouette. It is listed with Rim Ø 7.5 × H 14.5, 48 pcs per carton, and outer carton reference 47.5 × 32.5 × 31.4. The machine-made soda-lime glass construction and retail-ready shape make it suitable for bar service, restaurant tableware, hotel drink programs, gift sets, promotional drinkware and private-label B2B glassware sourcing.</p>
-        <div class="product-specs"><span class="spec-tag">500 ml</span><span class="spec-tag">Rim Ø 7.5 × H 14.5</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <span class="product-tag">Highball Glass · Model HS75H145</span>
+        <h3><a href="/tall-cold-cut-highball-glass-hs75h145" style="color:inherit;text-decoration:none;">500ml Cold-Cut Highball Glass</a></h3>
+        <p>HS75H145 is a generous 500ml tall cold-cut highball glass engineered for long drinks, craft iced tea, draft beers, and large mixed beverages.</p>
+        <div class="product-specs"><span class="spec-tag">500 ml</span><span class="spec-tag">H 14.5 × Ø 7.5 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
         <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model HS75H145</a>
       </div>
     </div>
     <div class="product-card" id="xz032-3">
-      <a href="/highball-drinking-tumbler-xz032-3"><img src="/assets/products/tumblers-highballs/xz032-3-highball-drinking-tumbler-new-20260917.webp" alt="Highball Drinking Tumbler - XZ032-3 - Wholesale Factory Direct China" loading="lazy"></a>
+      <a href="/highball-drinking-tumbler-xz032-3"><img src="/assets/products/tumblers-highballs/xz032-3-highball-drinking-tumbler-new-20260917.webp" alt="330ml Highball Drinking Tumbler - XZ032-3 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
       <div class="product-card-body">
-        <span class="product-tag">Tumblers · XZ032-3</span>
-        <h3><a href="/highball-drinking-tumbler-xz032-3" style="color:inherit;text-decoration:none;">Highball Drinking Tumbler</a></h3>
-        <p>XZ032-3 is a glassware item featuring clear glass body and practical drinkware proportions. It is listed with Rim and height details shown in the specification table, 48 pcs per carton, and outer carton reference 42.7 × 29.5 × 32.3. The machine-made soda-lime glass construction and retail-ready shape make it suitable for bar service, restaurant tableware, hotel drink programs, gift sets, promotional drinkware and private-label B2B glassware sourcing.</p>
-        <div class="product-specs"><span class="spec-tag">330 ml</span><span class="spec-tag">Rim Ø 7.1 × H 15</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <span class="product-tag">Highball Tumbler · Model XZ032-3</span>
+        <h3><a href="/highball-drinking-tumbler-xz032-3" style="color:inherit;text-decoration:none;">330ml Highball Drinking Tumbler</a></h3>
+        <p>XZ032-3 provides balanced 330ml capacity with crystal-clear walls and heavy bottom, suitable for bar cocktail programs and hotel beverage service.</p>
+        <div class="product-specs"><span class="spec-tag">330 ml</span><span class="spec-tag">H 15.0 × Ø 7.1 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
         <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ032-3</a>
       </div>
     </div>
     <div class="product-card" id="xz0486">
-      <a href="/stackable-water-tumbler-xz0486"><img src="/assets/products/tumblers-highballs/xz0486-200-ml-stackable-water-tumbler-new-20260917.webp" alt="200 ml Stackable Water Tumbler - XZ0486 - Wholesale Factory Direct China" loading="lazy"></a>
+      <a href="/stackable-water-tumbler-xz0486"><img src="/assets/products/tumblers-highballs/xz0486-200-ml-stackable-water-tumbler-new-20260917.webp" alt="200ml Stackable Water Tumbler - XZ0486 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
       <div class="product-card-body">
-        <span class="product-tag">Tumblers · XZ0486</span>
-        <h3><a href="/stackable-water-tumbler-xz0486" style="color:inherit;text-decoration:none;">200 ml Stackable Water Tumbler</a></h3>
-        <p>XZ0486 is a 200 ml glassware item featuring stackable form. It is listed with H 9.0; Ø 8.0; Base Ø 5.0; V 200 ml, 72 pcs per carton, and outer carton reference 43.5 × 41 × 21.5. The machine-made soda-lime glass construction and retail-ready shape make it suitable for bar service, restaurant tableware, hotel drink programs, gift sets, promotional drinkware and private-label B2B glassware sourcing.</p>
-        <div class="product-specs"><span class="spec-tag">200 ml</span><span class="spec-tag">H 9.0; Ø 8.0; Base Ø 5.0; V 200 ml</span><span class="spec-tag">MOQ 72 pcs</span></div>
+        <span class="product-tag">Water Tumbler · Model XZ0486</span>
+        <h3><a href="/stackable-water-tumbler-xz0486" style="color:inherit;text-decoration:none;">200ml Stackable Water Tumbler</a></h3>
+        <p>XZ0486 is a space-saving 200ml stackable drinking tumbler with tapered profile and reinforced rim for high-turnover buffets and dining rooms.</p>
+        <div class="product-specs"><span class="spec-tag">200 ml</span><span class="spec-tag">H 9.0 × Ø 8.0 cm</span><span class="spec-tag">MOQ 72 pcs</span></div>
         <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ0486</a>
       </div>
     </div>
     <div class="product-card" id="xz0603">
-      <a href="/diamond-cut-water-tumbler-xz0603"><img src="/assets/products/tumblers-highballs/xz0603-250-ml-diamond-cut-water-tumbler-new-20260917.webp" alt="250 ml Diamond-Cut Water Tumbler - XZ0603 - Wholesale Factory Direct China" loading="lazy"></a>
+      <a href="/diamond-cut-water-tumbler-xz0603"><img src="/assets/products/tumblers-highballs/xz0603-250-ml-diamond-cut-water-tumbler-new-20260917.webp" alt="250ml Diamond-Cut Water Tumbler - XZ0603 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
       <div class="product-card-body">
-        <span class="product-tag">Tumbler · XZ0603</span>
-        <h3><a href="/diamond-cut-water-tumbler-xz0603" style="color:inherit;text-decoration:none;">250 ml Diamond-Cut Water Tumbler</a></h3>
-        <p>XZ0603 is a 250 ml glassware item featuring diamond-cut texture. It is listed with Rim Ø 6.5 × H 12.5 V 250 ml, 72 pcs per carton, and outer carton reference 45 × 30.8 × 32.3. The machine-made soda-lime glass construction and retail-ready shape make it suitable for bar service, restaurant tableware, hotel drink programs, gift sets, promotional drinkware and private-label B2B glassware sourcing.</p>
-        <div class="product-specs"><span class="spec-tag">250 ml</span><span class="spec-tag">Rim Ø 6.5 × H 12.5</span><span class="spec-tag">MOQ 72 pcs</span></div>
+        <span class="product-tag">Cut Tumbler · Model XZ0603</span>
+        <h3><a href="/diamond-cut-water-tumbler-xz0603" style="color:inherit;text-decoration:none;">250ml Diamond-Cut Water Tumbler</a></h3>
+        <p>XZ0603 is an elegant 250ml tumbler featuring diamond-cut relief facets that reflect light beautifully during restaurant table water service.</p>
+        <div class="product-specs"><span class="spec-tag">250 ml</span><span class="spec-tag">H 12.5 × Ø 6.5 cm</span><span class="spec-tag">MOQ 72 pcs</span></div>
         <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ0603</a>
       </div>
     </div>
     <div class="product-card" id="xz2016">
-      <a href="/large-water-tumbler-xz2016"><img src="/assets/products/tumblers-highballs/xz2016-470-ml-water-tumbler-new-20260917.webp" alt="470 ml Water Tumbler - XZ2016 - Wholesale Factory Direct China" loading="lazy"></a>
+      <a href="/large-water-tumbler-xz2016"><img src="/assets/products/tumblers-highballs/xz2016-470-ml-water-tumbler-new-20260917.webp" alt="470ml Large Water Tumbler - XZ2016 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
       <div class="product-card-body">
-        <span class="product-tag">Tumblers · XZ2016</span>
-        <h3><a href="/large-water-tumbler-xz2016" style="color:inherit;text-decoration:none;">470 ml Water Tumbler</a></h3>
-        <p>XZ2016 is a 470 ml glassware item featuring clear glass body and practical drinkware proportions. It is listed with Rim Ø 8.7 × H 16.3; V 470 ml, 48 pcs per carton, and outer carton reference 51 × 25.1 × 35.5. The machine-made soda-lime glass construction and retail-ready shape make it suitable for bar service, restaurant tableware, hotel drink programs, gift sets, promotional drinkware and private-label B2B glassware sourcing.</p>
-        <div class="product-specs"><span class="spec-tag">470 ml</span><span class="spec-tag">Rim Ø 8.7 × H 16.3; V 470 ml</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <span class="product-tag">Large Tumbler · Model XZ2016</span>
+        <h3><a href="/large-water-tumbler-xz2016" style="color:inherit;text-decoration:none;">470ml Large Water Tumbler</a></h3>
+        <p>XZ2016 is a high-volume 470ml commercial water tumbler standing 16.3cm tall, designed for fast-paced hospitality replenishment and banquets.</p>
+        <div class="product-specs"><span class="spec-tag">470 ml</span><span class="spec-tag">H 16.3 × Ø 8.7 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
         <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2016</a>
       </div>
     </div>
     <div class="product-card" id="xz5008-3">
-      <a href="/wide-mouth-stackable-tumbler-xz5008-3"><img src="/assets/products/tumblers-highballs/xz5008-3-380-ml-stackable-drinking-tumbler-new-20260917.webp" alt="380 ml Stackable Drinking Tumbler - XZ5008-3 - Wholesale Factory Direct China" loading="lazy"></a>
+      <a href="/wide-mouth-stackable-tumbler-xz5008-3"><img src="/assets/products/tumblers-highballs/xz5008-3-380-ml-stackable-drinking-tumbler-new-20260917.webp" alt="380ml Stackable Drinking Tumbler - XZ5008-3 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
       <div class="product-card-body">
-        <span class="product-tag">Tumblers · XZ5008-3</span>
-        <h3><a href="/wide-mouth-stackable-tumbler-xz5008-3" style="color:inherit;text-decoration:none;">380 ml Stackable Drinking Tumbler</a></h3>
-        <p>XZ5008-3 is a 380 ml glassware item featuring stackable form. It is listed with Rim Ø 10.2 × H 8.2; V 380 ml, 48 pcs per carton, and outer carton reference 51 × 34.5 × 26. The machine-made soda-lime glass construction and retail-ready shape make it suitable for bar service, restaurant tableware, hotel drink programs, gift sets, promotional drinkware and private-label B2B glassware sourcing.</p>
-        <div class="product-specs"><span class="spec-tag">380 ml</span><span class="spec-tag">Rim Ø 10.2 × H 8.2; V 380 ml</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <span class="product-tag">Stackable Tumbler · Model XZ5008-3</span>
+        <h3><a href="/wide-mouth-stackable-tumbler-xz5008-3" style="color:inherit;text-decoration:none;">380ml Stackable Drinking Tumbler</a></h3>
+        <p>XZ5008-3 features a wide-mouth stackable form with 380ml capacity, ideal for bars, cafeteria trays, and multi-beverage service.</p>
+        <div class="product-specs"><span class="spec-tag">380 ml</span><span class="spec-tag">H 8.2 × Ø 10.2 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
         <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ5008-3</a>
       </div>
     </div>
     <div class="product-card" id="xz5163-2">
-      <a href="/six-sided-whiskey-tumbler-xz5163-2"><img src="/assets/products/tumblers-highballs/xz5163-2-300-ml-six-sided-whiskey-tumbler-new-20260917.webp" alt="300 ml Six-Sided Whiskey Tumbler - XZ5163-2 - Wholesale Factory Direct China" loading="lazy"></a>
+      <a href="/six-sided-whiskey-tumbler-xz5163-2"><img src="/assets/products/tumblers-highballs/xz5163-2-300-ml-six-sided-whiskey-tumbler-new-20260917.webp" alt="300ml Six-Sided Whiskey Tumbler - XZ5163-2 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
       <div class="product-card-body">
-        <span class="product-tag">Drinking Glass · XZ5163-2</span>
-        <h3><a href="/six-sided-whiskey-tumbler-xz5163-2" style="color:inherit;text-decoration:none;">300 ml Six-Sided Whiskey Tumbler</a></h3>
-        <p>XZ5163-2 is a 300 ml glassware item featuring six-sided profile. It is listed with Rim Ø 6.9 × H 9.2; V 300 ml, 72 pcs per carton, and outer carton reference 50.3 × 39 × 31.2. The machine-made soda-lime glass construction and retail-ready shape make it suitable for bar service, restaurant tableware, hotel drink programs, gift sets, promotional drinkware and private-label B2B glassware sourcing.</p>
-        <div class="product-specs"><span class="spec-tag">300 ml</span><span class="spec-tag">Rim Ø 6.9 × H 9.2; V 300 ml</span><span class="spec-tag">MOQ 72 pcs</span></div>
+        <span class="product-tag">Six-Sided Tumbler · Model XZ5163-2</span>
+        <h3><a href="/six-sided-whiskey-tumbler-xz5163-2" style="color:inherit;text-decoration:none;">300ml Six-Sided Whiskey Tumbler</a></h3>
+        <p>XZ5163-2 features crisp hexagonal faceted walls and 300ml volume for comfortable grip and distinct modern aesthetic in spirits service.</p>
+        <div class="product-specs"><span class="spec-tag">300 ml</span><span class="spec-tag">H 9.2 × Ø 6.9 cm</span><span class="spec-tag">MOQ 72 pcs</span></div>
         <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ5163-2</a>
       </div>
     </div>
     <div class="product-card" id="xz5215">
-      <a href="/heavy-base-highball-glass-xz5215"><img src="/assets/products/tumblers-highballs/xz5215-high-ball-glass-tumbler-new-20260917.webp" alt="High Ball Glass Tumbler - XZ5215 - Wholesale Factory Direct China" loading="lazy"></a>
+      <a href="/heavy-base-highball-glass-xz5215"><img src="/assets/products/tumblers-highballs/xz5215-high-ball-glass-tumbler-new-20260917.webp" alt="360ml Heavy-Base Highball Tumbler - XZ5215 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
       <div class="product-card-body">
-        <span class="product-tag">Tumbler · XZ5215</span>
-        <h3><a href="/heavy-base-highball-glass-xz5215" style="color:inherit;text-decoration:none;">High Ball Glass Tumbler</a></h3>
-        <p>XZ5215 is a glassware item featuring clear glass body and practical drinkware proportions. It is listed with Rim and height details shown in the specification table, 36 pcs per carton, and outer carton reference 49.3 × 24.7 × 32.3. The machine-made soda-lime glass construction and retail-ready shape make it suitable for bar service, restaurant tableware, hotel drink programs, gift sets, promotional drinkware and private-label B2B glassware sourcing.</p>
-        <div class="product-specs"><span class="spec-tag">360 ml</span><span class="spec-tag">Rim Ø 7.4 × H 14</span><span class="spec-tag">MOQ 36 pcs</span></div>
+        <span class="product-tag">Highball Tumbler · Model XZ5215</span>
+        <h3><a href="/heavy-base-highball-glass-xz5215" style="color:inherit;text-decoration:none;">360ml Heavy-Base Highball Glass</a></h3>
+        <p>XZ5215 is a 360ml classic tall highball tumbler with solid weighted base and chip-resistant rim for commercial bar cocktails and mixed drinks.</p>
+        <div class="product-specs"><span class="spec-tag">360 ml</span><span class="spec-tag">H 14.0 × Ø 7.4 cm</span><span class="spec-tag">MOQ 36 pcs</span></div>
         <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ5215</a>
+      </div>
+    </div>
+
+    <div class="product-card" id="xz2209">
+      <a href="/soccer-relief-base-highball-glass-xz2209"><img src="/assets/products/tumblers-highballs/xz2209-soccer-relief-base-highball-glass.webp" alt="400ml Soccer Relief Base Highball Glass - XZ2209 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Highball Glasses · XZ2209</span>
+        <h3><a href="/soccer-relief-base-highball-glass-xz2209" style="color:inherit;text-decoration:none;">400ml Soccer Relief Base Highball Glass</a></h3>
+        <p>XZ2209 is a 400ml commercial highball drinking glass featuring a three-dimensional embossed soccer relief molded into the heavy sham base. Designed for sports bars, brewery taprooms, and promotional stadium hospitality.</p>
+        <div class="product-specs"><span class="spec-tag">400 ml</span><span class="spec-tag">H 13.9 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2209</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz2210">
+      <a href="/beverage-highball-glass-xz2210"><img src="/assets/products/tumblers-highballs/xz2210-beverage-highball-glass.webp" alt="400ml Commercial Beverage Highball Glass - XZ2210 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Highball Glasses · XZ2210</span>
+        <h3><a href="/beverage-highball-glass-xz2210" style="color:inherit;text-decoration:none;">400ml Commercial Beverage Highball Glass</a></h3>
+        <p>XZ2210 is a versatile 400ml highball tumbler engineered for mixed drinks, iced coffees, fruit teas, and soda fountains. Built with a solid weighted base to prevent tipping in fast-paced catering environments.</p>
+        <div class="product-specs"><span class="spec-tag">400 ml</span><span class="spec-tag">H 13.9 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2210</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz2224">
+      <a href="/golf-pattern-base-highball-glass-xz2224"><img src="/assets/products/tumblers-highballs/xz2224-golf-pattern-base-highball-glass.webp" alt="400ml Golf Pattern Base Highball Glass - XZ2224 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Highball Glasses · XZ2224</span>
+        <h3><a href="/golf-pattern-base-highball-glass-xz2224" style="color:inherit;text-decoration:none;">400ml Golf Pattern Base Highball Glass</a></h3>
+        <p>XZ2224 is a 400ml tall highball glass designed with an embossed dimpled golf ball motif across its solid base. Engineered specifically for golf country clubs, tournament banquets, and executive corporate gift sets.</p>
+        <div class="product-specs"><span class="spec-tag">400 ml</span><span class="spec-tag">H 13.9 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2224</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz2213-eagle">
+      <a href="/eagle-relief-base-highball-glass-xz2213-eagle"><img src="/assets/products/tumblers-highballs/xz2213-eagle-relief-base-highball-glass.webp" alt="400ml Eagle Relief Base Highball Glass - XZ2213-EAGLE - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Highball Glasses · XZ2213-EAGLE</span>
+        <h3><a href="/eagle-relief-base-highball-glass-xz2213-eagle" style="color:inherit;text-decoration:none;">400ml Eagle Relief Base Highball Glass</a></h3>
+        <p>XZ2213-EAGLE features a sculpted three-dimensional soaring eagle head integrated into its heavyweight bottom. A standout choice for patriotic barware collections, resort gift shops, and premium spirit promotions.</p>
+        <div class="product-specs"><span class="spec-tag">400 ml</span><span class="spec-tag">H 13.9 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2213-EAGLE</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz2211-lion">
+      <a href="/lion-relief-base-highball-glass-xz2211-lion"><img src="/assets/products/tumblers-highballs/xz2211-lion-relief-base-highball-glass.webp" alt="400ml Lion Relief Base Highball Glass - XZ2211-LION - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Highball Glasses · XZ2211-LION</span>
+        <h3><a href="/lion-relief-base-highball-glass-xz2211-lion" style="color:inherit;text-decoration:none;">400ml Lion Relief Base Highball Glass</a></h3>
+        <p>XZ2211-LION is a 400ml highball drinking glass highlighted by an imperial lion head sculpted into the heavy sham base. Symbolizing strength and majesty, it serves as a commanding vessel for hotel bars and luxury lounges.</p>
+        <div class="product-specs"><span class="spec-tag">400 ml</span><span class="spec-tag">H 13.9 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2211-LION</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz22923">
+      <a href="/cylindrical-drinking-glass-xz22923"><img src="/assets/products/tumblers-highballs/xz22923-cylindrical-drinking-glass.webp" alt="340ml Cylindrical Drinking Glass - XZ22923 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Beverage Tumblers · XZ22923</span>
+        <h3><a href="/cylindrical-drinking-glass-xz22923" style="color:inherit;text-decoration:none;">340ml Cylindrical Drinking Glass</a></h3>
+        <p>XZ22923 is a sleek 340ml straight-sided drinking tumbler with minimalist Scandinavian geometry. Perfect for table water service, craft sodas, and contemporary cocktail presentations.</p>
+        <div class="product-specs"><span class="spec-tag">340 ml</span><span class="spec-tag">H 13.9 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ22923</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz3306">
+      <a href="/yulin-carved-highball-glass-xz3306"><img src="/assets/products/tumblers-highballs/xz3306-yulin-carved-highball-glass.webp" alt="340ml Yulin Carved Highball Glass - XZ3306 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Carved Highballs · XZ3306</span>
+        <h3><a href="/yulin-carved-highball-glass-xz3306" style="color:inherit;text-decoration:none;">340ml Yulin Carved Highball Glass</a></h3>
+        <p>XZ3306 features an intricate Yulin (fish scale) cut texture that refracts ambient light brilliantly across its 150mm tall silhouette. Ideal for upscale Gin & Tonic, Mojito, and sparkling cocktail service.</p>
+        <div class="product-specs"><span class="spec-tag">340 ml</span><span class="spec-tag">H 15.0 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ3306</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz5413b">
+      <a href="/geometric-cut-highball-glass-xz5413b"><img src="/assets/products/tumblers-highballs/xz5413b-geometric-cut-highball-glass.webp" alt="340ml Geometric Cut Highball Glass - XZ5413B - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Carved Highballs · XZ5413B</span>
+        <h3><a href="/geometric-cut-highball-glass-xz5413b" style="color:inherit;text-decoration:none;">340ml Geometric Cut Highball Glass</a></h3>
+        <p>XZ5413B combines modern geometric grid facets with a classic tall highball profile. The intricate cut glass surface enhances the effervescence of carbonated cocktails while offering a luxurious hand feel.</p>
+        <div class="product-specs"><span class="spec-tag">340 ml</span><span class="spec-tag">H 15.0 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ5413B</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz21401">
+      <a href="/minimalist-highball-tumbler-xz21401"><img src="/assets/products/tumblers-highballs/xz21401-minimalist-highball-tumbler.webp" alt="380ml Minimalist Highball Tumbler - XZ21401 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Highball Glasses · XZ21401</span>
+        <h3><a href="/minimalist-highball-tumbler-xz21401" style="color:inherit;text-decoration:none;">380ml Minimalist Highball Tumbler</a></h3>
+        <p>XZ21401 is an ergonomic 380ml highball tumbler engineered for high-turnover beverage and cocktail service. Its clean minimalist lines blend effortlessly into any table setting.</p>
+        <div class="product-specs"><span class="spec-tag">380 ml</span><span class="spec-tag">H 13.9 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ21401</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz047-2">
+      <a href="/tapered-highball-tumbler-xz047-2"><img src="/assets/products/tumblers-highballs/xz047-2-tapered-highball-tumbler.webp" alt="305ml Tapered Highball Tumbler - XZ047-2 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Beverage Tumblers · XZ047-2</span>
+        <h3><a href="/tapered-highball-tumbler-xz047-2" style="color:inherit;text-decoration:none;">305ml Tapered Highball Tumbler</a></h3>
+        <p>XZ047-2 is a 305ml tapered drinking tumbler featuring an elegant widening flare from base to rim. Ideal for fruit juices, iced teas, and refreshing summer cocktails.</p>
+        <div class="product-specs"><span class="spec-tag">305 ml</span><span class="spec-tag">H 12.7 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ047-2</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz1012">
+      <a href="/vertical-fluted-highball-tumbler-xz1012"><img src="/assets/products/tumblers-highballs/xz1012-vertical-fluted-highball-tumbler.webp" alt="305ml Vertical Fluted Highball Tumbler - XZ1012 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Fluted Highballs · XZ1012</span>
+        <h3><a href="/vertical-fluted-highball-tumbler-xz1012" style="color:inherit;text-decoration:none;">305ml Vertical Fluted Highball Tumbler</a></h3>
+        <p>XZ1012 features refined vertical fluting running along its entire 127mm body. The textured ribs provide vintage Art Deco glamour and a non-slip grip during condensation.</p>
+        <div class="product-specs"><span class="spec-tag">305 ml</span><span class="spec-tag">H 12.7 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ1012</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz5170-1">
+      <a href="/octagonal-small-water-tumbler-xz5170-1"><img src="/assets/products/tumblers-highballs/xz5170-1-octagonal-small-water-tumbler.webp" alt="180ml Octagonal Small Water Tumbler - XZ5170-1 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Faceted Tumblers · XZ5170-1</span>
+        <h3><a href="/octagonal-small-water-tumbler-xz5170-1" style="color:inherit;text-decoration:none;">180ml Octagonal Small Water Tumbler</a></h3>
+        <p>XZ5170-1 is an 8-sided octagonal 180ml compact water tumbler. The faceted lower chamber provides distinctive geometry and comfortable handling for table water and small juice servings.</p>
+        <div class="product-specs"><span class="spec-tag">180 ml</span><span class="spec-tag">H 8.0 cm</span><span class="spec-tag">MOQ 72 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ5170-1</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz5170-2">
+      <a href="/octagonal-medium-water-tumbler-xz5170-2"><img src="/assets/products/tumblers-highballs/xz5170-2-octagonal-medium-water-tumbler.webp" alt="310ml Octagonal Medium Water Tumbler - XZ5170-2 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Faceted Tumblers · XZ5170-2</span>
+        <h3><a href="/octagonal-medium-water-tumbler-xz5170-2" style="color:inherit;text-decoration:none;">310ml Octagonal Medium Water Tumbler</a></h3>
+        <p>XZ5170-2 offers a 310ml mid-size capacity with strong octagonal side panels. An outstanding multi-purpose tumbler for on-the-rocks spirits, table water, and soft drinks.</p>
+        <div class="product-specs"><span class="spec-tag">310 ml</span><span class="spec-tag">H 9.5 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ5170-2</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz5170-3">
+      <a href="/octagonal-highball-tumbler-xz5170-3"><img src="/assets/products/tumblers-highballs/xz5170-3-octagonal-highball-tumbler.webp" alt="350ml Octagonal Highball Tumbler - XZ5170-3 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Faceted Highballs · XZ5170-3</span>
+        <h3><a href="/octagonal-highball-tumbler-xz5170-3" style="color:inherit;text-decoration:none;">350ml Octagonal Highball Tumbler</a></h3>
+        <p>XZ5170-3 is a 145mm tall highball glass with crisp 8-sided octagonal geometry. The faceted profile creates dazzling light play in long drinks, highballs, and craft iced beverages.</p>
+        <div class="product-specs"><span class="spec-tag">350 ml</span><span class="spec-tag">H 14.5 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ5170-3</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz2010">
+      <a href="/flared-small-water-tumbler-xz2010"><img src="/assets/products/tumblers-highballs/xz2010-flared-small-water-tumbler.webp" alt="298ml Flared Small Water Tumbler - XZ2010 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Beverage Tumblers · XZ2010</span>
+        <h3><a href="/flared-small-water-tumbler-xz2010" style="color:inherit;text-decoration:none;">298ml Flared Small Water Tumbler</a></h3>
+        <p>XZ2010 features an open flared rim with 298ml capacity. Designed for easy stacking and quick washing, it is widely utilized for table water, breakfast buffets, and casual bar drinks.</p>
+        <div class="product-specs"><span class="spec-tag">298 ml</span><span class="spec-tag">H 9.4 cm</span><span class="spec-tag">MOQ 72 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2010</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz2012">
+      <a href="/flared-medium-water-tumbler-xz2012"><img src="/assets/products/tumblers-highballs/xz2012-flared-medium-water-tumbler.webp" alt="355ml Flared Medium Water Tumbler - XZ2012 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Beverage Tumblers · XZ2012</span>
+        <h3><a href="/flared-medium-water-tumbler-xz2012" style="color:inherit;text-decoration:none;">355ml Flared Medium Water Tumbler</a></h3>
+        <p>XZ2012 expands the flared series with a generous 355ml volume. Perfect for iced sodas, draft beers, and large table water pours in busy hospitality venues.</p>
+        <div class="product-specs"><span class="spec-tag">355 ml</span><span class="spec-tag">H 10.0 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2012</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz73005">
+      <a href="/straight-water-tumbler-220ml-xz73005"><img src="/assets/products/tumblers-highballs/xz73005-straight-water-tumbler-220ml.webp" alt="220ml Straight Water Tumbler - XZ73005 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Straight Tumblers · XZ73005</span>
+        <h3><a href="/straight-water-tumbler-220ml-xz73005" style="color:inherit;text-decoration:none;">220ml Straight Water Tumbler</a></h3>
+        <p>XZ73005 is a 220ml compact straight-sided tumbler with a thick flat sham base. Designed for European-style espresso water chasers, small juices, and bedside carafes.</p>
+        <div class="product-specs"><span class="spec-tag">220 ml</span><span class="spec-tag">H 8.5 cm</span><span class="spec-tag">MOQ 72 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ73005</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz73006">
+      <a href="/slim-straight-water-tumbler-160ml-xz73006"><img src="/assets/products/tumblers-highballs/xz73006-slim-straight-water-tumbler-160ml.webp" alt="160ml Slim Straight Water Tumbler - XZ73006 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Straight Tumblers · XZ73006</span>
+        <h3><a href="/slim-straight-water-tumbler-160ml-xz73006" style="color:inherit;text-decoration:none;">160ml Slim Straight Water Tumbler</a></h3>
+        <p>XZ73006 is a slender 160ml straight tumbler with a 57mm slim profile. Ideal for spirit tasting flights, digestive cordials, and specialized cocktail shots.</p>
+        <div class="product-specs"><span class="spec-tag">160 ml</span><span class="spec-tag">H 10.2 cm</span><span class="spec-tag">MOQ 90 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ73006</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz73007">
+      <a href="/straight-water-tumbler-230ml-xz73007"><img src="/assets/products/tumblers-highballs/xz73007-straight-water-tumbler-230ml.webp" alt="230ml Straight Water Tumbler - XZ73007 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Straight Tumblers · XZ73007</span>
+        <h3><a href="/straight-water-tumbler-230ml-xz73007" style="color:inherit;text-decoration:none;">230ml Straight Water Tumbler</a></h3>
+        <p>XZ73007 offers 230ml capacity standing 111mm high. A versatile medium tumbler suitable for table water, milk, and aperitifs in classic hospitality environments.</p>
+        <div class="product-specs"><span class="spec-tag">230 ml</span><span class="spec-tag">H 11.1 cm</span><span class="spec-tag">MOQ 72 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ73007</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz73008">
+      <a href="/straight-highball-tumbler-275ml-xz73008"><img src="/assets/products/tumblers-highballs/xz73008-straight-highball-tumbler-275ml.webp" alt="275ml Straight Highball Tumbler - XZ73008 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Straight Highballs · XZ73008</span>
+        <h3><a href="/straight-highball-tumbler-275ml-xz73008" style="color:inherit;text-decoration:none;">275ml Straight Highball Tumbler</a></h3>
+        <p>XZ73008 is a classic 275ml slim Collins glass standing 137mm tall. Specifically calibrated for Tom Collins, Mojitos, and Palomas where a slender vertical profile is preferred.</p>
+        <div class="product-specs"><span class="spec-tag">275 ml</span><span class="spec-tag">H 13.7 cm</span><span class="spec-tag">MOQ 72 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ73008</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz73009">
+      <a href="/straight-highball-tumbler-310ml-xz73009"><img src="/assets/products/tumblers-highballs/xz73009-straight-highball-tumbler-310ml.webp" alt="310ml Straight Highball Tumbler - XZ73009 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Straight Highballs · XZ73009</span>
+        <h3><a href="/straight-highball-tumbler-310ml-xz73009" style="color:inherit;text-decoration:none;">310ml Straight Highball Tumbler</a></h3>
+        <p>XZ73009 provides a standard 310ml capacity with an elongated 152mm height. A workhorse glass for craft highballs, Gin & Tonics, and sparkling water across international venues.</p>
+        <div class="product-specs"><span class="spec-tag">310 ml</span><span class="spec-tag">H 15.2 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ73009</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz73010">
+      <a href="/tall-straight-highball-tumbler-350ml-xz73010"><img src="/assets/products/tumblers-highballs/xz73010-tall-straight-highball-tumbler-350ml.webp" alt="350ml Tall Straight Highball Tumbler - XZ73010 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Straight Highballs · XZ73010</span>
+        <h3><a href="/tall-straight-highball-tumbler-350ml-xz73010" style="color:inherit;text-decoration:none;">350ml Tall Straight Highball Tumbler</a></h3>
+        <p>XZ73010 stands at a commanding 164mm height with a 350ml capacity. Ideal for layered cocktails, Japanese highballs with spear ice, and visual iced tea presentations.</p>
+        <div class="product-specs"><span class="spec-tag">350 ml</span><span class="spec-tag">H 16.4 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ73010</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz2021">
+      <a href="/conical-water-tumbler-xz2021"><img src="/assets/products/tumblers-highballs/xz2021-conical-water-tumbler.webp" alt="265ml Conical Water Tumbler - XZ2021 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Beverage Tumblers · XZ2021</span>
+        <h3><a href="/conical-water-tumbler-xz2021" style="color:inherit;text-decoration:none;">265ml Conical Water Tumbler</a></h3>
+        <p>XZ2021 is a 265ml conical tumbler featuring smooth tapered walls and a heavy base. Widely chosen for table water, fruit juices, and casual dining bar service.</p>
+        <div class="product-specs"><span class="spec-tag">265 ml</span><span class="spec-tag">H 9.5 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2021</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz2217">
+      <a href="/minimalist-highball-glass-xz2217"><img src="/assets/products/tumblers-highballs/xz2217-minimalist-highball-glass.webp" alt="300ml Minimalist Highball Glass - XZ2217 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Highball Glasses · XZ2217</span>
+        <h3><a href="/minimalist-highball-glass-xz2217" style="color:inherit;text-decoration:none;">300ml Minimalist Highball Glass</a></h3>
+        <p>XZ2217 is a 300ml tall minimalist highball glass engineered for clean presentation of craft cocktails, carbonated beverages, and flavored mineral waters.</p>
+        <div class="product-specs"><span class="spec-tag">300 ml</span><span class="spec-tag">H 14.9 cm</span><span class="spec-tag">MOQ 36 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2217</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz0910">
+      <a href="/wave-textured-low-tumbler-xz0910"><img src="/assets/products/tumblers-highballs/xz0910-wave-textured-low-tumbler.webp" alt="260ml Wave Textured Low Tumbler - XZ0910 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Textured Tumblers · XZ0910</span>
+        <h3><a href="/wave-textured-low-tumbler-xz0910" style="color:inherit;text-decoration:none;">260ml Wave Textured Low Tumbler</a></h3>
+        <p>XZ0910 features gentle organic wave relief wrapping around its 260ml body. Provides a distinctive tactile grip and water-like optical ripples for tabletop water service.</p>
+        <div class="product-specs"><span class="spec-tag">260 ml</span><span class="spec-tag">H 9.6 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ0910</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz0911">
+      <a href="/wave-textured-highball-tumbler-xz0911"><img src="/assets/products/tumblers-highballs/xz0911-wave-textured-highball-tumbler.webp" alt="330ml Wave Textured Highball Tumbler - XZ0911 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Textured Highballs · XZ0911</span>
+        <h3><a href="/wave-textured-highball-tumbler-xz0911" style="color:inherit;text-decoration:none;">330ml Wave Textured Highball Tumbler</a></h3>
+        <p>XZ0911 pairs with XZ0910 to offer a tall 330ml highball option with matching undulating wave contours. A favorite for resort cocktail menus, tiki drinks, and iced teas.</p>
+        <div class="product-specs"><span class="spec-tag">330 ml</span><span class="spec-tag">H 14.2 cm</span><span class="spec-tag">MOQ 36 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ0911</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz028-3">
+      <a href="/diamond-base-highball-glass-xz028-3"><img src="/assets/products/tumblers-highballs/xz028-3-diamond-base-highball-glass.webp" alt="340ml Diamond Base Highball Glass - XZ028-3 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Carved Highballs · XZ028-3</span>
+        <h3><a href="/diamond-base-highball-glass-xz028-3" style="color:inherit;text-decoration:none;">340ml Diamond Base Highball Glass</a></h3>
+        <p>XZ028-3 features deep diamond starburst relief around its lower quarter while maintaining crystal-clear smooth upper walls. An exquisite vessel for Scotch & soda, Gin rickeys, and craft lemonades.</p>
+        <div class="product-specs"><span class="spec-tag">340 ml</span><span class="spec-tag">H 15.0 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ028-3</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz2035-3">
+      <a href="/diamond-grid-highball-glass-xz2035-3"><img src="/assets/products/tumblers-highballs/xz2035-3-diamond-grid-highball-glass.webp" alt="278ml Diamond Grid Highball Glass - XZ2035-3 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Carved Highballs · XZ2035-3</span>
+        <h3><a href="/diamond-grid-highball-glass-xz2035-3" style="color:inherit;text-decoration:none;">278ml Diamond Grid Highball Glass</a></h3>
+        <p>XZ2035-3 is adorned with continuous diamond cross-hatch cutting that envelops the entire 130mm cylinder. Offers vintage elegance and superior tactile grip for cocktail banquets.</p>
+        <div class="product-specs"><span class="spec-tag">278 ml</span><span class="spec-tag">H 13.0 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2035-3</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz103-3a">
+      <a href="/square-lattice-highball-glass-xz103-3a"><img src="/assets/products/tumblers-highballs/xz103-3a-square-lattice-highball-glass.webp" alt="280ml Square Lattice Highball Glass - XZ103-3A - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Carved Highballs · XZ103-3A</span>
+        <h3><a href="/square-lattice-highball-glass-xz103-3a" style="color:inherit;text-decoration:none;">280ml Square Lattice Highball Glass</a></h3>
+        <p>XZ103-3A features a modern square lattice grid cut that catches light sharply across its vertical profile. A contemporary favorite for mixology presentations and craft iced teas.</p>
+        <div class="product-specs"><span class="spec-tag">280 ml</span><span class="spec-tag">H 13.0 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ103-3A</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz103-3d">
+      <a href="/vertical-fluted-highball-glass-xz103-3d"><img src="/assets/products/tumblers-highballs/xz103-3d-vertical-fluted-highball-glass.webp" alt="280ml Vertical Fluted Highball Glass - XZ103-3D - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Fluted Highballs · XZ103-3D</span>
+        <h3><a href="/vertical-fluted-highball-glass-xz103-3d" style="color:inherit;text-decoration:none;">280ml Vertical Fluted Highball Glass</a></h3>
+        <p>XZ103-3D combines dense vertical ribs with a weighted sham base. Designed to showcase the fizz and rising bubbles of carbonated highballs, gin fizzes, and spritzers.</p>
+        <div class="product-specs"><span class="spec-tag">280 ml</span><span class="spec-tag">H 13.0 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ103-3D</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz103-3b">
+      <a href="/wave-textured-highball-glass-xz103-3b"><img src="/assets/products/tumblers-highballs/xz103-3b-wave-textured-highball-glass.webp" alt="280ml Wave Textured Highball Glass - XZ103-3B - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Textured Highballs · XZ103-3B</span>
+        <h3><a href="/wave-textured-highball-glass-xz103-3b" style="color:inherit;text-decoration:none;">280ml Wave Textured Highball Glass</a></h3>
+        <p>XZ103-3B is styled with stacked horizontal wave bands creating a textured ripple effect. Ideal for serving iced cocktails, layered juices, and artisanal iced lattes.</p>
+        <div class="product-specs"><span class="spec-tag">280 ml</span><span class="spec-tag">H 13.0 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ103-3B</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz2027">
+      <a href="/glacier-textured-highball-glass-xz2027"><img src="/assets/products/tumblers-highballs/xz2027-glacier-textured-highball-glass.webp" alt="278ml Glacier Textured Highball Glass - XZ2027 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Textured Highballs · XZ2027</span>
+        <h3><a href="/glacier-textured-highball-glass-xz2027" style="color:inherit;text-decoration:none;">278ml Glacier Textured Highball Glass</a></h3>
+        <p>XZ2027 features a frosty, hammered glacier ice texture that mimics natural ice crystals. Makes every beverage look refreshingly frosty, even before the first sip.</p>
+        <div class="product-specs"><span class="spec-tag">278 ml</span><span class="spec-tag">H 13.0 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2027</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz22041">
+      <a href="/straight-fluted-highball-glass-xz22041"><img src="/assets/products/tumblers-highballs/xz22041-straight-fluted-highball-glass.webp" alt="278ml Straight Fluted Highball Glass - XZ22041 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Fluted Highballs · XZ22041</span>
+        <h3><a href="/straight-fluted-highball-glass-xz22041" style="color:inherit;text-decoration:none;">278ml Straight Fluted Highball Glass</a></h3>
+        <p>XZ22041 is a 278ml tall highball glass with precision fine vertical ribs running from base to rim. Delivers crisp modern elegance for high-end hospitality cocktail programs.</p>
+        <div class="product-specs"><span class="spec-tag">278 ml</span><span class="spec-tag">H 13.0 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ22041</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz2005">
+      <a href="/fluted-heavy-base-tumbler-xz2005"><img src="/assets/products/tumblers-highballs/xz2005-fluted-heavy-base-tumbler.webp" alt="310ml Fluted Heavy Base Tumbler - XZ2005 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Faceted Tumblers · XZ2005</span>
+        <h3><a href="/fluted-heavy-base-tumbler-xz2005" style="color:inherit;text-decoration:none;">310ml Fluted Heavy Base Tumbler</a></h3>
+        <p>XZ2005 is a 310ml multi-purpose tumbler featuring broad vertical panel facets anchored by a substantial weighted sham base. An excellent crossover glass for water, spirits, and cocktails.</p>
+        <div class="product-specs"><span class="spec-tag">310 ml</span><span class="spec-tag">H 9.8 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ2005</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz3307">
+      <a href="/yulin-carved-tumbler-400ml-xz3307"><img src="/assets/products/tumblers-highballs/xz3307-yulin-carved-tumbler-400ml.webp" alt="400ml Yulin Carved Tumbler - XZ3307 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Carved Tumblers · XZ3307</span>
+        <h3><a href="/yulin-carved-tumbler-400ml-xz3307" style="color:inherit;text-decoration:none;">400ml Yulin Carved Tumbler</a></h3>
+        <p>XZ3307 is a high-capacity 400ml tumbler featuring full-body Yulin scale cut facets. Designed for generous servings of iced tea, draft beers, and large mixed drinks.</p>
+        <div class="product-specs"><span class="spec-tag">400 ml</span><span class="spec-tag">H 13.9 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ3307</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz3303">
+      <a href="/yulin-carved-tumbler-350ml-xz3303"><img src="/assets/products/tumblers-highballs/xz3303-yulin-carved-tumbler-350ml.webp" alt="350ml Yulin Carved Tumbler - XZ3303 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Carved Tumblers · XZ3303</span>
+        <h3><a href="/yulin-carved-tumbler-350ml-xz3303" style="color:inherit;text-decoration:none;">350ml Yulin Carved Tumbler</a></h3>
+        <p>XZ3303 features the signature Yulin textured pattern in a versatile 350ml size. A proven favorite for commercial barware collections and branded spirits merchandising.</p>
+        <div class="product-specs"><span class="spec-tag">350 ml</span><span class="spec-tag">H 13.9 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ3303</a>
+      </div>
+    </div>
+    <div class="product-card" id="xz3701">
+      <a href="/sculptural-relief-highball-glass-xz3701"><img src="/assets/products/tumblers-highballs/xz3701-sculptural-relief-highball-glass.webp" alt="360ml Sculptural Relief Highball Glass - XZ3701 - Wholesale Factory Direct China" loading="lazy" decoding="async"></a>
+      <div class="product-card-body">
+        <span class="product-tag">Carved Highballs · XZ3701</span>
+        <h3><a href="/sculptural-relief-highball-glass-xz3701" style="color:inherit;text-decoration:none;">360ml Sculptural Relief Highball Glass</a></h3>
+        <p>XZ3701 is an impressive 360ml tall highball glass sculpted with deep architectural diamond relief. Stands 148mm tall to deliver maximum tableside elegance for luxury spirits and cocktails.</p>
+        <div class="product-specs"><span class="spec-tag">360 ml</span><span class="spec-tag">H 14.8 cm</span><span class="spec-tag">MOQ 48 pcs</span></div>
+        <a href="/custom-glassware-quote-checklist" class="product-card-cta">Quote Model XZ3701</a>
       </div>
     </div>
   </div>
@@ -937,6 +1325,43 @@
         <tr><td>380 ml Stackable Drinking Tumbler - XZ5008-3</td><td>380 ml</td><td>Rim Ø 10.2 × H 8.2; V 380 ml</td><td>Machine-made soda-lime glass</td><td>48 pcs</td><td>3-7 working days</td><td>LFGB / FDA / CE available for project confirmation</td></tr>
         <tr><td>300 ml Six-Sided Whiskey Tumbler - XZ5163-2</td><td>300 ml</td><td>Rim Ø 6.9 × H 9.2; V 300 ml</td><td>Machine-made soda-lime glass</td><td>72 pcs</td><td>3-7 working days</td><td>LFGB / FDA / CE available for project confirmation</td></tr>
         <tr><td>High Ball Glass Tumbler - XZ5215</td><td>360 ml</td><td>Rim Ø 7.4 × H 14</td><td>Machine-made soda-lime glass</td><td>36 pcs</td><td>3-7 working days</td><td>LFGB / FDA / CE available for project confirmation</td></tr>
+        <tr><td>400ml Soccer Relief Base Highball Glass - XZ2209</td><td>400 ml</td><td>Height 139 mm · Rim Ø 77 mm · Heavy Relief Base</td><td>High-Clarity Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>400ml Commercial Beverage Highball Glass - XZ2210</td><td>400 ml</td><td>Height 139 mm · Rim Ø 77 mm · Weighted Base</td><td>High-Clarity Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>400ml Golf Pattern Base Highball Glass - XZ2224</td><td>400 ml</td><td>Height 139 mm · Rim Ø 77 mm · Dimpled Golf Base</td><td>High-Clarity Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>400ml Eagle Relief Base Highball Glass - XZ2213-EAGLE</td><td>400 ml</td><td>Height 139 mm · Rim Ø 77 mm · Sculpted Eagle Base</td><td>High-Clarity Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>400ml Lion Relief Base Highball Glass - XZ2211-LION</td><td>400 ml</td><td>Height 139 mm · Rim Ø 77 mm · Sculpted Lion Base</td><td>High-Clarity Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>340ml Cylindrical Drinking Glass - XZ22923</td><td>340 ml</td><td>Height 139 mm · Rim Ø 77 mm · Base Ø 74.5 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>340ml Yulin Carved Highball Glass - XZ3306</td><td>340 ml</td><td>Height 150 mm · Rim Ø 72 mm · Base Ø 68 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>340ml Geometric Cut Highball Glass - XZ5413B</td><td>340 ml</td><td>Height 150 mm · Rim Ø 72 mm · Base Ø 68 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>380ml Minimalist Highball Tumbler - XZ21401</td><td>380 ml</td><td>Height 139 mm · Rim Ø 77 mm · Weighted Base</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>305ml Tapered Highball Tumbler - XZ047-2</td><td>305 ml</td><td>Height 127 mm · Rim Ø 77 mm · Base Ø 65 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>305ml Vertical Fluted Highball Tumbler - XZ1012</td><td>305 ml</td><td>Height 127 mm · Rim Ø 77 mm · Fluted Walls</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>180ml Octagonal Small Water Tumbler - XZ5170-1</td><td>180 ml</td><td>Height 80 mm · Rim Ø 73 mm · Octagonal Base</td><td>Lead-Free Soda-Lime Glass</td><td>72 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>310ml Octagonal Medium Water Tumbler - XZ5170-2</td><td>310 ml</td><td>Height 95 mm · Rim Ø 85 mm · Base Ø 67 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>350ml Octagonal Highball Tumbler - XZ5170-3</td><td>350 ml</td><td>Height 145 mm · Rim Ø 71 mm · Base Ø 55 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>298ml Flared Small Water Tumbler - XZ2010</td><td>298 ml</td><td>Height 94 mm · Rim Ø 88 mm · Base Ø 66 mm</td><td>Lead-Free Soda-Lime Glass</td><td>72 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>355ml Flared Medium Water Tumbler - XZ2012</td><td>355 ml</td><td>Height 100 mm · Rim Ø 90 mm · Base Ø 70 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>220ml Straight Water Tumbler - XZ73005</td><td>220 ml</td><td>Height 84.5 mm · Rim Ø 73 mm · Base Ø 66 mm</td><td>Lead-Free Soda-Lime Glass</td><td>72 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>160ml Slim Straight Water Tumbler - XZ73006</td><td>160 ml</td><td>Height 102 mm · Rim Ø 57 mm · Base Ø 52 mm</td><td>Lead-Free Soda-Lime Glass</td><td>90 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>230ml Straight Water Tumbler - XZ73007</td><td>230 ml</td><td>Height 111 mm · Rim Ø 65 mm · Base Ø 55 mm</td><td>Lead-Free Soda-Lime Glass</td><td>72 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>275ml Straight Highball Tumbler - XZ73008</td><td>275 ml</td><td>Height 137 mm · Rim Ø 58.5 mm · Base Ø 51 mm</td><td>Lead-Free Soda-Lime Glass</td><td>72 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>310ml Straight Highball Tumbler - XZ73009</td><td>310 ml</td><td>Height 152 mm · Rim Ø 64 mm · Base Ø 58 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>350ml Tall Straight Highball Tumbler - XZ73010</td><td>350 ml</td><td>Height 164 mm · Rim Ø 60 mm · Base Ø 51 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>265ml Conical Water Tumbler - XZ2021</td><td>265 ml</td><td>Height 94.5 mm · Rim Ø 88 mm · Base Ø 59.5 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>300ml Minimalist Highball Glass - XZ2217</td><td>300 ml</td><td>Height 149 mm · Rim Ø 77 mm · Weighted Sham</td><td>Lead-Free Soda-Lime Glass</td><td>36 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>260ml Wave Textured Low Tumbler - XZ0910</td><td>260 ml</td><td>Height 96 mm · Rim Ø 82 mm · Base Ø 87 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>330ml Wave Textured Highball Tumbler - XZ0911</td><td>330 ml</td><td>Height 142 mm · Rim Ø 77 mm · Base Ø 76 mm</td><td>Lead-Free Soda-Lime Glass</td><td>36 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>340ml Diamond Base Highball Glass - XZ028-3</td><td>340 ml</td><td>Height 150 mm · Rim Ø 71 mm · Base Ø 60 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>278ml Diamond Grid Highball Glass - XZ2035-3</td><td>278 ml</td><td>Height 130 mm · Rim Ø 69 mm · Base Ø 57 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>280ml Square Lattice Highball Glass - XZ103-3A</td><td>280 ml</td><td>Height 130 mm · Rim Ø 69 mm · Base Ø 57 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>280ml Vertical Fluted Highball Glass - XZ103-3D</td><td>280 ml</td><td>Height 130 mm · Rim Ø 69 mm · Base Ø 57 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>280ml Wave Textured Highball Glass - XZ103-3B</td><td>280 ml</td><td>Height 130 mm · Rim Ø 69 mm · Base Ø 66 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>278ml Glacier Textured Highball Glass - XZ2027</td><td>278 ml</td><td>Height 130 mm · Rim Ø 69 mm · Glacier Base</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>278ml Straight Fluted Highball Glass - XZ22041</td><td>278 ml</td><td>Height 130 mm · Rim Ø 69 mm · Base Ø 57 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>310ml Fluted Heavy Base Tumbler - XZ2005</td><td>310 ml</td><td>Height 98 mm · Rim Ø 80 mm · Base Ø 66.5 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>400ml Yulin Carved Tumbler - XZ3307</td><td>400 ml</td><td>Height 139 mm · Rim Ø 77 mm · Base Ø 66.5 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>350ml Yulin Carved Tumbler - XZ3303</td><td>350 ml</td><td>Height 139 mm · Rim Ø 77 mm · Base Ø 66.5 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
+        <tr><td>360ml Sculptural Relief Highball Glass - XZ3701</td><td>360 ml</td><td>Height 148 mm · Rim Ø 77 mm · Base Ø 66.5 mm</td><td>Lead-Free Soda-Lime Glass</td><td>48 pcs</td><td>3–5d Sample / 25–35d Bulk</td><td>LFGB / FDA / CA Prop 65 Lead-Free</td></tr>
               <tr><td>XZ-OR380 380 ml Origami Fluted Highball Glass</td><td>380 ml</td><td>Top Ø 7.0 × H 14.2 cm</td><td>Glass</td><td>48 pcs</td><td>3-7 working days</td><td>FDA CPG / LFGB (Tested)</td></tr>
         <tr><td>XZ-RC450 450 ml Fluted Can Glass with Straw</td><td>450 ml</td><td>Top Ø 6.8 × H 13.5 cm</td><td>Borosilicate</td><td>48 pcs</td><td>3-7 working days</td><td>FDA CPG / LFGB (Tested)</td></tr>
       </tbody></table></div>
