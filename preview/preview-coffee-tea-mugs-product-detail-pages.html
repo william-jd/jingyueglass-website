@@ -1,604 +1,681 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preview: Complete Coffee & Tea Mugs Suite (12 Dedicated PDPs) - Jingyue Glass</title>
+  <title>双层杯/咖啡杯全量 26 款新品批量生成与全景预览门户 | Jingyue Glass</title>
   <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
   <style>
+    :root {
+      --primary: #1a3a5c;
+      --primary-dark: #0d2540;
+      --accent: #c8930a;
+      --accent-hover: #e0a70b;
+      --light-bg: #f8fafc;
+      --white: #ffffff;
+      --dark: #1e293b;
+      --border: #e2e8f0;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: #f5f5f0;
-      color: #333;
-      line-height: 1.6;
-    }
-    .preview-header {
-      background: linear-gradient(135deg, #1a3a5c 0%, #0d2540 100%);
-      color: #fff;
-      padding: 40px 24px;
-      text-align: center;
-      border-bottom: 4px solid #c8930a;
-    }
-    .preview-badge {
-      display: inline-block;
-      background: #c8930a;
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 4px 12px;
-      border-radius: 4px;
-      margin-bottom: 12px;
-    }
-    .preview-header h1 {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 2.2rem;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .preview-header p {
-      font-size: 1.05rem;
-      color: #cbd5e1;
-      max-width: 860px;
-      margin: 0 auto;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--light-bg); color: var(--dark); line-height: 1.6; }
     
-    .container {
-      max-width: 1200px;
-      margin: 36px auto 60px;
-      padding: 0 20px;
-    }
+    header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+    .nav { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; }
+    .brand { font-size: 1.25rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+    .brand span { color: var(--accent); }
+    .nav-actions { display: flex; gap: 12px; }
+    .nav-btn { background: var(--primary); color: #fff; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.85rem; }
+    .nav-btn-gold { background: var(--accent); color: #fff; padding: 8px 16px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.85rem; }
+
+    .hero { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding: 48px 20px; text-align: center; border-bottom: 4px solid var(--accent); }
+    .hero-badge { display: inline-block; background: rgba(200,147,10,0.25); border: 1px solid rgba(200,147,10,0.6); color: #fef08a; padding: 4px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
+    .hero h1 { font-size: clamp(22px, 3.2vw, 34px); font-weight: 800; margin-bottom: 10px; }
+    .hero p { font-size: 1.05rem; color: #cbd5e1; max-width: 850px; margin: 0 auto; }
+
+    .container { max-width: 1300px; margin: 30px auto 80px; padding: 0 20px; }
+
+    /* KPI Highlights */
+    .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-bottom: 36px; }
+    @media(max-width: 900px) { .kpi-grid { grid-template-columns: repeat(2, 1fr); } }
+    .kpi-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 20px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.03); border-top: 3px solid var(--accent); }
+    .kpi-num { font-size: 2rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 4px; }
+    .kpi-label { font-size: 0.85rem; color: #64748b; font-weight: 600; }
+
+    /* Series Navigation Bar */
+    .series-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; background: var(--white); padding: 12px; border-radius: 8px; border: 1px solid var(--border); }
+    .series-nav a { text-decoration: none; background: #f1f5f9; color: var(--primary); padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.88rem; transition: all 0.2s; }
+    .series-nav a:hover { background: var(--accent); color: #fff; }
+
+    /* Series Section Styling */
+    .series-section { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 28px 24px; margin-bottom: 40px; box-shadow: 0 4px 16px rgba(0,0,0,0.04); }
+    .series-header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #f1f5f9; padding-bottom: 16px; margin-bottom: 24px; }
+    .series-title { font-size: 1.35rem; font-weight: 800; color: var(--primary); }
+    .series-desc { font-size: 0.9rem; color: #64748b; margin-top: 4px; }
+    .series-badge { background: #f0fdf4; border: 1px solid #bbf7d0; color: #166534; font-size: 0.8rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+
+    /* Products Grid */
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; }
+    .product-card { background: #fff; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, box-shadow 0.2s; }
+    .product-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(13,37,64,0.1); border-color: var(--accent); }
+    .card-img-wrap { width: 100%; aspect-ratio: 4 / 3; background: #f8fafc; position: relative; overflow: hidden; border-bottom: 1px solid var(--border); }
+    .card-img-wrap img { width: 100%; height: 100%; object-fit: contain; }
+    .card-badge { position: absolute; top: 10px; left: 10px; background: rgba(13,37,64,0.88); color: #fef08a; font-size: 0.75rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; }
+
+    .card-content { padding: 18px; display: flex; flex-direction: column; flex-grow: 1; justify-content: space-between; }
+    .card-cat { font-size: 0.75rem; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+    .card-title { font-size: 1.05rem; font-weight: 800; color: var(--dark); margin: 6px 0 12px; line-height: 1.35; }
     
-    .standards-bar {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 24px 28px;
-      margin-bottom: 36px;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.03);
-    }
-    .standards-bar h3 {
-      color: #1a3a5c;
-      font-size: 1.15rem;
-      margin-bottom: 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .standards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-    }
-    .standard-pill {
-      background: #f8fafc;
-      border-left: 3px solid #c8930a;
-      padding: 10px 14px;
-      border-radius: 0 6px 6px 0;
-      font-size: 0.85rem;
-    }
-    .standard-pill strong {
-      color: #0d2540;
-      display: block;
-      margin-bottom: 2px;
-    }
-    .standard-pill span {
-      color: #64748b;
-      font-size: 0.8rem;
-    }
+    .card-specs { background: #f8fafc; border-radius: 6px; padding: 10px 12px; margin-bottom: 16px; font-size: 0.82rem; }
+    .spec-row { display: flex; justify-content: space-between; padding: 3px 0; border-bottom: 1px dashed #e2e8f0; }
+    .spec-row:last-child { border-bottom: 0; }
+    .spec-row span { color: #64748b; }
+    .spec-row strong { color: var(--primary-dark); }
 
-    .section-title {
-      font-family: 'Playfair Display', Georgia, serif;
-      font-size: 1.5rem;
-      color: #1a3a5c;
-      margin: 32px 0 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #cbd5e1;
-    }
+    .btn-card { display: block; text-align: center; background: var(--primary); color: #fff; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 0.88rem; transition: background 0.2s; }
+    .product-card:hover .btn-card { background: var(--accent); }
 
-    .pdp-suite-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-    
-    .pdp-preview-card {
-      background: #fff;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .pdp-preview-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(26,58,92,0.12);
-      border-color: #c8930a;
-    }
-    
-    .card-img-wrap {
-      position: relative;
-      background: #ffffff;
-      height: 280px;
-      overflow: hidden;
-      border-bottom: 1px solid #e2e8f0;
-      padding: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .card-img-wrap img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      transition: transform 0.3s;
-    }
-    .pdp-preview-card:hover .card-img-wrap img {
-      transform: scale(1.04);
-    }
-    .card-model-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: #1a3a5c;
-      color: #c8930a;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 4px;
-      letter-spacing: 0.05em;
-    }
-    .card-status-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: #10b981;
-      color: #fff;
-      font-size: 0.7rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 4px;
-    }
-
-    .card-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-    }
-    .card-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #c8930a;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 6px;
-    }
-    .card-body h2 {
-      font-size: 1.15rem;
-      color: #1a3a5c;
-      margin-bottom: 8px;
-      line-height: 1.35;
-    }
-    .card-desc {
-      font-size: 0.85rem;
-      color: #64748b;
-      line-height: 1.5;
-      margin-bottom: 14px;
-      flex: 1;
-    }
-
-    .spec-table-mini {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 10px 12px;
-      margin-bottom: 16px;
-      font-size: 0.8rem;
-    }
-    .spec-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 3px 0;
-      border-bottom: 1px dashed #e2e8f0;
-    }
-    .spec-row:last-child { border-bottom: none; }
-    .spec-k { color: #64748b; font-weight: 500; }
-    .spec-v { color: #1a3a5c; font-weight: 600; text-align: right; max-width: 65%; }
-
-    .card-actions {
-      margin-top: auto;
-    }
-    .btn-view-pdp {
-      display: block;
-      width: 100%;
-      text-align: center;
-      background: #1a3a5c;
-      color: #fff;
-      text-decoration: none;
-      padding: 10px 14px;
-      border-radius: 6px;
-      font-weight: 600;
-      font-size: 0.85rem;
-      transition: background 0.2s;
-    }
-    .btn-view-pdp:hover {
-      background: #c8930a;
-    }
-    
-    .summary-footer {
-      background: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      padding: 24px;
-      text-align: center;
-      color: #64748b;
-      font-size: 0.9rem;
-    }
+    footer { background: var(--primary-dark); color: #94a3b8; text-align: center; padding: 30px 20px; font-size: 0.88rem; border-top: 1px solid rgba(255,255,255,0.08); }
+    footer a { color: #fef08a; text-decoration: none; font-weight: 700; }
   </style>
 </head>
 <body>
 
-  <header class="preview-header">
-    <span class="preview-badge">Staging &amp; Quality Review</span>
-    <h1>Coffee &amp; Tea Mugs Dedicated PDP Suite (12 Models)</h1>
-    <p>Comprehensive B2B product detail pages generated for all 12 Coffee & Tea Mug styles from the Jingyue catalog. Built under strict high-conversion B2B specifications prior to production deployment.</p>
+  <header>
+    <div class="nav">
+      <a href="/coffee-tea-mugs" class="brand">Jingyue Glass <span>· 双层杯/咖啡杯全量生成预览门户</span></a>
+      <div class="nav-actions">
+        <a href="/coffee-tea-mugs" class="nav-btn" target="_blank">线上分类汇总页 →</a>
+        <a href="/custom-glassware-quote-checklist" class="nav-btn-gold" target="_blank">B2B 询价表单 →</a>
+      </div>
+    </div>
   </header>
+
+  <section class="hero">
+    <span class="hero-badge">Production Preview Portal</span>
+    <h1>双层杯与吸管咖啡杯全量 26 款新品批量生成已就绪</h1>
+    <p>包含 5 大系列、26 款 4:3 矢量结构示意图、26 个独立单品详情页（PDP HTML）及 Schema 结构化数据，<strong>所有规格表均已彻底移除“工艺”栏</strong>，严格遵循 B2B 去价格化与深海蓝/香槟金视觉规范。</p>
+  </section>
 
   <div class="container">
     
-    <div class="standards-bar">
-      <h3>🔍 Quality &amp; Compliance Verification Checklist</h3>
-      <div class="standards-grid">
-        <div class="standard-pill">
-          <strong>100% Pure English Copy</strong>
-          <span>Zero Chinese character residue across all 12 PDPs</span>
-        </div>
-        <div class="standard-pill">
-          <strong>B2B De-Pricing Policy</strong>
-          <span>All fixed retail prices removed; itemized quotation basis deployed</span>
-        </div>
-        <div class="standard-pill">
-          <strong>High-Borosilicate COE 3.3</strong>
-          <span>Thermal shock tolerance (-20°C to +150°C) with silicone base vent</span>
-        </div>
-        <div class="standard-pill">
-          <strong>Packaging Standardization</strong>
-          <span>Odorless EPE pearl cotton &amp; ISTA-1A drop test certification</span>
-        </div>
-        <div class="standard-pill">
-          <strong>Accurate Contact Integration</strong>
-          <span>WhatsApp/WeChat: +86 132 5662 7201 | sales@jingyueglass.com</span>
-        </div>
-        <div class="standard-pill">
-          <strong>Full Schema Coverage</strong>
-          <span>Product, AggregateOffer, BreadcrumbList &amp; FAQPage JSON-LD</span>
-        </div>
+    <!-- KPI Summary Grid -->
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-num">26 款</div>
+        <div class="kpi-label">单品详情页 (PDP) 全部生成</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">5 大系列</div>
+        <div class="kpi-label">直筒/圣诞/3D动物/干花/毛毛虫</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">100%</div>
+        <div class="kpi-label">去工艺栏 & 去固定价格合规</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-num">26 张</div>
+        <div class="kpi-label">4:3 标准矢量示意图已就绪</div>
       </div>
     </div>
 
-    <div class="section-title">All 12 Dedicated Coffee &amp; Tea Mug Models</div>
-
-    <div class="pdp-suite-grid">
-    <div class="pdp-preview-card" id="card-xzs-2616">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZS-2616</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzs-2616-350-ml-dried-flower-glass-mug-new-20260918.webp" alt="350ml Dried Flower Sealed Double-Wall Glass Mug - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Sealed Botanical Double-Wall · XZS-2616</span>
-        <h2>350ml Dried Flower Sealed Double-Wall Glass Mug</h2>
-        <p class="card-desc">Model XZS-2616 is a masterfully hand-blown 350ml double-wall borosilicate glass mug featuring genuine dried botanical flowers hermetically sealed between the insulating glass walls. Engineered for thermal shock resistance from -20°C to +150°C, it prevents condensation and stays cool to the touch while showcasing a vibrant floral visual effect. Perfect for specialty tea service, boutique gift shops, Valentine and Mother's Day collections, and high-margin DTC drinkware gift sets.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">350 ml (11.8 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Rim Ø 8.4 cm × Height 11.7 cm (Base Ø 5.5 cm)</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">Hand-Blown High-Borosilicate Glass (COE 3.3) with Natural Dried Flowers</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">100 pcs (Flexible Trial Tier)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">Individual Color Box with Odorless EPE Pearl Cotton</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/dried-flower-glass-mug-xzs-2616" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZS-2616) ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="pdp-preview-card" id="card-xzdc-250">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZDC-250</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzdc-250-58-double-wall-cup-250-ml-new-20260918.webp" alt="250ml Classic DL-58 Insulated Double-Wall Glass Cup - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Insulated Double-Wall Tumblers · XZDC-250</span>
-        <h2>250ml Classic DL-58 Insulated Double-Wall Glass Cup</h2>
-        <p class="card-desc">Model XZDC-250 (DL-58) is a 250ml round-profile double-wall borosilicate glass tumbler designed for modern espresso bars, tabletop dining, and retail drinkware gift boxes. The dual-wall construction provides superior thermal insulation for hot flat whites, cappuccinos, or chilled cold brews without condensation rings or burning hands. Fitted with a medical-grade hydrophobic silicone vent plug at the base for pressure equalization.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">250 ml (8.5 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Top Ø 83 mm × Height 89 mm × Bottom Ø 50 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">Hand-Blown High-Borosilicate Glass (COE 3.3)</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">100 pcs (Flexible Trial Tier)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">6 pcs Inner Box</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/double-wall-glass-cup-xzdc-250" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZDC-250) ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="pdp-preview-card" id="card-xzdc-80">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZDC-80</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzdc-80-57-double-wall-cup-80-ml-new-20260918.webp" alt="80ml DL-57 Double-Wall Insulated Espresso Tasting Cup - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Espresso Double-Wall Glassware · XZDC-80</span>
-        <h2>80ml DL-57 Double-Wall Insulated Espresso Tasting Cup</h2>
-        <p class="card-desc">Model XZDC-80 (DL-57) is a compact 80ml double-wall borosilicate glass cup tailored for single and double espresso shots, macchiatos, and specialty coffee cupping sessions. The vacuum-isolated chamber preserves beverage crema temperature and aromatic volatile compounds while maintaining a comfortable exterior touch. Available in high-density export packaging ideal for horeca roasters and wholesale distributors.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">80 ml (2.7 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Top Ø 55 mm × Height 60 mm × Bottom Ø 40 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">Hand-Blown High-Borosilicate Glass (COE 3.3)</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">336 pcs (Standard Carton Master Pack)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">12 pcs Inner Box</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/espresso-double-wall-glass-cup-xzdc-80" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZDC-80) ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="pdp-preview-card" id="card-xzb001-l1">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZB001-L1</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzb001-l1-electroplated-tall-handled-glass-mug-new-20260918.webp" alt="600ml Electroplated Tall Handled Glass Mug - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Electroplated Tall Mugs · XZB001-L1</span>
-        <h2>600ml Electroplated Tall Handled Glass Mug</h2>
-        <p class="card-desc">Model XZB001-L1 is an eye-catching 600ml tall handled glass mug finished with a lustrous food-safe metallic electroplating gradient. Engineered with a wide 80mm rim and 120mm height, it offers generous capacity for iced cold brews, layered latte macchiatos, herbal tea infusions, and modern mixology cocktails. The ergonomic glass handle provides secure, balanced handling for high-volume hospitality and retail gift programs.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">600 ml (20.3 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Rim Ø 8.0 cm × Height 12.0 cm (Base Ø 6.5 cm)</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">High-Borosilicate Glass with Gradient Electroplated Exterior</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">600 pcs (Electroplating Customization Batch)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">Individual Presentation Box</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/electroplated-tall-handled-glass-mug-xzb001-l1" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZB001-L1) ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="pdp-preview-card" id="card-xzdc-450">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZDC-450</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzdc-450-60-double-wall-cup-450-ml-new-20260918.webp" alt="450ml DL-60 Large Insulated Double-Wall Glass Tumbler - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Large Double-Wall Tumblers · XZDC-450</span>
-        <h2>450ml DL-60 Large Insulated Double-Wall Glass Tumbler</h2>
-        <p class="card-desc">Model XZDC-450 (DL-60) is an oversized 450ml double-wall borosilicate glass tumbler engineered for large beverage service including iced lattes, Americanos, green smoothies, and fruit-infused sparkling water. Standing at 148mm with a sleek tapered silhouette, it combines a modern minimalist aesthetic with robust thermal insulation, preventing messy tabletop condensation while keeping hot drinks warm longer.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">450 ml (15.2 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Top Ø 85 mm × Height 148 mm × Bottom Ø 55 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">Hand-Blown High-Borosilicate Glass (COE 3.3)</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">80 pcs (Single Master Pack Tier)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">4 pcs Inner Box</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/tall-double-wall-glass-tumbler-xzdc-450" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZDC-450) ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="pdp-preview-card" id="card-xzdg-150">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZDG-150</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzdg-150-57-double-wall-handle-cup-150-ml-new-20260918.webp" alt="150ml DL-57 Insulated Double-Wall Glass Cup with Handle - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Handled Double-Wall Cups · XZDG-150</span>
-        <h2>150ml DL-57 Insulated Double-Wall Glass Cup with Handle</h2>
-        <p class="card-desc">Model XZDG-150 is a refined 150ml double-wall borosilicate glass cup fitted with an ergonomic glass handle. Specially sized for cortados, macchiatos, flat whites, and Gongfu tea tasting, it offers the ultimate combination of thermal insulation and traditional cup handling. The sturdy hand-welded C-handle ensures a secure grip, making it a favorite for boutique hotels, roastery tasting bars, and gift box collections.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">150 ml (5.1 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Top Ø 65 mm × Height 75 mm × Bottom Ø 40 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">Hand-Blown High-Borosilicate Glass (COE 3.3)</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">100 pcs (Flexible Trial Tier)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">6 pcs Inner Box</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/double-wall-handle-glass-cup-xzdg-150" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZDG-150) ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="pdp-preview-card" id="card-xzdg-350">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZDG-350</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzdg-350-59-double-wall-handle-cup-350-ml-new-20260918.webp" alt="350ml DL-59 Insulated Double-Wall Glass Coffee Mug with Handle - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Handled Double-Wall Mugs · XZDG-350</span>
-        <h2>350ml DL-59 Insulated Double-Wall Glass Coffee Mug with Handle</h2>
-        <p class="card-desc">Model XZDG-350 (DL-59) is our flagship 350ml double-wall borosilicate glass coffee mug with an integrated solid glass handle. Providing ample volume for standard 12oz lattes, cappuccinos, pour-over coffees, and hot teas, this mug delivers crystal-clear beverage floating optics while keeping hands comfortable without requiring a sleeve. Built to withstand commercial dishwashing with a hydrophobic silicone base seal.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">350 ml (11.8 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Top Ø 83 mm × Height 116 mm × Bottom Ø 50 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">Hand-Blown High-Borosilicate Glass (COE 3.3)</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">100 pcs (Flexible Trial Tier)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">4 pcs Inner Box</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/double-wall-handle-glass-mug-xzdg-350" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZDG-350) ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="pdp-preview-card" id="card-xzs-2601c">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZS-2601C</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzs-2601c-250-ml-color-bear-glass-mug-new-20260918.webp" alt="250ml 3D Color Bear Inverted Double-Wall Glass Mug - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Novelty 3D Figurine Mugs · XZS-2601C</span>
-        <h2>250ml 3D Color Bear Inverted Double-Wall Glass Mug</h2>
-        <p class="card-desc">Model XZS-2601C is a charming 250ml double-wall borosilicate glass mug featuring an intricately hand-sculpted 3D inverted bear silhouette inside the inner chamber. When filled with milk, matcha, coffee, or iced tea, the adorable bear face emerges vividly. Available in tinted amber, forest green, and blush pink glass colors, making it an ultra-popular novelty gift for specialty cafés, viral social media campaigns, and holiday retail lines.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">250 ml (8.5 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Rim Ø 8.0 cm × Height 10.0 cm (Base Ø 6.0 cm)</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">Hand-Blown Borosilicate Glass with Colored Glass Accents</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">100 pcs (Flexible Trial Tier)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">Individual White Gift Box with Bubble Bag</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/color-bear-double-wall-glass-mug-xzs-2601c" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZS-2601C) ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="pdp-preview-card" id="card-xzs-2603">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZS-2603</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzs-2603-transparent-fortune-cat-glass-mug-new-20260918.webp" alt="300ml Transparent Fortune Cat Double-Wall Glass Mug - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Novelty Cat Figurine Mugs · XZS-2603</span>
-        <h2>300ml Transparent Fortune Cat Double-Wall Glass Mug</h2>
-        <p class="card-desc">Model XZS-2603 is a 300ml crystal-clear borosilicate glass mug sculpted in the iconic silhouette of a traditional Maneki-Neko (Japanese Lucky Cat). The transparent double-wall glass highlights beverage tones while insulating against temperature extremes. Featuring an ergonomic cat-tail handle, it serves as an ideal mascot mug for Asian-fusion tea houses, souvenir shops, corporate good-fortune gifts, and festive retail promotions.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">300 ml (10.1 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Rim Ø 8.5 cm × Height 10.5 cm (Base Ø 6.2 cm)</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">Hand-Blown High-Borosilicate Glass (COE 3.3)</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">100 pcs (Flexible Trial Tier)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">Individual White Gift Box with Bubble Cushioning</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/transparent-fortune-cat-glass-mug-xzs-2603" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZS-2603) ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="pdp-preview-card" id="card-xzs-2605">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZS-2605</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzs-2605-pink-cat-glass-mug-with-gift-box-new-20260918.webp" alt="300ml Pastel Pink Cat Glass Mug with Presentation Gift Box - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Novelty Cat Gift Sets · XZS-2605</span>
-        <h2>300ml Pastel Pink Cat Glass Mug with Presentation Gift Box</h2>
-        <p class="card-desc">Model XZS-2605 is a 300ml novelty borosilicate glass mug accented with delicate pastel pink ear and tail details, packaged in a custom presentation gift box. Crafted from heat-resistant glass with an adorable cat silhouette and ergonomic curled tail handle, this model is custom-engineered for holiday gifting, Valentine campaigns, Mother's Day specials, and high-converting e-commerce drinkware gift sets.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">300 ml (10.1 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Rim Ø 8.5 cm × Height 10.5 cm (Base Ø 6.2 cm)</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">Hand-Blown Borosilicate Glass with Pink Enamel Detailing</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">100 pcs (Flexible Trial Tier)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">Luxury Pink Presentation Gift Box</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/pink-cat-glass-mug-gift-box-xzs-2605" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZS-2605) ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="pdp-preview-card" id="card-xzs-2606">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZS-2606</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzs-2606-black-cat-glass-mug-with-gift-box-new-20260918.webp" alt="300ml Matte Black Cat Glass Mug with Presentation Gift Box - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Novelty Cat Gift Sets · XZS-2606</span>
-        <h2>300ml Matte Black Cat Glass Mug with Presentation Gift Box</h2>
-        <p class="card-desc">Model XZS-2606 is a 300ml borosilicate glass mug showcasing a sleek midnight black cat motif, complete with an artistic cat-tail handle and an elegant matching presentation gift box. Engineered for coffee and tea lovers seeking a playful yet sophisticated design, it serves as an ideal seasonal bestseller for Halloween promotions, gothic coffee bars, and specialty pet-lover merchandise lines.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">300 ml (10.1 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Rim Ø 8.5 cm × Height 10.5 cm (Base Ø 6.2 cm)</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">Hand-Blown Borosilicate Glass with Matte Black Ceramic Pigments</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">100 pcs (Flexible Trial Tier)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">Luxury Black Presentation Gift Box</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/black-cat-glass-mug-gift-box-xzs-2606" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZS-2606) ↗</a>
-        </div>
-      </div>
-    </div>
-    <div class="pdp-preview-card" id="card-xzs-2614p">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">XZS-2614P</span>
-        <span class="card-status-badge">Ready for Review</span>
-        <img src="/assets/products/coffee-tea-mugs/xzs-2614p-pearl-ribbon-decorative-glass-mug-new-20260918.webp" alt="240ml Pearl Ribbon Decorative Glass Coffee & Tea Mug - Jingyue Glass Factory" loading="lazy">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Decorative Ribbon Glassware · XZS-2614P</span>
-        <h2>240ml Pearl Ribbon Decorative Glass Coffee & Tea Mug</h2>
-        <p class="card-desc">Model XZS-2614P is an exquisitely crafted 240ml decorative borosilicate glass mug adorned with an embossed pearl-ribbon relief and refined metallic luster accents. Designed specifically for boutique café tabletops, bridal shower souvenirs, afternoon tea parlors, and luxury gift retail, it delivers an enchanting tactile grip and romantic visual allure while providing full hot-drink thermal durability.</p>
-        
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity:</span><span class="spec-v">240 ml (8.1 oz)</span></div>
-          <div class="spec-row"><span class="spec-k">Dimensions:</span><span class="spec-v">Rim Ø 6.8 cm × Height 10.2 cm (Base Ø 5.0 cm)</span></div>
-          <div class="spec-row"><span class="spec-k">Material:</span><span class="spec-v">Hand-Blown High-Borosilicate Glass with Embossed Texture</span></div>
-          <div class="spec-row"><span class="spec-k">Trial MOQ:</span><span class="spec-v">100 pcs (Flexible Trial Tier)</span></div>
-          <div class="spec-row"><span class="spec-k">Standard Pack:</span><span class="spec-v">Individual Gift Box with EPE Cushioning</span></div>
-          <div class="spec-row"><span class="spec-k">Quotation:</span><span class="spec-v" style="color:#c8930a;">Itemized B2B Quote</span></div>
-        </div>
-        
-        <div class="card-actions">
-          <a href="/pearl-ribbon-decorative-glass-mug-xzs-2614p" class="btn-view-pdp" target="_blank">Open Dedicated PDP (XZS-2614P) ↗</a>
-        </div>
-      </div>
-    </div>
+    <!-- Series Fast Nav -->
+    <div class="series-nav">
+      <strong style="align-self:center; font-size:0.88rem; color:var(--primary); margin-right:8px;">系列快速跳转:</strong>
+      <a href="#classic">1. 直筒/把手双层杯 (5款)</a>
+      <a href="#holiday">2. 圣诞树造型杯 (1款)</a>
+      <a href="#animal">3. 3D动物内胆杯 (6款)</a>
+      <a href="#flower">4. 干花与羽毛夹层杯 (7款)</a>
+      <a href="#ribbed">5. 毛毛虫波浪吸管杯 (6款)</a>
     </div>
 
-    <div class="summary-footer">
-      <p><strong>Status:</strong> Staged for User Review · 12 Dedicated PDP HTML files created in <code>repo-drinkware-sets/</code>. Pending confirmation to update <code>coffee-tea-mugs.html</code> catalog links, synchronize <code>sitemap.xml</code>, and push to production Vercel.</p>
+    <!-- 5 Series Sections -->
+    
+    <div class="series-section" id="classic">
+      <div class="series-header">
+        <div>
+          <h2 class="series-title">1. 直筒与把手双层杯系列 (Classic Straight & Handle Double Wall)</h2>
+          <p class="series-desc">全系采用高硼硅 3.3 耐热玻璃，去价格化 B2B 询盘架构，已严格剔除工艺栏</p>
+        </div>
+        <span class="series-badge">5 款型号 · 80ml~650ml 全覆盖</span>
+      </div>
+      <div class="products-grid">
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2657-placeholder.svg" alt="XZS-2657">
+            <span class="card-badge">XZS-2657</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Classic Double Wall</span>
+            <h4 class="card-title">80ml Double Wall Espresso Glass</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>80 ml (2.7 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 6.2 × H 6.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>42 × 38 × 32 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/80ml-double-wall-espresso-glass-xzs2657" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2658-placeholder.svg" alt="XZS-2658">
+            <span class="card-badge">XZS-2658</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Classic Double Wall</span>
+            <h4 class="card-title">250ml Double Wall Glass Tumbler</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>250 ml (8.5 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.2 × H 9.0 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>50 × 40 × 53 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/250ml-double-wall-glass-tumbler-xzs2658" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2659-placeholder.svg" alt="XZS-2659">
+            <span class="card-badge">XZS-2659</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Classic Double Wall</span>
+            <h4 class="card-title">350ml Double Wall Glass Cup</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>350 ml (12 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.5 × H 11.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>80 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>52 × 42 × 48 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/350ml-double-wall-glass-cup-xzs2659" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2660-placeholder.svg" alt="XZS-2660">
+            <span class="card-badge">XZS-2660</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Classic Double Wall</span>
+            <h4 class="card-title">450ml Double Wall Glass Tumbler</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>450 ml (15 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.8 × H 14.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>80 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>54 × 44 × 52 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/450ml-double-wall-glass-tumbler-xzs2660" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2661-placeholder.svg" alt="XZS-2661">
+            <span class="card-badge">XZS-2661</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Classic Double Wall</span>
+            <h4 class="card-title">650ml Jumbo Double Wall Glass</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>650 ml (22 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 9.5 × H 18.0 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>48 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>56 × 42 × 45 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/650ml-jumbo-double-wall-glass-xzs2661" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+      </div>
     </div>
+    
+    <div class="series-section" id="holiday">
+      <div class="series-header">
+        <div>
+          <h2 class="series-title">2. 节日与夹心造型系列 (Christmas & Holiday Double Wall)</h2>
+          <p class="series-desc">全系采用高硼硅 3.3 耐热玻璃，去价格化 B2B 询盘架构，已严格剔除工艺栏</p>
+        </div>
+        <span class="series-badge">1 款型号 · 圣诞树内胆与硅胶盖</span>
+      </div>
+      <div class="products-grid">
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2620-placeholder.svg" alt="XZS-2620">
+            <span class="card-badge">XZS-2620</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Seasonal Holiday</span>
+            <h4 class="card-title">300ml Christmas Tree Double Wall Glass</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>300 ml (10 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 9.2 × H 11.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>48 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>48 × 36 × 42 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/300ml-christmas-tree-double-wall-glass-xzs2620" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="series-section" id="animal">
+      <div class="series-header">
+        <div>
+          <h2 class="series-title">3. 3D动物内胆立体杯系列 (Animal Figurine 3D Double Wall)</h2>
+          <p class="series-desc">全系采用高硼硅 3.3 耐热玻璃，去价格化 B2B 询盘架构，已严格剔除工艺栏</p>
+        </div>
+        <span class="series-badge">6 款型号 · 萌宠造型/礼盒装</span>
+      </div>
+      <div class="products-grid">
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2601-placeholder.svg" alt="XZS-2601">
+            <span class="card-badge">XZS-2601</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Animal 3D Chamber</span>
+            <h4 class="card-title">250ml 3D Bear Double Wall Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>250 ml (8.5 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.0 × H 10.0 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>53 × 53 × 42 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/250ml-3d-bear-double-wall-glass-mug-xzs2601" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2602-placeholder.svg" alt="XZS-2602">
+            <span class="card-badge">XZS-2602</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Animal 3D Chamber</span>
+            <h4 class="card-title">250ml 3D Duck Double Wall Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>250 ml (8.5 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.0 × H 10.0 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>53 × 53 × 42 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/250ml-3d-duck-double-wall-glass-mug-xzs2602" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2603-placeholder.svg" alt="XZS-2603">
+            <span class="card-badge">XZS-2603</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Animal 3D Chamber</span>
+            <h4 class="card-title">300ml Fortune Cat Double Wall Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>300 ml (10 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.5 × H 10.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>53 × 53 × 42 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/300ml-fortune-cat-double-wall-glass-mug-xzs2603" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2604-placeholder.svg" alt="XZS-2604">
+            <span class="card-badge">XZS-2604</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Animal 3D Chamber</span>
+            <h4 class="card-title">250ml Shiba Inu Double Wall Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>250 ml (8.5 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.0 × H 10.0 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>53 × 53 × 42 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/250ml-shiba-inu-double-wall-glass-mug-xzs2604" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2605-placeholder.svg" alt="XZS-2605">
+            <span class="card-badge">XZS-2605</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Animal 3D Chamber</span>
+            <h4 class="card-title">300ml Pink Cat Double Wall Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>300 ml (10 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.5 × H 10.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>53 × 53 × 42 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/300ml-pink-cat-double-wall-glass-mug-xzs2605" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2606-placeholder.svg" alt="XZS-2606">
+            <span class="card-badge">XZS-2606</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Animal 3D Chamber</span>
+            <h4 class="card-title">300ml Black Cat Double Wall Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>300 ml (10 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.5 × H 10.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>53 × 53 × 42 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/300ml-black-cat-double-wall-glass-mug-xzs2606" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="series-section" id="flower">
+      <div class="series-header">
+        <div>
+          <h2 class="series-title">4. 干花与羽毛夹层装饰系列 (Dried Flower & Feather Double Wall)</h2>
+          <p class="series-desc">全系采用高硼硅 3.3 耐热玻璃，去价格化 B2B 询盘架构，已严格剔除工艺栏</p>
+        </div>
+        <span class="series-badge">7 款型号 · 永生花/羽毛/流沙金箔</span>
+      </div>
+      <div class="products-grid">
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2611-placeholder.svg" alt="XZS-2611">
+            <span class="card-badge">XZS-2611</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Botanical & Dried Flower</span>
+            <h4 class="card-title">250ml Dried Flower Glass Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>250 ml (8.5 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 7.8 × H 10.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>52 × 42 × 44 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/250ml-romantic-dried-flower-glass-mug-xzs2611" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2612-placeholder.svg" alt="XZS-2612">
+            <span class="card-badge">XZS-2612</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Botanical & Dried Flower</span>
+            <h4 class="card-title">300ml Pearl Glitter Shaker Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>300 ml (10 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.2 × H 11.2 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>80 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>50 × 40 × 46 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/300ml-pearl-glitter-shaker-glass-mug-xzs2612" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2613-placeholder.svg" alt="XZS-2613">
+            <span class="card-badge">XZS-2613</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Botanical & Dried Flower</span>
+            <h4 class="card-title">250ml Fantasy Feather Glass Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>250 ml (8.5 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 7.8 × H 10.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>52 × 42 × 44 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/250ml-fantasy-feather-double-wall-glass-mug-xzs2613" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2614-placeholder.svg" alt="XZS-2614">
+            <span class="card-badge">XZS-2614</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Botanical & Dried Flower</span>
+            <h4 class="card-title">240ml Pearl Ribbon Decorative Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>240 ml (8 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 6.8 × H 10.2 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>48 × 38 × 42 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/240ml-pearl-ribbon-decorative-glass-mug-xzs2614" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2615-placeholder.svg" alt="XZS-2615">
+            <span class="card-badge">XZS-2615</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Botanical & Dried Flower</span>
+            <h4 class="card-title">300ml Preserved Flower Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>300 ml (10 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.2 × H 11.2 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>80 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>50 × 40 × 46 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/300ml-preserved-botanical-flower-mug-xzs2615" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2616-placeholder.svg" alt="XZS-2616">
+            <span class="card-badge">XZS-2616</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Botanical & Dried Flower</span>
+            <h4 class="card-title">350ml Large Dried Flower Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>350 ml (12 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.4 × H 11.7 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>100 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>52 × 42 × 48 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/350ml-dried-botanical-flower-glass-mug-xzs2616" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzs-2617-placeholder.svg" alt="XZS-2617">
+            <span class="card-badge">XZS-2617</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Botanical & Dried Flower</span>
+            <h4 class="card-title">300ml Gold Foil Quicksand Mug</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>300 ml (10 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.2 × H 11.2 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>80 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>50 × 40 × 46 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/300ml-gold-foil-quicksand-glass-mug-xzs2617" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    <div class="series-section" id="ribbed">
+      <div class="series-header">
+        <div>
+          <h2 class="series-title">5. 毛毛虫与波浪纹吸管杯系列 (Ribbed Caterpillar with Glass Straw)</h2>
+          <p class="series-desc">全系采用高硼硅 3.3 耐热玻璃，去价格化 B2B 询盘架构，已严格剔除工艺栏</p>
+        </div>
+        <span class="series-badge">6 款型号 · 网红爆款/配玻璃吸管</span>
+      </div>
+      <div class="products-grid">
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzg-2601-placeholder.svg" alt="XZG-2601">
+            <span class="card-badge">XZG-2601</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Ribbed Straw Tumbler</span>
+            <h4 class="card-title">350ml Striped Caterpillar Glass</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>350 ml (12 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 7.2 × H 12.0 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>48 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>46 × 35 × 40 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/350ml-striped-caterpillar-glass-cup-with-straw-xzg2601" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzg-2602-placeholder.svg" alt="XZG-2602">
+            <span class="card-badge">XZG-2602</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Ribbed Straw Tumbler</span>
+            <h4 class="card-title">450ml Wave Ribbed Glass Tumbler</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>450 ml (15 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 7.5 × H 14.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>48 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>48 × 36 × 42 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/450ml-wave-ribbed-glass-tumbler-with-straw-xzg2602" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzg-2603-placeholder.svg" alt="XZG-2603">
+            <span class="card-badge">XZG-2603</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Ribbed Straw Tumbler</span>
+            <h4 class="card-title">500ml Can-Shaped Glass Cup</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>500 ml (17 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 7.6 × H 15.2 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>48 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>50 × 38 × 44 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/500ml-can-shaped-glass-cup-with-straw-xzg2603" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzg-2604-placeholder.svg" alt="XZG-2604">
+            <span class="card-badge">XZG-2604</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Ribbed Straw Tumbler</span>
+            <h4 class="card-title">400ml Vertical Ribbed Tumbler</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>400 ml (13.5 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 7.8 × H 13.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>48 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>46 × 35 × 42 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/400ml-vertical-ribbed-coffee-tumbler-with-straw-xzg2604" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzg-2605-placeholder.svg" alt="XZG-2605">
+            <span class="card-badge">XZG-2605</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Ribbed Straw Tumbler</span>
+            <h4 class="card-title">480ml Gradient Caterpillar Glass</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>480 ml (16 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 7.8 × H 15.0 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>48 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>48 × 36 × 44 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/480ml-gradient-tinted-caterpillar-glass-xzg2605" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+        <div class="product-card">
+          <div class="card-img-wrap">
+            <img src="/assets/products/coffee-tea-mugs/xzg-2606-placeholder.svg" alt="XZG-2606">
+            <span class="card-badge">XZG-2606</span>
+          </div>
+          <div class="card-content">
+            <span class="card-cat">Ribbed Straw Tumbler</span>
+            <h4 class="card-title">550ml Jumbo Wave Coffee Glass</h4>
+            <div class="card-specs">
+              <div class="spec-row"><span>额定容量:</span> <strong>550 ml (18.5 oz)</strong></div>
+              <div class="spec-row"><span>产品尺寸:</span> <strong>Ø 8.0 × H 16.5 cm</strong></div>
+              <div class="spec-row"><span>装箱规格:</span> <strong>48 pcs / Master Carton</strong></div>
+              <div class="spec-row"><span>外箱尺寸:</span> <strong>52 × 38 × 46 cm</strong></div>
+              <div class="spec-row"><span>参数状态:</span> <strong style="color:#16a34a;">已移除工艺栏</strong></div>
+            </div>
+            <a href="/550ml-large-wave-ribbed-coffee-tumbler-xzg2606" class="btn-card" target="_blank">查看独立 PDP 详情页 →</a>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
 
   </div>
+
+  <footer>
+    <p>© 2026 Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass). All rights reserved. | <a href="/coffee-tea-mugs">访问官方品类页 (Coffee & Tea Mugs)</a></p>
+  </footer>
 
 </body>
 </html>
