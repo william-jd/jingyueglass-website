@@ -59,8 +59,8 @@
   .pdp-main { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 36px; box-shadow: var(--shadow-sm); margin-bottom: 40px; }
   
   .pdp-gallery { display: flex; flex-direction: column; align-items: center; }
-  .pdp-hero-wrap { width: 100%; aspect-ratio: 1/1; max-width: 480px; background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); display: flex; justify-content: center; align-items: center; overflow: hidden; position: relative; }
-  .pdp-hero-img { width: 100%; height: 100%; object-fit: contain; padding: 16px; transition: transform 0.3s ease; }
+  .pdp-hero-wrap { width: 100%; aspect-ratio: 4 / 3; max-width: 480px; background: #ffffff; border: 1px solid var(--border); border-radius: var(--radius-md); display: flex; justify-content: center; align-items: center; overflow: hidden; position: relative; }
+  .pdp-hero-img { width: 100%; height: 100%; object-fit: cover; padding: 16px; transition: transform 0.3s ease; }
   .pdp-hero-wrap:hover .pdp-hero-img { transform: scale(1.04); }
   .pdp-hero-badge { position: absolute; top: 12px; left: 12px; background: var(--primary); color: #fff; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; }
 
@@ -107,7 +107,7 @@
   .related-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; margin-top: 16px; }
   .related-card { background: #f8fafc; border: 1px solid var(--border); border-radius: var(--radius-md); padding: 14px; text-decoration: none; color: inherit; transition: transform 0.2s, border-color 0.2s; display: flex; flex-direction: column; }
   .related-card:hover { transform: translateY(-3px); border-color: var(--accent); }
-  .related-img { width: 100%; aspect-ratio: 1/1; object-fit: contain; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 10px; }
+  .related-img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 10px; }
   .related-title { font-size: 0.88rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 4px; }
   .related-meta { font-size: 0.78rem; color: #64748b; }
 
