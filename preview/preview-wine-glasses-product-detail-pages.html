@@ -3,458 +3,420 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preview: Complete Wine Glass Suite (9 Models) - Jingyue Glass</title>
-  <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
+  <title>Wine Glasses (33 New SKUs · B2B Architecture) Preview & Verification Portal - Jingyue Glass</title>
   <style>
+    :root {
+      --primary: #1a3a5c;
+      --primary-dark: #0d2540;
+      --accent: #c8930a;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+      --text: #1e293b;
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: #f5f5f0;
-      color: #333;
-      line-height: 1.6;
-    }
-    .preview-header {
-      background: linear-gradient(135deg, #1a3a5c 0%, #0d2540 100%);
-      color: #fff;
-      padding: 40px 24px;
-      text-align: center;
-      border-bottom: 4px solid #c8930a;
-    }
-    .preview-badge {
-      display: inline-block;
-      background: #c8930a;
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      padding: 4px 12px;
-      border-radius: 4px;
-      margin-bottom: 12px;
-    }
-    .preview-header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .preview-header p {
-      font-size: 1.05rem;
-      color: #cbd5e1;
-      max-width: 800px;
-      margin: 0 auto;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #0f172a; color: #fff; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
     
-    .container {
-      max-width: 1200px;
-      margin: 36px auto 60px;
-      padding: 0 20px;
-    }
-    
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      color: #1a3a5c;
-      margin: 32px 0 16px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .section-title::after {
-      content: '';
-      flex: 1;
-      height: 1px;
-      background: #cbd5e1;
-    }
+    /* Top Bar */
+    header { background: var(--primary-dark); padding: 10px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--accent); flex-shrink: 0; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand h1 { font-size: 1.05rem; font-weight: 700; color: #fff; }
+    .brand span { background: var(--accent); color: #fff; font-size: 0.72rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; }
 
-    .pdp-suite-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 24px;
-      margin-bottom: 40px;
-    }
-    
-    .pdp-preview-card {
-      background: #fff;
-      border: 1px solid #e2e8f0;
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .pdp-preview-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 28px rgba(26,58,92,0.12);
-      border-color: #c8930a;
-    }
-    
-    .card-img-wrap {
-      position: relative;
-      background: #f8fafc;
-      height: 230px;
-      overflow: hidden;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    .card-img-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s;
-    }
-    .pdp-preview-card:hover .card-img-wrap img {
-      transform: scale(1.03);
-    }
-    .card-model-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: #1a3a5c;
-      color: #c8930a;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 4px;
-      letter-spacing: 0.05em;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-    .card-status-badge {
-      position: absolute;
-      top: 12px;
-      right: 12px;
-      background: #25D366;
-      color: #fff;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 4px 8px;
-      border-radius: 4px;
-    }
-    
-    .card-body {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-    .card-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #c8930a;
-      text-transform: uppercase;
-      margin-bottom: 4px;
-    }
-    .card-body h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      color: #1a3a5c;
-      line-height: 1.35;
-      margin-bottom: 8px;
-    }
-    .card-desc {
-      font-size: 0.85rem;
-      color: #475569;
-      line-height: 1.5;
-      margin-bottom: 16px;
-      flex-grow: 1;
-    }
-    
-    .spec-table-mini {
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      padding: 10px 12px;
-      margin-bottom: 16px;
-      font-size: 0.8rem;
-    }
-    .spec-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 3px 0;
-      border-bottom: 1px dashed #e2e8f0;
-    }
-    .spec-row:last-child { border-bottom: none; }
-    .spec-k { color: #64748B; font-weight: 600; }
-    .spec-v { color: #1a3a5c; font-weight: 700; }
-    
-    .card-actions {
-      display: flex;
-      gap: 10px;
-    }
-    .btn-view-pdp {
-      flex: 1;
-      background: #1a3a5c;
-      color: #fff;
-      text-align: center;
-      padding: 10px;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-decoration: none;
-      transition: background 0.2s;
-    }
-    .btn-view-pdp:hover {
-      background: #c8930a;
-      color: #fff;
-    }
+    .preview-notice { background: rgba(200,147,10,0.15); border: 1px solid var(--accent); color: #f1c40f; padding: 4px 12px; border-radius: 6px; font-size: 0.76rem; }
 
-    .verification-summary {
-      background: #fff;
-      border: 1px solid #e2e8f0;
-      border-left: 4px solid #c8930a;
-      border-radius: 8px;
-      padding: 24px;
-      margin-top: 32px;
-    }
-    .verification-summary h3 {
-      font-size: 1.1rem;
-      color: #1a3a5c;
-      margin-bottom: 10px;
-    }
-    .verification-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 10px;
-      font-size: 0.88rem;
-      color: #334155;
-    }
-    .verification-list li::before {
-      content: '✅ ';
-      font-weight: bold;
-    }
+    .viewport-controls { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); padding: 4px; border-radius: 8px; }
+    .vp-btn { background: transparent; border: none; color: #94a3b8; padding: 6px 14px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .vp-btn.active, .vp-btn:hover { background: var(--accent); color: #fff; }
+
+    .header-actions { display: flex; align-items: center; gap: 14px; }
+    .status-pill { background: #10b981; color: #fff; font-size: 0.78rem; font-weight: 700; padding: 4px 12px; border-radius: 20px; display: flex; align-items: center; gap: 6px; }
+
+    /* Layout */
+    .main-wrap { display: flex; flex: 1; height: calc(100vh - 56px); overflow: hidden; }
+    
+    /* Sidebar */
+    .sidebar { width: 340px; background: #1e293b; border-right: 1px solid #334155; display: flex; flex-direction: column; flex-shrink: 0; }
+    .sidebar-head { padding: 14px 16px; border-bottom: 1px solid #334155; }
+    .sidebar-head h2 { font-size: 0.92rem; font-weight: 700; color: #f1f5f9; margin-bottom: 2px; }
+    .sidebar-head p { font-size: 0.74rem; color: #94a3b8; }
+
+    .sku-list { flex: 1; overflow-y: auto; padding: 8px; }
+    .sku-item { display: flex; align-items: center; gap: 10px; padding: 9px 12px; border-radius: 8px; cursor: pointer; transition: all 0.15s; margin-bottom: 4px; border: 1px solid transparent; }
+    .sku-item:hover { background: rgba(255,255,255,0.05); }
+    .sku-item.active { background: rgba(200, 147, 10, 0.15); border-color: var(--accent); }
+    
+    .sku-badge { background: #334155; color: #f1f5f9; font-size: 0.72rem; font-weight: 800; padding: 4px 6px; border-radius: 4px; min-width: 60px; text-align: center; }
+    .sku-badge.hub { background: var(--accent); color: #fff; }
+    .sku-item.active .sku-badge { background: var(--accent); color: #fff; }
+    
+    .sku-details { flex: 1; min-width: 0; }
+    .sku-title { font-size: 0.84rem; font-weight: 600; color: #f1f5f9; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .sku-meta { font-size: 0.72rem; color: #94a3b8; }
+
+    /* Preview Stage */
+    .preview-stage { flex: 1; background: #0f172a; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; padding: 12px 16px; overflow-y: auto; }
+    .stage-header { width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; font-size: 0.86rem; color: #94a3b8; }
+    .stage-title { font-weight: 700; color: #f1f5f9; }
+    
+    .iframe-wrapper { background: #fff; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); overflow: hidden; transition: max-width 0.3s ease; height: calc(100vh - 110px); width: 100%; max-width: 100%; }
+    iframe { width: 100%; height: 100%; border: none; display: block; }
+
+    /* Verification Drawer */
+    .audit-bar { background: #1e293b; border-top: 1px solid #334155; padding: 10px 24px; display: flex; gap: 20px; font-size: 0.78rem; color: #cbd5e1; justify-content: center; flex-wrap: wrap; }
+    .audit-item { display: flex; align-items: center; gap: 6px; }
+    .audit-item strong { color: #10b981; }
   </style>
 </head>
 <body>
 
-<div class="preview-header">
-  <span class="preview-badge">ALL 9 WINE GLASS MODELS RESTORED</span>
-  <h1>Wine Glass Product Suite &amp; Dedicated PDPs</h1>
-  <p>All 9 commercial wine glass models (XZ5202, XZ6302, XZ6135, XZ5204, XZ9001, XZ9002, XZ9003, XZ9004, XZ9050) restored with dedicated PDPs, clean single MOQ badges, and pure-English copy.</p>
-</div>
-
-<div class="container">
-
-  <div class="section-title">Complete 9-Model Stemware Catalog Grid</div>
-  <div class="pdp-suite-grid">
-
-    <!-- Card 1: XZ5202 -->
-    <div class="pdp-preview-card" style="border: 2px solid #c8930a;">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">MODEL XZ5202</span>
-        <span class="card-status-badge">HERO UPDATED</span>
-        <img src="/assets/products/wine-glasses/xz5202-bordeaux-wine-glass-set.webp" alt="Model XZ5202 Bordeaux Wine Glass">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Bordeaux Stemware · Model XZ5202</span>
-        <h2>425ml Machine-Blown Bordeaux Wine Glass</h2>
-        <p class="card-desc">Classic rounded bowl with seamless pulled stem and laser cold-cut rim. Updated with new 6-pack crystal hero image.</p>
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity &amp; Size</span><span class="spec-v">425 ml · H 222 × Ø 64 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Packing</span><span class="spec-v">48 pcs/ctn · 0.107 CBM</span></div>
-          <div class="spec-row"><span class="spec-k">MOQ</span><span class="spec-v">48 pcs</span></div>
-        </div>
-        <div class="card-actions">
-          <a href="/bordeaux-wine-glass-xz5202" class="btn-view-pdp" target="_blank">Open XZ5202 PDP →</a>
-        </div>
-      </div>
+  <!-- Top Bar -->
+  <header>
+    <div class="brand">
+      <h1>Jingyue Glass</h1>
+      <span>Wine Glasses (33 SKUs)</span>
     </div>
 
-    <!-- Card 2: XZ6302 -->
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">MODEL XZ6302</span>
-        <span class="card-status-badge">READY</span>
-        <img src="/assets/products/xz6302-tulip-red-wine-glass.webp" alt="Model XZ6302 Tulip Red Wine Glass">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Aromatics Stemware · Model XZ6302</span>
-        <h2>415ml Tulip Aromatics Red Wine Glass</h2>
-        <p class="card-desc">Angled tulip bowl contour that concentrates delicate volatile esters while directing wine across the center of the palate.</p>
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity &amp; Size</span><span class="spec-v">415 ml · H 215 × Ø 62 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Packing</span><span class="spec-v">48 pcs/ctn · 0.098 CBM</span></div>
-          <div class="spec-row"><span class="spec-k">MOQ</span><span class="spec-v">48 pcs</span></div>
-        </div>
-        <div class="card-actions">
-          <a href="/tulip-red-wine-glass-xz6302" class="btn-view-pdp" target="_blank">Open XZ6302 PDP →</a>
-        </div>
-      </div>
+    <div class="viewport-controls">
+      <button class="vp-btn active" onclick="setViewport('100%', this)">🖥 Desktop (100%)</button>
+      <button class="vp-btn" onclick="setViewport('768px', this)">📱 Tablet (768px)</button>
+      <button class="vp-btn" onclick="setViewport('375px', this)">📱 Mobile (375px)</button>
     </div>
 
-    <!-- Card 3: XZ6135 -->
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">MODEL XZ6135</span>
-        <span class="card-status-badge">READY</span>
-        <img src="/assets/products/xz6135-classic-white-wine-glass.jpg" alt="Model XZ6135 Classic White Wine Glass">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">White Wine Stemware · Model XZ6135</span>
-        <h2>315ml Classic White Wine Glass</h2>
-        <p class="card-desc">Compact bowl volume preserves crisp acidity and fruit vibrancy while preventing chilled white wines from warming up.</p>
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity &amp; Size</span><span class="spec-v">315 ml · H 205 × Ø 58 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Packing</span><span class="spec-v">48 pcs/ctn · 0.088 CBM</span></div>
-          <div class="spec-row"><span class="spec-k">MOQ</span><span class="spec-v">48 pcs</span></div>
-        </div>
-        <div class="card-actions">
-          <a href="/classic-white-wine-glass-xz6135" class="btn-view-pdp" target="_blank">Open XZ6135 PDP →</a>
-        </div>
+    <div class="header-actions">
+      <div class="preview-notice">👁 Local Preview Portal Only (Not deployed to live nav)</div>
+      <div class="status-pill">
+        <span>●</span>
+        <span>33 PDPs Ready</span>
       </div>
     </div>
+  </header>
 
-    <!-- Card 4: XZ5204 -->
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">MODEL XZ5204</span>
-        <span class="card-status-badge">READY</span>
-        <img src="/assets/products/xz5204-narrow-champagne-flute.jpg" alt="Model XZ5204 Narrow Champagne Flute">
+  <!-- Main Wrap -->
+  <div class="main-wrap">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <h2>Wine Glasses &amp; Stemware</h2>
+        <p>Select a model to preview independent PDP</p>
       </div>
-      <div class="card-body">
-        <span class="card-tag">Sparkling Stemware · Model XZ5204</span>
-        <h2>200ml Narrow Champagne Flute</h2>
-        <p class="card-desc">Slender pulled-stem crystal flute with laser nucleation points at the base to generate steady streams of fine effervescence.</p>
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity &amp; Size</span><span class="spec-v">200 ml · H 230 × Ø 48 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Packing</span><span class="spec-v">48 pcs/ctn · 0.082 CBM</span></div>
-          <div class="spec-row"><span class="spec-k">MOQ</span><span class="spec-v">48 pcs</span></div>
+      
+      <div class="sku-list" id="skuList">
+        <div class="sku-item active" onclick="loadPreview('../wine-glasses.html', this, 'Category Hub: Wine Glasses')">
+          <div class="sku-badge hub">HUB</div>
+          <div class="sku-details">
+            <div class="sku-title">Wine Glasses Category Portal</div>
+            <div class="sku-meta">Overview &amp; Product Grid</div>
+          </div>
         </div>
-        <div class="card-actions">
-          <a href="/narrow-champagne-flute-xz5204" class="btn-view-pdp" target="_blank">Open XZ5204 PDP →</a>
-        </div>
-      </div>
-    </div>
 
-    <!-- Card 5: XZ9001 -->
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">MODEL XZ9001</span>
-        <span class="card-status-badge">RESTORED</span>
-        <img src="/assets/products/wine-glasses/xz9001-concave-base-tall-red-wine-glass.webp" alt="Model XZ9001 Tall Red Wine Glass">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Tall Red Wine Stemware · Model XZ9001</span>
-        <h2>550ml Concave Base Tall Red Wine Glass</h2>
-        <p class="card-desc">Elongated anatomical bowl curvature with signature concave base. Designed for medium to full-bodied reds like Cabernet &amp; Syrah.</p>
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity &amp; Size</span><span class="spec-v">550 ml · H 235 × Ø 72 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Packing</span><span class="spec-v">48 pcs/ctn · 0.102 CBM</span></div>
-          <div class="spec-row"><span class="spec-k">MOQ</span><span class="spec-v">48 pcs</span></div>
-        </div>
-        <div class="card-actions">
-          <a href="/concave-base-tall-red-wine-glass-xz9001" class="btn-view-pdp" target="_blank">Open XZ9001 PDP →</a>
+        
+      <div class="sku-item" onclick="loadPreview('../425ml-machine-made-stemmed-wine-glass-xz6425.html', this, 'Model XZ6425 (425 ml)')">
+        <div class="sku-badge">XZ6425</div>
+        <div class="sku-details">
+          <div class="sku-title">425ml 425ml Machine-Made Stemmed Wine Glass</div>
+          <div class="sku-meta">425 ml · H 211mm · Ø 70mm</div>
         </div>
       </div>
-    </div>
 
-    <!-- Card 6: XZ9002 -->
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">MODEL XZ9002</span>
-        <span class="card-status-badge">RESTORED</span>
-        <img src="/assets/products/wine-glasses/xz9002-large-concave-base-red-wine-glass.webp" alt="Model XZ9002 Burgundy Wine Glass">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Burgundy Stemware · Model XZ9002</span>
-        <h2>650ml Large Concave-Base Burgundy Glass</h2>
-        <p class="card-desc">Expansive balloon bowl with signature concave punt base for full-bodied Pinot Noir and oak-aged reds requiring maximum aeration.</p>
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity &amp; Size</span><span class="spec-v">650 ml · H 240 × Ø 78 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Packing</span><span class="spec-v">24 pcs/ctn · 0.115 CBM</span></div>
-          <div class="spec-row"><span class="spec-k">MOQ</span><span class="spec-v">48 pcs</span></div>
-        </div>
-        <div class="card-actions">
-          <a href="/large-concave-base-wine-glass-xz9002" class="btn-view-pdp" target="_blank">Open XZ9002 PDP →</a>
+      <div class="sku-item" onclick="loadPreview('../425ml-gradient-pink-stemmed-wine-glass-xz6425-1.html', this, 'Model XZ6425-1 (425 ml)')">
+        <div class="sku-badge">XZ6425-1</div>
+        <div class="sku-details">
+          <div class="sku-title">425ml 425ml Gradient Pink Stemmed Wine Glass</div>
+          <div class="sku-meta">425 ml · H 211mm · Ø 70mm</div>
         </div>
       </div>
-    </div>
 
-    <!-- Card 7: XZ9003 -->
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">MODEL XZ9003</span>
-        <span class="card-status-badge">RESTORED</span>
-        <img src="/assets/products/wine-glasses/xz9003-oversized-concave-base-wine-goblet.webp" alt="Model XZ9003 Oversized Goblet">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Oversized Goblet · Model XZ9003</span>
-        <h2>750ml Oversized Concave Base Wine Goblet</h2>
-        <p class="card-desc">Extra-large commercial crystal goblet with deep bowl volume and signature concave foot for grand reserve wines and luxury hospitality.</p>
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity &amp; Size</span><span class="spec-v">750 ml · H 250 × Ø 84 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Packing</span><span class="spec-v">24 pcs/ctn · 0.128 CBM</span></div>
-          <div class="spec-row"><span class="spec-k">MOQ</span><span class="spec-v">24 pcs</span></div>
-        </div>
-        <div class="card-actions">
-          <a href="/oversized-concave-base-wine-goblet-xz9003" class="btn-view-pdp" target="_blank">Open XZ9003 PDP →</a>
+      <div class="sku-item" onclick="loadPreview('../425ml-smoked-black-stem-wine-glass-xz6425-2.html', this, 'Model XZ6425-2 (425 ml)')">
+        <div class="sku-badge">XZ6425-2</div>
+        <div class="sku-details">
+          <div class="sku-title">425ml 425ml Smoked Black Stem Wine Glass</div>
+          <div class="sku-meta">425 ml · H 211mm · Ø 70mm</div>
         </div>
       </div>
-    </div>
 
-    <!-- Card 8: XZ9004 -->
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">MODEL XZ9004</span>
-        <span class="card-status-badge">RESTORED</span>
-        <img src="/assets/products/wine-glasses/xz9004-slim-concave-base-tall-wine-glass.webp" alt="Model XZ9004 Slim Wine Glass">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Universal Stemware · Model XZ9004</span>
-        <h2>480ml Slim Concave Base Tall Wine Glass</h2>
-        <p class="card-desc">Modern slender silhouette crystal wine glass with elongated chimney and balanced concave base. Versatile for reds &amp; whites.</p>
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity &amp; Size</span><span class="spec-v">480 ml · H 238 × Ø 66 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Packing</span><span class="spec-v">48 pcs/ctn · 0.099 CBM</span></div>
-          <div class="spec-row"><span class="spec-k">MOQ</span><span class="spec-v">48 pcs</span></div>
-        </div>
-        <div class="card-actions">
-          <a href="/slim-concave-base-tall-wine-glass-xz9004" class="btn-view-pdp" target="_blank">Open XZ9004 PDP →</a>
+      <div class="sku-item" onclick="loadPreview('../400ml-tulip-red-wine-glass-xz6338.html', this, 'Model XZ6338 (400 ml)')">
+        <div class="sku-badge">XZ6338</div>
+        <div class="sku-details">
+          <div class="sku-title">400ml 400ml Tulip Red Wine Glass</div>
+          <div class="sku-meta">400 ml · H 232mm · Ø 62mm</div>
         </div>
       </div>
-    </div>
 
-    <!-- Card 9: XZ9050 -->
-    <div class="pdp-preview-card">
-      <div class="card-img-wrap">
-        <span class="card-model-badge">MODEL XZ9050</span>
-        <span class="card-status-badge">RESTORED</span>
-        <img src="/assets/products/wine-glasses/xz9050-concave-base-champagne-flute.webp" alt="Model XZ9050 Concave Base Flute">
-      </div>
-      <div class="card-body">
-        <span class="card-tag">Geometric Flute · Model XZ9050</span>
-        <h2>230ml Concave-Base Champagne Flute</h2>
-        <p class="card-desc">Modern elongated silhouette with weighted concave base, delivering exceptional balance and aesthetic elegance for VIP banquets.</p>
-        <div class="spec-table-mini">
-          <div class="spec-row"><span class="spec-k">Capacity &amp; Size</span><span class="spec-v">230 ml · H 245 × Ø 52 mm</span></div>
-          <div class="spec-row"><span class="spec-k">Packing</span><span class="spec-v">48 pcs/ctn · 0.089 CBM</span></div>
-          <div class="spec-row"><span class="spec-k">MOQ</span><span class="spec-v">48 pcs</span></div>
-        </div>
-        <div class="card-actions">
-          <a href="/concave-base-champagne-flute-xz9050" class="btn-view-pdp" target="_blank">Open XZ9050 PDP →</a>
+      <div class="sku-item" onclick="loadPreview('../510ml-bordeaux-stemmed-wine-glass-xz6345.html', this, 'Model XZ6345 (510 ml)')">
+        <div class="sku-badge">XZ6345</div>
+        <div class="sku-details">
+          <div class="sku-title">510ml 510ml Bordeaux Stemmed Wine Glass</div>
+          <div class="sku-meta">510 ml · H 242mm · Ø 71mm</div>
         </div>
       </div>
-    </div>
 
+      <div class="sku-item" onclick="loadPreview('../420ml-classic-white-wine-glass-xz6301.html', this, 'Model XZ6301 (420 ml)')">
+        <div class="sku-badge">XZ6301</div>
+        <div class="sku-details">
+          <div class="sku-title">420ml 420ml Classic White Wine Glass</div>
+          <div class="sku-meta">420 ml · H 231mm · Ø 62mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../640ml-burgundy-large-crystal-glass-xz6303.html', this, 'Model XZ6303 (640 ml)')">
+        <div class="sku-badge">XZ6303</div>
+        <div class="sku-details">
+          <div class="sku-title">640ml 640ml Burgundy Large Crystal Glass</div>
+          <div class="sku-meta">640 ml · H 247mm · Ø 69mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../400ml-angular-modern-wine-glass-xz6139.html', this, 'Model XZ6139 (400 ml)')">
+        <div class="sku-badge">XZ6139</div>
+        <div class="sku-details">
+          <div class="sku-title">400ml 400ml Angular Modern Wine Glass</div>
+          <div class="sku-meta">400 ml · H 195mm · Ø 64mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../590ml-angular-large-bordeaux-glass-xz6159.html', this, 'Model XZ6159 (590 ml)')">
+        <div class="sku-badge">XZ6159</div>
+        <div class="sku-details">
+          <div class="sku-title">590ml 590ml Angular Large Bordeaux Glass</div>
+          <div class="sku-meta">590 ml · H 230mm · Ø 69mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../590ml-ruby-red-stem-bordeaux-glass-xz6159-r.html', this, 'Model XZ6159-R (590 ml)')">
+        <div class="sku-badge">XZ6159-R</div>
+        <div class="sku-details">
+          <div class="sku-title">590ml 590ml Ruby Red Stem Bordeaux Glass</div>
+          <div class="sku-meta">590 ml · H 230mm · Ø 69mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../200ml-champagne-flute-glass-xz5204s.html', this, 'Model XZ5204S (200 ml)')">
+        <div class="sku-badge">XZ5204S</div>
+        <div class="sku-details">
+          <div class="sku-title">200ml 200ml Champagne Flute Glass</div>
+          <div class="sku-meta">200 ml · H 263mm · Ø 42mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../357ml-tasting-stemmed-wine-glass-xz5301.html', this, 'Model XZ5301 (357 ml)')">
+        <div class="sku-badge">XZ5301</div>
+        <div class="sku-details">
+          <div class="sku-title">357ml 357ml Tasting Stemmed Wine Glass</div>
+          <div class="sku-meta">357 ml · H 189mm · Ø 61mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../428ml-restaurant-stemmed-wine-glass-xz5302.html', this, 'Model XZ5302 (428 ml)')">
+        <div class="sku-badge">XZ5302</div>
+        <div class="sku-details">
+          <div class="sku-title">428ml 428ml Restaurant Stemmed Wine Glass</div>
+          <div class="sku-meta">428 ml · H 224mm · Ø 63mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../582ml-large-banquet-red-wine-glass-xz5303.html', this, 'Model XZ5303 (582 ml)')">
+        <div class="sku-badge">XZ5303</div>
+        <div class="sku-details">
+          <div class="sku-title">582ml 582ml Large Banquet Red Wine Glass</div>
+          <div class="sku-meta">582 ml · H 216mm · Ø 73mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../202ml-classic-tasting-port-glass-xz5304.html', this, 'Model XZ5304 (202 ml)')">
+        <div class="sku-badge">XZ5304</div>
+        <div class="sku-details">
+          <div class="sku-title">202ml 202ml Classic Tasting Port Glass</div>
+          <div class="sku-meta">202 ml · H 226mm · Ø 46mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../285ml-bistro-white-wine-glass-xz5627.html', this, 'Model XZ5627 (285 ml)')">
+        <div class="sku-badge">XZ5627</div>
+        <div class="sku-details">
+          <div class="sku-title">285ml 285ml Bistro White Wine Glass</div>
+          <div class="sku-meta">285 ml · H 202mm · Ø 56mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../440ml-standard-goblet-wine-glass-xz5645.html', this, 'Model XZ5645 (440 ml)')">
+        <div class="sku-badge">XZ5645</div>
+        <div class="sku-details">
+          <div class="sku-title">440ml 440ml Standard Goblet Wine Glass</div>
+          <div class="sku-meta">440 ml · H 234mm · Ø 65mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../606ml-oversized-balloon-wine-glass-xz0211.html', this, 'Model XZ0211 (606 ml)')">
+        <div class="sku-badge">XZ0211</div>
+        <div class="sku-details">
+          <div class="sku-title">606ml 606ml Oversized Balloon Wine Glass</div>
+          <div class="sku-meta">606 ml · H 210mm · Ø 90mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../650ml-grand-cru-burgundy-glass-xzs05.html', this, 'Model XZS05 (650 ml)')">
+        <div class="sku-badge">XZS05</div>
+        <div class="sku-details">
+          <div class="sku-title">650ml 650ml Grand Cru Burgundy Glass</div>
+          <div class="sku-meta">650 ml · H 211mm · Ø 90mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../250ml-classic-dessert-wine-glass-xz6323.html', this, 'Model XZ6323 (250 ml)')">
+        <div class="sku-badge">XZ6323</div>
+        <div class="sku-details">
+          <div class="sku-title">250ml 250ml Classic Dessert Wine Glass</div>
+          <div class="sku-meta">250 ml · H 245.5mm · Ø 48mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../180ml-slender-toasting-flute-xz7719.html', this, 'Model XZ7719 (180 ml)')">
+        <div class="sku-badge">XZ7719</div>
+        <div class="sku-details">
+          <div class="sku-title">180ml 180ml Slender Toasting Flute</div>
+          <div class="sku-meta">180 ml · H 245.5mm · Ø 46mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../612ml-premium-banquet-goblet-xz7359.html', this, 'Model XZ7359 (612 ml)')">
+        <div class="sku-badge">XZ7359</div>
+        <div class="sku-details">
+          <div class="sku-title">612ml 612ml Premium Banquet Goblet</div>
+          <div class="sku-meta">612 ml · H 234.5mm · Ø 59mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../180ml-cylindrical-cocktail-glass-xzj8046a.html', this, 'Model XZJ8046A (180 ml)')">
+        <div class="sku-badge">XZJ8046A</div>
+        <div class="sku-details">
+          <div class="sku-title">180ml 180ml Cylindrical Cocktail Glass</div>
+          <div class="sku-meta">180 ml · H 220mm · Ø 70mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../740ml-hand-blown-bordeaux-grand-cru-glass-xz98740.html', this, 'Model XZ98740 (740 ml)')">
+        <div class="sku-badge">XZ98740</div>
+        <div class="sku-details">
+          <div class="sku-title">740ml 740ml Hand-Blown Bordeaux Grand Cru Glass</div>
+          <div class="sku-meta">740 ml · H 275mm · Ø 97mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../730ml-hand-blown-burgundy-aeration-glass-xz98730.html', this, 'Model XZ98730 (730 ml)')">
+        <div class="sku-badge">XZ98730</div>
+        <div class="sku-details">
+          <div class="sku-title">730ml 730ml Hand-Blown Burgundy Aeration Glass</div>
+          <div class="sku-meta">730 ml · H 245mm · Ø 106mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../500ml-hand-blown-universal-tasting-glass-xz98500.html', this, 'Model XZ98500 (500 ml)')">
+        <div class="sku-badge">XZ98500</div>
+        <div class="sku-details">
+          <div class="sku-title">500ml 500ml Hand-Blown Universal Tasting Glass</div>
+          <div class="sku-meta">500 ml · H 246mm · Ø 87mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../700ml-hand-blown-cabernet-sauvignon-glass-xz98700.html', this, 'Model XZ98700 (700 ml)')">
+        <div class="sku-badge">XZ98700</div>
+        <div class="sku-details">
+          <div class="sku-title">700ml 700ml Hand-Blown Cabernet Sauvignon Glass</div>
+          <div class="sku-meta">700 ml · H 225mm · Ø 115mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../560ml-hand-blown-modern-angular-glass-xz99560.html', this, 'Model XZ99560 (560 ml)')">
+        <div class="sku-badge">XZ99560</div>
+        <div class="sku-details">
+          <div class="sku-title">560ml 560ml Hand-Blown Modern Angular Glass</div>
+          <div class="sku-meta">560 ml · H 257mm · Ø 94mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../640ml-hand-blown-precision-wine-glass-xz99640.html', this, 'Model XZ99640 (640 ml)')">
+        <div class="sku-badge">XZ99640</div>
+        <div class="sku-details">
+          <div class="sku-title">640ml 640ml Hand-Blown Precision Wine Glass</div>
+          <div class="sku-meta">640 ml · H 261mm · Ø 100mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../720ml-hand-blown-grand-tasting-glass-xz99720.html', this, 'Model XZ99720 (720 ml)')">
+        <div class="sku-badge">XZ99720</div>
+        <div class="sku-details">
+          <div class="sku-title">720ml 720ml Hand-Blown Grand Tasting Glass</div>
+          <div class="sku-meta">720 ml · H 251mm · Ø 115mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../540ml-diamond-geometric-wine-glass-xz9031.html', this, 'Model XZ9031 (540 ml)')">
+        <div class="sku-badge">XZ9031</div>
+        <div class="sku-details">
+          <div class="sku-title">540ml 540ml Diamond Geometric Wine Glass</div>
+          <div class="sku-meta">540 ml · H 240mm · Ø 70mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../400ml-diamond-geometric-white-wine-glass-xz9032.html', this, 'Model XZ9032 (400 ml)')">
+        <div class="sku-badge">XZ9032</div>
+        <div class="sku-details">
+          <div class="sku-title">400ml 400ml Diamond Geometric White Wine Glass</div>
+          <div class="sku-meta">400 ml · H 239mm · Ø 60mm</div>
+        </div>
+      </div>
+
+      <div class="sku-item" onclick="loadPreview('../210ml-diamond-geometric-flute-glass-xz9033.html', this, 'Model XZ9033 (210 ml)')">
+        <div class="sku-badge">XZ9033</div>
+        <div class="sku-details">
+          <div class="sku-title">210ml 210ml Diamond Geometric Flute Glass</div>
+          <div class="sku-meta">210 ml · H 239mm · Ø 45mm</div>
+        </div>
+      </div>
+
+      </div>
+    </aside>
+
+    <!-- Preview Stage -->
+    <main class="preview-stage">
+      <div class="stage-header">
+        <div class="stage-title" id="stageTitle">Category Hub: Wine Glasses</div>
+        <div id="urlDisplay" style="font-family: monospace; font-size: 0.8rem; color: #64748b;">../wine-glasses.html</div>
+      </div>
+
+      <div class="iframe-wrapper" id="frameWrap">
+        <iframe id="previewFrame" src="../wine-glasses.html"></iframe>
+      </div>
+    </main>
   </div>
 
-  <div class="verification-summary">
-    <h3>B2B Commercial &amp; Technical Standards Verification</h3>
-    <ul class="verification-list">
-      <li>All 9 wine glass models fully restored with dedicated PDP pages</li>
-      <li>100% Pure English Copy across all pages (Zero Chinese characters)</li>
-      <li>B2B De-Pricing Compliance (No fixed retail prices, pure RFQ Quote CTAs)</li>
-      <li>High Temperature Decal standard naming (580°C kiln-fired durability)</li>
-      <li>Packaging standard: 100% Odorless EPE pearl cotton inserts (Zero EVA)</li>
-      <li>Strict Single-H1 semantic structure on every product page</li>
-      <li>Schema.org Product + AggregateOffer JSON-LD structured data embedded</li>
-      <li>Self-referential Canonical tags declared on every URL</li>
-      <li>100% Verified Local WebP/JPG assets with zero broken image links</li>
-      <li>Sitemap.xml updated with all 9 active wine glass URLs</li>
-    </ul>
-  </div>
+  <!-- Audit Summary Bar -->
+  <footer class="audit-bar">
+    <div class="audit-item">✓ Single H1 Architecture: <strong>100%</strong></div>
+    <div class="audit-item">✓ B2B De-pricing &amp; Tiered Quote: <strong>100%</strong></div>
+    <div class="audit-item">✓ Mobile 375px Responsive: <strong>Verified</strong></div>
+    <div class="audit-item">✓ JSON-LD Schema: <strong>Product + AggregateOffer + FAQ</strong></div>
+  </footer>
 
-</div>
+  <script>
+    function loadPreview(url, el, title) {
+      document.getElementById('previewFrame').src = url;
+      document.getElementById('stageTitle').innerText = title;
+      document.getElementById('urlDisplay').innerText = url;
+      
+      const items = document.querySelectorAll('.sku-item');
+      items.forEach(i => i.classList.remove('active'));
+      if (el) el.classList.add('active');
+    }
 
+    function setViewport(width, btn) {
+      const wrap = document.getElementById('frameWrap');
+      wrap.style.maxWidth = width;
+      
+      const btns = document.querySelectorAll('.vp-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+    }
+  </script>
 </body>
 </html>
