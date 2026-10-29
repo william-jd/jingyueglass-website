@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>红酒杯 19款实拍大图更新全景预览 | Jingyue Glass</title>
+  <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --primary-dark: #0d2540;
+      --accent: #c8930a;
+      --accent-hover: #e0a70b;
+      --light-bg: #f5f5f0;
+      --white: #ffffff;
+      --dark: #1e293b;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--light-bg); color: var(--dark); line-height: 1.6; }
+    
+    header { background: var(--white); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 100; }
+    .nav { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; }
+    .nav-brand { font-size: 1.25rem; font-weight: 800; color: var(--primary); text-decoration: none; display: flex; align-items: center; gap: 8px; }
+    .nav-brand span { color: var(--accent); }
+    .nav-link { background: var(--accent); color: #fff; padding: 8px 18px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.9rem; }
+
+    .hero { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding: 48px 20px; text-align: center; }
+    .hero-badge { display: inline-block; background: rgba(200,147,10,0.25); border: 1px solid rgba(200,147,10,0.5); color: #fef08a; padding: 4px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; text-transform: uppercase; margin-bottom: 12px; }
+    .hero h1 { font-size: clamp(22px, 3.5vw, 34px); font-weight: 800; margin-bottom: 12px; }
+    .hero p { font-size: 1rem; color: #cbd5e1; max-width: 800px; margin: 0 auto; }
+
+    .container { max-width: 1280px; margin: 32px auto 60px; padding: 0 20px; }
+    
+    .stats-bar { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .stat-item { border-left: 3px solid var(--accent); padding-left: 12px; }
+    .stat-val { font-size: 1.4rem; font-weight: 800; color: var(--primary); }
+    .stat-lbl { font-size: 0.82rem; color: #64748b; font-weight: 600; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    .card { background: var(--white); border-radius: 12px; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 2px 10px rgba(0,0,0,0.05); transition: transform 0.25s, box-shadow 0.25s; display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 24px rgba(0,0,0,0.1); }
+    
+    .img-wrap { position: relative; width: 100%; aspect-ratio: 4 / 3; background: #e2e8f0; overflow: hidden; }
+    .img-wrap img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .badge { position: absolute; top: 12px; left: 12px; background: rgba(13,37,64,0.85); backdrop-filter: blur(4px); color: #fef08a; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(200,147,10,0.4); }
+    
+    .card-body { padding: 18px 20px 20px; flex: 1; display: flex; flex-direction: column; }
+    .model-tag { font-size: 0.8rem; font-weight: 700; color: var(--accent); margin-bottom: 6px; display: block; }
+    .card-body h3 { font-size: 1.05rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.4; }
+    .status-tag { font-size: 0.8rem; color: #16a34a; font-weight: 600; background: #f0fdf4; border: 1px solid #bbf7d0; padding: 4px 8px; border-radius: 4px; margin-bottom: 14px; }
+    
+    .btn-group { margin-top: auto; display: flex; gap: 8px; }
+    .btn-view { flex: 1; text-align: center; background: #f1f5f9; color: var(--primary); text-decoration: none; padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; border: 1px solid var(--border); transition: all 0.2s; }
+    .btn-view:hover { background: #e2e8f0; }
+    .btn-quote { flex: 1; text-align: center; background: var(--accent); color: #fff; text-decoration: none; padding: 8px 12px; border-radius: 6px; font-size: 0.85rem; font-weight: 700; transition: background 0.2s; }
+    .btn-quote:hover { background: var(--accent-hover); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <a href="/wine-glasses" class="nav-brand">Jingyue Glass <span>· 红酒杯实拍大图全景预览 (19款)</span></a>
+      <a href="/wine-glasses" class="nav-link" target="_blank">访问生产分类页 →</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <span class="hero-badge">Wine Glasses Real Photography Rollout</span>
+    <h1>全站 19款 红酒杯 / 高脚杯 高清实拍图全景预览</h1>
+    <p>全部 19 款型号已完成高清大理石实拍图替换，彻底替换原有占位图；分类页与单品详情页统一采用该高质量 4:3 实拍大图。</p>
+  </section>
+
+  <div class="container">
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-val">19 款</div>
+        <div class="stat-lbl">已更新实拍图红酒杯型号</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">1200 × 900</div>
+        <div class="stat-lbl">分类与详情页统一尺寸</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">WebP</div>
+        <div class="stat-lbl">高保真纯净摄影</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val">100% 完整</div>
+        <div class="stat-lbl">杯口与杯底完整展示 / 零截断</div>
+      </div>
+    </div>
+
+    <div class="grid">
+      
+    <div class="card" id="card-xz7359">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz7359.webp?v=20261029_p1" alt="612ml Premium Banquet Goblet (XZ7359)" loading="lazy">
+        <span class="badge">Model XZ7359</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ7359</span>
+        <h3>612ml Premium Banquet Goblet (XZ7359)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/612ml-premium-banquet-goblet-xz7359" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz0211">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz0211.webp?v=20261029_p1" alt="606ml Oversized Balloon Wine Glass (XZ0211)" loading="lazy">
+        <span class="badge">Model XZ0211</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ0211</span>
+        <h3>606ml Oversized Balloon Wine Glass (XZ0211)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/606ml-oversized-balloon-wine-glass-xz0211" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz5301">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz5301.webp?v=20261029_p1" alt="357ml Tasting Stemmed Wine Glass (XZ5301)" loading="lazy">
+        <span class="badge">Model XZ5301</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ5301</span>
+        <h3>357ml Tasting Stemmed Wine Glass (XZ5301)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/357ml-tasting-stemmed-wine-glass-xz5301" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz5302">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz5302.webp?v=20261029_p1" alt="428ml Restaurant Stemmed Wine Glass (XZ5302)" loading="lazy">
+        <span class="badge">Model XZ5302</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ5302</span>
+        <h3>428ml Restaurant Stemmed Wine Glass (XZ5302)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/428ml-restaurant-stemmed-wine-glass-xz5302" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz5303">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz5303.webp?v=20261029_p1" alt="582ml Large Banquet Red Wine Glass (XZ5303)" loading="lazy">
+        <span class="badge">Model XZ5303</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ5303</span>
+        <h3>582ml Large Banquet Red Wine Glass (XZ5303)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/582ml-large-banquet-red-wine-glass-xz5303" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz5304">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz5304.webp?v=20261029_p1" alt="202ml Classic Tasting Port Glass (XZ5304)" loading="lazy">
+        <span class="badge">Model XZ5304</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ5304</span>
+        <h3>202ml Classic Tasting Port Glass (XZ5304)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/202ml-classic-tasting-port-glass-xz5304" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz5627">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz5627.webp?v=20261029_p1" alt="285ml Bistro White Wine Glass (XZ5627)" loading="lazy">
+        <span class="badge">Model XZ5627</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ5627</span>
+        <h3>285ml Bistro White Wine Glass (XZ5627)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/285ml-bistro-white-wine-glass-xz5627" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz5645">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz5645.webp?v=20261029_p1" alt="440ml Standard Goblet Wine Glass (XZ5645)" loading="lazy">
+        <span class="badge">Model XZ5645</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ5645</span>
+        <h3>440ml Standard Goblet Wine Glass (XZ5645)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/440ml-standard-goblet-wine-glass-xz5645" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz6139">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz6139.webp?v=20261029_p1" alt="400ml Angular Modern Wine Glass (XZ6139)" loading="lazy">
+        <span class="badge">Model XZ6139</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ6139</span>
+        <h3>400ml Angular Modern Wine Glass (XZ6139)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/400ml-angular-modern-wine-glass-xz6139" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz6159">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz6159.webp?v=20261029_p1" alt="590ml Angular Large Bordeaux Glass (XZ6159)" loading="lazy">
+        <span class="badge">Model XZ6159</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ6159</span>
+        <h3>590ml Angular Large Bordeaux Glass (XZ6159)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/590ml-angular-large-bordeaux-glass-xz6159" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz6159-r">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz6159-r.webp?v=20261029_p1" alt="590ml Ruby Red Stem Bordeaux Glass (XZ6159-R)" loading="lazy">
+        <span class="badge">Model XZ6159-R</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ6159-R</span>
+        <h3>590ml Ruby Red Stem Bordeaux Glass (XZ6159-R)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/590ml-ruby-red-stem-bordeaux-glass-xz6159-r" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz6301">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz6301.webp?v=20261029_p1" alt="420ml Classic White Wine Glass (XZ6301)" loading="lazy">
+        <span class="badge">Model XZ6301</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ6301</span>
+        <h3>420ml Classic White Wine Glass (XZ6301)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/420ml-classic-white-wine-glass-xz6301" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz6303">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz6303.webp?v=20261029_p1" alt="640ml Burgundy Large Crystal Glass (XZ6303)" loading="lazy">
+        <span class="badge">Model XZ6303</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ6303</span>
+        <h3>640ml Burgundy Large Crystal Glass (XZ6303)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/640ml-burgundy-large-crystal-glass-xz6303" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz6323">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz6323.webp?v=20261029_p1" alt="250ml Classic Dessert Wine Glass (XZ6323)" loading="lazy">
+        <span class="badge">Model XZ6323</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ6323</span>
+        <h3>250ml Classic Dessert Wine Glass (XZ6323)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/250ml-classic-dessert-wine-glass-xz6323" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz6338">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz6338.webp?v=20261029_p1" alt="400ml Tulip Red Wine Glass (XZ6338)" loading="lazy">
+        <span class="badge">Model XZ6338</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ6338</span>
+        <h3>400ml Tulip Red Wine Glass (XZ6338)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/400ml-tulip-red-wine-glass-xz6338" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz6345">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz6345.webp?v=20261029_p1" alt="510ml Bordeaux Stemmed Wine Glass (XZ6345)" loading="lazy">
+        <span class="badge">Model XZ6345</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ6345</span>
+        <h3>510ml Bordeaux Stemmed Wine Glass (XZ6345)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/510ml-bordeaux-stemmed-wine-glass-xz6345" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz6425">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz6425.webp?v=20261029_p1" alt="425ml Machine-Made Stemmed Wine Glass (XZ6425)" loading="lazy">
+        <span class="badge">Model XZ6425</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ6425</span>
+        <h3>425ml Machine-Made Stemmed Wine Glass (XZ6425)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/425ml-machine-made-stemmed-wine-glass-xz6425" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz6425-1">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz6425-1.webp?v=20261029_p1" alt="425ml Gradient Pink Stemmed Wine Glass (XZ6425-1)" loading="lazy">
+        <span class="badge">Model XZ6425-1</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ6425-1</span>
+        <h3>425ml Gradient Pink Stemmed Wine Glass (XZ6425-1)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/425ml-gradient-pink-stemmed-wine-glass-xz6425-1" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="card-xz6425-2">
+      <div class="img-wrap">
+        <img src="/assets/products/wine-glasses/xz6425-2.webp?v=20261029_p1" alt="425ml Smoked Black Stem Wine Glass (XZ6425-2)" loading="lazy">
+        <span class="badge">Model XZ6425-2</span>
+      </div>
+      <div class="card-body">
+        <span class="model-tag">Stemware · XZ6425-2</span>
+        <h3>425ml Smoked Black Stem Wine Glass (XZ6425-2)</h3>
+        <p class="status-tag">✓ 高清实拍图已更新 | 大理石台面纯净光影</p>
+        <div class="btn-group">
+          <a href="/425ml-smoked-black-stem-wine-glass-xz6425-2" class="btn-view" target="_blank">查看独立 PDP</a>
+          <a href="/custom-glassware-quote-checklist" class="btn-quote" target="_blank">询价此型号</a>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
