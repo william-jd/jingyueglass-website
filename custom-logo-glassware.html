@@ -150,6 +150,11 @@
     .routes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 30px; }
     .route-card { background: #fff; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s; position: relative; }
     .route-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+    
+    /* Route Image Box Styling */
+    .route-img-box { width: 100%; aspect-ratio: 4 / 3; background: #f1f5f9; overflow: hidden; position: relative; border-bottom: 1px solid var(--line); }
+    .route-img-box img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s ease; }
+    .route-card:hover .route-img-box img { transform: scale(1.05); }
     .route-header { padding: 22px 20px; background: var(--wash); border-bottom: 1px solid var(--line); }
     .route-moq-badge { display: inline-block; background: var(--accent); color: #fff; font-size: 0.75rem; font-weight: 800; padding: 4px 10px; border-radius: 20px; margin-bottom: 10px; letter-spacing: 0.5px; }
     .route-header h3 { font-size: 1.22rem; color: var(--primary); font-weight: 800; line-height: 1.3; margin-bottom: 4px; }
@@ -476,6 +481,9 @@
         <div class="routes-grid">
           <!-- Route 1: Fiber Laser Engraving -->
           <div class="route-card">
+            <div class="route-img-box">
+              <img src="/assets/custom/custom-process-fiber-laser-engraving.webp?v=20261029" alt="Fiber Laser Engraving on Crystal Whiskey Decanters" loading="lazy">
+            </div>
             <div class="route-header">
               <span class="route-moq-badge">MOQ 48 Pcs · Fastest</span>
               <h3>Fiber Laser Engraving</h3>
@@ -495,6 +503,9 @@
 
           <!-- Route 2: UV Color Printing -->
           <div class="route-card">
+            <div class="route-img-box">
+              <img src="/assets/custom/custom-process-uv-color-print.webp?v=20261029" alt="UV Digital Color Printing on Glass Tumblers" loading="lazy">
+            </div>
             <div class="route-header">
               <span class="route-moq-badge" style="background:#0284c7;">MOQ 100 Pcs · Full Color</span>
               <h3>UV Digital Color Print</h3>
@@ -514,6 +525,9 @@
 
           <!-- Route 3: 580°C High-Temp Decals -->
           <div class="route-card">
+            <div class="route-img-box">
+              <img src="/assets/custom/custom-process-high-temp-decals.webp?v=20261029" alt="580C High Temperature Fused Decals on Wine Glasses" loading="lazy">
+            </div>
             <div class="route-header">
               <span class="route-moq-badge" style="background:#059669;">MOQ 500 Pcs · Commercial</span>
               <h3>580°C High-Temp Decals</h3>
@@ -533,6 +547,9 @@
 
           <!-- Route 4: OEM Private Custom Mold -->
           <div class="route-card">
+            <div class="route-img-box">
+              <img src="/assets/custom/custom-process-oem-custom-mold.webp?v=20261029" alt="OEM Private Custom Mold 3D CAD Engineering" loading="lazy">
+            </div>
             <div class="route-header">
               <span class="route-moq-badge" style="background:#475569;">MOQ 3,000 Pcs · Bespoke</span>
               <h3>OEM Private Custom Mold</h3>
