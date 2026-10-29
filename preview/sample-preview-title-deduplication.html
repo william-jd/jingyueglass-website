@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>全站产品标题重复表达诊断与首件修复方案预览 | Jingyue Glass</title>
+  <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --primary-dark: #0d2540;
+      --accent: #c8930a;
+      --accent-hover: #e0a70b;
+      --light-bg: #f8fafc;
+      --white: #ffffff;
+      --dark: #1e293b;
+      --border: #e2e8f0;
+      --danger: #ef4444;
+      --success: #16a34a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--light-bg); color: var(--dark); line-height: 1.6; }
+    
+    header { background: var(--white); border-bottom: 1px solid var(--border); padding: 14px 20px; position: sticky; top: 0; z-index: 100; }
+    .nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    .brand { font-size: 1.2rem; font-weight: 800; color: var(--primary); text-decoration: none; }
+    .brand span { color: var(--accent); }
+    .nav-btn { background: var(--accent); color: #fff; padding: 8px 18px; border-radius: 6px; font-weight: 700; text-decoration: none; font-size: 0.85rem; }
+
+    .hero { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding: 40px 20px; text-align: center; }
+    .hero-badge { display: inline-block; background: rgba(200,147,10,0.25); border: 1px solid rgba(200,147,10,0.5); color: #fef08a; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
+    .hero h1 { font-size: clamp(20px, 3vw, 30px); font-weight: 800; margin-bottom: 8px; }
+    .hero p { font-size: 0.95rem; color: #cbd5e1; max-width: 750px; margin: 0 auto; }
+
+    .container { max-width: 1200px; margin: 30px auto 60px; padding: 0 20px; }
+    
+    .stats-bar { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 28px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+    .stat-item { border-left: 3px solid var(--accent); padding-left: 12px; }
+    .stat-val { font-size: 1.4rem; font-weight: 800; color: var(--primary); }
+    .stat-lbl { font-size: 0.82rem; color: #64748b; font-weight: 600; }
+
+    .card-box { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 28px; box-shadow: 0 4px 16px rgba(0,0,0,0.05); }
+    .box-head { font-size: 1.15rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 16px; border-bottom: 2px solid var(--accent); padding-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+
+    /* Comparison Table */
+    .compare-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .compare-table th, .compare-table td { padding: 12px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    .compare-table th { background: #f8fafc; color: var(--primary-dark); font-weight: 700; }
+    .raw-title { color: var(--danger); font-family: monospace; font-size: 0.85rem; text-decoration: line-through; }
+    .fixed-title { color: var(--success); font-weight: 700; font-family: monospace; font-size: 0.85rem; }
+    .badge-status { display: inline-block; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; }
+    .badge-fixed { background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; }
+    .badge-pending { background: #fef3c7; color: #d97706; border: 1px solid #fde68a; }
+
+    .sample-highlight { background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; padding: 18px; margin-top: 14px; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <a href="/wine-glasses" class="brand">Jingyue Glass <span>· 标题重复表达全站诊断</span></a>
+      <a href="/wine-glasses" class="nav-btn" target="_blank">访问线上分类页 →</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <span class="hero-badge">Full Site Audit & Solution Preview</span>
+    <h1>全站产品标题重复表达诊断与首件修复方案</h1>
+    <p>经全面扫描 303 个全站页面，排查出容量前缀重复表达均集中在 Wine Glasses 品类中，其余品类结构规范正常。</p>
+  </section>
+
+  <div class="container">
+    
+    <div class="stats-bar">
+      <div class="stat-item">
+        <div class="stat-val">303 个</div>
+        <div class="stat-lbl">全站扫描 HTML 文件总数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val" style="color:var(--success);">0 处异常</div>
+        <div class="stat-lbl">啤酒杯/醒酒器/水杯/高身杯其他类目</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val" style="color:var(--accent);">32 款型号</div>
+        <div class="stat-lbl">Wine Glasses 类目待去重标题总数</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-val" style="color:var(--success);">1 件已修复</div>
+        <div class="stat-lbl">首件打样 XZ6425-1 已完成修正</div>
+      </div>
+    </div>
+
+    <!-- Box 1: Sample Fix Comparison -->
+    <div class="card-box">
+      <div class="box-head">
+        <span>首件打样修复效果（Model XZ6425-1）</span>
+        <span class="badge-status badge-fixed">✓ 首件已验证</span>
+      </div>
+      <div class="sample-highlight">
+        <p style="font-size:0.9rem; margin-bottom:8px;"><strong>所属页面：</strong><code>wine-glasses.html</code> 及 <code>425ml-gradient-pink-stemmed-wine-glass-xz6425-1.html</code></p>
+        <p style="font-size:0.9rem; margin-bottom:8px;"><strong>修复前（含重复容量）：</strong><span class="raw-title">425ml 425ml Gradient Pink Stemmed Wine Glass</span></p>
+        <p style="font-size:0.9rem;"><strong>修复后（标准纯净标题）：</strong><span class="fixed-title">425ml Gradient Pink Stemmed Wine Glass</span></p>
+      </div>
+    </div>
+
+    <!-- Box 2: All 32 Pending Items Solution Plan -->
+    <div class="card-box">
+      <div class="box-head">
+        <span>待批量执行的 32 款红酒杯标题去重清单（解决方案预览）</span>
+        <span class="badge-status badge-pending">待用户确认批量执行</span>
+      </div>
+      
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>型号 (SKU)</th>
+            <th>当前重复标题 (Before)</th>
+            <th>去重规范标题 (After)</th>
+            <th>影响范围</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>XZ6425-1</strong></td>
+            <td><span class="raw-title">425ml 425ml Gradient Pink Stemmed Wine Glass</span></td>
+            <td><span class="fixed-title">425ml Gradient Pink Stemmed Wine Glass</span></td>
+            <td><span class="badge-status badge-fixed">已打样</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ6425-2</strong></td>
+            <td><span class="raw-title">425ml 425ml Smoked Black Stem Wine Glass</span></td>
+            <td><span class="fixed-title">425ml Smoked Black Stem Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ6338</strong></td>
+            <td><span class="raw-title">400ml 400ml Tulip Red Wine Glass</span></td>
+            <td><span class="fixed-title">400ml Tulip Red Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ6345</strong></td>
+            <td><span class="raw-title">510ml 510ml Bordeaux Stemmed Wine Glass</span></td>
+            <td><span class="fixed-title">510ml Bordeaux Stemmed Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ6301</strong></td>
+            <td><span class="raw-title">420ml 420ml Classic White Wine Glass</span></td>
+            <td><span class="fixed-title">420ml Classic White Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ6303</strong></td>
+            <td><span class="raw-title">640ml 640ml Burgundy Large Crystal Glass</span></td>
+            <td><span class="fixed-title">640ml Burgundy Large Crystal Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ6139</strong></td>
+            <td><span class="raw-title">400ml 400ml Angular Modern Wine Glass</span></td>
+            <td><span class="fixed-title">400ml Angular Modern Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ6159</strong></td>
+            <td><span class="raw-title">590ml 590ml Angular Large Bordeaux Glass</span></td>
+            <td><span class="fixed-title">590ml Angular Large Bordeaux Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ6159-R</strong></td>
+            <td><span class="raw-title">590ml 590ml Ruby Red Stem Bordeaux Glass</span></td>
+            <td><span class="fixed-title">590ml Ruby Red Stem Bordeaux Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ5301</strong></td>
+            <td><span class="raw-title">357ml 357ml Tasting Stemmed Wine Glass</span></td>
+            <td><span class="fixed-title">357ml Tasting Stemmed Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ5302</strong></td>
+            <td><span class="raw-title">428ml 428ml Restaurant Stemmed Wine Glass</span></td>
+            <td><span class="fixed-title">428ml Restaurant Stemmed Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ5303</strong></td>
+            <td><span class="raw-title">582ml 582ml Large Banquet Red Wine Glass</span></td>
+            <td><span class="fixed-title">582ml Large Banquet Red Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ5304</strong></td>
+            <td><span class="raw-title">202ml 202ml Classic Tasting Port Glass</span></td>
+            <td><span class="fixed-title">202ml Classic Tasting Port Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ5627</strong></td>
+            <td><span class="raw-title">285ml 285ml Bistro White Wine Glass</span></td>
+            <td><span class="fixed-title">285ml Bistro White Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ5645</strong></td>
+            <td><span class="raw-title">440ml 440ml Standard Goblet Wine Glass</span></td>
+            <td><span class="fixed-title">440ml Standard Goblet Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ0211</strong></td>
+            <td><span class="raw-title">606ml 606ml Oversized Balloon Wine Glass</span></td>
+            <td><span class="fixed-title">606ml Oversized Balloon Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZS05</strong></td>
+            <td><span class="raw-title">650ml 650ml Grand Cru Burgundy Glass</span></td>
+            <td><span class="fixed-title">650ml Grand Cru Burgundy Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ6323</strong></td>
+            <td><span class="raw-title">250ml 250ml Classic Dessert Wine Glass</span></td>
+            <td><span class="fixed-title">250ml Classic Dessert Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ7719</strong></td>
+            <td><span class="raw-title">180ml 180ml Slender Toasting Flute</span></td>
+            <td><span class="fixed-title">180ml Slender Toasting Flute</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ7359</strong></td>
+            <td><span class="raw-title">612ml 612ml Premium Banquet Goblet</span></td>
+            <td><span class="fixed-title">612ml Premium Banquet Goblet</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZJ8046A</strong></td>
+            <td><span class="raw-title">180ml 180ml Cylindrical Cocktail Glass</span></td>
+            <td><span class="fixed-title">180ml Cylindrical Cocktail Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ98740</strong></td>
+            <td><span class="raw-title">740ml 740ml Hand-Blown Bordeaux Grand Cru Glass</span></td>
+            <td><span class="fixed-title">740ml Hand-Blown Bordeaux Grand Cru Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ98730</strong></td>
+            <td><span class="raw-title">730ml 730ml Hand-Blown Burgundy Aeration Glass</span></td>
+            <td><span class="fixed-title">730ml Hand-Blown Burgundy Aeration Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ98500</strong></td>
+            <td><span class="raw-title">500ml 500ml Hand-Blown Universal Tasting Glass</span></td>
+            <td><span class="fixed-title">500ml Hand-Blown Universal Tasting Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ98700</strong></td>
+            <td><span class="raw-title">700ml 700ml Hand-Blown Cabernet Sauvignon Glass</span></td>
+            <td><span class="fixed-title">700ml Hand-Blown Cabernet Sauvignon Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ99560</strong></td>
+            <td><span class="raw-title">560ml 560ml Hand-Blown Modern Angular Glass</span></td>
+            <td><span class="fixed-title">560ml Hand-Blown Modern Angular Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ99640</strong></td>
+            <td><span class="raw-title">640ml 640ml Hand-Blown Precision Wine Glass</span></td>
+            <td><span class="fixed-title">640ml Hand-Blown Precision Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ99720</strong></td>
+            <td><span class="raw-title">720ml 720ml Hand-Blown Grand Tasting Glass</span></td>
+            <td><span class="fixed-title">720ml Hand-Blown Grand Tasting Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ9031</strong></td>
+            <td><span class="raw-title">540ml 540ml Diamond Geometric Wine Glass</span></td>
+            <td><span class="fixed-title">540ml Diamond Geometric Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ9032</strong></td>
+            <td><span class="raw-title">400ml 400ml Diamond Geometric White Wine Glass</span></td>
+            <td><span class="fixed-title">400ml Diamond Geometric White Wine Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+          <tr>
+            <td><strong>XZ9033</strong></td>
+            <td><span class="raw-title">210ml 210ml Diamond Geometric Flute Glass</span></td>
+            <td><span class="fixed-title">210ml Diamond Geometric Flute Glass</span></td>
+            <td><span class="badge-status badge-pending">待批量</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</body>
+</html>
