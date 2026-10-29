@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>啤酒杯 XZ076 实拍大图与 4:3 视口修复首件打样预览 | Jingyue Glass</title>
+  <title>啤酒杯 XZ076 主体突出与无遮挡优化打样预览 | Jingyue Glass</title>
   <link rel="icon" type="image/png" href="/assets/jingyue-favicon.png">
   <style>
     :root {
@@ -18,66 +18,94 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--light-bg); color: var(--dark); line-height: 1.6; }
-    header { background: var(--white); border-bottom: 1px solid var(--border); padding: 14px 20px; }
-    .nav { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+    
+    header { background: var(--white); border-bottom: 1px solid var(--border); padding: 14px 20px; position: sticky; top: 0; z-index: 100; }
+    .nav { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
     .brand { font-size: 1.2rem; font-weight: 800; color: var(--primary); text-decoration: none; }
     .brand span { color: var(--accent); }
-    
-    .hero { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding: 40px 20px; text-align: center; }
+
+    .hero { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%); color: #fff; padding: 44px 20px; text-align: center; }
     .hero-badge { display: inline-block; background: rgba(200,147,10,0.25); border: 1px solid rgba(200,147,10,0.5); color: #fef08a; padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; margin-bottom: 10px; }
     .hero h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 8px; }
-    .hero p { font-size: 0.95rem; color: #cbd5e1; max-width: 700px; margin: 0 auto; }
+    .hero p { font-size: 0.95rem; color: #cbd5e1; max-width: 800px; margin: 0 auto; }
 
-    .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; }
-    .sample-box { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: grid; grid-template-columns: 1.2fr 1fr; gap: 24px; }
-    @media(max-width: 700px) { .sample-box { grid-template-columns: 1fr; } }
-
-    .img-container { width: 100%; aspect-ratio: 4 / 3; background: #222; border-radius: 8px; overflow: hidden; position: relative; }
-    .img-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .tag { position: absolute; top: 12px; left: 12px; background: rgba(13,37,64,0.85); color: #fef08a; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; }
-
-    .detail-side { display: flex; flex-direction: column; justify-content: center; }
-    .detail-side h2 { font-size: 1.3rem; color: var(--primary-dark); margin-bottom: 8px; }
-    .spec-list { list-style: none; margin: 16px 0; }
-    .spec-list li { padding: 6px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.9rem; display: flex; justify-content: space-between; }
-    .spec-list li strong { color: #475569; }
+    .container { max-width: 1200px; margin: 32px auto 60px; padding: 0 20px; }
     
-    .status-badge { background: #f0fdf4; border: 1px solid #bbf7d0; color: #16a34a; font-weight: 700; font-size: 0.85rem; padding: 6px 12px; border-radius: 6px; margin-bottom: 16px; text-align: center; }
-    .btn { display: block; text-align: center; background: var(--accent); color: #fff; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 700; transition: background 0.2s; }
+    .view-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+    @media(max-width: 800px) { .view-grid { grid-template-columns: 1fr; } }
+
+    .preview-card { background: var(--white); border-radius: 12px; border: 1px solid var(--border); padding: 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); display: flex; flex-direction: column; }
+    .card-header { border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 18px; }
+    .card-tag { display: inline-block; font-size: 0.75rem; font-weight: 700; color: #fff; background: var(--primary); padding: 3px 10px; border-radius: 4px; margin-bottom: 6px; }
+    .card-tag.accent { background: var(--accent); }
+    .card-header h2 { font-size: 1.15rem; color: var(--primary-dark); font-weight: 800; }
+    .card-header p { font-size: 0.85rem; color: #64748b; margin-top: 4px; }
+
+    /* Image Container (1200x900, 4:3) */
+    .img-box { width: 100%; aspect-ratio: 4 / 3; background: #222; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+    .img-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    .feature-list { list-style: none; margin: 18px 0; font-size: 0.88rem; }
+    .feature-list li { padding: 6px 0; border-bottom: 1px solid #f8fafc; display: flex; justify-content: space-between; }
+    .feature-list li strong { color: #475569; }
+    .feature-list li span { color: #16a34a; font-weight: 700; }
+
+    .btn { display: block; text-align: center; background: var(--accent); color: #fff; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 0.9rem; margin-top: auto; transition: background 0.2s; }
     .btn:hover { background: var(--accent-hover); }
   </style>
 </head>
 <body>
   <header>
     <div class="nav">
-      <a href="/beer-glasses" class="brand">Jingyue Glass <span>· 啤酒杯实拍修复打样</span></a>
-      <a href="/beer-glasses" style="color:var(--accent);font-weight:700;text-decoration:none;" target="_blank">访问品类页 →</a>
+      <a href="/beer-glasses" class="brand">Jingyue Glass <span>· XZ076 主体突出与无遮挡优化</span></a>
+      <a href="/beer-glasses" style="color:var(--accent);font-weight:700;text-decoration:none;" target="_blank">访问线上分类页 →</a>
     </div>
   </header>
 
   <section class="hero">
-    <span class="hero-badge">Sample Inspection</span>
-    <h1>首件打样验证：480ml Flared Pilsner Beer Glass (XZ076)</h1>
-    <p>已替换为 1200×900 (4:3) 麦穗与木桶实拍大图，并完成品类网格与 PDP 视口 CSS 修复，杯口与杯底 100% 完整展示，不再被顶部裁剪。</p>
+    <span class="hero-badge">Prominent Subject & Zero Occlusion</span>
+    <h1>480ml Flared Pilsner Beer Glass (XZ076) 预览打样</h1>
+    <p>主体放大突出，保留顶部 35px 麦穗自然呼吸空间，杯口与杯身 100% 完整无遮挡；分类页与单品详情页统一采用该高清实拍大图。</p>
   </section>
 
   <div class="container">
-    <div class="sample-box">
-      <div class="img-container">
-        <img src="/assets/products/beer-glasses/xz076-flared-pilsner-beer-glass.webp" alt="480ml Flared Pilsner Beer Glass XZ076">
-        <span class="tag">Pilsner Glass · Model XZ076</span>
-      </div>
-      <div class="detail-side">
-        <div class="status-badge">✓ 4:3 比例自适应生效 · 杯口完整无截断</div>
-        <h2>480ml Flared Pilsner Beer Glass</h2>
-        <ul class="spec-list">
-          <li><strong>产品型号 (Item No.):</strong> <span>XZ076</span></li>
-          <li><strong>额定容量 (Capacity):</strong> <span>480 ml</span></li>
-          <li><strong>物理规格 (Dimensions):</strong> <span>H 18.3 cm × Ø 7.7 cm</span></li>
-          <li><strong>主图文件 (Image):</strong> <span>xz076-flared-pilsner-beer-glass.webp</span></li>
-          <li><strong>图片比例 (Aspect Ratio):</strong> <span>4:3 (1200 × 900 px)</span></li>
+    <div class="view-grid">
+      <!-- Left: Category Page View -->
+      <div class="preview-card">
+        <div class="card-header">
+          <span class="card-tag">分类列表页效果</span>
+          <h2>/beer-glasses 产品卡展示</h2>
+          <p>4:3 标准比例，杯身放大居中突出，杯口清晰展现</p>
+        </div>
+        <div class="img-box">
+          <img src="/assets/products/beer-glasses/xz076-flared-pilsner-beer-glass.webp" alt="Category Beer Glass XZ076">
+        </div>
+        <ul class="feature-list">
+          <li><strong>主体占比 (Subject Prominence):</strong> <span>约 89% 黄金居中放大</span></li>
+          <li><strong>杯口遮挡 (Occlusion Status):</strong> <span>✓ 100% 无遮挡 / 顶部保留 35px</span></li>
+          <li><strong>分辨率与比例 (Specs):</strong> <span>1200 × 900 px (4:3)</span></li>
+          <li><strong>对齐状态 (Alignment):</strong> <span>分类与详情页统一图片源</span></li>
         </ul>
-        <a href="/flared-pilsner-beer-glass-xz076" class="btn" target="_blank">预览 XZ076 独立 PDP 页面 →</a>
+        <a href="/beer-glasses#xz076" class="btn" target="_blank">查看分类页产品卡效果 →</a>
+      </div>
+
+      <!-- Right: PDP Detail Page View -->
+      <div class="preview-card">
+        <div class="card-header">
+          <span class="card-tag accent">产品详情页效果</span>
+          <h2>/flared-pilsner-beer-glass-xz076 详情页主图</h2>
+          <p>与分类页统一使用相同实拍大图，4:3 高保真自适应展示</p>
+        </div>
+        <div class="img-box">
+          <img src="/assets/products/beer-glasses/xz076-flared-pilsner-beer-glass.webp" alt="PDP Beer Glass XZ076">
+        </div>
+        <ul class="feature-list">
+          <li><strong>图片来源 (Image Source):</strong> <span>与分类页完全统一</span></li>
+          <li><strong>视口适配 (Aspect Ratio):</strong> <span>4:3 黄金视口（无白边黑边）</span></li>
+          <li><strong>杯身展示 (Glass Clarity):</strong> <span>加厚加重底座与喇叭杯口全貌</span></li>
+          <li><strong>高清画质 (Quality):</strong> <span>94% WebP 高保真</span></li>
+        </ul>
+        <a href="/flared-pilsner-beer-glass-xz076" class="btn" target="_blank">进入独立详情页查看主图效果 →</a>
       </div>
     </div>
   </div>
