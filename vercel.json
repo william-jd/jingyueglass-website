@@ -43,34 +43,16 @@
       "permanent": true
     },
     {
-      "source": "/products/xzm006-whiskey-decanter-gift-set",
-      "destination": "/xzm006-whiskey-decanter-gift-set",
-      "permanent": true
+      "source": "/pt/jogos-de-decanter",
+      "destination": "/pt/jogos-de-decanter.html"
     },
     {
-      "source": "/blog/laser-engraving-vs-ceramic-decals-for-glassware",
-      "destination": "/laser-engraving-vs-ceramic-decals-for-glassware",
-      "permanent": true
+      "source": "/es/tazas-de-vidrio",
+      "destination": "/es/tazas-de-vidrio.html"
     },
     {
-      "source": "/blog/bar-glassware-par-level-calculation-formulas",
-      "destination": "/bar-glassware-par-level-calculation-formulas",
-      "permanent": true
-    },
-    {
-      "source": "/blog/what-certificates-required-for-us-eu-glassware-customs",
-      "destination": "/what-certificates-required-for-us-eu-glassware-customs",
-      "permanent": true
-    },
-    {
-      "source": "/products/bordeaux-wine-glass-xz5202",
-      "destination": "/bordeaux-wine-glass-xz5202",
-      "permanent": true
-    },
-    {
-      "source": "/products/smoked-cocktail-kit-torch-set",
-      "destination": "/smoked-cocktail-kit-torch-set",
-      "permanent": true
+      "source": "/pt/canecas-de-vidro",
+      "destination": "/pt/canecas-de-vidro.html"
     }
   ],
   "rewrites": [
