@@ -41,18 +41,6 @@
       "source": "/oem-custom-glassware",
       "destination": "/custom-logo-glassware",
       "permanent": true
-    },
-    {
-      "source": "/pt/jogos-de-decanter",
-      "destination": "/pt/jogos-de-decanter.html"
-    },
-    {
-      "source": "/es/tazas-de-vidrio",
-      "destination": "/es/tazas-de-vidrio.html"
-    },
-    {
-      "source": "/pt/canecas-de-vidro",
-      "destination": "/pt/canecas-de-vidro.html"
     }
   ],
   "rewrites": [
