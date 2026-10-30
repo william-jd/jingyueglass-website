@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview: Glassware Packaging & ISTA-1A Drop-Test Protocol for Fragile Export</title>
+<style>
+  :root {
+    --primary-navy: #1a3a5c;
+    --primary-dark: #0d2540;
+    --accent-gold: #c8930a;
+    --accent-hover: #e0a70b;
+    --accent-light: #fef8eb;
+    --bg-warm: #f5f5f0;
+    --text-ink: #1e293b;
+    --text-muted: #64748b;
+    --line-border: #e2e8f0;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 2px 8px rgba(13,37,64,0.06);
+    --shadow-md: 0 12px 32px rgba(13,37,64,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-warm); color: var(--text-ink); line-height: 1.7; overflow-x: hidden; }
+  a { color: var(--primary-navy); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-gold); }
+
+  .preview-banner { background: #0f172a; color: #fff; padding: 14px 20px; font-size: 0.9rem; border-bottom: 3px solid var(--accent-gold); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .preview-pill { background: var(--accent-gold); color: #fff; font-weight: 800; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase; }
+
+  header { background: #fff; border-bottom: 1px solid var(--line-border); }
+  .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; flex-wrap: wrap; gap: 10px; }
+  .logo { font-size: 1.3rem; font-weight: 800; color: var(--primary-navy); text-decoration: none; }
+  .logo span { color: var(--accent-gold); }
+
+  .article-wrapper { max-width: 860px; margin: 36px auto 70px; padding: 0 20px; }
+  .category-pill { display: inline-block; background: rgba(200,147,10,0.12); color: #9a6700; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
+  
+  .article-header h1 { font-size: clamp(26px, 3.8vw, 36px); color: var(--primary-dark); font-weight: 800; line-height: 1.25; margin-bottom: 14px; }
+  .article-byline { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.88rem; color: var(--text-muted); font-weight: 600; margin-bottom: 24px; }
+  .article-lead { font-size: 1.12rem; color: #334155; line-height: 1.65; margin-bottom: 28px; padding-bottom: 22px; border-bottom: 1px solid var(--line-border); font-weight: 500; }
+
+  .article-content { background: #fff; border-radius: var(--radius-lg); padding: clamp(24px, 4vw, 44px); border: 1px solid var(--line-border); box-shadow: var(--shadow-sm); }
+  .article-content h2 { font-size: 1.35rem; color: var(--primary-dark); font-weight: 800; margin: 32px 0 14px; padding-left: 12px; border-left: 4px solid var(--accent-gold); line-height: 1.35; }
+  .article-content h2:first-of-type { margin-top: 10px; }
+  .article-content h3 { font-size: 1.12rem; color: var(--primary-navy); font-weight: 800; margin: 22px 0 10px; }
+  .article-content p { font-size: 0.98rem; color: #334155; margin-bottom: 18px; line-height: 1.75; }
+  .article-content ul, .article-content ol { margin: 0 0 22px 24px; color: #334155; font-size: 0.96rem; line-height: 1.75; }
+  .article-content li { margin-bottom: 8px; }
+
+  .callout-box { background: var(--accent-light); border: 1px solid #eed99f; border-left: 4px solid var(--accent-gold); border-radius: var(--radius-sm); padding: 18px 20px; margin: 26px 0; }
+  .callout-title { font-size: 1rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 6px; }
+  .callout-text { font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6; }
+
+  .table-box { width: 100%; overflow-x: auto; margin: 22px 0; border: 1px solid var(--line-border); border-radius: var(--radius-sm); }
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; }
+  .comp-table th { background: var(--primary-dark); color: #fff; padding: 12px 14px; font-weight: 700; white-space: nowrap; }
+  .comp-table td { padding: 11px 14px; border-bottom: 1px solid var(--line-border); vertical-align: top; }
+  .comp-table tr:nth-child(even) td { background: #f8fafc; }
+
+  .cta-banner { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-navy) 100%); color: #fff; border-radius: var(--radius-lg); padding: 36px 30px; margin-top: 40px; text-align: center; }
+  .cta-banner h3 { font-size: 1.45rem; font-weight: 800; margin-bottom: 10px; color: #fff; }
+  .cta-banner p { font-size: 0.96rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 20px; }
+  .btn-gold { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--accent-gold); color: #fff; font-size: 0.98rem; font-weight: 800; padding: 12px 28px; border-radius: var(--radius-sm); text-decoration: none; transition: background 0.2s; }
+  .btn-gold:hover { background: var(--accent-hover); color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="preview-banner">
+  <div><strong>Preview Mode:</strong> Direction 2 New SOP Guide · Target: <code>/glassware-packaging-drop-test-protocol.html</code></div>
+  <div class="preview-pill">Ready for Confirmation</div>
+</div>
+
+<header>
+  <div class="nav-container">
+    <a href="/" class="logo">JINGYUE <span>GLASS</span></a>
+    <div style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Packaging Engineering &amp; Export Compliance</div>
+  </div>
+</header>
+
+<main class="article-wrapper">
+  <div class="category-pill">Export Logistics &amp; Packaging SOP</div>
+  
+  <div class="article-header">
+    <h1>Custom Glassware Packaging &amp; ISTA-1A Drop-Test Protocol for Fragile Export</h1>
+    <div class="article-byline">
+      <span>By Jingyue Glass Quality Assurance Team</span>
+      <span>•</span>
+      <span>Published October 2026</span>
+      <span>•</span>
+      <span>ISTA-1A / ISO 9001 / Amazon SIOC Compliant</span>
+    </div>
+  </div>
+
+  <p class="article-lead">
+    Breakage during multi-modal ocean and cross-border e-commerce transport is the primary risk factor for commercial glassware importers. This technical SOP outlines Jingyue Glass's <strong>Odorless High-Density EPE Pearl Cotton</strong> cushioning standards, <strong>5-Ply Double-Wall Corrugated (BC-Flute) Master Cartons</strong>, and the standardized <strong>ISTA-1A 10-Drop Testing Sequence</strong> that keeps export breakage rates below <strong>0.3%</strong>.
+  </p>
+
+  <article class="article-content">
+    <h2>1. The Four-Tier Engineered Packaging Architecture</h2>
+    <p>
+      Standard export packaging is engineered in four interlocking protective zones to isolate fragile crystal and borosilicate glassware from compression shock and vibration fatigue:
+    </p>
+
+    <div class="table-box">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Protection Layer</th>
+            <th>Material &amp; Specification</th>
+            <th>Engineering Function</th>
+            <th>Compliance Standard</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Layer 1: Primary Contact</strong></td>
+            <td>Individual Polybag / Tissue Wrap</td>
+            <td>Dust prevention &amp; zero surface scratching during transit.</td>
+            <td>Food-grade LDPE (Recyclable)</td>
+          </tr>
+          <tr>
+            <td><strong>Layer 2: Shock Isolation</strong></td>
+            <td><strong>Odorless CNC-Molded EPE Pearl Cotton (28kg/m&sup3;)</strong></td>
+            <td>360&deg; customized contour cavities with &ge;15mm side clearance; zero chemical off-gassing.</td>
+            <td>REACH / RoHS compliant</td>
+          </tr>
+          <tr>
+            <td><strong>Layer 3: Retail/Gift Box</strong></td>
+            <td>1200g Rigid Greyboard + 157g Art Paper</td>
+            <td>Crush resistance (&ge;1200 kPa) and luxury tactile branding.</td>
+            <td>FSC Certified Board</td>
+          </tr>
+          <tr>
+            <td><strong>Layer 4: Export Master Carton</strong></td>
+            <td>5-Ply Double-Wall Corrugated (BC-Flute, 250g/140g/120g/140g/250g)</td>
+            <td>Stacking burst strength &ge;14 kg/cm&sup2; (Edge Crush Test &ge; 8.5 kN/m).</td>
+            <td>ISTA-1A / Amazon SIOC Type A</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. Why Odorless EPE Pearl Cotton is Mandatory (vs. Traditional EVA/Sponge)</h2>
+    <div class="callout-box">
+      <div class="callout-title">🌿 Zero Chemical Odor Guarantee for Food-Contact Drinkware</div>
+      <div class="callout-text">
+        Traditional EVA foam and open-cell polyurethane sponges release volatile organic compounds (VOCs) that trap chemical odors inside enclosed cups. Jingyue Glass standardizes on <strong>high-purity, thermally bonded EPE pearl cotton</strong> that is 100% odorless, non-toxic, and certified for food-contact luxury gift presentation.
+      </div>
+    </div>
+
+    <h2>3. The ISTA-1A 10-Drop Impact Verification Sequence</h2>
+    <p>
+      Every newly developed SKU or bespoke gift box configuration undergoes a standardized 10-drop impact test from a calibrated height of <strong>76 cm (30 inches)</strong> onto flat concrete:
+    </p>
+    <ol>
+      <li><strong>Drop 1:</strong> Most vulnerable corner (Box Corner 5-1-2).</li>
+      <li><strong>Drops 2–4:</strong> Three adjacent shortest edges radiating from the dropped corner.</li>
+      <li><strong>Drops 5–10:</strong> All six flat faces (Bottom, Top, Front, Back, Right, Left).</li>
+    </ol>
+    <p>
+      <strong>Pass Criteria:</strong> Zero micro-cracks in glassware, zero stem detachment, and zero box structural rupture.
+    </p>
+
+    <h2>4. 48-Hour Breakage Compensation Policy</h2>
+    <p>
+      Jingyue Glass provides guaranteed breakage protection: in the rare event of transit damage exceeding the 0.5% standard threshold, buyers simply submit unboxing photos or 4K videos within <strong>48 hours of container receipt</strong> for 100% credit or immediate free replacement dispatch.
+    </p>
+
+    <div class="cta-banner">
+      <h3>Need Custom Drop-Tested Packaging for Your Brand?</h3>
+      <p>Contact our packaging engineers to design custom CNC EPE gift sets, rigid magnetic boxes, or Amazon FBA drop-tested mailer packaging.</p>
+      <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20am%20interested%20in%20your%20ISTA-1A%20Drop-Tested%20Packaging%20SOP%20and%20custom%20gift%20box%20solutions." class="btn-gold" target="_blank" rel="noopener noreferrer">
+        Inquire Packaging Engineering on WhatsApp →
+      </a>
+    </div>
+  </article>
+</main>
+
+</body>
+</html>
