@@ -95,6 +95,14 @@
     {
       "source": "/blog/what-certificates-required-for-us-eu-glassware-customs",
       "destination": "/what-certificates-required-for-us-eu-glassware-customs.html"
+    },
+    {
+      "source": "/es/tazas-de-vidrio",
+      "destination": "/es/tazas-de-vidrio.html"
+    },
+    {
+      "source": "/pt/canecas-de-vidro",
+      "destination": "/pt/canecas-de-vidro.html"
     }
   ]
 }
