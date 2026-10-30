@@ -2036,4 +2036,16 @@
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
+  <url>
+    <loc>https://www.jingyueglass.com/es/taza-doble-pared-borosilicato-250ml-xzs-2601</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.jingyueglass.com/pt/caneca-parede-dupla-vidro-borossilicato-250ml-xzs-2601</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
