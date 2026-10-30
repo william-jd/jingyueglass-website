@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview: B2B Sourcing Guide - High-Borosilicate Double-Wall Glass vs. Soda-Lime Glass</title>
+<style>
+  :root {
+    --primary-navy: #1a3a5c;
+    --primary-dark: #0d2540;
+    --accent-gold: #c8930a;
+    --accent-hover: #e0a70b;
+    --accent-light: #fef8eb;
+    --bg-warm: #f5f5f0;
+    --text-ink: #1e293b;
+    --text-muted: #64748b;
+    --line-border: #e2e8f0;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 2px 8px rgba(13,37,64,0.06);
+    --shadow-md: 0 12px 32px rgba(13,37,64,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg-warm); color: var(--text-ink); line-height: 1.7; overflow-x: hidden; }
+  a { color: var(--primary-navy); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { color: var(--accent-gold); }
+
+  .preview-banner { background: #0f172a; color: #fff; padding: 14px 20px; font-size: 0.9rem; border-bottom: 3px solid var(--accent-gold); position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+  .preview-pill { background: var(--accent-gold); color: #fff; font-weight: 800; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; text-transform: uppercase; }
+
+  header { background: #fff; border-bottom: 1px solid var(--line-border); }
+  .nav-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 12px 20px; flex-wrap: wrap; gap: 10px; }
+  .logo { font-size: 1.3rem; font-weight: 800; color: var(--primary-navy); text-decoration: none; }
+  .logo span { color: var(--accent-gold); }
+
+  .article-wrapper { max-width: 860px; margin: 36px auto 70px; padding: 0 20px; }
+  .category-pill { display: inline-block; background: rgba(200,147,10,0.12); color: #9a6700; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
+  
+  .article-header h1 { font-size: clamp(26px, 3.8vw, 36px); color: var(--primary-dark); font-weight: 800; line-height: 1.25; margin-bottom: 14px; }
+  .article-byline { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; font-size: 0.88rem; color: var(--text-muted); font-weight: 600; margin-bottom: 24px; }
+  .article-lead { font-size: 1.12rem; color: #334155; line-height: 1.65; margin-bottom: 28px; padding-bottom: 22px; border-bottom: 1px solid var(--line-border); font-weight: 500; }
+
+  .article-content { background: #fff; border-radius: var(--radius-lg); padding: clamp(24px, 4vw, 44px); border: 1px solid var(--line-border); box-shadow: var(--shadow-sm); }
+  .article-content h2 { font-size: 1.35rem; color: var(--primary-dark); font-weight: 800; margin: 32px 0 14px; padding-left: 12px; border-left: 4px solid var(--accent-gold); line-height: 1.35; }
+  .article-content h2:first-of-type { margin-top: 10px; }
+  .article-content h3 { font-size: 1.12rem; color: var(--primary-navy); font-weight: 800; margin: 22px 0 10px; }
+  .article-content p { font-size: 0.98rem; color: #334155; margin-bottom: 18px; line-height: 1.75; }
+  .article-content ul, .article-content ol { margin: 0 0 22px 24px; color: #334155; font-size: 0.96rem; line-height: 1.75; }
+  .article-content li { margin-bottom: 8px; }
+
+  .article-figure { margin: 26px 0; background: #f8fafc; border: 1px solid var(--line-border); border-radius: var(--radius-md); overflow: hidden; }
+  .article-figure img { width: 100%; max-height: 380px; object-fit: cover; display: block; }
+  .article-figure figcaption { padding: 10px 16px; font-size: 0.82rem; color: var(--text-muted); font-weight: 600; background: #f1f5f9; border-top: 1px solid var(--line-border); }
+
+  .callout-box { background: var(--accent-light); border: 1px solid #eed99f; border-left: 4px solid var(--accent-gold); border-radius: var(--radius-sm); padding: 18px 20px; margin: 26px 0; }
+  .callout-title { font-size: 1rem; font-weight: 800; color: var(--primary-dark); margin-bottom: 6px; }
+  .callout-text { font-size: 0.92rem; color: #475569; margin: 0; line-height: 1.6; }
+
+  .table-box { width: 100%; overflow-x: auto; margin: 22px 0; border: 1px solid var(--line-border); border-radius: var(--radius-sm); }
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; text-align: left; }
+  .comp-table th { background: var(--primary-dark); color: #fff; padding: 12px 14px; font-weight: 700; white-space: nowrap; }
+  .comp-table td { padding: 11px 14px; border-bottom: 1px solid var(--line-border); vertical-align: top; }
+  .comp-table tr:nth-child(even) td { background: #f8fafc; }
+
+  .pdp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
+  .pdp-card { background: #f8fafc; border: 1px solid var(--line-border); border-radius: var(--radius-md); padding: 14px; text-decoration: none; color: inherit; transition: transform 0.2s, box-shadow 0.2s; display: block; }
+  .pdp-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); border-color: var(--accent-gold); }
+  .pdp-card img { width: 100%; height: 160px; object-fit: cover; border-radius: var(--radius-sm); margin-bottom: 10px; }
+  .pdp-title { font-size: 0.92rem; font-weight: 700; color: var(--primary-navy); margin-bottom: 4px; }
+  .pdp-sku { font-size: 0.78rem; font-weight: 700; color: var(--accent-gold); text-transform: uppercase; }
+
+  .cta-banner { background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-navy) 100%); color: #fff; border-radius: var(--radius-lg); padding: 36px 30px; margin-top: 40px; text-align: center; }
+  .cta-banner h3 { font-size: 1.45rem; font-weight: 800; margin-bottom: 10px; color: #fff; }
+  .cta-banner p { font-size: 0.96rem; color: #cbd5e1; max-width: 600px; margin: 0 auto 20px; }
+  .btn-gold { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: var(--accent-gold); color: #fff; font-size: 0.98rem; font-weight: 800; padding: 12px 28px; border-radius: var(--radius-sm); text-decoration: none; transition: background 0.2s; }
+  .btn-gold:hover { background: var(--accent-hover); color: #fff; }
+</style>
+</head>
+<body>
+
+<div class="preview-banner">
+  <div><strong>Preview Mode:</strong> New B2B Sourcing Guide (Direction 2) · Target Route: <code>/double-wall-vs-soda-lime-glass-guide.html</code></div>
+  <div class="preview-pill">Ready for Confirmation</div>
+</div>
+
+<header>
+  <div class="nav-container">
+    <a href="/" class="logo">JINGYUE <span>GLASS</span></a>
+    <div style="font-size:0.85rem;color:var(--text-muted);font-weight:600;">Technical Sourcing Guide · Engineering Intelligence</div>
+  </div>
+</header>
+
+<main class="article-wrapper">
+  <div class="category-pill">Material Engineering &amp; Sourcing</div>
+  
+  <div class="article-header">
+    <h1>High-Borosilicate 3.3 Double-Wall Glass vs. Soda-Lime: The Commercial Buyer's Guide</h1>
+    <div class="article-byline">
+      <span>By Jingyue Glass Technical Team</span>
+      <span>•</span>
+      <span>Updated October 2026</span>
+      <span>•</span>
+      <span>12 min read</span>
+      <span>•</span>
+      <span>ISO 9001 / FDA / LFGB Certified</span>
+    </div>
+  </div>
+
+  <p class="article-lead">
+    For hospitality procurement directors, café chains, and e-commerce drinkware brands, selecting between <strong>Lab-Grade High Borosilicate Glass 3.3</strong> and traditional <strong>Soda-Lime Glass</strong> directly impacts thermal failure rates, shipping payload costs, and customer safety. This guide delivers verified engineering benchmarks, dishwasher survival data, and factory-direct tooling rules.
+  </p>
+
+  <article class="article-content">
+    <h2>1. Chemical Composition &amp; Thermal Shock Resistance (&Delta;T)</h2>
+    <p>
+      The defining difference between high borosilicate glass and standard soda-lime glass lies in the substitution of boron trioxide (B<sub>2</sub>O<sub>3</sub>) for alkali oxides. In <strong>COE 3.3 Borosilicate Glass</strong>, approximately 12–13% boron trioxide is incorporated into the silica matrix:
+    </p>
+
+    <div class="table-box">
+      <table class="comp-table">
+        <thead>
+          <tr>
+            <th>Engineering Property</th>
+            <th>High Borosilicate 3.3 (Double Wall)</th>
+            <th>Standard Soda-Lime Glass</th>
+            <th>Commercial Impact for Buyers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Coefficient of Expansion (COE)</strong></td>
+            <td>3.3 &times; 10<sup>-6</sup> / K</td>
+            <td>8.5 &ndash; 9.2 &times; 10<sup>-6</sup> / K</td>
+            <td>Borosilicate expands ~60% less when exposed to sudden heat.</td>
+          </tr>
+          <tr>
+            <td><strong>Thermal Shock Tolerance (&Delta;T)</strong></td>
+            <td><strong>&Delta;T &ge; 170&deg;C</strong> (-20&deg;C to +150&deg;C)</td>
+            <td>&Delta;T &approx; 40&deg;C &ndash; 60&deg;C max</td>
+            <td>Zero thermal cracking when pouring 100&deg;C boiling coffee into a frozen glass.</td>
+          </tr>
+          <tr>
+            <td><strong>Density &amp; Specific Weight</strong></td>
+            <td>2.23 g/cm&sup3; (Lightweight)</td>
+            <td>2.50 &ndash; 2.58 g/cm&sup3; (Heavy)</td>
+            <td>Borosilicate saves <strong>12&ndash;15% in international air/sea freight weight</strong>.</td>
+          </tr>
+          <tr>
+            <td><strong>Hydrolytic Resistance (ISO 719)</strong></td>
+            <td>Class HGB 1 (Neutral glass)</td>
+            <td>Class HGB 3</td>
+            <td>Zero cloudiness or chemical leaching under 1,000+ commercial wash cycles.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>2. The Mechanics of Double-Wall Optical Insulation</h2>
+    <p>
+      Unlike single-wall soda-lime cups that conduct heat rapidly to the user's hand, double-wall glassware features an insulating sealed air chamber between an inner and outer wall:
+    </p>
+    <ul>
+      <li><strong>Thermal Retention:</strong> Hot espresso and tea stay at serving temperature (&gt;65&deg;C) for over <strong>2.4&times; longer</strong> than standard ceramic or soda-lime cups.</li>
+      <li><strong>Anti-Condensation (No Sweating):</strong> Cold brew and iced drinks do not form water rings on polished wood tables or banquet tablecloths, eliminating the need for coasters.</li>
+      <li><strong>Cool-to-Touch Exterior:</strong> Eliminates the necessity for paper heat sleeves or clumsy silicone grips.</li>
+    </ul>
+
+    <div class="article-figure">
+      <img src="/assets/products/coffee-tea-mugs/DW_Mug_250ml.webp" alt="250ml Double Wall Borosilicate Glass Tumbler Heat Insulation Test">
+      <figcaption>Figure 1: Hand-blown 250ml Double Wall Borosilicate Glass Tumbler (Model XZS-2658) showing optical insulation and condensation-free exterior.</figcaption>
+    </div>
+
+    <h2>3. The Crucial Hydrophobic Silicone Vent Seal (Safety Protocol)</h2>
+    <div class="callout-box">
+      <div class="callout-title">⚠️ Engineering Advisory: Why Double-Wall Cups Have a Base Dot</div>
+      <div class="callout-text">
+        During manual glassblowing, air trapped between the two walls must be equalized. Jingyue Glass seals the base vent with a <strong>medical-grade hydrophobic silicone membrane</strong> rather than a rigid glass plug. This allows microscopic air expansion during boiling or microwave heating while preventing dishwasher wash-water from being sucked into the vacuum chamber.
+      </div>
+    </div>
+
+    <h2>4. Customization &amp; Decoration Compatibility</h2>
+    <p>
+      High-borosilicate glass supports advanced branding techniques engineered to withstand commercial hospitality use:
+    </p>
+    <ol>
+      <li><strong>580&deg;C High-Temperature Ceramic Decal:</strong> Fuses inorganic mineral pigments directly into the outer glass surface for 100% dishwasher-proof logos.</li>
+      <li><strong>Precision Fiber Laser Engraving:</strong> Sub-millimeter frosting with zero micro-fractures, available with low MOQ starting from 48 pieces.</li>
+      <li><strong>Botanical &amp; Dried Flower Insertion:</strong> Natural preserved florals, glitter quicksand, and 3D glass animal figurines hermetically sealed inside the chamber.</li>
+    </ol>
+
+    <h2>5. Recommended Master Models for Commercial Sourcing</h2>
+    <div class="pdp-grid">
+      <a href="/250ml-double-wall-glass-tumbler-xzs2658" class="pdp-card">
+        <img src="/assets/products/coffee-tea-mugs/DW_Mug_250ml.webp" alt="250ml Double Wall Tumbler XZS2658">
+        <div class="pdp-sku">SKU: XZS-2658</div>
+        <div class="pdp-title">250ml Double Wall Tumbler</div>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Standard Café &amp; Flat White Cup</p>
+      </a>
+
+      <a href="/250ml-3d-bear-double-wall-glass-mug-xzs2601" class="pdp-card">
+        <img src="/assets/products/coffee-tea-mugs/Bear_Mug_Clear_250ml.webp" alt="250ml 3D Bear Mug XZS2601">
+        <div class="pdp-sku">SKU: XZS-2601</div>
+        <div class="pdp-title">250ml 3D Bear Mug with Handle</div>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Novelty Retail &amp; Gift Box Sets</p>
+      </a>
+
+      <a href="/450ml-wave-ribbed-glass-tumbler-with-straw-xzg2602" class="pdp-card">
+        <img src="/assets/products/coffee-tea-mugs/Bubble_Medium_Clear.webp" alt="450ml Wave Ribbed Tumbler XZG2602">
+        <div class="pdp-sku">SKU: XZG-2602</div>
+        <div class="pdp-title">450ml Wave Ribbed Tumbler</div>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin:0;">Iced Coffee &amp; Bubble Tea Cup</p>
+      </a>
+    </div>
+
+    <div class="cta-banner">
+      <h3>Ready to Source High-Borosilicate Double-Wall Glassware?</h3>
+      <p>Contact Jingyue Glass engineering team for direct factory wholesale pricing, custom decal artwork digital proofs, and refundable physical samples.</p>
+      <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20am%20reading%20your%20Borosilicate%20Double-Wall%20Sourcing%20Guide%20and%20would%20like%20to%20request%20samples%20and%20quote." class="btn-gold" target="_blank" rel="noopener noreferrer">
+        Request Factory Quote on WhatsApp →
+      </a>
+    </div>
+  </article>
+</main>
+
+</body>
+</html>
