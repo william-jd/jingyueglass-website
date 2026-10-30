@@ -121,6 +121,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://www.jingyueglass.com/es/tazas-de-vidrio</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://www.jingyueglass.com/eu-ppwr-glassware-packaging-compliance-guide</loc>
     <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -249,6 +255,12 @@
   <url>
     <loc>https://www.jingyueglass.com/pt/copos-altos-highball</loc>
     <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://www.jingyueglass.com/pt/canecas-de-vidro</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
