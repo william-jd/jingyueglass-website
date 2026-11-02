@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本地预览：第1步 - AggregateOffer 结构化数据方案 (主画册与核心套装页)</title>
+<style>
+  :root {
+    --primary: #1a3a5c;
+    --primary-dark: #0d2540;
+    --accent: #c8930a;
+    --accent-hover: #e0a70b;
+    --bg-warm: #f5f5f0;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --code-bg: #0f172a;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bg-warm);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 30px 20px;
+    margin: 0;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .preview-card {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 32px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    margin-bottom: 28px;
+  }
+  .header-badge {
+    display: inline-block;
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-size: 1.7rem;
+    color: var(--primary-dark);
+    margin: 0 0 10px 0;
+  }
+  h2 {
+    font-size: 1.3rem;
+    color: var(--primary);
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 8px;
+    margin-top: 24px;
+  }
+  .desc {
+    color: #475569;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+  .schema-block {
+    background: var(--code-bg);
+    color: #e2e8f0;
+    border-radius: 8px;
+    padding: 20px;
+    overflow-x: auto;
+    font-family: "Fira Code", Consolas, Monaco, monospace;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    border: 1px solid #334155;
+    position: relative;
+  }
+  .schema-title {
+    font-weight: 700;
+    color: #38bdf8;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+  }
+  .highlight-tag {
+    color: #f59e0b;
+    font-weight: 700;
+  }
+  .note-box {
+    background: #fef8eb;
+    border-left: 4px solid var(--accent);
+    padding: 16px 20px;
+    border-radius: 4px;
+    font-size: 0.92rem;
+    color: #92400e;
+    margin-top: 20px;
+  }
+  .strategy-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.92rem;
+  }
+  .strategy-table th, .strategy-table td {
+    border: 1px solid var(--border);
+    padding: 12px 14px;
+    text-align: left;
+  }
+  .strategy-table th {
+    background: #f8fafc;
+    color: var(--primary-dark);
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="preview-card">
+    <span class="header-badge">第 1 步交付物预览</span>
+    <h1>AggregateOffer 结构化数据方案 (主画册与核心套装页)</h1>
+    <p class="desc">针对 <code>/glassware-product-catalog.html</code> 与 <code>/xzm006-whiskey-decanter-gift-set.html</code>，构建规范的 B2B 价格区间与梯度 Schema。既保持前台“去价格化与询盘导向”，又向 Google Rich Snippets / AI 搜索引擎（Perplexity, ChatGPT, Claude）精准提供结构化采购价格预算。</p>
+
+    <h2>一、 核心页面 Schema 配置策略</h2>
+    <table class="strategy-table">
+      <thead>
+        <tr>
+          <th>目标页面</th>
+          <th>产品/集合名称</th>
+          <th>价格区间 (lowPrice - highPrice)</th>
+          <th>起订量与梯度 (priceSpecification)</th>
+          <th>预期 SEO / GEO 收益</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>/glassware-product-catalog.html</code></td>
+          <td>Commercial & Hospitality Glassware Collection</td>
+          <td>$1.20 - $18.50 (USD)</td>
+          <td>Sample: 48 pcs<br>Bulk Tier: 1,000 pcs</td>
+          <td>画册页获得 Product/AggregateOffer 富文本摘要，覆盖全品类大宗采购单价搜索</td>
+        </tr>
+        <tr>
+          <td><code>/xzm006-whiskey-decanter-gift-set.html</code></td>
+          <td>Model XZM006 Luxury Pine Box Whiskey Decanter Set</td>
+          <td>$8.50 - $18.50 (USD)</td>
+          <td>Laser Sample: 48 pcs ($18.50)<br>FOB Bulk: 1,000 pcs ($8.50)</td>
+          <td>精准捕获“Whiskey Decanter Gift Set Wholesale Price”及礼品商询价问答</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>二、 主画册页 JSON-LD 代码预览 (Product + AggregateOffer)</h2>
+    <div class="schema-block">
+      <div class="schema-title">&lt;script type="application/ld+json"&gt; - /glassware-product-catalog.html</div>
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Jingyue Commercial & Hospitality Glassware Collection (2026)",
+  "image": [
+    "https://www.jingyueglass.com/assets/images/decanter-pine-box-open.webp",
+    "https://www.jingyueglass.com/assets/images/bordeaux-wine-glass.webp"
+  ],
+  "description": "B2B direct factory glassware collection including wine glasses, whiskey tumblers, beer steins, decanter gift sets, and high-borosilicate double-wall mugs with 580°C ceramic decal and odorless EPE packaging.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Jingyue Glass"
+  },
+  "sku": "JG-CATALOG-2026",
+  "offers": {
+    "@type": "AggregateOffer",
+    "url": "https://www.jingyueglass.com/glassware-product-catalog",
+    "priceCurrency": "USD",
+    "lowPrice": "1.20",
+    "highPrice": "18.50",
+    "offerCount": "45",
+    "priceValidUntil": "2027-12-31",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Wuhan Jingyueda Household Products Co., Ltd.",
+      "url": "https://www.jingyueglass.com/"
+    },
+    "priceSpecification": [
+      {
+        "@type": "UnitPriceSpecification",
+        "priceType": "https://schema.org/MinimumAdvertisedPrice",
+        "price": "18.50",
+        "priceCurrency": "USD",
+        "eligibleQuantity": {
+          "@type": "QuantitativeValue",
+          "minValue": 48,
+          "unitCode": "C62"
+        }
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        "priceType": "https://schema.org/InvoicePrice",
+        "price": "1.20",
+        "priceCurrency": "USD",
+        "eligibleQuantity": {
+          "@type": "QuantitativeValue",
+          "minValue": 1000,
+          "unitCode": "C62"
+        }
+      }
+    ]
+  }
+}
+    </div>
+
+    <h2>三、 核心套装页 JSON-LD 代码预览 (/xzm006-whiskey-decanter-gift-set.html)</h2>
+    <div class="schema-block">
+      <div class="schema-title">&lt;script type="application/ld+json"&gt; - /xzm006-whiskey-decanter-gift-set.html</div>
+{
+  "@context": "https://schema.org/",
+  "@type": "Product",
+  "name": "Model XZM006 Luxury Pine Box Whiskey Decanter Gift Set (with Odorless EPE Foam)",
+  "image": "https://www.jingyueglass.com/assets/images/decanter-pine-box-open.webp",
+  "description": "Hand-crafted 800ml crystal whiskey decanter with 4 twisted rocks glasses, 8 food-grade stainless steel chilling stones, velvet pouch, and odorless EPE pearl cotton insert in solid pine wood box.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Jingyue Glass"
+  },
+  "sku": "XZM006-PINE-SET",
+  "mpn": "XZM006",
+  "offers": {
+    "@type": "AggregateOffer",
+    "url": "https://www.jingyueglass.com/xzm006-whiskey-decanter-gift-set",
+    "priceCurrency": "USD",
+    "lowPrice": "8.50",
+    "highPrice": "18.50",
+    "offerCount": "2",
+    "priceValidUntil": "2027-12-31",
+    "availability": "https://schema.org/InStock",
+    "seller": {
+      "@type": "Organization",
+      "name": "Wuhan Jingyueda Household Products Co., Ltd."
+    },
+    "priceSpecification": [
+      {
+        "@type": "UnitPriceSpecification",
+        "priceType": "https://schema.org/ListPrice",
+        "name": "Laser Engraved Pre-Production Sample",
+        "price": "18.50",
+        "priceCurrency": "USD",
+        "eligibleQuantity": {
+          "@type": "QuantitativeValue",
+          "minValue": 48,
+          "maxValue": 99,
+          "unitCode": "C62"
+        }
+      },
+      {
+        "@type": "UnitPriceSpecification",
+        "priceType": "https://schema.org/InvoicePrice",
+        "name": "Wholesale Container Bulk Production",
+        "price": "8.50",
+        "priceCurrency": "USD",
+        "eligibleQuantity": {
+          "@type": "QuantitativeValue",
+          "minValue": 1000,
+          "unitCode": "C62"
+        }
+      }
+    ]
+  }
+}
+    </div>
+
+    <div class="note-box">
+      <strong>✨ 业务一致性核验：</strong><br>
+      1. 前台页面保留“去价格化”策略，买家依然通过 <code>Request Quote</code> 弹窗提交具体 Logo 与包装要求；<br>
+      2. 结构化数据中的 <code>$8.50 - $18.50</code> 与 <code>48 pcs / 1000 pcs</code> 与 <code>llms.txt</code>、<code>llms-full.txt</code> 及官方报价体系完全对齐，杜绝 AI 幻觉与虚假标价惩罚。
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
