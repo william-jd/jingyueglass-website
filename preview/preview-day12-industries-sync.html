@@ -7,6 +7,52 @@
 <title>Day 12 Preview | Hospitality Industry Route Synchronization</title>
 <style>
 :root{--navy:#0d2540;--blue:#1a3a5c;--gold:#c8930a;--warm:#f5f5f0;--ink:#1b2732;--muted:#5d6873;--line:#dbe3ea;--pass:#176b4d;--warn:#985b00}*{box-sizing:border-box}body{margin:0;color:var(--ink);font:15px/1.65 Arial,system-ui,sans-serif;background:#fff}header{background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;padding:58px 22px}main{max-width:1180px;margin:auto;padding:28px 22px 70px}h1,h2,h3{line-height:1.25}h1{max-width:900px;font-size:clamp(2rem,4vw,3.3rem);margin:0 0 14px}h2{color:var(--blue);margin-top:42px}h3{margin-bottom:8px}.eyebrow{color:#f4cf70;font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:.8rem}.lead{max-width:900px;color:#dbe7f2;font-size:1.1rem}.notice{border-left:5px solid var(--gold);background:#fff8e8;padding:16px 18px;margin:24px 0}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.card{border:1px solid var(--line);border-radius:10px;padding:20px;background:#fff;box-shadow:0 6px 20px #0d254010}.card strong{color:var(--blue)}table{width:100%;border-collapse:collapse;margin:14px 0 22px;background:#fff}th,td{border:1px solid var(--line);padding:12px;text-align:left;vertical-align:top}th{background:var(--blue);color:#fff}code{background:#eef3f7;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}.pass{color:var(--pass);font-weight:700}.warn{color:var(--warn);font-weight:700}.pill{display:inline-block;border-radius:999px;background:#e7f4ee;color:var(--pass);padding:3px 10px;font-size:.82rem;font-weight:700}.small{color:var(--muted);font-size:.92rem}.proposal{background:var(--warm);border-radius:12px;padding:22px}.proposal h3{color:var(--blue)}ul{padding-left:22px}footer{background:var(--navy);color:#dbe7f2;padding:26px 22px}a{color:var(--blue)}@media(max-width:650px){header{padding:40px 18px}main{padding:20px 14px 50px}table{font-size:.88rem;display:block;overflow-x:auto;white-space:normal}}
+
+  /* ── QUICK BACK TO TOP / NAV BUTTON ── */
+  html { scroll-behavior: smooth; }
+  .back-to-top {
+    position: fixed;
+    bottom: 88px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: #c8930a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+    z-index: 997;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s, background 0.2s, box-shadow 0.2s;
+  }
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .back-to-top:hover {
+    background: #e0a70b;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+    transform: translateY(-2px);
+  }
+  .back-to-top:active {
+    transform: translateY(0);
+  }
+  @media (max-width: 768px) {
+    .back-to-top {
+      bottom: 80px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -36,4 +82,24 @@
 <h2>6. Approval decision record</h2>
 <table><thead><tr><th>Decision</th><th>Status</th><th>Required confirmation</th></tr></thead><tbody><tr><td>Preferred route</td><td class="warn">待确认 / Pending</td><td>Confirm whether <code>/industries/hospitality-restaurant-glassware</code> owns the content and whether the root duplicate remains indexable.</td></tr><tr><td>No-price copy</td><td class="pass">Ready for review</td><td>Sales/legal review of wording and RFQ fields.</td></tr><tr><td>EPE wording</td><td class="warn">待证据</td><td>Confirm actual odorless EPE pearl cotton availability for hospitality packaging.</td></tr><tr><td>Production update</td><td class="warn">Blocked by approval</td><td>Only after explicit approval; then run a separate production diff and deployment check.</td></tr></tbody></table>
 </main><footer><strong>Jingyue Day 12 Preview</strong><br>Independent local preview only · Production sources unchanged · No Git commit, push or publication performed.</footer>
+
+<!-- Back to Top / Navigation Button -->
+<button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to Top" title="Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+<script>
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) {
+      if (window.scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    }
+  }, { passive: true });
+</script>
+
 </body></html>
