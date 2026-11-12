@@ -902,6 +902,51 @@
   background: var(--accent-hover, #e0a70b);
 }
 
+
+  /* ── QUICK BACK TO TOP / NAV BUTTON ── */
+  .back-to-top {
+    position: fixed;
+    bottom: 88px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: #c8930a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+    z-index: 997;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s, background 0.2s, box-shadow 0.2s;
+  }
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .back-to-top:hover {
+    background: #e0a70b;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+    transform: translateY(-2px);
+  }
+  .back-to-top:active {
+    transform: translateY(0);
+  }
+  @media (max-width: 768px) {
+    .back-to-top {
+      bottom: 80px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
 </style>
 
 <!-- Open Graph & Twitter Cards -->
@@ -1842,64 +1887,47 @@
       </ul>
     </div>
     <form action="https://formspree.io/f/mkopdvol" method="POST">
-        <!-- Anti-Spam Honeypot Field -->
-        <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="hidden" name="page_url" value="https://www.jingyueglass.com/beer-glasses">
-        <input type="hidden" name="page_path" value="/beer-glasses">
-        <input type="hidden" name="page_title" value="Wholesale Beer Glasses & Mugs Manufacturer | Jingyue Glass">
-        <input type="hidden" name="product_category" value="Wholesale Beer Glasses & Mugs Manufacturer">
-        <input type="hidden" name="cta_source" value="inquiry_form">
-        <input type="hidden" name="utm_source" value="">
-        <input type="hidden" name="utm_medium" value="">
-        <input type="hidden" name="referrer" value="">
-        <input type="hidden" name="submit_timestamp" value="">
-        <input type="hidden" name="device_type" value="">
-      <input type="hidden" name="subject" value="Beer Glasses & Mugs Inquiry — jingyueglass.com">
+      <input type="hidden" name="subject" value="Beer Glasses Inquiry — jingyueglass.com">
+      
       <div class="form-row">
-        <input type="text" name="name" placeholder="Your Name *" required>
-        <input type="email" name="email" placeholder="Email Address *" required>
+        <input type="email" name="email" placeholder="Business Email *" required>
+        <input type="text" name="name" placeholder="Your Name">
       </div>
-      <div class="form-row">
+      
+      <div class="form-full">
         <input type="text" name="company" placeholder="Company Name">
-        <input type="text" name="country" placeholder="Country *" required>
       </div>
+
       <div class="form-full">
         <select name="product">
-          <option value="">Select Beer Glass Style</option>
-          <option value="XZBR39 470 ml Classic Stemmed Beer Goblet">XZBR39 470 ml Classic Stemmed Beer Goblet</option>
-          <option value="XZ70-3 500 ml Classic Heavy-Base Beer Mug">XZ70-3 500 ml Classic Heavy-Base Beer Mug</option>
-          <option value="XZ078 580 ml Curved Pilsner Beer Glass">XZ078 580 ml Curved Pilsner Beer Glass</option>
-          <option value="XZ01-280 520 ml Faceted Pub Beer Mug">XZ01-280 520 ml Faceted Pub Beer Mug</option>
-          <option value="XZ309 545 ml Novelty Boot Beer Mug">XZ309 545 ml Novelty Boot Beer Mug</option>
-          <option value="XZ1238 480 ml Straight-Sided Beer Mug">XZ1238 480 ml Straight-Sided Beer Mug</option>
-          <option value="XZ5824 1200 ml Jumbo Bubble-Texture Beer Mug">XZ5824 1200 ml Jumbo Bubble-Texture Beer Mug</option>
-          <option value="XZ7010 570 ml Straight Pub Beer Glass">XZ7010 570 ml Straight Pub Beer Glass</option>
-          <option value="XZ88148 480 ml Tall Beverage Tumbler">XZ88148 480 ml Tall Beverage Tumbler</option>
-          <option value="XZ2220E 620 ml Tall Handled Beer Mug">XZ2220E 620 ml Tall Handled Beer Mug</option>
-          <option value="Mixed Beer Order">Mixed Beer Glass Order</option>
+          <option value="">-- Select Product Style / Category --</option>
+          <option value="Custom Beer Glasses In-Stock Wholesale">In-Stock Standard Wholesale</option>
+          <option value="Custom Logo Printing / Laser Engraving">Custom Logo Printing / Laser Engraving</option>
+          <option value="Custom Gift Box Packaging">Custom Gift Box &amp; Presentation Set</option>
+          <option value="Bespoke OEM/ODM Development">Bespoke OEM / ODM Custom Mold</option>
         </select>
       </div>
+
       <div class="form-row">
         <select name="service_type">
-            <option value="" disabled selected>Please select an option...</option>
-            
           <option value="Standard Wholesale">Standard Wholesale (Low MOQ)</option>
-          <option value="Custom Logo Printing">Custom Logo / Laser Engraving</option>
-          <option value="Custom Gift Box">Custom Packaging / Gift Box</option>
-          <option value="OEM Mold & Development">OEM / ODM Custom Mold</option>
-          <option value="Sample Proofing">Sample Request / Trial Order</option>
+          <option value="Custom Branding">Custom Logo / Branding</option>
+          <option value="Custom Packaging">Custom Packaging &amp; Box</option>
+          <option value="Sample Proofing">Sample Request / Evaluation</option>
         </select>
         <select name="quantity">
-          <option value="">Estimated Order Quantity</option>
+          <option value="">-- Estimated Quantity --</option>
           <option value="< 100 pcs (Sample / Trial)">&lt; 100 pcs (Sample / Trial)</option>
           <option value="100 - 500 pcs (Small Batch)">100 - 500 pcs (Small Batch)</option>
           <option value="500 - 2,000 pcs (Standard Wholesale)">500 - 2,000 pcs (Standard Wholesale)</option>
           <option value="2,000 - 5,000 pcs (Volume Order)">2,000 - 5,000 pcs (Volume Order)</option>
-          <option value="5,000+ pcs (Full Container / OEM)">5,000+ pcs (Full Container / OEM)</option>
+          <option value="5,000+ pcs (Full Container)">5,000+ pcs (Full Container)</option>
         </select>
       </div>
-      <textarea name="message" placeholder="Notes on logo, printing, destination, or packaging requirements..."></textarea>
-      <button type="submit" class="submit-btn">Get Wholesale Quote</button>
+
+      <textarea name="message" required placeholder="Please provide glassware dimensions, logo decoration method, custom gift box requirements, order volume, branding method, packaging type, or destination port..."></textarea>
+      
+      <button type="submit" class="submit-btn">Send Inquiry — Get Factory Quote</button>
       <p class="form-note" style="margin-top:12px;font-size:0.8rem;color:#718096;text-align:center;">🔒 100% Confidential NDA · ⚡ 1-Hour Fast Reply · 📦 Sample Proofing Available</p>
     </form>
   </div>
@@ -2081,6 +2109,26 @@ if ('serviceWorker' in navigator) {
   function jyFillInquiryTracking(form){if(!form)return;var params=new URLSearchParams(window.location.search||'');var values={page_url:window.location.href,page_path:window.location.pathname||'/',page_title:document.title||'',referrer:document.referrer||'',submit_timestamp:new Date().toISOString(),device_type:jyDeviceType(),utm_source:params.get('utm_source')||'',utm_medium:params.get('utm_medium')||''};Object.keys(values).forEach(function(name){var input=form.querySelector('input[name="'+name+'"]');if(input)input.value=values[name];});}
   document.querySelectorAll('form').forEach(function(form){jyFillInquiryTracking(form);form.addEventListener('submit',function(){jyFillInquiryTracking(form);});});
 })();
+</script>
+
+
+<!-- Back to Top / Navigation Button -->
+<button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to Top" title="Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+<script>
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) {
+      if (window.scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    }
+  }, { passive: true });
 </script>
 
 </body>

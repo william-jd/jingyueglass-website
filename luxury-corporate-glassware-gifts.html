@@ -373,6 +373,51 @@
   background: var(--accent-hover, #e0a70b);
 }
 
+
+  /* ── QUICK BACK TO TOP / NAV BUTTON ── */
+  .back-to-top {
+    position: fixed;
+    bottom: 88px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: #c8930a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+    z-index: 997;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s, background 0.2s, box-shadow 0.2s;
+  }
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .back-to-top:hover {
+    background: #e0a70b;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+    transform: translateY(-2px);
+  }
+  .back-to-top:active {
+    transform: translateY(0);
+  }
+  @media (max-width: 768px) {
+    .back-to-top {
+      bottom: 80px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
 </style>
 
 <!-- Open Graph & Twitter Cards -->
@@ -554,88 +599,49 @@
       </div>
     </div>
 
-    <form class="demo-form" action="https://formspree.io/f/mkopdvol" method="POST">
-        <!-- Anti-Spam Honeypot Field -->
-        <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="hidden" name="page_url" value="https://www.jingyueglass.com/luxury-corporate-glassware-gifts">
-        <input type="hidden" name="page_path" value="/luxury-corporate-glassware-gifts">
-        <input type="hidden" name="page_title" value="Luxury Corporate Glassware Gift Sets | Jingyue Glass">
-        <input type="hidden" name="product_category" value="Luxury Corporate Glassware Gift Sets">
-        <input type="hidden" name="cta_source" value="inquiry_form">
-        <input type="hidden" name="utm_source" value="">
-        <input type="hidden" name="utm_medium" value="">
-        <input type="hidden" name="referrer" value="">
-        <input type="hidden" name="submit_timestamp" value="">
-        <input type="hidden" name="device_type" value="">
-      <input type="hidden" name="subject" value="Corporate Glassware Gift Sets Inquiry — jingyueglass.com">
+    <form action="https://formspree.io/f/mkopdvol" method="POST">
+      <input type="hidden" name="subject" value="Luxury Corporate Gifts Inquiry — jingyueglass.com">
       
       <div class="form-row">
-        <div class="form-group">
-          <label>Your Name *</label>
-          <input type="text" name="name" class="form-control" required placeholder="John Smith">
-        </div>
-        <div class="form-group">
-          <label>Company / Organization</label>
-          <input type="text" name="company" class="form-control" placeholder="e.g. Enterprise Group / Brand Agency">
-        </div>
+        <input type="email" name="email" placeholder="Business Email *" required>
+        <input type="text" name="name" placeholder="Your Name">
+      </div>
+      
+      <div class="form-full">
+        <input type="text" name="company" placeholder="Company Name">
       </div>
 
-      <div class="form-row">
-        <div class="form-group">
-          <label>Business Email *</label>
-          <input type="email" name="email" class="form-control" required placeholder="you@company.com">
-        </div>
-        <div class="form-group">
-          <label>Destination Country *</label>
-          <input type="text" name="country" class="form-control" required placeholder="e.g. USA, UK, Canada">
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-group">
-          <label>Gift Set Type</label>
-          <select name="product" class="form-control">
-            <option value="" disabled selected>Please select an option...</option>
-            
-            <option value="Whiskey Decanter + 2 Glasses Wooden Box Set">Whiskey Decanter + 2 Glasses Wooden Box Set</option>
-            <option value="Champagne Flute Pair Luxury Box Set">Champagne Flute Pair Luxury Box Set</option>
-            <option value="4-Piece Rocks Glass + Chilling Stones Set">4-Piece Rocks Glass + Chilling Stones Set</option>
-            <option value="Wine Decanter + 4 Wine Glasses Gift Set">Wine Decanter + 4 Wine Glasses Gift Set</option>
-            <option value="Bespoke Custom Combination Set">Bespoke Custom Combination Set</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label>Packaging Preference</label>
-          <select name="service_type" class="form-control">
-            <option value="" disabled selected>Please select an option...</option>
-            
-            <option value="Solid Wooden Box (Pine/Bamboo)">Solid Wooden Box (Pine / Bamboo)</option>
-            <option value="Magnetic Rigid Gift Box (Paperboard)">Magnetic Rigid Gift Box (Paperboard)</option>
-            <option value="Book-Style Box with Ribbon">Book-Style Box with Ribbon</option>
-            <option value="Sample Proofing First">Sample Proofing First</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label>Estimated Quantity (Sets)</label>
-        <select name="quantity" class="form-control">
-            <option value="" disabled selected>Please select an option...</option>
-            
-          <option value="20 - 50 sets (Small Batch VIP)">20 - 50 sets (Small Batch VIP)</option>
-          <option value="50 - 200 sets (Corporate Event)">50 - 200 sets (Corporate Event)</option>
-          <option value="200 - 500 sets (Wholesale Program)">200 - 500 sets (Wholesale Program)</option>
-          <option value="500+ sets (Volume Retail / OEM)">500+ sets (Volume Retail / OEM)</option>
+      <div class="form-full">
+        <select name="product">
+          <option value="">-- Select Product Style / Category --</option>
+          <option value="Custom Luxury Corporate Gifts In-Stock Wholesale">In-Stock Standard Wholesale</option>
+          <option value="Custom Logo Printing / Laser Engraving">Custom Logo Printing / Laser Engraving</option>
+          <option value="Custom Gift Box Packaging">Custom Gift Box &amp; Presentation Set</option>
+          <option value="Bespoke OEM/ODM Development">Bespoke OEM / ODM Custom Mold</option>
         </select>
       </div>
 
-      <div class="form-group">
-        <label>Project Requirements &amp; Logo Details *</label>
-        <textarea name="message" class="form-control" required placeholder="Please state decanter/glass styles, logo branding method (laser engraving, gold foil, screen print), box color or destination port..."></textarea>
+      <div class="form-row">
+        <select name="service_type">
+          <option value="Standard Wholesale">Standard Wholesale (Low MOQ)</option>
+          <option value="Custom Branding">Custom Logo / Branding</option>
+          <option value="Custom Packaging">Custom Packaging &amp; Box</option>
+          <option value="Sample Proofing">Sample Request / Evaluation</option>
+        </select>
+        <select name="quantity">
+          <option value="">-- Estimated Quantity --</option>
+          <option value="< 100 pcs (Sample / Trial)">&lt; 100 pcs (Sample / Trial)</option>
+          <option value="100 - 500 pcs (Small Batch)">100 - 500 pcs (Small Batch)</option>
+          <option value="500 - 2,000 pcs (Standard Wholesale)">500 - 2,000 pcs (Standard Wholesale)</option>
+          <option value="2,000 - 5,000 pcs (Volume Order)">2,000 - 5,000 pcs (Volume Order)</option>
+          <option value="5,000+ pcs (Full Container)">5,000+ pcs (Full Container)</option>
+        </select>
       </div>
 
-      <button type="submit" class="form-submit-btn">GET FACTORY GIFT QUOTE →</button>
-      <p style="text-align:center;font-size:0.78rem;color:var(--gray);margin-top:12px;">🔒 100% Confidential NDA · ⚡ 1-Hour Fast Reply · 📦 Sample Proofing Available</p>
+      <textarea name="message" required placeholder="Please provide glassware dimensions, logo decoration method, custom gift box requirements, order volume, branding method, packaging type, or destination port..."></textarea>
+      
+      <button type="submit" class="submit-btn">Send Inquiry — Get Factory Quote</button>
+      <p class="form-note" style="margin-top:12px;font-size:0.8rem;color:#718096;text-align:center;">🔒 100% Confidential NDA · ⚡ 1-Hour Fast Reply · 📦 Sample Proofing Available</p>
     </form>
   </div>
 </section>
@@ -712,6 +718,26 @@ if ('serviceWorker' in navigator) {
   function jyFillInquiryTracking(form){if(!form)return;var params=new URLSearchParams(window.location.search||'');var values={page_url:window.location.href,page_path:window.location.pathname||'/',page_title:document.title||'',referrer:document.referrer||'',submit_timestamp:new Date().toISOString(),device_type:jyDeviceType(),utm_source:params.get('utm_source')||'',utm_medium:params.get('utm_medium')||''};Object.keys(values).forEach(function(name){var input=form.querySelector('input[name="'+name+'"]');if(input)input.value=values[name];});}
   document.querySelectorAll('form').forEach(function(form){jyFillInquiryTracking(form);form.addEventListener('submit',function(){jyFillInquiryTracking(form);});});
 })();
+</script>
+
+
+<!-- Back to Top / Navigation Button -->
+<button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to Top" title="Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+<script>
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) {
+      if (window.scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    }
+  }, { passive: true });
 </script>
 
 </body>

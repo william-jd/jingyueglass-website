@@ -677,6 +677,51 @@
   background: var(--accent-hover, #e0a70b);
 }
 
+
+  /* ── QUICK BACK TO TOP / NAV BUTTON ── */
+  .back-to-top {
+    position: fixed;
+    bottom: 88px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: #c8930a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+    z-index: 997;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s, background 0.2s, box-shadow 0.2s;
+  }
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .back-to-top:hover {
+    background: #e0a70b;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+    transform: translateY(-2px);
+  }
+  .back-to-top:active {
+    transform: translateY(0);
+  }
+  @media (max-width: 768px) {
+    .back-to-top {
+      bottom: 80px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
 </style>
 
 <script type="application/ld+json">
@@ -1433,22 +1478,10 @@
     </div>
     <div class="inquiry-form">
       <form id="inquiryForm" onsubmit="submitForm(event)" novalidate>
-        <!-- Anti-Spam Honeypot Field -->
-        <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <input type="hidden" name="page_url" value="https://www.jingyueglass.com/">
-        <input type="hidden" name="page_path" value="/">
-        <input type="hidden" name="page_title" value="Jingyue Glass | Factory-Direct B2B Glassware Supplier">
-        <input type="hidden" name="product_category" value="Jingyue Glass">
-        <input type="hidden" name="cta_source" value="inquiry_form">
-        <input type="hidden" name="utm_source" value="">
-        <input type="hidden" name="utm_medium" value="">
-        <input type="hidden" name="referrer" value="">
-        <input type="hidden" name="submit_timestamp" value="">
-        <input type="hidden" name="device_type" value="">
         <div class="form-row">
           <div class="form-group">
-            <label data-i18n="f_name">Your Name *</label>
-            <input type="text" name="name" required placeholder="John Smith" data-i18n-placeholder="f_ph_name">
+            <label data-i18n="f_name">Your Name</label>
+            <input type="text" name="name" placeholder="John Smith" data-i18n-placeholder="f_ph_name">
           </div>
           <div class="form-group">
             <label data-i18n="f_company">Company Name</label>
@@ -1461,20 +1494,8 @@
             <input type="email" name="email" required placeholder="you@company.com">
           </div>
           <div class="form-group">
-            <label data-i18n="f_country">Destination Country *</label>
-            <select name="country" required>
-              <option value="">-- Select Destination Country --</option>
-              <option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>Germany</option><option>France</option><option>Spain</option><option>Italy</option><option>Netherlands</option>
-              <option>Brazil</option><option>Argentina</option><option>Chile</option><option>Mexico</option><option>Colombia</option><option>Peru</option>
-              <option>Indonesia</option><option>Vietnam</option><option>Thailand</option><option>Malaysia</option><option>Philippines</option><option>Singapore</option>
-              <option>United Arab Emirates</option><option>Saudi Arabia</option><option>South Africa</option><option>Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label data-i18n="f_product">Product Category *</label>
-            <select name="product" required>
+            <label data-i18n="f_product">Product Category</label>
+            <select name="product">
               <option value="">-- Select Category --</option>
               <option>Wine Glasses (Stemmed &amp; Stemless)</option>
               <option>Wine Decanters &amp; Carafes</option>
@@ -1488,11 +1509,11 @@
               <option>Bespoke OEM/ODM Custom Mold</option>
             </select>
           </div>
+        </div>
+        <div class="form-row">
           <div class="form-group">
             <label data-i18n="f_service">Service / Project Intent</label>
             <select name="service_type">
-            <option value="" disabled selected>Please select an option...</option>
-            
               <option value="Standard Wholesale">Standard Wholesale (In-Stock / Low MOQ)</option>
               <option value="Custom Logo Printing">Custom Logo Printing / Laser Engraving</option>
               <option value="Custom Gift Packaging">Custom Gift Packaging &amp; Inserts</option>
@@ -1500,8 +1521,6 @@
               <option value="Sample Proofing Request">Sample Request / Quality Evaluation</option>
             </select>
           </div>
-        </div>
-        <div class="form-row">
           <div class="form-group">
             <label data-i18n="f_qty">Estimated Order Quantity</label>
             <select name="quantity">
@@ -1513,19 +1532,19 @@
               <option value="10,000+ pcs / Full Container (OEM Production)">10,000+ pcs / Full Container (OEM Production)</option>
             </select>
           </div>
-          <div class="form-group">
-            <label data-i18n="f_timeline">Target Delivery / Lead Time</label>
-            <select name="timeline">
-              <option value="Standard (25-35 Days)">Standard Production (25–35 Days)</option>
-              <option value="Urgent (< 20 Days)">Urgent / Ready Stock (&lt; 20 Days)</option>
-              <option value="Sample First (< 10 Days)">Sample First (&lt; 10 Days)</option>
-              <option value="Planning Stage / Future Quarter">Planning Stage / Future Quarter</option>
-            </select>
-          </div>
+        </div>
+        <div class="form-group" style="margin-bottom:16px;">
+          <label data-i18n="f_timeline">Target Delivery / Lead Time</label>
+          <select name="timeline">
+            <option value="Standard (25-35 Days)">Standard Production (25–35 Days)</option>
+            <option value="Urgent (< 20 Days)">Urgent / Ready Stock (&lt; 20 Days)</option>
+            <option value="Sample First (< 10 Days)">Sample First (&lt; 10 Days)</option>
+            <option value="Planning Stage / Future Quarter">Planning Stage / Future Quarter</option>
+          </select>
         </div>
         <div class="form-group">
           <label data-i18n="f_msg">Project Requirements &amp; Notes *</label>
-          <textarea name="message" required placeholder="Please provide glassware dimensions, logo decoration method, custom gift box requirements, order volume, branding method, packaging type, or destination port..." data-i18n-placeholder="f_ph_msg"></textarea>
+          <textarea name="message" required placeholder="Please provide glassware dimensions, logo decoration method, custom gift box requirements, order volume, branding method, packaging type, or target unit price..." data-i18n-placeholder="f_ph_msg"></textarea>
         </div>
         <button type="submit" class="form-submit" data-i18n="f_submit">SEND FACTORY INQUIRY →</button>
         <p class="form-msg" id="formMsg"></p>
@@ -1668,7 +1687,7 @@ const i18n = {
     inq_tag:"Get a Quote", inq_title:"Tell Us What You Need",
     inq_sub:"Fill in the form and our sales team will respond within 1 hour. No commitment required.",
     ct_email:"Email", ct_web:"Website",
-    f_name:"Your Name *", f_company:"Company", f_email:"Email *", f_country:"Country *",
+    f_name:"Your Name", f_company:"Company", f_email:"Email *", f_country:"Country *",
     f_product:"Product Interested In *", f_qty:"Est. Quantity", f_custom:"Custom Logo?",
     f_msg:"Message / Requirements *", f_submit:"SEND INQUIRY →",
     foot_about:"Wuhan Jingyueda Household Products Co., Ltd.<br>Leading glassware manufacturer, central China.<br><br>ARC · Libbey · Eisch authorized.",
@@ -1749,7 +1768,7 @@ const i18n = {
     inq_tag:"Solicitar Cotización", inq_title:"Cuéntenos Lo Que Necesita",
     inq_sub:"Complete el formulario y nuestro equipo de ventas responderá en 1 hora. Sin compromiso.",
     ct_email:"Correo Electrónico", ct_web:"Sitio Web",
-    f_name:"Su Nombre *", f_company:"Empresa", f_email:"Email *", f_country:"País *",
+    f_name:"Su Nombre", f_company:"Empresa", f_email:"Email *", f_country:"País *",
     f_product:"Producto de Interés *", f_qty:"Cantidad Estimada", f_custom:"¿Logo Personalizado?",
     f_msg:"Mensaje / Requisitos *", f_submit:"ENVIAR CONSULTA →",
     foot_about:"Wuhan Jingyueda Household Products Co., Ltd.<br>Fabricante líder de cristalería, China central.<br><br>Autorizado: ARC · Libbey · Eisch",
@@ -1831,7 +1850,7 @@ const i18n = {
     inq_tag:"Pedir Cotação", inq_title:"Diga-nos o que Precisa",
     inq_sub:"Preencha o formulário e nossa equipe de vendas responderá em 1 hora. Sem compromisso.",
     ct_email:"E-mail", ct_web:"Site",
-    f_name:"Seu Nome *", f_company:"Empresa", f_email:"E-mail *", f_country:"País *",
+    f_name:"Seu Nome", f_company:"Empresa", f_email:"E-mail *", f_country:"País *",
     f_product:"Produto de Interesse *", f_qty:"Quantidade Estimada", f_custom:"Logo Personalizado?",
     f_msg:"Mensagem / Requisitos *", f_submit:"ENVIAR CONSULTA →",
     foot_about:"Wuhan Jingyueda Household Products Co., Ltd.<br>Fabricante líder de cristalaria, centro da China.<br><br>Autorizado: ARC · Libbey · Eisch",
@@ -1882,8 +1901,6 @@ function setLang(lang) {
       }
     });
   }
-}
-  });
 }
 
 function toggleMenu() {
@@ -2009,6 +2026,26 @@ if ('serviceWorker' in navigator) {
   function jyFillInquiryTracking(form){if(!form)return;var params=new URLSearchParams(window.location.search||'');var values={page_url:window.location.href,page_path:window.location.pathname||'/',page_title:document.title||'',referrer:document.referrer||'',submit_timestamp:new Date().toISOString(),device_type:jyDeviceType(),utm_source:params.get('utm_source')||'',utm_medium:params.get('utm_medium')||''};Object.keys(values).forEach(function(name){var input=form.querySelector('input[name="'+name+'"]');if(input)input.value=values[name];});}
   document.querySelectorAll('form').forEach(function(form){jyFillInquiryTracking(form);form.addEventListener('submit',function(){jyFillInquiryTracking(form);});});
 })();
+</script>
+
+
+<!-- Back to Top / Navigation Button -->
+<button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to Top" title="Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+<script>
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) {
+      if (window.scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    }
+  }, { passive: true });
 </script>
 
 </body>

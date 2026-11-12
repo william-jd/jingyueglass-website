@@ -251,6 +251,51 @@
   .widget-email { background: #f1f5f9; color: #1a3a5c !important; border: 1px solid #cbd5e1; }
   .widget-wechat-box { background: #f8fafc; border: 1px dashed #cbd5e1; padding: 10px 12px; border-radius: 6px; font-size: 0.84rem; }
   .widget-quote { background: var(--accent, #c8930a); color: #fff !important; justify-content: center; font-weight: 700; }
+
+  /* ── QUICK BACK TO TOP / NAV BUTTON ── */
+  .back-to-top {
+    position: fixed;
+    bottom: 88px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: #c8930a;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.16);
+    z-index: 997;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.28s ease, transform 0.28s ease, visibility 0.28s, background 0.2s, box-shadow 0.2s;
+  }
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .back-to-top:hover {
+    background: #e0a70b;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+    transform: translateY(-2px);
+  }
+  .back-to-top:active {
+    transform: translateY(0);
+  }
+  @media (max-width: 768px) {
+    .back-to-top {
+      bottom: 80px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+    }
+  }
+
 </style>
 
 <!-- Open Graph & Twitter Cards -->
@@ -1019,6 +1064,26 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(function(){});
   });
 }
+</script>
+
+
+<!-- Back to Top / Navigation Button -->
+<button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to Top" title="Back to top">
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="18 15 12 9 6 15"></polyline>
+  </svg>
+</button>
+<script>
+  window.addEventListener('scroll', function() {
+    var btn = document.getElementById('backToTop');
+    if (btn) {
+      if (window.scrollY > 300) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    }
+  }, { passive: true });
 </script>
 
 </body>
