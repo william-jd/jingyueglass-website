@@ -47,7 +47,8 @@
     }
   }
 
-</style></head><body>
+</style>  <link rel="stylesheet" href="/assets/inquiry-modal.css">
+</head><body>
 <header class="top"><div class="brand"><b>JY</b><div>晶悦达 <span>JINGYUEDA</span></div><em>报价工作台</em></div><div class="actions"><span id="saveState">本机草稿</span><button id="save">保存草稿</button><button id="load">导入草稿</button><button id="excel">导出 Excel</button><button id="print" class="primary">保存 PDF</button></div></header>
 <main><aside><div class="eyebrow">PRODUCT LIBRARY</div><h1>从产品开始</h1><p class="muted">选入产品，自动填写报价信息。</p><input id="search" type="search" placeholder="搜索货号、产品名称…" aria-label="搜索产品"><div class="filters"><button class="active" data-category="">全部</button><button data-category="木盒套装">木盒套装</button><button data-category="现货杯具">现货杯具</button></div><div class="library-meta"><span id="resultCount"></span><button id="catalogBtn" class="link">查看图册 ↗</button></div><div id="products"></div></aside>
 <section class="workspace"><div class="workspace-heading"><div><div class="eyebrow">QUOTATION STUDIO</div><h2>制作报价单</h2></div><button id="new">新建空白报价</button></div><div class="notice">版本 2026.10.20.3 · 价格暂留空 · 草稿仅保存在当前浏览器</div>
@@ -78,4 +79,5 @@
   }, { passive: true });
 </script>
 
+  <script src="/assets/inquiry-modal.js" defer></script>
 </body></html>
