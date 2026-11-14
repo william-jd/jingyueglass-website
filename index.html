@@ -516,6 +516,7 @@
     .quote-float { right: 16px; bottom: 18px; padding: 13px 16px; font-size: .84rem; }
   }
 </style>
+  <link rel="stylesheet" href="/assets/inquiry-modal.css">
 </head>
 <body>
 
@@ -1065,42 +1066,8 @@
             <input type="email" name="email" required placeholder="you@company.com">
           </div>
           <div class="form-group">
-            <label data-i18n="f_country">Destination Country *</label>
-            <select name="country" required>
-              <option value="">-- Select Destination Country --</option>
-              <option>United States</option><option>United Kingdom</option><option>Canada</option><option>Australia</option><option>Germany</option><option>France</option><option>Spain</option><option>Italy</option><option>Netherlands</option>
-              <option>Brazil</option><option>Argentina</option><option>Chile</option><option>Mexico</option><option>Colombia</option><option>Peru</option>
-              <option>Indonesia</option><option>Vietnam</option><option>Thailand</option><option>Malaysia</option><option>Philippines</option><option>Singapore</option>
-              <option>United Arab Emirates</option><option>Saudi Arabia</option><option>South Africa</option><option>Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label data-i18n="f_product">Product Category *</label>
-            <select name="product" required>
-              <option value="">-- Select Category --</option>
-              <option>Wine Glasses (Stemmed &amp; Stemless)</option>
-              <option>Wine Decanters &amp; Carafes</option>
-              <option>Whiskey Glasses &amp; Old Fashioned</option>
-              <option>Beer Glasses, Mugs &amp; Steins</option>
-              <option>Coffee &amp; Tea Mugs (Borosilicate)</option>
-              <option>Gift Sets (Champagne &amp; Whiskey Sets)</option>
-              <option>Tumblers &amp; Highball Glasses</option>
-              <option>Cocktail &amp; Drinkware Sets</option>
-              <option>Mixed Container Multi-SKU Order</option>
-              <option>Bespoke OEM/ODM Custom Mold</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label data-i18n="f_service">Service / Project Intent</label>
-            <select name="service_type">
-              <option value="Standard Wholesale">Standard Wholesale (In-Stock / Low MOQ)</option>
-              <option value="Custom Logo Printing">Custom Logo Printing / Laser Engraving</option>
-              <option value="Custom Gift Packaging">Custom Gift Packaging &amp; Inserts</option>
-              <option value="OEM Mold & New Product">OEM / ODM Custom Mold &amp; Development</option>
-              <option value="Sample Proofing Request">Sample Request / Quality Evaluation</option>
-            </select>
+            <label data-i18n="f_qty">Estimated Order Quantity</label>
+            <input type="text" name="quantity" placeholder="e.g. 500 pcs">
           </div>
         </div>
         <div class="form-row">
@@ -1131,10 +1098,8 @@
         </div>
         <button type="submit" class="form-submit" data-i18n="f_submit">SEND FACTORY INQUIRY →</button>
         <p class="form-msg" id="formMsg"></p>
-        <div class="form-trust-footer" data-i18n="f_trust_footer" style="margin-top:14px;display:flex;align-items:center;justify-content:center;gap:18px;font-size:0.78rem;color:var(--gray);flex-wrap:wrap;">
-          <span>🔒 100% Confidential NDA</span>
-          <span>⚡ 1-Hour Fast Reply</span>
-          <span>📋 Free DFM &amp; Quote Review</span>
+        <div class="form-trust-footer" style="margin-top:14px;padding:12px 14px;border:1px solid #e2e8f0;border-radius:8px;background:#f8fafc;font-size:0.78rem;color:var(--gray);line-height:1.55;">
+          <strong style="color:var(--primary);">Quote-use notice:</strong> The information you provide is used to review your request and prepare a quotation. Submitting this form does not require payment. We do not sell your contact details.
         </div>
       </form>
     </div>
@@ -1539,6 +1504,7 @@ function submitForm(e) {
   });
 }
 </script>
+  <script src="/assets/inquiry-modal.js" defer></script>
 </body>
 </html>
 
