@@ -57,21 +57,33 @@
     document.body.classList.toggle('jy-modal-lock',isOpen);
   }
 
+  function findSku(text){
+    var tokens=(text||'').toUpperCase().match(/[A-Z0-9][A-Z0-9._/-]{2,}/g)||[];
+    for(var i=0;i<tokens.length;i++){
+      var token=tokens[i].replace(/[.,;:]+$/,'');
+      if(/[A-Z]/.test(token)&&/\d/.test(token)&&!/^\d+(?:ML|PCS|OZ|CM|MM|DAYS?)$/.test(token))return token;
+    }
+    return '';
+  }
+
   function getSelectedProduct(trigger){
     if(!trigger)return '';
     var explicit=trigger.getAttribute('data-product')||trigger.getAttribute('data-sku');
     if(explicit)return explicit.trim();
     var text=(trigger.textContent||'').trim().replace(/\s+/g,' ');
-    var match=text.match(/\bQuote(?:\s+Model)?\s+([A-Z0-9][A-Z0-9._/-]*\d[A-Z0-9._/-]*)\b/i);
-    if(match)return match[1];
-    var card=trigger.closest('.product-card,.card,[data-product],[data-sku]');
+    var sku=findSku(text);
+    var card=trigger.closest('.product-card,.card,.product-item,.product-details,[data-product],[data-sku]');
+    var heading='';
     if(card){
       var cardExplicit=card.getAttribute('data-product')||card.getAttribute('data-sku');
       if(cardExplicit)return cardExplicit.trim();
-      var heading=card.querySelector('h2,h3,h4,.product-title,.product-name');
-      if(heading)return heading.textContent.trim().replace(/\s+/g,' ');
+      var headingEl=card.querySelector('h2,h3,h4,.product-title,.product-name');
+      if(headingEl)heading=headingEl.textContent.trim().replace(/\s+/g,' ');
+      if(!sku)sku=findSku(card.textContent||'');
     }
-    return '';
+    if(sku&&heading&&heading.toUpperCase().indexOf(sku)===-1)return sku+' — '+heading;
+    if(sku)return sku;
+    return heading;
   }
 
   function openQuote(trigger){
