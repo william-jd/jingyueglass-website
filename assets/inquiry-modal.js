@@ -21,6 +21,8 @@
           '<form id="jyQuoteForm" novalidate>'+
             '<input type="hidden" name="source_page" value="">'+
             '<input type="hidden" name="source_action" value="">'+
+            '<input type="hidden" name="selected_product" value="">'+
+            '<div id="jySelectedProduct" class="jy-selected-product" hidden><span>Selected product</span><strong></strong></div>'+
             '<div class="jy-grid">'+
               '<div class="jy-field"><label for="jyName">Your Name</label><input id="jyName" name="name" type="text" autocomplete="name" placeholder="John Smith"></div>'+
               '<div class="jy-field"><label for="jyCompany">Company Name</label><input id="jyCompany" name="company" type="text" autocomplete="organization" placeholder="Your company"></div>'+
@@ -55,13 +57,41 @@
     document.body.classList.toggle('jy-modal-lock',isOpen);
   }
 
+  function getSelectedProduct(trigger){
+    if(!trigger)return '';
+    var explicit=trigger.getAttribute('data-product')||trigger.getAttribute('data-sku');
+    if(explicit)return explicit.trim();
+    var text=(trigger.textContent||'').trim().replace(/\s+/g,' ');
+    var match=text.match(/\bQuote(?:\s+Model)?\s+([A-Z0-9][A-Z0-9._/-]*\d[A-Z0-9._/-]*)\b/i);
+    if(match)return match[1];
+    var card=trigger.closest('.product-card,.card,[data-product],[data-sku]');
+    if(card){
+      var cardExplicit=card.getAttribute('data-product')||card.getAttribute('data-sku');
+      if(cardExplicit)return cardExplicit.trim();
+      var heading=card.querySelector('h2,h3,h4,.product-title,.product-name');
+      if(heading)return heading.textContent.trim().replace(/\s+/g,' ');
+    }
+    return '';
+  }
+
   function openQuote(trigger){
     lastTrigger=trigger||document.activeElement;
     returnTrigger=lastTrigger;
     var action=form.querySelector('[name="source_action"]');
     var page=form.querySelector('[name="source_page"]');
+    var productInput=form.querySelector('[name="selected_product"]');
+    var productDisplay=form.querySelector('#jySelectedProduct');
+    var selectedProduct=getSelectedProduct(trigger);
     action.value=trigger&&trigger.textContent?trigger.textContent.trim().replace(/\s+/g,' '):'Quote request';
     page.value=window.location.href;
+    productInput.value=selectedProduct;
+    if(selectedProduct){
+      productDisplay.hidden=false;
+      productDisplay.querySelector('strong').textContent=selectedProduct;
+    }else{
+      productDisplay.hidden=true;
+      productDisplay.querySelector('strong').textContent='';
+    }
     var error=form.querySelector('.jy-form-error');
     error.textContent='';
     error.classList.remove('is-visible');
