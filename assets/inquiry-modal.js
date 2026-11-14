@@ -13,9 +13,8 @@
       '<div class="jy-quote-dialog" role="dialog" aria-modal="true" aria-labelledby="jyQuoteTitle">'+
         '<button type="button" class="jy-close" aria-label="Close inquiry form">×</button>'+
         '<div class="jy-quote-head">'+
-          '<div class="jy-quote-kicker">Factory quotation request</div>'+
-          '<h2 id="jyQuoteTitle">Tell Us What You Need</h2>'+
-          '<p>Share the essential project information below so our team can prepare a suitable quotation.</p>'+
+          '<h2 id="jyQuoteTitle">Quick Quotation &amp; Sample Request</h2>'+
+          '<p>Tell us your target quantity and branding requirements so we can review your request.</p>'+
         '</div>'+
         '<div class="jy-quote-body">'+
           '<form id="jyQuoteForm" novalidate>'+
@@ -51,8 +50,12 @@
 
   function setOpen(el,isOpen){
     if(!el)return;
+    el.hidden=!isOpen;
     el.classList.toggle('is-open',isOpen);
     el.setAttribute('aria-hidden',isOpen?'false':'true');
+    el.style.setProperty('opacity',isOpen?'1':'0','important');
+    el.style.setProperty('visibility',isOpen?'visible':'hidden','important');
+    el.style.setProperty('pointer-events',isOpen?'auto':'none','important');
     document.documentElement.classList.toggle('jy-modal-lock',isOpen);
     document.body.classList.toggle('jy-modal-lock',isOpen);
   }
@@ -113,6 +116,7 @@
 
   function closeQuote(){
     setOpen(quoteModal,false);
+    quoteModal.hidden=true;
     if(lastTrigger&&typeof lastTrigger.focus==='function')lastTrigger.focus();
   }
 
@@ -189,13 +193,32 @@
       .finally(function(){button.disabled=false;button.textContent='SEND INQUIRY →';});
   }
 
+  function removePageModal(){
+    var pageModal=document.getElementById('quoteModal');
+    if(pageModal)pageModal.remove();
+  }
+
+  function installLegacyBridge(){
+    window.openQuoteModal=function(productName){
+      var trigger=window.event&&(window.event.currentTarget||window.event.target);
+      if(!trigger||!trigger.nodeType)trigger=document.activeElement;
+      if(productName&&trigger&&trigger.setAttribute)trigger.setAttribute('data-product',productName);
+      openQuote(trigger);
+    };
+    window.closeQuoteModal=closeQuote;
+  }
+
   function init(){
+    removePageModal();
     var host=document.createElement('div');
     host.innerHTML=modalMarkup();
     while(host.firstChild)document.body.appendChild(host.firstChild);
     quoteModal=document.getElementById('jyQuoteModal');
     successModal=document.getElementById('jySuccessModal');
+    quoteModal.hidden=true;
+    successModal.hidden=true;
     form=document.getElementById('jyQuoteForm');
+    installLegacyBridge();
 
     bindTriggers();
     replaceLegacyForms();
