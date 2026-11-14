@@ -1006,11 +1006,14 @@
   }
 
   @media (max-width: 768px) {
+    html, body { max-width: 100%; overflow-x: hidden; }
     .intro-video-grid, .catalog-lead-magnet { grid-template-columns: 1fr; }
     .inquiry-form-grid { grid-template-columns: 1fr; }
     .form-group-full { grid-column: span 1; }
     .footer-grid { grid-template-columns: 1fr; }
     .hero-banner h1 { font-size: 1.85rem; }
+    .modal-overlay { padding: 12px; box-sizing: border-box; overflow-y: auto; }
+    .modal-box { width: 100%; max-width: 100%; max-height: calc(100dvh - 24px); padding: 24px 18px; overflow-y: auto; box-sizing: border-box; }
     .floating-contact-matrix { right: 14px; bottom: 20px; }
     .f-contact-btn { width: 44px; height: 44px; font-size: 1.1rem; }
   }
@@ -1062,7 +1065,6 @@
   }
 
 </style>
-  <link rel="stylesheet" href="/assets/inquiry-modal.css">
 </head>
 <body>
 
@@ -1774,9 +1776,20 @@ function openQuoteModal(productName) {
   var modal = document.getElementById('quoteModal');
   if (modal) {
     modal.classList.add('active');
-    if (productName) {
-      document.getElementById('modalProductInput').value = productName;
+    var input = document.getElementById('modalProductInput');
+    var selectedProduct = productName || '';
+    if (!selectedProduct && window.event) {
+      var trigger = window.event.currentTarget || window.event.target;
+      var card = trigger && trigger.closest ? trigger.closest('.product-card') : null;
+      if (card) {
+        var skuEl = card.querySelector('.product-sku');
+        var nameEl = card.querySelector('.product-name');
+        var sku = skuEl ? skuEl.textContent.replace(/^\s*MODEL\s+/i, '').trim() : '';
+        var name = nameEl ? nameEl.textContent.trim().replace(/\s+/g, ' ') : '';
+        selectedProduct = [sku, name].filter(Boolean).join(' — ');
+      }
     }
+    if (input) input.value = selectedProduct;
   }
 }
 function closeQuoteModal() {
@@ -1861,6 +1874,5 @@ document.querySelectorAll('.faq-question').forEach(function(header) {
   }, { passive: true });
 </script>
 
-  <script src="/assets/inquiry-modal.js" defer></script>
 </body>
 </html>
