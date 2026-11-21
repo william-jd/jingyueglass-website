@@ -207,6 +207,224 @@
       .pdp-actions { flex-direction: column; }
       .nav-container { flex-direction: column; align-items: flex-start; }
     }
+  
+    /* Related Products Recommendation Grid */
+    .related-products-section {
+      margin: 40px 0 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line-border);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .related-card {
+      background: #fff;
+      border: 1px solid var(--line-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(26,58,92,0.1);
+      border-color: var(--accent-gold);
+    }
+    .related-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 10px;
+      border-bottom: 1px solid var(--line-border);
+    }
+    .related-card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .related-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .related-card-body h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .related-card-body p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+    .related-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .spec-chip {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .related-btn {
+      display: block;
+      text-align: center;
+      background: var(--primary-navy);
+      color: #fff !important;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .related-btn:hover {
+      background: var(--accent-gold);
+      color: #fff !important;
+    }
+
+    /* High-Conversion Sourcing CTA Banner */
+    .pdp-cta-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      margin: 40px 0 20px;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(13,37,64,0.18);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(200,147,10,0.3);
+    }
+    .pdp-cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(200,147,10,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .cta-badge {
+      display: inline-block;
+      background: rgba(200,147,10,0.25);
+      border: 1px solid var(--accent-gold);
+      color: #f1c40f;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .pdp-cta-banner h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .pdp-cta-banner p {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+    .cta-contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .contact-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .contact-chip span {
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+    .contact-chip:hover {
+      background: rgba(200,147,10,0.25);
+      border-color: var(--accent-gold);
+      color: #f1c40f;
+    }
+    .contact-chip.static:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+    .cta-banner-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-gold {
+      background: var(--accent-gold);
+      color: #fff !important;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-gold:hover {
+      background: var(--accent-hover);
+      color: #fff !important;
+    }
+    .btn-outline-white {
+      background: transparent;
+      color: #fff !important;
+      border: 1px solid rgba(255,255,255,0.4);
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: #fff;
+      color: #fff !important;
+    }
+
   </style>
   <link rel="stylesheet" href="/assets/inquiry-modal.css?v=20261114-3">
 </head>
@@ -341,7 +559,225 @@
       .xzpp-svc .meta { font-size: 0.78rem; color: #1a3a5c; background: #f1f5f9; padding: 6px 10px; border-radius: 4px; }
       .xzpp-svc .meta strong { color: #c8930a; }
       .xzpp-icon { font-size: 1.5rem; }
-    </style>
+    
+    /* Related Products Recommendation Grid */
+    .related-products-section {
+      margin: 40px 0 32px;
+      padding-top: 28px;
+      border-top: 1px solid var(--line-border);
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+    .related-card {
+      background: #fff;
+      border: 1px solid var(--line-border);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .related-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 24px rgba(26,58,92,0.1);
+      border-color: var(--accent-gold);
+    }
+    .related-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: contain;
+      background: #ffffff;
+      padding: 10px;
+      border-bottom: 1px solid var(--line-border);
+    }
+    .related-card-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .related-tag {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .related-card-body h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .related-card-body p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin-bottom: 12px;
+      flex-grow: 1;
+    }
+    .related-specs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+    .spec-chip {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+      background: #f1f5f9;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .related-btn {
+      display: block;
+      text-align: center;
+      background: var(--primary-navy);
+      color: #fff !important;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .related-btn:hover {
+      background: var(--accent-gold);
+      color: #fff !important;
+    }
+
+    /* High-Conversion Sourcing CTA Banner */
+    .pdp-cta-banner {
+      background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-dark) 100%);
+      border-radius: var(--radius-lg);
+      padding: 36px 28px;
+      margin: 40px 0 20px;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(13,37,64,0.18);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(200,147,10,0.3);
+    }
+    .pdp-cta-banner::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, rgba(200,147,10,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .cta-badge {
+      display: inline-block;
+      background: rgba(200,147,10,0.25);
+      border: 1px solid var(--accent-gold);
+      color: #f1c40f;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+    }
+    .pdp-cta-banner h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.6rem;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .pdp-cta-banner p {
+      font-size: 0.92rem;
+      color: #cbd5e1;
+      line-height: 1.55;
+      max-width: 780px;
+      margin-bottom: 22px;
+    }
+    .cta-contact-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .contact-chip {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--radius-sm);
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      color: #fff;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .contact-chip span {
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+    .contact-chip:hover {
+      background: rgba(200,147,10,0.25);
+      border-color: var(--accent-gold);
+      color: #f1c40f;
+    }
+    .contact-chip.static:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(255,255,255,0.15);
+      color: #fff;
+    }
+    .cta-banner-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-gold {
+      background: var(--accent-gold);
+      color: #fff !important;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-gold:hover {
+      background: var(--accent-hover);
+      color: #fff !important;
+    }
+    .btn-outline-white {
+      background: transparent;
+      color: #fff !important;
+      border: 1px solid rgba(255,255,255,0.4);
+      font-weight: 600;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .btn-outline-white:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: #fff;
+      color: #fff !important;
+    }
+
+  </style>
 
     <div class="xzpp-section" id="post-processing-gallery">
       <div class="xzpp-label">OEM / ODM Capabilities</div>
@@ -510,6 +946,91 @@
       </div>
     </div>
 
+
+    <!-- ========== COMPLEMENTARY DRINKWARE RECOMMENDATION GRID ========== -->
+    <div class="related-products-section" id="related-products">
+      <div class="xzpp-label">Complementary Drinkware</div>
+      <h2 class="xzpp-heading">Recommended Bar &amp; Tabletop Glassware Collections</h2>
+      <p class="xzpp-sub">Pair Model XZ3303 with matching stackable tumblers, rocks glasses, and carafes for a cohesive hospitality drinkware program.</p>
+
+      <div class="related-grid">
+        <div class="related-card">
+          <img src="/assets/products/tumblers-highballs/hs6h110-320-ml-cold-cut-highball-drinking-glass-new-20260917.webp" alt="320ml Cold-Cut Highball Drinking Glass Wholesale Factory Direct" loading="lazy" decoding="async">
+          <div class="related-card-body">
+            <span class="related-tag">Highball Glass · HS6H110</span>
+            <h3>320ml Cold-Cut Highball Drinking Glass</h3>
+            <p>Commercial-grade 320ml highball drinking glass with laser cold-cut mouth treatment and weighted base.</p>
+            <div class="related-specs">
+              <span class="spec-chip">320 ml</span><span class="spec-chip">Rim Ø 6.9 × H 11.0 cm</span><span class="spec-chip">MOQ 48 pcs</span>
+            </div>
+            <a href="/cold-cut-highball-glass-hs6h110" class="related-btn">View Product Detail &rarr;</a>
+          </div>
+        </div>
+        <div class="related-card">
+          <img src="/assets/products/tumblers-highballs/hs75h145-500-ml-cold-cut-highball-drinking-glass.webp" alt="500ml Tall Cold-Cut Highball Glass Wholesale Factory Direct" loading="lazy" decoding="async">
+          <div class="related-card-body">
+            <span class="related-tag">Highball Glass · HS75H145</span>
+            <h3>500ml Tall Cold-Cut Highball Glass</h3>
+            <p>Slim commercial-grade 500ml tall highball glass with precision cold-cut rim for Long Island and cocktail bars.</p>
+            <div class="related-specs">
+              <span class="spec-chip">500 ml</span><span class="spec-chip">Rim Ø 7.5 × H 14.5 cm</span><span class="spec-chip">MOQ 48 pcs</span>
+            </div>
+            <a href="/tall-cold-cut-highball-glass-hs75h145" class="related-btn">View Product Detail &rarr;</a>
+          </div>
+        </div>
+        <div class="related-card">
+          <img src="/assets/products/tumblers-highballs/xz5008-3-380-ml-stackable-drinking-tumbler-new-20260917.webp" alt="380ml Wide-Mouth Stackable Drinking Tumbler Wholesale Factory Direct" loading="lazy" decoding="async">
+          <div class="related-card-body">
+            <span class="related-tag">Stackable Tumbler · XZ5008-3</span>
+            <h3>380ml Wide-Mouth Stackable Drinking Tumbler</h3>
+            <p>Space-saving stackable beverage tumbler engineered for high-turnover restaurant, cafe, and banquet water service.</p>
+            <div class="related-specs">
+              <span class="spec-chip">380 ml</span><span class="spec-chip">Rim Ø 10.2 × H 8.2 cm</span><span class="spec-chip">MOQ 48 pcs</span>
+            </div>
+            <a href="/wide-mouth-stackable-tumbler-xz5008-3" class="related-btn">View Product Detail &rarr;</a>
+          </div>
+        </div>
+        <div class="related-card">
+          <img src="/assets/products/whiskey-glasses/xz5411-diamond-cut-rock-glass.webp" alt="300ml Diamond Cut Rock Glass Wholesale Factory Direct" loading="lazy" decoding="async">
+          <div class="related-card-body">
+            <span class="related-tag">Rocks Glass · XZ5411</span>
+            <h3>300ml Diamond Cut Rock Glass</h3>
+            <p>Classic heavy-base geometric cut crystal rock glass for Old Fashioned, Negroni, and premium whiskey bar service.</p>
+            <div class="related-specs">
+              <span class="spec-chip">300 ml</span><span class="spec-chip">H 9.0 × Ø 8.3 cm</span><span class="spec-chip">MOQ 48 pcs</span>
+            </div>
+            <a href="/diamond-cut-rock-glass-xz5411" class="related-btn">View Product Detail &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== HIGH-CONVERSION SOURCING CTA BANNER ========== -->
+    <div class="pdp-cta-banner" id="contact-sourcing">
+      <div class="cta-banner-content">
+        <span class="cta-badge">&#9889; Direct Factory Sourcing &middot; 1-Hour Fast Response</span>
+        <h2>Ready to Source Model XZ3303 or Start a Custom Project?</h2>
+        <p>Contact our export engineering team for factory-direct quotation, custom laser or decal branding mockups, or sample verification. We support hospitality venues, distributors, and beverage brands globally.</p>
+        
+        <div class="cta-contact-chips">
+          <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20am%20interested%20in%20Model%20XZ3303%20Highball%20Glasses%20and%20customization%20services." target="_blank" rel="noopener" class="contact-chip">
+            <span>&#128172; WhatsApp:</span> <strong>+86 132 5662 7201</strong>
+          </a>
+          <a href="mailto:sales@jingyueglass.com?subject=Wholesale%20Inquiry%20-%20Model%20XZ3303%20Highball%20Glass" class="contact-chip">
+            <span>&#9993; Email:</span> <strong>sales@jingyueglass.com</strong>
+          </a>
+          <div class="contact-chip static">
+            <span>&#128205; Factory:</span> <strong>Wuhan Jingyueda Household Products Co., Ltd.</strong>
+          </div>
+        </div>
+
+        <div class="cta-banner-actions">
+          <a href="javascript:void(0)" onclick="openQuoteModal('XZ3303')" class="btn-gold" style="cursor: pointer;">&#9889; Request Instant Itemized Quote</a>
+          <a href="https://wa.me/8613256627201?text=Hello%20Jingyue%20Glass%2C%20I%20would%20like%20to%20request%20physical%20samples%20for%20Model%20XZ3303." class="btn-outline-white" target="_blank" rel="noopener">&#128230; Request Physical Sample</a>
+          <a href="/glassware-product-catalog" class="btn-outline-white">&#128214; View Full Product Catalog</a>
+        </div>
+      </div>
+    </div>
 
   </div>
 </main>
