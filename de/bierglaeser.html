@@ -276,6 +276,29 @@
     }
   }
 
+
+/* ── 6-CARD PROTECTIVE PACKAGING GALLERY ── */
+.pack-showcase-section { margin: 44px 0; }
+.pack-showcase-header { margin-bottom: 24px; text-align: left; }
+.pack-showcase-header span { color: #c8930a; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 6px; }
+.pack-showcase-header h2, .pack-showcase-header h3 { font-size: clamp(20px, 3vw, 26px); color: #1a3a5c; font-weight: 800; margin: 0 0 6px; border-left: none; padding-left: 0; }
+.pack-showcase-header p { color: #64748b; font-size: 14px; margin: 0; line-height: 1.55; }
+.pack-showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 18px; }
+.pack-showcase-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(13,37,64,0.05); display: flex; flex-direction: column; transition: transform 0.25s, box-shadow 0.25s; }
+.pack-showcase-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(13,37,64,0.1); border-color: #cbd5e1; }
+.pack-showcase-img { width: 100%; height: 180px; background: #f1f5f9; overflow: hidden; }
+.pack-showcase-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+.pack-showcase-card:hover .pack-showcase-img img { transform: scale(1.03); }
+.pack-showcase-body { padding: 18px; flex: 1; display: flex; flex-direction: column; }
+.pack-showcase-body h4 { margin: 0 0 6px; font-size: 16px; font-weight: 700; color: #1a3a5c; }
+.pack-showcase-body p { margin: 0; font-size: 13px; color: #5d6873; line-height: 1.5; }
+@media (max-width: 900px) {
+  .pack-showcase-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+}
+@media (max-width: 580px) {
+  .pack-showcase-grid { grid-template-columns: 1fr; }
+}
+
 </style>
 <script type="application/ld+json">
 {
@@ -374,6 +397,85 @@
       <span>Zuverlässige Container-Lieferung verzollt und versteuert direkt an Ihr Brauerei- oder Zolllager in Deutschland, Österreich oder der Schweiz.</span>
     </div>
   </div>
+
+
+  <!-- ── 6-CARD PROTECTIVE PACKAGING GALLERY (DEUTSCH) ── -->
+  <div class="pack-showcase-section">
+    <div class="pack-showcase-header">
+      <span>SICHERE EXPORTVERPACKUNG &amp; LOGISTIK</span>
+      <h2>Transparenter Schutz — Null-Bruch Exportstandard</h2>
+      <p>Von der Einzelverpackung über 5-lagige Exportkartons bis hin zur palettierten Seefracht – unsere standardisierten Verpackungsprozesse schützen Ihre Glaswaren bei jedem Transportschritt.</p>
+    </div>
+
+    <div class="pack-showcase-grid">
+      <!-- Card 1 -->
+      <div class="pack-showcase-card">
+        <div class="pack-showcase-img">
+          <img src="https://huahanggifts.com/images/shipping-support/wrapped-glasses.jpg" alt="Einzeln geschützte Gläser" loading="lazy">
+        </div>
+        <div class="pack-showcase-body">
+          <h4>Einzeln Geschützt</h4>
+          <p>Jedes Glas wird einzeln in Seidenpapier und Schutzhüllen eingehüllt, um Oberflächenkratzer und Scheuern während des Transports zu verhindern.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="pack-showcase-card">
+        <div class="pack-showcase-img">
+          <img src="https://huahanggifts.com/images/shipping-support/wrapped-gift-box.jpg" alt="Geschenkbox-Schutz mit Umkarton" loading="lazy">
+        </div>
+        <div class="pack-showcase-body">
+          <h4>Geschenkbox-Schutz</h4>
+          <p>Präsentationsboxen erhalten zusätzliche Wellpappen-Versandhüllen und Feuchtigkeitsschutz für ein makelloses Auspackerlebnis.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="pack-showcase-card">
+        <div class="pack-showcase-img">
+          <img src="https://huahanggifts.com/images/shipping-support/foam-corners-clean-web-20261118.webp" alt="Geruchsfreie EPE-Perlbaumwolle" loading="lazy">
+        </div>
+        <div class="pack-showcase-body">
+          <h4>Geruchsfreies EPE</h4>
+          <p>Maßgeschneiderte, CNC-gefräste EPE-Perlbaumwoll-Einsätze betten das Glas passgenau ein und absorbieren Stöße ohne chemische Geruchsbildung.</p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="pack-showcase-card">
+        <div class="pack-showcase-img">
+          <img src="https://huahanggifts.com/images/shipping-support/foam-top-clean-web-20261118.webp" alt="Vollflächige obere Dämpfungsschicht" loading="lazy">
+        </div>
+        <div class="pack-showcase-body">
+          <h4>Obere Dämpfungsschicht</h4>
+          <p>Vollflächige obere Schaumstoffplatten fixieren den Inhalt zuverlässig gegen vertikale Vibrationen bei See- und Lufttransport.</p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="pack-showcase-card">
+        <div class="pack-showcase-img">
+          <img src="https://huahanggifts.com/images/shipping-support/carton-corners.jpg" alt="5-lagiger Export-Meisterkarton" loading="lazy">
+        </div>
+        <div class="pack-showcase-body">
+          <h4>5-lagiger Exportkarton</h4>
+          <p>Hochbelastbare 5-lagige Wellpappkartons mit stabilen Stegeinsätzen halten mehrfacher Container-Stapelung stand.</p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="pack-showcase-card">
+        <div class="pack-showcase-img">
+          <img src="https://huahanggifts.com/images/shipping-support/loaded-pallets.jpg" alt="Palettierte Seefracht mit Kantenschutz" loading="lazy">
+        </div>
+        <div class="pack-showcase-body">
+          <h4>Palettierte Seefracht</h4>
+          <p>Vollständige Stretchfolien-Umwicklung und Kantenschutzverstärkung für sicheres Handling per Gabelstapler und Containerversand.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
 
   <div style="text-align: center; margin: 40px 0;">
     <a href="/custom-glassware-quote-checklist" class="btn-quote" style="font-size: 1.05rem; padding: 12px 28px;">Kostenloses Großhandelsangebot Anfordern</a>
