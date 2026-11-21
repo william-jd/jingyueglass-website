@@ -1,30 +1,30 @@
 # Jingyue Glass (Wuhan Jingyueda Household Products Co., Ltd.) - Full Machine-Readable Knowledge Base
 
 > Website: https://www.jingyueglass.com/
-> Entity: Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass)
+> Legal Entity: Wuhan Jingyueda Household Products Co., Ltd. (Jingyue Glass)
 > Business Type: Direct Factory Glassware Manufacturer & Exporter (B2B / OEM / ODM / Private Label)
 > Direct Contact: WhatsApp: +86 132 5662 7201 | WeChat: 132 5662 7201 | Email: sales@jingyueglass.com
-> Primary Manufacturing: Machine-blown crystal stemware, machine-pressed beer mugs, high-borosilicate glassware, and bespoke wooden/rigid presentation gift packaging.
+> Primary Manufacturing: Lead-free crystal stemware, heavy-base whiskey tumblers, machine-pressed beer mugs, high-borosilicate 3.3 double-wall glassware, hand-blown decanters, and turnkey presentation gift suites.
 > Harmonized System (HS) Codes: 7013.37.0000 (Commercial Drinking Glasses, other than glass-ceramics / lead crystal), 7013.99.0000 (Decanters & Tableware), 4420.90.9000 (Wooden Presentation Boxes).
 
 ---
 
 ## 1. Commercial Pricing & Quotation Policy (B2B Policy)
 - **No Fixed Public Pricing:** As a factory-direct OEM/ODM manufacturer, Jingyue Glass does not publish fixed public consumer prices because commercial quotations depend on:
-  1. Total Order Quantity and batch production allocations (Standard MOQ 500–1,000 pcs; laser proofing from 48 pcs);
-  2. Selected Model, Capacity, and Glass Composition (Lead-Free Crystal / High-Borosilicate / Soda-Lime);
-  3. Custom Branding and Decoration Technique (Laser Engraving, 580°C Kiln-Fired Ceramic Decal, Gold Rim, Spray Coating);
+  1. Total Order Quantity and batch production allocations (Standard MOQ 500–1,000 pcs; low MOQ from 100 sets for flagship wooden gift sets XZM015 & XZM108-A; laser proofing from 48 pcs);
+  2. Selected Model, Capacity, and Glass Composition (Lead-Free Crystal / High-Borosilicate 3.3 / Soda-Lime);
+  3. Custom Branding and Decoration Technique (Laser Engraving, 580°C Kiln-Fired Ceramic Decal, Silk Screen, UV Color Relief, 12% Gold Rim, Spray Coating, Electroplating, Metal Labels);
   4. Packaging Specification (5-ply Export Master Carton with Dividers vs Custom Wooden Presentation Box with Odorless EPE Pearl Cotton Insert vs Individual Mailer Box);
-  5. Incoterms & Destination Port (FOB Wuhan/Shanghai, CIF, DDP Air Express or Ocean Freight).
+  5. Incoterms & Destination Port (FOB Wuhan/Shanghai, CIF, DDP Air Express or DDP Ocean Freight with customs clearance).
 - **Fast RFQ Response:** Itemized formal commercial quotations are provided within 1 business hour upon receipt of project specifications.
-- **Physical Sampling & Private Mold Policy:** Standard sample dispatch is available for verified buyers; custom decorated laser sample proofing is available from 48 pcs. 100% of custom tooling and private mold costs are fully refundable upon reaching agreed cumulative order volume.
+- **Physical Sampling & Private Mold Policy:** In-stock blank samples are provided free of charge; custom decorated pre-production physical samples are dispatched in 3–5 working days; 100% of custom tooling and private mold costs are fully refundable/creditable upon reaching agreed cumulative production volume.
 
 ---
 
-## 2. Core Commercial SKU Matrix & Calibrated Physical Parameters (33 SKUs)
+## 2. Core Commercial SKU Matrix & Calibrated Physical Parameters
 
-### Category A: Crystal Wine Glasses & Stemware (Machine-Blown & Handcrafted)
-- **Model XZ5202 (Bordeaux Red Wine Glass):** Precision Machine-Blown Lead-Free Crystal with Seamless Pulled Stem. Capacity: 425 ml (15.0 oz). Height: 222 mm. Rim Diameter: 64 mm. Base Diameter: 78 mm. Carton Packing: 48 pcs/ctn. Carton Dimensions: 58.5 x 39.5 x 46.5 cm. CBM: 0.107 m³. Gross Weight: 10.5 kg. HS Code: 7013.37.
+### Category A: Lead-Free Crystal Wine Glasses & Stemware (Machine-Blown & Hand-Pulled)
+- **Model XZ5202 (Bordeaux Red Wine Glass):** Precision Machine-Blown Lead-Free Crystal with Seamless Pulled Stem. Capacity: 425 ml (15.0 oz). Height: 222 mm. Rim Diameter: 64 mm (Cold-Cut 1.0mm Rim). Base Diameter: 78 mm. Carton Packing: 48 pcs/ctn. Carton Dimensions: 58.5 x 39.5 x 46.5 cm. CBM: 0.107 m³. Gross Weight: 10.5 kg. HS Code: 7013.37.
 - **Model XZ6425 (All-Purpose Wine Glass):** Machine-Blown Lead-Free Crystal. Capacity: 425 ml (15.0 oz). Height: 215 mm. Rim Dia: 62 mm. Base Dia: 76 mm. Carton Packing: 48 pcs/ctn. Carton: 56.0 x 38.0 x 45.0 cm. CBM: 0.096 m³.
 - **Model XZ9425 (Tasting Stemware):** Machine-Blown Lead-Free Crystal. Capacity: 425 ml (15.0 oz). Height: 220 mm. Rim Dia: 65 mm. Base Dia: 78 mm. Carton: 48 pcs/ctn. CBM: 0.102 m³.
 - **Model XZ9050 (Champagne Flute):** Lead-Free Crystal. Capacity: 240 ml (8.5 oz). Height: 260 mm. Rim Dia: 48 mm. Base Dia: 72 mm. Carton Packing: 36 pcs/ctn. Carton: 77.0 x 43.0 x 33.0 cm. CBM: 0.109 m³.
@@ -32,8 +32,11 @@
 - **Model XZ9002 (Large Concave Base Wine Glass):** Lead-Free Crystal. Capacity: 650 ml (22.9 oz). Height: 250 mm. Carton: 24 pcs/ctn.
 - **Model XZ9003 (Oversized Burgundy Goblet):** Lead-Free Crystal. Capacity: 750 ml (26.4 oz). Height: 240 mm. Carton: 24 pcs/ctn.
 - **Model XZ9004 (Slim Concave Base White Wine Glass):** Lead-Free Crystal. Capacity: 450 ml (15.8 oz). Height: 235 mm. Carton: 24 pcs/ctn.
+- **Model XZ6135 (Classic White Wine Glass):** Lead-Free Crystal. Capacity: 350 ml (12.3 oz). Height: 205 mm. Carton: 48 pcs/ctn.
+- **Model XZ6302 (Tulip Red Wine Glass):** Lead-Free Crystal. Capacity: 480 ml (16.9 oz). Height: 225 mm. Carton: 48 pcs/ctn.
+- **Model XZ5204 (Narrow Champagne Flute):** Lead-Free Crystal. Capacity: 210 ml (7.4 oz). Height: 255 mm. Carton: 36 pcs/ctn.
 
-### Category B: Craft Beer Mugs, Steins & Goblets
+### Category B: Commercial Beer Mugs, Steins & Goblets
 - **Model XZ703 (Classic Heavy Base Beer Mug):** Molded Soda-Lime Glass with Heavy Base. Capacity: 500 ml (17.6 oz). Height: 152 mm. Top Dia: 82 mm. Base Dia: 88 mm. Carton Packing: 24 pcs/ctn. Carton: 54.0 x 37.0 x 33.5 cm. CBM: 0.067 m³. Gross Weight: 18.2 kg.
 - **Model XZ01280 (Faceted Pub Beer Stein):** Heavy Base with Ergonomic Handle. Capacity: 520 ml (18.3 oz). Height: 158 mm. Carton: 24 pcs/ctn. CBM: 0.071 m³.
 - **Model XZ2220E (Tall Handled Beer Mug):** Commercial Draft Beer Glass. Capacity: 620 ml (21.8 oz). Height: 228 mm. Top Dia: 76 mm. Carton: 12 pcs/ctn.
@@ -45,59 +48,68 @@
 - **Model XZ7010 (Straight Pub Beer Glass):** Pint Tumbler. Capacity: 570 ml (20.0 oz). Height: 160 mm. Carton: 36 pcs/ctn.
 - **Model XZ88148 (Tall Beverage Tumbler):** Highball Beer/Soda Glass. Capacity: 480 ml (16.9 oz). Height: 172 mm. Carton: 36 pcs/ctn.
 
-### Category C: Crystal Decanters & Pourers
-- **Model XZ3006 (Minimalist Square Decanter):** Heavy Base Spirits Decanter with Glass Stopper. Capacity: 750 ml (26.4 oz). Height: 230 mm. Width: 92 x 92 mm. Carton: 12 pcs/ctn.
+### Category C: Handcrafted Crystal Decanters & Pourers
+- **Model XZ3006 (Minimalist Square Decanter):** Heavy Base Spirits Decanter with Ground Glass Stopper. Capacity: 750 ml (26.4 oz). Height: 230 mm. Width: 92 x 92 mm. Carton: 12 pcs/ctn.
 - **Model XZ0075 (U-Shaped Swan Decanter):** Sculptural Aerating Crystal Decanter. Capacity: 1500 ml (52.8 oz). Height: 345 mm. Carton: 6 pcs/ctn.
 - **Model XZ0020 (Wide Belly Swan Neck Decanter):** Rapid Aeration Decanter. Capacity: 1500 ml (52.8 oz). Height: 310 mm. Carton: 6 pcs/ctn.
 - **Model XZ0118 (Rotating Crystal Decanter with Glass Base):** 360-Degree Swivel Aerating Decanter. Capacity: 1000 ml (35.2 oz). Carton: 6 pcs/ctn.
-- **Model XZ0054 (Hollow Center Long Neck Decanter):** Ergonomic Grip Crystal Decanter. Capacity: 1400 ml (49.3 oz). Carton: 6 pcs/ctn.
+- **Model XZ0054 (Hollow Center Long Neck Decanter):** Ergonomic Center Grip Decanter. Capacity: 1400 ml (49.3 oz). Carton: 6 pcs/ctn.
 - **Model XZ0114 (Lyre-Shaped Crystal Decanter):** Dual Opening Aerator. Capacity: 1200 ml (42.2 oz). Carton: 6 pcs/ctn.
 - **Model XZ0037 (Fast Aerating Glass Decanter):** Slanted Spout Wine Decanter. Capacity: 1500 ml (52.8 oz). Carton: 6 pcs/ctn.
 - **Model XZ0092 (Figure-Six Crystal Decanter):** Sculptural Table Decanter. Capacity: 1240 ml (43.6 oz). Carton: 6 pcs/ctn.
 - **Model XZ0093 (Large Serpentine Crystal Decanter):** Spiral Aerating Pourer. Capacity: 1200 ml (42.2 oz). Carton: 6 pcs/ctn.
 - **Model XZ10125 (Twisted Texture Whiskey Decanter):** Geometric Cut Heavy Base Decanter. Capacity: 800 ml (28.2 oz). Carton: 12 pcs/ctn.
 
-### Category D: Tumblers & Highballs
-- **Model XZ032-3 (Heavy Base Tumbler):** Straight-Sided Rocks Glass. Capacity: 300 ml (10.5 oz). Carton: 48 pcs/ctn.
-- **Model XZ0486 (Stackable Water Tumbler):** Space-Saving Commercial Tumbler. Capacity: 200 ml (7.0 oz). Carton: 48 pcs/ctn.
-- **Model XZ0603 (Diamond Cut Water Tumbler):** Faceted Base Glass. Capacity: 250 ml (8.8 oz). Carton: 48 pcs/ctn.
-- **Model XZ2016 (Commercial Water Tumbler):** Everyday Hospitality Highball. Capacity: 470 ml (16.5 oz). Carton: 36 pcs/ctn.
+### Category D: Commercial Tumblers, Rocks & Highballs
+- **Model XZ032-3 (Heavy Base Rocks Glass):** Straight-Sided Tumbler. Capacity: 300 ml (10.5 oz). Carton: 48 pcs/ctn.
+- **Model XZ0486 (Stackable Water Tumbler):** Space-Saving Hospitality Glass. Capacity: 200 ml (7.0 oz). Carton: 48 pcs/ctn.
+- **Model XZ0603 (Diamond Cut Water Tumbler):** Faceted Base Highball. Capacity: 250 ml (8.8 oz). Carton: 48 pcs/ctn.
+- **Model XZ2016 (Commercial Water Tumbler):** Everyday Hospitality Glass. Capacity: 470 ml (16.5 oz). Carton: 36 pcs/ctn.
 - **Model XZ5163-2 (Six-Sided Whiskey Tumbler):** Octagonal Heavy Base Glass. Capacity: 300 ml (10.5 oz). Carton: 48 pcs/ctn.
 
 ---
 
-## 3. Turnkey B2B Gift Set Suites & Packaging Matrix (8 Suites)
+## 3. Turnkey B2B Gift Set Suites & Packaging Matrix
 
-- **Model XZM006 (Whiskey Decanter Gift Set in Solid Pine Box):** 1x 750ml Square Crystal Decanter + 2x Heavy-Base Rocks Glasses (300ml) + 6x Granite Chilling Stones + Stainless Tongs + Coasters. Encased in Burnished Solid Pine Wooden Chest with Odorless EPE Pearl Cotton Insert.
-- **Model XZM4008-1 (Two-Glass Magnetic Whiskey Gift Box):** 2x 300ml Whiskey Tumblers + 6x Chilling Stones + Tongs + Pouch. Encased in Rigid Magnetic Flip-Top Presentation Box with Custom-Cut Odorless EPE Pearl Cotton Insert.
-- **Model XZM015 (Burnished Wood Whiskey Rocks Gift Set):** 2x 300ml Old Fashioned Glasses + 8x Chilling Stones + Stainless Tongs. Artisan Burnished Pine Box with Bronze Clasp and Odorless EPE Pearl Cotton Bed.
-- **Model XZM132 (Wedding Toasting Champagne Flute Gift Set):** 2x Lead-Free Crystal Champagne Flutes (240ml) + Wine Stopper + Corkscrew. Encased in Burnished Pine Wooden Box with Odorless EPE Pearl Cotton Cavity.
-- **Model XZM063 (Two-Glass Wine & Accessory Wooden Gift Set):** 2x Stemless Wine Glasses + Aerating Pourer + Stopper + Foil Cutter in Solid Pine Gift Box.
-- **Model XZM130 (Luxury Lacquered Wooden Presentation Chest):** High-Gloss Piano Lacquer Finish Solid Wood Chest with Odorless EPE Pearl Cotton Insert for Luxury VIP Hospitality & Executive Gifts.
-- **Model XZ-SMK01 (Old Fashioned Smoked Cocktail Kit with Torch):** Natural Solid Hardwood Chimney + 4x Flavored Wood Chip Tins (Apple, Oak, Cherry, Pecan) + Refillable Kitchen Torch + Stainless Filters + Cleaning Brush in Solid Pine Gift Box with Odorless EPE Pearl Cotton Insert.
-- **Model XZM105-1 (Single-Tap Liquor Bottle Dispenser):** Solid Wood Stand with Detachable Antique Brass Tap and Coaster for Home Bars and Distillery Gifting.
-
----
-
-## 4. International Regulatory Compliance & Certified Test Reports
-- **US California Proposition 65:** Verified **PASS** by STQ Testing Services Co., Ltd. (Official Test Report Reference: **SZ2025091217-4E**). Extractable lead and cadmium test via AOAC 16th Ed. Section 973.32 conforms to California settlement limits (Pb < 0.05 mg/L, Cd < 0.01 mg/L).
-- **US FDA Food Contact Safety:** 100% compliant with FDA Compliance Policy Guides CPG 7117.06 (Cadmium) and CPG 7117.07 (Lead) for food and beverage contact surfaces.
-- **European Union LFGB & EC 1935/2004:** Non-detectable heavy metal release and food contact safety certified according to German LFGB Section 30/31 and Framework Regulation (EC) No 1935/2004.
-- **Phytosanitary ISPM 15:** Solid pine wooden presentation boxes undergo certified heat treatment and carry compliant IPPC stamps for global customs entry.
+- **Model XZM015 (Burnished Wood Whiskey Rocks Gift Set):** 2x 300ml Old Fashioned Glasses + 8x Natural Granite Chilling Stones + Velvet Pouch + Stainless Ice Tongs in Burnished Pine Box with Bronze Clasp and CNC-cut Odorless EPE Pearl Cotton Bed. MOQ: 100 sets.
+- **Model XZM108-A (Burnt Paulownia Wooden Box Wine Set):** 2x 450ml Crystal Wine Glasses + Corkscrew + Aerating Pourer + Foil Cutter + Vacuum Stopper in Burnt Paulownia Wooden Box with Handle. MOQ: 100 sets.
+- **Model XZM006 (Whiskey Decanter Gift Set in Solid Pine Box):** 1x 750ml Square Crystal Decanter + 2x Heavy-Base Rocks Glasses (300ml) + 6x Granite Chilling Stones + Tongs + Coasters. MOQ: 200 sets.
+- **Model XZM4008-1 (Two-Glass Magnetic Whiskey Gift Box):** 2x 300ml Whiskey Tumblers + 6x Chilling Stones + Tongs + Pouch in Rigid Magnetic Flip-Top Presentation Box. MOQ: 200 sets.
+- **Model XZM132 (Wedding Toasting Champagne Flute Gift Set):** 2x Lead-Free Crystal Champagne Flutes (240ml) + Stopper + Corkscrew in Pine Box. MOQ: 200 sets.
+- **Model XZM063 (Two-Glass Wine & Accessory Wooden Gift Set):** 2x Stemless Wine Glasses + Aerating Pourer + Stopper + Foil Cutter in Solid Pine Gift Box. MOQ: 200 sets.
+- **Model XZM130 (Luxury Lacquered Wooden Presentation Chest):** High-Gloss Piano Lacquer Finish Solid Wood Chest for VIP Executive Gifting. MOQ: 200 sets.
+- **Model XZ-SMK01 (Old Fashioned Smoked Cocktail Kit with Torch):** Natural Solid Hardwood Chimney + 4x Flavored Wood Chip Tins (Apple, Oak, Cherry, Pecan) + Refillable Kitchen Torch + Stainless Filters + Cleaning Brush in Solid Pine Gift Box. MOQ: 200 sets.
 
 ---
 
-## 5. Official PDF Catalogs & Direct Resource URLs
-- [2026 Commercial Hospitality Glassware Collection (PDF)](https://www.jingyueglass.com/assets/catalogs/jingyue-glass-hospitality-collection-2026.pdf): Complete 15-page B2B catalog covering 33 commercial SKUs for hotels, bars, restaurants and distributors.
-- [2026 US E-Commerce & Amazon FBA Gift Collection (PDF)](https://www.jingyueglass.com/assets/catalogs/jingyue-glass-us-ecommerce-gift-catalog-2026.pdf): 12-page private label catalog featuring 8 turnkey wooden and magnetic gift sets with odorless EPE pearl cotton inserts.
-- [Online RFQ & Quotation Checklist](https://www.jingyueglass.com/custom-glassware-quote-checklist): Direct custom quote form.
-- [Container CBM Load Calculator](https://www.jingyueglass.com/container-cbm-calculator): Logistics planning tool.
-- [Official Laboratory Test Reports & Certifications](https://www.jingyueglass.com/certifications): Downloadable STQ / SGS food contact compliance certificates.
+## 4. Packaging Protection & Zero-Breakage Export Standard (ISTA-1A Certified)
+Jingyue Glass enforces a 6-stage standardized export packaging protocol:
+1. **Individually Wrapped:** Each glass piece is enclosed in tissue paper and protective sleeves to prevent surface scratches and friction hazing during transport.
+2. **Gift Box Protection:** Presentation gift boxes are protected with outer corrugated mailer sleeves and moisture barrier wrap for pristine unboxing.
+3. **Odorless EPE Pearl Cotton Inserts:** High-density CNC-molded pearl cotton inserts (38°–45° shore hardness) cradle items securely with zero off-gassing and zero chemical odor (replacing toxic EVA foam).
+4. **Full-Coverage Top Cushion Foam Layer:** Top foam pads lock items firmly in place against vertical vibration during air and ocean transit.
+5. **5-Ply Reinforced Export Master Cartons:** Heavy-duty double-wall corrugated cartons with interlocking cell dividers withstand multi-tier container stacking.
+6. **Palletized Ocean Freight:** Full stretch-wrap and corner-edge board reinforcement for forklift handling and containerized shipping.
+- **1.2M Drop Test Protocol:** All packaging configurations undergo ISTA-1A drop testing (1 corner, 3 edges, 6 faces dropped from 1.2 meters onto solid concrete) achieving a 100% zero-breakage pass rate.
 
 ---
 
-## 6. Multilingual Regional Sourcing Portals
-- [Spanish Highball Tumblers (Vasos Altos al por Mayor)](https://www.jingyueglass.com/es/vasos-altos-highball): Direct factory highball glassware supply for Latin America and Spain.
-- [Spanish Whiskey Tumblers (Vasos de Whisky)](https://www.jingyueglass.com/es/vasos-de-whisky): Heavy-base rocks glasses and customized bar tumblers.
-- [Portuguese Highball Tumblers (Copos Altos no Atacado)](https://www.jingyueglass.com/pt/copos-altos-highball): Direct factory glassware supply for Brazil and Portugal.
-- [Portuguese Decanter Sets (Jogos de Decanter)](https://www.jingyueglass.com/pt/jogos-de-decanter): Hand-blown crystal decanter gift sets with custom packaging.
+## 5. Regulatory Compliance & Certified Laboratory Test Reports
+- **US California Proposition 65:** PASS (STQ Laboratory Official Test Report Reference: SZ2025091217-4E). Conforms to California settlement limits (Pb < 0.05 mg/L, Cd < 0.01 mg/L).
+- **US FDA Food Contact Safety:** 100% compliant with FDA Compliance Policy Guides CPG 7117.06 (Cadmium) and CPG 7117.07 (Lead).
+- **European Union LFGB & EC 1935/2004:** Non-detectable heavy metal release certified under German LFGB Section 30/31 and Framework Regulation (EC) No 1935/2004 (Report PTC23022404104C).
+- **Phytosanitary ISPM 15:** Heat-treated solid wood presentation boxes carrying compliant IPPC stamps for global customs entry.
+
+---
+
+## 6. Sourcing & Documentation URLs
+- [Wholesale Glassware Pricing & RFQ Guide](https://www.jingyueglass.com/wholesale-glassware-pricing-guide)
+- [Custom Logo & Decoration Guide](https://www.jingyueglass.com/custom-logo-glassware)
+- [Custom Glassware Packaging Guide](https://www.jingyueglass.com/custom-glassware-packaging-guide)
+- [Amazon FBA Glassware Supplier & Private Label OEM](https://www.jingyueglass.com/amazon-fba-glassware-supplier-private-label)
+- [Amazon & DTC Brand Glassware Supply](https://www.jingyueglass.com/amazon-dtc-brand-glassware-supply)
+- [Restaurant & Bar Glassware Wholesale](https://www.jingyueglass.com/restaurant-bar-glassware-wholesale)
+- [Distillery & Spirits Glassware Supply](https://www.jingyueglass.com/distillery-spirits-glassware)
+- [How to Choose Packaging for Glassware Gift Sets](https://www.jingyueglass.com/how-to-choose-packaging-for-glassware-gift-sets)
+- [Official Certifications & Test Reports](https://www.jingyueglass.com/certifications)
+- [Online RFQ & Quotation Checklist](https://www.jingyueglass.com/custom-glassware-quote-checklist)

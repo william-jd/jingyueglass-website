@@ -1,21 +1,39 @@
+# robots.txt for https://www.jingyueglass.com/
 User-agent: *
 Allow: /
 
-# AI Search & LLM Crawlers
+# AI Search Engines & LLM Web Crawlers (Full Crawling & Indexing Allowed)
 User-agent: GPTBot
 Allow: /
 
-User-agent: ClaudeBot
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: ClaudeBot
+Allow: /
+
 User-agent: Applebot
 Allow: /
 
-# Block unnecessary paths
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Block unnecessary server paths
 Disallow: /cdn-cgi/
+
+# LLM Machine-Readable Knowledge Indexes
+# Specification: https://llmstxt.org/
+LLM-Index: https://www.jingyueglass.com/llms.txt
+LLM-Full-Index: https://www.jingyueglass.com/llms-full.txt
 
 # Sitemaps
 Sitemap: https://www.jingyueglass.com/sitemap.xml
