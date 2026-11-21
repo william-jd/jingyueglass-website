@@ -41,6 +41,16 @@
       "source": "/oem-custom-glassware",
       "destination": "/custom-logo-glassware",
       "permanent": true
+    },
+    {
+      "source": "/coffee-mugs",
+      "destination": "/coffee-tea-mugs",
+      "permanent": true
+    },
+    {
+      "source": "/coffee-mugs.html",
+      "destination": "/coffee-tea-mugs",
+      "permanent": true
     }
   ]
 }
