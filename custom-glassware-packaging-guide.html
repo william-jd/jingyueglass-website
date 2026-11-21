@@ -176,6 +176,24 @@
     }
   }
 
+
+  /* ── 6-CARD PROTECTIVE PACKAGING GALLERY ── */
+  .pack-showcase-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 18px; }
+  .pack-showcase-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(13,37,64,0.05); display: flex; flex-direction: column; transition: transform 0.25s, box-shadow 0.25s; }
+  .pack-showcase-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(13,37,64,0.1); border-color: #cbd5e1; }
+  .pack-showcase-img { width: 100%; height: 180px; background: #f1f5f9; overflow: hidden; }
+  .pack-showcase-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.3s; }
+  .pack-showcase-card:hover .pack-showcase-img img { transform: scale(1.03); }
+  .pack-showcase-body { padding: 16px; flex: 1; display: flex; flex-direction: column; }
+  .pack-showcase-body h4 { margin: 0 0 6px; font-size: 16px; font-weight: 700; color: #1a3a5c; }
+  .pack-showcase-body p { margin: 0; font-size: 13px; color: #64748b; line-height: 1.5; }
+  @media (max-width: 900px) {
+    .pack-showcase-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  }
+  @media (max-width: 580px) {
+    .pack-showcase-grid { grid-template-columns: 1fr; }
+  }
+
 </style>
 
 <!-- Open Graph & Twitter Cards -->
@@ -226,6 +244,84 @@
     <section class="hero"><div class="wrap"><div class="eyebrow">For gift companies, ecommerce sellers and retail brands</div><h2>Custom Glassware Packaging Guide for Gift Boxes, Inserts, Labels and Export Cartons</h2><p>Plan packaging before quotation so the glassware, decoration, inner protection and carton route can be reviewed as one B2B project.</p><a class="cta" href="/#inquiry">Request Packaging Quote</a><a class="cta secondary" href="/gift-sets">Browse Gift Sets</a></div></section>
     <section class="section"><div class="wrap quick"><strong>Quick answer:</strong> A custom glassware packaging quote should include the glass item, set configuration, box type, insert or divider, logo or artwork area, barcode and label needs, master carton requirements, destination and target quantity. Custom packaging MOQ may differ from the glassware MOQ, so both should be reviewed together.</div></section>
     <section class="section alt"><div class="wrap"><h2>Why packaging must be discussed before price comparison</h2><p class="lead">Glassware buyers often compare unit prices before the packaging route is clear. That can create misleading comparisons because bulk cartons, color boxes, rigid gift boxes, foam inserts and ecommerce-ready protection can change material cost, carton volume, labor and MOQ. For Jingyue Glass projects, packaging is treated as part of the product specification rather than a final add-on.</p><div class="grid"><article class="card"><h3>Retail display</h3><p>Color boxes, window boxes, barcode areas and shelf-facing artwork should be reviewed with the chosen glass size and quantity.</p></article><article class="card"><h3>Gift presentation</h3><p>Wooden boxes, rigid boxes, fitted inserts and accessories can improve perceived value but need a separate MOQ and structure check.</p></article><article class="card"><h3>Export protection</h3><p>Inner dividers, foam, molded inserts and reinforced outer cartons reduce breakage risk when they match the actual decorated product.</p></article></div></div></section>
+    
+    <!-- ── 6-CARD PROTECTIVE PACKAGING GALLERY ── -->
+    <div class="packaging-showcase-section" style="margin: 36px 0;">
+      <div style="margin-bottom: 22px;">
+        <span style="color: #c8930a; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 4px;">PROTECTIVE PACKAGING</span>
+        <h2 style="font-size: clamp(20px, 3vw, 28px); color: #0d2540; font-weight: 800; margin: 0 0 6px; border-left: none; padding-left: 0;">Protection You Can See — Zero-Breakage Export Standard</h2>
+        <p style="color: #64748b; font-size: 14px; margin: 0; line-height: 1.55;">From individual piece wrapping to cell-divided master cartons and palletized ocean freight, our standardized packaging procedures protect your glassware at every step.</p>
+      </div>
+
+      <div class="pack-showcase-grid">
+        <!-- Card 1 -->
+        <div class="pack-showcase-card">
+          <div class="pack-showcase-img">
+            <img src="https://huahanggifts.com/images/shipping-support/wrapped-glasses.jpg" alt="Individually Wrapped Glassware Protection" loading="lazy">
+          </div>
+          <div class="pack-showcase-body">
+            <h4>Individually Wrapped</h4>
+            <p>Each glass is enclosed in tissue paper and protective sleeves to prevent surface scratches and friction hazing during transport.</p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="pack-showcase-card">
+          <div class="pack-showcase-img">
+            <img src="https://huahanggifts.com/images/shipping-support/wrapped-gift-box.jpg" alt="Gift Box Protection with Outer Corrugated Sleeves" loading="lazy">
+          </div>
+          <div class="pack-showcase-body">
+            <h4>Gift Box Protection</h4>
+            <p>Presentation gift boxes are protected with outer corrugated mailer sleeves and moisture barrier wrap for pristine unboxing.</p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="pack-showcase-card">
+          <div class="pack-showcase-img">
+            <img src="https://huahanggifts.com/images/shipping-support/foam-corners-clean-web-20261118.webp" alt="Odorless EPE Pearl Cotton CNC Cut Inserts" loading="lazy">
+          </div>
+          <div class="pack-showcase-body">
+            <h4>Odorless EPE Pearl Cotton</h4>
+            <p>Custom CNC-cut odorless EPE pearl cotton inserts cradle the glass precisely, absorbing transit shocks with zero off-gassing.</p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="pack-showcase-card">
+          <div class="pack-showcase-img">
+            <img src="https://huahanggifts.com/images/shipping-support/foam-top-clean-web-20261118.webp" alt="Full-Coverage Top Cushion Foam Layer" loading="lazy">
+          </div>
+          <div class="pack-showcase-body">
+            <h4>Top Cushion Layer</h4>
+            <p>Full-coverage top foam pads lock items firmly in place against vertical vibration during long-distance air and ocean transit.</p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="pack-showcase-card">
+          <div class="pack-showcase-img">
+            <img src="https://huahanggifts.com/images/shipping-support/carton-corners.jpg" alt="5-Ply Export Master Carton with Cell Dividers" loading="lazy">
+          </div>
+          <div class="pack-showcase-body">
+            <h4>5-Ply Export Master Carton</h4>
+            <p>Heavy-duty reinforced 5-ply corrugated export cartons with interlocking cell dividers withstand multi-tier container stacking.</p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="pack-showcase-card">
+          <div class="pack-showcase-img">
+            <img src="https://huahanggifts.com/images/shipping-support/loaded-pallets.jpg" alt="Palletized Ocean Freight with Corner Protectors" loading="lazy">
+          </div>
+          <div class="pack-showcase-body">
+            <h4>Palletized Ocean Freight</h4>
+            <p>Full stretch-wrap and corner-edge board reinforcement for forklift handling and seamless containerized shipping.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <section class="section"><div class="wrap"><h2>Packaging options buyers should define</h2><div class="table-wrap"><table><thead><tr><th>Packaging element</th><th>Typical options</th><th>What buyers should confirm</th></tr></thead><tbody><tr><td>Inner protection</td><td>Paper divider, foam insert, molded pulp, odorless EPE pearl cotton or fitted tray</td><td>Glass dimensions, weight, coating or logo position, ecommerce drop risk and export carton layout.</td></tr><tr><td>Retail box</td><td>White box, kraft box, color box, window box or rigid gift box</td><td>Artwork file, barcode area, language, finish, shelf display and whether the box is for retail or gifting.</td></tr><tr><td>Gift-set structure</td><td>Wine glass set, whiskey glass set, decanter set, flute set or accessory set</td><td>Exact components, each product size, insert layout, accessory position and final pack-out weight.</td></tr><tr><td>Outer carton</td><td>Master carton, reinforced carton, carton marks, pallet discussion</td><td>Units per carton, destination, shipping method, handling marks and breakage-control expectations.</td></tr><tr><td>Labels and compliance support</td><td>Barcode sticker, SKU label, carton mark, warning label or importer label</td><td>Buyer-supplied label content, destination market and whether the label is for unit box, carton or both.</td></tr></tbody></table></div></div></section>
     <section class="section alt"><div class="wrap"><h2>MOQ drivers for custom glassware packaging</h2><p class="lead">There is no universal packaging MOQ. A standard carton label, printed color box, rigid gift box and fitted insert may all have different setup and material requirements. Buyers can reduce risk by separating the first test order from the scale order.</p><div class="checklist"><div class="check"><strong>Start with existing glass shapes</strong><br>Use a confirmed glass or set before investing in a fully customized box.</div><div class="check"><strong>Keep the first pack-out simple</strong><br>For market testing, standard cartons or simpler printed labels may be more practical than a complex gift box.</div><div class="check"><strong>Confirm carton volume early</strong><br>Packaging affects freight volume and landed cost, not only unit price.</div><div class="check"><strong>Check the decorated sample in the final insert</strong><br>Logo, coating or accessories can change how the glass fits inside the box.</div></div></div></section>
     <section class="section"><div class="wrap"><h2>RFQ checklist for glassware packaging</h2><div class="table-wrap"><table><thead><tr><th>Send this detail</th><th>Example</th><th>Why it matters</th></tr></thead><tbody><tr><td>Product or SKU</td><td>Wine glass, whiskey glass, beer mug, decanter or gift set SKU</td><td>Packaging is designed around the actual glass size and weight.</td></tr><tr><td>Packaging purpose</td><td>Retail shelf, ecommerce shipping, corporate gift, supermarket display</td><td>Different channels need different protection and presentation.</td></tr><tr><td>Box style reference</td><td>Photo, dieline, material preference or similar box link</td><td>Helps the supplier identify whether an existing route or new box structure is needed.</td></tr><tr><td>Artwork and labels</td><td>Logo, barcode, carton mark, warning label, language version</td><td>Artwork affects printing route, proofing and label placement.</td></tr><tr><td>Quantity and destination</td><td>Order quantity, destination country/city and shipping term</td><td>MOQ, carton count and shipping basis cannot be reviewed without quantity and destination.</td></tr></tbody></table></div></div></section>
