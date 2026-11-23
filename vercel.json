@@ -61,6 +61,76 @@
       "source": "/industries/amazon-dtc-brand-glassware-supply.html",
       "destination": "/amazon-dtc-brand-glassware-supply",
       "permanent": true
+    },
+    {
+      "source": "/hotel-restaurant-glassware-supply",
+      "destination": "/hospitality-restaurant-glassware",
+      "permanent": true
+    },
+    {
+      "source": "/hotel-restaurant-glassware-supply.html",
+      "destination": "/hospitality-restaurant-glassware",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant-bar-glassware-wholesale",
+      "destination": "/hospitality-restaurant-glassware",
+      "permanent": true
+    },
+    {
+      "source": "/restaurant-bar-glassware-wholesale.html",
+      "destination": "/hospitality-restaurant-glassware",
+      "permanent": true
+    },
+    {
+      "source": "/borosilicate-vs-soda-lime-glass-sourcing-guide",
+      "destination": "/borosilicate-vs-soda-lime-glass-commercial-comparison",
+      "permanent": true
+    },
+    {
+      "source": "/borosilicate-vs-soda-lime-glass-sourcing-guide.html",
+      "destination": "/borosilicate-vs-soda-lime-glass-commercial-comparison",
+      "permanent": true
+    },
+    {
+      "source": "/corporate-gift-glassware-custom-sets",
+      "destination": "/corporate-luxury-gifting-glassware",
+      "permanent": true
+    },
+    {
+      "source": "/corporate-gift-glassware-custom-sets.html",
+      "destination": "/corporate-luxury-gifting-glassware",
+      "permanent": true
+    },
+    {
+      "source": "/corporate-holiday-glassware-gifts",
+      "destination": "/corporate-luxury-gifting-glassware",
+      "permanent": true
+    },
+    {
+      "source": "/corporate-holiday-glassware-gifts.html",
+      "destination": "/corporate-luxury-gifting-glassware",
+      "permanent": true
+    },
+    {
+      "source": "/luxury-corporate-glassware-gifts",
+      "destination": "/corporate-luxury-gifting-glassware",
+      "permanent": true
+    },
+    {
+      "source": "/luxury-corporate-glassware-gifts.html",
+      "destination": "/corporate-luxury-gifting-glassware",
+      "permanent": true
+    },
+    {
+      "source": "/double-wall-vs-soda-lime-glass-guide",
+      "destination": "/borosilicate-vs-soda-lime-glass-commercial-comparison",
+      "permanent": true
+    },
+    {
+      "source": "/double-wall-vs-soda-lime-glass-guide.html",
+      "destination": "/borosilicate-vs-soda-lime-glass-commercial-comparison",
+      "permanent": true
     }
   ]
 }
