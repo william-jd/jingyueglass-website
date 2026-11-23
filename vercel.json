@@ -51,6 +51,16 @@
       "source": "/coffee-mugs.html",
       "destination": "/coffee-tea-mugs",
       "permanent": true
+    },
+    {
+      "source": "/industries/amazon-dtc-brand-glassware-supply",
+      "destination": "/amazon-dtc-brand-glassware-supply",
+      "permanent": true
+    },
+    {
+      "source": "/industries/amazon-dtc-brand-glassware-supply.html",
+      "destination": "/amazon-dtc-brand-glassware-supply",
+      "permanent": true
     }
   ]
 }
