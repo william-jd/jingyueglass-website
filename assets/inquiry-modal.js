@@ -168,7 +168,7 @@
 
   function replaceLegacyForms(){
     document.querySelectorAll('form').forEach(function(legacyForm){
-      if(legacyForm.id==='jyQuoteForm')return;
+      if(legacyForm.id==='jyQuoteForm'||legacyForm.hasAttribute('data-inline-inquiry'))return;
       var action=(legacyForm.getAttribute('action')||'').toLowerCase();
       var looksLikeInquiry=action.indexOf('formspree.io')>-1||legacyForm.id==='inquiryForm'||legacyForm.closest('#inquiry,.inquiry,.inquiry-section');
       if(!looksLikeInquiry)return;

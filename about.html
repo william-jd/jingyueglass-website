@@ -608,6 +608,26 @@
 <meta name="twitter:description" content="Explore Jingyue Glass (Wuhan Jingyueda) factory capabilities: 50M pcs annual capacity, 5,500m² warehouse, AQL 2.5 QC inspection, FDA/LFGB food contact compliance and global export track record.">
 <meta name="twitter:image" content="/assets/migrated/about-a6d54a9117.webp">
   <link rel="stylesheet" href="/assets/inquiry-modal.css?v=20261114-3">
+<style>
+  .about-inquiry-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-areas:"details form"; gap:48px; align-items:start; }
+  .about-inquiry-grid > *, .about-field { min-width:0; }
+  .about-contact-details { grid-area:details; }
+  .about-inquiry-card { grid-area:form; }
+  .about-form-heading { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:4px 12px; margin-bottom:14px; }
+  .about-optional-fields { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:14px; }
+  .about-field label { display:block; margin-bottom:6px; font-size:.875rem; font-weight:700; color:#334155; }
+  .about-field input, .about-field textarea { display:block; width:100%; box-sizing:border-box; min-height:44px; padding:10px 12px; border:1.5px solid #cbd5e1; border-radius:6px; font:inherit; font-size:1rem; color:#0f172a; background:#fff; }
+  .about-field textarea { resize:vertical; }
+  .about-inquiry-card :is(input,textarea,button):focus-visible { outline:2px solid #1a3a5c; outline-offset:2px; }
+  @media (max-width: 768px) {
+    #inquiry .wrap { width:100%; box-sizing:border-box; }
+    .about-inquiry-grid { grid-template-columns:minmax(0,1fr); grid-template-areas:"form" "details"; gap:32px; }
+    .about-optional-fields { grid-template-columns:minmax(0,1fr); }
+    nav.nav { position:static; height:auto; padding-block:10px; flex-wrap:wrap; gap:8px 16px; }
+    nav.nav .nav-links { min-width:0; max-width:100%; flex-wrap:wrap; gap:4px 16px; }
+    nav.nav .nav-links a { display:inline-flex; align-items:center; min-height:44px; }
+  }
+</style>
 </head>
 <body>
 
@@ -1108,10 +1128,59 @@
 <!-- Direct B2B RFQ Inquiry Form Section -->
 <section class="section" id="inquiry" style="background:#0d2540; color:#fff; padding:70px 0; border-top:1px solid rgba(255,255,255,0.08); margin-top:40px;">
   <div class="wrap" style="max-width:1160px; margin:0 auto; padding:0 20px;">
-    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:48px; align-items:start;">
+    <div class="about-inquiry-grid">
       
-      <!-- Left Column: Start a Conversation & Contacts -->
-      <div>
+      <!-- Direct inquiry form -->
+      <div class="about-inquiry-card" style="background:#ffffff; color:#0f172a; border-radius:14px; padding:32px 28px; box-shadow:0 12px 35px rgba(0,0,0,0.25);">
+        <div class="about-form-heading">
+          <h3 id="about-inquiry-heading" style="font-size:1.35rem; font-weight:800; color:#0f172a; margin:0;">A few details to get started</h3>
+          <span style="font-size:0.8rem; color:#64748b;">* Required</span>
+        </div>
+
+        <div style="background:#f1f5f9; border:1px solid #e2e8f0; border-radius:6px; padding:10px 14px; margin-bottom:20px; font-size:0.82rem; color:#475569;">
+          ⚡ <strong>Direct Factory Review:</strong> We will review your brief and send an itemized quotation draft within 1 business hour.
+        </div>
+
+        <form data-inline-inquiry aria-labelledby="about-inquiry-heading" action="https://formsubmit.co/ajax/sales@jingyueglass.com" method="POST" style="display:flex; flex-direction:column; gap:16px;">
+          <input type="hidden" name="_subject" value="New B2B Inquiry from About Page — Jingyue Glass">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="about-field">
+            <label for="about-rfq-email">Business email *</label>
+            <input id="about-rfq-email" type="email" name="email" autocomplete="email" required placeholder="name@company.com">
+          </div>
+          <div class="about-field">
+            <label for="about-rfq-message">Your project requirements *</label>
+            <textarea id="about-rfq-message" name="message" required rows="4" placeholder="Which glassware do you need? Include any logo, packaging or delivery requirements."></textarea>
+          </div>
+          <div class="about-optional-fields">
+            <div class="about-field">
+              <label for="about-rfq-company">Company (optional)</label>
+              <input id="about-rfq-company" type="text" name="company" autocomplete="organization" placeholder="Company or brand">
+            </div>
+            <div class="about-field">
+              <label for="about-rfq-country">Country / region (optional)</label>
+              <input id="about-rfq-country" type="text" name="country" autocomplete="country-name" placeholder="Destination country">
+            </div>
+            <div class="about-field">
+              <label for="about-rfq-quantity">Estimated quantity (optional)</label>
+              <input id="about-rfq-quantity" type="text" name="quantity" placeholder="e.g. 500 pcs">
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" style="background:#c8930a; color:#fff; border:none; padding:13px 24px; border-radius:8px; font-size:1rem; font-weight:700; cursor:pointer; width:100%; transition:background 0.2s; box-shadow:0 4px 12px rgba(200,147,10,0.3);">
+            Send Inquiry &amp; Get Quotation →
+          </button>
+
+          <p style="font-size:0.78rem; color:#64748b; text-align:center; margin:0;">
+            🔒 Privacy Protected. Direct reply within 1 business hour to your email and WhatsApp.
+          </p>
+        </form>
+      </div>
+
+      <!-- Contact details -->
+      <div class="about-contact-details">
         <span style="display:inline-block; font-size:0.82rem; font-weight:700; color:var(--accent,#c8930a); letter-spacing:1.5px; text-transform:uppercase; margin-bottom:12px;">Start a conversation</span>
         <h2 style="font-size:clamp(1.8rem, 2.8vw, 2.4rem); font-weight:800; line-height:1.2; margin-bottom:18px; color:#fff;">
           Your next custom glassware project starts with a brief.
@@ -1142,62 +1211,6 @@
             </a>
           </div>
         </div>
-      </div>
-
-      <!-- Right Column: Inquiry White Card Form -->
-      <div style="background:#ffffff; color:#0f172a; border-radius:14px; padding:32px 28px; box-shadow:0 12px 35px rgba(0,0,0,0.25);">
-        <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:14px;">
-          <h3 style="font-size:1.35rem; font-weight:800; color:#0f172a; margin:0;">A few details to get started</h3>
-          <span style="font-size:0.8rem; color:#64748b;">* Required</span>
-        </div>
-
-        <div style="background:#f1f5f9; border:1px solid #e2e8f0; border-radius:6px; padding:10px 14px; margin-bottom:20px; font-size:0.82rem; color:#475569;">
-          ⚡ <strong>Direct Factory Review:</strong> We will review your brief and send an itemized quotation draft within 1 business hour.
-        </div>
-
-        <form action="https://formsubmit.co/ajax/sales@jingyueglass.com" method="POST" style="display:flex; flex-direction:column; gap:16px;">
-          <input type="hidden" name="_subject" value="New B2B Inquiry from About Page — Jingyue Glass">
-          <input type="text" name="_gotcha" style="display:none">
-
-          <!-- Row 1: Company + Email * -->
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-            <div>
-              <label style="display:block; font-size:0.84rem; font-weight:700; color:#334155; margin-bottom:6px;">Company</label>
-              <input type="text" name="company" placeholder="e.g. ABC Hospitality / Brand" style="width:100%; padding:10px 12px; border:1.5px solid #cbd5e1; border-radius:6px; font-size:0.92rem; outline:none; box-sizing:border-box;">
-            </div>
-            <div>
-              <label style="display:block; font-size:0.84rem; font-weight:700; color:#334155; margin-bottom:6px;">Business email *</label>
-              <input type="email" name="email" required placeholder="name@company.com" style="width:100%; padding:10px 12px; border:1.5px solid #cbd5e1; border-radius:6px; font-size:0.92rem; outline:none; box-sizing:border-box;">
-            </div>
-          </div>
-
-          <!-- Row 2: Country + Estimated Quantity -->
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-            <div>
-              <label style="display:block; font-size:0.84rem; font-weight:700; color:#334155; margin-bottom:6px;">Country / region</label>
-              <input type="text" name="country" placeholder="e.g. United States, Germany" style="width:100%; padding:10px 12px; border:1.5px solid #cbd5e1; border-radius:6px; font-size:0.92rem; outline:none; box-sizing:border-box;">
-            </div>
-            <div>
-              <label style="display:block; font-size:0.84rem; font-weight:700; color:#334155; margin-bottom:6px;">Estimated quantity</label>
-              <input type="text" name="quantity" placeholder="e.g. 500 pcs, 2,000 pcs" style="width:100%; padding:10px 12px; border:1.5px solid #cbd5e1; border-radius:6px; font-size:0.92rem; outline:none; box-sizing:border-box;">
-            </div>
-          </div>
-
-          <!-- Row 3: Project Requirements * -->
-          <div>
-            <label style="display:block; font-size:0.84rem; font-weight:700; color:#334155; margin-bottom:6px;">Your project requirements *</label>
-            <textarea name="message" required rows="4" placeholder="Products, target occasion, branding or packaging ideas, and your target delivery timeline..." style="width:100%; padding:10px 12px; border:1.5px solid #cbd5e1; border-radius:6px; font-size:0.92rem; outline:none; resize:vertical; box-sizing:border-box;"></textarea>
-          </div>
-
-          <!-- Submit Button -->
-          <button type="submit" style="background:#c8930a; color:#fff; border:none; padding:13px 24px; border-radius:8px; font-size:1rem; font-weight:700; cursor:pointer; width:100%; transition:background 0.2s; box-shadow:0 4px 12px rgba(200,147,10,0.3);">
-            Send Inquiry &amp; Get Quotation →
-          </button>
-
-          <p style="font-size:0.78rem; color:#64748b; text-align:center; margin:0;">
-            🔒 Privacy Protected. Direct reply within 1 business hour to your email and WhatsApp.
-          </p>
-        </form>
       </div>
 
     </div>
@@ -1294,7 +1307,7 @@ document.addEventListener('click', function(e) {
   }, { passive: true });
 </script>
 
-  <script src="/assets/inquiry-modal.js?v=20261114-6" defer></script>
+  <script src="/assets/inquiry-modal.js?v=about-inline-1" defer></script>
 </body>
 </html>
 
