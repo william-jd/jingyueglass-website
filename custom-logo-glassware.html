@@ -13,7 +13,7 @@
     'cookie_flags': 'SameSite=None;Secure'
   });
 </script>
-<script src="/assets/js/b2b-analytics-events.js" defer></script>
+<script src="/assets/js/b2b-analytics-events.js?v=contact-events-1" defer></script>
 <link rel="preconnect" href="https://www.jingyueglass.com">
   <link rel="alternate" hreflang="en" href="https://www.jingyueglass.com/custom-logo-glassware">
   <link rel="alternate" hreflang="x-default" href="https://www.jingyueglass.com/custom-logo-glassware">
@@ -291,6 +291,7 @@
       .jy-quote-body{padding:20px}
     }
   </style>
+<script src="/assets/js/contact-measurement.js?v=contact-events-1" defer></script>
 </head>
 <body>
 
@@ -1063,6 +1064,7 @@
         body: formData,
         headers: { 'Accept': 'application/json' }
       }).then(function(res) {
+        if (res.ok) { if(window.jyContactMeasurement)window.jyContactMeasurement.accepted(e,'formspree'); }
         submitBtn.disabled = false;
         submitBtn.textContent = 'SEND INQUIRY →';
         closeJYQuoteModal();

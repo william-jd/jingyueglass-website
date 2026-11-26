@@ -211,6 +211,7 @@
       .nav-menu{display:none}
     }
   </style>
+<script src="/assets/js/contact-measurement.js?v=contact-events-1" data-contact-only-ga defer></script>
 </head>
 <body>
 
@@ -4058,8 +4059,8 @@
   }
   function closeModal() { document.getElementById('inquiry-modal').classList.remove('active'); }
   function closeModalOverlay(e) { if (e.target.id === 'inquiry-modal') closeModal(); }
-  function handleFormSubmit(e) { e.preventDefault(); alert('Thank you! Your inquiry has been prepared. Redirecting to WhatsApp for instant confirmation.'); window.open('https://wa.me/8613256627201', '_blank'); }
-  function handleModalSubmit(e) { e.preventDefault(); const sku = document.getElementById('modal-sku').value; alert('Thank you! Your inquiry for ' + sku + ' has been prepared. Redirecting to WhatsApp.'); window.open('https://wa.me/8613256627201?text=' + encodeURIComponent('Hello, I would like a quote for ' + sku), '_blank'); closeModal(); }
+  function handleFormSubmit(e) { e.preventDefault(); alert('Thank you! Your inquiry has been prepared. Redirecting to WhatsApp for instant confirmation.'); if(window.jyContactMeasurement)window.jyContactMeasurement.whatsapp(); window.open('https://wa.me/8613256627201?text=Hi%2C%20I%20found%20you%20on%20the%20Jingyue%20Glass%20website.', '_blank'); }
+  function handleModalSubmit(e) { e.preventDefault(); const sku = document.getElementById('modal-sku').value; alert('Thank you! Your inquiry for ' + sku + ' has been prepared. Redirecting to WhatsApp.'); if(window.jyContactMeasurement)window.jyContactMeasurement.whatsapp(); window.open('https://wa.me/8613256627201?text=' + encodeURIComponent('Hi, I found you on the Jingyue Glass website.\n\nHello, I would like a quote for ' + sku), '_blank'); closeModal(); }
 
   function filterBySeries(series, btn) {
     document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));

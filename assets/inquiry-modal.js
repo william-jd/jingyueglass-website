@@ -199,7 +199,7 @@
 
     fetch(endpoint,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
       .then(function(response){if(!response.ok)throw new Error('Submission failed');return response;})
-      .then(function(){form.reset();openSuccess();})
+      .then(function(){if(window.jyContactMeasurement)window.jyContactMeasurement.accepted(event,'formspree');form.reset();openSuccess();})
       .catch(function(){error.textContent='The form could not be sent. Please try again or email sales@jingyueglass.com.';error.classList.add('is-visible');})
       .finally(function(){button.disabled=false;button.textContent='SEND INQUIRY →';});
   }

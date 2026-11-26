@@ -10,25 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // 1. Track WhatsApp Clicks
-  document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp"]').forEach(function(el) {
-    el.addEventListener('click', function() {
-      var text = (el.innerText || el.getAttribute('aria-label') || 'WhatsApp Link').trim();
-      var href = el.getAttribute('href') || '';
-      trackEvent('contact_whatsapp', {
-        event_category: 'Lead',
-        event_label: text,
-        link_url: href,
-        page_location: window.location.pathname
-      });
-      trackEvent('generate_lead', {
-        currency: 'USD',
-        value: 100.0,
-        lead_type: 'whatsapp'
-      });
-    });
-  });
-
   // 2. Track Email Clicks
   document.querySelectorAll('a[href^="mailto:"]').forEach(function(el) {
     el.addEventListener('click', function() {
@@ -38,11 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
         event_category: 'Lead',
         event_label: email,
         page_location: window.location.pathname
-      });
-      trackEvent('generate_lead', {
-        currency: 'USD',
-        value: 50.0,
-        lead_type: 'email'
       });
     });
   });
@@ -54,11 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         event_category: 'Lead',
         event_label: 'WeChat Contact Widget',
         page_location: window.location.pathname
-      });
-      trackEvent('generate_lead', {
-        currency: 'USD',
-        value: 50.0,
-        lead_type: 'wechat'
       });
     });
   });
@@ -76,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         body: JSON.stringify(payload)
       })
-      .then(function(res) { return res.json(); })
+      .then(function(res) { if (!res.ok) throw new Error('Form not accepted'); return res.json(); })
       .then(function(data) {
         // console.log('[Inquiry Submitted to sales@jingyueglass.com]', data);
         if (callback) callback(null, data);
@@ -153,19 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
       var messageInput = form.querySelector('textarea');
       var messageVal = messageInput ? (messageInput.value || '').trim() : '';
 
-      // 4.5 GA4 Event Tracking
-      var formId = form.getAttribute('id') || form.getAttribute('name') || 'rfq_form';
-      trackEvent('inquiry_submit', {
-        event_category: 'Lead',
-        event_label: formId,
-        page_location: window.location.pathname
-      });
-      trackEvent('generate_lead', {
-        currency: 'USD',
-        value: 500.0,
-        lead_type: 'form_submission'
-      });
-
       // 4.6 Dispatch Form Submission directly to sales@jingyueglass.com
       var subjectTitle = productVal ? ('New Quote Request: ' + productVal + ' (Jingyue Glass)') : ('New RFQ Inquiry from ' + (nameVal || emailVal || 'Website Visitor'));
       var inquiryPayload = {
@@ -183,7 +141,11 @@ document.addEventListener('DOMContentLoaded', function() {
         submission_time: new Date().toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }) + ' (CST)'
       };
 
-      submitInquiryPayload(inquiryPayload);
+      submitInquiryPayload(inquiryPayload, function(err, receipt) {
+        if (!err && receipt && (receipt.success === true || receipt.success === 'true')) {
+          if(window.jyContactMeasurement)window.jyContactMeasurement.accepted(e,'formsubmit');
+        }
+      });
     });
   });
 
