@@ -7,6 +7,7 @@
   var form;
   var lastTrigger=null;
   var returnTrigger=null;
+  var explicitTriggers=!!(document.currentScript && document.currentScript.hasAttribute('data-explicit-triggers'));
 
   function modalMarkup(){
     return '<div id="jyQuoteModal" class="jy-quote-backdrop" aria-hidden="true">'+
@@ -145,7 +146,17 @@
   function bindTriggers(){
     document.querySelectorAll('a[href],button').forEach(function(el){
       if(el.closest('#jyQuoteModal,#jySuccessModal'))return;
-      if(el.matches('a[href]')&&isInquiryLink(el))el.classList.add('jy-quote-open');
+      if(el.matches('a[href]')){
+        // Real outbound destinations keep native navigation, even with a stale modal class.
+        var href=(el.getAttribute('href')||'').trim();
+        if(href && !/^javascript:void\(0\);?$/i.test(href)){
+          var url;
+          try{url=new URL(href,document.baseURI);}catch(_){return;}
+          if(!/^https?:$/.test(url.protocol) || url.origin!==window.location.origin)return;
+        }
+        // Keep older pages working until they explicitly mark their quote controls.
+        if(!explicitTriggers && isInquiryLink(el))el.classList.add('jy-quote-open');
+      }
       if(el.classList.contains('jy-quote-open')){
         el.addEventListener('click',function(event){
           event.preventDefault();
